@@ -172,7 +172,7 @@ export default function VideoAndWelcome() {
   ];
 
   return (
-    <div>
+    <div className="">
       {/* Mobile-only simplified block: visible on small screens only
           Animated letters placed BEFORE the content on mobile as requested. */}
 
@@ -226,8 +226,8 @@ export default function VideoAndWelcome() {
       />
 
       <div className="hidden md:block relative mx-auto max-w-[80vw] px-3 md:px-6 mt-10 md:mt-14 lg:mt-20 md:max-w-[95vw]">
-        <div className="relative grid items-start gap-2 md:grid-cols-2 md:gap-2 lg:gap-4 h-[90vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh]">
-          <div className="relative z-10 pr-1 md:pr-3 self-end pb-1 max-w-[479px] h-[216px] flex flex-col justify-end gap-6 ">
+        <div className="relative grid items-start gap-2 md:grid-cols-2 md:gap-2 lg:gap-4 h-[90vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh]">
+          <div className="relative z-10 pr-1 md:pr-3 self-end pb-1 max-w-[479px] h-[216px] flex flex-col justify-end gap-6 2xl:top-[10vh] ">
             <p className="text-[13px] md:text-xl font-extrabold tracking-tight text-black">
               We’re the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.
@@ -266,7 +266,7 @@ export default function VideoAndWelcome() {
             </div>
           </div>
 
-          <div className="relative z-20 -ml-4 md:-ml-16 h-[50vh] lg:h-[35vh] w-[50vw] xl:h-[40vh] md:h-[25vh] md:mt-0 md:scale-[123%] xl:mt-5 pointer-events-none select-none transform-gpu origin-top-left transition-transform duration-200 lg:scale-110 lg:-mt-5 lg:-ml-10 xl:scale-30">
+          <div className="relative z-20 -ml-4 md:-ml-16 h-[50vh] lg:h-[35vh] w-[50vw] xl:h-[40vh] md:h-[25vh] md:mt-0 md:scale-[123%] xl:mt-5 pointer-events-none select-none transform-gpu origin-top-left transition-transform duration-200 lg:scale-110 lg:-mt-5 lg:-ml-10 xl:scale-30 2xl:ml-[-5rem]">
             {/* Animated letters will replace the static image. The whole block scales down on lg/xl so
                 per-letter absolute px positions stay consistent (we compute against a 2xl reference)
                 while visually fitting smaller breakpoints. */}
@@ -274,8 +274,6 @@ export default function VideoAndWelcome() {
           </div>
         </div>
       </div>
-
-
 
       
       <div className="md:hidden h-[70vh] flex justify-between items-center gap-20">
@@ -324,7 +322,7 @@ export default function VideoAndWelcome() {
           </div>
         </div>
       </div>
-      <div id="line" className="w-full h-1 bg-black mt-40 mb-40"></div>
+      <div id="line" className="w-full h-1 bg-black mt-24 mb-40 2xl:mt-40"></div>
     </div>
   );
 }
