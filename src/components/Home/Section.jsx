@@ -6,7 +6,7 @@ const Section = () => {
     <section className="mx-auto max-w-[120rem] px-4 py-12">
   {/* Default view: hidden on mobile, visible on lg+ (md has its own layout) */}
   <div className="hidden md:hidden lg:block">
-        <div className="border-2 border-gray-600 py-20 rounded-sm overflow-hidden">
+        <div className="border-2 border-gray-600 rounded-sm overflow-hidden">
           <div className="flex flex-col md:flex-row items-stretch">
             {/* Left column - content */}
             <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center">

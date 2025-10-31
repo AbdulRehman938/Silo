@@ -9,6 +9,7 @@ export default function VideoAndWelcome() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const wordRef = useRef(null);
 
   // Animated letters component: uses a per-letter layout to match the attached image.
   // Each entry defines left/top (percent), rotation (deg), size (vw) and zIndex so letters overlap correctly.
@@ -171,6 +172,47 @@ export default function VideoAndWelcome() {
     { left: '70%', top: '90%', rotate: 0, size: '23vw', z: 1, fontWeight: 'bold' },
   ];
 
+useEffect(() => {
+  const el = wordRef.current;
+  if (!el) return;
+
+  const applyAdjustment = () => {
+    const vw = window.innerWidth;
+    const dpr = window.devicePixelRatio || 1;
+
+    const is133_140 =
+      (vw >= 1360 && vw <= 1500) && (dpr >= 1.3 && dpr < 1.45);
+    const is150 =
+      (vw >= 1280 && vw <= 1420) && (dpr >= 1.45 && dpr < 1.55);
+
+    if (is150) {
+      // 150% scale: move further up
+      el.style.height = "40vh";
+      el.style.marginTop = "-10vh";
+      el.style.transform = "translateY(2vh)";
+    } else if (is133_140) {
+      // 133%–140% scale
+      el.style.height = "28vh";
+      el.style.marginTop = "-8vh";
+      el.style.transform = "translateY(-5vh)";
+    } else {
+      // reset for normal view
+      el.style.height = "";
+      el.style.marginTop = "";
+      el.style.transform = "";
+    }
+  };
+
+  applyAdjustment();
+  window.addEventListener("resize", applyAdjustment);
+
+  return () => window.removeEventListener("resize", applyAdjustment);
+}, []);
+
+
+
+
+
   return (
     <div className="">
       {/* Mobile-only simplified block: visible on small screens only
@@ -266,7 +308,10 @@ export default function VideoAndWelcome() {
             </div>
           </div>
 
-          <div className="relative z-20 -ml-4 md:-ml-16 h-[50vh] lg:h-[35vh] w-[50vw] xl:h-[40vh] md:h-[25vh] md:mt-0 md:scale-[123%] xl:mt-5 pointer-events-none select-none transform-gpu origin-top-left transition-transform duration-200 lg:scale-110 lg:-mt-5 lg:-ml-10 xl:scale-30 2xl:ml-[-5rem]">
+          <div
+            ref={wordRef}
+            className="relative z-20 -ml-4 md:-ml-16 h-[50vh] lg:h-[35vh] w-[50vw] xl:h-[40vh] md:h-[25vh] md:mt-0 md:scale-[123%] xl:mt-5 pointer-events-none select-none transform-gpu origin-top-left transition-transform duration-200 lg:scale-110 lg:-mt-5 lg:-ml-10 xl:scale-30 2xl:ml-[-5rem]"
+          >
             {/* Animated letters will replace the static image. The whole block scales down on lg/xl so
                 per-letter absolute px positions stay consistent (we compute against a 2xl reference)
                 while visually fitting smaller breakpoints. */}
@@ -322,7 +367,7 @@ export default function VideoAndWelcome() {
           </div>
         </div>
       </div>
-      <div id="line" className="w-full h-1 bg-black mt-24 mb-40 2xl:mt-40"></div>
+      <div id="line" className="w-full h-[0.06rem] bg-black mt-24 mb-40 2xl:mt-40"></div>
     </div>
   );
 }

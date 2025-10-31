@@ -29,7 +29,7 @@ export default function Hero() {
       <VideoAndWelcome />
 
       <ContentAndDone />
-      <div className="w-[100vw] h-1 bg-black my-20"></div>
+      <div className="w-[100vw] h-[0.06rem] bg-black my-20"></div>
       <Section />
     </div>
   )

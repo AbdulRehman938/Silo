@@ -75,7 +75,7 @@ export default function ContentAndDone() {
             </div>
           </article>
         </div>
-        <div className="w-full h-1 bg-black my-20 mx-auto"></div>
+        <div className="w-[100vw] relative h-[0.08rem] right-5 bg-black my-20 "></div>
 
         <div id="done" className="w-full min-h-screen py-20">
           <h2 className="text-7xl font-semibold tracking-tight text-black mb-4">
@@ -87,7 +87,7 @@ export default function ContentAndDone() {
 
           <div className="space-y-20">
             {/* First project */}
-            <div className="hidden lg:flex items-center justify-around space-x-20 border-y-2 py-16 border-y-gray-800 group relative">
+            <div className="hidden lg:flex items-center justify-around space-x-20 border-y-[0.1rem] py-16 border-y-gray-800 group relative">
               <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
                 <img
                   src="/Smoothie.png"

@@ -110,6 +110,9 @@ const useAnimationLoop = (trackRef, targetVelocity, seqWidth, isHovered, pauseOn
 
       if (seqWidth > 0) {
         offsetRef.current += velocityRef.current * deltaTime
+        // keep offset within [0, seqWidth) so the visible translation wraps
+        // This ensures movement appears infinite regardless of direction
+        offsetRef.current = ((offsetRef.current % seqWidth) + seqWidth) % seqWidth
         const translateX = -offsetRef.current
         track.style.transform = `translate3d(${translateX}px, 0, 0)`
       }

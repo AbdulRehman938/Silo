@@ -7,7 +7,7 @@ const cx = (...parts) => parts.filter(Boolean).join(' ')
 const LogoLoopComponent = ({
   logos,
   speed = 120,
-  direction = 'left',
+  direction = 'right',
   width = '100%',
   logoHeight = 28,
   gap = 32,
