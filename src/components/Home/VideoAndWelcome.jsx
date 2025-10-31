@@ -322,7 +322,7 @@ useEffect(() => {
 
       
       <div className="md:hidden h-[70vh] flex justify-between items-center gap-20">
-        <div className="flex flex-col justify-between items-center h-full">
+        <div className="flex flex-col justify-center items-center gap-32 h-full">
           <div className="pointer-events-none select-none mb-6 mt-10 h-60 w-[80vw] mx-auto">
             <AnimatedLetters word={"Wecolme"} layout={mobileLayout} />
           </div>
