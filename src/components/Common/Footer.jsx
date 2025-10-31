@@ -8,8 +8,7 @@ const Footer = () => {
           {/* Left: Brand + Newsletter */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-2 mb-6">
-              <span className="text-3xl font-extrabold tracking-tight">Silo</span>
-              <img src="/Vector.png" alt="vector accent" className="h-3 w-3" />
+              <img src="/footerlogo.png" alt="Silo logo" className="h-8" />
             </div>
             <p className="text-sm font-medium mb-3">Join our newsletter to stay up to date.</p>
             <form className="flex w-full max-w-md items-stretch gap-3" onSubmit={(e)=>e.preventDefault()}>
@@ -35,34 +34,34 @@ const Footer = () => {
           {/* Middle: About */}
           <div className="md:col-span-3">
             <h4 className="text-sm font-semibold mb-4">About us</h4>
-            <ul className="space-y-3 text-sm">
-              <li><a href="#" className="hover:underline">Services</a></li>
-              <li><a href="#" className="hover:underline">About the Silo</a></li>
-              <li><a href="#" className="hover:underline">Mission and Values</a></li>
-              <li><a href="#" className="hover:underline">Meet the Team</a></li>
-              <li><a href="#" className="hover:underline">Why UGC?</a></li>
+            <ul className="space-y-3">
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Services</a></li>
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>About the Silo</a></li>
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Mission and Values</a></li>
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Meet the Team</a></li>
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Why UGC?</a></li>
             </ul>
           </div>
           {/* Right: Case Studies */}
           <div className="md:col-span-2">
             <h4 className="text-sm font-semibold mb-4">Case Studies</h4>
-            <ul className="space-y-3 text-sm">
-              <li><a href="#" className="hover:underline">Case study 1</a></li>
-              <li><a href="#" className="hover:underline">Case study 2</a></li>
-              <li><a href="#" className="hover:underline">Case study 3</a></li>
-              <li><a href="#" className="hover:underline">Case study 4</a></li>
-              <li><a href="#" className="hover:underline">Case study 5</a></li>
+            <ul className="space-y-3">
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 1</a></li>
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 2</a></li>
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 3</a></li>
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 4</a></li>
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 5</a></li>
             </ul>
           </div>
           {/* Socials */}
           <div className="md:col-span-2">
             <h4 className="text-sm font-semibold mb-4">Follow Us</h4>
-            <ul className="space-y-3 text-sm">
-              <li><a href="#" className="hover:underline">Youtube</a></li>
-              <li><a href="#" className="hover:underline">X</a></li>
-              <li><a href="#" className="hover:underline">Instagram</a></li>
-              <li><a href="#" className="hover:underline">TikTok</a></li>
-              <li><a href="#" className="hover:underline">LinkedIn</a></li>
+            <ul className="space-y-3">
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Youtube</a></li>
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>X</a></li>
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Instagram</a></li>
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>TikTok</a></li>
+              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>LinkedIn</a></li>
             </ul>
           </div>
         </div>
