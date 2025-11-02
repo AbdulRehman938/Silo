@@ -47,7 +47,7 @@ const Hero = () => {
           </div>
         </div>
         <Cards />
-        <div className="w-full h-[200vh] bg-black"></div>
+       
       </div>
 
       {/* Mobile-only view - visible only on small screens */}
@@ -92,9 +92,6 @@ const Hero = () => {
         <div className="mt-6">
           <Cards />
         </div>
-
-        {/* Spacer (keeps existing page spacing) */}
-        <div className="w-full h-40 bg-black mt-8"></div>
       </div>
     </>
   );

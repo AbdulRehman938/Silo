@@ -30,16 +30,28 @@ const CARD_DATA = [
 ];
 
 const Cards = () => {
-  const containerRef = useRef(null);
+  const desktopRef = useRef(null);
+  const mobileRef = useRef(null);
   const [cardProgress, setCardProgress] = useState(0);
   const [isLocked, setIsLocked] = useState(false);
+  const [isMobileInView, setIsMobileInView] = useState(false);
+  const touchStartY = useRef(0);
 
+  // Viewport visibility for mobile
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsMobileInView(entry.isIntersecting),
+      { threshold: 0.5 }
+    );
+    if (mobileRef.current) observer.observe(mobileRef.current);
+    return () => observer.disconnect();
+  }, []);
 
+  // Desktop wheel handler
+  useEffect(() => {
     const handleWheel = (e) => {
-      if (!containerRef.current) return;
-
-      const rect = containerRef.current.getBoundingClientRect();
+      if (!desktopRef.current) return;
+      const rect = desktopRef.current.getBoundingClientRect();
       const viewportCenter = window.innerHeight / 2;
       const containerCenter = rect.top + rect.height / 2;
       const isAtTrigger = Math.abs(containerCenter - viewportCenter) <= 100;
@@ -68,6 +80,41 @@ const Cards = () => {
     return () => document.removeEventListener('wheel', handleWheel);
   }, [cardProgress]);
 
+  // Mobile touch handler
+  useEffect(() => {
+    const handleTouchStart = (e) => {
+      if (!mobileRef.current || !isMobileInView) return;
+      touchStartY.current = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e) => {
+      if (!mobileRef.current || !isMobileInView) return;
+      const delta = touchStartY.current - e.touches[0].clientY;
+      const step = Math.abs(delta) * 0.01;
+      
+      const shouldAnimate = 
+        (cardProgress > 0 && cardProgress < CARD_DATA.length) ||
+        (cardProgress === 0 && delta > 0) ||
+        (cardProgress === CARD_DATA.length && delta < 0);
+
+      if (shouldAnimate) {
+        e.preventDefault();
+        setCardProgress(prev => {
+          const newProgress = prev + (delta > 0 ? step : -step);
+          return Math.max(0, Math.min(CARD_DATA.length, newProgress));
+        });
+      }
+      touchStartY.current = e.touches[0].clientY;
+    };
+
+    document.addEventListener('touchstart', handleTouchStart, { passive: true });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    return () => {
+      document.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, [cardProgress, isMobileInView]);
+
   const getCardTransform = (index) => {
     // Each card disappears one by one
     const cardStart = index;
@@ -92,7 +139,7 @@ const Cards = () => {
   return (
     <>
       {/* Desktop View - Hidden on Mobile */}
-      <div ref={containerRef} className="hidden sm:flex w-full h-screen 2xl:mt-20 md:mt-0 flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
+      <div ref={desktopRef} className="hidden sm:flex w-full h-screen 2xl:mt-20 md:mt-0 flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
         {/* Static stacked cards centered over the H1 */}
         <div className="absolute left-[30%] top-[40%] -translate-x-1/2 -translate-y-1/2 z-[60] flex items-center justify-center" style={{height: 420, width: 720}}>
           {CARD_DATA.map((card, i) => {
@@ -144,7 +191,7 @@ const Cards = () => {
       </div>
 
       {/* Mobile View - Only Visible on Mobile */}
-      <div ref={containerRef} className="sm:hidden w-full h-[70vh] flex flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
+      <div ref={mobileRef} className="sm:hidden w-full h-screen flex flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
         {/* Mobile H1 text positioned at top */}
         <h1 className="absolute left-1/2 top-[30%] -translate-x-1/2 -translate-y-1/2 text-brand text-[20vw] leading-[5rem] font-bold text-center z-10 pointer-events-none">
           CORE <br /> SERVICES
