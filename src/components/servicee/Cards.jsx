@@ -144,9 +144,9 @@ const Cards = () => {
       </div>
 
       {/* Mobile View - Only Visible on Mobile */}
-      <div className="sm:hidden w-full h-[70vh] flex flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
+      <div ref={containerRef} className="sm:hidden w-full h-[70vh] flex flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
         {/* Mobile H1 text positioned at top */}
-        <h1 className="absolute left-1/2 top-[30%] -translate-x-1/2 -translate-y-1/2 text-brand text-[20vw] leading-[6rem] font-bold text-center z-10 pointer-events-none">
+        <h1 className="absolute left-1/2 top-[30%] -translate-x-1/2 -translate-y-1/2 text-brand text-[20vw] leading-[5rem] font-bold text-center z-10 pointer-events-none">
           CORE <br /> SERVICES
         </h1>
         

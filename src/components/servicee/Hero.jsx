@@ -76,7 +76,7 @@ const Hero = () => {
             className="w-[45%] inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-12 px-4 text-sm font-bold uppercase tracking-wide text-white"
           >
             <IoIosSend className="w-5 h-5" />
-            <span>Let's chat</span>
+            <span className="whitespace-nowrap">Let's chat</span>
           </a>
 
           <a
