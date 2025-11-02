@@ -7,49 +7,100 @@ import Cards from "./Cards";
 
 const Hero = () => {
   return (
-    <div className="w-full h-auto">
-      <div className="w-[100vw] h-[105vh] flex flex-col justify-start items-center mt-20">
-        <VideoPlayer />
-        <div className="flex flex-col justify-start items-center text-black leading-tight">
-          <h1 className="text-[28vh] font-black">What we do</h1>
-          <span className="text-xl font-medium text-black text-center w-[40vw]">
-            {" "}
-            We make content that cuts through the noise. Strategy, UGC, design,
-            and motion, built to get noticed and remembered
-          </span>
+    <>
+      {/* Desktop / larger screens - hidden on small screens */}
+      <div className="hidden sm:block w-full h-auto">
+        <div className="w-[100vw] h-[105vh] flex flex-col justify-between items-center 2xl:mt-20 lg:mt-10 lg:h-[105vh] md:mt-5 md:h-[80vh]">
+          <VideoPlayer />
+          <div className="flex flex-col justify-start items-center text-black leading-tight">
+            <h1 className="2xl:text-[15vw] font-black lg:text-[15vw] 2xl:mb-3 md:text-[16vw] md:mb-10 md:0">What we do</h1>
+            <span className="2xl:text-2xl 2xl:font-medium text-black text-center 2xl:w-[48vw] lg:w-[60vw] lg:text-lg md:w-[70vw] md:text-base ">
+              {" "}
+              We make content that cuts through the noise. Strategy, UGC, design,
+              and motion, built to get noticed and remembered
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-10 2xl:mt-5 lg:mt-10">
+            <a
+              href="#"
+              className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
+            >
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                <IoIosSend className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-12 group-hover:rotate-45 group-hover:scale-[140%]" />
+              </div>
+              <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-40">
+                Let's chat
+              </span>
+            </a>
+
+            <a
+              href="#"
+              className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-8 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
+            >
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                <IoIosSend className="block text-brand w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-10 group-hover:rotate-45 group-hover:scale-[140%]" />
+              </div>
+              <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-28">
+                About us
+              </span>
+            </a>
+          </div>
         </div>
-        <div className="flex flex-wrap gap-10 mt-16">
+        <Cards />
+        <div className="w-full h-[200vh] bg-black"></div>
+      </div>
+
+      {/* Mobile-only view - visible only on small screens */}
+      <div className="block sm:hidden w-full h-auto bg-white px-4 py-6">
+        {/* Video (targeting the same video but sized for mobile) */}
+        <div className="mb-4">
+          <VideoPlayer
+            containerClassName="w-full h-[32rem]"
+            videoClassName="w-full h-full object-contain"
+          />
+        </div>
+
+        {/* Headline & description (smaller for mobile) */}
+        <div className="flex flex-col gap-3 text-center text-black">
+          <h1 className="text-5xl font-black leading-tight">What we do</h1>
+          <p className="text-sm leading-relaxed">
+            We make content that cuts through the noise. Strategy, UGC, design,
+            and motion, built to get noticed and remembered.
+          </p>
+        </div>
+
+        {/* Buttons stacked for mobile */}
+        <div className="mt-6 flex gap-3 mx-auto ml-5">
           <a
             href="#"
-            className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
+            className="w-[45%] inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-12 px-4 text-sm font-bold uppercase tracking-wide text-white"
           >
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-              <IoIosSend className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-12 group-hover:rotate-45 group-hover:scale-[140%]" />
-            </div>
-            <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-40">
-              Let's chat
-            </span>
+            <IoIosSend className="w-5 h-5" />
+            <span>Let's chat</span>
           </a>
 
           <a
             href="#"
-            className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-8 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
+            className="w-[45%] inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-12 px-4 text-sm font-bold uppercase tracking-wide text-brand"
           >
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-              <IoIosSend className="block text-brand w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-10 group-hover:rotate-45 group-hover:scale-[140%]" />
-            </div>
-            <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-28">
-              About us
-            </span>
+            <IoIosSend className="w-5 h-5" />
+            <span>About us</span>
           </a>
         </div>
+
+        {/* Include cards component (will also be mobile visible) */}
+        <div className="mt-6">
+          <Cards />
+        </div>
+
+        {/* Spacer (keeps existing page spacing) */}
+        <div className="w-full h-40 bg-black mt-8"></div>
       </div>
-      <Cards />
-    </div>
+    </>
   );
 };
 
-function VideoPlayer() {
+function VideoPlayer({ containerClassName = "", videoClassName = "" }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
@@ -85,14 +136,14 @@ function VideoPlayer() {
   return (
     <div
       id="video"
-      className="w-[20%] h-[70%] bg-black relative flex items-center justify-center group overflow-hidden"
+      className={`2xl:w-[18%] 2xl:h-[70rem] lg:h-[60%] lg:w-[30%] md:h-[50%] bg-black relative flex items-center justify-center group overflow-hidden ${containerClassName}`}
       onMouseEnter={() => setShowOverlay(true)}
       onMouseLeave={() => setShowOverlay(false)}
     >
       <video
         ref={videoRef}
         src={demoVideo2}
-        className="w-full h-full object-cover bg-black"
+        className={videoClassName || "w-full h-full object-cover bg-black"}
         loop
         muted={isMuted}
         autoPlay
