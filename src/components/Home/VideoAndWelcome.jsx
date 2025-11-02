@@ -319,7 +319,6 @@ useEffect(() => {
           </div>
         </div>
       </div>
-
       
       <div className="md:hidden h-[40rem] flex justify-center items-center gap-10">
         <div className="flex flex-col justify-center items-center gap-10 h-full">
