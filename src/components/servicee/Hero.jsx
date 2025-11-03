@@ -11,7 +11,7 @@ const Hero = () => {
     <>
       {/* Desktop / larger screens - hidden on small screens */}
       <div className="hidden sm:block w-full h-full">
-        <div className="w-[100vw] 2xl:h-[90vh] overflow-hidden flex flex-col justify-between -gap-10 items-center 2xl:mt-16 lg:mt-5 lg:h-[88vh] md:mt-5 md:h-[88vh] xl:h-[90vh] xl:mt-10">
+        <div className="w-[100vw] 2xl:max-h-[58em] overflow-hidden flex flex-col justify-between -gap-10 items-center 2xl:mt-16 lg:mt-5 lg:h-[88vh] md:mt-5 md:h-[88vh] xl:h-[90vh] xl:mt-10">
           <VideoPlayer />
           <div className="flex flex-col 2xl:-mt-16 justify-start gap-1 items-center text-black leading-tight">
             <h1 className="2xl:text-[15vw] font-black lg:text-[15vw] 2xl:mb-3 md:text-[16vw] md:mb-0 md:0">What we do</h1>
