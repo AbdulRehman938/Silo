@@ -8,10 +8,10 @@ export default function ContentAndDone() {
       {/* Desktop view (hidden on mobile) */}
       <div className="hidden md:block">
         <div className="flex justify-center gap-[18%] items-center w-full mx-28">
-          <h2 className="text-2xl lg:text-5xl xl:text-7xl md:text-5xl xl:w-[30rem] 2xl:text-7xl font-semibold tracking-tight text-black w-[28rem] 2xl:w-full lg:w-[22rem]">
+          <h2 className="text-2xl lg:text-5xl xl:text-6xl md:text-5xl xl:w-[60rem] 2xl:text-7xl font-semibold tracking-tight text-black w-[28rem] 2xl:w-full lg:w-[35rem]">
             This is simply <br /> what we do
           </h2>
-          <div className="text-sm lg:text-lg xl:text-2xl font-bold leading-10 text-black/80 2xl:text-xl  md:text-base w-full">
+          <div className="text-sm lg:text-xs xl:text-base xl:mr-52 font-bold leading-10 text-black/80 2xl:text-xl  md:text-base w-full">
             <span>
               We make content people stop for.<br />
               <span style={{ display: 'inline-block', marginTop: '1em' }}>
@@ -20,9 +20,9 @@ export default function ContentAndDone() {
             </span>
           </div>
         </div>
-        <div className="mt-8 md:mt-10 lg:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start mx-28">
+  <div className="mt-8 md:mt-10 lg:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 items-start mx-28">
           <article className="w-full flex flex-col gap-8 md:gap-6">
-            <div className="overflow-hidden rounded-md w-auto h-[40rem] md:h-[400px] lg:h-[40rem] 2xl:max-h-[40rem]">
+            <div className="overflow-hidden rounded-md w-auto h-[40rem] md:h-[400px] lg:h-[30rem] 2xl:max-h-[40rem]">
               <img
                 src="/first.png"
                 alt="Social Strategy & Management"
@@ -39,8 +39,8 @@ export default function ContentAndDone() {
             </p>
           </article>
 
-          <article className="w-full flex flex-col gap-8 md:gap-6">
-            <div className="overflow-hidden rounded-md w-auto h-[20rem] md:h-[320px] lg:h-[25rem] lg:mt-40">
+          <article className="w-full flex flex-col gap-8 md:gap-6 2xl:mt-20 xl:mt-20">
+            <div className="overflow-hidden rounded-md w-auto h-[20rem] md:h-[320px] lg:h-[30rem]">
               <img
                 src="/second.png"
                 alt="UGC Creator Network"
@@ -57,9 +57,9 @@ export default function ContentAndDone() {
             </p>
           </article>
 
-          <article className="w-full md:col-span-2 lg:col-span-1 flex justify-center lg:justify-start">
-            <div className="w-full md:w-2/3 lg:w-auto flex flex-col gap-8 md:gap-6">
-              <div className="overflow-hidden rounded-md w-auto h-[20rem] md:h-[320px] lg:h-[25rem] lg:mt-60">
+          <article className="w-full flex justify-end 2xl:ml-0 lg:mt-32 xl:mt-40 2xl:mt-60 lg:ml-[14rem] xl:ml-0">
+            <div className="w-full md:w-2/3 lg:w-full xl:w-auto 2xl:w-auto flex flex-col gap-8 md:gap-6 md:mt-0">
+              <div className="overflow-hidden rounded-md w-auto h-[20rem] md:h-[320px] lg:h-[25rem]">
                 <img
                   src="/third.png"
                   alt="Design + Motion"

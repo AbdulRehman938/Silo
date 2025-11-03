@@ -40,7 +40,7 @@ const Footer = () => {
             <h4 className="text-sm font-semibold mb-4">About us</h4>
             <ul className="space-y-3">
               <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Services</a></li>
-              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>About the Silo</a></li>
+              <li><a href="/about" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>About the Silo</a></li>
               <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Mission and Values</a></li>
               <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Meet the Team</a></li>
               <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Why UGC?</a></li>

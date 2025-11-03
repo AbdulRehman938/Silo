@@ -7,6 +7,7 @@ import Portfolio from '../pages/Portfolio.jsx'
 import Services from '../pages/Services.jsx'
 import JobBoard from '../pages/JobBoard.jsx'
 import Ramblings from '../pages/Ramblings.jsx'
+import About from '../pages/About.jsx'
 
 const Home = HomeModule.default || HomeModule.Home || (() => <div>Home</div>)
 
@@ -25,6 +26,7 @@ function RoutesTree() {
 			<Route element={<Layout />}>
 				<Route index element={<Home />} />
 				<Route path="portfolio" element={<Portfolio />} />
+				<Route path="about" element={<About />} />
 				<Route path="services" element={<Services />} />
 				<Route path="job-board" element={<JobBoard />} />
 				<Route path="ramblings" element={<Ramblings />} />
