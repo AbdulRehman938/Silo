@@ -4,17 +4,18 @@ import { IoIosSend } from "react-icons/io";
 import demoVideo from "../../DemoVideo/Demo-Video.mp4";
 import demoVideo2 from "../../DemoVideo/demo2.mp4";
 import Cards from "./Cards";
+import Interested from "./Interested";
 
 const Hero = () => {
   return (
     <>
       {/* Desktop / larger screens - hidden on small screens */}
       <div className="hidden sm:block w-full h-auto">
-        <div className="w-[100vw] h-[105vh] flex flex-col justify-between items-center 2xl:mt-20 lg:mt-10 lg:h-[105vh] md:mt-5 md:h-[80vh]">
+        <div className="w-[100vw] 2xl:h-[109vh] flex flex-col justify-between items-center 2xl:mt-10 lg:mt-5 lg:h-[115vh] md:mt-5 md:h-[90vh] xl:h-[117vh]">
           <VideoPlayer />
           <div className="flex flex-col justify-start items-center text-black leading-tight">
             <h1 className="2xl:text-[15vw] font-black lg:text-[15vw] 2xl:mb-3 md:text-[16vw] md:mb-10 md:0">What we do</h1>
-            <span className="2xl:text-2xl 2xl:font-medium text-black text-center 2xl:w-[48vw] lg:w-[60vw] lg:text-lg md:w-[70vw] md:text-base ">
+            <span className="2xl:text-2xl 2xl:font-bold text-xl text-center 2xl:w-[48vw] lg:w-[60vw] lg:text-lg md:w-[70vw] md:text-base md:mb-5 ">
               {" "}
               We make content that cuts through the noise. Strategy, UGC, design,
               and motion, built to get noticed and remembered
@@ -47,7 +48,7 @@ const Hero = () => {
           </div>
         </div>
         <Cards />
-       
+       <Interested />
       </div>
 
       {/* Mobile-only view - visible only on small screens */}
@@ -92,6 +93,7 @@ const Hero = () => {
         <div className="mt-6">
           <Cards />
         </div>
+        <Interested />
       </div>
     </>
   );
@@ -133,7 +135,7 @@ function VideoPlayer({ containerClassName = "", videoClassName = "" }) {
   return (
     <div
       id="video"
-      className={`2xl:w-[18%] 2xl:h-[70rem] lg:h-[60%] lg:w-[30%] md:h-[50%] bg-black relative flex items-center justify-center group overflow-hidden ${containerClassName}`}
+      className={`2xl:w-[18%] 2xl:h-[90vh] xl:w-[20%] xl:h-[55%] lg:h-[60%] lg:w-[30%] md:h-[70%] bg-black relative flex items-center justify-center group overflow-hidden ${containerClassName}`}
       onMouseEnter={() => setShowOverlay(true)}
       onMouseLeave={() => setShowOverlay(false)}
     >

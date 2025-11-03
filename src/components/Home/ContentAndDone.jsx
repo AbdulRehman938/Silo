@@ -4,23 +4,25 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export default function ContentAndDone() {
   return (
-    <div className="mx-auto max-w-[120rem] px-3 md:px-6">
+    <div className="mx-auto overflow-hidden max-w-[100vw]">
       {/* Desktop view (hidden on mobile) */}
       <div className="hidden md:block">
-        <div className="flex justify-between items-center w-[95vw] mx-auto">
-          <h2 className="text-2xl lg:text-5xl xl:text-7xl md:text-5xl xl:w-[30rem] 2xl:text-7xl font-semibold tracking-tight text-black w-[28rem] 2xl:w-[28rem] lg:w-[22rem]">
-            This is simply what we do
+        <div className="flex justify-center gap-[18%] items-center w-full mx-28">
+          <h2 className="text-2xl lg:text-5xl xl:text-7xl md:text-5xl xl:w-[30rem] 2xl:text-7xl font-semibold tracking-tight text-black w-[28rem] 2xl:w-full lg:w-[22rem]">
+            This is simply <br /> what we do
           </h2>
-          <div className="text-sm lg:text-lg xl:text-2xl font-bold leading-10 text-black/80 space-y-3 2xl:text-2xl md:text-base">
-            <p>We make content people stop for.</p>
-            <p>
-              Strategy first. Design that bites. Delivery that doesn’t miss.
-            </p>
+          <div className="text-sm lg:text-lg xl:text-2xl font-bold leading-10 text-black/80 2xl:text-xl  md:text-base w-full">
+            <span>
+              We make content people stop for.<br />
+              <span style={{ display: 'inline-block', marginTop: '1em' }}>
+                Strategy first. Design that bites. Delivery that doesn’t miss.
+              </span>
+            </span>
           </div>
         </div>
-        <div className="mt-8 md:mt-10 lg:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start mx-auto">
+        <div className="mt-8 md:mt-10 lg:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start mx-28">
           <article className="w-full flex flex-col gap-8 md:gap-6">
-            <div className="overflow-hidden rounded-md w-auto h-[40rem] md:h-[400px] lg:h-[40rem]">
+            <div className="overflow-hidden rounded-md w-auto h-[40rem] md:h-[400px] lg:h-[40rem] 2xl:max-h-[40rem]">
               <img
                 src="/first.png"
                 alt="Social Strategy & Management"
@@ -75,7 +77,8 @@ export default function ContentAndDone() {
             </div>
           </article>
         </div>
-        <div className="w-[100vw] relative h-[0.08rem] right-5 bg-black my-20 "></div>
+           <div id="line" className="w-full h-[0.1rem] bg-black mt-24 mb-40 2xl:mt-40"></div>
+ 
 
         <div id="done" className="w-full min-h-screen py-20">
           <h2 className="text-7xl font-semibold tracking-tight text-black mb-4">

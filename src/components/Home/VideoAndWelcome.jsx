@@ -267,10 +267,10 @@ useEffect(() => {
         poster={"/image.png"}
       />
 
-      <div className="hidden md:block relative mx-auto max-w-[80vw] px-3 md:px-6 mt-10 md:mt-14 lg:mt-20 md:max-w-[95vw]">
+      <div className="hidden md:block relative mx-auto max-w-[90vw] px-3 md:px-6 mt-10 md:mt-14 lg:mt-20 md:max-w-[95vw] 2xl:max-w-[90vw]">
         <div className="relative grid items-start gap-2 md:grid-cols-2 md:gap-2 lg:gap-4 h-[90vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh]">
-          <div className="relative z-10 pr-1 md:pr-3 self-end pb-1 max-w-[479px] h-[216px] flex flex-col justify-end gap-6 2xl:top-[10vh] ">
-            <p className="text-[13px] md:text-xl font-extrabold tracking-tight text-black">
+          <div className="relative z-10 pr-1 md:pr-3 self-end pb-1 max-w-[500px] h-[216px] flex flex-col justify-end gap-6 2xl:top-[10vh] ">
+            <p className="text-[20px] md:text-xl 2xl:text-2xl font-extrabold tracking-tight text-black">
               We’re the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.
             </p>
@@ -366,7 +366,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
-      <div id="line" className="w-full h-[0.06rem] bg-black mt-24 mb-40 2xl:mt-40"></div>
+      <div id="line" className="w-full h-[0.1rem] bg-black mt-24 mb-40 2xl:mt-40"></div>
     </div>
   );
 }

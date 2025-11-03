@@ -39,9 +39,9 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm" style={{backdropFilter: 'saturate(120%) blur(6px)'}}>
       <div className="mx-0 lg:mx-5 py-3 px-3 md:px-6 flex justify-between items-center lg:border-2 decoration-black">
         {/* Left: Logo */}
-        <div className="flex items-center">
-          <img src="/logo.png" alt="Silo" className="h-10 w-auto md:h-12" />
-        </div>
+        <Link to="/" className="flex items-center" aria-label="Home">
+          <img src="/Company Logo.png" alt="Silo" className="h-10 w-auto md:h-12" />
+        </Link>
 
         {/* Right: CTA */}
         <div className="flex items-center justify-center gap-10">
@@ -82,19 +82,19 @@ export default function Header() {
               )}
             </AnimatePresence>
 
-            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold text-lg transition-all ${isActive ? 'text-3xl text-brand' : 'text-black'}`}>
+            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               The Silo
             </NavLink>
-            <NavLink to="/portfolio" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold text-lg transition-all ${isActive ? 'text-3xl text-brand' : 'text-black'}`}>
+            <NavLink to="/portfolio" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               Portfolio
             </NavLink>
-            <NavLink to="/services" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold text-lg transition-all ${isActive ? 'text-3xl text-brand' : 'text-black'}`}>
+            <NavLink to="/services" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               Services
             </NavLink>
-            <NavLink to="/job-board" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold text-lg transition-all ${isActive ? 'text-3xl text-brand' : 'text-black'}`}>
+            <NavLink to="/job-board" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               Job Board
             </NavLink>
-            <NavLink to="/ramblings" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold text-lg transition-all ${isActive ? 'text-3xl text-brand' : 'text-black'}`}>
+            <NavLink to="/ramblings" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               Ramblings
             </NavLink>
           </nav>

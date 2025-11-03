@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useTexture } from '@react-three/drei'
 import { shaderMaterial } from '@react-three/drei'
@@ -20,6 +20,7 @@ function LiquidPlane({ imageUrl, mouse, isHovered }) {
   const texture = useTexture(imageUrl)
   const { viewport } = useThree()
 
+  // Always cover full viewport width, center the plane
   useFrame((state) => {
     if (ref.current) {
       ref.current.uTime = state.clock.elapsedTime
@@ -28,8 +29,9 @@ function LiquidPlane({ imageUrl, mouse, isHovered }) {
     }
   })
 
+  // Plane covers full width, centered
   return (
-    <mesh>
+    <mesh position={[0, 0, 0]}>
       <planeGeometry args={[viewport.width, viewport.height, 64, 64]} />
       <liquidMaterial ref={ref} uTexture={texture} />
     </mesh>
@@ -47,15 +49,44 @@ export default function LiquidImage({ imageUrl }) {
     setMouse(new THREE.Vector2(x, y))
   }
 
+  // Fixed pixel height (not affected by scaling), responsive to screen width
+  const getCanvasHeight = () => {
+    const w = window.innerWidth
+    if (w >= 1024) return 600
+    if (w >= 768) return 500
+    return 384
+  }
+  const [canvasHeight, setCanvasHeight] = useState(getCanvasHeight())
+
+  useEffect(() => {
+    function handleResize() {
+      setCanvasHeight(getCanvasHeight())
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   return (
-    <div 
-      className="w-full h-96 md:h-[500px] lg:h-[600px] overflow-hidden" 
+    <div
+      className="overflow-hidden"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ transform: 'none' }}
+      style={{
+        width: '100%',
+        height: `${canvasHeight}px`,
+        margin: '0',
+        left: 0,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+      }}
     >
-      <Canvas camera={{ position: [0, 0, 3.5] }} style={{ width: '100%', height: '100%', transform: 'none' }}>
+      <Canvas
+        camera={{ position: [0, 0, 3.5] }}
+        style={{ width: '100%', height: '100%', display: 'block' }}
+      >
         <ambientLight intensity={1.2} />
         <LiquidPlane imageUrl={imageUrl} mouse={mouse} isHovered={isHovered} />
       </Canvas>

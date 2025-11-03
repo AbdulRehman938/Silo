@@ -11,7 +11,7 @@ export default function Layout() {
     <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />
       {/* reserve space for fixed header so page content isn't hidden */}
-      <main className="flex-1 pt-16 md:pt-20">
+      <main className="flex-1 w-screen pt-16 md:pt-20">
         <Outlet />
       </main>
       <Footer />
