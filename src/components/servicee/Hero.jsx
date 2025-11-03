@@ -11,9 +11,9 @@ const Hero = () => {
     <>
       {/* Desktop / larger screens - hidden on small screens */}
       <div className="hidden sm:block w-full h-full">
-        <div className="w-[100vw] 2xl:max-h-[90vh] flex flex-col justify-between -gap-10 items-center 2xl:mt-10 lg:mt-5 lg:h-[88vh] md:mt-5 md:h-[88vh] xl:h-[90vh] xl:mt-10">
+        <div className="w-[100vw] 2xl:h-[90vh] overflow-hidden flex flex-col justify-between -gap-10 items-center 2xl:mt-16 lg:mt-5 lg:h-[88vh] md:mt-5 md:h-[88vh] xl:h-[90vh] xl:mt-10">
           <VideoPlayer />
-          <div className="flex flex-col 2xl:-mt-32 justify-start gap-1 items-center text-black leading-tight">
+          <div className="flex flex-col 2xl:-mt-16 justify-start gap-1 items-center text-black leading-tight">
             <h1 className="2xl:text-[15vw] font-black lg:text-[15vw] 2xl:mb-3 md:text-[16vw] md:mb-0 md:0">What we do</h1>
             <span className="2xl:text-2xl 2xl:-mt-5 2xl:font-bold text-xl text-center 2xl:w-[48vw] lg:w-[60vw] lg:text-lg md:w-[70vw] md:text-base md:mb-5 ">
               {" "}
@@ -21,7 +21,7 @@ const Hero = () => {
               and motion, built to get noticed and remembered
             </span>
           </div>
-          <div className="flex flex-wrap gap-10 2xl:mb-20 xl:mb-5">
+          <div className="flex flex-wrap gap-10 2xl:mb-28 xl:mb-5">
             <a
               href="#"
               className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
@@ -48,9 +48,8 @@ const Hero = () => {
           </div>
         </div>
         <Cards />
-       <Interested />
+        <Interested />
       </div>
-
       {/* Mobile-only view - visible only on small screens */}
       <div className="block sm:hidden w-full h-auto bg-white px-1 py-6">
         {/* Video (targeting the same video but sized for mobile) */}
