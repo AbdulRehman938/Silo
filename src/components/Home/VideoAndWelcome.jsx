@@ -218,8 +218,8 @@ useEffect(() => {
       {/* Mobile-only simplified block: visible on small screens only
           Animated letters placed BEFORE the content on mobile as requested. */}
 
-      <div className="relative w-full overflow-hidden mt-6 md:mt-10 lg:mt-14">
-        <div className="h-96 lg:h-[80vh] md:h-[60vh] relative">
+  <div className="relative w-full overflow-hidden mt-12 md:mt-32 lg:mt-40">
+        <div className="h-[32vw] min-h-[18rem] max-h-[60vh] lg:h-[28vw] lg:min-h-[22rem] lg:max-h-[70vh] md:h-[40vw] md:min-h-[20rem] md:max-h-[65vh] relative transition-all duration-300 ease-in-out">
           <img
             src="/image.png"
             alt="Showcase"

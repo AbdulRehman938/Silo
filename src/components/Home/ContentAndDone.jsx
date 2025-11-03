@@ -80,7 +80,7 @@ export default function ContentAndDone() {
            <div id="line" className="w-full h-[0.1rem] bg-black mt-24 mb-40 2xl:mt-40"></div>
  
 
-        <div id="done" className="w-full min-h-screen py-20">
+        <div id="done" className="w-full min-h-screen py-20 px-28">
           <h2 className="text-7xl font-semibold tracking-tight text-black mb-4">
             Stuff we’ve done
           </h2>

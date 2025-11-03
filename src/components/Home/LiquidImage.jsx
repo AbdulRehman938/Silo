@@ -20,7 +20,6 @@ function LiquidPlane({ imageUrl, mouse, isHovered }) {
   const texture = useTexture(imageUrl)
   const { viewport } = useThree()
 
-  // Always cover full viewport width, center the plane
   useFrame((state) => {
     if (ref.current) {
       ref.current.uTime = state.clock.elapsedTime
@@ -29,7 +28,6 @@ function LiquidPlane({ imageUrl, mouse, isHovered }) {
     }
   })
 
-  // Plane covers full width, centered
   return (
     <mesh position={[0, 0, 0]}>
       <planeGeometry args={[viewport.width, viewport.height, 64, 64]} />
@@ -49,7 +47,6 @@ export default function LiquidImage({ imageUrl }) {
     setMouse(new THREE.Vector2(x, y))
   }
 
-  // Fixed pixel height (not affected by scaling), responsive to screen width
   const getCanvasHeight = () => {
     const w = window.innerWidth
     if (w >= 1024) return 600
@@ -68,24 +65,22 @@ export default function LiquidImage({ imageUrl }) {
 
   return (
     <div
-      className="overflow-hidden"
+      className="w-full"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
-        width: '100%',
         height: `${canvasHeight}px`,
-        margin: '0',
-        left: 0,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
       }}
     >
       <Canvas
         camera={{ position: [0, 0, 3.5] }}
-        style={{ width: '100%', height: '100%', display: 'block' }}
+        dpr={1}
+        style={{
+          width: '100%',
+          height: '100%',
+          display: 'block',
+        }}
       >
         <ambientLight intensity={1.2} />
         <LiquidPlane imageUrl={imageUrl} mouse={mouse} isHovered={isHovered} />
