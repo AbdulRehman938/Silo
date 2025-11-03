@@ -88,9 +88,6 @@ export default function Header() {
             <NavLink to="/portfolio" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               Portfolio
             </NavLink>
-            <NavLink to="/about" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
-              About
-            </NavLink>
             <NavLink to="/services" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               Services
             </NavLink>
