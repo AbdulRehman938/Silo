@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Section from '../components/Home/Section';
 
 const About = () => {
   // Carousel state management
@@ -840,6 +841,7 @@ const About = () => {
           </div>
         </div>
       </section>
+        <Section />
     </div>
   )
 }
