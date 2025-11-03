@@ -13,7 +13,7 @@ const DEFAULT_LOGOS = [
 export default function Hero() {
   return (
     <div className='w-full'>
-       <div className="relative w-full overflow-hidden mb-6 md:mb-10 lg:mb-12 2xl:-mt-16">
+       <div className="relative w-full overflow-hidden mb-6 md:mb-10 lg:mb-12 2xl:-mt-10">
         <LiquidImage imageUrl="/hero.png" />
       </div>
 

@@ -7,11 +7,11 @@ export default function ContentAndDone() {
     <div className="mx-auto overflow-hidden max-w-[100vw]">
       {/* Desktop view (hidden on mobile) */}
       <div className="hidden md:block">
-        <div className="flex justify-center gap-[18%] items-center w-full mx-28">
-          <h2 className="text-2xl lg:text-5xl xl:text-6xl md:text-5xl xl:w-[60rem] 2xl:text-7xl font-semibold tracking-tight text-black w-[28rem] 2xl:w-full lg:w-[35rem]">
+        <div className="flex justify-center gap-[18%] items-center w-full mx-28 md:mx-10">
+          <h2 className="text-2xl lg:text-5xl xl:text-6xl md:text-4xl xl:w-[60rem] 2xl:text-7xl font-semibold tracking-tight text-black w-[28rem] 2xl:w-full lg:w-[35rem]">
             This is simply <br /> what we do
           </h2>
-          <div className="text-sm lg:text-xs xl:text-base xl:mr-52 font-bold leading-10 text-black/80 2xl:text-xl  md:text-base w-full">
+          <div className="text-sm lg:text-xs xl:text-base xl:mr-52 font-bold leading-10 text-black/80 2xl:text-xl md:text-xs w-full">
             <span>
               We make content people stop for.<br />
               <span style={{ display: 'inline-block', marginTop: '1em' }}>
@@ -20,7 +20,7 @@ export default function ContentAndDone() {
             </span>
           </div>
         </div>
-  <div className="mt-8 md:mt-10 lg:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 items-start mx-28">
+  <div className="mt-8 md:mt-10 lg:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 items-start mx-28 md:mx-10">
           <article className="w-full flex flex-col gap-8 md:gap-6">
             <div className="overflow-hidden rounded-md w-auto h-[40rem] md:h-[400px] lg:h-[30rem] 2xl:max-h-[40rem]">
               <img
@@ -39,7 +39,7 @@ export default function ContentAndDone() {
             </p>
           </article>
 
-          <article className="w-full flex flex-col gap-8 md:gap-6 2xl:mt-20 xl:mt-20">
+          <article className="w-full flex flex-col gap-8 md:gap-6 2xl:mt-20 xl:mt-20 lg:mt-20 md:mt-20">
             <div className="overflow-hidden rounded-md w-auto h-[20rem] md:h-[320px] lg:h-[30rem]">
               <img
                 src="/second.png"
@@ -57,8 +57,8 @@ export default function ContentAndDone() {
             </p>
           </article>
 
-          <article className="w-full flex justify-end 2xl:ml-0 lg:mt-32 xl:mt-40 2xl:mt-60 lg:ml-[14rem] xl:ml-0">
-            <div className="w-full md:w-2/3 lg:w-full xl:w-auto 2xl:w-auto flex flex-col gap-8 md:gap-6 md:mt-0">
+          <article className="w-full md:col-span-2 lg:col-span-1 flex md:justify-center lg:justify-end 2xl:ml-0 lg:mt-32 xl:mt-40 2xl:mt-60 lg:ml-[14rem] xl:ml-0">
+            <div className="w-full flex flex-col gap-8 md:gap-6 md:mt-0">
               <div className="overflow-hidden rounded-md w-auto h-[20rem] md:h-[320px] lg:h-[25rem]">
                 <img
                   src="/third.png"
@@ -80,7 +80,7 @@ export default function ContentAndDone() {
            <div id="line" className="w-full h-[0.1rem] bg-black mt-24 mb-40 2xl:mt-40"></div>
  
 
-        <div id="done" className="w-full min-h-screen py-20 px-28">
+        <div id="done" className="w-full min-h-screen py-10 px-16">
           <h2 className="text-7xl font-semibold tracking-tight text-black mb-4">
             Stuff we’ve done
           </h2>
@@ -310,14 +310,14 @@ export default function ContentAndDone() {
                   explainer animations to punchy LinkedIn posts, we built a
                   visual system that made analytics unmissable.
                 </p>
-                <div className="flex space-x-2 mt-2">
+                 <div className="flex space-x-2 mt-2">
                   <span className="text-base font-bold text-black p-2 bg-brand/20">
                     Design
                   </span>
                   <span className="text-base font-bold text-black p-2 bg-brand/20">
                     B2B
                   </span>
-                  <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  <span className="text-base font-bold whitespace-nowrap text-black p-2 bg-brand/20">
                     LinkedIn Content
                   </span>
                 </div>

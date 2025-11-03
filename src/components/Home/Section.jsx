@@ -6,11 +6,11 @@ const Section = () => {
     <section className="mx-auto max-w-[120rem] px-4 py-12">
   {/* Default view: hidden on mobile, visible on lg+ (md has its own layout) */}
   <div className="hidden md:hidden lg:block">
-        <div className="border-2 border-gray-600 rounded-sm overflow-hidden mx-28">
+        <div className="border-2 border-gray-600 rounded-sm overflow-hidden mx-10">
           <div className="flex flex-col md:flex-row items-stretch">
             {/* Left column - content */}
             <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tight text-black mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tight text-black mb-6">
                 Ready when you are.
               </h1>
               <p className="text-sm md:text-xl text-gray-700 font-semibold mb-8 max-w-2xl">
