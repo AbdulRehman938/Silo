@@ -1,0 +1,32 @@
+/* Target 125% Windows scaling (devicePixelRatio ~1.25) */
+@media (resolution: 1.25dppx), (min-resolution: 120dpi) and (max-resolution: 130dpi) {
+  #video {
+    height: 40vh !important;
+  }
+  .hero-title {
+    font-size: 10vw !important;
+    margin-top: 5vw !important;
+  }
+  .hero-desc {
+    font-size: 1vw !important;
+  }
+  .hero-main {
+    margin-top: 1rem !important;
+  }
+}
+
+/* Target 150% Windows scaling (devicePixelRatio ~1.5) */
+@media (resolution: 1.5dppx), (min-resolution: 144dpi) and (max-resolution: 155dpi) {
+    .hero-main {
+    margin-top: 0rem !important;
+  }
+  #video {
+    height: 40vh !important;
+  }
+  .hero-title {
+    font-size: 10vw !important;
+  }
+  .hero-desc {
+    font-size: 1vw !important;
+  }
+}
