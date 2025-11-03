@@ -11,7 +11,7 @@ const Hero = () => {
     <>
       {/* Desktop / larger screens - hidden on small screens */}
       <div className="hidden sm:block w-full h-full">
-        <div className="w-[100vw] 2xl:max-h-[90vh] flex flex-col justify-between -gap-10 items-center 2xl:mt-20 lg:mt-5 lg:h-[88vh] md:mt-5 md:h-[88vh] xl:h-[90vh]">
+        <div className="w-[100vw] 2xl:max-h-[90vh] flex flex-col justify-between -gap-10 items-center 2xl:mt-10 lg:mt-5 lg:h-[88vh] md:mt-5 md:h-[88vh] xl:h-[90vh] xl:mt-10">
           <VideoPlayer />
           <div className="flex flex-col 2xl:-mt-32 justify-start gap-1 items-center text-black leading-tight">
             <h1 className="2xl:text-[15vw] font-black lg:text-[15vw] 2xl:mb-3 md:text-[16vw] md:mb-0 md:0">What we do</h1>
@@ -52,7 +52,7 @@ const Hero = () => {
       </div>
 
       {/* Mobile-only view - visible only on small screens */}
-      <div className="block sm:hidden w-full h-auto bg-white px-4 py-6">
+      <div className="block sm:hidden w-full h-auto bg-white px-1 py-6">
         {/* Video (targeting the same video but sized for mobile) */}
         <div className="mb-4">
           <VideoPlayer
