@@ -36,6 +36,8 @@ export default function Header() {
     setLine((l) => ({ ...l, visible: false }));
   }
 
+
+
   return (
     <header className="fixed  top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm" style={{backdropFilter: 'saturate(120%) blur(6px)'}}>
       <div className="mx-0 header lg:mx-5 py-3 px-3 md:px-6 flex justify-between items-center lg:border-2 decoration-black">
@@ -116,12 +118,12 @@ export default function Header() {
           </button>
 
           {/* CTA visible on large screens only; on tablet/mobile it's inside the hamburger panel below */}
-          <button className="hidden lg:inline-flex relative text-lg bg-brand text-white py-3 px-6 items-center border-none rounded overflow-hidden header-btn transition-all duration-200 cursor-pointer group active:scale-95">
+          <Link to="/contact" className="hidden lg:inline-flex relative text-lg bg-brand text-white py-3 px-6 items-center border-none rounded overflow-hidden header-btn transition-all duration-200 cursor-pointer group active:scale-95 no-underline">
             <div className="absolute svg-wrapper group-hover:animate-bounce-custom">
               <IoIosSend className="block opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-5 group-hover:rotate-45 group-hover:scale-[160%]" />
             </div>
             <span className="block transition-all font-bold duration-300 ease-in-out group-hover:translate-x-28">Lets Talk</span>
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -169,10 +171,10 @@ export default function Header() {
               </nav>
 
               <div className="px-6 pb-8">
-                <button onClick={close} className="w-full inline-flex items-center justify-center gap-3 rounded-2xl bg-brand text-white px-6 py-3 font-bold shadow-lg hover:opacity-95 transition">
+                <Link to="/contact" onClick={close} className="w-full inline-flex items-center justify-center gap-3 rounded-2xl bg-brand text-white px-6 py-3 font-bold shadow-lg hover:opacity-95 transition no-underline">
                   <IoIosSend className="w-5 h-5" />
                   Lets Talk
-                </button>
+                </Link>
               </div>
             </div>
           </aside>

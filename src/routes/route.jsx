@@ -8,17 +8,14 @@ import Services from '../pages/Services.jsx'
 import JobBoard from '../pages/JobBoard.jsx'
 import Ramblings from '../pages/Ramblings.jsx'
 import About from '../pages/About.jsx'
+import Contact from '../pages/Contact.jsx'
+import Contact2 from '../pages/Contact2.jsx'
+import Terms from '../pages/Terms.jsx'
+import NotFound from '../pages/NotFound.jsx'
+import CareerIndex from '../pages/CareerIndex.jsx'
+import JobDetail from '../pages/JobDetail.jsx'
 
 const Home = HomeModule.default || HomeModule.Home || (() => <div>Home</div>)
-
-function NotFound() {
-	return (
-		<div style={{ padding: 24 }}>
-			<h1>404 — Not Found</h1>
-			<p>The page you requested does not exist.</p>
-		</div>
-	)
-}
 
 function RoutesTree() {
 	return (
@@ -30,6 +27,11 @@ function RoutesTree() {
 				<Route path="services" element={<Services />} />
 				<Route path="job-board" element={<JobBoard />} />
 				<Route path="ramblings" element={<Ramblings />} />
+				<Route path="contact" element={<Contact />} />
+						<Route path="contact2" element={<Contact2 />} />
+						<Route path="terms" element={<Terms />} />
+									<Route path="careers" element={<CareerIndex />} />
+									<Route path="job/:id" element={<JobDetail />} />
 				<Route path="*" element={<NotFound />} />
 			</Route>
 		</Routes>

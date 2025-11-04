@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { AiFillTikTok } from 'react-icons/ai'
 import { FaInstagramSquare, FaLinkedin, FaYoutube } from 'react-icons/fa'
 import { IoMdSend } from 'react-icons/io'
@@ -76,7 +77,7 @@ const Footer = () => {
           <p className="text-xs text-neutral-600">© 2025 The Silo Creative Limited. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-6 text-xs">
             <a href="#" className="hover:underline">Privacy Policy</a>
-            <a href="#" className="hover:underline">Terms of Service</a>
+            <Link to="/terms" className="hover:underline">Terms of Service</Link>
             <a href="#" className="hover:underline">Cookies Settings</a>
           </div>
         </div>
