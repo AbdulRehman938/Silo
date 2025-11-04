@@ -6,6 +6,7 @@ import * as THREE from 'three'
 import { extend } from '@react-three/fiber'
 import { useSpring, a } from '@react-spring/three'
 import liquidShader from '../../shaders/liquidShader.js'
+import "../../styles/scaling-overrides.css"
 
 const LiquidMaterial = shaderMaterial(
   { uTime: 0, uTexture: null, uMouse: new THREE.Vector2(0, 0), uHover: 0.0 },
@@ -74,6 +75,7 @@ export default function LiquidImage({ imageUrl }) {
       }}
     >
       <Canvas
+      className="canvas-style"
         camera={{ position: [0, 0, 3.5] }}
         dpr={1}
         style={{

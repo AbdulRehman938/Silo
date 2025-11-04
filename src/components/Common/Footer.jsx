@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-white text-black border-t border-neutral-200">
       {/* Top grid: logo/newsletter + link columns */}
-      <div className="hidden md:block  mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <div className="hidden md:block  mx-auto w-full max-w-[90vw] px-4 sm:px-6 lg:px-8 py-10 md:py-14">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
           {/* Left: Brand + Newsletter */}
           <div className="md:col-span-5">

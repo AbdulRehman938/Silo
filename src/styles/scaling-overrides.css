@@ -13,6 +13,19 @@
   .hero-main {
     margin-top: 1rem !important;
   }
+  .home-hero-text-p {
+  margin-top: 0rem !important;
+}
+.home-hero-text-h {
+  margin-top: -10rem !important;
+}
+.home-hero-text-float {
+  margin-top: -1rem !important;
+  width: 100% !important;
+}
+.canvas-style {
+  height: 80% !important;
+}
 }
 
 /* Target 150% Windows scaling (devicePixelRatio ~1.5) */
@@ -54,5 +67,18 @@
 .service-video #video {
   height: 45vh !important;
   margin-top: 2rem !important;
+}
+.home-hero-text-p {
+  margin-top: 0rem !important;
+}
+.home-hero-text-h {
+  margin-top: -10rem !important;
+}
+.home-hero-text-float {
+  margin-top: -1rem !important;
+  width: 100% !important;
+}
+.canvas-style {
+  height: 80% !important;
 }
 }

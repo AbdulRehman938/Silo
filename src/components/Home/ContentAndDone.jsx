@@ -4,23 +4,20 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export default function ContentAndDone() {
   return (
-    <div className="mx-auto max-w-[120rem] px-3 md:px-6">
+    <div className="mx-auto max-w-[90vw] px-3 md:px-6">
       {/* Desktop view (hidden on mobile) */}
-      <div className="hidden md:block">
-        <div className="flex justify-between items-center w-[95vw] mx-auto">
-          <h2 className="text-2xl lg:text-5xl xl:text-7xl md:text-5xl xl:w-[30rem] 2xl:text-7xl font-semibold tracking-tight text-black w-[28rem] 2xl:w-[28rem] lg:w-[22rem]">
-            This is simply what we do
+      <div className="hidden md:block overflow-hidden">
+        <div className="flex justify-center relative items-center w-[95vw] mx-auto">
+          <h2 className=" mr-auto text-2xl lg:text-5xl xl:text-5xl md:text-5xl xl:w-[30rem] 2xl:text-7xl font-semibold tracking-tight text-black w-[28rem] 2xl:w-[28rem] lg:w-[22rem]">
+            This is simply <br /> what we do
           </h2>
-          <div className="text-sm lg:text-lg xl:text-2xl font-bold leading-10 text-black/80 space-y-3 2xl:text-2xl md:text-base">
-            <p>We make content people stop for.</p>
-            <p>
-              Strategy first. Design that bites. Delivery that doesn’t miss.
-            </p>
+          <div className="text-sm mr-auto lg:text-sm xl:text-sm font-bold leading-10 text-black/80 space-y-3 2xl:text-2xl md:text-base">
+            <p>We make content people stop for <br />  Strategy first. Design that bites. Delivery that doesn’t miss.</p>
           </div>
         </div>
-        <div className="mt-8 md:mt-10 lg:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start mx-auto">
-          <article className="w-full flex flex-col gap-8 md:gap-6">
-            <div className="overflow-hidden rounded-md w-auto h-[40rem] md:h-[400px] lg:h-[40rem]">
+        <div className="h-fit overflow-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start mx-auto">
+          <article className="w-full flex flex-col gap-8 mt-0 pt-0 md:gap-6 ">
+            <div className="overflow-hidden rounded-md w-auto h-[20rem] md:h-[320px] lg:h-[30rem] lg:mt-20">
               <img
                 src="/first.png"
                 alt="Social Strategy & Management"
@@ -38,7 +35,7 @@ export default function ContentAndDone() {
           </article>
 
           <article className="w-full flex flex-col gap-8 md:gap-6">
-            <div className="overflow-hidden rounded-md w-auto h-[20rem] md:h-[320px] lg:h-[25rem] lg:mt-40">
+            <div className="overflow-hidden rounded-md w-auto h-[20rem] md:h-[320px] lg:h-[20rem] lg:mt-40">
               <img
                 src="/second.png"
                 alt="UGC Creator Network"

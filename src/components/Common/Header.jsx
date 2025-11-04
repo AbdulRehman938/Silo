@@ -83,10 +83,10 @@ export default function Header() {
               )}
             </AnimatePresence>
 
-            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold  transition-all ${isActive ? 'text-2xl text-brand header2' : 'text-lg text-black'}`}>
+            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold  transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               The Silo
             </NavLink>
-            <NavLink to="/portfolio" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/about" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               Portfolio
             </NavLink>
             <NavLink to="/services" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
