@@ -39,8 +39,7 @@ export default function Header() {
 
 
   return (
-    <header className="fixed top-0 left-0 max-w-[90vw] mx-auto right-0 z-50 bg-red-400 rounded-b-2xl" style={{backdropFilter: 'saturate(120%) blur(6px)'}}>
-      {/* fixed top-0 left-0 max-w-[90vw] mx-auto right-0 z-50 bg-white/75 backdrop-blur-sm shadow-sm rounded-b-2xl */}
+    <header className="fixed top-0 left-0 max-w-[90vw] mx-auto right-0 z-50 bg-white/75 backdrop-blur-sm shadow-sm rounded-b-2xl" style={{backdropFilter: 'saturate(120%) blur(6px)'}}>
       <div className="mx-0 header lg:mx-5 py-3 px-3 md:px-6 flex justify-between items-center decoration-black">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center" aria-label="Home">
