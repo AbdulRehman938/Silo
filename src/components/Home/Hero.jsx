@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <div className='w-full'>
        <div className="relative w-full home-hero-text-float overflow-hidden mb-6 md:mb-10 lg:mb-12 2xl:-mt-10">
-        <LiquidImage imageUrl="/Frame 11-Picsart-AiImageEnhancer.png" />
+        <LiquidImage imageUrl="/Frame 11 (2).png" />
       </div>
 
       <div className="w-full max-h-screen bg-white 2xl:mt-32 md:mt-10 lg:mt-0 mb-6 md:mb-10 lg:mb-14 xl:-mt-5">
