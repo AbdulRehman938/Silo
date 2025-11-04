@@ -6,8 +6,8 @@ export default function ContentAndDone() {
   return (
     <div className="mx-auto overflow-hidden max-w-[100vw]">
       {/* Desktop view (hidden on mobile) */}
-      <div className="hidden md:block">
-        <div className="flex justify-center gap-[18%] items-center w-full mx-28 md:mx-10">
+      <div className="hidden md:block 2xl:mx-16">
+        <div className="flex justify-center gap-[18%] items-center w-full mx-28 md:mx-10 ">
           <h2 className="text-2xl lg:text-5xl xl:text-6xl md:text-4xl xl:w-[60rem] 2xl:text-7xl font-semibold tracking-tight text-black w-[28rem] 2xl:w-full lg:w-[35rem]">
             This is simply <br /> what we do
           </h2>

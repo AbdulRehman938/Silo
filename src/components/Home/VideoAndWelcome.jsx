@@ -310,7 +310,7 @@ useEffect(() => {
 
           <div
             ref={wordRef}
-            className="relative z-20 -ml-4 md:-ml-16 h-[50vh] lg:h-[35vh] w-[50vw] xl:h-[40vh] md:h-[25vh] md:mt-0 md:scale-[123%] xl:mt-5 pointer-events-none select-none transform-gpu origin-top-left transition-transform duration-200 lg:scale-110 lg:-mt-5 lg:-ml-10 xl:scale-30 2xl:ml-[-5rem]"
+            className="relative z-10 -ml-4 md:-ml-16 h-[50vh] lg:h-[35vh] w-[50vw] xl:h-[40vh] md:h-[25vh] md:mt-0 md:scale-[123%] xl:mt-5 pointer-events-none select-none transform-gpu origin-top-left transition-transform duration-200 lg:scale-110 lg:-mt-5 lg:-ml-10 xl:scale-30 2xl:ml-[-5rem]"
           >
             {/* Animated letters will replace the static image. The whole block scales down on lg/xl so
                 per-letter absolute px positions stay consistent (we compute against a 2xl reference)

@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { Link, NavLink } from "react-router-dom";
 import { IoIosSend } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
+import "../../styles/scaling-overrides.css"
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -36,11 +37,11 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm" style={{backdropFilter: 'saturate(120%) blur(6px)'}}>
-      <div className="mx-0 lg:mx-5 py-3 px-3 md:px-6 flex justify-between items-center lg:border-2 decoration-black">
+    <header className="fixed  top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm" style={{backdropFilter: 'saturate(120%) blur(6px)'}}>
+      <div className="mx-0 header lg:mx-5 py-3 px-3 md:px-6 flex justify-between items-center lg:border-2 decoration-black">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center" aria-label="Home">
-          <img src="/Company Logo.png" alt="Silo" className="h-10 w-auto md:h-12" />
+          <img src="/Company Logo.png" alt="Silo" className="h-10 header2 w-auto md:h-12" />
         </Link>
 
         {/* Right: CTA */}
@@ -82,7 +83,7 @@ export default function Header() {
               )}
             </AnimatePresence>
 
-            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold  transition-all ${isActive ? 'text-2xl text-brand header2' : 'text-lg text-black'}`}>
               The Silo
             </NavLink>
             <NavLink to="/portfolio" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
@@ -115,7 +116,7 @@ export default function Header() {
           </button>
 
           {/* CTA visible on large screens only; on tablet/mobile it's inside the hamburger panel below */}
-          <button className="hidden lg:inline-flex relative text-lg bg-brand text-white py-3 px-6 items-center border-none rounded overflow-hidden transition-all duration-200 cursor-pointer group active:scale-95">
+          <button className="hidden lg:inline-flex relative text-lg bg-brand text-white py-3 px-6 items-center border-none rounded overflow-hidden header-btn transition-all duration-200 cursor-pointer group active:scale-95">
             <div className="absolute svg-wrapper group-hover:animate-bounce-custom">
               <IoIosSend className="block opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-5 group-hover:rotate-45 group-hover:scale-[160%]" />
             </div>
