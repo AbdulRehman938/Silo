@@ -22,7 +22,7 @@ const Hero = () => {
     <>
       {/* First Section - Hero */}
       <section
-        className="min-h-screen flex items-center w-full justify-center px-3 sm:px-2  md:px-6 lg:px-8 pb-6 md:pb-12 lg:pb-16 overflow-hidden"
+        className="min-h-screen flex items-center w-full justify-center px-3 sm:px-2 md:px-6 lg:px-8 pb-6 md:pb-12 lg:pb-16 overflow-hidden"
         aria-label="About Silo - Company introduction"
       >
         <div className="flex flex-col justify-between xl:grid xl:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 max-w-full mx-auto w-full items-centersm:mt-5 xs:mt-10">

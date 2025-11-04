@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const MindsInTheSilo = () => {
   // Carousel state management
@@ -52,7 +54,6 @@ const MindsInTheSilo = () => {
 
   // Enhanced responsive breakpoint detection
   const [isMobile, setIsMobile] = useState(false);
-  const [viewportWidth, setViewportWidth] = useState(0);
   
   useEffect(() => {
     const checkViewport = () => {
@@ -63,8 +64,6 @@ const MindsInTheSilo = () => {
         setIsMobile(newIsMobile);
         setCurrentSlide(0); // Reset to first slide when switching layouts
       }
-      
-      setViewportWidth(width);
     };
     
     // Initial check
@@ -86,14 +85,13 @@ const MindsInTheSilo = () => {
 
   // Dynamic slide calculation based on screen size
   const totalSlides = isMobile ? carouselData.length : 2; // Mobile: 5 slides, Desktop: 2 slides
-  const cardsPerView = isMobile ? 1 : 3;
 
   // Navigation functions with debouncing
   const goToNextSlide = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setCurrentSlide((prev) => (prev + 1) % totalSlides);
-      setTimeout(() => setIsTransitioning(false), 400);
+      setTimeout(() => setIsTransitioning(false), 600);
     }
   };
 
@@ -101,7 +99,7 @@ const MindsInTheSilo = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-      setTimeout(() => setIsTransitioning(false), 400);
+      setTimeout(() => setIsTransitioning(false), 600);
     }
   };
 
@@ -175,7 +173,7 @@ const MindsInTheSilo = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center py-6 sm:py-8 md:py-12 lg:py-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden">
-      <div className="max-w-7xl mx-auto w-full">
+      <div className="max-w-full mx-auto w-full">
         {/* Header Section - Zoom & Small Laptop Optimized */}
         <div className="text-center xl:text-left mb-6 sm:mb-8 md:mb-12 lg:mb-16 px-2 sm:px-0">
           <h2 
@@ -212,63 +210,112 @@ const MindsInTheSilo = () => {
           aria-label="Team members carousel"
           aria-live="polite"
         >
-          {/* Cards Container - Mobile Enhanced */}
+          {/* Cards Container - Mobile Enhanced with Framer Motion */}
           <div 
-            className="overflow-hidden w-full px-2 sm:px-4 lg:px-0 lg:max-w-7xl lg:mx-auto"
+            className="overflow-hidden w-full px-2 sm:px-4 lg:px-0 lg:max-w-full lg:mx-auto"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
             role="group"
             aria-label={`Slide ${currentSlide + 1} of ${totalSlides}`}
           >
-            <div 
-              className="flex gap-3 sm:gap-4 md:gap-6 transition-transform duration-400 ease-in-out"
+            <motion.div 
+              className="flex gap-3 sm:gap-4 md:gap-6"
+              animate={{
+                x: isMobile 
+                  ? -currentSlide * (280 + 12) // Mobile: optimized card width
+                  : -(currentSlide === 0 ? 0 : currentSlide * (395 + 24)) // Desktop: proper slide calculation
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 300,
+                damping: 30,
+                mass: 0.8
+              }}
               style={{
-                transform: isMobile 
-                  ? `translateX(-${currentSlide * (280 + 12)}px)` // Mobile: optimized card width
-                  : `translateX(-${currentSlide === 0 ? 0 : 2 * (395 + 24)}px)`, // Desktop: original logic
                 width: 'fit-content'
               }}
             >
-              {carouselData.map((item, index) => (
-                <div key={item.id} className="flex-shrink-0 w-64 sm:w-72 md:w-80 lg:w-80 xl:w-[350px] 2xl:w-[395px]">
+              {carouselData.map((item, index) => {
+                // Calculate if card is visible in current view
+                const isVisible = isMobile 
+                  ? index === currentSlide
+                  : (currentSlide === 0 ? index < 3 : index >= currentSlide && index < currentSlide + 3);
+                
+                return (
+                  <motion.div 
+                    key={item.id} 
+                    className="flex-shrink-0 w-64 sm:w-72 md:w-80 lg:w-80 xl:w-[350px] 2xl:w-[395px]"
+                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                    animate={{ 
+                      opacity: isVisible ? 1 : 0.6,
+                      scale: isVisible ? 1 : 0.95,
+                      y: isVisible ? 0 : 10
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      ease: [0.25, 0.46, 0.45, 0.94]
+                    }}
+                  >
                   {item.type === 'team-member' ? (
-                    // Team Member Card - Zoom & Small Laptop Optimized
-                    <div 
-                      className="bg-white rounded-lg shadow-lg p-3 sm:p-4 lg:p-5 xl:p-6 h-full flex flex-col"
+                    // Team Member Card - Zoom & Small Laptop Optimized with Motion
+                    <motion.div 
+                      className="bg-white rounded-lg p-3 sm:p-4 lg:p-5 xl:p-6 h-full flex flex-col"
                       style={{
-                        minHeight: '300px',
-                        opacity: 1
+                        minHeight: '300px'
                       }}
+                      whileHover={{ 
+                        y: -5,
+                        boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+                      }}
+                      transition={{ duration: 0.3 }}
                     >
-                      <img 
+                      <motion.img 
                         src={item.imageUrl} 
                         alt={`${item.name} - Team Member`}
                         className="w-full h-auto rounded-lg object-cover flex-1 max-h-40 sm:max-h-48 lg:max-h-56 xl:max-h-none"
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
                       />
                       
                       {/* Text Content - Zoom & Small Laptop Optimized */}
-                      <div className="mt-2 sm:mt-3 lg:mt-4 space-y-1 sm:space-y-2">
-                        <h3 className="font-bold text-black text-sm sm:text-base lg:text-lg text-center">{item.name}</h3>
-                        <p className="text-gray-600 text-xs sm:text-sm text-center">{item.title}</p>
-                        <p className="text-gray-700 text-xs sm:text-sm leading-relaxed text-center">
+                      <motion.div 
+                        className="mt-2 sm:mt-3 lg:mt-4 space-y-1 sm:space-y-2"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                      >
+                        <h3 className="font-bold text-black text-sm sm:text-base lg:text-xl text-left">{item.name}</h3>
+                        <p className="text-gray-800  text-xs sm:text-sm lg:text-lg text-left">{item.title}</p>
+                        <p className="text-gray-700 text-xs sm:text-sm leading-relaxed text-left">
                           {item.description}
                         </p>
-                      </div>
-                    </div>
+                      </motion.div>
+                    </motion.div>
                   ) : (
-                    // Special Card - Zoom & Small Laptop Optimized
-                    <div 
+                    // Special Card - Zoom & Small Laptop Optimized with Motion
+                    <motion.div 
                       className="rounded-lg p-3 sm:p-4 lg:p-6 xl:p-8 h-full flex flex-col justify-center items-center text-center border-2"
                       style={{
                         minHeight: '300px',
                         backgroundColor: '#FFE5E5',
-                        borderColor: '#FF322E',
-                        opacity: 1
+                        borderColor: '#FF322E'
                       }}
+                      whileHover={{ 
+                        scale: 1.02,
+                        borderColor: '#FF1E1A',
+                        boxShadow: "0 10px 25px rgba(255, 50, 46, 0.2)"
+                      }}
+                      transition={{ duration: 0.3 }}
                     >
-                      <div className="space-y-3 sm:space-y-4 lg:space-y-6 xl:space-y-8 max-w-xs">
-                        <h3 
+                      <motion.div 
+                        className="space-y-3 sm:space-y-4 lg:space-y-6 xl:space-y-8 max-w-xs"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                      >
+                        <motion.h3 
                           className="font-bold text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-tight"
                           style={{
                             fontFamily: 'Epilogue, sans-serif',
@@ -276,22 +323,30 @@ const MindsInTheSilo = () => {
                             lineHeight: '120%',
                             letterSpacing: '0%'
                           }}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.5, delay: 0.3 }}
                         >
                           {item.title}
-                        </h3>
+                        </motion.h3>
                         
-                        <button 
+                        <motion.button 
                           className="bg-red-500 hover:bg-red-600 text-white font-bold px-3 sm:px-4 lg:px-6 xl:px-8 py-2 sm:py-2 lg:py-3 xl:py-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-xs sm:text-sm lg:text-base xl:text-lg w-full"
                           onClick={() => console.log('Prove it clicked')}
                           style={{
                             fontFamily: 'DM Sans, sans-serif',
                             fontWeight: 700
                           }}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: 0.4 }}
                         >
                           {item.buttonText}
-                        </button>
+                        </motion.button>
                         
-                        <p 
+                        <motion.p 
                           className="text-gray-700 text-xs sm:text-sm lg:text-base leading-relaxed"
                           style={{
                             fontFamily: 'DM Sans, sans-serif',
@@ -300,19 +355,23 @@ const MindsInTheSilo = () => {
                             letterSpacing: '0%',
                             color: '#6B7280'
                           }}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.5, delay: 0.5 }}
                         >
                           {item.description}
-                        </p>
-                      </div>
-                    </div>
+                        </motion.p>
+                      </motion.div>
+                    </motion.div>
                   )}
-                </div>
-              ))}
-            </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
           </div>
 
           {/* Navigation Controls - Mobile Optimized */}
-          <div className="flex justify-between items-center mt-6 sm:mt-8 w-full px-2 sm:px-4 lg:max-w-7xl lg:mx-auto">
+          <div className="flex justify-between items-center mt-6 sm:mt-8 w-full px-2 sm:px-4 lg:max-w-full lg:mx-auto lg:px-10">
             {/* Navigation Dots - Mobile Enhanced */}
             <div className="flex space-x-1 sm:space-x-2">
               {Array.from({ length: totalSlides }).map((_, index) => (
@@ -322,7 +381,7 @@ const MindsInTheSilo = () => {
                     if (!isTransitioning) {
                       setIsTransitioning(true);
                       setCurrentSlide(index);
-                      setTimeout(() => setIsTransitioning(false), 400);
+                      setTimeout(() => setIsTransitioning(false), 600);
                     }
                   }}
                   className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
@@ -346,7 +405,7 @@ const MindsInTheSilo = () => {
               }`}
               aria-label="Previous slide"
             >
-              ←
+              <HiArrowLeft />
             </button>
             <button 
               onClick={goToNextSlide}
@@ -358,7 +417,7 @@ const MindsInTheSilo = () => {
               }`}
               aria-label="Next slide"
             >
-              →
+              <HiArrowRight />
             </button>
             </div>
           </div>

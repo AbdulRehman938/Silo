@@ -3,9 +3,9 @@ import { IoIosSend } from "react-icons/io";
 
 const Section = () => {
   return (
-    <section className="mx-auto max-w-[120rem] px-4 py-12">
-  {/* Default view: hidden on mobile, visible on lg+ (md has its own layout) */}
-  <div className="hidden md:hidden lg:block">
+    <section className="mx-auto max-w-[95vw] px-4 py-12">
+      {/* Default view: hidden on mobile, visible on lg+ (md has its own layout) */}
+      <div className="hidden md:hidden lg:block">
         <div className="border-2 border-gray-600 rounded-sm overflow-hidden mx-10">
           <div className="flex flex-col md:flex-row items-stretch">
             {/* Left column - content */}
@@ -47,7 +47,11 @@ const Section = () => {
 
             {/* Right column - empty space for image */}
             <div className="w-full md:w-1/2 bg-gray-50 md:min-h-[280px]">
-              <img src="/section.png" alt="section" className="w-full h-full object-cover" />
+              <img
+                src="/section.png"
+                alt="section"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -60,20 +64,36 @@ const Section = () => {
           <div className="flex flex-col items-stretch">
             {/* Top: right image placeholder (appears on top for md view) */}
             <div className="w-full bg-gray-50 h-52 md:h-64 lg:h-72 px-10">
-              <img src="/section.png" alt="section" className="w-full h-full object-cover" />
+              <img
+                src="/section.png"
+                alt="section"
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Bottom: content */}
             <div className="p-6 md:p-8">
-              <h2 className="text-2xl md:text-3xl font-semibold text-black mb-3">Ready when you are.</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold text-black mb-3">
+                Ready when you are.
+              </h2>
               <p className="text-sm md:text-base text-gray-700 mb-4">
                 Whether you’re a brand looking for scroll-stopping content or a
                 creator ready to join our roster, this is where it starts.
               </p>
 
               <div className="flex gap-3">
-                <a href="#" className="inline-flex items-center justify-center bg-[#FF322E] text-white px-4 py-2 rounded">For Brands</a>
-                <a href="#" className="inline-flex items-center justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 rounded">For Creators</a>
+                <a
+                  href="#"
+                  className="inline-flex items-center justify-center bg-[#FF322E] text-white px-4 py-2 rounded"
+                >
+                  For Brands
+                </a>
+                <a
+                  href="#"
+                  className="inline-flex items-center justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 rounded"
+                >
+                  For Creators
+                </a>
               </div>
             </div>
           </div>
@@ -86,21 +106,37 @@ const Section = () => {
           <div className="flex flex-col items-stretch">
             {/* Top: content */}
             <div className="p-6">
-              <h2 className="text-2xl font-semibold text-black mb-3">Ready when you are.</h2>
+              <h2 className="text-2xl font-semibold text-black mb-3">
+                Ready when you are.
+              </h2>
               <p className="text-sm text-gray-700 mb-4">
                 Whether you’re a brand looking for scroll-stopping content or a
                 creator ready to join our roster, this is where it starts.
               </p>
 
               <div className="flex gap-3">
-                <a href="#" className="inline-flex items-center justify-center bg-[#FF322E] text-white px-4 py-2 rounded">For Brands</a>
-                <a href="#" className="inline-flex items-center justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 rounded">For Creators</a>
+                <a
+                  href="#"
+                  className="inline-flex items-center justify-center bg-[#FF322E] text-white px-4 py-2 rounded"
+                >
+                  For Brands
+                </a>
+                <a
+                  href="#"
+                  className="inline-flex items-center justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 rounded"
+                >
+                  For Creators
+                </a>
               </div>
             </div>
 
             {/* Bottom: image placeholder */}
             <div className="w-full bg-gray-50 h-44 px-5">
-              <img src="/section.png" alt="section" className="w-full h-full object-cover" />
+              <img
+                src="/section.png"
+                alt="section"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
