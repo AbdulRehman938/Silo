@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const MindsInTheSilo = () => {
   // Carousel state management
@@ -8,6 +8,10 @@ const MindsInTheSilo = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  
+  // Viewport animation state
+  const [cardsInViewport, setCardsInViewport] = useState(new Set());
+  const cardRefs = useRef([]);
 
   // Carousel data - team members + special card
   const carouselData = [
@@ -55,6 +59,46 @@ const MindsInTheSilo = () => {
   // Enhanced responsive breakpoint detection
   const [isMobile, setIsMobile] = useState(false);
   
+  // Intersection Observer for viewport-based animations
+  const observerCallback = useCallback((entries) => {
+    entries.forEach((entry) => {
+      const cardIndex = parseInt(entry.target.dataset.cardIndex);
+      
+      setCardsInViewport(prev => {
+        const newSet = new Set(prev);
+        
+        // Card is entering viewport (even 1% visible)
+        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+          newSet.add(cardIndex);
+        } 
+        // Card is completely out of viewport
+        else if (!entry.isIntersecting && entry.intersectionRatio === 0) {
+          newSet.delete(cardIndex);
+        }
+        
+        return newSet;
+      });
+    });
+  }, []);
+
+  // Setup intersection observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(observerCallback, {
+      root: null,
+      rootMargin: '0px',
+      threshold: [0, 0.01] // Trigger at 0% (completely out) and 1% (barely in)
+    });
+
+    // Observe all card elements
+    cardRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [observerCallback]);
+  
   useEffect(() => {
     const checkViewport = () => {
       const width = window.innerWidth;
@@ -84,7 +128,8 @@ const MindsInTheSilo = () => {
   }, [isMobile]);
 
   // Dynamic slide calculation based on screen size
-  const totalSlides = isMobile ? carouselData.length : 2; // Mobile: 5 slides, Desktop: 2 slides
+  const cardsPerView = isMobile ? 1 : 3;
+  const totalSlides = isMobile ? carouselData.length : Math.max(1, carouselData.length - cardsPerView + 1);
 
   // Navigation functions with debouncing
   const goToNextSlide = () => {
@@ -224,7 +269,7 @@ const MindsInTheSilo = () => {
               animate={{
                 x: isMobile 
                   ? -currentSlide * (280 + 12) // Mobile: optimized card width
-                  : -(currentSlide === 0 ? 0 : currentSlide * (395 + 24)) // Desktop: proper slide calculation
+                  : -currentSlide * (395 + 24) // Desktop: consistent slide calculation
               }}
               transition={{
                 type: "spring",
@@ -237,36 +282,42 @@ const MindsInTheSilo = () => {
               }}
             >
               {carouselData.map((item, index) => {
-                // Calculate if card is visible in current view
-                const isVisible = isMobile 
-                  ? index === currentSlide
-                  : (currentSlide === 0 ? index < 3 : index >= currentSlide && index < currentSlide + 3);
+                const isInViewport = cardsInViewport.has(index);
                 
                 return (
                   <motion.div 
                     key={item.id} 
+                    ref={(el) => {
+                      cardRefs.current[index] = el;
+                      if (el) el.dataset.cardIndex = index;
+                    }}
                     className="flex-shrink-0 w-64 sm:w-72 md:w-80 lg:w-80 xl:w-[350px] 2xl:w-[395px]"
-                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                    initial={{ opacity: 0, scale: 0.8, y: 50, rotateY: -15 }}
                     animate={{ 
-                      opacity: isVisible ? 1 : 0.6,
-                      scale: isVisible ? 1 : 0.95,
-                      y: isVisible ? 0 : 10
+                      opacity: isInViewport ? 1 : 0,
+                      scale: isInViewport ? 1 : 0.8,
+                      y: isInViewport ? 0 : 50,
+                      rotateY: isInViewport ? 0 : -15
                     }}
                     transition={{
-                      duration: 0.6,
-                      ease: [0.25, 0.46, 0.45, 0.94]
+                      duration: 0.8,
+                      ease: [0.25, 0.46, 0.45, 0.94],
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15
                     }}
                   >
                   {item.type === 'team-member' ? (
-                    // Team Member Card - Zoom & Small Laptop Optimized with Motion
+                    // Team Member Card - Viewport-based animations
                     <motion.div 
                       className="bg-white rounded-lg p-3 sm:p-4 lg:p-5 xl:p-6 h-full flex flex-col"
                       style={{
                         minHeight: '300px'
                       }}
                       whileHover={{ 
-                        y: -5,
-                        boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
+                        y: -8,
+                        boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
+                        scale: 1.02
                       }}
                       transition={{ duration: 0.3 }}
                     >
@@ -274,27 +325,62 @@ const MindsInTheSilo = () => {
                         src={item.imageUrl} 
                         alt={`${item.name} - Team Member`}
                         className="w-full h-auto rounded-lg object-cover flex-1 max-h-40 sm:max-h-48 lg:max-h-56 xl:max-h-none"
-                        initial={{ opacity: 0, scale: 1.1 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
+                        initial={{ opacity: 0, scale: 1.2, rotateX: 20 }}
+                        animate={{ 
+                          opacity: isInViewport ? 1 : 0, 
+                          scale: isInViewport ? 1 : 1.2,
+                          rotateX: isInViewport ? 0 : 20
+                        }}
+                        transition={{ duration: 0.6, delay: isInViewport ? 0.2 : 0 }}
                       />
                       
-                      {/* Text Content - Zoom & Small Laptop Optimized */}
+                      {/* Text Content - Staggered animations */}
                       <motion.div 
                         className="mt-2 sm:mt-3 lg:mt-4 space-y-1 sm:space-y-2"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ 
+                          opacity: isInViewport ? 1 : 0, 
+                          y: isInViewport ? 0 : 30 
+                        }}
+                        transition={{ duration: 0.6, delay: isInViewport ? 0.4 : 0 }}
                       >
-                        <h3 className="font-bold text-black text-sm sm:text-base lg:text-xl text-left">{item.name}</h3>
-                        <p className="text-gray-800  text-xs sm:text-sm lg:text-lg text-left">{item.title}</p>
-                        <p className="text-gray-700 text-xs sm:text-sm leading-relaxed text-left">
+                        <motion.h3 
+                          className="font-bold text-black text-sm sm:text-base lg:text-xl text-left"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ 
+                            opacity: isInViewport ? 1 : 0, 
+                            x: isInViewport ? 0 : -20 
+                          }}
+                          transition={{ duration: 0.5, delay: isInViewport ? 0.5 : 0 }}
+                        >
+                          {item.name}
+                        </motion.h3>
+                        <motion.p 
+                          className="text-gray-800 text-xs sm:text-sm lg:text-lg text-left"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ 
+                            opacity: isInViewport ? 1 : 0, 
+                            x: isInViewport ? 0 : -20 
+                          }}
+                          transition={{ duration: 0.5, delay: isInViewport ? 0.6 : 0 }}
+                        >
+                          {item.title}
+                        </motion.p>
+                        <motion.p 
+                          className="text-gray-700 text-xs sm:text-sm leading-relaxed text-left"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ 
+                            opacity: isInViewport ? 1 : 0, 
+                            y: isInViewport ? 0 : 10 
+                          }}
+                          transition={{ duration: 0.5, delay: isInViewport ? 0.7 : 0 }}
+                        >
                           {item.description}
-                        </p>
+                        </motion.p>
                       </motion.div>
                     </motion.div>
                   ) : (
-                    // Special Card - Zoom & Small Laptop Optimized with Motion
+                    // Special Card - Viewport-based animations
                     <motion.div 
                       className="rounded-lg p-3 sm:p-4 lg:p-6 xl:p-8 h-full flex flex-col justify-center items-center text-center border-2"
                       style={{
@@ -303,17 +389,21 @@ const MindsInTheSilo = () => {
                         borderColor: '#FF322E'
                       }}
                       whileHover={{ 
-                        scale: 1.02,
+                        scale: 1.05,
                         borderColor: '#FF1E1A',
-                        boxShadow: "0 10px 25px rgba(255, 50, 46, 0.2)"
+                        boxShadow: "0 20px 40px rgba(255, 50, 46, 0.3)",
+                        rotate: 1
                       }}
                       transition={{ duration: 0.3 }}
                     >
                       <motion.div 
                         className="space-y-3 sm:space-y-4 lg:space-y-6 xl:space-y-8 max-w-xs"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ 
+                          opacity: isInViewport ? 1 : 0, 
+                          scale: isInViewport ? 1 : 0.8 
+                        }}
+                        transition={{ duration: 0.6, delay: isInViewport ? 0.2 : 0 }}
                       >
                         <motion.h3 
                           className="font-bold text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-tight"
@@ -323,9 +413,13 @@ const MindsInTheSilo = () => {
                             lineHeight: '120%',
                             letterSpacing: '0%'
                           }}
-                          initial={{ opacity: 0, scale: 0.9 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.5, delay: 0.3 }}
+                          initial={{ opacity: 0, scale: 0.7, rotateZ: -5 }}
+                          animate={{ 
+                            opacity: isInViewport ? 1 : 0, 
+                            scale: isInViewport ? 1 : 0.7,
+                            rotateZ: isInViewport ? 0 : -5
+                          }}
+                          transition={{ duration: 0.6, delay: isInViewport ? 0.3 : 0 }}
                         >
                           {item.title}
                         </motion.h3>
@@ -337,11 +431,15 @@ const MindsInTheSilo = () => {
                             fontFamily: 'DM Sans, sans-serif',
                             fontWeight: 700
                           }}
-                          whileHover={{ scale: 1.05 }}
+                          whileHover={{ scale: 1.1, rotate: -1 }}
                           whileTap={{ scale: 0.95 }}
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.5, delay: 0.4 }}
+                          initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                          animate={{ 
+                            opacity: isInViewport ? 1 : 0, 
+                            y: isInViewport ? 0 : 20,
+                            scale: isInViewport ? 1 : 0.8
+                          }}
+                          transition={{ duration: 0.6, delay: isInViewport ? 0.4 : 0 }}
                         >
                           {item.buttonText}
                         </motion.button>
@@ -355,9 +453,12 @@ const MindsInTheSilo = () => {
                             letterSpacing: '0%',
                             color: '#6B7280'
                           }}
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ duration: 0.5, delay: 0.5 }}
+                          initial={{ opacity: 0, y: 15 }}
+                          animate={{ 
+                            opacity: isInViewport ? 1 : 0, 
+                            y: isInViewport ? 0 : 15 
+                          }}
+                          transition={{ duration: 0.6, delay: isInViewport ? 0.5 : 0 }}
                         >
                           {item.description}
                         </motion.p>
