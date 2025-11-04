@@ -14,8 +14,7 @@ const Hero = () => {
       <div className="hidden sm:block w-full h-full">
         <div className="w-[100vw] hero-main 2xl:max-h-[58em] overflow-hidden flex flex-col justify-between -gap-10 items-center 2xl:mt-16 lg:mt-5 lg:h-[88vh] md:mt-5 md:h-[88vh] xl:h-[90vh] xl:mt-10 hero-top">
           <div
-            style={{ height: "60vh", width: "100%" }}
-            className="flex items-center justify-center service-video"
+            className="flex items-center 2xl:h-[60vh] w-[100%] justify-center service-video xl:h-[40vh]"
           >
             <VideoPlayer containerClassName="video" />
           </div>
@@ -29,7 +28,7 @@ const Hero = () => {
               design, and motion, built to get noticed and remembered
             </span>
           </div>
-          <div className="flex flex-wrap gap-10 2xl:mb-28 xl:mb-5">
+          <div className="flex flex-wrap gap-10 2xl:mb-28 xl:mb-10">
             <a
               href="#"
               className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-[55px] hero-btn px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
@@ -142,7 +141,7 @@ function VideoPlayer({ containerClassName = "", videoClassName = "" }) {
   return (
     <div
       id="video"
-      className={`2xl:w-[210px] 2xl:h-[294px] xl:w-[20%] xl:h-[70vh] lg:h-[60vh] lg:w-[30%] md:h-[70vh] bg-black relative flex items-center justify-center group overflow-hidden ${containerClassName}`}
+      className={`2xl:w-[210px] 2xl:h-[294px] xl:w-[20%] xl:h-[40vh] lg:h-[60vh] lg:w-[30%] md:h-[70vh] bg-black relative flex items-center justify-center group overflow-hidden ${containerClassName}`}
       onMouseEnter={() => setShowOverlay(true)}
       onMouseLeave={() => setShowOverlay(false)}
     >
