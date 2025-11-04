@@ -39,7 +39,7 @@ export default function Header() {
 
 
   return (
-    <header className="fixed  top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm" style={{backdropFilter: 'saturate(120%) blur(6px)'}}>
+    <header className="fixed top-0 left-0 max-w-[90vw] mx-auto right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm" style={{backdropFilter: 'saturate(120%) blur(6px)'}}>
       <div className="mx-0 header lg:mx-5 py-3 px-3 md:px-6 flex justify-between items-center lg:border-2 decoration-black">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center" aria-label="Home">
@@ -85,10 +85,10 @@ export default function Header() {
               )}
             </AnimatePresence>
 
-            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold  transition-all ${isActive ? 'text-2xl text-brand header2' : 'text-lg text-black'}`}>
+            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold  transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               The Silo
             </NavLink>
-            <NavLink to="/portfolio" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/about" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               Portfolio
             </NavLink>
             <NavLink to="/services" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>

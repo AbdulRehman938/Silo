@@ -1,0 +1,126 @@
+const WhyUGC = () => {
+  return (
+    <section className="min-h-screen flex items-center justify-center py-6 sm:py-8 md:py-12 lg:py-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden">
+      <div className="max-w-full mx-auto w-full">
+        <h2 
+          className="font-bold text-black mb-6 sm:mb-8 md:mb-12 text-center xl:text-left text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[48px] leading-tight px-2 sm:px-0"
+          style={{
+            opacity: 1,
+            fontFamily: 'Epilogue, sans-serif',
+            fontWeight: 700,
+            lineHeight: '120%',
+            letterSpacing: '0%'
+          }}
+        >
+          Why we choose UGC?
+        </h2>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-6 xl:gap-8">
+          {/* First Column - Zoom & Small Laptop Optimized */}
+          <div className="w-full space-y-3 sm:space-y-4 md:space-y-6 px-2 sm:px-0 max-w-md mx-auto lg:max-w-none">
+            <img 
+              src="/img1.png" 
+              alt="People trust people"
+              className="w-full h-auto rounded-lg max-h-48 sm:max-h-56 md:max-h-64 lg:max-h-none object-cover"
+            />
+            <h3 
+              className="font-bold text-black text-base sm:text-lg md:text-xl lg:text-2xl text-center lg:text-left"
+              style={{
+                fontFamily: 'Epilogue, sans-serif',
+                fontWeight: 700,
+                lineHeight: '140%',
+                letterSpacing: '0%'
+              }}
+            >
+              Because people trust people.
+            </h3>
+            <p 
+              className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed text-center lg:text-left"
+              style={{
+                fontFamily: 'DM Sans, sans-serif',
+                fontWeight: 400,
+                lineHeight: '150%',
+                letterSpacing: '0%',
+                opacity: 1
+              }}
+            >
+              UGC feels real. It doesn't look like an ad. It looks like 
+              someone you'd actually follow. That's why it works.
+            </p>
+          </div>
+          
+          {/* Second Column - Zoom & Small Laptop Optimized */}
+          <div className="w-full space-y-3 sm:space-y-4 md:space-y-6 lg:pt-0 xl:pt-8 2xl:pt-16 px-2 sm:px-0 max-w-md mx-auto lg:max-w-none">
+            <img 
+              src="/img2.png" 
+              alt="Strategy makes it scale"
+              className="w-full h-auto rounded-lg max-h-48 sm:max-h-56 md:max-h-64 lg:max-h-none object-cover"
+            />
+            <h3 
+              className="font-bold text-black text-base sm:text-lg md:text-xl lg:text-2xl text-center lg:text-left"
+              style={{
+                fontFamily: 'Epilogue, sans-serif',
+                fontWeight: 700,
+                lineHeight: '140%',
+                letterSpacing: '0%'
+              }}
+            >
+              Because strategy makes it scale.
+            </h3>
+            <p 
+              className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed text-center lg:text-left"
+              style={{
+                fontFamily: 'DM Sans, sans-serif',
+                fontWeight: 400,
+                lineHeight: '150%',
+                letterSpacing: '0%',
+                opacity: 1
+              }}
+            >
+              On its own, UGC is just content. When we build into a 
+              social strategy, brand mapping, and storytelling, it 
+              becomes a growth engine.
+            </p>
+          </div>
+          
+          {/* Third Column - Zoom & Small Laptop Optimized */}
+          <div className="w-full space-y-3 sm:space-y-4 md:space-y-6 lg:pt-0 xl:pt-16 2xl:pt-32 px-2 sm:px-0 max-w-md mx-auto lg:max-w-none">
+            <img 
+              src="/img3.png" 
+              alt="Brands need both"
+              className="w-full h-auto rounded-lg max-h-48 sm:max-h-56 md:max-h-64 lg:max-h-none object-cover"
+            />
+            <h3 
+              className="font-bold text-black text-base sm:text-lg md:text-xl lg:text-2xl text-center lg:text-left"
+              style={{
+                fontFamily: 'Epilogue, sans-serif',
+                fontWeight: 700,
+                lineHeight: '140%',
+                letterSpacing: '0%'
+              }}
+            >
+              Because brands need both.
+            </h3>
+            <p 
+              className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed text-center lg:text-left"
+              style={{
+                fontFamily: 'DM Sans, sans-serif',
+                fontWeight: 400,
+                lineHeight: '150%',
+                letterSpacing: '0%',
+                opacity: 1
+              }}
+            >
+              We don't pick between slick campaigns and scrappy 
+              creator clips. We blend them. Structured strategy + 
+              creator energy = content that connects and 
+              converts.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default WhyUGC;
