@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { IoMdSend } from 'react-icons/io'
+import { IoIosSend, IoMdSend } from 'react-icons/io'
 const Footer = () => {
   return (
     <footer className="w-full bg-white text-black border-t border-neutral-200">
@@ -22,9 +22,14 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="shrink-0 border border-red-400 text-red-500 px-4 py-2.5 text-sm font-semibold hover:bg-red-50 transition-colors"
+                className="shrink-0 inline-flex items-center justify-center gap-2 bg-transparent border-2 border-red-400 h-[42px] px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-red-500 relative overflow-hidden group"
               >
-                Subscribe
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                  <IoIosSend className="block text-red-500 w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-8 group-hover:rotate-45 group-hover:scale-[140%]" />
+                </div>
+                <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-40">
+                  Subscribe
+                </span>
               </button>
             </form>
             <p className="mt-3 text-xs text-neutral-500 max-w-md">
@@ -133,10 +138,15 @@ const Footer = () => {
           />
           <button
             type="submit"
-            className="px-4 text-lg text-black font-bold flex items-center justify-center"
+            className="px-4 text-lg text-black font-bold flex items-center justify-center relative overflow-hidden group"
             aria-label="Subscribe"
           >
-            <span><IoMdSend className='text-xl text-brand' /></span>
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+              <IoIosSend className="block text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-2 group-hover:rotate-45 group-hover:scale-[140%]" />
+            </div>
+            <span className="transition-all duration-300 ease-in-out group-hover:translate-x-6">
+              <IoMdSend className='text-xl text-brand' />
+            </span>
           </button>
         </form>
       </div>

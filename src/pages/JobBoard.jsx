@@ -1,4 +1,5 @@
 import Section from '../components/Home/Section.jsx';
+import { IoIosSend } from 'react-icons/io';
 
 // Job data structure and static data
 const jobsData = [
@@ -154,7 +155,7 @@ export default function JobBoard() {
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             {/* Primary Button - Exact screenshot styling */}
             <button 
-              className="bg-[#FF322E] text-white hover:bg-red-600 transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-[#FF322E] text-white border-transparent relative overflow-hidden group"
               style={{
                 fontFamily: 'DM Sans, sans-serif',
                 fontWeight: 700,
@@ -166,12 +167,17 @@ export default function JobBoard() {
                 whiteSpace: 'nowrap'
               }}
             >
-              Sign up as a Creator
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                <IoIosSend className="block text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-16 group-hover:rotate-45 group-hover:scale-[140%]" />
+              </div>
+              <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-60">
+                Sign up as a Creator
+              </span>
             </button>
             
             {/* Secondary Button - Exact screenshot styling */}
             <button 
-              className="bg-transparent text-[#FF322E] border border-[#FF322E] rounded hover:bg-[#FF322E] hover:text-white transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#FF322E] text-[#FF322E] relative overflow-hidden group"
               style={{
                 fontFamily: 'DM Sans, sans-serif',
                 fontWeight: 400,
@@ -181,7 +187,12 @@ export default function JobBoard() {
                 whiteSpace: 'nowrap'
               }}
             >
-              Post a Brief
+              <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                <IoIosSend className="block text-[#FF322E] w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-8 group-hover:rotate-45 group-hover:scale-[140%]" />
+              </div>
+              <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-40">
+                Post a Brief
+              </span>
             </button>
           </div>
         </div>

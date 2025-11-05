@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { IoIosSend } from 'react-icons/io';
 
 export default function Ramblings() {
   const navigate = useNavigate();
@@ -137,12 +138,14 @@ export default function Ramblings() {
                           e.stopPropagation();
                           navigate(filteredPosts[0].link);
                         }}
-                        className="inline-flex items-center text-red-500 hover:text-red-600 font-medium transition-colors"
+                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-red-500 text-red-500 h-[40px] px-4 py-2 text-xs font-bold uppercase tracking-wide relative overflow-hidden group"
                       >
-                        READ MORE
-                        <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
+                        <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                          <IoIosSend className="block text-red-500 w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-6 group-hover:rotate-45 group-hover:scale-[140%]" />
+                        </div>
+                        <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-16">
+                          READ MORE
+                        </span>
                       </button>
                     </div>
                   </div>
@@ -181,12 +184,14 @@ export default function Ramblings() {
                               e.stopPropagation();
                               navigate(post.link);
                             }}
-                            className="inline-flex items-center text-red-500 hover:text-red-600 font-medium transition-colors text-sm"
+                            className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-red-500 text-red-500 h-[36px] px-3 py-1 text-xs font-bold uppercase tracking-wide relative overflow-hidden group"
                           >
-                            READ MORE
-                            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
+                            <div className="absolute left-2 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                              <IoIosSend className="block text-red-500 w-3 h-3 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-5 group-hover:rotate-45 group-hover:scale-[140%]" />
+                            </div>
+                            <span className="block transition-all duration-300 ease-in-out text-xs group-hover:translate-x-12">
+                              READ MORE
+                            </span>
                           </button>
                         </div>
                       </div>
@@ -229,9 +234,14 @@ export default function Ramblings() {
                 />
                 <button
                   type="submit"
-                  className="bg-red-500 hover:bg-red-600 text-white font-medium px-6 py-3 rounded-md transition-colors whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 bg-red-500 text-white h-[48px] px-6 py-3 text-xs font-bold uppercase tracking-wide border-transparent relative overflow-hidden group whitespace-nowrap"
                 >
-                  Sign me up!
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                    <IoIosSend className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-12 group-hover:rotate-45 group-hover:scale-[140%]" />
+                  </div>
+                  <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-40">
+                    Sign me up!
+                  </span>
                 </button>
               </form>
               <p className="text-xs text-gray-500 mt-3">
