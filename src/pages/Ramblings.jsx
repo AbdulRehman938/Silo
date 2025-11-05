@@ -44,7 +44,7 @@ export default function Ramblings() {
     },
     {
       id: 5,
-      image: "/rambling5.png",
+      image: "/rambling6.png",
       category: "Creators",
       readTime: "5 min read",
       title: "Meet the Creators: Stories from Our Network",
