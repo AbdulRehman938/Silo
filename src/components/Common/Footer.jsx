@@ -17,12 +17,12 @@ const Footer = () => {
                 type="email"
                 aria-label="Email address"
                 placeholder="Enter your email"
-                className="w-full rounded border border-neutral-300 px-4 py-2.5 text-sm placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
+                className="w-full border border-neutral-300 px-4 py-2.5 text-sm placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
                 required
               />
               <button
                 type="submit"
-                className="shrink-0 rounded border border-red-400 text-red-500 px-4 py-2.5 text-sm font-semibold hover:bg-red-50 transition-colors"
+                className="shrink-0 border border-red-400 text-red-500 px-4 py-2.5 text-sm font-semibold hover:bg-red-50 transition-colors"
               >
                 Subscribe
               </button>
@@ -89,11 +89,11 @@ const Footer = () => {
         <div className="text-sm text-neutral-500 mb-2">All rights reserved</div>
         {/* Social icons row */}
         <div className="flex gap-3 mb-2 mt-4">
-          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">Youtube</span><img src="/Youtube.png" alt="Youtube" className="w-6 h-6" /></a>
-          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">twitter</span><img src="/X.png" alt="X" className="w-6 h-6" /></a>
-          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">Instagram</span><img src="/Instagram.png" alt="Instagram" className="w-6 h-6" /></a>
-          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">TikTok</span><img src="/Tiktok.png" alt="TikTok" className="w-6 h-6" /></a>
-          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">LinkedIn</span><img src="/Linkedin.png" alt="LinkedIn" className="w-6 h-6" /></a>
+          <a href="#" className="bg-neutral-200 p-2"><span className="sr-only">Youtube</span><img src="/Youtube.png" alt="Youtube" className="w-6 h-6" /></a>
+          <a href="#" className="bg-neutral-200 p-2"><span className="sr-only">twitter</span><img src="/X.png" alt="X" className="w-6 h-6" /></a>
+          <a href="#" className="bg-neutral-200 p-2"><span className="sr-only">Instagram</span><img src="/Instagram.png" alt="Instagram" className="w-6 h-6" /></a>
+          <a href="#" className="bg-neutral-200 p-2"><span className="sr-only">TikTok</span><img src="/Tiktok.png" alt="TikTok" className="w-6 h-6" /></a>
+          <a href="#" className="bg-neutral-200 p-2"><span className="sr-only">LinkedIn</span><img src="/Linkedin.png" alt="LinkedIn" className="w-6 h-6" /></a>
         </div>
       </div>
       {/* Two columns: Company and Support */}
@@ -123,7 +123,7 @@ const Footer = () => {
       <div className="mt-6">
         <div className="font-bold mb-2">Get updates</div>
         <p className='text-xs font-semibold text-gray-500 mb-5'>By subscribing you agree to with our Privacy Policy and provide consent to receive updates from our company.</p>
-        <form className="flex w-full border border-neutral-400 rounded overflow-hidden" onSubmit={e => e.preventDefault()}>
+        <form className="flex w-full border border-neutral-400 overflow-hidden" onSubmit={e => e.preventDefault()}>
           <input
             type="email"
             aria-label="Email address"

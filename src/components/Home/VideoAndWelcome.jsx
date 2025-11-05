@@ -267,11 +267,11 @@ useEffect(() => {
       <div className="hidden md:block relative mx-auto max-w-[80vw] px-3 md:px-6 mt-10 md:mt-14 lg:mt-20 md:max-w-[90vw]">
         <div className="relative grid items-start gap-2 md:grid-cols-2 md:gap-2 lg:gap-4 h-[90vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh]">
           <div className="relative z-10 pr-1 md:pr-3 self-end pb-1 max-w-[580px] h-[216px] flex flex-col justify-end gap-6 2xl:top-[10vh] ">
-            <p className="text-lg md:text-2xl lg:text-3xl font-extrabold tracking-tight text-black">
+            <p className="text-base md:text-lg lg:text-xl font-semibold tracking-tight text-black">
               We’re the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.
             </p>
-            <p className="text-sm md:text-base lg:text-lg leading-relaxed text-black/80">
+            <p className="text-xs md:text-sm lg:text-base leading-relaxed text-black/80">
               We create intentional, personality–driven content, from authentic
               creator videos to scroll–stopping social feeds – designed to
               connect. Every piece is grounded in strategy, fuelled by
@@ -281,7 +281,7 @@ useEffect(() => {
             <div className="flex flex-wrap items-center gap-8">
               <a
                 href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white  border-transparent relative overflow-hidden group"
+                className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white  border-transparent relative overflow-hidden group"
               >
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 translate-x-5 svg-wrapper group-hover:animate-bounce-custom">
                   <IoIosSend className="block text-white w-8 h-8 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-2 group-hover:rotate-45 group-hover:scale-[140%]" />
@@ -307,7 +307,7 @@ useEffect(() => {
 
           <div
             ref={wordRef}
-            className="relative z-20 -ml-4 md:-ml-16 h-[50vh] lg:h-[35vh] w-[50vw] xl:h-[40vh] md:h-[25vh] md:mt-0 md:scale-[123%] xl:mt-5 pointer-events-none select-none transform-gpu origin-top-left transition-transform duration-200 lg:scale-110 lg:-mt-5 lg:-ml-10 xl:scale-30 2xl:ml-[-5rem]"
+            className="relative z-20 ml-8 md:ml-4 lg:ml-8 xl:ml-12 2xl:ml-16 h-[50vh] lg:h-[35vh] w-[50vw] xl:h-[40vh] md:h-[25vh] md:mt-0 md:scale-[123%] xl:mt-5 pointer-events-none select-none transform-gpu origin-top-left transition-transform duration-200 lg:scale-110 lg:-mt-5"
           >
             {/* Animated letters will replace the static image. The whole block scales down on lg/xl so
                 per-letter absolute px positions stay consistent (we compute against a 2xl reference)

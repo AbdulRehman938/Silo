@@ -31,7 +31,7 @@ const Hero = () => {
           <div className="flex flex-wrap gap-10 2xl:mb-28 xl:mb-10">
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-[55px] hero-btn px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[55px] hero-btn px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
             >
               <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                 <IoIosSend className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-12 group-hover:rotate-45 group-hover:scale-[140%]" />
@@ -43,7 +43,7 @@ const Hero = () => {
 
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] hero-btn px-8 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[55px] hero-btn px-8 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
             >
               <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                 <IoIosSend className="block text-brand w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-10 group-hover:rotate-45 group-hover:scale-[140%]" />
@@ -80,7 +80,7 @@ const Hero = () => {
         <div className="mt-6 flex gap-3 mx-auto ml-5">
           <a
             href="#"
-            className="w-[45%] inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-12 px-4 text-sm font-bold uppercase tracking-wide text-white"
+            className="w-[45%] inline-flex items-center justify-center gap-2 bg-[#FF322E] h-12 px-4 text-sm font-bold uppercase tracking-wide text-white"
           >
             <IoIosSend className="w-5 h-5" />
             <span className="whitespace-nowrap">Let's chat</span>
@@ -88,7 +88,7 @@ const Hero = () => {
 
           <a
             href="#"
-            className="w-[45%] inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-12 px-4 text-sm font-bold uppercase tracking-wide text-brand"
+            className="w-[45%] inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-12 px-4 text-sm font-bold uppercase tracking-wide text-brand"
           >
             <IoIosSend className="w-5 h-5" />
             <span>About us</span>

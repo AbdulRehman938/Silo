@@ -173,7 +173,7 @@ const Cards = () => {
                   scale: transform.scale
                 }}
                 transition={{ type: 'spring', stiffness: 220, damping: 22 }}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 2xl:w-full lg:w-[80%] md:w-[55%] md:h-[200px] md:left-[20rem] md:top-[15rem] lg:h-[250px] 2xl:h-[340px] bg-white border-2 border-[#FF322E] rounded-md flex flex-col items-start justify-center px-12 py-10 shadow-lg 2xl:left-[23rem]"
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 2xl:w-full lg:w-[80%] md:w-[55%] md:h-[200px] md:left-[20rem] md:top-[15rem] lg:h-[250px] 2xl:h-[340px] bg-white border-2 border-[#FF322E] flex flex-col items-start justify-center px-12 py-10 shadow-lg 2xl:left-[23rem]"
                 style={{ zIndex: z }}
               >
                 <div className="mb-4 flex w-full justify-between items-center 2xl:text-xl lg:text-base font-bold">{card.icon}

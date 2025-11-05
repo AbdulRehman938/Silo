@@ -106,7 +106,7 @@ export default function Header() {
           <button
             aria-label="Open menu"
             aria-expanded={open}
-            className="lg:hidden inline-flex h-12 w-16 items-center justify-center rounded-sm border border-transparent"
+            className="lg:hidden inline-flex h-12 w-16 items-center justify-center border border-transparent"
             onClick={toggle}
           >
             <span className="sr-only">Menu</span>
@@ -118,7 +118,7 @@ export default function Header() {
           </button>
 
           {/* CTA visible on large screens only; on tablet/mobile it's inside the hamburger panel below */}
-          <Link to="/contact" className="hidden lg:inline-flex relative text-lg bg-brand text-white py-3 px-6 items-center border-none rounded overflow-hidden header-btn transition-all duration-200 cursor-pointer group active:scale-95 no-underline">
+          <Link to="/contact" className="hidden lg:inline-flex relative text-lg bg-brand text-white py-3 px-6 items-center border-none overflow-hidden header-btn transition-all duration-200 cursor-pointer group active:scale-95 no-underline">
             <div className="absolute svg-wrapper group-hover:animate-bounce-custom">
               <IoIosSend className="block opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-5 group-hover:rotate-45 group-hover:scale-[160%]" />
             </div>
@@ -144,7 +144,7 @@ export default function Header() {
             <div className="flex flex-col h-full">
               <div className="px-6 py-5 flex items-center justify-between border-b">
                 <img src="/logo.png" alt="Silo" className="h-8 w-auto" />
-                <button onClick={close} aria-label="Close menu" className="p-2 rounded-md hover:bg-gray-100">
+                <button onClick={close} aria-label="Close menu" className="p-2 hover:bg-gray-100">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18 6L6 18" stroke="#111827" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M6 6L18 18" stroke="#111827" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

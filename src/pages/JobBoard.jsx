@@ -154,7 +154,7 @@ export default function JobBoard() {
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             {/* Primary Button - Exact screenshot styling */}
             <button 
-              className="bg-[#FF322E] text-white rounded hover:bg-red-600 transition-colors"
+              className="bg-[#FF322E] text-white hover:bg-red-600 transition-colors"
               style={{
                 fontFamily: 'DM Sans, sans-serif',
                 fontWeight: 700,
