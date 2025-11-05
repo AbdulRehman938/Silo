@@ -11,9 +11,9 @@ export default function VideoAndWelcome() {
   const handleClose = () => setOpen(false);
   const wordRef = useRef(null);
 
-  // Animated letters component: uses a per-letter layout to match the attached image.
-  // Each entry defines left/top (percent), rotation (deg), size (vw) and zIndex so letters overlap correctly.
-  function AnimatedLetters({ word = "Welcome", layout }) {
+  // Animated letters component: uses a per-letter layout with container-relative sizing.
+  // Each entry defines left/top (percent), rotation (deg), size (container-relative) and zIndex so letters overlap correctly.
+  function AnimatedLetters({ word = "Welcome", layout, useContainerSizing = false }) {
     const ref = useRef(null);
     const [inView, setInView] = useState(false);
 
@@ -32,60 +32,61 @@ export default function VideoAndWelcome() {
     }, []);
 
     // Default layout that approximates the attached artwork's placement and sizing.
+    // When useContainerSizing is true, sizes are calculated relative to container
     const defaultLayout = [
       {
-        left: "-10%",
+        left: "-30%",
         top: "2%",
         rotate: -22,
-        size: "18vw",
+        size: useContainerSizing ? "calc(var(--base-font-size) * 0.9)" : "18vw",
         z: 7,
         fontWeight: "bold",
       },
       {
-        left: "20%",
+        left: "0%",
         top: "28%",
         rotate: 0,
-        size: "14vw",
+        size: useContainerSizing ? "calc(var(--base-font-size) * 0.7)" : "14vw",
         z: 6,
         fontWeight: "bold",
       },
       {
-        left: "4%",
+        left: "-16%",
         top: "32%",
         rotate: 18,
-        size: "20vw",
+        size: useContainerSizing ? "calc(var(--base-font-size) * 1.0)" : "20vw",
         z: 5,
         fontWeight: "bold",
       },
       {
-        left: "15%",
+        left: "-5%",
         top: "65%",
         rotate: 20,
-        size: "22vw",
+        size: useContainerSizing ? "calc(var(--base-font-size) * 1.1)" : "22vw",
         z: 6,
         fontWeight: "bold",
       },
       {
-        left: "34%",
+        left: "14%",
         top: "60%",
         rotate: -36,
-        size: "24vw",
+        size: useContainerSizing ? "calc(var(--base-font-size) * 1.2)" : "24vw",
         z: 3,
         fontWeight: "bold",
       },
       {
-        left: "28%",
+        left: "8%",
         top: "98%",
         rotate: 0,
-        size: "30vw",
+        size: useContainerSizing ? "calc(var(--base-font-size) * 1.5)" : "30vw",
         z: 2,
         fontWeight: "bold",
       },
       {
-        left: "78%",
+        left: "58%",
         top: "140%",
         rotate: 0,
-        size: "16vw",
+        size: useContainerSizing ? "calc(var(--base-font-size) * 0.8)" : "16vw",
         z: 1,
         fontWeight: "bold",
       },
@@ -163,13 +164,13 @@ export default function VideoAndWelcome() {
 
   // Mobile-specific layout: simpler, centered, and smaller so letters fit nicely on phones.
   const mobileLayout = [
-    { left: '00%', top: '8%', rotate: -30, size: '35vw', z: 7, fontWeight: 'bold' },
-    { left: '28%', top: '24%', rotate: -4, size: '25vw', z: 6, fontWeight: 'bold' },
-    { left: '10%', top: '29%', rotate: 20, size: '38vw', z: 5, fontWeight: 'bold' },
-    { left: '30%', top: '39%', rotate: 40, size: '40vw', z: 4, fontWeight: 'bold' },
-    { left: '53%', top: '35%', rotate: -42, size: '48vw', z: 3, fontWeight: 'bold' },
-    { left: '33%', top: '62%', rotate: 0, size: '36vw', z: 2, fontWeight: 'bold' },
-    { left: '68%', top: '73%', rotate: 0, size: '23vw', z: 1, fontWeight: 'bold' },
+    { left: '-20%', top: '8%', rotate: -30, size: '35vw', z: 7, fontWeight: 'bold' },
+    { left: '8%', top: '24%', rotate: -4, size: '25vw', z: 6, fontWeight: 'bold' },
+    { left: '-10%', top: '29%', rotate: 20, size: '38vw', z: 5, fontWeight: 'bold' },
+    { left: '10%', top: '39%', rotate: 40, size: '40vw', z: 4, fontWeight: 'bold' },
+    { left: '33%', top: '35%', rotate: -42, size: '48vw', z: 3, fontWeight: 'bold' },
+    { left: '13%', top: '62%', rotate: 0, size: '36vw', z: 2, fontWeight: 'bold' },
+    { left: '48%', top: '73%', rotate: 0, size: '23vw', z: 1, fontWeight: 'bold' },
   ];
 
 useEffect(() => {
@@ -265,12 +266,12 @@ useEffect(() => {
 
       <div className="hidden md:block relative mx-auto max-w-[80vw] px-3 md:px-6 mt-10 md:mt-14 lg:mt-20 md:max-w-[90vw]">
         <div className="relative grid items-start gap-2 md:grid-cols-2 md:gap-2 lg:gap-4 h-[90vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh]">
-          <div className="relative z-10 pr-1 md:pr-3 self-end pb-1 max-w-[479px] h-[216px] flex flex-col justify-end gap-6 2xl:top-[10vh] ">
-            <p className="text-[13px] md:text-xl font-extrabold tracking-tight text-black">
+          <div className="relative z-10 pr-1 md:pr-3 self-end pb-1 max-w-[580px] h-[216px] flex flex-col justify-end gap-6 2xl:top-[10vh] ">
+            <p className="text-lg md:text-2xl lg:text-3xl font-extrabold tracking-tight text-black">
               We’re the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.
             </p>
-            <p className="text-[12px] lg:text-sm leading-relaxed text-black/80 md:text-sm">
+            <p className="text-sm md:text-base lg:text-lg leading-relaxed text-black/80">
               We create intentional, personality–driven content, from authentic
               creator videos to scroll–stopping social feeds – designed to
               connect. Every piece is grounded in strategy, fuelled by
