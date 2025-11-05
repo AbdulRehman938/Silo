@@ -1,9 +1,5 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import { AiFillTikTok } from 'react-icons/ai'
-import { FaInstagramSquare, FaLinkedin, FaYoutube } from 'react-icons/fa'
 import { IoMdSend } from 'react-icons/io'
-import { RiTwitterXLine } from 'react-icons/ri'
 const Footer = () => {
   return (
     <footer className="w-full bg-white text-black border-t border-neutral-200">
@@ -62,11 +58,11 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h4 className="text-sm font-semibold mb-4">Follow Us</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Youtube</a></li>
-              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>X</a></li>
-              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Instagram</a></li>
-              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>TikTok</a></li>
-              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>LinkedIn</a></li>
+              <li><a href="#" className="hover:underline flex items-center gap-2" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}><img src="/Youtube.png" alt="Youtube" className="w-4 h-4" />Youtube</a></li>
+              <li><a href="#" className="hover:underline flex items-center gap-2" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}><img src="/X.png" alt="X" className="w-4 h-4" />X</a></li>
+              <li><a href="#" className="hover:underline flex items-center gap-2" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}><img src="/Instagram.png" alt="Instagram" className="w-4 h-4" />Instagram</a></li>
+              <li><a href="#" className="hover:underline flex items-center gap-2" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}><img src="/Tiktok.png" alt="TikTok" className="w-4 h-4" />TikTok</a></li>
+              <li><a href="#" className="hover:underline flex items-center gap-2" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}><img src="/Linkedin.png" alt="LinkedIn" className="w-4 h-4" />LinkedIn</a></li>
             </ul>
           </div>
         </div>
@@ -93,12 +89,11 @@ const Footer = () => {
         <div className="text-sm text-neutral-500 mb-2">All rights reserved</div>
         {/* Social icons row */}
         <div className="flex gap-3 mb-2 mt-4">
-          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">Youtube</span><FaYoutube className='rounded-full text-red-600 text-2xl' /></a>
-        <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">twitter</span><RiTwitterXLine className='rounded-full text-black/90 text-2xl' /></a>
-          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">Instagram</span><FaInstagramSquare className='rounded-full text-red-600 text-2xl' /></a>
-          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">TikTok</span><AiFillTikTok className='rounded-full text-black/90 text-2xl' /></a>
-          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">LinkedIn</span><FaLinkedin className=' text-blue-500 bg-white text-2xl' /></a>
-         
+          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">Youtube</span><img src="/Youtube.png" alt="Youtube" className="w-6 h-6" /></a>
+          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">twitter</span><img src="/X.png" alt="X" className="w-6 h-6" /></a>
+          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">Instagram</span><img src="/Instagram.png" alt="Instagram" className="w-6 h-6" /></a>
+          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">TikTok</span><img src="/Tiktok.png" alt="TikTok" className="w-6 h-6" /></a>
+          <a href="#" className="rounded-full bg-neutral-200 p-2"><span className="sr-only">LinkedIn</span><img src="/Linkedin.png" alt="LinkedIn" className="w-6 h-6" /></a>
         </div>
       </div>
       {/* Two columns: Company and Support */}
