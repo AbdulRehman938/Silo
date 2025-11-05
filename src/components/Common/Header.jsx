@@ -171,7 +171,7 @@ export default function Header() {
               </nav>
 
               <div className="px-6 pb-8">
-                <Link to="/contact" onClick={close} className="w-full inline-flex items-center justify-center gap-3 rounded-2xl bg-brand text-white px-6 py-3 font-bold shadow-lg hover:opacity-95 transition no-underline">
+                <Link to="/contact" onClick={close} className="w-full inline-flex items-center justify-center gap-3 bg-brand text-white px-6 py-3 font-bold shadow-lg hover:opacity-95 transition no-underline">
                   <IoIosSend className="w-5 h-5" />
                   Lets Talk
                 </Link>
