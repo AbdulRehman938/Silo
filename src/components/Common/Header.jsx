@@ -85,19 +85,19 @@ export default function Header() {
               )}
             </AnimatePresence>
 
-            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold  transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold whitespace-nowrap  transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               The Silo
             </NavLink>
-            <NavLink to="/about" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/about" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               Portfolio
             </NavLink>
-            <NavLink to="/services" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/services" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               Services
             </NavLink>
-            <NavLink to="/job-board" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/job-board" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               Job Board
             </NavLink>
-            <NavLink to="/ramblings" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/ramblings" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
               Ramblings
             </NavLink>
           </nav>
@@ -118,7 +118,7 @@ export default function Header() {
           </button>
 
           {/* CTA visible on large screens only; on tablet/mobile it's inside the hamburger panel below */}
-          <Link to="/contact" className="hidden lg:inline-flex relative text-lg bg-brand text-white py-3 px-6 items-center border-none overflow-hidden header-btn transition-all duration-200 cursor-pointer group active:scale-95 no-underline">
+          <Link to="/contact" className="hidden lg:inline-flex relative text-lg whitespace-nowrap bg-brand text-white py-3 px-6 items-center border-none overflow-hidden header-btn transition-all duration-200 cursor-pointer group active:scale-95 no-underline">
             <div className="absolute svg-wrapper group-hover:animate-bounce-custom">
               <IoIosSend className="block opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-5 group-hover:rotate-45 group-hover:scale-[160%]" />
             </div>

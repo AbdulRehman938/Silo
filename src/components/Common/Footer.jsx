@@ -52,11 +52,11 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h4 className="text-sm font-semibold mb-4">Case Studies</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 1</a></li>
-              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 2</a></li>
-              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 3</a></li>
-              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 4</a></li>
-              <li><a href="#" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 5</a></li>
+              <li><a href="/case-studies" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 1</a></li>
+              <li><a href="/case-studies" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 2</a></li>
+              <li><a href="/case-studies" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 3</a></li>
+              <li><a href="/case-studies" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 4</a></li>
+              <li><a href="/case-studies" className="hover:underline" style={{fontFamily: 'DM Sans', fontWeight: 700, fontSize: '14px', lineHeight: '150%'}}>Case study 5</a></li>
             </ul>
           </div>
           {/* Socials */}
@@ -116,11 +116,11 @@ const Footer = () => {
         <div className="flex-1">
           <div className="font-bold mb-1">Support</div>
           <ul className="space-y-1">
-            <li><a href="#" className="hover:underline text-sm">Case study 1</a></li>
-            <li><a href="#" className="hover:underline text-sm">Case study 2</a></li>
-            <li><a href="#" className="hover:underline text-sm">Case study 3</a></li>
-            <li><a href="#" className="hover:underline text-sm">Case study 4</a></li>
-            <li><a href="#" className="hover:underline text-sm">Case study 5</a></li>
+            <li><a href="/case-studies" className="hover:underline text-sm">Case study 1</a></li>
+            <li><a href="/case-studies" className="hover:underline text-sm">Case study 2</a></li>
+            <li><a href="/case-studies" className="hover:underline text-sm">Case study 3</a></li>
+            <li><a href="/case-studies" className="hover:underline text-sm">Case study 4</a></li>
+            <li><a href="/case-studies" className="hover:underline text-sm">Case study 5</a></li>
           </ul>
         </div>
       </div>

@@ -164,13 +164,13 @@ export default function VideoAndWelcome() {
 
   // Mobile-specific layout: simpler, centered, and smaller so letters fit nicely on phones.
   const mobileLayout = [
-    { left: '-20%', top: '8%', rotate: -30, size: '35vw', z: 7, fontWeight: 'bold' },
+    { left: '-20%', top: '2%', rotate: -30, size: '35vw', z: 7, fontWeight: 'bold' },
     { left: '8%', top: '24%', rotate: -4, size: '25vw', z: 6, fontWeight: 'bold' },
     { left: '-10%', top: '29%', rotate: 20, size: '38vw', z: 5, fontWeight: 'bold' },
     { left: '10%', top: '39%', rotate: 40, size: '40vw', z: 4, fontWeight: 'bold' },
-    { left: '33%', top: '35%', rotate: -42, size: '48vw', z: 3, fontWeight: 'bold' },
-    { left: '13%', top: '62%', rotate: 0, size: '36vw', z: 2, fontWeight: 'bold' },
-    { left: '48%', top: '73%', rotate: 0, size: '23vw', z: 1, fontWeight: 'bold' },
+    { left: '30%', top: '35%', rotate: -42, size: '48vw', z: 3, fontWeight: 'bold' },
+    { left: '13%', top: '68%', rotate: 0, size: '36vw', z: 2, fontWeight: 'bold' },
+    { left: '50%', top: '83%', rotate: 0, size: '23vw', z: 1, fontWeight: 'bold' },
   ];
 
 useEffect(() => {
@@ -319,11 +319,11 @@ useEffect(() => {
       
       <div className="md:hidden h-[40rem] flex justify-center items-center gap-10">
         <div className="flex flex-col justify-center items-center gap-10 h-full">
-          <div className="pointer-events-none select-none mb-6 mt-10 h-[30rem] w-[80vw] mx-auto">
+          <div className="pointer-events-none select-none mb-6 mt-10 h-[30rem] w-[80vw] ml-32 mx-auto">
             <AnimatedLetters word={"Wecolme"} layout={mobileLayout} />
           </div>
 
-          <div className=" mx-5">
+          <div className="mx-10">
             <p className="text-[18px] font-extrabold tracking-tight text-black">
               We’re the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.
