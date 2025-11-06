@@ -1,0 +1,211 @@
+import { useParams, useNavigate } from 'react-router-dom';
+import { jobsData } from '../data/jobsData.js';
+
+const JobBoardDetail = () => {
+  const { jobId } = useParams();
+  const navigate = useNavigate();
+  
+  // Find the job data based on the jobId from URL
+  const job = jobsData.find(j => j.id === jobId);
+  
+  // Handle case where job is not found
+  if (!job) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Job Not Found</h1>
+          <p className="text-gray-600 mb-6">The job you're looking for doesn't exist or has been removed.</p>
+          <button 
+            onClick={() => navigate('/job-board')}
+            className="bg-[#FF322E] text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors"
+          >
+            Back to Job Board
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full bg-white min-h-screen">
+      {/* Main container matching the exact design */}
+      <div className="max-w-[90%] md:max-w-[900px] lg:max-w-[1000px] xl:max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+        
+        {/* Header Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-16">
+          
+          {/* Left Content */}
+          <div className="flex flex-col">
+            {/* Category Badge */}
+            <div className="inline-flex items-center bg-red-50 text-[#FF322E] px-3 py-1.5 rounded-md text-sm font-medium mb-6 w-fit">
+              {job.category}
+            </div>
+            
+            {/* Job Title */}
+            <h1 className="text-black text-5xl font-bold leading-tight mb-12 font-['Epilogue']">
+              {job.title}
+            </h1>
+            
+            {/* Interested? Section */}
+            <div>
+              <h2 className="text-black text-2xl font-bold mb-6 font-['Epilogue']">
+                Interested?
+              </h2>
+              
+              {/* Contact Person */}
+              <div className="flex items-center gap-3 mb-4">
+                <img
+                  src={job.contact.avatar}
+                  alt={`${job.contact.name} avatar`}
+                  className="w-12 h-12 rounded-full object-cover"
+                />
+                <div>
+                  <p className="text-black font-semibold text-base">
+                    {job.contact.name}
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    {job.contact.title}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Email Contact */}
+              <div className="flex items-center gap-2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <polyline points="22,6 12,13 2,6" stroke="#6B7280" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <a 
+                  href={`mailto:${job.contact.email}`}
+                  className="text-gray-700 hover:text-[#FF322E] transition-colors text-base"
+                >
+                  {job.contact.email}
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Main Image */}
+          <div>
+            <img
+              src={job.images.primary}
+              alt={`${job.title} main image`}
+              className="w-full h-[300px] md:h-[350px] lg:h-[400px] object-cover rounded-2xl"
+            />
+          </div>
+        </div>
+        
+        {/* Content Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-16">
+          
+          {/* Secondary Image */}
+          <div>
+            <img
+              src={job.images.secondary}
+              alt={`${job.title} secondary image`}
+              className="w-full h-[280px] md:h-[320px] lg:h-[360px] object-cover rounded-xl"
+            />
+          </div>
+          
+          {/* Client Info */}
+          <div>
+            <h2 className="text-black text-3xl font-bold mb-6 font-['Epilogue']">
+              The Client:
+            </h2>
+            
+            <div className="text-gray-700 text-base leading-relaxed whitespace-pre-line max-w-prose">
+              {job.client.description}
+            </div>
+          </div>
+        </div>
+        
+        {/* Requirements Section */}
+        <div className="border-t border-gray-200 pt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 relative">
+            
+            {/* Vertical divider line for desktop */}
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 transform -translate-x-0.5"></div>
+            
+            {/* They're looking for */}
+            <div className="lg:pr-16">
+              <h3 className="text-black text-2xl font-bold mb-8 font-['Epilogue']">
+                They're looking for
+              </h3>
+              
+              <ul className="space-y-6">
+                {job.requirements.lookingFor.map((requirement, index) => (
+                  <li key={index} className="flex items-start gap-4">
+                    <span className="text-green-500 text-lg mt-0.5">✓</span>
+                    <span className="text-gray-700 text-base leading-relaxed">
+                      {requirement}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* They're not looking for */}
+            <div className="lg:pl-16">
+              <h3 className="text-black text-2xl font-bold mb-8 font-['Epilogue']">
+                They're not looking for
+              </h3>
+              
+              <ul className="space-y-6">
+                {job.requirements.notLookingFor.map((requirement, index) => (
+                  <li key={index} className="flex items-start gap-4">
+                    <span className="text-red-500 text-lg mt-0.5">✗</span>
+                    <span className="text-gray-700 text-base leading-relaxed">
+                      {requirement}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        {/* Newsletter Signup Section */}
+        <div className="bg-gray-50 rounded-2xl p-8 md:p-12 lg:p-16 mt-20">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 md:gap-12 lg:gap-16">
+            
+            {/* Left Content */}
+            <div className="lg:flex-1 lg:max-w-lg">
+              <h2 className="text-black text-3xl font-bold mb-4 font-['Epilogue'] leading-tight">
+                Get these straight to your inbox
+              </h2>
+              
+              <p className="text-gray-700 text-base leading-relaxed">
+                We add UGC jobs weekly, but our creator roster gets first dibs. Sign up to get briefs before they hit the board.
+              </p>
+            </div>
+            
+            {/* Right Form */}
+            <div className="lg:flex-shrink-0 lg:max-w-sm w-full">
+              <div className="flex flex-col gap-3">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF322E] focus:border-transparent text-base w-full"
+                />
+                <button className="bg-[#FF322E] text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-600 transition-colors text-base">
+                  Send me work
+                </button>
+              </div>
+              
+              <p className="text-gray-500 text-sm mt-3 leading-relaxed">
+                By clicking Sign Up you're confirming that you agree with our{' '}
+                <a href="#" className="text-gray-700 underline hover:text-[#FF322E] transition-colors">
+                  Terms and Conditions
+                </a>
+              </p>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  );
+};
+
+export default JobBoardDetail;

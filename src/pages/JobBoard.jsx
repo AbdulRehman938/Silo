@@ -1,48 +1,16 @@
 import Section from '../components/Home/Section.jsx';
 import { IoIosSend } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
+import { jobsData } from '../data/jobsData.js';
 
-// Job data structure and static data
-const jobsData = [
-  {
-    id: '1',
-    title: 'Smoothie Smash',
-    category: 'Food & Drink',
-    image: '/job1.png'
-  },
-  {
-    id: '2',
-    title: 'Lumin Solar',
-    category: 'Energy',
-    image: '/job2.png'
-  },
-  {
-    id: '3',
-    title: 'Smart Stats',
-    category: 'B2B',
-    image: '/job3.png'
-  },
-  {
-    id: '4',
-    title: 'Supofa',
-    category: 'Food & Drink',
-    image: '/job4.png'
-  },
-  {
-    id: '5',
-    title: 'Royal Navy',
-    category: 'B2B',
-    image: '/job5.png'
-  }
-];
+
 
 // JobCard Component - Clickable with hover effects
 function JobCard({ job }) {
+  const navigate = useNavigate();
+  
   const handleCardClick = () => {
-    // Handle job card click - you can navigate to job details page or open modal
-    console.log(`Clicked on job: ${job.title}`);
-    // Example: navigate to job details
-    // window.location.href = `/jobs/${job.id}`;
-    // Or use React Router: navigate(`/jobs/${job.id}`);
+    navigate(`/jobs/${job.id}`);
   };
 
   return (

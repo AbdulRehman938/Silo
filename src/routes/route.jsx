@@ -14,6 +14,8 @@ import Terms from '../pages/Terms.jsx'
 import NotFound from '../pages/NotFound.jsx'
 import CareerIndex from '../pages/CareerIndex.jsx'
 import JobDetail from '../pages/JobDetail.jsx'
+import JobBoardDetail from '../pages/JobBoardDetail.jsx'
+import JobBoardDetailClone from '../pages/JobBoardDetailClone.jsx'
 import BlogDetail from '../pages/BlogDetail.jsx'
 
 const Home = HomeModule.default || HomeModule.Home || (() => <div>Home</div>)
@@ -34,6 +36,7 @@ function RoutesTree() {
 						<Route path="terms" element={<Terms />} />
 									<Route path="careers" element={<CareerIndex />} />
 									<Route path="job/:id" element={<JobDetail />} />
+				<Route path="jobs/:jobId" element={<JobBoardDetail />} />
 				<Route path="*" element={<NotFound />} />
 			</Route>
 		</Routes>
