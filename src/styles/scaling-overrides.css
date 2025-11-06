@@ -26,6 +26,9 @@
 .canvas-style {
   height: 80% !important;
 }
+.main-div {
+  margin-bottom: 5rem;
+}
 }
 
 /* Target 150% Windows scaling (devicePixelRatio ~1.5) */
@@ -80,5 +83,8 @@
 }
 .canvas-style {
   height: 70% !important;
+}
+.main-div {
+  margin-bottom: 8rem;
 }
 }

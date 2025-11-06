@@ -1,5 +1,6 @@
 import TextLoop from '../Common/TextLoop';
 import { LuTriangleRight } from 'react-icons/lu';
+import "../../styles/scaling-overrides.css"
 
 // Marquee row data objects — edit these to add/remove/modify each row
 const row1 = {
@@ -31,7 +32,7 @@ const row3 = {
 
 const WhoWeLoveWorkingWith = () => {
   return (
-    <section className="min-h-[80vh] w-[100vw] flex items-start justify-center pt-32 pb-6 sm:pb-8 md:pb-12 lg:pb-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden">
+    <section className="main-div min-h-[80vh] w-[100vw] flex items-start justify-center pt-32 pb-6 sm:pb-8 md:pb-12 lg:pb-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden">
       <div className="max-w-full mr-auto w-full">
         {/* Text Section - Zoom & Small Laptop Optimized */}
         <div className="text-left mb-6 sm:mb-8 md:mb-12 lg:mb-16 px-2 sm:px-0 w-full md:w-screen lg:ml-0 md:-ml-24">
