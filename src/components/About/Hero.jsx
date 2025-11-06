@@ -102,7 +102,7 @@ const Hero = () => {
               <img
                 src="/About1.png"
                 alt="Silo team member showcasing brand identity"
-                className="w-full h-auto rounded-2xl object-cover max-h-[300px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[500px] xl:max-h-[600px] 2xl:max-h-none"
+                className="w-full h-auto object-cover max-h-[300px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[500px] xl:max-h-[600px] 2xl:max-h-none"
                 style={{
                   opacity: 1,
                 }}
@@ -114,7 +114,7 @@ const Hero = () => {
               <img
                 src="/About2.png"
                 alt="The Silo brand representation"
-                className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 2xl:w-[328px] h-auto rounded-lg object-cover max-h-[200px] sm:max-h-[250px] md:max-h-[300px] lg:max-h-[350px] lg:block xl:min-h-[200px] 2xl:max-h-none border-white"
+                className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 2xl:w-[328px] h-auto object-cover max-h-[200px] sm:max-h-[250px] md:max-h-[300px] lg:max-h-[350px] lg:block xl:min-h-[200px] 2xl:max-h-none border-white"
               />
             </div>
           </div>
