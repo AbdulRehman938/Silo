@@ -3,10 +3,10 @@ import { IoIosSend } from "react-icons/io";
 
 const Section = () => {
   return (
-    <section className="mx-auto max-w-[95vw] px-4 py-12">
+    <section className="mx-auto max-w-[95vw]">
       {/* Default view: hidden on mobile, visible on lg+ (md has its own layout) */}
-      <div className="hidden md:hidden lg:block">
-        <div className="border-2 border-gray-600 rounded-sm overflow-hidden mx-10">
+      <div className="hidden md:hidden lg:block max-w-[95vw]">
+        <div className="border-2 border-gray-600 rounded-sm overflow-hidden max-w-[90vw] mx-auto">
           <div className="flex flex-col md:flex-row items-stretch">
             {/* Left column - content */}
             <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center">

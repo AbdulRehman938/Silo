@@ -1,6 +1,6 @@
 const ThingsWeBelieveIn = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center py-6 sm:py-8 md:py-12 lg:py-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden">
+    <section className="min-h-screen flex items-center justify-center py-6 sm:py-8 md:py-12 lg:py-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden border-b-[1px] border-b-black">
       <div className="max-w-full mx-auto w-full">
         {/* Text Section - Zoom & Small Laptop Optimized */}
         <div className="text-center xl:text-left mb-6 sm:mb-8 md:mb-12 lg:mb-16 px-2 sm:px-0 max-w-4xl mx-auto xl:mx-0">
@@ -22,14 +22,12 @@ const ThingsWeBelieveIn = () => {
           <p 
             className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed"
             style={{
-              fontFamily: 'DM Sans, sans-serif',
-              fontWeight: 400,
+              fontWeight: 500,
               lineHeight: '150%',
               letterSpacing: '0%'
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros 
-            elementum tristique. Duis cursus, mi quis viverra ornare.
+           These are the principles that guide everything we create - grounding our work in <span className="font-black">authenticity</span>, driving it with <span className="font-black">creativity</span>, and strengthening it through <span className="font-black">strategy</span>.
           </p>
         </div>
         
@@ -54,7 +52,7 @@ const ThingsWeBelieveIn = () => {
             
             {/* Text Content Below Card */}
             <h3 
-              className="font-bold text-black text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl 2xl:text-2xl text-center lg:text-left"
+              className="font-bold text-black text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl 2xl:text-3xl text-center lg:text-left"
               style={{
                 fontFamily: 'Epilogue, sans-serif',
                 fontWeight: 700,
@@ -62,20 +60,18 @@ const ThingsWeBelieveIn = () => {
                 letterSpacing: '0%'
               }}
             >
-              Content should mean something, not just fill a feed.
+              We believe the most powerful content feels real.
             </h3>
             
             <p 
               className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-sm xl:text-base leading-relaxed text-center lg:text-left"
               style={{
-                fontFamily: 'DM Sans, sans-serif',
-                fontWeight: 400,
+                fontWeight: 600,
                 lineHeight: '150%',
                 letterSpacing: '0%'
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum 
-              tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
+             That’s why we focus on creating work that speaks in your brand’s <span className="font-black">true voice </span> and feels native to the platforms it’s on. No filler posts. No forced trends. Just genuine connection that lasts.
             </p>
           </div>
           
@@ -98,28 +94,25 @@ const ThingsWeBelieveIn = () => {
             
             {/* Text Content Below Card */}
             <h3 
-              className="font-bold text-black text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl 2xl:text-2xl text-center lg:text-left"
+              className="font-bold text-black text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl 2xl:text-3xl text-center lg:text-left"
               style={{
-                fontFamily: 'Epilogue, sans-serif',
                 fontWeight: 700,
                 lineHeight: '140%',
                 letterSpacing: '0%'
               }}
             >
-              We create work that sticks, not scrolls past.
+             Great content isn’t just noticed — it’s remembered.
             </h3>
             
             <p 
               className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-sm xl:text-base leading-relaxed text-center lg:text-left"
               style={{
-                fontFamily: 'DM Sans, sans-serif',
-                fontWeight: 400,
+                fontWeight: 600,
                 lineHeight: '150%',
                 letterSpacing: '0%'
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum 
-              tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
+              We push <span className="font-black">creativity</span> beyond surface-level visuals, blending bold ideas with sharp design and motion that hold attention. Every project is an opportunity to challenge convention and craft something distinctive that brings your brand to life.
             </p>
           </div>
           
@@ -156,14 +149,12 @@ const ThingsWeBelieveIn = () => {
             <p 
               className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-sm xl:text-base leading-relaxed text-center lg:text-left"
               style={{
-                fontFamily: 'DM Sans, sans-serif',
-                fontWeight: 400,
+                fontWeight: 600,
                 lineHeight: '150%',
                 letterSpacing: '0%'
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum 
-              tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.
+             That’s why every campaign, post, and video we create is built on a solid <span className="font-black">strategic</span> foundation. From audience insights to content pillars, we make sure your brand shows up with purpose and consistency, not noise.
             </p>
           </div>
         </div>

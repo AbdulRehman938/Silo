@@ -4,8 +4,8 @@ import WhyUGC from "./WhyUGC";
 import WhoWeLoveWorkingWith from "./WhoWeLoveWorkingWith";
 import ThingsWeBelieveIn from "./ThingsWeBelieveIn";
 import MindsInTheSilo from "./MindsInTheSilo";
-import Section from "../Home/Section";
 import { IoIosSend } from "react-icons/io";
+import Section2 from "./Section2";
 
 const Hero = () => {
   const handleContactClick = () => {
@@ -126,7 +126,7 @@ const Hero = () => {
       <WhoWeLoveWorkingWith />
       <ThingsWeBelieveIn /> 
       <MindsInTheSilo />
-      <Section />
+      <Section2 />
     </>
   );
 };

@@ -32,14 +32,6 @@ const MindsInTheSilo = () => {
       imageUrl: '/Carousal2.png'
     },
     {
-      id: 'deniro-stocks',
-      type: 'team-member',
-      name: 'Deniro Stocks',
-      title: 'Job Title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
-      imageUrl: '/Carousal3.png'
-    },
-    {
       id: 'will-carter',
       type: 'team-member',
       name: 'Will Carter',
@@ -310,7 +302,7 @@ const MindsInTheSilo = () => {
                   {item.type === 'team-member' ? (
                     // Team Member Card - Viewport-based animations
                     <motion.div 
-                      className="bg-white rounded-lg p-3 sm:p-4 lg:p-5 xl:p-6 h-full flex flex-col"
+                      className="bg-white p-3 sm:p-4 lg:p-5 xl:p-6 h-full flex flex-col"
                       style={{
                         minHeight: '300px'
                       }}
@@ -324,7 +316,7 @@ const MindsInTheSilo = () => {
                       <motion.img 
                         src={item.imageUrl} 
                         alt={`${item.name} - Team Member`}
-                        className="w-full h-auto rounded-lg object-cover flex-1 max-h-40 sm:max-h-48 lg:max-h-56 xl:max-h-none"
+                        className="w-full h-auto object-cover flex-1 max-h-40 sm:max-h-48 lg:max-h-56 xl:max-h-none"
                         initial={{ opacity: 0, scale: 1.2, rotateX: 20 }}
                         animate={{ 
                           opacity: isInViewport ? 1 : 0, 
@@ -382,7 +374,7 @@ const MindsInTheSilo = () => {
                   ) : (
                     // Special Card - Viewport-based animations
                     <motion.div 
-                      className="rounded-lg p-3 sm:p-4 lg:p-6 xl:p-8 h-full flex flex-col justify-center items-center text-center border-2"
+                      className=" p-3 sm:p-4 lg:p-6 xl:p-8 h-full flex flex-col justify-center items-center text-center border-2"
                       style={{
                         minHeight: '300px',
                         backgroundColor: '#FFE5E5',
@@ -425,7 +417,7 @@ const MindsInTheSilo = () => {
                         </motion.h3>
                         
                         <motion.button 
-                          className="bg-red-500 hover:bg-red-600 text-white font-bold px-3 sm:px-4 lg:px-6 xl:px-8 py-2 sm:py-2 lg:py-3 xl:py-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-xs sm:text-sm lg:text-base xl:text-lg w-full"
+                          className="bg-red-500 hover:bg-red-600 text-white font-bold px-3 sm:px-4 lg:px-6 xl:px-8 py-2 sm:py-2 lg:py-3 xl:py-4 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-xs sm:text-sm lg:text-base xl:text-lg w-full"
                           onClick={() => console.log('Prove it clicked')}
                           style={{
                             fontFamily: 'DM Sans, sans-serif',
@@ -499,7 +491,7 @@ const MindsInTheSilo = () => {
             <button 
               onClick={goToPrevSlide}
               disabled={isTransitioning}
-              className={`w-10 h-10 sm:w-12 sm:h-12 border border-red-500 text-red-500 rounded flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base sm:text-lg ${
+              className={`w-10 h-10 sm:w-12 sm:h-12 border border-red-500 text-red-500 flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base sm:text-lg ${
                 isTransitioning 
                   ? 'opacity-50 cursor-not-allowed' 
                   : 'hover:bg-red-50 active:bg-red-100'
@@ -511,7 +503,7 @@ const MindsInTheSilo = () => {
             <button 
               onClick={goToNextSlide}
               disabled={isTransitioning}
-              className={`w-10 h-10 sm:w-12 sm:h-12 border border-red-500 text-red-500 rounded flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base sm:text-lg ${
+              className={`w-10 h-10 sm:w-12 sm:h-12 border border-red-500 text-red-500 flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base sm:text-lg ${
                 isTransitioning 
                   ? 'opacity-50 cursor-not-allowed' 
                   : 'hover:bg-red-50 active:bg-red-100'

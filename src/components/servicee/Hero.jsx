@@ -5,6 +5,7 @@ import demoVideo from "../../DemoVideo/Demo-Video.mp4";
 import demoVideo2 from "../../DemoVideo/demo2.mp4";
 import Cards from "./Cards";
 import Interested from "./Interested";
+import OptionalAddOns from "./OptionalAddOns";
 import "../../styles/scaling-overrides.css";
 
 const Hero = () => {
@@ -56,6 +57,7 @@ const Hero = () => {
         </div>
         <Cards />
         <Interested />
+        <OptionalAddOns />
       </div>
       {/* Mobile-only view - visible only on small screens */}
       <div className="block sm:hidden w-full h-auto bg-white px-1 py-6">
@@ -100,6 +102,7 @@ const Hero = () => {
           <Cards />
         </div>
         <Interested />
+        <OptionalAddOns />
       </div>
     </>
   );
