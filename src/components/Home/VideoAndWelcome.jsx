@@ -64,7 +64,7 @@ export default function VideoAndWelcome() {
         poster={"/image.png"}
       />
 
-      <div className="hidden md:block relative mx-auto max-w-[80vw] px-3 mt-10 md:mt-14 lg:mt-20 md:max-w-[95vw] md:px-0">
+      <div className="hidden md:block relative mx-auto lg:max-w-[80vw] px-3 mt-10 md:mt-14 lg:mt-20 md:max-w-[95vw] md:px-0">
         <div id="welcome-parent-div" className="relative flex items-end justify-between h-[90vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh]">
           {/* Left text div - aligned at bottom left */}
           <div className="relative z-10 self-end pb-4 max-w-[38%] md:max-w-[45%] flex flex-col justify-end gap-6 md:gap-2">
