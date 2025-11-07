@@ -4,6 +4,7 @@ import VideoModal from "../Common/VideoModal";
 import demoVideo from "../../DemoVideo/Demo-Video.mp4";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { WelcomeLetters } from "./WelcomeLetters";
+import LiquidImage from "./LiquidImage";
 
 export default function VideoAndWelcome() {
   const [open, setOpen] = useState(false);
@@ -108,7 +109,7 @@ export default function VideoAndWelcome() {
 
           {/* Welcome text div - aligned at bottom right, covering full width */}
           <div className="relative z-20 self-end w-[55%] h-full flex justify-start items-end pointer-events-none select-none overflow-visible">
-            <div className="w-full h-full relative flex items-end">
+            <div className="canvas w-full h-full relative flex items-end">
               <WelcomeLetters />
             </div>
           </div>

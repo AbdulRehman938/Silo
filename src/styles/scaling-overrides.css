@@ -14,10 +14,10 @@
     margin-top: 1rem !important;
   }
   .home-hero-text-p {
-  margin-top: 0rem !important;
+  margin-top: 0 !important;
 }
 .home-hero-text-h {
-  margin-top: -13rem !important;
+  margin-top: 2rem !important;
 }
 .home-hero-text-float {
   margin-top: -1rem !important;
@@ -29,6 +29,10 @@
 .main-div {
   margin-bottom: 5rem;
 }
+#welcome-parent-div {
+  height: 100vh;
+}
+
 }
 
 /* Target 150% Windows scaling (devicePixelRatio ~1.5) */
@@ -86,5 +90,8 @@
 }
 .main-div {
   margin-bottom: 8rem;
+}
+#welcome-parent-div {
+  height: 50rem;
 }
 }
