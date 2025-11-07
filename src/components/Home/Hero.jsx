@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <div className="w-full">
       {/* Full screen hero section */}
-      <div className="w-full 2xl:h-[calc(100vh-80px)] xl:h-[calc(100vh-80px)] lg:h-auto h-[50vh] flex flex-col justify-between">
+      <div className="w-full 2xl:h-[calc(100vh-80px)] xl:h-[calc(100vh-80px)] lg:h-auto md:h-[60vh] h-[50vh] flex flex-col justify-between">
         <SiloHoverBanner
           svgSrc="/hero.svg"
           intensity={40}
@@ -33,7 +33,7 @@ export default function Hero() {
               gap={48}
               speed={100}
               stripCoverage={4}
-              shuffleCopies={true}
+              shuffleCopies={false}
               logoHeight={48}
             />
           </div>

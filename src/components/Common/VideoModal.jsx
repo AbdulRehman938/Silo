@@ -92,8 +92,8 @@ export default function VideoModal({
     : { width: "min(1100px,96vw)" };
 
   return (
-    <div className="fixed inset-0 z-1000 flex items-center justify-center mt-20">
-      <div className="absolute inset-0 bg-black/30" onClick={onClose} />
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center">
+      <div className="absolute inset-0 bg-black/60" onClick={onClose} />
 
       <div
         style={modalStyle}

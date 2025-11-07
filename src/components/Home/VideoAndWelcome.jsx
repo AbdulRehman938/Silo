@@ -86,7 +86,7 @@ export default function VideoAndWelcome() {
                 className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white  border-transparent relative overflow-hidden group"
               >
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 translate-x-5 svg-wrapper group-hover:animate-bounce-custom">
-                  <IoIosSend className="block text-white w-8 h-8 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-2 group-hover:rotate-45 group-hover:scale-[140%]" />
+                  <IoIosSend className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-4 group-hover:rotate-45 group-hover:scale-[140%]" />
                 </div>
                 <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-28">
                   About us

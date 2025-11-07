@@ -39,11 +39,11 @@ export default function Header() {
 
 
   return (
-    <header className="fixed top-0 left-0 w-full lg:max-w-[90vw] lg:mx-auto right-0 z-50 bg-white/75 backdrop-blur-sm shadow-sm lg:rounded-b-2xl" style={{backdropFilter: 'saturate(120%) blur(6px)'}}>
-      <div className="mx-0 lg:mx-5 py-3 px-3 md:px-6 flex justify-between items-center decoration-black">
+    <header className="fixed top-0 left-0 w-full lg:max-w-[90vw] lg:mx-auto right-0 z-50 bg-white/75 backdrop-blur-sm border-[1px] border-black md:mt-5" style={{backdropFilter: 'saturate(120%) blur(6px)'}}>
+      <div className="mx-0 lg:mx-5 py-3 px-3 md:px-6 flex justify-between items-center decoration-black ">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center" aria-label="Home">
-          <img src="/Company Logo.png" alt="Silo" className="h-10 header2 w-auto md:h-12" />
+          <img src="/hero.svg" alt="Silo" className="h-10 header2 w-auto md:h-12" />
         </Link>
 
         {/* Right: CTA */}
@@ -52,7 +52,7 @@ export default function Header() {
           <nav
             ref={navRef}
             onMouseLeave={handleNavLeave}
-            className="hidden lg:flex items-center justify-center gap-6 text-xl font-semibold text-black relative overflow-hidden"
+            className="hidden lg:flex items-center justify-center gap-3 xl:gap-4 2xl:gap-6 text-xl font-semibold text-black relative overflow-hidden"
           >
             {/* top and bottom animated lines — mounted only when visible */}
             <AnimatePresence>
@@ -85,19 +85,19 @@ export default function Header() {
               )}
             </AnimatePresence>
 
-            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold whitespace-nowrap  transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-3 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-lg xl:text-xl 2xl:text-2xl text-brand' : 'text-sm xl:text-base 2xl:text-lg text-black'}`}>
               The Silo
             </NavLink>
-            <NavLink to="/about" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/about" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-3 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-lg xl:text-xl 2xl:text-2xl text-brand' : 'text-sm xl:text-base 2xl:text-lg text-black'}`}>
               Portfolio
             </NavLink>
-            <NavLink to="/services" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/services" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-3 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-lg xl:text-xl 2xl:text-2xl text-brand' : 'text-sm xl:text-base 2xl:text-lg text-black'}`}>
               Services
             </NavLink>
-            <NavLink to="/job-board" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/job-board" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-3 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-lg xl:text-xl 2xl:text-2xl text-brand' : 'text-sm xl:text-base 2xl:text-lg text-black'}`}>
               Job Board
             </NavLink>
-            <NavLink to="/ramblings" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-3 py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-2xl text-brand' : 'text-lg text-black'}`}>
+            <NavLink to="/ramblings" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-3 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-lg xl:text-xl 2xl:text-2xl text-brand' : 'text-sm xl:text-base 2xl:text-lg text-black'}`}>
               Ramblings
             </NavLink>
           </nav>
@@ -118,7 +118,7 @@ export default function Header() {
           </button>
 
           {/* CTA visible on large screens only; on tablet/mobile it's inside the hamburger panel below */}
-          <Link to="/contact" className="hidden lg:inline-flex relative text-lg whitespace-nowrap bg-brand text-white py-3 px-6 items-center border-none overflow-hidden header-btn transition-all duration-200 cursor-pointer group active:scale-95 no-underline">
+          <Link to="/contact" className="hidden lg:inline-flex relative text-sm xl:text-base 2xl:text-lg whitespace-nowrap bg-brand text-white py-2 xl:py-2.5 2xl:py-3 px-4 xl:px-5 2xl:px-6 items-center border-none overflow-hidden header-btn transition-all duration-200 cursor-pointer group active:scale-95 no-underline">
             <div className="absolute svg-wrapper group-hover:animate-bounce-custom">
               <IoIosSend className="block opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-5 group-hover:rotate-45 group-hover:scale-[160%]" />
             </div>
@@ -138,12 +138,12 @@ export default function Header() {
 
           {/* right drawer (above backdrop) */}
           <aside
-            className={`absolute top-0 right-0 h-full w-[70vw] bg-white shadow-2xl transform transition-transform duration-300 ${open ? 'translate-x-0 pointer-events-auto z-60' : 'translate-x-full pointer-events-none'}`}
+            className={`absolute top-0 right-0 h-[70vh] rounded-bl-xl w-[80vw] md:w-[50vw] bg-white shadow-2xl transform transition-transform duration-300 ${open ? 'translate-x-0 pointer-events-auto z-60' : 'translate-x-full pointer-events-none'}`}
             aria-hidden={!open}
           >
             <div className="flex flex-col h-full">
               <div className="px-6 py-5 flex items-center justify-between border-b">
-                <img src="/logo.png" alt="Silo" className="h-8 w-auto" />
+                <img src="/hero.svg" alt="Silo" className="h-8 w-auto" />
                 <button onClick={close} aria-label="Close menu" className="p-2 hover:bg-gray-100">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18 6L6 18" stroke="#111827" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -153,19 +153,19 @@ export default function Header() {
               </div>
 
               <nav className="px-6 py-8 flex-1 flex flex-col gap-6">
-                <NavLink to="/" onClick={close} className={({ isActive }) => `text-lg font-extrabold tracking-tight transition ${isActive ? 'text-2xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
+                <NavLink to="/" onClick={close} className={({ isActive }) => `text-xl font-extrabold tracking-tight transition ${isActive ? 'text-2xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
                   The Silo
                 </NavLink>
-                <NavLink to="/portfolio" onClick={close} className={({ isActive }) => `text-lg font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
+                <NavLink to="/portfolio" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
                   Portfolio
                 </NavLink>
-                <NavLink to="/services" onClick={close} className={({ isActive }) => `text-lg font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
+                <NavLink to="/services" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
                   Services
                 </NavLink>
-                <NavLink to="/job-board" onClick={close} className={({ isActive }) => `text-lg font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
+                <NavLink to="/job-board" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
                   Job Board
                 </NavLink>
-                <NavLink to="/ramblings" onClick={close} className={({ isActive }) => `text-lg font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
+                <NavLink to="/ramblings" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
                   Ramblings
                 </NavLink>
               </nav>
