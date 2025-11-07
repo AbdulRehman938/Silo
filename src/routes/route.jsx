@@ -15,7 +15,6 @@ import NotFound from '../pages/NotFound.jsx'
 import CareerIndex from '../pages/CareerIndex.jsx'
 import JobDetail from '../pages/JobDetail.jsx'
 import JobBoardDetail from '../pages/JobBoardDetail.jsx'
-import JobBoardDetailClone from '../pages/JobBoardDetailClone.jsx'
 import BlogDetail from '../pages/BlogDetail.jsx'
 import CaseStudies from '../pages/CaseStudies.jsx'
 
