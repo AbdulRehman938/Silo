@@ -64,15 +64,15 @@ export default function VideoAndWelcome() {
         poster={"/image.png"}
       />
 
-      <div className="hidden md:block relative mx-auto max-w-[80vw] px-3 md:px-6 mt-10 md:mt-14 lg:mt-20 md:max-w-[90vw]">
+      <div className="hidden md:block relative mx-auto max-w-[80vw] px-3 mt-10 md:mt-14 lg:mt-20 md:max-w-[95vw] md:px-0">
         <div id="welcome-parent-div" className="relative flex items-end justify-between h-[90vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh]">
           {/* Left text div - aligned at bottom left */}
-          <div className="relative z-10 self-end pb-4 max-w-[38%] flex flex-col justify-end gap-6">
-            <p className="text-base md:text-lg lg:text-xl font-semibold tracking-tight text-black">
+          <div className="relative z-10 self-end pb-4 max-w-[38%] md:max-w-[45%] flex flex-col justify-end gap-6 md:gap-2">
+            <p className="text-base md:text-base lg:text-xl font-semibold md:tracking-tighter tracking-tight text-black">
               We’re the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.
             </p>
-            <p className="text-xs md:text-sm lg:text-base leading-relaxed text-black/80">
+            <p className="text-xs md:text-xs lg:text-base leading-relaxed text-black/80">
               We create intentional, personality–driven content, from authentic
               creator videos to scroll–stopping social feeds – designed to
               connect. Every piece is grounded in strategy, fuelled by
