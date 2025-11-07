@@ -63,9 +63,12 @@ export const WelcomeLetters = () => {
     const containerTop = containerRef.current.getBoundingClientRect().top;
     const startY = -(viewportHeight + containerTop + 200);
 
+    // Use the parent div as trigger instead of the component itself
+    const triggerElement = document.getElementById('welcome-parent-div') || containerRef.current;
+
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: containerRef.current,
+        trigger: triggerElement,
         start: 'top 80%',
         once: true,
         id: 'welcome-letters',
