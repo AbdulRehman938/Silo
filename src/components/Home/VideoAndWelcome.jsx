@@ -1,214 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { IoIosSend } from "react-icons/io";
-import { motion } from "framer-motion";
 import VideoModal from "../Common/VideoModal";
 import demoVideo from "../../DemoVideo/Demo-Video.mp4";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { WelcomeLetters } from "./WelcomeLetters";
 
 export default function VideoAndWelcome() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const wordRef = useRef(null);
-
-  // Animated letters component: uses a per-letter layout with container-relative sizing.
-  // Each entry defines left/top (percent), rotation (deg), size (container-relative) and zIndex so letters overlap correctly.
-  function AnimatedLetters({ word = "Welcome", layout, useContainerSizing = false }) {
-    const ref = useRef(null);
-    const [inView, setInView] = useState(false);
-
-    useEffect(() => {
-      if (!ref.current) return;
-      const obs = new IntersectionObserver(
-        (entries) => {
-          // set inView based on current intersection state. Do NOT disconnect so the animation
-          // can replay whenever the element re-enters the viewport.
-          setInView(entries[0].isIntersecting);
-        },
-        { threshold: 0.12 }
-      );
-      obs.observe(ref.current);
-      return () => obs.disconnect();
-    }, []);
-
-    // Default layout that approximates the attached artwork's placement and sizing.
-    // When useContainerSizing is true, sizes are calculated relative to container
-    const defaultLayout = [
-      {
-        left: "-30%",
-        top: "2%",
-        rotate: -22,
-        size: useContainerSizing ? "calc(var(--base-font-size) * 0.9)" : "18vw",
-        z: 7,
-        fontWeight: "bold",
-      },
-      {
-        left: "0%",
-        top: "28%",
-        rotate: 0,
-        size: useContainerSizing ? "calc(var(--base-font-size) * 0.7)" : "14vw",
-        z: 6,
-        fontWeight: "bold",
-      },
-      {
-        left: "-16%",
-        top: "32%",
-        rotate: 18,
-        size: useContainerSizing ? "calc(var(--base-font-size) * 1.0)" : "20vw",
-        z: 5,
-        fontWeight: "bold",
-      },
-      {
-        left: "-5%",
-        top: "65%",
-        rotate: 20,
-        size: useContainerSizing ? "calc(var(--base-font-size) * 1.1)" : "22vw",
-        z: 6,
-        fontWeight: "bold",
-      },
-      {
-        left: "14%",
-        top: "60%",
-        rotate: -36,
-        size: useContainerSizing ? "calc(var(--base-font-size) * 1.2)" : "24vw",
-        z: 3,
-        fontWeight: "bold",
-      },
-      {
-        left: "8%",
-        top: "98%",
-        rotate: 0,
-        size: useContainerSizing ? "calc(var(--base-font-size) * 1.5)" : "30vw",
-        z: 2,
-        fontWeight: "bold",
-      },
-      {
-        left: "58%",
-        top: "140%",
-        rotate: 0,
-        size: useContainerSizing ? "calc(var(--base-font-size) * 0.8)" : "16vw",
-        z: 1,
-        fontWeight: "bold",
-      },
-    ];
-
-    const positions =
-      layout && layout.length === word.length ? layout : defaultLayout;
-
-    // map logical weight names to Tailwind classes
-    const weightMap = {
-      thin: "font-thin",
-      light: "font-light",
-      normal: "font-normal",
-      medium: "font-medium",
-      semibold: "font-semibold",
-      bold: "font-bold",
-      black: "font-black",
-    };
-
-    return (
-      <div
-        ref={ref}
-        className="relative h-full w-full pointer-events-none select-none"
-      >
-        {Array.from(word).map((ch, i) => {
-          const pos = positions[i] || {
-            left: `${i * 10}%`,
-            top: `${i * 6}%`,
-            rotate: 0,
-            size: "10vw",
-            z: 1,
-          };
-          const finalRotate = pos.rotate || 0;
-          const weightClass =
-            weightMap[(pos.fontWeight || "").toLowerCase()] || "font-black";
-          const hidden = { y: -220, opacity: 0, rotate: finalRotate - 30 };
-          const visible = {
-            y: 0,
-            opacity: 1,
-            rotate: [
-              finalRotate + 8,
-              finalRotate - 8,
-              finalRotate + 4,
-              finalRotate,
-            ],
-          };
-
-          return (
-            <motion.span
-              key={i}
-              initial="hidden"
-              animate={inView ? visible : hidden}
-              transition={{
-                delay: i * 0.08,
-                type: "spring",
-                stiffness: 420,
-                damping: 28,
-              }}
-              style={{
-                left: pos.left,
-                top: pos.top,
-                fontSize: pos.size,
-                zIndex: pos.z,
-                lineHeight: 0.8,
-              }}
-              className={`absolute -translate-x-1/2 text-black leading-none ${weightClass}`}
-            >
-              {ch}
-            </motion.span>
-          );
-        })}
-      </div>
-    );
-  }
-
-  // Mobile-specific layout: simpler, centered, and smaller so letters fit nicely on phones.
-  const mobileLayout = [
-    { left: '-20%', top: '2%', rotate: -30, size: '35vw', z: 7, fontWeight: 'bold' },
-    { left: '8%', top: '24%', rotate: -4, size: '25vw', z: 6, fontWeight: 'bold' },
-    { left: '-10%', top: '29%', rotate: 20, size: '38vw', z: 5, fontWeight: 'bold' },
-    { left: '10%', top: '39%', rotate: 40, size: '40vw', z: 4, fontWeight: 'bold' },
-    { left: '30%', top: '35%', rotate: -42, size: '48vw', z: 3, fontWeight: 'bold' },
-    { left: '13%', top: '68%', rotate: 0, size: '36vw', z: 2, fontWeight: 'bold' },
-    { left: '50%', top: '83%', rotate: 0, size: '23vw', z: 1, fontWeight: 'bold' },
-  ];
-
-useEffect(() => {
-  const el = wordRef.current;
-  if (!el) return;
-
-  const applyAdjustment = () => {
-    const vw = window.innerWidth;
-    const dpr = window.devicePixelRatio || 1;
-
-    const is133_140 =
-      (vw >= 1360 && vw <= 1500) && (dpr >= 1.3 && dpr < 1.45);
-    const is150 =
-      (vw >= 1280 && vw <= 1420) && (dpr >= 1.45 && dpr < 1.55);
-
-    if (is150) {
-      // 150% scale: move further up
-      el.style.height = "40vh";
-      el.style.marginTop = "-10vh";
-      el.style.transform = "translateY(2vh)";
-    } else if (is133_140) {
-      // 133%–140% scale
-      el.style.height = "28vh";
-      el.style.marginTop = "-8vh";
-      el.style.transform = "translateY(-5vh)";
-    } else {
-      // reset for normal view
-      el.style.height = "";
-      el.style.marginTop = "";
-      el.style.transform = "";
-    }
-  };
-
-  applyAdjustment();
-  window.addEventListener("resize", applyAdjustment);
-
-  return () => window.removeEventListener("resize", applyAdjustment);
-}, []);
 
   return (
     <div className="">
@@ -265,8 +65,9 @@ useEffect(() => {
       />
 
       <div className="hidden md:block relative mx-auto max-w-[80vw] px-3 md:px-6 mt-10 md:mt-14 lg:mt-20 md:max-w-[90vw]">
-        <div className="relative grid items-start gap-2 md:grid-cols-2 md:gap-2 lg:gap-4 h-[90vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh]">
-          <div className="relative z-10 pr-1 md:pr-3 self-end pb-1 max-w-[580px] h-[216px] flex flex-col justify-end gap-6 2xl:top-[10vh] ">
+        <div id="welcome-parent-div" className="relative flex items-end justify-between h-[90vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh]">
+          {/* Left text div - aligned at bottom left */}
+          <div className="relative z-10 self-end pb-4 max-w-[38%] flex flex-col justify-end gap-6">
             <p className="text-base md:text-lg lg:text-xl font-semibold tracking-tight text-black">
               We’re the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.
@@ -305,14 +106,11 @@ useEffect(() => {
             </div>
           </div>
 
-          <div
-            ref={wordRef}
-            className="relative z-20 ml-8 md:ml-4 lg:ml-8 xl:ml-12 2xl:ml-16 h-[50vh] lg:h-[35vh] w-[50vw] xl:h-[40vh] md:h-[25vh] md:mt-0 md:scale-[123%] xl:mt-[-3rem] pointer-events-none select-none transform-gpu origin-top-left transition-transform duration-200 lg:scale-110 lg:-mt-5"
-          >
-            {/* Animated letters will replace the static image. The whole block scales down on lg/xl so
-                per-letter absolute px positions stay consistent (we compute against a 2xl reference)
-                while visually fitting smaller breakpoints. */}
-            <AnimatedLetters word={"Wecolme"} />
+          {/* Welcome text div - aligned at bottom right, covering full width */}
+          <div className="relative z-20 self-end w-[55%] h-full flex justify-start items-end pointer-events-none select-none overflow-visible">
+            <div className="w-full h-full relative flex items-end">
+              <WelcomeLetters />
+            </div>
           </div>
         </div>
       </div>
@@ -320,7 +118,7 @@ useEffect(() => {
       <div className="md:hidden h-[40rem] flex justify-center items-center gap-10">
         <div className="flex flex-col justify-center items-center gap-10 h-full">
           <div className="pointer-events-none select-none mb-6 mt-10 h-[30rem] w-[80vw] ml-32 mx-auto">
-            <AnimatedLetters word={"Wecolme"} layout={mobileLayout} />
+            <WelcomeLetters />
           </div>
 
           <div className="mx-10">

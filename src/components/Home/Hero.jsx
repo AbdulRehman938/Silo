@@ -13,27 +13,30 @@ const DEFAULT_LOGOS = [
 export default function Hero() {
   return (
     <div className="w-full">
-      <SiloHoverBanner
-        svgSrc="/hero.svg"
-        intensity={40}
-        className="home-hero-text-float mb-6 md:mb-10 lg:mb-12 2xl:-mt-10"
-      />
+      {/* Full screen hero section */}
+      <div className="w-full h-[calc(100vh-80px)] flex flex-col justify-between">
+        <SiloHoverBanner
+          svgSrc="/hero.svg"
+          intensity={40}
+          className="home-hero-text-float flex-shrink-0"
+        />
 
-      <div className="w-full max-h-screen bg-white 2xl:mt-20 md:mt-10 lg:mt-0 mb-6 md:mb-10 lg:mb-14 xl:-mt-5">
-        <div className="mx-auto max-w-[120rem] px-3 md:px-6 home-hero-text-h">
-          <div className="py-4 md:py-5 text-center font-bold text-2xl 2xl:text-3xl xl:text-2xl text-black">
-            Used by companies who know what works.
+        <div className="w-full bg-white flex-shrink-0 mt-auto">
+          <div className="mx-auto max-w-[120rem] px-3 md:px-6 home-hero-text-h">
+            <div className="py-4 md:py-5 text-center font-bold text-2xl 2xl:text-3xl xl:text-2xl text-black">
+              Used by companies who know what works.
+            </div>
           </div>
-        </div>
-        <div className="pb-8 mt-5 home-hero-text-p">
-          <LogoLoop
-            logos={DEFAULT_LOGOS}
-            gap={48}
-            speed={100}
-            stripCoverage={4}
-            shuffleCopies={true}
-            logoHeight={48}
-          />
+          <div className="pb-8 mt-5 home-hero-text-p">
+            <LogoLoop
+              logos={DEFAULT_LOGOS}
+              gap={48}
+              speed={100}
+              stripCoverage={4}
+              shuffleCopies={true}
+              logoHeight={48}
+            />
+          </div>
         </div>
       </div>
 
