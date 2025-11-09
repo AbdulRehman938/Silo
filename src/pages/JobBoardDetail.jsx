@@ -203,7 +203,6 @@ const JobBoardDetail = () => {
             
           </div>
         </div>
-        
       </div>
     </div>
   );

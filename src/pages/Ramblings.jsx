@@ -1,6 +1,7 @@
-import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { IoIosSend } from 'react-icons/io';
+import { useState, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
+import { IoIosSend } from "react-icons/io";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export default function Ramblings() {
   const navigate = useNavigate();
@@ -13,8 +14,9 @@ export default function Ramblings() {
       category: "UGC",
       readTime: "5 min read",
       title: "How to brief a UGC creator",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-      link: "/blog/1"
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      link: "/blog/1",
     },
     {
       id: 2,
@@ -22,17 +24,19 @@ export default function Ramblings() {
       category: "Animation",
       readTime: "5 min read",
       title: "Animation checklist for social media",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-      link: "/blog/2"
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      link: "/blog/2",
     },
     {
       id: 3,
       image: "/rambling3.png",
       category: "Strategy",
       readTime: "5 min read",
-      title: "The Death of \"Posting to Post\"",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-      link: "/blog/3"
+      title: 'The Death of "Posting to Post"',
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      link: "/blog/3",
     },
     {
       id: 4,
@@ -40,8 +44,9 @@ export default function Ramblings() {
       category: "Branding",
       readTime: "5 min read",
       title: "5 Things Every Brand Brief Should Include (But Rarely Does)",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-      link: "/blog/4"
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      link: "/blog/4",
     },
     {
       id: 5,
@@ -49,14 +54,17 @@ export default function Ramblings() {
       category: "Creators",
       readTime: "5 min read",
       title: "Meet the Creators: Stories from Our Network",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-      link: "/blog/5"
-    }
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      link: "/blog/5",
+    },
   ];
 
   // Dynamically generate categories from blog posts
   const categories = useMemo(() => {
-    const uniqueCategories = [...new Set(blogPosts.map(post => post.category))];
+    const uniqueCategories = [
+      ...new Set(blogPosts.map((post) => post.category)),
+    ];
     return ["View all", ...uniqueCategories];
   }, [blogPosts]);
 
@@ -65,12 +73,12 @@ export default function Ramblings() {
     if (selectedCategory === "View all") {
       return blogPosts;
     }
-    return blogPosts.filter(post => post.category === selectedCategory);
+    return blogPosts.filter((post) => post.category === selectedCategory);
   }, [blogPosts, selectedCategory]);
 
   return (
-    <div className="bg-gray-50 min-h-screen">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
+    <div className="min-h-screen mt-10">
+      <div className="mx-auto max-w-[90vw] px-6 lg:px-8 py-12">
         {/* Header Section */}
         <div className="mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold text-black mb-4">
@@ -85,16 +93,18 @@ export default function Ramblings() {
           {/* Sidebar */}
           <div className="lg:w-48 flex-shrink-0">
             <div className="p-4">
-              <h3 className="text-lg font-bold text-black mb-6">Blog categories</h3>
+              <h3 className="text-lg font-bold text-black mb-6">
+                Blog categories
+              </h3>
               <div className="space-y-4">
                 {categories.map((category) => (
                   <button
                     key={category}
                     onClick={() => setSelectedCategory(category)}
-                    className={`block w-full text-left text-sm transition-colors ${
+                    className={`block w-full text-left text-sm transition-all duration-300 ease-in-out ${
                       selectedCategory === category
-                        ? 'border border-gray-800 px-4 py-3 text-black font-medium' 
-                        : 'text-gray-700 hover:text-black px-2 py-1'
+                        ? "border-2 border-black bg-transparent px-4 py-3 text-black font-bold transform scale-105"
+                        : "text-gray-700 hover:text-black hover:bg-gray-50 hover:translate-x-2 hover:font-bold px-2 py-1"
                     }`}
                   >
                     {category}
@@ -110,22 +120,26 @@ export default function Ramblings() {
               <>
                 {/* Featured Post */}
                 <div className="mb-12">
-                  <div 
-                    className="bg-white rounded-lg overflow-hidden cursor-pointer transform transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
+                  <div
+                    className="bg-white overflow-hidden cursor-pointer"
                     onClick={() => navigate(filteredPosts[0].link)}
                   >
-                    <div className="aspect-[2/1] overflow-hidden">
+                    <div className="w-full h-[60vh] overflow-hidden group">
                       <img
                         src={filteredPosts[0].image}
                         alt={filteredPosts[0].title}
-                        className="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
                     <div className="p-8">
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="text-sm text-gray-500">{filteredPosts[0].category}</span>
+                        <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1 rounded">
+                          {filteredPosts[0].category}
+                        </span>
                         <span className="text-gray-300">•</span>
-                        <span className="text-sm text-gray-500">{filteredPosts[0].readTime}</span>
+                        <span className="text-sm text-gray-500">
+                          {filteredPosts[0].readTime}
+                        </span>
                       </div>
                       <h2 className="text-3xl font-bold text-black mb-4 hover:text-red-600 transition-colors">
                         {filteredPosts[0].title}
@@ -133,20 +147,18 @@ export default function Ramblings() {
                       <p className="text-gray-600 mb-6 text-lg">
                         {filteredPosts[0].description}
                       </p>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          navigate(filteredPosts[0].link);
-                        }}
-                        className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-red-500 text-red-500 h-[40px] px-4 py-2 text-xs font-bold uppercase tracking-wide relative overflow-hidden group"
+                      <a
+                        href="#"
+                        className="inline-flex items-center gap-2 font-dm font-semibold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                       >
-                        <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                          <IoIosSend className="block text-red-500 w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-6 group-hover:rotate-45 group-hover:scale-[140%]" />
-                        </div>
-                        <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-16">
-                          READ MORE
+                        <span>Read more</span>
+                        <span
+                          aria-hidden
+                          className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                        >
+                          <MdOutlineKeyboardArrowRight className="text-2xl font-black text-black" />
                         </span>
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -155,23 +167,27 @@ export default function Ramblings() {
                 {filteredPosts.length > 1 && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {filteredPosts.slice(1).map((post) => (
-                      <div 
-                        key={post.id} 
-                        className="bg-white rounded-lg overflow-hidden cursor-pointer transform transition-all duration-200 hover:shadow-lg hover:-translate-y-1"
+                      <div
+                        key={post.id}
+                        className="bg-white overflow-hidden cursor-pointer"
                         onClick={() => navigate(post.link)}
                       >
-                        <div className="aspect-[4/3] overflow-hidden">
+                        <div className="aspect-[4/3] overflow-hidden group">
                           <img
                             src={post.image}
                             alt={post.title}
-                            className="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                           />
                         </div>
                         <div className="p-6">
                           <div className="flex items-center gap-3 mb-3">
-                            <span className="text-sm text-gray-500">{post.category}</span>
+                            <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1 rounded">
+                              {post.category}
+                            </span>
                             <span className="text-gray-300">•</span>
-                            <span className="text-sm text-gray-500">{post.readTime}</span>
+                            <span className="text-sm text-gray-500">
+                              {post.readTime}
+                            </span>
                           </div>
                           <h3 className="text-xl font-bold text-black mb-3 hover:text-red-600 transition-colors">
                             {post.title}
@@ -179,20 +195,18 @@ export default function Ramblings() {
                           <p className="text-gray-600 mb-4">
                             {post.description}
                           </p>
-                          <button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              navigate(post.link);
-                            }}
-                            className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-red-500 text-red-500 h-[36px] px-3 py-1 text-xs font-bold uppercase tracking-wide relative overflow-hidden group"
+                          <a
+                            href="#"
+                            className="inline-flex items-center gap-2 font-dm font-semibold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                           >
-                            <div className="absolute left-2 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                              <IoIosSend className="block text-red-500 w-3 h-3 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-5 group-hover:rotate-45 group-hover:scale-[140%]" />
-                            </div>
-                            <span className="block transition-all duration-300 ease-in-out text-xs group-hover:translate-x-12">
-                              READ MORE
+                            <span>Read more</span>
+                            <span
+                              aria-hidden
+                              className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                            >
+                              <MdOutlineKeyboardArrowRight className="text-2xl font-black text-back" />
                             </span>
-                          </button>
+                          </a>
                         </div>
                       </div>
                     ))}
@@ -204,57 +218,54 @@ export default function Ramblings() {
             {/* No posts message */}
             {filteredPosts.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">No posts found in this category.</p>
+                <p className="text-gray-500 text-lg">
+                  No posts found in this category.
+                </p>
               </div>
             )}
           </div>
         </div>
 
         {/* Newsletter Signup Section */}
-        <div className="mt-20 bg-white rounded-lg p-8 lg:p-12">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+        <div className="mt-40">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 md:gap-12 lg:gap-16">
             {/* Left Content */}
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">
+            <div className="lg:flex-1 lg:max-w-lg">
+              <h2 className="text-black text-3xl font-bold mb-4 font-['Epilogue'] leading-tight">
                 Sign up to our newsletter
               </h2>
-              <p className="text-gray-600 text-lg">
-                We don't spam. We send sharp insights, new briefs, and the kind of content you'll actually want to open.
+
+              <p className="text-black text-base leading-relaxed">
+               We don’t spam. We send sharp insights, new briefs, and the kind of content you’ll actually want to open.
               </p>
             </div>
 
-            {/* Right Content - Form */}
-            <div className="lg:w-1/2">
-              <form className="flex flex-col sm:flex-row gap-4">
+            {/* Right Form */}
+            <div className="lg:flex-shrink-0 max-w-xl w-full">
+              <div className="flex gap-3">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                  required
+                  className="px-4 py-3 border border-black  focus:outline-none focus:ring-2 focus:ring-[#FF322E] focus:border-transparent text-base w-full"
                 />
-                <button
-                  type="submit"
-                  className="inline-flex items-center justify-center gap-2 bg-red-500 text-white h-[48px] px-6 py-3 text-xs font-bold uppercase tracking-wide border-transparent relative overflow-hidden group whitespace-nowrap"
-                >
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                    <IoIosSend className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-12 group-hover:rotate-45 group-hover:scale-[140%]" />
-                  </div>
-                  <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-40">
-                    Sign me up!
-                  </span>
+                <button className="bg-[#FF322E] whitespace-nowrap text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors text-base">
+                  Sign me up!
                 </button>
-              </form>
-              <p className="text-xs text-gray-500 mt-3">
-                By clicking Sign Up you're confirming that you agree with our{' '}
-                <a href="#" className="underline hover:text-gray-700">
+              </div>
+
+              <p className="text-black text-sm mt-3 leading-relaxed">
+                By clicking Sign Up you're confirming that you agree with our{" "}
+                <a
+                  href="#"
+                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                >
                   Terms and Conditions
                 </a>
-                .
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
