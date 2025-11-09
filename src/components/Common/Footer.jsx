@@ -46,7 +46,7 @@ const Footer = () => {
               <li><a href="#" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Mission and Values</a></li>
               <li><a href="#" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Meet the Team</a></li>
               <li><a href="#" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Why UGC?</a></li>
-              <li><a href="#" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Careers</a></li>
+              <li><a href="/careers" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Careers</a></li>
             </ul>
           </div>
           {/* Right: Case Studies */}

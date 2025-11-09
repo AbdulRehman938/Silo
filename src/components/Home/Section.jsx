@@ -39,7 +39,7 @@ const Section = () => {
                     <IoIosSend className="block text-brand w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-10 group-hover:rotate-45 group-hover:scale-[140%]" />
                   </div>
                   <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-28">
-                    View all
+                    For Creators
                   </span>
                 </a>
               </div>

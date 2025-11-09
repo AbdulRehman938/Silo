@@ -1,5 +1,6 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { MdOutlineKeyboardArrowRight } from 'react-icons/md'
+import Section2 from "../components/About/Section2";
 
 const CareerIndex = () => {
   const navigate = useNavigate()
@@ -15,15 +16,17 @@ const CareerIndex = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-      <div className="max-w-7xl mx-auto">
+    
+      <div className=' h-auto max-w-[90vw] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20'>
+    <div className="min-h-screen max-w-full bg-white py-8 sm:py-12 md:py-16 lg:py-20  mx-auto">
+      <div className="max-w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
           {/* Left Content */}
           <div className="space-y-4 sm:space-y-6 order-2 lg:order-1">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-black leading-tight">
               Work at the Silo
             </h1>
-            <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
+            <p className="text-sm sm:text-base md:text-xl text-black leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br className="hidden sm:block" />
               Suspendisse varius enim in eros elementum tristique.
             </p>
@@ -34,7 +37,7 @@ const CareerIndex = () => {
             {/* Job Card 1 */}
             <div 
               onClick={() => handleJobClick(1)}
-              className="bg-white border border-gray-400 p-4 sm:p-6 cursor-pointer hover:shadow-lg hover:border-gray-500 transition-all duration-200 group"
+              className="bg-white border border-gray-400 p-6 sm:p-8 md:p-10 cursor-pointer hover:shadow-lg hover:border-gray-500 transition-all duration-200 group"
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2 sm:mb-0">
@@ -65,10 +68,12 @@ const CareerIndex = () => {
                 </div>
                 <button 
                   onClick={(e) => handleApplyClick(e, 1)}
-                  className="text-red-500 hover:text-red-600 font-medium text-sm flex items-center gap-1 self-start sm:self-auto transition-colors duration-200"
+                  className="inline-flex items-center gap-2 font-dm font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group self-start sm:self-auto"
                 >
-                  Apply Now
-                  <span>›</span>
+                  <span>Apply Now</span>
+                  <span aria-hidden className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2">
+                    <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
+                  </span>
                 </button>
               </div>
               
@@ -127,7 +132,7 @@ const CareerIndex = () => {
             {/* Job Card 2 */}
             <div 
               onClick={() => handleJobClick(2)}
-              className="bg-white border border-gray-400 p-4 sm:p-6 cursor-pointer hover:shadow-lg hover:border-gray-500 transition-all duration-200 group"
+              className="bg-white border border-gray-400 p-6 sm:p-8 md:p-10 cursor-pointer hover:shadow-lg hover:border-gray-500 transition-all duration-200 group"
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2 sm:mb-0">
@@ -158,10 +163,12 @@ const CareerIndex = () => {
                 </div>
                 <button 
                   onClick={(e) => handleApplyClick(e, 2)}
-                  className="text-red-500 hover:text-red-600 font-medium text-sm flex items-center gap-1 self-start sm:self-auto transition-colors duration-200"
+                  className="inline-flex items-center gap-2 font-dm font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group self-start sm:self-auto"
                 >
-                  Apply Now
-                  <span>›</span>
+                  <span>Apply Now</span>
+                  <span aria-hidden className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2">
+                    <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
+                  </span>
                 </button>
               </div>
               
@@ -220,7 +227,7 @@ const CareerIndex = () => {
             {/* Job Card 3 */}
             <div 
               onClick={() => handleJobClick(3)}
-              className="bg-white border border-gray-400 p-4 sm:p-6 cursor-pointer hover:shadow-lg hover:border-gray-500 transition-all duration-200 group"
+              className="bg-white border border-gray-400 p-6 sm:p-8 md:p-10 cursor-pointer hover:shadow-lg hover:border-gray-500 transition-all duration-200 group"
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2 sm:mb-0">
@@ -251,10 +258,12 @@ const CareerIndex = () => {
                 </div>
                 <button 
                   onClick={(e) => handleApplyClick(e, 3)}
-                  className="text-red-500 hover:text-red-600 font-medium text-sm flex items-center gap-1 self-start sm:self-auto transition-colors duration-200"
+                  className="inline-flex items-center gap-2 font-dm font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group self-start sm:self-auto"
                 >
-                  Apply Now
-                  <span>›</span>
+                  <span>Apply Now</span>
+                  <span aria-hidden className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2">
+                    <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
+                  </span>
                 </button>
               </div>
               
@@ -312,6 +321,8 @@ const CareerIndex = () => {
           </div>
         </div>
       </div>
+    </div>
+    <Section2 />
     </div>
   )
 }
