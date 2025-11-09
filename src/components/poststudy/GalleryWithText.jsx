@@ -18,6 +18,13 @@ const GalleryWithText = ({ heading, text, images }) => {
     const handleScroll = () => {
       if (!containerRef.current || !textRef.current || !textWrapperRef.current) return
 
+      // Disable sticky on mobile (screens smaller than 1024px / lg breakpoint)
+      const isMobile = window.innerWidth < 1024
+      if (isMobile) {
+        setIsSticky(false)
+        return
+      }
+
       const containerRect = containerRef.current.getBoundingClientRect()
       const textWrapperRect = textWrapperRef.current.getBoundingClientRect()
       const textHeight = textRef.current.offsetHeight
@@ -49,7 +56,7 @@ const GalleryWithText = ({ heading, text, images }) => {
       <div className='max-w-[90vw] mx-auto'>
         <div className='flex flex-col lg:flex-row gap-8 lg:gap-16 items-start'>
           {/* Left: Scrolling Images */}
-          <div className='w-full lg:w-1/2 flex flex-col gap-6'>
+          <div className='w-full lg:w-1/2 flex flex-col gap-6 order-2 lg:order-1'>
             {displayImages.map((image, index) => (
               <div key={index} className='w-full aspect-[4/3] bg-gray-200 overflow-hidden'>
                 {image.src ? (
@@ -74,7 +81,7 @@ const GalleryWithText = ({ heading, text, images }) => {
           </div>
 
           {/* Right: Sticky Text */}
-          <div ref={textWrapperRef} className='w-full lg:w-1/2 relative'>
+          <div ref={textWrapperRef} className='w-full lg:w-1/2 relative order-1 lg:order-2'>
             <div 
               ref={textRef}
               className={`${isSticky ? 'fixed top-24' : 'relative'}`}

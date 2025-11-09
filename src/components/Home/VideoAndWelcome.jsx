@@ -116,13 +116,13 @@ export default function VideoAndWelcome() {
         </div>
       </div>
       
-      <div className="md:hidden h-[40rem] flex justify-center items-center gap-10">
+      <div id="welcome-parent-div-mobile" className="md:hidden h-[40rem] flex justify-center items-center gap-10">
         <div className="flex flex-col justify-center items-center gap-10 h-full">
-          <div className="pointer-events-none select-none mb-6 mt-10 h-[30rem] w-[80vw] ml-32 mx-auto">
+          <div className="pointer-events-none select-none mb-6 mt-44 h-[30rem] w-[80vw] -ml-24">
             <WelcomeLetters />
           </div>
 
-          <div className="mx-10">
+          <div className="mx-2">
             <p className="text-[18px] font-extrabold tracking-tight text-black">
               We’re the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.

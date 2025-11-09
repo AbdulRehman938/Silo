@@ -16,7 +16,7 @@ const Terms = () => {
         </div>
 
         {/* Content Sections */}
-        <div className="space-y-8 sm:space-y-10 md:space-y-12">
+        <div className="space-y-8 sm:space-y-10 md:space-y-12 mb-20 md:mb-0">
           {/* Section 1 */}
           <section>
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">

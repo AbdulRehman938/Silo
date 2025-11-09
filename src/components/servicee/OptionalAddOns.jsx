@@ -4,7 +4,7 @@ import { IoIosSend } from "react-icons/io";
 const OptionalAddOns = () => {
   return (
     <section className="w-full bg-white text-black pb-16">
-  <div className="max-w-[90vw] mx-auto px-6">
+  <div className="max-w-[90vw] mx-auto px-0 md:px-6">
         {/* Three column layout on md+, stacked on mobile */}
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border--2 border-black">
           {/* Column 1 */}
@@ -131,7 +131,7 @@ const OptionalAddOns = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-12">
+        <div className="mt-12 ml-5 md:ml-0">
           <a
             href="#"
             className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-8 py-3 text-xs font-semibold uppercase tracking-wide text-brand relative overflow-hidden group"

@@ -10,11 +10,90 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
         </h2>
       )}
 
-      {/* 3 Column Layout */}
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8'>
+      {/* Mobile Layout: Image followed by stats for each */}
+      <div className='md:hidden flex flex-col gap-6'>
+        {/* Column 1 Stats */}
+        <div className='bg-white border-2 border-black p-8 flex flex-col justify-between min-h-[400px]'>
+          <h3 className='text-lg font-bold text-black'>
+            {column1?.heading || 'Short stats heading goes here'}
+          </h3>
+          <div className='text-right'>
+            <div className='text-6xl font-bold text-black mb-4'>
+              {column1?.value || '30%'}
+            </div>
+            <div className='w-full h-[2px] bg-black mb-4'></div>
+            <p className='text-sm text-gray-700 leading-relaxed'>
+              {column1?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
+            </p>
+          </div>
+        </div>
+
+        {/* Column 2: Image then Stats */}
+        <div className='w-full aspect-[4/3] bg-gray-200 overflow-hidden'>
+          {column2?.image?.src ? (
+            <img 
+              src={column2.image.src} 
+              alt={column2.image.alt || 'Stats image'} 
+              className='w-full h-full object-cover'
+            />
+          ) : (
+            <div className='w-full h-full flex items-center justify-center bg-gray-300'>
+              <FaImage className='w-24 h-24 text-gray-400' />
+            </div>
+          )}
+        </div>
+        
+        <div className='bg-white border-2 border-black p-8 flex flex-col justify-between'>
+          <h3 className='text-lg font-bold text-black mb-4'>
+            {column2?.stat?.heading || 'Short stats heading goes here'}
+          </h3>
+          <div className='text-right'>
+            <div className='text-6xl font-bold text-black mb-4'>
+              {column2?.stat?.value || '30%'}
+            </div>
+            <div className='w-full h-[2px] bg-black mb-4'></div>
+            <p className='text-sm text-gray-700 leading-relaxed'>
+              {column2?.stat?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
+            </p>
+          </div>
+        </div>
+
+        {/* Column 3: Image then Stats */}
+        <div className='w-full aspect-[4/3] bg-gray-200 overflow-hidden'>
+          {column3?.image?.src ? (
+            <img 
+              src={column3.image.src} 
+              alt={column3.image.alt || 'Stats image'} 
+              className='w-full h-full object-cover'
+            />
+          ) : (
+            <div className='w-full h-full flex items-center justify-center bg-gray-300'>
+              <FaImage className='w-24 h-24 text-gray-400' />
+            </div>
+          )}
+        </div>
+        
+        <div className='bg-white border-2 border-black p-8 flex flex-col justify-between'>
+          <h3 className='text-lg font-bold text-black mb-4'>
+            {column3?.stat?.heading || 'Short stats heading goes here'}
+          </h3>
+          <div className='text-right'>
+            <div className='text-6xl font-bold text-black mb-4'>
+              {column3?.stat?.value || '30%'}
+            </div>
+            <div className='w-full h-[2px] bg-black mb-4'></div>
+            <p className='text-sm text-gray-700 leading-relaxed'>
+              {column3?.stat?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Layout: 3 Column Grid (unchanged) */}
+      <div className='hidden md:grid grid-cols-3 gap-6 md:gap-8'>
         
         {/* Column 1: Single tall card */}
-        <div className='bg-white border-2 border-black p-8 md:p-10 flex flex-col justify-between min-h-[500px]'>
+        <div className='bg-white border-2 border-black p-8 md:p-10 flex flex-col justify-between md:min-h-[500px]'>
           <h3 className='text-lg md:text-xl font-bold text-black'>
             {column1?.heading || 'Short stats heading goes here'}
           </h3>

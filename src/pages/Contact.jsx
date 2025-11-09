@@ -57,7 +57,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen max-w-[95vw] mx-auto bg-white">
       {/* First Section - Want to work with brands that get it? */}
-      <section className="pt-8 sm:pt-12 md:pt-16 lg:pt-20 px-4 sm:px-6 md:px-8 lg:px-16">
+      <section className="pt-8 sm:pt-12 md:pt-16 lg:pt-20 px-0 sm:px-6 md:px-8 lg:px-16">
         <div className="max-w-full mx-auto min-h-screen">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             {/* Left Content */}
@@ -235,7 +235,7 @@ const Contact = () => {
       </section>
 
       {/* Second Section - Brand looking to hire creators? */}
-      <section className="pb-8 sm:pb-12 md:pb-12 lg:pb-16 px-4 sm:px-6 md:px-8 lg:px-16">
+      <section className="pb-8 sm:pb-12 md:pb-12 lg:pb-16 mt-8 md:mt-0 px-0 sm:px-6 md:px-8 lg:px-16">
         <div className="max-w-full mx-auto">
           <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-0 lg:items-stretch">
             {/* Left Content with Border */}

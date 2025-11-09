@@ -63,8 +63,8 @@ const Hero = () => {
         {/* Video (targeting the same video but sized for mobile) */}
         <div className="mb-4">
           <VideoPlayer
-            containerClassName="w-full h-[32rem]"
-            videoClassName="w-full h-full object-contain"
+            containerClassName="w-full h-auto"
+            videoClassName="w-full h-auto object-contain"
           />
         </div>
 

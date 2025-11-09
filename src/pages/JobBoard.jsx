@@ -13,7 +13,7 @@ function JobCard({ job }) {
 
   return (
     <div
-      className="flex flex-col w-full max-w-[28vw] cursor-pointer transition-all duration-300 group"
+      className="flex flex-col w-full md:max-w-[28vw] cursor-pointer transition-all duration-300 group"
       onClick={handleCardClick}
       role="button"
       tabIndex={0}
@@ -66,9 +66,9 @@ function JobCard({ job }) {
 
 export default function JobBoard() {
   return (
-    <div className="w-full bg-white mt-20 mb-20">
+    <div className="w-full bg-white md:mt-20 mb-20">
       {/* Container with 95vw max-width */}
-      <div className="max-w-[90vw] mx-auto px-3 sm:px-4 lg:px-6 py-10 lg:py-14">
+      <div className="max-w-[90vw] mx-auto px-0 sm:px-0 lg:px-6 py-10 lg:py-14 mb-20 md:mb-0">
         {/* Hero Section - Adjusted for 95vw */}
         <div className="mb-12 lg:mb-16">
           <div className="w-full lg:w-1/2">

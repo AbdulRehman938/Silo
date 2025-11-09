@@ -156,7 +156,7 @@ export default function Header() {
                 <NavLink to="/" onClick={close} className={({ isActive }) => `text-xl font-extrabold tracking-tight transition ${isActive ? 'text-2xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
                   The Silo
                 </NavLink>
-                <NavLink to="/portfolio" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
+                <NavLink to="/about" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
                   Portfolio
                 </NavLink>
                 <NavLink to="/services" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>

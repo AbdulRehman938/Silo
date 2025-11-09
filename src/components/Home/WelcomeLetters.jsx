@@ -64,12 +64,17 @@ export const WelcomeLetters = () => {
     const startY = -(viewportHeight + containerTop + 200);
 
     // Use the parent div as trigger instead of the component itself
-    const triggerElement = document.getElementById('welcome-parent-div') || containerRef.current;
+    // Check if mobile view
+    const isMobile = window.innerWidth < 768;
+    const triggerElement = isMobile 
+      ? document.getElementById('welcome-parent-div-mobile')
+      : document.getElementById('welcome-parent-div');
+    const startPosition = isMobile ? 'top bottom' : 'top 80%';
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: triggerElement,
-        start: 'top 80%',
+        trigger: triggerElement || containerRef.current,
+        start: startPosition,
         once: true,
         id: 'welcome-letters',
       },

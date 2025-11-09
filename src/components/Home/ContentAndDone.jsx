@@ -4,7 +4,7 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export default function ContentAndDone() {
   return (
-    <div className="mx-auto max-w-[90vw] px-3 md:px-6">
+    <div className="mx-auto max-w-[90vw] px-0 md:px-6">
       {/* Desktop view (hidden on mobile) */}
       <div className="hidden md:block overflow-hidden">
         <div className="flex justify-center relative items-center w-[95vw] mx-auto">
@@ -82,7 +82,7 @@ export default function ContentAndDone() {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
 
-          <div className="space-y-20">
+          <div className="space-y-20 w-full">
             {/* First project */}
             <div className="hidden lg:flex items-center justify-around space-x-20 border-y-[0.1rem] py-16 border-y-gray-800 group relative">
               <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
@@ -456,7 +456,7 @@ export default function ContentAndDone() {
           </div>
         </div>
 
-        <div className="w-full h-1 bg-black my-12"></div>
+        <div className="w-full h-[2px] bg-black my-12"></div>
 
         {/* Mobile Done Section */}
         <div id="done-mobile" className="w-full">

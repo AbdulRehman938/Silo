@@ -48,7 +48,7 @@ const TitleWithDescription = ({ title, description }) => {
         </div>
 
         {/* Description - Bottom Right */}
-        <div className="absolute bottom-0 right-0 w-full md:w-[50%] flex flex-col gap-4 mt-8 md:mt-0">
+        <div className="absolute -bottom-12 md:bottom-0 right-0 w-full md:w-[50%] flex flex-col gap-4 md:mt-0">
           {Array.isArray(description) ? (
             description.map((para, index) => (
               <p

@@ -78,7 +78,7 @@ export default function Ramblings() {
 
   return (
     <div className="min-h-screen mt-10">
-      <div className="mx-auto max-w-[90vw] px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-[90vw] px-0 md:px-6 lg:px-8 md:py-12 mb-20">
         {/* Header Section */}
         <div className="mb-12">
           <h1 className="text-4xl lg:text-5xl font-bold text-black mb-4">
@@ -92,7 +92,7 @@ export default function Ramblings() {
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Sidebar */}
           <div className="lg:w-48 flex-shrink-0">
-            <div className="p-4">
+            <div className="sticky top-20 lg:top-24 p-4 bg-white z-40 shadow-md lg:shadow-none">
               <h3 className="text-lg font-bold text-black mb-6">
                 Blog categories
               </h3>
@@ -131,7 +131,7 @@ export default function Ramblings() {
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
-                    <div className="p-8">
+                    <div className="md:p-8 py-8 px-0">
                       <div className="flex items-center gap-3 mb-4">
                         <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1 rounded">
                           {filteredPosts[0].category}
@@ -179,7 +179,7 @@ export default function Ramblings() {
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                           />
                         </div>
-                        <div className="p-6">
+                        <div className="md:p-6 py-6 px-0">
                           <div className="flex items-center gap-3 mb-3">
                             <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1 rounded">
                               {post.category}
@@ -227,7 +227,7 @@ export default function Ramblings() {
         </div>
 
         {/* Newsletter Signup Section */}
-        <div className="mt-40">
+        <div className="md:mt-40 mt-10">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 md:gap-12 lg:gap-16">
             {/* Left Content */}
             <div className="lg:flex-1 lg:max-w-lg">
@@ -242,7 +242,7 @@ export default function Ramblings() {
 
             {/* Right Form */}
             <div className="lg:flex-shrink-0 max-w-xl w-full">
-              <div className="flex gap-3">
+              <div className="md:flex md:gap-3 flex flex-col gap-4">
                 <input
                   type="email"
                   placeholder="Enter your email"
