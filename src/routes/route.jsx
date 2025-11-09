@@ -11,6 +11,8 @@ import About from '../pages/About.jsx'
 import Contact from '../pages/Contact.jsx'
 import Contact2 from '../pages/Contact2.jsx'
 import Terms from '../pages/Terms.jsx'
+import Privacy from '../pages/Privacy.jsx'
+import Cookies from '../pages/Cookies.jsx'
 import NotFound from '../pages/NotFound.jsx'
 import CareerIndex from '../pages/CareerIndex.jsx'
 import JobDetail from '../pages/JobDetail.jsx'
@@ -37,6 +39,8 @@ function RoutesTree() {
 				<Route path="contact" element={<Contact />} />
 						<Route path="contact2" element={<Contact2 />} />
 						<Route path="terms" element={<Terms />} />
+						<Route path="privacy-policy" element={<Privacy />} />
+						<Route path="cookies" element={<Cookies />} />
 									<Route path="careers" element={<CareerIndex />} />
 									<Route path="job/:id" element={<JobDetail />} />
 				<Route path="jobs/:jobId" element={<JobBoardDetail />} />
