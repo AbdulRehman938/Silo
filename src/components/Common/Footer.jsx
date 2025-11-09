@@ -78,9 +78,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6 pt-6">
           <p className="text-base text-black">© 2025 The Silo Creative Limited. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-6 text-base">
-            <a href="#" className="hover:underline">Privacy Policy</a>
-            <Link to="/terms" className="hover:underline">Terms of Service</Link>
-            <a href="#" className="hover:underline">Cookies Settings</a>
+            <a href="#" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer">Privacy Policy</a>
+            <Link to="/terms" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer">Terms of Service</Link>
+            <a href="#" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer">Cookies Settings</a>
           </div>
         </div>
       </div>

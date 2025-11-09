@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { jobsData } from '../data/jobsData.js';
+import { TiTick } from 'react-icons/ti';
 
 const JobBoardDetail = () => {
   const { jobId } = useParams();
@@ -29,7 +30,7 @@ const JobBoardDetail = () => {
   return (
     <div className="w-full bg-white min-h-screen">
       {/* Main container matching the exact design */}
-      <div className="max-w-[90%] md:max-w-[900px] lg:max-w-[1000px] xl:max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+      <div className="max-w-[90vw] mx-auto py-8 sm:py-12 lg:py-16">
         
         {/* Header Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 mb-16">
@@ -37,7 +38,7 @@ const JobBoardDetail = () => {
           {/* Left Content */}
           <div className="flex flex-col">
             {/* Category Badge */}
-            <div className="inline-flex items-center bg-red-50 text-[#FF322E] px-3 py-1.5 rounded-md text-sm font-medium mb-6 w-fit">
+            <div className="inline-flex items-center bg-[#FFDBDB] text-[#000] px-3 py-1.5 text-sm font-medium mb-6 w-fit">
               {job.category}
             </div>
             
@@ -77,7 +78,7 @@ const JobBoardDetail = () => {
                 </svg>
                 <a 
                   href={`mailto:${job.contact.email}`}
-                  className="text-gray-700 hover:text-[#FF322E] transition-colors text-base"
+                  className="text-black hover:text-[#FF322E] transition-colors text-base"
                 >
                   {job.contact.email}
                 </a>
@@ -90,7 +91,7 @@ const JobBoardDetail = () => {
             <img
               src={job.images.primary}
               alt={`${job.title} main image`}
-              className="w-full h-[300px] md:h-[350px] lg:h-[400px] object-cover rounded-2xl"
+              className="w-full h-[300px] md:h-[350px] lg:h-[400px] object-cover"
             />
           </div>
         </div>
@@ -103,7 +104,7 @@ const JobBoardDetail = () => {
             <img
               src={job.images.secondary}
               alt={`${job.title} secondary image`}
-              className="w-full h-[280px] md:h-[320px] lg:h-[360px] object-cover rounded-xl"
+              className="w-full h-[280px] md:h-[320px] lg:h-[360px] object-cover"
             />
           </div>
           
@@ -120,11 +121,11 @@ const JobBoardDetail = () => {
         </div>
         
         {/* Requirements Section */}
-        <div className="border-t border-gray-200 pt-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 relative">
+        <div className="pt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 relative border-t-2 border-t-black pt-10">
             
             {/* Vertical divider line for desktop */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 transform -translate-x-0.5"></div>
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black transform -translate-x-0.5"></div>
             
             {/* They're looking for */}
             <div className="lg:pr-16">
@@ -135,7 +136,7 @@ const JobBoardDetail = () => {
               <ul className="space-y-6">
                 {job.requirements.lookingFor.map((requirement, index) => (
                   <li key={index} className="flex items-start gap-4">
-                    <span className="text-green-500 text-lg mt-0.5">✓</span>
+                    <span className="text-black text-lg mt-0.5"><TiTick /></span>
                     <span className="text-gray-700 text-base leading-relaxed">
                       {requirement}
                     </span>
@@ -153,7 +154,7 @@ const JobBoardDetail = () => {
               <ul className="space-y-6">
                 {job.requirements.notLookingFor.map((requirement, index) => (
                   <li key={index} className="flex items-start gap-4">
-                    <span className="text-red-500 text-lg mt-0.5">✗</span>
+                    <span className="text-black font-black text-lg mt-0.5">✗</span>
                     <span className="text-gray-700 text-base leading-relaxed">
                       {requirement}
                     </span>
@@ -165,7 +166,7 @@ const JobBoardDetail = () => {
         </div>
         
         {/* Newsletter Signup Section */}
-        <div className="bg-gray-50 rounded-2xl p-8 md:p-12 lg:p-16 mt-20">
+        <div className="mt-40">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 md:gap-12 lg:gap-16">
             
             {/* Left Content */}
@@ -174,27 +175,27 @@ const JobBoardDetail = () => {
                 Get these straight to your inbox
               </h2>
               
-              <p className="text-gray-700 text-base leading-relaxed">
+              <p className="text-black text-base leading-relaxed">
                 We add UGC jobs weekly, but our creator roster gets first dibs. Sign up to get briefs before they hit the board.
               </p>
             </div>
             
             {/* Right Form */}
-            <div className="lg:flex-shrink-0 lg:max-w-sm w-full">
-              <div className="flex flex-col gap-3">
+            <div className="lg:flex-shrink-0 max-w-xl w-full">
+              <div className="flex gap-3">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF322E] focus:border-transparent text-base w-full"
+                  className="px-4 py-3 border border-black  focus:outline-none focus:ring-2 focus:ring-[#FF322E] focus:border-transparent text-base w-full"
                 />
-                <button className="bg-[#FF322E] text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-600 transition-colors text-base">
+                <button className="bg-[#FF322E] whitespace-nowrap text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors text-base">
                   Send me work
                 </button>
               </div>
               
-              <p className="text-gray-500 text-sm mt-3 leading-relaxed">
+              <p className="text-black text-sm mt-3 leading-relaxed">
                 By clicking Sign Up you're confirming that you agree with our{' '}
-                <a href="#" className="text-gray-700 underline hover:text-[#FF322E] transition-colors">
+                <a href="#" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer">
                   Terms and Conditions
                 </a>
               </p>
