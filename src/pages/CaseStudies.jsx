@@ -54,7 +54,7 @@ const CaseStudies = () => {
               {/* Buttons - Zoom & Small Laptop Optimized */}
               <div className="flex flex-row gap-3 sm:gap-4 items-start w-full sm:w-auto lg:mx-auto md:mx-auto xl:mx-0">
                 <a
-                  href="#"
+                  href="/case-study-post"
                   className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
                 >
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -66,7 +66,7 @@ const CaseStudies = () => {
                 </a>
 
                 <a
-                  href="#"
+                  href="/case-study-post"
                   className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
                 >
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -142,7 +142,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="#"
+                href="/case-study-post"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -190,7 +190,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="#"
+                href="/case-study-post"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -238,7 +238,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="#"
+                href="/case-study-post"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -286,7 +286,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="#"
+                href="/case-study-post"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -337,7 +337,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="#"
+                href="/case-study-post"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -388,7 +388,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="#"
+                href="/case-study-post"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -438,7 +438,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="#"
+                href="/case-study-post"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -486,7 +486,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="#"
+                href="/case-study-post"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -534,7 +534,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="#"
+                href="/case-study-post"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -582,7 +582,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="#"
+                href="/case-study-post"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -633,7 +633,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="#"
+                href="/case-study-post"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -684,7 +684,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="#"
+                href="/case-study-post"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -705,3 +705,4 @@ const CaseStudies = () => {
 };
 
 export default CaseStudies;
+

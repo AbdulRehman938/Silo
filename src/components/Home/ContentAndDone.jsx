@@ -119,7 +119,7 @@ export default function ContentAndDone() {
                   </span>
                 </div>
                 <a
-                  href="#"
+                  href="/case-study-post"
                   className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                 >
                   <span>View Project</span>
@@ -169,7 +169,7 @@ export default function ContentAndDone() {
                   </span>
                 </div>
                 <a
-                  href="#"
+                  href="/case-study-post"
                   className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                 >
                   <span>View Project</span>
@@ -217,7 +217,7 @@ export default function ContentAndDone() {
                   </span>
                 </div>
                 <a
-                  href="#"
+                  href="/case-study-post"
                   className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                 >
                   <span>View Project</span>
@@ -265,7 +265,7 @@ export default function ContentAndDone() {
                   </span>
                 </div>
                 <a
-                  href="#"
+                  href="/case-study-post"
                   className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                 >
                   <span>View Project</span>
@@ -316,7 +316,7 @@ export default function ContentAndDone() {
                   </span>
                 </div>
                 <a
-                  href="#"
+                  href="/case-study-post"
                   className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                 >
                   <span>View Project</span>
@@ -367,7 +367,7 @@ export default function ContentAndDone() {
                   </span>
                 </div>
                 <a
-                  href="#"
+                  href="/case-study-post"
                   className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                 >
                   <span>View Project</span>
@@ -384,7 +384,7 @@ export default function ContentAndDone() {
 
           <div className="flex justify-center">
             <a
-              href="#"
+              href="/case-study-post"
               className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
             >
               <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -482,7 +482,7 @@ export default function ContentAndDone() {
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">UGC</span>
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">TikTok</span>
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 font-dm font-bold text-lg text-[#FF322E]">
+                <a href="/case-study-post" className="inline-flex items-center gap-2 font-dm font-bold text-lg text-[#FF322E]">
                   <span>View Project</span>
                   <MdOutlineKeyboardArrowRight className="text-xl" />
                 </a>
@@ -503,7 +503,7 @@ export default function ContentAndDone() {
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">Motion Design</span>
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">Strategy</span>
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 font-dm font-bold text-lg text-[#FF322E]">
+                <a href="/case-study-post" className="inline-flex items-center gap-2 font-dm font-bold text-lg text-[#FF322E]">
                   <span>View Project</span>
                   <MdOutlineKeyboardArrowRight className="text-xl" />
                 </a>
@@ -524,7 +524,7 @@ export default function ContentAndDone() {
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">Design</span>
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">B2B</span>
                 </div>
-                <a href="#" className="inline-flex items-center gap-2 font-dm font-bold text-lg text-[#FF322E]">
+                <a href="/case-study-post" className="inline-flex items-center gap-2 font-dm font-bold text-lg text-[#FF322E]">
                   <span>View Project</span>
                   <MdOutlineKeyboardArrowRight className="text-xl" />
                 </a>
@@ -533,7 +533,7 @@ export default function ContentAndDone() {
           </div>
 
           <div className="flex justify-center mt-[-5rem]">
-            <a href="#" className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand">
+            <a href="/case-study-post" className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand">
               <span>View all</span>
             </a>
           </div>
@@ -542,3 +542,4 @@ export default function ContentAndDone() {
     </div>
   );
 }
+

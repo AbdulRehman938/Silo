@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 import demoVideo from "../../DemoVideo/Demo-Video.mp4";
-import demoVideo2 from "../../DemoVideo/demo2.mp4";
 import Cards from "./Cards";
 import Interested from "./Interested";
 import OptionalAddOns from "./OptionalAddOns";

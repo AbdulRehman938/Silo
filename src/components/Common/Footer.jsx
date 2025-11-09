@@ -53,11 +53,11 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h4 className="text-lg font-semibold mb-4">Case Studies</h4>
             <ul className="space-y-3">
-              <li><a href="/case-studies" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Case study 1</a></li>
-              <li><a href="/case-studies" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Case study 2</a></li>
-              <li><a href="/case-studies" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Case study 3</a></li>
-              <li><a href="/case-studies" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Case study 4</a></li>
-              <li><a href="/case-studies" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Case study 5</a></li>
+              <li><a href="/case-study-post" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Case study 1</a></li>
+              <li><a href="/case-study-post" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Case study 2</a></li>
+              <li><a href="/case-study-post" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Case study 3</a></li>
+              <li><a href="/case-study-post" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Case study 4</a></li>
+              <li><a href="/case-study-post" className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer" style={{fontFamily: 'DM Sans', fontWeight: 700, lineHeight: '150%'}}>Case study 5</a></li>
             </ul>
           </div>
           {/* Socials */}
@@ -118,11 +118,11 @@ const Footer = () => {
         <div className="flex-1">
           <div className="font-bold mb-1">Support</div>
           <ul className="space-y-1">
-            <li><a href="/case-studies" className="hover:underline text-sm">Case study 1</a></li>
-            <li><a href="/case-studies" className="hover:underline text-sm">Case study 2</a></li>
-            <li><a href="/case-studies" className="hover:underline text-sm">Case study 3</a></li>
-            <li><a href="/case-studies" className="hover:underline text-sm">Case study 4</a></li>
-            <li><a href="/case-studies" className="hover:underline text-sm">Case study 5</a></li>
+            <li><a href="/case-study-post" className="hover:underline text-sm">Case study 1</a></li>
+            <li><a href="/case-study-post" className="hover:underline text-sm">Case study 2</a></li>
+            <li><a href="/case-study-post" className="hover:underline text-sm">Case study 3</a></li>
+            <li><a href="/case-study-post" className="hover:underline text-sm">Case study 4</a></li>
+            <li><a href="/case-study-post" className="hover:underline text-sm">Case study 5</a></li>
           </ul>
         </div>
       </div>

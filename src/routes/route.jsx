@@ -17,6 +17,7 @@ import JobDetail from '../pages/JobDetail.jsx'
 import JobBoardDetail from '../pages/JobBoardDetail.jsx'
 import BlogDetail from '../pages/BlogDetail.jsx'
 import CaseStudies from '../pages/CaseStudies.jsx'
+import PostCaseStudy from '../pages/PostCaseStudy.jsx'
 
 const Home = HomeModule.default || HomeModule.Home || (() => <div>Home</div>)
 
@@ -31,6 +32,7 @@ function RoutesTree() {
 				<Route path="job-board" element={<JobBoard />} />
 				<Route path="ramblings" element={<Ramblings />} />
 				<Route path="case-studies" element={<CaseStudies />} />
+				<Route path="case-study-post" element={<PostCaseStudy />} />
 				<Route path="blog/:id" element={<BlogDetail />} />
 				<Route path="contact" element={<Contact />} />
 						<Route path="contact2" element={<Contact2 />} />
