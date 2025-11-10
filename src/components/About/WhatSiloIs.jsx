@@ -70,7 +70,7 @@ const WhatSiloIs = () => {
         <div className="mt-6 sm:mt-8 md:mt-12 px-2 sm:px-0">
           <div className="w-full h-60 sm:h-60 md:h-72 lg:h-80 xl:h-96 2xl:h-[30rem] overflow-hidden mx-auto max-w-full">
             <img 
-              src="/image.png" 
+              src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717240/image_re2b0o.png" 
               alt="Silo creative process illustration"
               className="w-full h-full object-cover"
               style={{

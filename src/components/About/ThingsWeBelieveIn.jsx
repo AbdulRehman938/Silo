@@ -44,7 +44,7 @@ const ThingsWeBelieveIn = () => {
               }}
             >
               <img 
-                src="/Vector1.png" 
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717293/Vector1_kxamhf.png" 
                 alt="Content should mean something icon"
                 className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16"
               />
@@ -86,7 +86,7 @@ const ThingsWeBelieveIn = () => {
               }}
             >
               <img 
-                src="/Vector2.png" 
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/Vector2_wppsbr.png" 
                 alt="We create work that sticks icon"
                 className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16"
               />
@@ -127,7 +127,7 @@ const ThingsWeBelieveIn = () => {
               }}
             >
               <img 
-                src="/Vector3.png" 
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/Vector3_xw1icu.png" 
                 alt="Bold ideas need solid foundation icon"
                 className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16"
               />

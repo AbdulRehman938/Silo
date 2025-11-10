@@ -44,7 +44,7 @@ const Hero = () => {
       <video
         ref={videoRef}
         className='absolute inset-0 w-full h-full object-cover'
-        src={demoVideo}
+        src="https://res.cloudinary.com/di9tb45rl/video/upload/v1762717692/Demo-video_himxf7.mp4"
         loop
         muted={isMuted}
         autoPlay

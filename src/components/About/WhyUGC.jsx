@@ -19,7 +19,7 @@ const WhyUGC = () => {
           {/* First Column - Zoom & Small Laptop Optimized */}
           <div className="w-full space-y-2 sm:space-y-2  md:space-y-2 px-2 sm:px-0 max-w-md mx-auto lg:max-w-none">
             <img 
-              src="/img1.png" 
+              src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717258/img1_f6eobz.png" 
               alt="People trust people"
               className="w-full h-auto max-h-48 sm:max-h-56 md:max-h-64 lg:max-h-none object-cover"
             />
@@ -52,7 +52,7 @@ const WhyUGC = () => {
           {/* Second Column - Zoom & Small Laptop Optimized */}
           <div className="w-full space-y-2 sm:space-y-2  md:space-y-2 lg:pt-0 xl:pt-8 2xl:pt-16 px-2 sm:px-0 max-w-md mx-auto lg:max-w-none">
             <img 
-              src="/img2.png" 
+              src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717257/img2_nbestt.png" 
               alt="Strategy makes it scale"
               className="w-full h-auto max-h-48 sm:max-h-56 md:max-h-64 lg:max-h-none object-cover"
             />
@@ -86,7 +86,7 @@ const WhyUGC = () => {
           {/* Third Column - Zoom & Small Laptop Optimized */}
           <div className="w-full space-y-2 sm:space-y-2  md:space-y-2 lg:pt-0 xl:pt-16 2xl:pt-32 px-2 sm:px-0 max-w-md mx-auto lg:max-w-none">
             <img 
-              src="/img3.png" 
+              src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717244/img3_dwttap.png" 
               alt="Brands need both"
               className="w-full h-auto max-h-48 sm:max-h-56 md:max-h-64 lg:max-h-none object-cover"
             />

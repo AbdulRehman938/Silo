@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Left: Brand + Newsletter */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-2 mb-6">
-              <img src="/footerlogo.png" alt="Silo logo" className="h-8" />
+              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717230/footerlogo_tllimb.png" alt="Silo logo" className="h-8" />
             </div>
             <p className="text-xl font-medium mb-3">
               Join our newsletter to stay up to date.
@@ -138,7 +138,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="/case-study-post"
+                  href="/case-study/1"
                   className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
@@ -146,12 +146,12 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  Case study 1
+                  E-commerce Platform
                 </a>
               </li>
               <li>
                 <a
-                  href="/case-study-post"
+                  href="/case-study/2"
                   className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
@@ -159,12 +159,12 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  Case study 2
+                  Brand Refresh Campaign
                 </a>
               </li>
               <li>
                 <a
-                  href="/case-study-post"
+                  href="/case-study/3"
                   className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
@@ -172,12 +172,12 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  Case study 3
+                  Mobile App Launch
                 </a>
               </li>
               <li>
                 <a
-                  href="/case-study-post"
+                  href="/case-study/4"
                   className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
@@ -185,12 +185,12 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  Case study 4
+                  Content Marketing
                 </a>
               </li>
               <li>
                 <a
-                  href="/case-study-post"
+                  href="/case-study/5"
                   className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
@@ -198,7 +198,7 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  Case study 5
+                  UGC Creator Campaign
                 </a>
               </li>
             </ul>
@@ -217,7 +217,7 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  <img src="/Youtube.png" alt="Youtube" className="w-4 h-4" />
+                  <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717295/Youtube_dtmefe.png" alt="Youtube" className="w-4 h-4" />
                   Youtube
                 </a>
               </li>
@@ -231,7 +231,7 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  <img src="/X.png" alt="X" className="w-4 h-4" />X
+                  <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/X_loibpj.png" alt="X" className="w-4 h-4" />X
                 </a>
               </li>
               <li>
@@ -245,7 +245,7 @@ const Footer = () => {
                   }}
                 >
                   <img
-                    src="/Instagram.png"
+                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717241/Instagram_ec8sza.png"
                     alt="Instagram"
                     className="w-4 h-4"
                   />
@@ -262,7 +262,7 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  <img src="/Tiktok.png" alt="TikTok" className="w-4 h-4" />
+                  <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717291/Tiktok_ryqcdc.png" alt="TikTok" className="w-4 h-4" />
                   TikTok
                 </a>
               </li>
@@ -276,7 +276,7 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  <img src="/Linkedin.png" alt="LinkedIn" className="w-4 h-4" />
+                  <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717248/Linkedin_joc2nv.png" alt="LinkedIn" className="w-4 h-4" />
                   LinkedIn
                 </a>
               </li>
@@ -317,7 +317,7 @@ const Footer = () => {
         {/* Top: Brand and copyright */}
         <div className="mb-4">
           <div className="font-extrabold text-xl mb-3">
-            <img src="/footerlogo.png" alt="Silo logo" className="h-8" />
+            <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717230/footerlogo_tllimb.png" alt="Silo logo" className="h-8" />
           </div>
           <div className="text-sm font-semibold">
             © 2025 The Silo Creative Limited
@@ -329,23 +329,23 @@ const Footer = () => {
           <div className="flex gap-3 mb-2 mt-4">
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">Youtube</span>
-              <img src="/Youtube.png" alt="Youtube" className="w-4 h-4" />
+              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717295/Youtube_dtmefe.png" alt="Youtube" className="w-4 h-4" />
             </a>
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">twitter</span>
-              <img src="/X.png" alt="X" className="w-4 h-4" />
+              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/X_loibpj.png" alt="X" className="w-4 h-4" />
             </a>
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">Instagram</span>
-              <img src="/Instagram.png" alt="Instagram" className="w-4 h-4" />
+              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717241/Instagram_ec8sza.png" alt="Instagram" className="w-4 h-4" />
             </a>
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">TikTok</span>
-              <img src="/Tiktok.png" alt="TikTok" className="w-4 h-4" />
+              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717291/Tiktok_ryqcdc.png" alt="TikTok" className="w-4 h-4" />
             </a>
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">LinkedIn</span>
-              <img src="/Linkedin.png" alt="LinkedIn" className="w-4 h-4" />
+              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717248/Linkedin_joc2nv.png" alt="LinkedIn" className="w-4 h-4" />
             </a>
           </div>
         </div>
@@ -390,28 +390,28 @@ const Footer = () => {
             <div className="font-bold mb-1">Case Studies</div>
             <ul className="space-y-1">
               <li>
-                <a href="/case-study-post" className="hover:underline text-sm">
-                  Case study 1
+                <a href="/case-study/1" className="hover:underline text-sm">
+                  E-commerce Platform
                 </a>
               </li>
               <li>
-                <a href="/case-study-post" className="hover:underline text-sm">
-                  Case study 2
+                <a href="/case-study/2" className="hover:underline text-sm">
+                  Brand Refresh Campaign
                 </a>
               </li>
               <li>
-                <a href="/case-study-post" className="hover:underline text-sm">
-                  Case study 3
+                <a href="/case-study/3" className="hover:underline text-sm">
+                  Mobile App Launch
                 </a>
               </li>
               <li>
-                <a href="/case-study-post" className="hover:underline text-sm">
-                  Case study 4
+                <a href="/case-study/4" className="hover:underline text-sm">
+                  Content Marketing
                 </a>
               </li>
               <li>
-                <a href="/case-study-post" className="hover:underline text-sm">
-                  Case study 5
+                <a href="/case-study/5" className="hover:underline text-sm">
+                  UGC Creator Campaign
                 </a>
               </li>
             </ul>

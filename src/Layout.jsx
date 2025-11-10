@@ -8,7 +8,7 @@ const Footer = FooterModule.default || FooterModule.Footer || (() => <div>Footer
 
 export default function Layout() {
   const location = useLocation()
-  const isCaseStudyPost = location.pathname === '/case-study-post'
+  const isCaseStudyPost = location.pathname.startsWith('/case-study/')
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">

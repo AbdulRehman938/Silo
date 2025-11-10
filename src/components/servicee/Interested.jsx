@@ -11,7 +11,7 @@ const Interested = () => {
           <div className="md:pr-8 md:border-r-2 md:border-black py-10">
             <div className="bg-gray-100 w-full h-96 mb-6 flex overflow-hidden items-start justify-center text-gray-400">
               <img
-                src="/first.png"
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717232/first_dyyzet.png"
                 alt="first"
                 className="object-cover object-top w-full h-full"
               />
@@ -52,7 +52,7 @@ const Interested = () => {
           <div className="md:px-8 md:border-r-2 md:border-black py-10">
             <div className="bg-gray-100 w-full h-96 mb-6 flex items-center justify-center text-gray-400">
               <img
-                src="/second.png"
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717288/second_wt2ss3.png"
                 alt="second"
                 className="object-cover object-xcenter w-full h-full"
               />
@@ -94,7 +94,7 @@ const Interested = () => {
             <div className="w-full md:w-[85%] lg:w-full">
               <div className="bg-gray-100 w-full h-96 mb-6 flex items-center justify-center text-gray-400">
                 <img
-                  src="/third.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717293/third_gwfnbk.png"
                   alt="third"
                   className="object-cover object-xcenter w-full h-full"
                 />

@@ -43,7 +43,7 @@ export default function Header() {
       <div className="mx-0 lg:mx-5 py-3 px-3 md:px-6 flex justify-between items-center decoration-black ">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center" aria-label="Home">
-          <img src="/hero.svg" alt="Silo" className="h-10 header2 w-auto md:h-12" />
+          <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg" alt="Silo" className="h-10 header2 w-auto md:h-12" />
         </Link>
 
         {/* Right: CTA */}
@@ -143,7 +143,7 @@ export default function Header() {
           >
             <div className="flex flex-col h-full">
               <div className="px-6 py-5 flex items-center justify-between border-b">
-                <img src="/hero.svg" alt="Silo" className="h-8 w-auto" />
+                <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg" alt="Silo" className="h-8 w-auto" />
                 <button onClick={close} aria-label="Close menu" className="p-2 hover:bg-gray-100">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18 6L6 18" stroke="#111827" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

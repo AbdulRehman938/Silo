@@ -10,7 +10,7 @@ export default function Ramblings() {
   const blogPosts = [
     {
       id: 1,
-      image: "/rambling1.png",
+      image: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/rambling1_wotzmr.png",
       category: "UGC",
       readTime: "5 min read",
       title: "How to brief a UGC creator",
@@ -20,7 +20,7 @@ export default function Ramblings() {
     },
     {
       id: 2,
-      image: "/rambling2.png",
+      image: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717283/rambling2_dhai4t.png",
       category: "Animation",
       readTime: "5 min read",
       title: "Animation checklist for social media",
@@ -30,7 +30,7 @@ export default function Ramblings() {
     },
     {
       id: 3,
-      image: "/rambling3.png",
+      image: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717283/rambling3_d95vxk.png",
       category: "Strategy",
       readTime: "5 min read",
       title: 'The Death of "Posting to Post"',
@@ -40,7 +40,7 @@ export default function Ramblings() {
     },
     {
       id: 4,
-      image: "/rambling4.png",
+      image: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717290/rambling4_buowhf.png",
       category: "Branding",
       readTime: "5 min read",
       title: "5 Things Every Brand Brief Should Include (But Rarely Does)",
@@ -50,7 +50,7 @@ export default function Ramblings() {
     },
     {
       id: 5,
-      image: "/rambling6.png",
+      image: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/rambling6_o0p8nd.png",
       category: "Creators",
       readTime: "5 min read",
       title: "Meet the Creators: Stories from Our Network",
@@ -242,7 +242,7 @@ export default function Ramblings() {
 
             {/* Right Form */}
             <div className="lg:flex-shrink-0 max-w-xl w-full">
-              <div className="md:flex md:gap-3 flex flex-col gap-4">
+              <div className="md:flex md:gap-3 flex  gap-4">
                 <input
                   type="email"
                   placeholder="Enter your email"

@@ -19,7 +19,7 @@ export default function ContentAndDone() {
           <article className="w-full flex flex-col gap-8 mt-0 pt-0 md:gap-6 ">
             <div className="overflow-hidden rounded-md w-auto h-[20rem] md:h-[320px] lg:h-[30rem] lg:mt-20">
               <img
-                src="/first.png"
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717232/first_dyyzet.png"
                 alt="Social Strategy & Management"
                 className="block h-full w-full object-fill"
               />
@@ -37,7 +37,7 @@ export default function ContentAndDone() {
           <article className="w-full flex flex-col gap-8 md:gap-6">
             <div className="overflow-hidden rounded-md w-auto h-[20rem] md:h-[320px] lg:h-[20rem] lg:mt-40">
               <img
-                src="/second.png"
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717288/second_wt2ss3.png"
                 alt="UGC Creator Network"
                 className="block h-full w-full object-cover"
               />
@@ -56,7 +56,7 @@ export default function ContentAndDone() {
             <div className="w-full md:w-2/3 lg:w-auto flex flex-col gap-8 md:gap-6">
               <div className="overflow-hidden rounded-md w-auto h-[20rem] md:h-[320px] lg:h-[25rem] lg:mt-60">
                 <img
-                  src="/third.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717293/third_gwfnbk.png"
                   alt="Design + Motion"
                   className="block h-full w-full object-cover"
                 />
@@ -87,7 +87,7 @@ export default function ContentAndDone() {
             <div className="hidden lg:flex items-center justify-around space-x-20 border-y-[0.1rem] py-16 border-y-gray-800 group relative">
               <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
                 <img
-                  src="/Smoothie.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
                   alt="smoothie"
                   className="w-full h-full object-cover"
                 />
@@ -95,7 +95,7 @@ export default function ContentAndDone() {
               {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
               <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
                 <img
-                  src="/smoothie-hover.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
                   alt="smoothie"
                   className="w-full h-full object-cover"
                 />
@@ -136,14 +136,14 @@ export default function ContentAndDone() {
             <div className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 border-y-2 py-12 border-y-gray-800 group relative">
               <div className="w-1/2 h-96 rounded-md relative">
                 <img
-                  src="/Smoothie.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
                   alt="smoothie"
                   className="w-full h-full object-cover"
                 />
                 {/* Hover image placeholder */}
                 <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
                   <img
-                    src="/smoothie-hover.png"
+                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
                     alt="smoothie"
                     className="w-full h-full object-cover"
                   />
@@ -187,7 +187,7 @@ export default function ContentAndDone() {
             <div className="hidden lg:flex items-center justify-around space-x-20 border-b-2 py-16 border-b-gray-800 group relative">
               <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
                 <img
-                  src="/Lumen.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                   alt="smoothie"
                   className="w-full h-full object-cover"
                 />
@@ -195,7 +195,7 @@ export default function ContentAndDone() {
               {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
               <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
                 <img
-                  src="/lumer-hover.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                   alt="smoothie"
                   className="w-full h-full object-cover"
                 />
@@ -234,14 +234,14 @@ export default function ContentAndDone() {
             <div className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 border-b-2 py-12 border-b-gray-800 group relative top-[-5rem]">
               <div className="w-1/2 h-96 rounded-md relative">
                 <img
-                  src="/Lumen.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                   alt="smoothie"
                   className="w-full h-full object-cover"
                 />
                 {/* Hover image placeholder */}
                 <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
                   <img
-                    src="/lumer-hover.png"
+                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                     alt="smoothie"
                     className="w-full h-full object-cover"
                   />
@@ -283,7 +283,7 @@ export default function ContentAndDone() {
             <div className="hidden lg:flex items-center justify-around space-x-20 py-16  group relative">
               <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
                 <img
-                  src="/SMART.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                   alt="smoothie"
                   className="w-full h-full object-cover"
                 />
@@ -291,7 +291,7 @@ export default function ContentAndDone() {
               {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
               <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
                 <img
-                  src="/stats-hover.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
                   alt="smoothie"
                   className="w-full h-full object-cover"
                 />
@@ -333,14 +333,14 @@ export default function ContentAndDone() {
             <div className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 py-12 group relative top-[-10rem]">
               <div className="w-1/2 h-96 rounded-md relative">
                 <img
-                  src="/SMART.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                   alt="smoothie"
                   className="w-full h-full object-cover"
                 />
                 {/* Hover image placeholder */}
                 <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
                   <img
-                    src="/stats-hover.png"
+                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
                     alt="smoothie"
                     className="w-full h-full object-cover"
                   />
@@ -412,7 +412,7 @@ export default function ContentAndDone() {
         <div className="space-y-20">
           <div className="rounded-md overflow-hidden">
             <img
-              src="/first.png"
+              src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717232/first_dyyzet.png"
               alt="Social Strategy"
               className="w-full h-96 object-cover"
             />
@@ -427,7 +427,7 @@ export default function ContentAndDone() {
 
           <div className="rounded-md overflow-hidden">
             <img
-              src="/second.png"
+              src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717288/second_wt2ss3.png"
               alt="UGC Creator Network"
               className="w-full h-48 object-cover"
             />
@@ -442,7 +442,7 @@ export default function ContentAndDone() {
 
           <div className="rounded-md overflow-hidden">
             <img
-              src="/third.png"
+              src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717293/third_gwfnbk.png"
               alt="Design + Motion"
               className="w-full h-60 object-cover"
             />
@@ -470,7 +470,7 @@ export default function ContentAndDone() {
           <div className="space-y-12">
             <div className="border-y-2 py-8 border-y-gray-800">
               <div className="w-full h-64 rounded-md mb-6">
-                <img src="/Smoothie.png" alt="smoothie" className="w-full h-full object-cover" />
+                <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png" alt="smoothie" className="w-full h-full object-cover" />
               </div>
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-black">Smoothie Smash</h3>
@@ -491,7 +491,7 @@ export default function ContentAndDone() {
 
             <div className="border-b-2 relative top-[-2rem] py-8 border-b-gray-800">
               <div className="w-full h-64 rounded-md mb-6">
-                <img src="/Lumen.png" alt="lumin solar" className="w-full h-full object-cover" />
+                <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png" alt="lumin solar" className="w-full h-full object-cover" />
               </div>
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-black">Lumin Solar</h3>
@@ -512,7 +512,7 @@ export default function ContentAndDone() {
 
             <div className="py-8 relative top-[-8rem]">
               <div className="w-full h-64 rounded-md mb-6">
-                <img src="/SMART.png" alt="smart stats" className="w-full h-full object-cover" />
+                <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png" alt="smart stats" className="w-full h-full object-cover" />
               </div>
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-black">Smart Stats</h3>

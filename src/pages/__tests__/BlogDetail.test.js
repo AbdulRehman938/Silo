@@ -59,7 +59,7 @@ const mockBlogPost = {
   author: "Ruby Turbett",
   publishDate: "12 Sept 2024",
   readTime: "5 min read",
-  featuredImage: "/placeholderblog1.png"
+  featuredImage: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717272/placeholderblog1_r8kl8d.png"
 };
 
 // Test functions

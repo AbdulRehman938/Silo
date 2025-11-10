@@ -21,7 +21,7 @@ const MindsInTheSilo = () => {
       name: 'Ruby Turbett',
       title: 'Job title',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
-      imageUrl: '/Carousal1.png'
+      imageUrl: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717229/Carousal1_qyrnxy.png'
     },
     {
       id: 'hailey-hippolyte',
@@ -29,7 +29,7 @@ const MindsInTheSilo = () => {
       name: 'Hailey Hippolyte',
       title: 'Job title',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
-      imageUrl: '/Carousal2.png'
+      imageUrl: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717231/Carousal2_hnaif5.png'
     },
     {
       id: 'will-carter',
@@ -37,7 +37,7 @@ const MindsInTheSilo = () => {
       name: 'Will Carter',
       title: 'Genius and Ego',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
-      imageUrl: '/Carousal4.png'
+      imageUrl: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717231/Carousal4_inzouv.png'
     },
     {
       id: 'join-us',

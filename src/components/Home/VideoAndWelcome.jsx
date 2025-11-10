@@ -19,7 +19,7 @@ export default function VideoAndWelcome() {
       <div className="relative w-full overflow-hidden mt-6 md:mt-10 lg:mt-14">
         <div className="h-96 lg:h-[80vh] md:h-[60vh] relative">
           <img
-            src="/image.png"
+            src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717240/image_re2b0o.png"
             alt="Showcase"
             className="block w-full h-full object-cover select-none"
           />
@@ -59,10 +59,10 @@ export default function VideoAndWelcome() {
       <VideoModal
         isOpen={open}
         onClose={handleClose}
-        src={demoVideo}
+        src="https://res.cloudinary.com/di9tb45rl/video/upload/v1762717692/Demo-video_himxf7.mp4"
         title={"The Silo - Showreel"}
         byline={"The Silo Creative"}
-        poster={"/image.png"}
+        poster={"https://res.cloudinary.com/di9tb45rl/image/upload/v1762717240/image_re2b0o.png"}
       />
 
       <div className="hidden md:block relative mx-auto lg:max-w-[80vw] px-3 mt-10 md:mt-14 lg:mt-20 md:max-w-[95vw] md:px-0">

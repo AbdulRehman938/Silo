@@ -6,17 +6,17 @@ import Section from "./Section";
 import "../../styles/scaling-overrides.css";
 
 const DEFAULT_LOGOS = [
-  { src: "/asics.png", alt: "ASICS" },
-  { src: "/webflow.png", alt: "Webflow" },
+  { src: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717226/asics_vgprpc.png", alt: "ASICS" },
+  { src: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/webflow_r2dwk5.png", alt: "Webflow" },
 ];
 
 export default function Hero() {
   return (
-    <div className="w-full mb-10">
+    <div className="w-full mb-10 mt-10 md:mt-0">
       {/* Full screen hero section */}
       <div className="w-full 2xl:h-[calc(100vh-80px)] xl:h-[calc(100vh-80px)] lg:h-auto md:h-[60vh] h-[50vh] flex flex-col justify-between">
         <SiloHoverBanner
-          svgSrc="/hero.svg"
+          svgSrc="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg"
           intensity={40}
           className="home-hero-text-float flex-shrink-0"
         />

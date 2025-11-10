@@ -4,10 +4,10 @@ export const jobsData = [
     id: '1',
     title: 'Smoothie Smash',
     category: 'Food & Drink',
-    image: '/job1.png',
+    image: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717244/job1_f36aj9.png',
     images: {
-      primary: '/jobdetail1.png',
-      secondary: '/jobdetail2.png'
+      primary: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717262/jobdetail1_tl5zvw.png',
+      secondary: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717248/jobdetail2_sdgacx.png'
     },
     client: {
       name: 'Smoothie Smash',
@@ -17,7 +17,7 @@ export const jobsData = [
       name: 'Ruby Turbett',
       title: 'Position, Silo',
       email: 'rt@thesilcreative.com',
-      avatar: '/Carousal1.png'
+      avatar: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717229/Carousal1_qyrnxy.png'
     },
     requirements: {
       lookingFor: [
@@ -35,10 +35,10 @@ export const jobsData = [
     id: '2',
     title: 'Lumin Solar',
     category: 'Energy',
-    image: '/job2.png',
+    image: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717244/job2_pjxf05.png',
     images: {
-      primary: '/jobdetail1.png',
-      secondary: '/jobdetail2.png'
+      primary: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717262/jobdetail1_tl5zvw.png',
+      secondary: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717248/jobdetail2_sdgacx.png'
     },
     client: {
       name: 'Lumin Solar',
@@ -48,7 +48,7 @@ export const jobsData = [
       name: 'Ruby Turbett',
       title: 'Position, Silo',
       email: 'rt@thesilcreative.com',
-      avatar: '/Carousal1.png'
+      avatar: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717229/Carousal1_qyrnxy.png'
     },
     requirements: {
       lookingFor: [
@@ -66,10 +66,10 @@ export const jobsData = [
     id: '3',
     title: 'Smart Stats',
     category: 'B2B',
-    image: '/job3.png',
+    image: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717245/job3_akytl7.png',
     images: {
-      primary: '/jobdetail1.png',
-      secondary: '/jobdetail2.png'
+      primary: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717262/jobdetail1_tl5zvw.png',
+      secondary: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717248/jobdetail2_sdgacx.png'
     },
     client: {
       name: 'Smart Stats',
@@ -79,7 +79,7 @@ export const jobsData = [
       name: 'Ruby Turbett',
       title: 'Position, Silo',
       email: 'rt@thesilcreative.com',
-      avatar: '/Carousal1.png'
+      avatar: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717229/Carousal1_qyrnxy.png'
     },
     requirements: {
       lookingFor: [
@@ -97,10 +97,10 @@ export const jobsData = [
     id: '4',
     title: 'Supofa',
     category: 'Food & Drink',
-    image: '/job4.png',
+    image: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762769561/job4_y0tfsv.png',
     images: {
-      primary: '/jobdetail1.png',
-      secondary: '/jobdetail2.png'
+      primary: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717262/jobdetail1_tl5zvw.png',
+      secondary: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717248/jobdetail2_sdgacx.png'
     },
     client: {
       name: 'Supofa',
@@ -110,7 +110,7 @@ export const jobsData = [
       name: 'Ruby Turbett',
       title: 'Position, Silo',
       email: 'rt@thesilcreative.com',
-      avatar: '/Carousal1.png'
+      avatar: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717229/Carousal1_qyrnxy.png'
     },
     requirements: {
       lookingFor: [
@@ -128,10 +128,10 @@ export const jobsData = [
     id: '5',
     title: 'Royal Navy',
     category: 'B2B',
-    image: '/job5.png',
+    image: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717248/job5_lviam7.png',
     images: {
-      primary: '/jobdetail1.png',
-      secondary: '/jobdetail2.png'
+      primary: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717262/jobdetail1_tl5zvw.png',
+      secondary: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717248/jobdetail2_sdgacx.png'
     },
     client: {
       name: 'Royal Navy',
@@ -141,7 +141,7 @@ export const jobsData = [
       name: 'Ruby Turbett',
       title: 'Position, Silo',
       email: 'rt@thesilcreative.com',
-      avatar: '/Carousal1.png'
+      avatar: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717229/Carousal1_qyrnxy.png'
     },
     requirements: {
       lookingFor: [

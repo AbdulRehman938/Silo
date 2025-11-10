@@ -100,7 +100,7 @@ const Hero = () => {
             {/* Primary Image - Zoom & Small Laptop Optimized */}
             <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:w-auto xl:max-w-[400px] 2xl:max-w-[438px] flex-shrink-0">
               <img
-                src="/About1.png"
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717241/About1_t6qyw0.png"
                 alt="Silo team member showcasing brand identity"
                 className="w-full h-auto object-cover max-h-[300px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[500px] xl:max-h-[600px] 2xl:max-h-none"
                 style={{
@@ -112,7 +112,7 @@ const Hero = () => {
             {/* Secondary Image - Zoom & Small Laptop Optimized */}
             <div className="flex flex-col items-center lg:items-center xl:self-start xl:mt-8 2xl:mt-16 border-white bg-white">
               <img
-                src="/About2.png"
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/About2_gof6gm.png"
                 alt="The Silo brand representation"
                 className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 2xl:w-[328px] h-auto object-cover max-h-[200px] sm:max-h-[250px] md:max-h-[300px] lg:max-h-[350px] lg:block xl:min-h-[200px] 2xl:max-h-none border-white"
               />

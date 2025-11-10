@@ -48,7 +48,7 @@ const Section = () => {
             {/* Right column - empty space for image */}
             <div className="w-full md:w-1/2 bg-gray-50 md:min-h-[280px]">
               <img
-                src="/section.png"
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
                 className="w-full h-full object-cover"
               />
@@ -65,7 +65,7 @@ const Section = () => {
             {/* Top: right image placeholder (appears on top for md view) */}
             <div className="w-full bg-gray-50 h-52 md:h-64 lg:h-72 px-10">
               <img
-                src="/section.png"
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
                 className="w-full h-full object-cover"
               />
@@ -133,7 +133,7 @@ const Section = () => {
             {/* Bottom: image placeholder */}
             <div className="w-full bg-gray-50 h-44 px-5">
               <img
-                src="/section.png"
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
                 className="w-full h-full object-cover"
               />
