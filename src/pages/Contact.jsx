@@ -3,6 +3,7 @@ import { IoIosSend } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import "../styles/scaling-overrides.css"
 
 const Contact = () => {
   // Scroll to top when component mounts
@@ -235,7 +236,7 @@ const Contact = () => {
       </section>
 
       {/* Second Section - Brand looking to hire creators? */}
-      <section className="pb-8 sm:pb-12 md:pb-12 lg:pb-16 mt-8 md:mt-0 px-0 sm:px-6 md:px-8 lg:px-16">
+      <section className="contact pb-8 sm:pb-12 md:pb-12 lg:pb-16 mt-8 md:mt-0 px-0 sm:px-6 md:px-8 lg:px-16">
         <div className="max-w-full mx-auto">
           <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-0 lg:items-stretch">
             {/* Left Content with Border */}

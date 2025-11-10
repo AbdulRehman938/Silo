@@ -32,7 +32,9 @@
 #welcome-parent-div {
   height: 100vh;
 }
-
+.contact {
+  margin-top: 5rem !important;
+}
 }
 
 /* Target 150% Windows scaling (devicePixelRatio ~1.5) */
