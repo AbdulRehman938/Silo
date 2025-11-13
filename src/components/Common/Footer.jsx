@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { IoIosSend, IoMdSend } from "react-icons/io";
 const Footer = () => {
   return (
@@ -53,8 +53,8 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">About us</h4>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#"
+                <NavLink
+                  to="/services"
                   className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
@@ -63,11 +63,11 @@ const Footer = () => {
                   }}
                 >
                   Services
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a
-                  href="/about"
+                <NavLink
+                  to="/about"
                   className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
@@ -76,7 +76,7 @@ const Footer = () => {
                   }}
                 >
                   About the Silo
-                </a>
+                </NavLink>
               </li>
               <li>
                 <a
@@ -118,8 +118,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a
-                  href="/careers"
+                <NavLink
+                  to="/careers"
                   className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
@@ -128,7 +128,33 @@ const Footer = () => {
                   }}
                 >
                   Careers
-                </a>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/job-board"
+                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontWeight: 700,
+                    lineHeight: "150%",
+                  }}
+                >
+                  Job Board
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/ramblings"
+                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontWeight: 700,
+                    lineHeight: "150%",
+                  }}
+                >
+                  Ramblings
+                </NavLink>
               </li>
             </ul>
           </div>
@@ -357,14 +383,14 @@ const Footer = () => {
             <div className="font-bold mb-1">About us</div>
             <ul className="space-y-1">
               <li>
-                <a href="#" className="hover:underline text-sm">
+                <NavLink to="/services" className="hover:underline text-sm">
                   Services
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="/about" className="hover:underline text-sm">
+                <NavLink to="/about" className="hover:underline text-sm">
                   About the Silo
-                </a>
+                </NavLink>
               </li>
               <li>
                 <a href="#" className="hover:underline text-sm">
@@ -382,9 +408,19 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/careers" className="hover:underline text-sm">
+                <NavLink to="/careers" className="hover:underline text-sm">
                   Careers
-                </a>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/job-board" className="hover:underline text-sm">
+                  Job Board
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/ramblings" className="hover:underline text-sm">
+                  Ramblings
+                </NavLink>
               </li>
             </ul>
           </div>
