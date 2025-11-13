@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import Hero from '../components/BlogDetail/Hero';
 import NewsletterSubscription from '../components/BlogDetail/NewsletterSubscription';
+import { LuTriangleRight } from 'react-icons/lu';
 
 export default function BlogDetail() {
   const { id } = useParams();
@@ -64,7 +65,7 @@ export default function BlogDetail() {
       readTime: "5 min read",
       title: "How to brief a UGC creator",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-      author: "Ruby Turbett",
+  author: "Demo Author",
       publishDate: "12 Sept 2024",
       featuredImage: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717272/placeholderblog1_r8kl8d.png",
       content: {
@@ -77,12 +78,12 @@ export default function BlogDetail() {
         },
         contentImage: {
           src: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717274/placeholderblog2_vdiswn.png',
-          alt: 'Image content goes here',
-          caption: 'Image content goes here'
+          alt: 'Placeholder project image showing example visuals',
+          caption: 'Illustrative placeholder image — example project visuals'
         },
         quote: {
           text: 'Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus.',
-          author: 'Author name'
+          author: 'Demo Author'
         },
         conclusion: {
           title: 'Conclusion',
@@ -102,7 +103,7 @@ export default function BlogDetail() {
       readTime: "5 min read",
       title: "Animation checklist for social media",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-      author: "Ruby Turbett",
+  author: "Demo Author",
       publishDate: "12 Sept 2024",
       featuredImage: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717272/placeholderblog1_r8kl8d.png",
       content: {
@@ -115,8 +116,8 @@ export default function BlogDetail() {
         },
         contentImage: {
           src: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717274/placeholderblog2_vdiswn.png',
-          alt: 'Image content goes here',
-          caption: 'Image content goes here'
+          alt: 'Placeholder project image showing example visuals',
+          caption: 'Illustrative placeholder image — example project visuals'
         },
         quote: {
           text: 'Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus.',
@@ -140,7 +141,7 @@ export default function BlogDetail() {
       readTime: "5 min read",
       title: "The Death of \"Posting to Post\"",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-      author: "Ruby Turbett",
+  author: "Demo Author",
       publishDate: "12 Sept 2024",
       featuredImage: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717272/placeholderblog1_r8kl8d.png",
       content: {
@@ -153,8 +154,8 @@ export default function BlogDetail() {
         },
         contentImage: {
           src: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717274/placeholderblog2_vdiswn.png',
-          alt: 'Image content goes here',
-          caption: 'Image content goes here'
+          alt: 'Placeholder project image showing example visuals',
+          caption: 'Illustrative placeholder image — example project visuals'
         },
         quote: {
           text: 'Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus.',
@@ -178,7 +179,7 @@ export default function BlogDetail() {
       readTime: "5 min read",
       title: "5 Things Every Brand Brief Should Include (But Rarely Does)",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-      author: "Ruby Turbett",
+  author: "Demo Author",
       publishDate: "12 Sept 2024",
       featuredImage: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717272/placeholderblog1_r8kl8d.png",
       content: {
@@ -191,8 +192,8 @@ export default function BlogDetail() {
         },
         contentImage: {
           src: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717274/placeholderblog2_vdiswn.png',
-          alt: 'Image content goes here',
-          caption: 'Image content goes here'
+          alt: 'Placeholder project image showing example visuals',
+          caption: 'Illustrative placeholder image — example project visuals'
         },
         quote: {
           text: 'Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus.',
@@ -216,7 +217,7 @@ export default function BlogDetail() {
       readTime: "5 min read",
       title: "Meet the Creators: Stories from Our Network",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
-      author: "Ruby Turbett",
+  author: "Demo Author",
       publishDate: "12 Sept 2024",
       featuredImage: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717272/placeholderblog1_r8kl8d.png",
       content: {
@@ -229,8 +230,8 @@ export default function BlogDetail() {
         },
         contentImage: {
           src: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717274/placeholderblog2_vdiswn.png',
-          alt: 'Image content goes here',
-          caption: 'Image content goes here'
+          alt: 'Placeholder project image showing example visuals',
+          caption: 'Illustrative placeholder image — example project visuals'
         },
         quote: {
           text: 'Ipsum sit mattis nulla quam nulla. Gravida id gravida ac enim mauris id. Non pellentesque congue eget consectetur turpis. Sapien, dictum molestie sem tempor. Diam elit, orci, tincidunt aenean tempus.',
@@ -329,7 +330,7 @@ export default function BlogDetail() {
             </div>
             {blogPost.content.contentImage.caption && (
               <p className="text-sm text-gray-600 mt-2 flex items-center gap-1">
-                <span>▶</span> {blogPost.content.contentImage.caption}
+                <span><LuTriangleRight className="text-black fill-black mx-1 rotate-90" size={16} /></span> {blogPost.content.contentImage.caption}
               </p>
             )}
           </div>
@@ -355,7 +356,7 @@ export default function BlogDetail() {
             </blockquote>
             {blogPost.content.quote.author && (
               <p className="text-sm text-gray-600 flex items-center gap-1">
-                <span>▶</span> {blogPost.content.quote.author}
+                <span><LuTriangleRight className="text-black fill-black mx-1 rotate-90" size={16} /></span> {blogPost.content.quote.author}
               </p>
             )}
           </div>

@@ -25,7 +25,7 @@ const Hero = () => {
         className="min-h-screen flex items-center w-full justify-center px-3 sm:px-2 md:px-6 lg:px-8 pb-6 md:pb-12 lg:pb-16 overflow-hidden mt-10 sm:mt-0"
         aria-label="About Silo - Company introduction"
       >
-        <div className="flex flex-col justify-between xl:grid xl:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 max-w-full mx-auto w-full items-centersm:mt-5 xs:mt-10">
+        <div className="flex flex-col justify-between xl:grid xl:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 max-w-full mx-auto w-full items-center sm:mt-5 md:mt-10 xs:mt-10">
           {/* Text Content Area */}
           <div
             className="flex flex-col h-full sm:mt-5 xs:mt-10 justify-between space-y-4 sm:space-y-6 md:space-y-8 order-2 xl:order-1 xl:pr-6 w-full"
@@ -42,7 +42,7 @@ const Hero = () => {
                 letterSpacing: "0%",
               }}
             >
-              We are the <span className="text-red-500">Silo</span>, get to know
+              We are the <br /> <span className="text-red-500">Silo</span>, get to <br /> know
               us.
             </h1>
 

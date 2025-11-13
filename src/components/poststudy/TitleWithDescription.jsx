@@ -40,15 +40,15 @@ const TitleWithDescription = ({ title, description }) => {
   return (
     <div className="w-full max-w-[90vw] mx-auto py-16 md:py-24">
       <div className="relative min-h-[300px] md:min-h-[400px]">
-        {/* Title - Top Left */}
-        <div className="absolute top-0 left-0 w-full md:w-[45%]">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight">
+        {/* Title - Top Left (stack on mobile, absolute at md+) */}
+        <div className="relative w-full md:absolute md:top-0 md:left-0 md:w-[45%]">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight">
             {title || "This job was pretty bloody cool."}
           </h1>
         </div>
 
-        {/* Description - Bottom Right */}
-        <div className="absolute -bottom-12 md:bottom-0 right-0 w-full md:w-[50%] flex flex-col gap-4 md:mt-0">
+  {/* Description - Bottom Right (stack on mobile, absolute at md+) */}
+  <div className="relative mt-6 w-full md:absolute md:-bottom-12 md:right-0 md:w-[50%] flex flex-col gap-4 md:mt-0">
           {Array.isArray(description) ? (
             description.map((para, index) => (
               <p
