@@ -57,10 +57,10 @@ const CaseStudies = () => {
                   href="/case-study-post"
                   className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
                 >
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                    <IoIosSend className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-10 group-hover:rotate-45 group-hover:scale-[140%]" />
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper lg:group-hover:animate-bounce-custom">
+                    <IoIosSend className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out lg:group-hover:opacity-100 lg:group-hover:translate-x-10 lg:group-hover:rotate-45 lg:group-hover:scale-[140%]" />
                   </div>
-                  <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base group-hover:translate-x-40">
+                  <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base lg:group-hover:translate-x-40">
                     Let's chat
                   </span>
                 </a>
@@ -69,10 +69,10 @@ const CaseStudies = () => {
                   href="/case-study-post"
                   className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
                 >
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                    <IoIosSend className="block text-brand w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-12 group-hover:rotate-45 group-hover:scale-[140%]" />
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper lg:group-hover:animate-bounce-custom">
+                    <IoIosSend className="block text-brand w-6 h-6 opacity-0 transition-all duration-300 ease-in-out lg:group-hover:opacity-100 lg:group-hover:translate-x-12 lg:group-hover:rotate-45 lg:group-hover:scale-[140%]" />
                   </div>
-                  <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base group-hover:translate-x-40">
+                  <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base lg:group-hover:translate-x-40">
                     Our services
                   </span>
                 </a>
@@ -81,7 +81,7 @@ const CaseStudies = () => {
           </div>
 
           {/* Visual Content Area - Zoom & Small Laptop Optimized */}
-          <div className="flex flex-col lg:flex-col xl:flex-row lg:mt-10 items-center justify-center xl:justify-end gap-3 sm:gap-4 md:gap-6 order-1 xl:order-2 w-full max-w-sm sm:max-w-md md:max-w-lg xl:max-w-none mx-auto xl:mx-0 md:mt-10">
+          <div className="flex flex-col lg:flex-col xl:flex-row lg:mt-10 items-center justify-center xl:justify-end gap-3 sm:gap-4 md:gap-6 order-1 xl:order-2 w-full max-w-sm sm:max-w-md md:max-w-lg xl:max-w-none mx-auto xl:mx-0 md:mt-10 mt-10">
             {/* Primary Image - Zoom & Small Laptop Optimized */}
             <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:w-auto xl:max-w-[400px] 2xl:max-w-[438px] flex-shrink-0">
               <img
@@ -106,7 +106,7 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      <div id="done" className="w-full min-h-screen py-20">
+      <div id="done" className="w-full min-h-screen pb-20">
         <div className="space-y-20">
           {/* First project */}
           <div className="hidden lg:flex items-center justify-around space-x-20 border-y-[0.1rem] py-16 border-y-gray-800 group relative">
@@ -118,7 +118,7 @@ const CaseStudies = () => {
               />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
+            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
                 alt="smoothie"
@@ -148,7 +148,7 @@ const CaseStudies = () => {
                 <span>View Project</span>
                 <span
                   aria-hidden
-                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out lg:group-hover:translate-x-2"
                 >
                   <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
                 </span>
@@ -156,15 +156,15 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 border-y-2 py-12 border-y-gray-800 group relative">
-            <div className="w-1/2 h-96 rounded-md relative">
+          <div className="block md:flex md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-y-2 pb-12 border-y-gray-800 group relative mt-0">
+            <div className="w-full md:w-1/2 h-96 rounded-md relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
                 alt="smoothie"
                 className="w-full h-full object-cover"
               />
               {/* Hover image placeholder */}
-              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
+              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
                   alt="smoothie"
@@ -173,7 +173,7 @@ const CaseStudies = () => {
               </div>
             </div>
             {/* Placeholder for image */}
-            <div className="w-[80%] flex flex-col justify-center items-start gap-4">
+            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4">
               <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
               <p className="text-xl text-black font-bold">Food & Drink</p>
               <p className="text-lg font-semibold text-black">
@@ -196,7 +196,7 @@ const CaseStudies = () => {
                 <span>View Project</span>
                 <span
                   aria-hidden
-                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out lg:group-hover:translate-x-2"
                 >
                   <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
                 </span>
@@ -205,7 +205,7 @@ const CaseStudies = () => {
           </div>
 
           {/* Second project */}
-          <div className="hidden lg:flex items-center justify-around space-x-20 border-b-2 py-16 border-b-gray-800 group relative">
+          <div className="hidden lg:flex items-center justify-around space-x-20 border-b-2 pb-16 border-b-gray-800 group relative">
             <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
@@ -214,7 +214,7 @@ const CaseStudies = () => {
               />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
+            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                 alt="smoothie"
@@ -244,7 +244,7 @@ const CaseStudies = () => {
                 <span>View Project</span>
                 <span
                   aria-hidden
-                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out lg:group-hover:translate-x-2"
                 >
                   <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
                 </span>
@@ -252,15 +252,15 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 border-b-2 py-12 border-b-gray-800 group relative top-[-5rem]">
-            <div className="w-1/2 h-96 rounded-md relative">
+          <div className="block md:flex md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-b-2 py-12 border-b-gray-800 group relative md:top-[-5rem] mt-0 pt-0">
+            <div className="w-full md:w-1/2 h-96 rounded-md relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
                 className="w-full h-full object-cover"
               />
               {/* Hover image placeholder */}
-              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
+              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                   alt="smoothie"
@@ -269,7 +269,7 @@ const CaseStudies = () => {
               </div>
             </div>
             {/* Placeholder for image */}
-            <div className="w-[80%] flex flex-col justify-center items-start gap-4">
+            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4">
               <h3 className="text-4xl font-bold text-black">Lumin Solar</h3>
               <p className="text-xl text-black font-bold">Energy</p>
               <p className="text-lg font-semibold text-black">
@@ -292,7 +292,7 @@ const CaseStudies = () => {
                 <span>View Project</span>
                 <span
                   aria-hidden
-                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out lg:group-hover:translate-x-2"
                 >
                   <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
                 </span>
@@ -301,7 +301,7 @@ const CaseStudies = () => {
           </div>
 
           {/* Third project */}
-          <div className="hidden lg:flex items-center justify-around space-x-20 py-16  group relative">
+          <div className="hidden lg:flex items-center justify-around space-x-20 pb-16 group relative">
             <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
@@ -310,7 +310,7 @@ const CaseStudies = () => {
               />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
+            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
                 alt="smoothie"
@@ -343,7 +343,7 @@ const CaseStudies = () => {
                 <span>View Project</span>
                 <span
                   aria-hidden
-                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out lg:group-hover:translate-x-2"
                 >
                   <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
                 </span>
@@ -351,15 +351,15 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 py-12 group relative top-[-10rem]">
-            <div className="w-1/2 h-96 rounded-md relative">
+          <div className="block md:flex md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 pb-12 group relative md:top-[-10rem] mt-0">
+            <div className="w-full md:w-1/2 h-96 rounded-md relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"
                 className="w-full h-full object-cover"
               />
               {/* Hover image placeholder */}
-              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
+              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
                   alt="smoothie"
@@ -368,7 +368,7 @@ const CaseStudies = () => {
               </div>
             </div>
             {/* Placeholder for image */}
-            <div className="w-[80%] flex flex-col justify-center items-start gap-4">
+            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4">
               <h3 className="text-4xl font-bold text-black">Smart Stats</h3>
               <p className="text-xl text-black font-bold">SaaS</p>
               <p className="text-lg font-semibold text-black">
@@ -452,8 +452,8 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 border-y-2 py-12 border-y-gray-800 group relative">
-            <div className="w-1/2 h-96 rounded-md relative">
+          <div className="block md:flex md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-y-2 py-12 border-y-gray-800 group relative mt-0">
+            <div className="w-full md:w-1/2 h-96 rounded-md relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
                 alt="smoothie"
@@ -469,7 +469,7 @@ const CaseStudies = () => {
               </div>
             </div>
             {/* Placeholder for image */}
-            <div className="w-[80%] flex flex-col justify-center items-start gap-4">
+            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4">
               <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
               <p className="text-xl text-black font-bold">Food & Drink</p>
               <p className="text-lg font-semibold text-black">
@@ -548,8 +548,8 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 border-b-2 py-12 border-b-gray-800 group relative top-[-5rem]">
-            <div className="w-1/2 h-96 rounded-md relative">
+          <div className="block md:flex md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-b-2 py-12 border-b-gray-800 group relative md:top-[-5rem] mt-0">
+            <div className="w-full md:w-1/2 h-96 rounded-md relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
@@ -565,7 +565,7 @@ const CaseStudies = () => {
               </div>
             </div>
             {/* Placeholder for image */}
-            <div className="w-[80%] flex flex-col justify-center items-start gap-4">
+            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4">
               <h3 className="text-4xl font-bold text-black">Lumin Solar</h3>
               <p className="text-xl text-black font-bold">Energy</p>
               <p className="text-lg font-semibold text-black">
@@ -647,14 +647,14 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 py-12 group relative top-[-10rem]">
-            <div className="w-1/2 h-96 rounded-md relative">
+          <div className="block md:flex md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 pb-12 group relative md:top-[-10rem] mt-0">
+            <div className="w-full md:w-1/2 h-96 rounded-md relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"
                 className="w-full h-full object-cover"
               />
-              {/* Hover image placeholder */}
+              {/* Hover image placeholder */}  
               <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
@@ -664,7 +664,7 @@ const CaseStudies = () => {
               </div>
             </div>
             {/* Placeholder for image */}
-            <div className="w-[80%] flex flex-col justify-center items-start gap-4">
+            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4">
               <h3 className="text-4xl font-bold text-black">Smart Stats</h3>
               <p className="text-xl text-black font-bold">SaaS</p>
               <p className="text-lg font-semibold text-black">
