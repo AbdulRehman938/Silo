@@ -17,7 +17,7 @@ export default function VideoAndWelcome() {
           Animated letters placed BEFORE the content on mobile as requested. */}
 
       <div className="relative w-full overflow-hidden mt-6 md:mt-10 lg:mt-14">
-        <div className="h-96 lg:h-[80vh] md:h-[60vh] relative">
+        <div className="h-80 lg:h-[80vh] md:h-[60vh] relative">
           <img
             src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717240/image_re2b0o.png"
             alt="Showcase"
@@ -116,7 +116,7 @@ export default function VideoAndWelcome() {
         </div>
       </div>
       
-      <div id="welcome-parent-div-mobile" className="md:hidden h-[40rem] flex justify-center items-center gap-10">
+      <div id="welcome-parent-div-mobile" className="md:hidden h-[36rem] flex justify-center items-center gap-10">
         <div className="flex flex-col justify-center items-center gap-10 h-full">
           <div className="pointer-events-none select-none mb-6 mt-10 h-[30rem] w-[80vw] ml-20">
             <WelcomeLetters />
