@@ -116,9 +116,9 @@ export default function VideoAndWelcome() {
         </div>
       </div>
       
-      <div id="welcome-parent-div-mobile" className="md:hidden h-[36rem] flex justify-center items-center gap-10">
+      <div id="welcome-parent-div-mobile" className="md:hidden h-[38rem] flex justify-center items-center gap-10">
         <div className="flex flex-col justify-center items-center gap-10 h-full">
-          <div className="pointer-events-none select-none mb-6 mt-10 h-[30rem] w-[80vw] ml-20">
+          <div className="pointer-events-none select-none mb-6 mt-10 h-[35rem] w-[80vw] ml-20">
             <WelcomeLetters />
           </div>
 
