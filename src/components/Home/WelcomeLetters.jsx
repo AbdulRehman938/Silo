@@ -27,6 +27,7 @@ export const WelcomeLetters = () => {
   if (w <= 385) return { OFFSET_X: 40, OFFSET_Y: 8, SCALE: 0.1 };
     if (w <= 425) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.8 }; // 425px mobile
     if (w <= 428) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.8 }; // 425px mobile
+    if (w <= 440) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.8 }; // 425px mobile
     if (w <= 480) {
       const t = (w - 425) / (480 - 425);
       return {
