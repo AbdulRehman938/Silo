@@ -134,7 +134,9 @@ const Footer = () => {
           </div>
           {/* Right: Case Studies */}
           <div className="md:col-span-2">
-            <h4 className="text-lg font-semibold mb-4">Case Studies</h4>
+            <h4 className="text-lg font-semibold mb-4"> <Link to="/case-studies"  aria-label="Case Studies">
+              Case Studies
+            </Link></h4>
             <ul className="space-y-3">
               <li>
                 <a
@@ -387,7 +389,9 @@ const Footer = () => {
             </ul>
           </div>
           <div className="flex-1">
-            <div className="font-bold mb-1">Case Studies</div>
+            <Link to="/case-studies" className="font-bold mb-1 block hover:underline text-sm" aria-label="Case Studies">
+              Case Studies
+            </Link>
             <ul className="space-y-1">
               <li>
                 <a href="/case-study/1" className="hover:underline text-sm">
