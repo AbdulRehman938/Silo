@@ -226,7 +226,7 @@ const Contact = () => {
             {/* Right Image */}
             <div className="order-1 lg:order-2">
               <img
-                src="/contact2.png"
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717234/contact2_v8cqrr.png"
                 alt="Person relaxing on chair"
                 className="w-full h-64 sm:h-80 md:h-[75vh] lg:h-[80vh] object-cover"
               />

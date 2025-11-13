@@ -12,9 +12,9 @@ const Hero = () => {
     <>
       {/* Desktop / larger screens - hidden on small screens */}
       <div className="hidden sm:block w-full h-full">
-        <div className="w-[100vw] hero-main 2xl:max-h-[58em] flex flex-col justify-between -gap-10 items-center 2xl:mt-16 lg:mt-5 lg:h-[88vh] md:mt-5 md:h-[88vh] xl:h-[90vh] xl:mt-10 hero-top">
+        <div className="w-[100vw] md:mt-40 hero-main 2xl:max-h-[58em] flex flex-col justify-between -gap-10 items-center lg:h-[88vh] md:h-[88vh] xl:h-[90vh] hero-top">
           <div
-            className="flex items-center 2xl:h-[60vh] w-[100%] justify-center service-video xl:h-[40vh]"
+            className="flex items-center 2xl:h-[60vh] w-[100%] justify-center service-video xl:h-[40vh] md:mt-10"
           >
             <VideoPlayer containerClassName="video" />
           </div>

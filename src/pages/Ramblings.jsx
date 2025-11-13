@@ -77,7 +77,7 @@ export default function Ramblings() {
   }, [blogPosts, selectedCategory]);
 
   return (
-    <div className="min-h-screen mt-10">
+    <div className="min-h-screen mt-5">
       <div className="mx-auto max-w-[90vw] px-0 md:px-6 lg:px-8 md:py-12 mb-20">
         {/* Header Section */}
         <div className="mb-12">
