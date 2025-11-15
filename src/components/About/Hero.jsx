@@ -4,7 +4,7 @@ import WhyUGC from "./WhyUGC";
 import WhoWeLoveWorkingWith from "./WhoWeLoveWorkingWith";
 import ThingsWeBelieveIn from "./ThingsWeBelieveIn";
 import MindsInTheSilo from "./MindsInTheSilo";
-import { IoIosSend } from "react-icons/io";
+import { FaChevronRight } from "react-icons/fa";
 import Section2 from "./Section2";
 
 const Hero = () => {
@@ -22,7 +22,7 @@ const Hero = () => {
     <>
       {/* First Section - Hero */}
       <section
-        className="min-h-screen flex items-center w-full justify-center px-3 sm:px-2 md:px-6 lg:px-8 pb-6 md:pb-12 lg:pb-16 overflow-hidden mt-10 sm:mt-0"
+        className="min-h-screen flex items-center w-full justify-center px-3 sm:px-2 md:px-6 lg:px-8 pb-6 md:pb-12 lg:pb-16 overflow-hidden"
         aria-label="About Silo - Company introduction"
       >
         <div className="flex flex-col justify-between xl:grid xl:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 max-w-full mx-auto w-full items-center sm:mt-5 md:mt-10 xs:mt-10">
@@ -72,8 +72,8 @@ const Hero = () => {
                   href="#"
                   className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
                 >
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                    <IoIosSend className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-10 group-hover:rotate-45 group-hover:scale-[140%]" />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                    <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
                   </div>
                   <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base group-hover:translate-x-40">
                     Let's chat
@@ -84,8 +84,8 @@ const Hero = () => {
                   href="#"
                   className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
                 >
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                    <IoIosSend className="block text-brand w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-12 group-hover:rotate-45 group-hover:scale-[140%]" />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                    <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
                   </div>
                   <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base group-hover:translate-x-40">
                     Our services

@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
-import { IoIosSend, IoMdSend } from "react-icons/io";
+import { IoMdSend } from "react-icons/io";
+import { FaChevronRight } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="w-full bg-white text-black border-t border-black">
@@ -29,8 +30,8 @@ const Footer = () => {
                 type="submit"
                 className="shrink-0 inline-flex items-center justify-center gap-2 bg-transparent border-2 border-red-400 h-[42px] px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-red-500 relative overflow-hidden group"
               >
-                <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                  <IoIosSend className="block text-red-500 w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-8 group-hover:rotate-45 group-hover:scale-[140%]" />
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                  <FaChevronRight   className="text-red-500 w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
                 </div>
                 <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-40">
                   Subscribe

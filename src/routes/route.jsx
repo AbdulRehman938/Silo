@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-// Import the module namespace so we can support either a default export or a named export
 import * as HomeModule from '../pages/Home.jsx'
 import Layout from '../Layout.jsx'
 import Portfolio from '../pages/Portfolio.jsx'

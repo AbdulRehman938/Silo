@@ -1,103 +1,63 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { createPortal } from "react-dom";
 import { Link, NavLink } from "react-router-dom";
-import { IoIosSend } from "react-icons/io";
-import { motion, AnimatePresence } from "framer-motion";
+import { FaChevronRight } from "react-icons/fa";
 import "../../styles/scaling-overrides.css"
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const toggle = () => setOpen((v) => !v);
   const close = () => setOpen(false);
-  const navRef = useRef(null);
-  const [navWidth, setNavWidth] = useState(0);
-  const [line, setLine] = useState({ left: 0, width: 0, visible: false });
-
-  useEffect(() => {
-    function update() {
-      if (navRef.current) setNavWidth(navRef.current.clientWidth);
+  const handleHeaderClick = (e) => {
+    // only toggle when clicking the header background (not interactive children)
+    // and only on mobile/tablet (below lg breakpoint)
+    if (e.currentTarget === e.target && typeof window !== 'undefined' && window.innerWidth < 1024) {
+      toggle();
     }
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  function handleLinkEnter(e) {
-    const link = e.currentTarget;
-    if (!navRef.current || !link) return;
-    const navRect = navRef.current.getBoundingClientRect();
-    const linkRect = link.getBoundingClientRect();
-    const left = Math.round(linkRect.left - navRect.left);
-    const width = Math.round(linkRect.width);
-    setLine({ left, width, visible: true });
-  }
-
-  function handleNavLeave() {
-    setLine((l) => ({ ...l, visible: false }));
-  }
-
-
+  };
+  
 
   return (
-    <header className="fixed top-0 left-0 w-full lg:max-w-[90vw] lg:mx-auto right-0 z-50 bg-white/75 backdrop-blur-sm border-[1px] border-black md:mt-5" style={{backdropFilter: 'saturate(120%) blur(6px)'}}>
-      <div className="mx-0 lg:mx-5 py-3 px-3 md:px-6 flex justify-between items-center decoration-black ">
+    <header onClick={handleHeaderClick} className="fixed top-0 left-0 w-full right-0 z-50 bg-transparent mt-3 md:mt-5">
+      <div className="mx-3 lg:mx-10">
+        <div className="max-w-[1440px] border-[1px] border-black bg-white mx-auto py-3 px-3 md:px-6 flex justify-between items-center decoration-black">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center" aria-label="Home">
-          <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg" alt="Silo" className="h-10 header2 w-auto md:h-12" />
+          <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg" alt="Silo" className="h-7 header2 w-auto md:h-9" />
         </Link>
 
         {/* Right: CTA */}
-        <div className="flex items-center justify-center gap-10">
+        <div className="flex items-center justify-center gap-6">
           {/* Center: Nav */}
-          <nav
-            ref={navRef}
-            onMouseLeave={handleNavLeave}
-            className="hidden lg:flex items-center justify-center gap-3 xl:gap-4 2xl:gap-6 text-xl font-semibold text-black relative overflow-hidden"
-          >
-            {/* top and bottom animated lines — mounted only when visible */}
-            <AnimatePresence>
-              {line.visible && (
-                <motion.div
-                  key="top-line"
-                  aria-hidden
-                  className="absolute top-0 h-[3px] pointer-events-none"
-                  style={{ width: line.width || 0, backgroundColor: '#FF322E' }}
-                  initial={{ left: - (line.width || 0) - 200, opacity: 0 }}
-                  animate={{ left: line.left, opacity: 1 }}
-                  exit={{ left: - (line.width || 0) - 200, opacity: 0 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                />
-              )}
-            </AnimatePresence>
-
-            <AnimatePresence>
-              {line.visible && (
-                <motion.div
-                  key="bottom-line"
-                  aria-hidden
-                  className="absolute bottom-0 h-[3px] pointer-events-none"
-                  style={{ width: line.width || 0, backgroundColor: '#FF322E', zIndex: 30 }}
-                  initial={{ left: navWidth + (line.width || 0) + 200, opacity: 0 }}
-                  animate={{ left: line.left, opacity: 1 }}
-                  exit={{ left: navWidth + (line.width || 0) + 200, opacity: 0 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                />
-              )}
-            </AnimatePresence>
-
-            <NavLink to="/" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-3 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-lg xl:text-xl 2xl:text-2xl text-brand' : 'text-sm xl:text-base 2xl:text-lg text-black'}`}>
+          <nav className="hidden lg:flex items-center justify-center gap-3 xl:gap-4 2xl:gap-6 text-xl font-bold text-black relative">
+            <NavLink
+              to="/about"
+              className={({ isActive }) => `px-2 xl:px-2.5  2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
+            >
               The Silo
             </NavLink>
-            <NavLink to="/about" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-3 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-lg xl:text-xl 2xl:text-2xl text-brand' : 'text-sm xl:text-base 2xl:text-lg text-black'}`}>
+            <NavLink
+              to="/about"
+              className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
+            >
               Portfolio
             </NavLink>
-            <NavLink to="/services" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-3 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-lg xl:text-xl 2xl:text-2xl text-brand' : 'text-sm xl:text-base 2xl:text-lg text-black'}`}>
+            <NavLink
+              to="/services"
+              className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
+            >
               Services
             </NavLink>
-            <NavLink to="/job-board" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-3 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-lg xl:text-xl 2xl:text-2xl text-brand' : 'text-sm xl:text-base 2xl:text-lg text-black'}`}>
+            <NavLink
+              to="/job-board"
+              className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
+            >
               Job Board
             </NavLink>
-            <NavLink to="/ramblings" onMouseEnter={handleLinkEnter} className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-3 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-all ${isActive ? 'text-lg xl:text-xl 2xl:text-2xl text-brand' : 'text-sm xl:text-base 2xl:text-lg text-black'}`}>
+            <NavLink
+              to="/ramblings"
+              className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
+            >
               Ramblings
             </NavLink>
           </nav>
@@ -120,61 +80,54 @@ export default function Header() {
           {/* CTA visible on large screens only; on tablet/mobile it's inside the hamburger panel below */}
           <Link to="/contact" className="hidden lg:inline-flex relative text-sm xl:text-base 2xl:text-lg whitespace-nowrap bg-brand text-white py-2 xl:py-2.5 2xl:py-3 px-4 xl:px-5 2xl:px-6 items-center border-none overflow-hidden header-btn transition-all duration-200 cursor-pointer group active:scale-95 no-underline">
             <div className="absolute svg-wrapper group-hover:animate-bounce-custom">
-              <IoIosSend className="block opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-5 group-hover:rotate-45 group-hover:scale-[160%]" />
+              <FaChevronRight  className="block opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-7 group-hover:scale-[160%]" />
             </div>
             <span className="block transition-all font-bold duration-300 ease-in-out group-hover:translate-x-28">Lets Talk</span>
           </Link>
+        </div>
         </div>
       </div>
 
       {/* Panel for tablet/mobile: overlay + right drawer covering 70% width */}
       {createPortal(
-        <div className={`lg:hidden fixed inset-0 z-50 ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}>
-          {/* backdrop (covers full viewport, sits above header) */}
+        <div className={`lg:hidden fixed inset-0 z-40 ${open ? 'pointer-events-auto' : 'pointer-events-none'}`}>
+          {/* backdrop (below the curtain and below the header) */}
           <div
             onClick={close}
-            className={`absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity ${open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+            className={`absolute inset-0 bg-black/60 transition-opacity ${open ? 'opacity-100 pointer-events-auto z-30' : 'opacity-0 pointer-events-none'}`}
           />
 
-          {/* right drawer (above backdrop) */}
+          {/* curtain panel: extends from header */}
           <aside
-            className={`absolute top-0 right-0 h-[70vh] rounded-bl-xl w-[80vw] md:w-[50vw] bg-white shadow-2xl transform transition-transform duration-300 ${open ? 'translate-x-0 pointer-events-auto z-60' : 'translate-x-full pointer-events-none'}`}
+            className={`absolute left-0 right-0 top-16 md:top-20 transform transition-all duration-700 ease-out ${open ? 'opacity-100 translate-y-0 pointer-events-auto z-40' : 'opacity-0 -translate-y-4 pointer-events-none z-40'}`}
             aria-hidden={!open}
           >
-            <div className="flex flex-col h-full">
-              <div className="px-6 py-5 flex items-center justify-between border-b">
-                <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg" alt="Silo" className="h-8 w-auto" />
-                <button onClick={close} aria-label="Close menu" className="p-2 hover:bg-gray-100">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18 6L6 18" stroke="#111827" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M6 6L18 18" stroke="#111827" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-              </div>
+            <div className="mx-3 lg:mx-10">
+              <div className="max-w-[1440px] border-[1px] border-black border-t-0 mx-auto bg-white rounded-b-xl overflow-hidden shadow-lg">
+                <nav className="px-6 py-8 flex-1 flex flex-col gap-6">
+                    <NavLink to="/about" onClick={close} className={({ isActive }) => `text-xl font-bold tracking-tight transition ${isActive ? 'text-brand font-extrabold border-b-2 border-brand pb-1' : 'text-black'}`}>
+                      The Silo
+                    </NavLink>
+                    <NavLink to="/about" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-brand font-extrabold border-b-2 border-brand pb-1' : 'text-black'}`}>
+                      Portfolio
+                    </NavLink>
+                    <NavLink to="/services" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-brand font-extrabold border-b-2 border-brand pb-1' : 'text-black'}`}>
+                      Services
+                    </NavLink>
+                    <NavLink to="/job-board" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-brand font-extrabold border-b-2 border-brand pb-1' : 'text-black'}`}>
+                      Job Board
+                    </NavLink>
+                    <NavLink to="/ramblings" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-brand font-extrabold border-b-2 border-brand pb-1' : 'text-black'}`}>
+                      Ramblings
+                    </NavLink>
+                </nav>
 
-              <nav className="px-6 py-8 flex-1 flex flex-col gap-6">
-                <NavLink to="/" onClick={close} className={({ isActive }) => `text-xl font-extrabold tracking-tight transition ${isActive ? 'text-2xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
-                  The Silo
-                </NavLink>
-                <NavLink to="/about" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
-                  Portfolio
-                </NavLink>
-                <NavLink to="/services" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
-                  Services
-                </NavLink>
-                <NavLink to="/job-board" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
-                  Job Board
-                </NavLink>
-                <NavLink to="/ramblings" onClick={close} className={({ isActive }) => `text-xl font-bold transition ${isActive ? 'text-xl text-brand border-b-2 border-brand pb-1' : 'hover:text-brand'}`}>
-                  Ramblings
-                </NavLink>
-              </nav>
-
-              <div className="px-6 pb-8">
-                <Link to="/contact" onClick={close} className="w-full inline-flex items-center justify-center gap-3 bg-brand text-white px-6 py-3 font-bold shadow-lg hover:opacity-95 transition no-underline">
-                  <IoIosSend className="w-5 h-5" />
-                  Lets Talk
-                </Link>
+                <div className="px-6 pb-8">
+                  <Link to="/contact" onClick={close} className="w-full inline-flex items-center justify-center gap-3 bg-brand text-white px-6 py-3 font-bold shadow-lg hover:opacity-95 transition no-underline">
+                   
+                    Lets Talk
+                  </Link>
+                </div>
               </div>
             </div>
           </aside>

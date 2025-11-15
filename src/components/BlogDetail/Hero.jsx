@@ -47,7 +47,7 @@ export default function Hero({ blogPost }) {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 min-h-screen md:mt-20 md:min-h-[80vh]">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 min-h-screen md:min-h-[80vh]">
       {/* Left Column - Content */}
       <div className="order-2 lg:order-1">
         <nav className="mb-8" aria-label="Breadcrumb">

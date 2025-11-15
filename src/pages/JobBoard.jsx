@@ -1,5 +1,5 @@
 import Section from "../components/Home/Section.jsx";
-import { IoIosSend } from "react-icons/io";
+import { FaChevronRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { jobsData } from "../data/jobsData.js";
 
@@ -135,8 +135,8 @@ export default function JobBoard() {
                 whiteSpace: "nowrap",
               }}
             >
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                <IoIosSend className="block text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-16 group-hover:rotate-45 group-hover:scale-[140%]" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-6 group-hover:scale-[140%]" />
               </div>
               <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-60">
                 Sign up as a Creator
@@ -157,8 +157,8 @@ export default function JobBoard() {
                 whiteSpace: "nowrap",
               }}
             >
-              <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                <IoIosSend className="block text-[#FF322E] w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-[70px] group-hover:rotate-45 group-hover:scale-[140%]" />
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                <FaChevronRight   className="text-[#FF322E] w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-6 group-hover:scale-[140%]" />
               </div>
               <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-80">
                 Post a requirement Brief

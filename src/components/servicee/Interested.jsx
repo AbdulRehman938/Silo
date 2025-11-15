@@ -1,5 +1,5 @@
 import React from "react";
-import { IoIosSend } from "react-icons/io";
+import { FaChevronRight } from "react-icons/fa";
 
 const Interested = () => {
   return (

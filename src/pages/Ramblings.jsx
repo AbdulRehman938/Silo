@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { IoIosSend } from "react-icons/io";
+import { FaChevronRight } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export default function Ramblings() {

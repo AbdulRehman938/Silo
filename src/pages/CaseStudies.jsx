@@ -1,5 +1,5 @@
 import React from "react";
-import { IoIosSend } from "react-icons/io";
+import { FaChevronRight } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Section2 from "../components/About/Section2";
 
@@ -57,8 +57,8 @@ const CaseStudies = () => {
                   href="/case-study-post"
                   className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
                 >
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper lg:group-hover:animate-bounce-custom">
-                    <IoIosSend className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out lg:group-hover:opacity-100 lg:group-hover:translate-x-10 lg:group-hover:rotate-45 lg:group-hover:scale-[140%]" />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper lg:group-hover:animate-bounce-custom">
+                    <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out lg:group-hover:opacity-100 lg:group-hover:translate-x-4 lg:group-hover:scale-[140%]" />
                   </div>
                   <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base lg:group-hover:translate-x-40">
                     Let's chat
@@ -69,8 +69,8 @@ const CaseStudies = () => {
                   href="/case-study-post"
                   className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
                 >
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper lg:group-hover:animate-bounce-custom">
-                    <IoIosSend className="block text-brand w-6 h-6 opacity-0 transition-all duration-300 ease-in-out lg:group-hover:opacity-100 lg:group-hover:translate-x-12 lg:group-hover:rotate-45 lg:group-hover:scale-[140%]" />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper lg:group-hover:animate-bounce-custom">
+                    <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out lg:group-hover:opacity-100 lg:group-hover:translate-x-4 lg:group-hover:scale-[140%]" />
                   </div>
                   <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base lg:group-hover:translate-x-40">
                     Our services

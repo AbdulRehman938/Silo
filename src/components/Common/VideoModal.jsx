@@ -94,13 +94,12 @@ export default function VideoModal({
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center">
       <div className="absolute inset-0 bg-black/60" onClick={onClose} />
-
       <div
         style={modalStyle}
-        className="relative mx-4 max-h-[90vh] bg-[#0b0b0b] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(2,6,23,0.6)] border border-black/60"
+        className="relative mx-4 max-h-[90vh] bg-[#0b0b0b] overflow-hidden shadow-[0_20px_50px_rgba(2,6,23,0.6)] border border-black/60"
       >
         {/* top-left title badge */}
-        <div className="absolute top-4 left-4 z-30 flex items-start gap-3">
+        <div className="absolute top-1 left-1 z-30 flex items-start gap-3">
           <div className="w-9 h-9 bg-white rounded flex items-center justify-center text-sm font-bold">
             Silo
           </div>
@@ -144,12 +143,12 @@ export default function VideoModal({
         <button
           onClick={onClose}
           aria-label="Close"
-          className="absolute top-6 right-4 w-11 h-11 rounded-full bg-white/7 text-white z-40 flex items-center justify-center hover:bg-white/14 transition"
+          className="absolute top-6 right-4 w-11 h-11 bg-white/7 text-white z-40 flex items-center justify-center hover:bg-white/14 transition"
         >
           <IoClose size={22} />
         </button>
 
-        <div className="w-full h-full bg-black flex items-center justify-center p-4">
+        <div className="w-full h-full bg-black flex items-center justify-center ">
           <div className="w-full h-full flex items-center justify-center">
             <video
               ref={videoRef}
@@ -157,7 +156,7 @@ export default function VideoModal({
               poster={poster}
               controls
               onLoadedMetadata={handleLoadedMetadata}
-              className="max-w-full max-h-[80vh] rounded-md bg-black shadow-inner"
+              className="max-w-full max-h-[80vh] bg-black shadow-inner"
             />
           </div>
         </div>
