@@ -1,11 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
 import { IoMdSend } from "react-icons/io";
-import { FaChevronRight } from "react-icons/fa";
+import { FaChevronCircleRight, FaChevronRight, FaYoutube } from "react-icons/fa";
+import { SiTiktok } from "react-icons/si";
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
-    <footer className="w-full bg-white text-black border-t border-black">
+    <footer className="w-full bg-white text-black border-t border-black max-w-[1440px] mx-auto">
+      <div className="mx-3 lg:mx-10">
       {/* Top grid: logo/newsletter + link columns */}
-      <div className="hidden md:block  mx-auto w-full max-w-[90vw] px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <div className="hidden md:block w-full py-10 md:py-14">
+        <div className="">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
           {/* Left: Brand + Newsletter */}
           <div className="md:col-span-5">
@@ -23,7 +27,7 @@ const Footer = () => {
                 type="email"
                 aria-label="Email address"
                 placeholder="Enter your email"
-                className="w-full border border-neutral-300 px-4 py-2.5 text-sm placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
+                className="w-full border border-black px-4 py-2.5 text-sm font-bold placeholder-black/60 focus:outline-none focus:ring-2 focus:ring-black focus:border-black"
                 required
               />
               <button
@@ -31,18 +35,18 @@ const Footer = () => {
                 className="shrink-0 inline-flex items-center justify-center gap-2 bg-transparent border-2 border-red-400 h-[42px] px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-red-500 relative overflow-hidden group"
               >
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                  <FaChevronRight   className="text-red-500 w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
+                  <FaChevronRight className="text-red-500 w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
                 </div>
                 <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-40">
-                  Subscribe
+                  SUBSCRIBE
                 </span>
               </button>
             </form>
-            <p className="mt-3 text-sm text-black max-w-md">
+            <p className="mt-3 text-sm text-black font-bold max-w-md">
               By subscribing you agree to with our{" "}
               <a
                 href="#"
-                className="underline hover:text-brand hover:text-base cursor-pointer ease-in-out duration-200"
+                className="underline cursor-pointer ease-in-out duration-200"
               >
                 Privacy Policy
               </a>{" "}
@@ -50,13 +54,13 @@ const Footer = () => {
             </p>
           </div>
           {/* Middle: About */}
-          <div className="md:col-span-3">
+          <div className="md:col-span-3 md:ml-12 lg:ml-20">
             <h4 className="text-lg font-semibold mb-4">About us</h4>
             <ul className="space-y-3">
               <li>
                 <NavLink
                   to="/services"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -69,7 +73,7 @@ const Footer = () => {
               <li>
                 <NavLink
                   to="/about"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -82,7 +86,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -95,7 +99,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -108,7 +112,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -121,7 +125,7 @@ const Footer = () => {
               <li>
                 <NavLink
                   to="/careers"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -134,7 +138,7 @@ const Footer = () => {
               <li>
                 <NavLink
                   to="/job-board"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -147,7 +151,7 @@ const Footer = () => {
               <li>
                 <NavLink
                   to="/ramblings"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -160,7 +164,7 @@ const Footer = () => {
             </ul>
           </div>
           {/* Right: Case Studies */}
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 md:-ml-6 lg:-ml-8">
             <h4 className="text-lg font-semibold mb-4"> <Link to="/case-studies"  aria-label="Case Studies">
               Case Studies
             </Link></h4>
@@ -168,7 +172,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/case-study/1"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -180,8 +184,8 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/case-study/2"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  href="/case-study/1"
+                  className="text-sm hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -194,7 +198,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/case-study/3"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -207,7 +211,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/case-study/4"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -220,7 +224,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/case-study/5"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -239,21 +243,22 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer flex items-center gap-2"
+                  className="text-sm ease-in-out duration-200 cursor-pointer flex items-center gap-2"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
                     lineHeight: "150%",
                   }}
                 >
-                  <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717295/Youtube_dtmefe.png" alt="Youtube" className="w-4 h-4" />
+                  {/* <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717295/Youtube_dtmefe.png" alt="Youtube" className="w-4 h-4" /> */}
+                  <FaYoutube className="w-4 h-4 text-black font-bold" />
                   Youtube
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer flex items-center gap-2"
+                  className="text-sm ease-in-out duration-200 cursor-pointer flex items-center gap-2"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -266,7 +271,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer flex items-center gap-2"
+                  className="text-sm ease-in-out duration-200 cursor-pointer flex items-center gap-2"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -284,21 +289,22 @@ const Footer = () => {
               <li>
                 <a
                   href="#"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer flex items-center gap-2"
+                  className="text-sm ease-in-out duration-200 cursor-pointer flex items-center gap-2"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
                     lineHeight: "150%",
                   }}
                 >
-                  <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717291/Tiktok_ryqcdc.png" alt="TikTok" className="w-4 h-4" />
+                  {/* <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717291/Tiktok_ryqcdc.png" alt="TikTok" className="w-4 h-4" /> */}
+                  <SiTiktok className="w-4 h-4 text-black font-bold" />
                   TikTok
                 </a>
               </li>
               <li>
                 <a
                   href="#"
-                  className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer flex items-center gap-2"
+                  className="text-sm ease-in-out duration-200 cursor-pointer flex items-center gap-2"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
@@ -312,29 +318,30 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+        </div>
         {/* Divider */}
         <hr className="mt-10 md:mt-12 border-black" />
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 md:gap-6 pt-6">
-          <p className="text-base text-black">
-            © 2025 The Silo Creative Limited. All rights reserved.
+          <p className="text-base text-black font-bold">
+            © {year} The Silo Creative Limited. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-6 text-base">
             <a
               href="/privacy-policy"
-              className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+              className="font-bold text-black underline text-sm ease-in-out duration-200 cursor-pointer"
             >
               Privacy Policy
             </a>
             <Link
               to="/terms"
-              className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+              className="font-bold text-black underline text-sm ease-in-out duration-200 cursor-pointer"
             >
               Terms of Service
             </Link>
             <a
               href="/cookies"
-              className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
+              className="font-bold text-black underline text-sm ease-in-out duration-200 cursor-pointer"
             >
               Cookies Settings
             </a>
@@ -348,8 +355,8 @@ const Footer = () => {
           <div className="font-extrabold text-xl mb-3">
             <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717230/footerlogo_tllimb.png" alt="Silo logo" className="h-8" />
           </div>
-          <div className="text-sm font-semibold">
-            © 2025 The Silo Creative Limited
+          <div className="text-sm font-bold">
+            © {year} The Silo Creative Limited
           </div>
           <div className="text-sm text-neutral-500 mb-2">
             All rights reserved
@@ -358,7 +365,8 @@ const Footer = () => {
           <div className="flex gap-3 mb-2 mt-4">
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">Youtube</span>
-              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717295/Youtube_dtmefe.png" alt="Youtube" className="w-4 h-4" />
+              {/* <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717295/Youtube_dtmefe.png" alt="Youtube" className="w-4 h-4" /> */}
+              <FaYoutube className="w-4 h-4 text-black font-bold" />
             </a>
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">twitter</span>
@@ -370,7 +378,8 @@ const Footer = () => {
             </a>
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">TikTok</span>
-              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717291/Tiktok_ryqcdc.png" alt="TikTok" className="w-4 h-4" />
+              {/* <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717291/Tiktok_ryqcdc.png" alt="TikTok" className="w-4 h-4" /> */}
+              <SiTiktok className="w-4 h-4 text-black font-bold" />
             </a>
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">LinkedIn</span>
@@ -384,74 +393,74 @@ const Footer = () => {
             <div className="font-bold mb-1">About us</div>
             <ul className="space-y-1">
               <li>
-                <NavLink to="/services" className="hover:underline text-sm">
+                <NavLink to="/services" className="text-sm">
                   Services
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" className="hover:underline text-sm">
+                <NavLink to="/about" className="text-sm">
                   About the Silo
                 </NavLink>
               </li>
               <li>
-                <a href="#" className="hover:underline text-sm">
+                <a href="#" className="text-sm">
                   Mission and Values
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline text-sm">
+                <a href="#" className="text-sm">
                   Meet the Team
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline text-sm">
+                <a href="#" className="text-sm">
                   Why UGC?
                 </a>
               </li>
               <li>
-                <NavLink to="/careers" className="hover:underline text-sm">
+                <NavLink to="/careers" className="text-sm">
                   Careers
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/job-board" className="hover:underline text-sm">
+                <NavLink to="/job-board" className="text-sm">
                   Job Board
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/ramblings" className="hover:underline text-sm">
+                <NavLink to="/ramblings" className="text-sm">
                   Ramblings
                 </NavLink>
               </li>
             </ul>
           </div>
           <div className="flex-1">
-            <Link to="/case-studies" className="font-bold mb-1 block hover:underline text-sm" aria-label="Case Studies">
+            <Link to="/case-studies" className="font-bold mb-1 block text-sm" aria-label="Case Studies">
               Case Studies
             </Link>
             <ul className="space-y-1">
               <li>
-                <a href="/case-study/1" className="hover:underline text-sm">
+                <a href="/case-study/1" className="text-sm">
                   E-commerce Platform
                 </a>
               </li>
               <li>
-                <a href="/case-study/2" className="hover:underline text-sm">
+                <a href="/case-study/2" className="text-sm hover:text-brand">
                   Brand Refresh Campaign
                 </a>
               </li>
               <li>
-                <a href="/case-study/3" className="hover:underline text-sm">
+                <a href="/case-study/3" className="text-sm hover:text-brand">
                   Mobile App Launch
                 </a>
               </li>
               <li>
-                <a href="/case-study/4" className="hover:underline text-sm">
+                <a href="/case-study/4" className="text-sm hover:text-brand">
                   Content Marketing
                 </a>
               </li>
               <li>
-                <a href="/case-study/5" className="hover:underline text-sm">
+                <a href="/case-study/5" className="text-sm hover:text-brand">
                   UGC Creator Campaign
                 </a>
               </li>
@@ -460,23 +469,23 @@ const Footer = () => {
         </div>
 
         {/* Bottom Links */}
-        <div className="mt-6 pt-4 border-t border-gray-300 pl-5">
-          <div className="flex flex-wrap items-center gap-4 text-xs">
+        <div className="mt-6 pt-4 border-t border-gray-300 flex justify-around items-center w-full">
+          <div className="flex flex-wrap items-center gap-4 text-xs mx-auto">
             <a
               href="/privacy-policy"
-              className="hover:text-brand ease-in-out duration-200 cursor-pointer"
+              className="ease-in-out font-bold text-black duration-200 cursor-pointer"
             >
               Privacy Policy
             </a>
             <Link
               to="/terms"
-              className="hover:text-brand ease-in-out duration-200 cursor-pointer"
+              className="ease-in-out font-bold text-black duration-200 cursor-pointer"
             >
               Terms of Service
             </Link>
             <a
               href="/cookies"
-              className="hover:text-brand ease-in-out duration-200 cursor-pointer"
+              className="ease-in-out font-bold text-black duration-200 cursor-pointer"
             >
               Cookies Settings
             </a>
@@ -485,32 +494,33 @@ const Footer = () => {
         {/* Newsletter */}
         <div className="mt-6">
           <div className="font-bold mb-2">Get updates</div>
-          <p className="text-xs font-semibold text-gray-500 mb-5">
+          <p className="text-xs font-bold text-black mb-5">
             By subscribing you agree to with our Privacy Policy and provide
             consent to receive updates from our company.
           </p>
           <form
-            className="flex w-full border border-neutral-400 overflow-hidden"
+            className="flex w-full border border-black overflow-hidden"
             onSubmit={(e) => e.preventDefault()}
           >
             <input
               type="email"
               aria-label="Email address"
               placeholder="Enter your email"
-              className="w-full px-3 py-2 text-sm placeholder-neutral-500 focus:outline-none bg-white"
+              className="w-full px-3 py-2 text-sm placeholder-black/60 font-bold focus:outline-none bg-white"
               required
             />
             <button
               type="submit"
-              className="px-4 text-lg text-black font-bold flex items-center justify-center relative overflow-hidden group"
-              aria-label="Subscribe"
+              className="px-4 text-lg font-bold flex items-center justify-center relative overflow-hidden group"
+              aria-label="SUBSCRIBE"
             >
               <span className="transition-all duration-300 ease-in-out group-hover:translate-x-4">
-                <IoMdSend className="text-xl text-brand" />
+                <FaChevronRight className="text-xl text-brand" />
               </span>
             </button>
           </form>
         </div>
+      </div>
       </div>
     </footer>
   );
