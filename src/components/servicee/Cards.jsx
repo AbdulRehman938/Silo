@@ -33,7 +33,7 @@ const Cards = () => {
   const desktopRef = useRef(null);
   const mobileRef = useRef(null);
   const [cardProgress, setCardProgress] = useState(0);
-  const [isLocked, setIsLocked] = useState(false);
+  const [isScrollLocked, setIsScrollLocked] = useState(false);
   const [isMobileInView, setIsMobileInView] = useState(false);
   const touchStartY = useRef(0);
 
@@ -47,7 +47,7 @@ const Cards = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Desktop wheel handler
+  // Desktop wheel handler with robust scroll lock
   useEffect(() => {
     const handleWheel = (e) => {
       if (!desktopRef.current) return;
@@ -56,15 +56,20 @@ const Cards = () => {
       const containerCenter = rect.top + rect.height / 2;
       const isAtTrigger = Math.abs(containerCenter - viewportCenter) <= 100;
 
+      // Lock scroll if cards are centered and not fully animated
+      if (isAtTrigger && cardProgress < CARD_DATA.length && cardProgress > 0) {
+        if (!isScrollLocked) setIsScrollLocked(true);
+      } else {
+        if (isScrollLocked) setIsScrollLocked(false);
+      }
+
       if (isAtTrigger) {
         const delta = e.deltaY;
         const step = Math.abs(delta) * 0.003;
-        
         const shouldAnimate = 
           (cardProgress > 0 && cardProgress < CARD_DATA.length) ||
           (cardProgress === 0 && delta > 0) ||
           (cardProgress === CARD_DATA.length && delta < 0);
-
         if (shouldAnimate) {
           e.preventDefault();
           e.stopPropagation();
@@ -75,12 +80,11 @@ const Cards = () => {
         }
       }
     };
-
     document.addEventListener('wheel', handleWheel, { passive: false });
     return () => document.removeEventListener('wheel', handleWheel);
-  }, [cardProgress]);
+  }, [cardProgress, isScrollLocked]);
 
-  // Mobile touch handler
+  // Mobile touch handler with robust scroll lock
   useEffect(() => {
     const handleTouchStart = (e) => {
       if (!mobileRef.current || !isMobileInView) return;
@@ -91,12 +95,20 @@ const Cards = () => {
       if (!mobileRef.current || !isMobileInView) return;
       const delta = touchStartY.current - e.touches[0].clientY;
       const step = Math.abs(delta) * 0.01;
-      
       const shouldAnimate = 
         (cardProgress > 0 && cardProgress < CARD_DATA.length) ||
         (cardProgress === 0 && delta > 0) ||
         (cardProgress === CARD_DATA.length && delta < 0);
-
+      // Lock scroll if cards are centered and not fully animated
+      const rect = mobileRef.current.getBoundingClientRect();
+      const viewportCenter = window.innerHeight / 2;
+      const containerCenter = rect.top + rect.height / 2;
+      const isAtTrigger = Math.abs(containerCenter - viewportCenter) <= 100;
+      if (isAtTrigger && cardProgress < CARD_DATA.length && cardProgress > 0) {
+        if (!isScrollLocked) setIsScrollLocked(true);
+      } else {
+        if (isScrollLocked) setIsScrollLocked(false);
+      }
       if (shouldAnimate) {
         e.preventDefault();
         setCardProgress(prev => {
@@ -113,7 +125,21 @@ const Cards = () => {
       document.removeEventListener('touchstart', handleTouchStart);
       document.removeEventListener('touchmove', handleTouchMove);
     };
-  }, [cardProgress, isMobileInView]);
+  }, [cardProgress, isMobileInView, isScrollLocked]);
+  // Scroll lock effect: lock/unlock body scroll when needed
+  useEffect(() => {
+    if (isScrollLocked) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [isScrollLocked]);
 
   const getCardTransform = (index) => {
     // Each card disappears one by one
@@ -139,7 +165,7 @@ const Cards = () => {
   return (
     <>
       {/* Desktop View - Hidden on Mobile */}
-      <div ref={desktopRef} className="hidden sm:flex w-full h-screen 2xl:mt-20 md:mt-0 flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
+      <div ref={desktopRef} className="hidden sm:flex w-full max-w-[1280px] mx-auto h-screen 2xl:mt-20 md:mt-0 flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
         {/* Static stacked cards centered over the H1 */}
         <div className="absolute left-[30%] top-[40%] -translate-x-1/2 -translate-y-1/2 z-[60] flex items-center justify-center" style={{height: 420, width: 720}}>
           {CARD_DATA.map((card, i) => {
@@ -177,7 +203,7 @@ const Cards = () => {
                 style={{ zIndex: z }}
               >
                 <div className="mb-4 flex w-full justify-between items-center 2xl:text-xl lg:text-base font-bold">{card.icon}
-                  card : {card.number}
+                  {/* card : {card.number} */}
                 </div>
                 <h2 className="2xl:text-5xl lg:text-2xl font-bold mb-2">{card.title}</h2>
                 <p className="2xl:text-3xl lg:text-xl text-gray-700">{card.desc}</p>
@@ -185,7 +211,7 @@ const Cards = () => {
             );
           })}
         </div>
-        <h1 className="text-brand 2xl:text-[20vw] md:text-[22vw] md:leading-tight font-bold text-center 2xl:leading-[20rem] z-10 pointer-events-none lg:text-[20vw]">
+        <h1 className="text-brand xl:text-[15vw] md:text-[22vw] md:leading-tight font-bold text-center 2xl:leading-[20rem] z-10 pointer-events-none lg:text-[20vw]">
           CORE <br /> SERVICES
         </h1>
       </div>
@@ -239,7 +265,7 @@ const Cards = () => {
                       {card.icon.props.children}
                     </svg>
                   </div>
-                  <span>card : {card.number}</span>
+                 
                 </div>
                 <h2 className="text-sm font-bold mb-1 leading-tight">{card.title}</h2>
                 <p className="text-xs text-gray-700 leading-relaxed">{card.desc}</p>

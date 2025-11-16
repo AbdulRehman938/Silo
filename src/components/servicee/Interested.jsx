@@ -4,11 +4,11 @@ import { FaChevronRight } from "react-icons/fa";
 const Interested = () => {
   return (
     <section className="w-full bg-white text-black pt-16">
-      <div className="max-w-[90vw] mx-auto px-0 md:px-6">
+      <div className="max-w-[1280px] mx-auto px-0 md:px-6 ">
         {/* Three column layout on md+, stacked on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border-t-2 border-black">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border-t border-black mx-3">
           {/* Column 1 */}
-          <div className="md:pr-8 md:border-r-2 md:border-black py-10">
+          <div className="md:pr-8 md:border-r md:border-black py-10">
             <div className="bg-gray-100 w-full h-96 mb-6 flex overflow-hidden items-start justify-center text-gray-400">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717232/first_dyyzet.png"
@@ -49,7 +49,7 @@ const Interested = () => {
           </div>
 
           {/* Column 2 */}
-          <div className="md:px-8 md:border-r-2 md:border-black py-10">
+          <div className="md:px-8 md:border-r md:border-black py-10">
             <div className="bg-gray-100 w-full h-96 mb-6 flex items-center justify-center text-gray-400">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717288/second_wt2ss3.png"

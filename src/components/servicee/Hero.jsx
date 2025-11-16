@@ -1,40 +1,75 @@
-import React, { useRef, useState } from "react";
-import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+import React, { useRef, useState, useEffect } from "react";
+import { createPortal } from "react-dom";
+import { FaPlay, FaPause} from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
-import demoVideo from "../../DemoVideo/Demo-Video.mp4";
 import Cards from "./Cards";
 import Interested from "./Interested";
 import OptionalAddOns from "./OptionalAddOns";
 import "../../styles/scaling-overrides.css";
+import Section from "../Home/Section.jsx";
 
 const Hero = () => {
+  const [cmsData, setCmsData] = useState({
+    showVideo: true,
+    videoUrl: "https://player.vimeo.com/video/76979871"
+  });
+  
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    if (!cmsData.showVideo) return;
+    setOpen(true);
+  };
+  const handleClose = () => setOpen(false);
+  const playerRef = useRef(null);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") handleClose();
+    };
+    if (open) window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (e) => {
+      const node = playerRef.current;
+      if (!node) return;
+      if (!node.contains(e.target)) {
+        handleClose();
+      }
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [open]);
+
   return (
     <>
       {/* Desktop / larger screens - hidden on small screens */}
-      <div className="hidden sm:block w-full h-full">
-        <div className="w-[100vw] hero-main 2xl:max-h-[58em] flex flex-col justify-between -gap-10 items-center lg:h-[88vh] md:h-[88vh] xl:h-[90vh] hero-top">
+      <div className="hidden sm:block min-h-screen">
+        <div className="w-full max-w-[1280px] min-h-screen mx-auto mt-24 flex flex-col justify-center items-center hero-top">
           <div
-            className="flex items-center 2xl:h-[60vh] w-[100%] justify-center service-video xl:h-[40vh] md:mt-10"
+            className="flex items-center w-[210px] h-[300px] justify-center service-video "
           >
-            <VideoPlayer containerClassName="video" />
+            <VideoPlayer containerClassName="w-full h-full" onVideoClick={handleOpen} />
           </div>
-          <div className="flex flex-col 2xl:-mt-16 justify-start gap-1 items-center text-black leading-tight">
-            <h1 className="2xl:text-[15vw] hero-title font-black lg:text-[15vw] 2xl:mb-3 md:text-[16vw] md:mb-0 md:0">
+          <div className="flex flex-col justify-start items-center text-black leading-tight">
+            <h1 className="font-bold xl:text-[200px] lg:text-[150px] 2xl:mb-3 mt-0 md:text-[16vw] md:mb-0 md:0">
               What we do
             </h1>
-            <span className="2xl:text-2xl 2xl:-mt-5 2xl:font-medium text-xl text-center 2xl:w-[48vw] lg:w-[60vw] lg:text-lg md:w-[70vw] md:text-base md:mb-5 hero-desc ">
+            <span className="text-black text-xl font-normal text-center lg:w-[60vw] lg:text-lg md:w-[70vw] md:text-base md:mb-5">
               {" "}
               We make content that cuts through the noise. Strategy, UGC,
-              design, and motion, built to get noticed and remembered
+              design, and motion, <br /> built to get noticed and remembered
             </span>
           </div>
           <div className="flex flex-wrap gap-10 2xl:mb-28 xl:mb-10">
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[55px] hero-btn px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[45px] hero-btn px-6 py-3 text-xs font-bold  tracking-wide text-white border-transparent relative overflow-hidden group"
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
+                <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
               </div>
               <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-40">
                 Let's chat
@@ -43,10 +78,10 @@ const Hero = () => {
 
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[55px] hero-btn px-8 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[45px] hero-btn px-8 py-3 text-xs font-bold  tracking-wide text-brand relative overflow-hidden group"
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
+                <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
               </div>
               <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-28">
                 About us
@@ -57,20 +92,23 @@ const Hero = () => {
         <Cards />
         <Interested />
         <OptionalAddOns />
+        <Section />
+        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black " />
       </div>
       {/* Mobile-only view - visible only on small screens */}
-      <div className="block sm:hidden w-full h-auto bg-white px-1 py-6">
+      <div className="block sm:hidden w-full h-auto bg-white px-1 py-6 mt-20">
         {/* Video (targeting the same video but sized for mobile) */}
         <div className="mb-4">
           <VideoPlayer
-            containerClassName="w-full h-auto"
+            containerClassName="w-[50%] mx-auto h-[35vh]"
             videoClassName="w-full h-auto object-contain"
+            onVideoClick={handleOpen}
           />
         </div>
 
         {/* Headline & description (smaller for mobile) */}
-        <div className="flex flex-col gap-3 text-center text-black">
-          <h1 className="text-5xl font-black leading-tight">What we do</h1>
+        <div className="flex flex-col gap-3 text-center text-black mt-20">
+          <h1 className="text-6xl font-black leading-tight">What we do</h1>
           <p className="text-sm leading-relaxed">
             We make content that cuts through the noise. Strategy, UGC, design,
             and motion, built to get noticed and remembered.
@@ -81,17 +119,17 @@ const Hero = () => {
         <div className="mt-6 flex gap-3 mx-auto ml-5">
           <a
             href="#"
-            className="w-[45%] inline-flex items-center justify-center gap-2 bg-[#FF322E] h-12 px-4 text-sm font-bold uppercase tracking-wide text-white"
+            className="w-[45%] inline-flex items-center justify-center gap-2 bg-[#FF322E] h-12 px-4 text-sm font-bold tracking-wide text-white"
           >
-            <FaChevronRight   className="w-5 h-5" />
+            
             <span className="whitespace-nowrap">Let's chat</span>
           </a>
 
           <a
             href="#"
-            className="w-[45%] inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-12 px-4 text-sm font-bold uppercase tracking-wide text-brand"
+            className="w-[45%] inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-12 px-4 text-sm font-bold tracking-wide text-brand"
           >
-            <FaChevronRight className="w-5 h-5" />
+            
             <span>About us</span>
           </a>
         </div>
@@ -102,12 +140,43 @@ const Hero = () => {
         </div>
         <Interested />
         <OptionalAddOns />
+        <Section />
+        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black " />
       </div>
+      
+      {open &&
+        createPortal(
+          <div
+            onClick={handleClose}
+            className="fixed inset-0 z-[9999] flex items-center justify-center"
+          >
+            <div
+              onClick={handleClose}
+              className="absolute inset-0 bg-black/60"
+            />
+
+            <div
+              ref={playerRef}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-[1100px] mx-4 h-[50vh] md:h-[60vh]"
+            >
+              <iframe
+                title="Vimeo player"
+                src={`${cmsData.videoUrl}?autoplay=1&muted=0`}
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+                style={{ border: 0, borderRadius: 0 }}
+              />
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 };
 
-function VideoPlayer({ containerClassName = "", videoClassName = "" }) {
+function VideoPlayer({ containerClassName = "", videoClassName = "", onVideoClick }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
@@ -141,44 +210,35 @@ function VideoPlayer({ containerClassName = "", videoClassName = "" }) {
   }, [isMuted, isPlaying]);
 
   return (
-    <div
-      id="video"
-      className={`2xl:w-[210px] 2xl:h-[294px] xl:w-[20%] xl:h-[40vh] lg:h-[60vh] lg:w-[30%] md:h-[70vh] bg-black relative flex items-center justify-center group overflow-hidden ${containerClassName}`}
+    <div 
+      className={`relative cursor-pointer ${containerClassName}`}
       onMouseEnter={() => setShowOverlay(true)}
       onMouseLeave={() => setShowOverlay(false)}
+      onClick={onVideoClick}
     >
       <video
         ref={videoRef}
-        src="https://res.cloudinary.com/di9tb45rl/video/upload/v1762717692/Demo-video_himxf7.mp4"
-        className={videoClassName || "w-full h-full object-cover bg-black"}
-        loop
-        muted={isMuted}
+        className={`w-full h-full object-fill ${videoClassName}`}
         autoPlay
+        muted={isMuted}
+        loop
         playsInline
-      />
-      {/* Overlay controls */}
-      <div
-        className={`absolute inset-0 bg-black/40 transition-opacity duration-200 ${
-          showOverlay ? "opacity-100" : "opacity-0 pointer-events-none"
-        } group-hover:opacity-100 group-hover:pointer-events-auto`}
       >
-        {/* Play/Pause button centered */}
-        <button
-          onClick={handlePlayPause}
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/80 rounded-full p-6 text-black hover:bg-white shadow-lg focus:outline-none z-10"
-          style={{ fontSize: 38 }}
-        >
-          {isPlaying ? <FaPause size={38} /> : <FaPlay size={38} />}
-        </button>
-        {/* Sound button top right */}
-        <button
-          onClick={handleMute}
-          className="absolute top-4 right-4 bg-white/80 rounded-full p-3 text-black hover:bg-white shadow-lg focus:outline-none z-10"
-          style={{ fontSize: 28 }}
-        >
-          {isMuted ? <FaVolumeMute size={28} /> : <FaVolumeUp size={28} />}
-        </button>
-      </div>
+        <source src="https://res.cloudinary.com/di9tb45rl/video/upload/v1762717692/Demo-video_himxf7.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      
+      {showOverlay && (
+        <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center gap-4">
+          <button
+            onClick={handlePlayPause}
+            className="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 transition-all"
+          >
+            {isPlaying ? <FaPause className="w-6 h-6" /> : <FaPlay className="w-6 h-6" />}
+          </button>
+         
+        </div>
+      )}
     </div>
   );
 }
