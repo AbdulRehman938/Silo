@@ -39,7 +39,7 @@ export const WelcomeLetters = () => {
     // if (w <= 700) return { OFFSET_X: 120, OFFSET_Y: 20, SCALE: 0.95 };
     
     // Tablet/Desktop breakpoints - adjusted down 20% and shifted left
-    if (w <= 900) return { OFFSET_X: -45, OFFSET_Y: -200, SCALE: 1.35 }; // md
+    if (w <= 900) return { OFFSET_X: -45, OFFSET_Y: -200, SCALE: 1.25 }; // md
     if (w <= 1024) return { OFFSET_X: -20, OFFSET_Y: -200, SCALE: 1.5 }; // lg
     if (w <= 1440) return { OFFSET_X: 0, OFFSET_Y: -160, SCALE: 2.0 }; // 1440px - slightly smaller
     if (w <= 1536) return { OFFSET_X: 20, OFFSET_Y: -160, SCALE: 1.8 }; // xl

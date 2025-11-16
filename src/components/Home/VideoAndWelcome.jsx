@@ -1,76 +1,152 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { FaChevronRight } from "react-icons/fa";
-import VideoModal from "../Common/VideoModal";
-import demoVideo from "../../DemoVideo/Demo-Video.mp4";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { WelcomeLetters } from "./WelcomeLetters";
-import LiquidImage from "./LiquidImage";
 import { FaPlay } from "react-icons/fa";
 
 export default function VideoAndWelcome() {
+  const [cmsData, setCmsData] = useState({
+    showVideo: false,
+    videoUrl: "https://player.vimeo.com/video/76979871",
+    imageUrl:
+      "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717240/image_re2b0o.png",
+  });
+
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+  const handleOpen = () => {
+    if (!cmsData.showVideo) return;
+    setOpen(true);
+  };
   const handleClose = () => setOpen(false);
 
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") handleClose();
+    };
+    if (open) window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  // Fetch CMS-provided settings (showVideo, videoUrl, imageUrl)
+  useEffect(() => {
+    let mounted = true;
+    // TODO: replace this URL with your CMS endpoint
+    fetch("https://yourcms.com/api/video-data")
+      .then((res) => res.json())
+      .then((data) => {
+        if (!mounted) return;
+        if (data && typeof data === "object") {
+          setCmsData((prev) => ({ ...prev, ...data }));
+        }
+      })
+      .catch(() => {
+        /* ignore fetch errors and keep defaults */
+      });
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const playerRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (e) => {
+      const node = playerRef.current;
+      if (!node) return;
+      if (!node.contains(e.target)) {
+        handleClose();
+      }
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [open]);
+
+  const year = new Date().getFullYear();
+
   return (
-    <div>
+    <div className="pb-0">
       {/* Mobile-only simplified block: visible on small screens only
           Animated letters placed BEFORE the content on mobile as requested. */}
 
       <div className="relative w-full overflow-hidden mt-6 md:mt-10 lg:mt-14">
         <div className="h-80 lg:h-[80vh] md:h-[60vh] relative">
           <img
-            src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717240/image_re2b0o.png"
+            src={cmsData.imageUrl}
             alt="Showcase"
             className="block w-full h-full object-cover select-none"
           />
 
-          {/* semi-transparent black cover */}
-          <div className="absolute inset-0 bg-black/60" aria-hidden />
+          {cmsData.showVideo ? (
+            <>
+              {/* semi-transparent black cover */}
+              <div className="absolute inset-0 bg-black/60" aria-hidden />
 
-          {/* centered play CTA */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="flex items-center gap-4 text-start text-white px-4">
-              <button
-                type="button"
-                aria-label="Play showreel"
-                onClick={handleOpen}
-                className="flex items-center justify-center w-12 h-12 md:w-20 md:h-20 rounded-full bg-white text-black shadow-lg hover:bg-brand hover:scale-110"
-              >
-               <FaPlay className="bg-transparent" />
-              </button>
+              {/* centered play CTA */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex items-center gap-4 text-start text-white px-4">
+                  <button
+                    type="button"
+                    aria-label="Play showreel"
+                    onClick={handleOpen}
+                    className="flex items-center justify-center w-12 h-12 md:w-12 md:h-12 rounded-full bg-white text-black shadow-lg hover:bg-brand hover:scale-110"
+                  >
+                    <FaPlay className="bg-transparent" />
+                  </button>
 
-              <h3 className="text-lg md:text-2xl font-medium leading-tight">
-                Watch our showreel <br /> 2015–2025
-              </h3>
-            </div>
-          </div>
+                  <h3 className="text-lg md:text-base font-medium leading-tight">
+                    Watch our showreel <br /> 2015–{year}
+                  </h3>
+                </div>
+              </div>
+            </>
+          ) : null}
         </div>
       </div>
 
-      <VideoModal
-        isOpen={open}
-        onClose={handleClose}
-        src="https://res.cloudinary.com/di9tb45rl/video/upload/v1762717692/Demo-video_himxf7.mp4"
-        title={"The Silo - Showreel"}
-        byline={"The Silo Creative"}
-        poster={
-          "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717240/image_re2b0o.png"
-        }
-      />
+      {open &&
+        createPortal(
+          <div
+            onClick={handleClose}
+            className="fixed inset-0 z-[9999] flex items-center justify-center"
+          >
+            <div
+              onClick={handleClose}
+              className="absolute inset-0 bg-black/60"
+            />
 
-      <div className="hidden md:block relative mx-auto lg:max-w-[80vw] px-3 mt-10 md:mt-14 lg:mt-20 md:max-w-[95vw] md:px-0">
+            <div
+              ref={playerRef}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-[1100px] mx-4 h-[50vh] md:h-[60vh]"
+            >
+              {/* Vimeo embed with no border and no border-radius */}
+              <iframe
+                title="Vimeo player"
+                src={`${cmsData.videoUrl}?autoplay=1&muted=0`}
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+                style={{ border: 0, borderRadius: 0 }}
+              />
+            </div>
+          </div>,
+          document.body
+        )}
+
+      <div className="hidden md:block relative mx-auto px-3 mt-10 md:mt-10 lg:mt-20 md:px-0 md:mx-10">
         <div
           id="welcome-parent-div"
-          className="relative flex items-end justify-between h-[90vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh]"
+          className="relative flex items-end max-w-[1280px] mx-auto justify-between h-[60vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh]"
         >
           {/* Left text div - aligned at bottom left */}
-          <div className="relative z-10 self-end pb-4 max-w-[38%] md:max-w-[45%] flex flex-col justify-end gap-6 md:gap-2">
+          <div className="relative z-10 self-end pb-4 max-w-[38%] md:max-w-[45%] flex flex-col justify-end gap-6 md:gap-7">
             <p className="text-base md:text-base lg:text-xl font-semibold md:tracking-tighter tracking-tight text-black">
               We’re the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.
             </p>
-            <p className="text-xs md:text-xs lg:text-base leading-relaxed text-black/80">
+            <p className="text-xs md:text-xs lg:text-base font-semibold leading-relaxed text-black/80">
               We create intentional, personality–driven content, from authentic
               creator videos to scroll–stopping social feeds – designed to
               connect. Every piece is grounded in strategy, fuelled by
@@ -80,10 +156,10 @@ export default function VideoAndWelcome() {
             <div className="flex flex-wrap items-center gap-8">
               <a
                 href="#"
-                className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white  border-transparent relative overflow-hidden group"
+                className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold  tracking-wide text-white  border-transparent relative overflow-hidden group"
               >
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 translate-x-5 svg-wrapper group-hover:animate-bounce-custom">
-                  <FaChevronRight   className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-4 group-hover:scale-[140%]" />
+                  <FaChevronRight className="block text-white w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-7 group-hover:scale-[140%]" />
                 </div>
                 <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-28">
                   About us
@@ -122,7 +198,21 @@ export default function VideoAndWelcome() {
             <WelcomeLetters />
           </div>
 
-          <div className="mx-6">
+          {/* Mobile play CTA - opens the same Vimeo popout as desktop */}
+          <div className="flex justify-center -mt-8">
+            {cmsData.showVideo && (
+              <button
+                type="button"
+                aria-label="Play showreel"
+                onClick={handleOpen}
+                className="flex items-center justify-center w-12 h-12 rounded-full bg-white text-black shadow-lg hover:bg-brand hover:scale-110"
+              >
+                <FaPlay className="bg-transparent" />
+              </button>
+            )}
+          </div>
+
+          <div className="mx-3">
             <p className="text-[18px] font-extrabold tracking-tight text-black">
               We’re the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.
@@ -137,10 +227,10 @@ export default function VideoAndWelcome() {
             <div className="flex flex-wrap items-center gap-4 mt-4">
               <a
                 href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-[48px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
+                className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-[48px] px-6 py-3 text-xs font-bold  tracking-wide text-white border-transparent relative overflow-hidden group"
               >
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                  <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-2 group-hover:scale-[140%]" />
+                  <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-2 group-hover:scale-[140%]" />
                 </div>
                 <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-6">
                   About us
@@ -164,7 +254,7 @@ export default function VideoAndWelcome() {
       </div>
       <div
         id="line"
-        className="w-full h-[0.06rem] bg-black mt-24 mb-40 2xl:mt-40"
+        className="w-full h-[0.06rem] bg-black relative mx-auto mt-20 mb-20 md:mt-40 md:mb-28"
       ></div>
     </div>
   );

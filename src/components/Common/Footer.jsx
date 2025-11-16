@@ -5,7 +5,7 @@ import { SiTiktok } from "react-icons/si";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="w-full bg-white text-black border-t border-black max-w-[1440px] mx-auto">
+    <footer className="w-full bg-white text-black max-w-[1440px] mx-auto">
       <div className="mx-3 lg:mx-10">
       {/* Top grid: logo/newsletter + link columns */}
       <div className="hidden md:block w-full py-10 md:py-14">
@@ -35,7 +35,7 @@ const Footer = () => {
                 className="shrink-0 inline-flex items-center justify-center gap-2 bg-transparent border-2 border-red-400 h-[42px] px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-red-500 relative overflow-hidden group"
               >
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                  <FaChevronRight className="text-red-500 w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
+                  <FaChevronRight className="text-red-500 w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
                 </div>
                 <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-40">
                   SUBSCRIBE
@@ -349,7 +349,7 @@ const Footer = () => {
         </div>
       </div>
       {/* Modern mobile-only footer layout */}
-      <div className="block md:hidden px-4 py-8 w-full bg-white">
+      <div className="block md:hidden px-2 py-8 w-full bg-white">
         {/* Top: Brand and copyright */}
         <div className="mb-4">
           <div className="font-extrabold text-xl mb-3">
@@ -469,7 +469,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Links */}
-        <div className="mt-6 pt-4 border-t border-gray-300 flex justify-around items-center w-full">
+        <div className="mt-6 pt-4 flex justify-around items-center w-full">
           <div className="flex flex-wrap items-center gap-4 text-xs mx-auto">
             <a
               href="/privacy-policy"
@@ -493,32 +493,33 @@ const Footer = () => {
         </div>
         {/* Newsletter */}
         <div className="mt-6">
-          <div className="font-bold mb-2">Get updates</div>
-          <p className="text-xs font-bold text-black mb-5">
+          <div className="font-bold mb-2">Join our newsletter to stay up to date.</div>
+         
+          <form
+            className="w-full"
+            onSubmit={(e) => e.preventDefault()}
+          >
+            <div className="border border-black overflow-hidden">
+              <input
+                type="email"
+                aria-label="Email address"
+                placeholder="Enter your email"
+                className="w-full px-3 py-3 text-sm placeholder-black/60 font-bold focus:outline-none bg-white"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="mt-3 w-full inline-flex items-center justify-center rounded-sm border-2 border-brand h-[42px] px-4 py-2.5 text-sm font-bold uppercase tracking-wide text-brand"
+              aria-label="SUBSCRIBE"
+            >
+              SUBSCRIBE
+            </button>
+          </form>
+           <p className="text-xs font-bold text-black mt-3">
             By subscribing you agree to with our Privacy Policy and provide
             consent to receive updates from our company.
           </p>
-          <form
-            className="flex w-full border border-black overflow-hidden"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input
-              type="email"
-              aria-label="Email address"
-              placeholder="Enter your email"
-              className="w-full px-3 py-2 text-sm placeholder-black/60 font-bold focus:outline-none bg-white"
-              required
-            />
-            <button
-              type="submit"
-              className="px-4 text-lg font-bold flex items-center justify-center relative overflow-hidden group"
-              aria-label="SUBSCRIBE"
-            >
-              <span className="transition-all duration-300 ease-in-out group-hover:translate-x-4">
-                <FaChevronRight className="text-xl text-brand" />
-              </span>
-            </button>
-          </form>
         </div>
       </div>
       </div>

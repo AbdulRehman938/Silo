@@ -21,12 +21,12 @@ export const SiloHoverBanner = ({
       // }}
     >
       <div className='w-full px-4 md:px-8 lg:px-12'>
-        <div className='flex items-center justify-center md:mt-0 mt-10 w-full md:min-h-[350px] mx-auto max-w-[2160px]'>
+        <div className='flex items-center justify-center md:mt-0 mt-10 w-full md:min-h-[350px] mx-auto'>
           {!isMobile ? (
             <div ref={hostRef} className='relative w-full flex items-center justify-center' />
           ) : (
             <div className='flex justify-center items-center w-full h-full'>
-              <img src={svgSrc} alt='Silo logo' className='w-full max-w-[1440px] h-auto object-contain' />
+              <img src={svgSrc} alt='Silo logo' className='w-full h-auto object-contain' />
             </div>
           )}
         </div>

@@ -23,7 +23,7 @@ export default function Header() {
         <div className="max-w-[1440px] border-[2px] border-black bg-white mx-auto py-3 px-3 md:px-6 flex justify-between items-center decoration-black">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center" aria-label="Home">
-          <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg" alt="Silo" className="h-7 header2 w-auto md:h-9" />
+          <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg" alt="Silo" className="h-5 header2 w-auto md:h-9" />
         </Link>
 
         {/* Right: CTA */}
@@ -66,7 +66,7 @@ export default function Header() {
           <button
             aria-label="Open menu"
             aria-expanded={open}
-            className="lg:hidden inline-flex h-12 w-16 items-center justify-center border border-transparent"
+            className="lg:hidden inline-flex h-8 w-16 items-center justify-center border border-transparent"
             onClick={toggle}
           >
             <span className="sr-only">Menu</span>

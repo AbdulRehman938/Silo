@@ -12,7 +12,7 @@ const DEFAULT_LOGOS = [
 
 export default function Hero() {
   return (
-    <div className="w-full max-w-[1536px] mx-auto">
+    <div className="w-full max-w-[1440px] mx-auto">
       {/* Full screen hero section */}
       <div className="w-full 2xl:h-[calc(100vh-80px)] xl:h-[calc(100vh-80px)] lg:h-auto md:h-[60vh] h-[50vh] flex flex-col justify-between">
         <SiloHoverBanner
@@ -22,7 +22,7 @@ export default function Hero() {
         />
 
         <div className="w-full bg-white flex-shrink-0 mt-10 md:mt-0">
-          <div className="mx-auto max-w-[120rem] px-3 md:px-6 home-hero-text-h">
+          <div className="mx-auto w-full px-3 md:px-6 home-hero-text-h">
             <div className="py-4 md:py-5 text-center font-bold text-2xl 2xl:text-3xl xl:text-2xl text-black">
               Used by companies who know what works.
             </div>
@@ -43,8 +43,9 @@ export default function Hero() {
       <VideoAndWelcome />
 
       <ContentAndDone />
-      <div className="w-full h-[0.06rem] bg-black my-20"></div>
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black md:my-28 mt-20" />
       <Section />
+         <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
     </div>
   );
 }
