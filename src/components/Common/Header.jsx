@@ -44,7 +44,7 @@ export default function Header() {
             </NavLink>
             <NavLink
               to="/services"
-              className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-brand'}`}
+              className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
             >
               Services
             </NavLink>

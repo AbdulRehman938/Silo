@@ -1,48 +1,33 @@
 import { useState } from "react";
-import WhatSiloIs from "./WhatSiloIs";
-import WhyUGC from "./WhyUGC";
-import WhoWeLoveWorkingWith from "./WhoWeLoveWorkingWith";
-import ThingsWeBelieveIn from "./ThingsWeBelieveIn";
-import MindsInTheSilo from "./MindsInTheSilo";
 import { FaChevronRight } from "react-icons/fa";
-import Section2 from "./Section2";
 
 const Hero = () => {
-  const handleContactClick = () => {
-    // Contact functionality - could be a modal, form, or navigation
-    console.log("Contact action triggered");
-  };
-
-  const handleServicesClick = () => {
-    // Navigate to services section
-    console.log("Navigate to services");
-  };
 
   return (
     <>
       {/* First Section - Hero */}
       <section
-        className="min-h-screen flex items-center w-full justify-center px-3 sm:px-2 md:px-6 lg:px-8 pb-6 md:pb-12 lg:pb-16 overflow-hidden"
+        className="mt-20 mb-10 flex items-start w-full justify-start px-3 sm:px-2 md:px-6 lg:px-8 pb-6 md:pb-12 lg:pb-16 overflow-hidden"
         aria-label="About Silo - Company introduction"
       >
-        <div className="flex flex-col justify-between xl:grid xl:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 max-w-full mx-auto w-full items-center sm:mt-5 md:mt-10 xs:mt-10">
+        <div className="flex flex-col justify-between xl:grid xl:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 max-w-full mx-auto w-full items-center mt-0 lg:mt-16 md:mt-10">
           {/* Text Content Area */}
           <div
-            className="flex flex-col h-full sm:mt-5 xs:mt-10 justify-between space-y-4 sm:space-y-6 md:space-y-8 order-2 xl:order-1 xl:pr-6 w-full"
+            className="flex flex-col h-full justify-start xl:justify-between space-y-4 sm:space-y-6 md:space-y-8 order-1 xl:order-1 xl:pr-6 w-full items-start"
             role="main"
           >
             {/* Main Heading - Zoom & Small Laptop Optimized */}
             <h1
-              className="font-bold text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[56px] leading-tight text-center xl:text-left px-2 sm:px-0"
+              className="font-bold text-black text-5xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[56px] leading-3 text-left px-2 sm:px-0 mt-6 sm:mt-0"
               style={{
                 opacity: 1,
-                fontFamily: "Epilogue, sans-serif",
+                fontFamily: 'Epilogue, sans-serif',
                 fontWeight: 700,
-                lineHeight: "120%",
+                lineHeight: "100%",
                 letterSpacing: "0%",
               }}
             >
-              We are the <br /> <span className="text-red-500">Silo</span>, get to <br /> know
+              We are the <br /> <span className="text-red-500">Silo, </span>get to <br /> know
               us.
             </h1>
 
@@ -51,11 +36,11 @@ const Hero = () => {
               {/* Brand Statement - Zoom & Small Laptop Optimized */}
               <div>
                 <p
-                  className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl xl:text-[18px] leading-relaxed text-center xl:text-left max-w-full xl:max-w-lg px-2 sm:px-0"
+                  className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl xl:text-[18px] leading-relaxed text-left max-w-full xl:max-w-lg px-2 sm:px-0 font-epilogue"
                   style={{
                     opacity: 1,
-                    fontFamily: "DM Sans, sans-serif",
                     fontWeight: 400,
+                    fontFamily:"Epilogue, sans-serif",
                     lineHeight: "150%",
                     letterSpacing: "0%",
                   }}
@@ -67,10 +52,10 @@ const Hero = () => {
               </div>
 
               {/* Buttons - Zoom & Small Laptop Optimized */}
-              <div className="flex flex-row gap-3 sm:gap-4 items-start w-full sm:w-auto lg:mx-auto md:mx-auto xl:mx-0">
+              <div className="flex flex-row gap-3 sm:gap-4 items-start w-full sm:w-auto xl:mx-0">
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
+                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold tracking-wide text-white border-transparent relative overflow-hidden group"
                 >
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                     <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
@@ -82,7 +67,7 @@ const Hero = () => {
 
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
+                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
                 >
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                     <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
@@ -96,21 +81,21 @@ const Hero = () => {
           </div>
 
           {/* Visual Content Area - Zoom & Small Laptop Optimized */}
-          <div className="flex flex-col lg:flex-col xl:flex-row lg:mt-10 items-center justify-center xl:justify-end gap-3 sm:gap-4 md:gap-6 order-1 xl:order-2 w-full max-w-sm sm:max-w-md md:max-w-lg xl:max-w-none mx-auto xl:mx-0 md:mt-10">
-            {/* Primary Image - Zoom & Small Laptop Optimized */}
-            <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:w-auto xl:max-w-[400px] 2xl:max-w-[438px] flex-shrink-0">
+          <div className="flex flex-col mt-10 md:mt-0 md:flex-row lg:flex-row xl:flex-row items-center md:items-start xl:items-start justify-start xl:justify-end gap-3 sm:gap-4 md:gap-6 order-2 xl:order-2 w-full sm:max-w-xl md:max-w-none lg:max-w-none xl:max-w-none xl:mx-0 ">
+              {/* Secondary Image - Zoom & Small Laptop Optimized */}
+              <div className="order-2 md:order-1 w-full max-w-full sm:max-w-sm md:w-1/2 md:max-w-none lg:w-1/2 xl:w-auto xl:max-w-[400px] 2xl:max-w-[438px] flex-shrink-0">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717241/About1_t6qyw0.png"
                 alt="Silo team member showcasing brand identity"
-                className="w-full h-auto object-cover max-h-[300px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[500px] xl:max-h-[600px] 2xl:max-h-none"
+                className="w-full h-auto object-cover max-h-[400px] sm:max-h-[350px] md:max-h-[500px] lg:max-h-[550px] xl:max-h-[550px] 2xl:max-h-none"
                 style={{
                   opacity: 1,
                 }}
               />
             </div>
 
-            {/* Secondary Image - Zoom & Small Laptop Optimized */}
-            <div className="flex flex-col items-center lg:items-center xl:self-start xl:mt-8 2xl:mt-16 border-white bg-white">
+              {/* Primary Image - Zoom & Small Laptop Optimized */}
+              <div className="order-1 md:order-2 flex flex-col items-start md:items-center lg:items-center xl:items-start md:w-auto lg:w-auto xl:w-auto border-white bg-white">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/About2_gof6gm.png"
                 alt="The Silo brand representation"
@@ -121,12 +106,6 @@ const Hero = () => {
         </div>
       </section>
 
-      <WhatSiloIs />
-      <WhyUGC />
-      <WhoWeLoveWorkingWith />
-      <ThingsWeBelieveIn /> 
-      <MindsInTheSilo />
-      <Section2 />
     </>
   );
 };

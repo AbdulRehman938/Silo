@@ -32,13 +32,13 @@ const row3 = {
 
 const WhoWeLoveWorkingWith = () => {
   return (
-    <section className="main-div md:min-h-[80vh] min-h-[50vh] w-[100vw] flex items-start justify-center pt-32 pb-6 sm:pb-8 md:pb-12 lg:pb-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden">
-      <div className="max-w-full mr-auto w-full">
+    <section className="main-div md:min-h-[60vh] min-h-[55vh] w-[100vw] flex items-start justify-center pt-32 md:pt-0 pb-6 sm:pb-8 md:pb-12 lg:pb-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden">
+      <div className="max-w-full mr-auto w-full h-auto">
         {/* Text Section - Zoom & Small Laptop Optimized */}
-        <div className="text-left mb-6 sm:mb-8 md:mb-12 lg:mb-16 px-2 sm:px-0 w-full md:w-screen lg:ml-0 md:-ml-24 -ml-5 -mt-32 md:mt-0">
+        <div className="text-left mb-6 sm:mb-8 md:mb-12 lg:mb-16 px-2 sm:px-0 w-full -mt-32 md:mt-0">
           {/* Heading - Zoom & Small Laptop Optimized */}
           <h2 
-            className="font-bold text-black text-center sm:text-center md:text-center md:absolute md:left-1/2 md:-translate-x-1/2 md:-mt-12 lg:text-left lg:static lg:left-auto lg:translate-x-0 lg:mt-0 text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-[48px] leading-tight mb-3 md:mb-10 sm:mb-4"
+            className="font-bold text-black text-left sm:text-left md:text-left md:absolute md:left-1/2 md:-translate-x-1/2 md:-mt-12 lg:text-left lg:static lg:left-auto lg:translate-x-0 lg:mt-0 text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-[48px] leading-tight mb-3 md:mb-10 sm:mb-4"
             style={{
               fontFamily: 'Epilogue, sans-serif',
               fontWeight: 700,
@@ -51,10 +51,10 @@ const WhoWeLoveWorkingWith = () => {
           
           {/* Below Text - Zoom & Small Laptop Optimized */}
           <p 
-            className="text-gray-700 text-left hidden sm:hidden md:hidden lg:block xl:block lg:text-left xl:text-left text-xs sm:text-sm md:text-base lg:text-lg xl:text-base leading-relaxed md:mt-10"
+            className="text-gray-700 text-leftlg:block xl:block lg:text-left xl:text-left text-xs sm:text-sm md:text-base lg:text-lg xl:text-base leading-relaxed md:mt-10"
             style={{
               fontFamily: 'DM Sans, sans-serif',
-              fontWeight: 100,
+              fontWeight: 700,
               lineHeight: '150%',
               letterSpacing: '0%',
             
@@ -62,35 +62,12 @@ const WhoWeLoveWorkingWith = () => {
           >
            We partner with e-commerce and lifestyle brands that value strategy, speed, and creator- <br />led content. If you sell online, shape culture, or run experiences people talk about, you’re our <br /> people.
           </p>
-          <p 
-            className="text-gray-700 hidden sm:block md:block lg:hidden xl:hidden text-center text-base leading-relaxed md:mt-10"
-            style={{
-              fontFamily: 'DM Sans, sans-serif',
-              fontWeight: 100,
-              lineHeight: '150%',
-              letterSpacing: '0%',
-            
-            }}
-          >
-           We partner with e-commerce and lifestyle brands that value strategy, speed, <br /> and creator-led content. If you sell online, shape culture, or run <br /> experiences people talk about, you’re our  people.
-          </p>
-          <p 
-            className="text-gray-700 block md:hidden lg:hidden xl:hidden text-center text-base leading-relaxed"
-            style={{
-              fontFamily: 'DM Sans, sans-serif',
-              fontWeight: 100,
-              lineHeight: '150%',
-              letterSpacing: '0%',
-            
-            }}
-          >
-           Additional text specifically for small screens.
-          </p>
+         
         </div>
         
       </div>
         {/* Cards Grid - Full Width */}
-        <div className="absolute left-0 w-screen md:mt-60 mt-0">
+        <div className="absolute left-0 w-screen md:mt-60 mt-10">
           <div className="relative w-full md:space-y-16 space-y-8">
             <TextLoop {...row1} key={row1.id} separator={row1.separator} />
             <TextLoop {...row2} key={row2.id} separator={row2.separator} />

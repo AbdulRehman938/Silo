@@ -6,6 +6,7 @@ const MindsInTheSilo = () => {
   // Carousel state management
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
   
@@ -19,37 +20,37 @@ const MindsInTheSilo = () => {
       id: 'ruby-turbett',
       type: 'team-member',
       name: 'Ruby Turbett',
-      title: 'Job title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
+      title: 'Founder',
+      description: 'Ruby has a decade of marketing experience, having built a finance-focused agency before leaning into her passion for social. She leads with sharp thinking and builds strong client relationships. Outside work, she’s at pilates, boxing or planning her next city break.',
       imageUrl: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717229/Carousal1_qyrnxy.png'
     },
     {
       id: 'hailey-hippolyte',
       type: 'team-member',
       name: 'Hailey Hippolyte',
-      title: 'Job title',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
+      title: 'Head of Social & Creator Partnerships',
+      description: 'Hailey turns ideas into standout stories and thoughtful collaborations. With a balance of data and creativity, she helps brands connect in a lasting way. She thrives on bringing people and ideas together, often found chasing sunsets when she’s off the clock.',
       imageUrl: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717231/Carousal2_hnaif5.png'
     },
     {
       id: 'will-carter',
       type: 'team-member',
       name: 'Will Carter',
-      title: 'Genius and Ego',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.',
+      title: 'Creative Digital Designer',
+      description: 'Will designs clean, human-focused digital experiences with a balance of creativity and practical thinking. He helps brands show up with clarity and purpose, turning ideas into simple products people enjoy using. When he’s not working, he’s likely on a padel court perfecting his backhand.',
       imageUrl: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717231/Carousal4_inzouv.png'
     },
     {
       id: 'join-us',
       type: 'special-card',
-      title: 'Think you\'re cooler than us?',
-      buttonText: 'Prove it',
-      description: 'Worst case, you get rejected by people with great hair (or Wil).'
+      title: 'Think you’re the right fit for our team?',
+      buttonText: 'Current Vacancies',
+      description: 'Can’t see an opening that fits you? Get in touch anyway - we’re always on the lookout for our next team-mates!'
     }
   ];
 
   // Enhanced responsive breakpoint detection
-  const [isMobile, setIsMobile] = useState(false);
+  const [viewportWidth, setViewportWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
   
   // Intersection Observer for viewport-based animations
   const observerCallback = useCallback((entries) => {
@@ -94,12 +95,22 @@ const MindsInTheSilo = () => {
   useEffect(() => {
     const checkViewport = () => {
       const width = window.innerWidth;
-      const newIsMobile = width < 768;
-      
-      if (newIsMobile !== isMobile) {
-        setIsMobile(newIsMobile);
-        setCurrentSlide(0); // Reset to first slide when switching layouts
+      // Compute cards-per-view for previous and new widths so we can reset slide on breakpoint change
+      const prevWidth = viewportWidth;
+      const getCardsPerView = (w) => {
+        if (w < 768) return 1;
+        if (w < 1280) return 2; // md and lg show 2 cards
+        return 3; // xl and up show 3 cards
+      };
+
+      const prevCards = getCardsPerView(prevWidth);
+      const newCards = getCardsPerView(width);
+
+      if (newCards !== prevCards) {
+        setCurrentSlide(0);
       }
+
+      setViewportWidth(width);
     };
     
     // Initial check
@@ -117,18 +128,41 @@ const MindsInTheSilo = () => {
       window.removeEventListener('resize', debouncedResize);
       clearTimeout(timeoutId);
     };
-  }, [isMobile]);
+  }, [viewportWidth]);
 
-  // Dynamic slide calculation based on screen size
-  const cardsPerView = isMobile ? 1 : 3;
-  const totalSlides = isMobile ? carouselData.length : Math.max(1, carouselData.length - cardsPerView + 1);
+  // Dynamic slide calculation based on viewport width
+  const getLayoutForWidth = (w) => {
+    // returns { cardsPerView, cardWidth, gap }
+    if (w < 768) {
+      return { cardsPerView: 1, cardWidth: Math.min(320, w - 40), gap: 12 };
+    }
+    if (w < 1024) {
+      // md: show 2 cards, calculate width to fit properly
+      const availableWidth = w - 80; // account for padding
+      const cardWidth = Math.min(340, (availableWidth - 24) / 2);
+      return { cardsPerView: 2, cardWidth, gap: 24 };
+    }
+    if (w < 1280) {
+      // lg: show 2 cards, calculate width to fit properly
+      const availableWidth = w - 100;
+      const cardWidth = Math.min(380, (availableWidth - 24) / 2);
+      return { cardsPerView: 2, cardWidth, gap: 24 };
+    }
+    // xl and up: show 3 cards, calculate width to fit properly
+    const availableWidth = w - 120;
+    const cardWidth = Math.min(380, (availableWidth - 48) / 3);
+    return { cardsPerView: 3, cardWidth, gap: 24 };
+  };
 
-  // Navigation functions with debouncing
+  const { cardsPerView, cardWidth, gap } = getLayoutForWidth(viewportWidth);
+  const totalSlides = cardsPerView === 1 ? carouselData.length : Math.max(1, carouselData.length - cardsPerView + 1);
+
+  // Navigation functions with faster transitions
   const goToNextSlide = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setCurrentSlide((prev) => (prev + 1) % totalSlides);
-      setTimeout(() => setIsTransitioning(false), 600);
+      setTimeout(() => setIsTransitioning(false), 300);
     }
   };
 
@@ -136,7 +170,7 @@ const MindsInTheSilo = () => {
     if (!isTransitioning) {
       setIsTransitioning(true);
       setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-      setTimeout(() => setIsTransitioning(false), 600);
+      setTimeout(() => setIsTransitioning(false), 300);
     }
   };
 
@@ -149,8 +183,8 @@ const MindsInTheSilo = () => {
   const handleTouchMove = (e) => {
     setTouchEnd(e.targetTouches[0].clientX);
     
-    // Prevent horizontal scroll interference on mobile
-    if (isMobile && touchStart) {
+    // Prevent horizontal scroll interference on all screen sizes
+    if (touchStart) {
       const currentX = e.targetTouches[0].clientX;
       const diffX = Math.abs(currentX - touchStart);
       
@@ -168,13 +202,11 @@ const MindsInTheSilo = () => {
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
 
-    // Only trigger swipe on mobile devices
-    if (isMobile) {
-      if (isLeftSwipe) {
-        goToNextSlide();
-      } else if (isRightSwipe) {
-        goToPrevSlide();
-      }
+    // Trigger swipe for all screen sizes
+    if (isLeftSwipe) {
+      goToNextSlide();
+    } else if (isRightSwipe) {
+      goToPrevSlide();
     }
     
     // Reset touch states
@@ -209,12 +241,12 @@ const MindsInTheSilo = () => {
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-6 sm:py-8 md:py-12 lg:py-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden">
+    <section className="min-h-screen flex items-start justify-center py-6 sm:py-8 md:py-12 lg:py-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden">
       <div className="max-w-full mx-auto w-full">
         {/* Header Section - Zoom & Small Laptop Optimized */}
-        <div className="text-center xl:text-left mb-6 sm:mb-8 md:mb-12 lg:mb-16 px-2 sm:px-0">
+        <div className="text-left xl:text-left mb-6 sm:mb-8 md:mb-12 lg:mb-16 px-2 sm:px-0">
           <h2 
-            className="font-bold text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[48px] leading-tight mb-3 sm:mb-4"
+            className="font-bold text-black text-2xl sm:text-xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-[48px] leading-tight mb-3 sm:mb-4"
             style={{
               opacity: 1,
               fontFamily: 'Epilogue, sans-serif',
@@ -227,7 +259,7 @@ const MindsInTheSilo = () => {
           </h2>
           
           <p 
-            className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto xl:mx-0"
+            className="text-black text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl xl:mx-0"
             style={{
               fontFamily: 'DM Sans, sans-serif',
               fontWeight: 400,
@@ -235,8 +267,7 @@ const MindsInTheSilo = () => {
               letterSpacing: '0%'
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros 
-            elementum tristique.
+           Behind The Silo is a collective of storytellers, designers, and social minds who live and breathe content - building brands with creativity and strategy.
           </p>
         </div>
 
@@ -255,22 +286,46 @@ const MindsInTheSilo = () => {
             onTouchEnd={handleTouchEnd}
             role="group"
             aria-label={`Slide ${currentSlide + 1} of ${totalSlides}`}
+            style={{ touchAction: 'pan-y pinch-zoom' }}
           >
             <motion.div 
-              className="flex gap-3 sm:gap-4 md:gap-6"
+              className="flex gap-3 sm:gap-4 md:gap-6 cursor-grab active:cursor-grabbing select-none"
+              drag="x"
+              dragConstraints={{
+                left: -(cardWidth + gap) * Math.max(0, carouselData.length - cardsPerView),
+                right: 0
+              }}
+              dragElastic={0.2}
+              dragMomentum={false}
+              onDragStart={() => {
+                setIsDragging(true);
+                document.body.style.userSelect = 'none';
+              }}
+              onDragEnd={(event, info) => {
+                setIsDragging(false);
+                document.body.style.userSelect = '';
+                const offset = info.offset.x;
+                const velocity = info.velocity.x;
+                
+                if (Math.abs(offset) > 50 || Math.abs(velocity) > 300) {
+                  if (offset > 0 && currentSlide > 0) {
+                    goToPrevSlide();
+                  } else if (offset < 0 && currentSlide < totalSlides - 1) {
+                    goToNextSlide();
+                  }
+                }
+              }}
               animate={{
-                x: isMobile 
-                  ? -currentSlide * (280 + 12) // Mobile: optimized card width
-                  : -currentSlide * (395 + 24) // Desktop: consistent slide calculation
+                x: -currentSlide * (cardWidth + gap)
               }}
               transition={{
                 type: "spring",
-                stiffness: 300,
-                damping: 30,
-                mass: 0.8
+                stiffness: 400,
+                damping: 25,
+                mass: 0.5
               }}
               style={{
-                width: 'fit-content'
+                width: `${cardWidth * carouselData.length + gap * (carouselData.length - 1)}px`
               }}
             >
               {carouselData.map((item, index) => {
@@ -283,7 +338,8 @@ const MindsInTheSilo = () => {
                       cardRefs.current[index] = el;
                       if (el) el.dataset.cardIndex = index;
                     }}
-                    className="flex-shrink-0 w-64 sm:w-72 md:w-80 lg:w-80 xl:w-[350px] 2xl:w-[395px]"
+                    className="flex-shrink-0"
+                    style={{ width: `${cardWidth}px` }}
                     initial={{ opacity: 0, scale: 0.8, y: 50, rotateY: -15 }}
                     animate={{ 
                       opacity: isInViewport ? 1 : 0,
@@ -300,96 +356,63 @@ const MindsInTheSilo = () => {
                     }}
                   >
                   {item.type === 'team-member' ? (
-                    // Team Member Card - Viewport-based animations
+                    // Team Member Card - No fading animations
                     <motion.div 
-                      className="bg-white p-3 sm:p-4 lg:p-5 xl:p-6 h-full flex flex-col"
+                      className="bg-white h-full flex flex-col group"
                       style={{
-                        minHeight: '300px'
+                        minHeight: '300px',
+                        pointerEvents: isDragging ? 'none' : 'auto',
+                        border: cardsPerView === 1 && isInViewport ? '2px solid #FF322E' : 'none'
                       }}
-                      whileHover={{ 
-                        y: -8,
-                        boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-                        scale: 1.02
-                      }}
+                      whileHover={!isDragging ? {} : {}}
                       transition={{ duration: 0.3 }}
                     >
-                      <motion.img 
+                      <img 
                         src={item.imageUrl} 
                         alt={`${item.name} - Team Member`}
-                        className="w-full h-auto object-cover flex-1 max-h-40 sm:max-h-48 lg:max-h-56 xl:max-h-none"
-                        initial={{ opacity: 0, scale: 1.2, rotateX: 20 }}
-                        animate={{ 
-                          opacity: isInViewport ? 1 : 0, 
-                          scale: isInViewport ? 1 : 1.2,
-                          rotateX: isInViewport ? 0 : 20
-                        }}
-                        transition={{ duration: 0.6, delay: isInViewport ? 0.2 : 0 }}
+                        className="w-full h-auto object-cover flex-1 max-h-[22rem] lg:max-h-[22rem] md:max-h-[30rem]"
+                        draggable={false}
                       />
                       
-                      {/* Text Content - Staggered animations */}
-                      <motion.div 
-                        className="mt-2 sm:mt-3 lg:mt-4 space-y-1 sm:space-y-2"
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ 
-                          opacity: isInViewport ? 1 : 0, 
-                          y: isInViewport ? 0 : 30 
-                        }}
-                        transition={{ duration: 0.6, delay: isInViewport ? 0.4 : 0 }}
+                      {/* Text Content - No animations */}
+                      <div 
+                        className="mt-0 pt-3 sm:pt-3 lg:pt-4 border border-transparent border-t-0 transition-all duration-200 md:group-hover:border-red-500 md:group-hover:border-b-2 md:group-hover:border-l-2 md:group-hover:border-r-2"
                       >
-                        <motion.h3 
-                          className="font-bold text-black text-sm sm:text-base lg:text-xl text-left"
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ 
-                            opacity: isInViewport ? 1 : 0, 
-                            x: isInViewport ? 0 : -20 
-                          }}
-                          transition={{ duration: 0.5, delay: isInViewport ? 0.5 : 0 }}
+                        <h3 
+                          className="font-semibold text-black text-xl sm:text-base lg:text-2xl text-left"
                         >
                           {item.name}
-                        </motion.h3>
-                        <motion.p 
-                          className="text-gray-800 text-xs sm:text-sm lg:text-lg text-left"
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ 
-                            opacity: isInViewport ? 1 : 0, 
-                            x: isInViewport ? 0 : -20 
-                          }}
-                          transition={{ duration: 0.5, delay: isInViewport ? 0.6 : 0 }}
+                        </h3>
+                        <p 
+                          className="text-black text-base sm:text-sm lg:text-xl text-left mb-5 font-normal"
                         >
                           {item.title}
-                        </motion.p>
-                        <motion.p 
-                          className="text-gray-700 text-xs sm:text-sm leading-relaxed text-left"
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ 
-                            opacity: isInViewport ? 1 : 0, 
-                            y: isInViewport ? 0 : 10 
-                          }}
-                          transition={{ duration: 0.5, delay: isInViewport ? 0.7 : 0 }}
+                        </p>
+                        <p 
+                          className="text-black text-sm lg:text-lg leading-relaxed text-left font-normal"
                         >
                           {item.description}
-                        </motion.p>
-                      </motion.div>
+                        </p>
+                      </div>
                     </motion.div>
                   ) : (
                     // Special Card - Viewport-based animations
                     <motion.div 
-                      className=" p-3 sm:p-4 lg:p-6 xl:p-8 h-full flex flex-col justify-center items-center text-center border-2"
+                      className=" p-3 sm:p-4 lg:p-6 xl:p-8 h-full flex flex-col justify-center items-center text-left border-2 group"
                       style={{
                         minHeight: '300px',
                         backgroundColor: '#FFE5E5',
-                        borderColor: '#FF322E'
+                        borderColor: '#FF322E',
+                        pointerEvents: isDragging ? 'none' : 'auto'
                       }}
-                      whileHover={{ 
-                        scale: 1.05,
+                      whileHover={!isDragging ? { 
                         borderColor: '#FF1E1A',
-                        boxShadow: "0 20px 40px rgba(255, 50, 46, 0.3)",
                         rotate: 1
-                      }}
+                      } : {}}
                       transition={{ duration: 0.3 }}
                     >
                       <motion.div 
-                        className="space-y-3 sm:space-y-4 lg:space-y-6 xl:space-y-8 max-w-xs"
+                        className="space-y-6 sm:space-y-4 lg:space-y-6 xl:space-y-8 max-w-xs"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ 
                           opacity: isInViewport ? 1 : 0, 
@@ -398,7 +421,7 @@ const MindsInTheSilo = () => {
                         transition={{ duration: 0.6, delay: isInViewport ? 0.2 : 0 }}
                       >
                         <motion.h3 
-                          className="font-bold text-black text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-tight"
+                          className="font-bold text-black text-3xl text-center w-[90%] md:text-4xl md:w-[100%] mx-auto sm:text-xl lg:text-2xl xl:text-3xl leading-tight"
                           style={{
                             fontFamily: 'Epilogue, sans-serif',
                             fontWeight: 700,
@@ -417,7 +440,7 @@ const MindsInTheSilo = () => {
                         </motion.h3>
                         
                         <motion.button 
-                          className="bg-red-500 hover:bg-red-600 text-white font-bold px-3 sm:px-4 lg:px-6 xl:px-8 py-2 sm:py-2 lg:py-3 xl:py-4 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-xs sm:text-sm lg:text-base xl:text-lg w-full"
+                          className="bg-brand hover:bg-red-600 text-white font-bold px-3 sm:px-4 lg:px-6 xl:px-8 py-4 sm:py-2 lg:py-3 xl:py-4 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base sm:text-sm lg:text-base xl:text-lg w-[80%] mx-auto ml-9"
                           onClick={() => console.log('Prove it clicked')}
                           style={{
                             fontFamily: 'DM Sans, sans-serif',
@@ -437,13 +460,12 @@ const MindsInTheSilo = () => {
                         </motion.button>
                         
                         <motion.p 
-                          className="text-gray-700 text-xs sm:text-sm lg:text-base leading-relaxed"
+                          className="text-black text-sm text-center w-[90%] mx-auto md:w-[100%] sm:text-sm lg:text-base leading-relaxed"
                           style={{
                             fontFamily: 'DM Sans, sans-serif',
-                            fontWeight: 400,
+                            fontWeight: 600,
                             lineHeight: '150%',
                             letterSpacing: '0%',
-                            color: '#6B7280'
                           }}
                           initial={{ opacity: 0, y: 15 }}
                           animate={{ 
@@ -474,7 +496,7 @@ const MindsInTheSilo = () => {
                     if (!isTransitioning) {
                       setIsTransitioning(true);
                       setCurrentSlide(index);
-                      setTimeout(() => setIsTransitioning(false), 600);
+                      setTimeout(() => setIsTransitioning(false), 300);
                     }
                   }}
                   className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${

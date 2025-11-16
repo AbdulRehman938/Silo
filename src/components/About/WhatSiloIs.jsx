@@ -1,12 +1,12 @@
 const WhatSiloIs = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center py-6 md:py-12 lg:py-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden w-full sm:py-0 sm:h-fit">
-      <div className="max-w-full mx-auto w-full flex flex-col gap-10">
-        <div className="flex flex-col xl:grid mb-10 xl:grid-cols-2 items-start gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 sm:mb-8 md:mb-12 lg:mb-16">
+    <section className="min-h-screen flex items-center justify-center py-6 md:py-12 lg:py-20 lg:pb-10 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden w-full sm:py-0 sm:h-fit">
+      <div className="max-w-full mx-auto w-full flex flex-col gap-0">
+        <div className="flex flex-col md:grid md:grid-cols-2 mb-10 items-start gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 sm:mb-8  mx-auto">
           {/* Left Side - Heading - Zoom & Small Laptop Optimized */}
-          <div className="w-full px-2 sm:px-0">
+          <div className="w-full px-2 sm:px-0 mt-10 md:mt-0">
             <h2 
-              className="font-bold text-black text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[48px] leading-tight text-center xl:text-left"
+              className="font-bold max-w-[36rem] text-black text-2xl md:text-2xl lg:text-3xl xl:text-5xl 2xl:text-[48px] leading-tight text-left"
               style={{
                 opacity: 1,
                 fontFamily: 'Epilogue, sans-serif',
@@ -20,12 +20,12 @@ const WhatSiloIs = () => {
           </div>
           
           {/* Right Side - Text Content - Zoom & Small Laptop Optimized */}
-          <div className="text-gray-700 space-y-3 sm:space-y-4 md:space-y-6 w-full px-2 sm:px-0">
+            <div className="text-gray-700 space-y-3 sm:space-y-4 md:space-y-6 w-full px-2 sm:px-0">
             <p 
-              className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[18px] leading-relaxed text-center xl:text-left"
+              className="text-base sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[18px] leading-relaxed text-left"
               style={{
                
-                fontWeight: 800,
+                fontWeight: 700,
                 lineHeight: '150%',
                 letterSpacing: '0%',
                 color: '#000',
@@ -36,10 +36,10 @@ const WhatSiloIs = () => {
             </p>
             
             <p 
-              className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[18px] leading-relaxed text-center xl:text-left"
+              className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[18px] leading-relaxed text-left"
               style={{
                
-                fontWeight: 500,
+                fontWeight: 400,
                 lineHeight: '150%',
                 letterSpacing: '0%',
                 color: '#000',
@@ -50,10 +50,10 @@ const WhatSiloIs = () => {
             </p>
             
             <p 
-              className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[18px] leading-relaxed text-center xl:text-left"
+              className="text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[18px] leading-relaxed text-left"
               style={{
                
-                fontWeight: 500,
+                fontWeight: 400,
                 lineHeight: '150%',
                 letterSpacing: '0%',
                 color: '#000',
@@ -67,8 +67,8 @@ const WhatSiloIs = () => {
         </div>
         
         {/* Full Width Image Below - Zoom & Small Laptop Optimized */}
-        <div className="mt-6 sm:mt-8 md:mt-12 px-2 sm:px-0">
-          <div className="w-full h-60 sm:h-60 md:h-72 lg:h-80 xl:h-96 2xl:h-[30rem] overflow-hidden mx-auto max-w-full">
+        <div className="mt-6 sm:mt-8 md:mt-16 px-2 sm:px-0 w-full mx-auto">
+          <div className="w-full h-60 sm:h-60 md:h-72 lg:h-80 xl:h-96 2xl:h-[30rem] overflow-hidden">
             <img 
               src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717240/image_re2b0o.png" 
               alt="Silo creative process illustration"
