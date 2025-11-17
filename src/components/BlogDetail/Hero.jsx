@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { FaLink, FaLinkedinIn, FaFacebookF, FaImage } from 'react-icons/fa';
+import { toast } from 'react-toastify';
+import { FaLink, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
 export default function Hero({ blogPost }) {
@@ -28,8 +29,7 @@ export default function Hero({ blogPost }) {
     try {
       if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(window.location.href);
-        setCopySuccess(true);
-        setTimeout(() => setCopySuccess(false), 2000);
+        toast.success('Link copied to clipboard!');
       } else {
         const textArea = document.createElement('textarea');
         textArea.value = window.location.href;
@@ -37,33 +37,32 @@ export default function Hero({ blogPost }) {
         textArea.select();
         document.execCommand('copy');
         document.body.removeChild(textArea);
-        setCopySuccess(true);
-        setTimeout(() => setCopySuccess(false), 2000);
+        toast.success('Link copied to clipboard!');
       }
     } catch (err) {
       console.error('Failed to copy: ', err);
-      alert('Failed to copy link. Please copy manually: ' + window.location.href);
+      toast.error('Failed to copy link. Please try again.');
     }
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 min-h-screen md:min-h-[80vh]">
+    <div className="grid grid-cols-1 lg:grid-cols-[40%_58%] gap-0 md:gap-0 lg:gap-[2%] md:min-h-[80vh] lg:mt-16">
       {/* Left Column - Content */}
-      <div className="order-2 lg:order-1">
+      <div className="order-1 h-[43vh] md:h-auto lg:order-1">
         <nav className="mb-8" aria-label="Breadcrumb">
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
+          <div className="flex items-center space-x-2 text-base text-black">
             <span>Blog</span>
-            <span className="text-gray-400">›</span>
+            <span className="text-black">›</span>
             <span>{blogPost.category}</span>
           </div>
         </nav>
         {/* Blog Title */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-16 leading-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-black lg:mb-16 mb-5 leading-tight">
           {blogPost.title || 'Blog title heading will go here'}
         </h1>
 
         {/* Author Metadata */}
-        <div className="mb-12">
+        <div className="lg:mb-12 mb-5">
           <p className="text-sm text-black">
             By <span className="font-semibold">{blogPost.author || 'Ruby Turbett'}</span>
           </p>
@@ -75,15 +74,15 @@ export default function Hero({ blogPost }) {
         </div>
 
         {/* Social Share Section */}
-        <div className="mb-8">
+        <div className="lg:mb-8 mb-5">
           <h2 className="text-base font-semibold text-black mb-3">Share this post</h2>
           <div className="flex items-center gap-3">
             {/* Copy Link Button */}
             <button
               onClick={copyToClipboard}
-              className="p-2 text-black hover:text-gray-600 focus:outline-none transition-colors"
+              className="p-2 text-black hover:text-brand focus:outline-none transition-colors"
               aria-label="Copy link to clipboard"
-              title={copySuccess ? "Copied!" : "Copy link"}
+              title="Copy link"
             >
               <FaLink className="w-5 h-5" />
             </button>
@@ -91,7 +90,7 @@ export default function Hero({ blogPost }) {
             {/* LinkedIn Button */}
             <button
               onClick={shareOnLinkedIn}
-              className="p-2 text-black hover:text-gray-600 focus:outline-none transition-colors"
+              className="p-2 text-black hover:text-brand focus:outline-none transition-colors"
               aria-label="Share on LinkedIn"
             >
               <FaLinkedinIn className="w-5 h-5" />
@@ -100,7 +99,7 @@ export default function Hero({ blogPost }) {
             {/* Twitter/X Button */}
             <button
               onClick={shareOnTwitter}
-              className="p-2 text-black hover:text-gray-600 focus:outline-none transition-colors"
+              className="p-2 text-black hover:text-brand focus:outline-none transition-colors"
               aria-label="Share on Twitter"
             >
               <FaXTwitter className="w-5 h-5" />
@@ -109,42 +108,49 @@ export default function Hero({ blogPost }) {
             {/* Facebook Button */}
             <button
               onClick={shareOnFacebook}
-              className="p-2 text-black hover:text-gray-600 focus:outline-none transition-colors"
+              className="p-2 text-black hover:text-brand focus:outline-none transition-colors"
               aria-label="Share on Facebook"
             >
               <FaFacebookF className="w-5 h-5" />
             </button>
           </div>
-          {copySuccess && (
-            <p className="text-sm text-green-600 mt-2" role="status" aria-live="polite">
-              Link copied to clipboard!
-            </p>
-          )}
         </div>
       </div>
 
       {/* Right Column - Featured Image */}
-      <div className="order-1 lg:order-2">
-        <div className="bg-gray-300 aspect-[16/9] overflow-hidden flex items-center justify-center relative">
+      <div className="order-2 lg:order-2">
+        <div className="bg-white aspect-auto overflow-hidden flex items-center justify-center relative min-h-[35vh] md:h-auto">
           {!imageError && blogPost.featuredImage ? (
             <>
               {!imageLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-300 animate-pulse">
-                  <FaImage className="w-16 h-16 text-gray-400" />
+                <div className="absolute inset-0 w-full h-full flex items-center justify-center bg-[#DBDBDB] animate-pulse">
+                  <svg
+                    className="w-20 h-20 text-[#BABABA]"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                  </svg>
                 </div>
               )}
               <img
                 src={blogPost.featuredImage}
                 alt={`Featured image for ${blogPost.title}`}
-                className={`w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                className={`w-full h-full object-cover transition-opacity duration-300 block ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 loading="lazy"
                 onLoad={() => setImageLoaded(true)}
                 onError={() => setImageError(true)}
               />
             </>
           ) : (
-            <div className="w-full h-full flex items-center justify-center">
-              <FaImage className="w-20 h-20 text-gray-400" />
+            <div className="w-full h-full flex items-center justify-center bg-[#DBDBDB]">
+              <svg
+                className="w-20 h-20 text-[#BABABA]"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+              </svg>
             </div>
           )}
         </div>

@@ -1,18 +1,60 @@
 import { useState, useEffect, useRef } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { toast } from 'react-toastify';
 
 export default function NewsletterSubscription({ onSubmit, isSubmitting, message, messageType, containerRef }) {
-  const [email, setEmail] = useState('');
   const [isSticky, setIsSticky] = useState(false);
   const [leftPosition, setLeftPosition] = useState(0);
   const newsletterRef = useRef(null);
   const wrapperRef = useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (email && !isSubmitting) {
-      onSubmit(email);
-    }
-  };
+  // Validation schema
+  const validationSchema = Yup.object({
+    email: Yup.string()
+      .email('Invalid email address')
+      .required('Email is required'),
+  });
+
+  // Formik setup
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+    },
+    validationSchema: validationSchema,
+    onSubmit: (values, { setSubmitting, resetForm }) => {
+      // Handle form submission here
+      console.log('Newsletter subscription:', values.email);
+      
+      // Get existing data from localStorage
+      const existingData = JSON.parse(localStorage.getItem('newsletterSubscriptions') || '[]');
+      
+      // Add new subscription with timestamp
+      const newSubscription = {
+        email: values.email,
+        submittedAt: new Date().toISOString()
+      };
+      
+      // Add to array and store in localStorage
+      const updatedData = [...existingData, newSubscription];
+      localStorage.setItem('newsletterSubscriptions', JSON.stringify(updatedData));
+      
+      // Log all stored data
+      console.log('All newsletter subscriptions:', updatedData);
+      
+      // Show success toast
+      toast.success('Successfully subscribed to newsletter!');
+      
+      // Reset form
+      resetForm();
+      setSubmitting(false);
+      
+      // Reload page after successful submit
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    },
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,43 +98,49 @@ export default function NewsletterSubscription({ onSubmit, isSubmitting, message
     <div ref={wrapperRef} className="relative">
       <div 
         ref={newsletterRef}
-        className={`bg-white border-2 border-gray-300 rounded-lg p-6 ${isSticky ? 'fixed top-24' : 'relative'}`}
+        className={`bg-white border-2 mt-10 border-black p-6 ${isSticky ? 'fixed top-24' : 'relative'}`}
         style={isSticky ? { left: `${leftPosition}px`, width: wrapperRef.current?.offsetWidth + 'px' } : {}}
       >
       <h3 className="text-xl font-bold text-black mb-3">Subscribe to newsletter</h3>
-      <p className="text-sm text-gray-600 mb-5 leading-relaxed">
+      <p className="text-base font-normal text-black mb-5 leading-relaxed">
         Subscribe to receive the latest blog posts to your inbox every week.
       </p>
       
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-          className="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none"
-          disabled={isSubmitting}
-          required
-        />
+      <form onSubmit={formik.handleSubmit} className="space-y-4">
+        <div>
+          <input
+            type="email"
+            name="email"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            placeholder="Enter your email"
+            className={`w-full border px-4 py-2 text-sm focus:ring-2 focus:ring-red-500 focus:border-red-500 outline-none ${
+              formik.touched.email && formik.errors.email
+                ? 'border-red-500'
+                : 'border-black'
+            }`}
+            disabled={formik.isSubmitting}
+          />
+          {formik.touched.email && formik.errors.email && (
+            <p className="mt-1 text-sm text-red-500">{formik.errors.email}</p>
+          )}
+        </div>
         
         <button
           type="submit"
-          disabled={isSubmitting || !email}
-          className="w-full bg-red-500 text-white px-4 py-3 rounded font-medium hover:bg-red-600 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          disabled={formik.isSubmitting}
+          className="w-full bg-red-500 text-white px-4 py-3 font-medium hover:bg-red-600 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
-          {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+          {formik.isSubmitting ? 'Subscribing...' : 'Subscribe'}
         </button>
       </form>
 
-      {message && (
-        <p className={`text-sm mt-3 ${messageType === 'success' ? 'text-green-600' : 'text-red-600'}`}>
-          {message}
-        </p>
-      )}
+      
 
-        <p className="text-xs text-gray-500 mt-3">
+        <p className="text-xs text-black mt-3">
           By subscribing you agree to with our{' '}
-          <a href="#" className="underline hover:text-gray-700">Privacy Policy</a>
+          <a href="/privacy-policy" className="underline hover:text-black">Privacy Policy</a>
         </p>
       </div>
     </div>

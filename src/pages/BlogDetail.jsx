@@ -255,11 +255,11 @@ export default function BlogDetail() {
   // Handle case where blog post is not found
   if (!blogPost) {
     return (
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-white min-h-screen">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-black mb-4">Blog Post Not Found</h1>
-            <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
+            <p className="text-black mb-8">The blog post you're looking for doesn't exist.</p>
             <a 
               href="/ramblings" 
               className="inline-flex items-center text-red-500 hover:text-red-600 font-medium transition-colors"
@@ -273,10 +273,9 @@ export default function BlogDetail() {
   }
 
   return (
-    <div className="bg-gray-50 min-h-[20vh]">
-      <div className="mx-auto max-w-[90vw] px-6 lg:px-8 py-12">
+    <div className="bg-white mt-20 min-h-[20vh]">
+      <div className="mx-auto max-w-[1280px] px-6 lg:px-8 py-12">
         {/* Breadcrumb Navigation */}
-        
 
         {/* Hero Section */}
         <Hero blogPost={blogPost} />
@@ -290,7 +289,7 @@ export default function BlogDetail() {
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
               {blogPost.content?.introduction?.title || 'Introduction'}
             </h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-black leading-relaxed">
               {blogPost.content?.introduction?.paragraphs?.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               )) || (
@@ -321,7 +320,7 @@ export default function BlogDetail() {
         {/* Content Image Section - Matches left column width */}
         {blogPost.content?.contentImage && (
           <div className="mt-12 lg:max-w-[66.666%]">
-            <div className="bg-gray-300 rounded-lg aspect-video overflow-hidden flex items-center justify-center">
+            <div className="bg-white aspect-video overflow-hidden flex items-center justify-center">
               <img
                 src={blogPost.content.contentImage.src}
                 alt={blogPost.content.contentImage.alt}
@@ -329,7 +328,7 @@ export default function BlogDetail() {
               />
             </div>
             {blogPost.content.contentImage.caption && (
-              <p className="text-sm text-gray-600 mt-2 flex items-center gap-1">
+              <p className="text-sm text-black mt-2 flex items-center gap-1">
                 <span><LuTriangleRight className="text-black fill-black mx-1 rotate-90" size={16} /></span> {blogPost.content.contentImage.caption}
               </p>
             )}
@@ -338,7 +337,7 @@ export default function BlogDetail() {
 
         {/* Additional Content Paragraphs */}
         <div className="mt-12 lg:max-w-[66.666%]">
-          <div className="space-y-4 text-gray-700 leading-relaxed">
+          <div className="space-y-4 text-black leading-relaxed">
             <p>
               Dolor enim eu tortor urna sed duis nulla. Aliquam vestibulum, nulla odio nisl vitae. In aliquet pellentesque aenean hac vestibulum turpis mi bibendum diam. Tempor integer aliquam in vitae malesuada fringilla.
             </p>
@@ -350,12 +349,12 @@ export default function BlogDetail() {
 
         {/* Quote Section */}
         {blogPost.content?.quote && (
-          <div className="mt-12 border border-gray-300 rounded-lg p-8 lg:max-w-[66.666%]">
-            <blockquote className="text-lg md:text-xl text-gray-800 leading-relaxed mb-4">
+          <div className="mt-12 border border-black p-8 lg:max-w-[66.666%]">
+            <blockquote className="text-lg md:text-xl text-black leading-relaxed mb-4">
               "{blogPost.content.quote.text}"
             </blockquote>
             {blogPost.content.quote.author && (
-              <p className="text-sm text-gray-600 flex items-center gap-1">
+              <p className="text-sm text-black flex items-center gap-1">
                 <span><LuTriangleRight className="text-black fill-black mx-1 rotate-90" size={16} /></span> {blogPost.content.quote.author}
               </p>
             )}
@@ -368,7 +367,7 @@ export default function BlogDetail() {
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
               {blogPost.content.conclusion.title}
             </h2>
-            <div className="space-y-4 text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-black leading-relaxed">
               {blogPost.content.conclusion.paragraphs?.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -378,6 +377,7 @@ export default function BlogDetail() {
         </div>
         {/* End Content Container */}
       </div>
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
     </div>
   );
 }

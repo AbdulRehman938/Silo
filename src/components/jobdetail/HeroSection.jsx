@@ -1,10 +1,10 @@
-import { BsImage } from 'react-icons/bs'
+
 
 const HeroSection = ({ jobData }) => {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col mt-20">
       {/* Content Section no. 1 - Top Half */}
-      <div className="flex-1 max-w-[90vw] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 flex items-center">
+      <div className="flex-1 max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 flex items-center">
         <div className="w-full pt-8 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Content */}
@@ -70,8 +70,14 @@ const HeroSection = ({ jobData }) => {
 
             {/* Right Image */}
             <div className="order-1 lg:order-2">
-              <div className="bg-gray-300 w-[105%] h-[268px] sm:h-[336px] lg:h-[315px] flex items-center justify-center">
-                <BsImage className="text-gray-400 text-6xl sm:text-8xl" />
+              <div className="w-full h-full flex items-center justify-center bg-[#DBDBDB]  sm:h-[336px] lg:h-[315px]">
+                <svg
+                  className="w-20 h-20 text-[#BABABA]"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                </svg>
               </div>
             </div>
           </div>
@@ -79,13 +85,19 @@ const HeroSection = ({ jobData }) => {
       </div>
 
       {/* Content Section no. 2 - Bottom Half */}
-      <div className="flex-1 max-w-[90vw] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 flex items-center pb-8 sm:pb-12">
+      <div className="flex-1 max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 flex items-center pb-8 sm:pb-12">
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Image */}
             <div className="order-2 lg:order-1">
-              <div className="bg-gray-300 w-full h-64 sm:h-80 lg:h-[300px] flex items-center justify-center">
-                <BsImage className="text-gray-400 text-6xl sm:text-8xl" />
+              <div className="w-full h-full flex items-center justify-center bg-[#DBDBDB] sm:h-80 lg:h-[300px]">
+                <svg
+                  className="w-20 h-20 text-[#BABABA]"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                </svg>
               </div>
             </div>
 

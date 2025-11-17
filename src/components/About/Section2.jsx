@@ -3,7 +3,7 @@ import { FaChevronRight } from "react-icons/fa";
 
 const Section2 = () => {
   return (
-    <section className="w-full mb-20">
+    <section className="w-full mb-20 max-w-[1280px] mx-auto">
       {/* Default view: hidden on mobile, visible on lg+ (md has its own layout) */}
       <div className="hidden md:hidden lg:block w-full">
         <div className="border-2 border-gray-600 rounded-sm overflow-hidden w-full">
@@ -24,7 +24,7 @@ const Section2 = () => {
                   className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
                 >
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                    <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
+                    <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
                   </div>
                   <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-40">
                     For Brands
@@ -36,9 +36,9 @@ const Section2 = () => {
                   className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
                 >
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                    <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
+                    <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
                   </div>
-                  <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-28">
+                  <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-40">
                     For Creators
                   </span>
                 </a>

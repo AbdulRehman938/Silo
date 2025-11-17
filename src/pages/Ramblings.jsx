@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
@@ -6,6 +6,11 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 export default function Ramblings() {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("View all");
+  const containerRef = useRef(null);
+  const sidebarRef = useRef(null);
+  const sidebarWrapperRef = useRef(null);
+  const [isSticky, setIsSticky] = useState(false);
+  const [leftPosition, setLeftPosition] = useState(0);
 
   const blogPosts = [
     {
@@ -76,23 +81,64 @@ export default function Ramblings() {
     return blogPosts.filter((post) => post.category === selectedCategory);
   }, [blogPosts, selectedCategory]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current || !sidebarRef.current || !sidebarWrapperRef.current) return;
+
+      // Disable sticky on mobile (screens smaller than 1024px / lg breakpoint)
+      const isMobile = window.innerWidth < 1024;
+      if (isMobile) {
+        setIsSticky(false);
+        return;
+      }
+
+      const containerRect = containerRef.current.getBoundingClientRect();
+      const sidebarWrapperRect = sidebarWrapperRef.current.getBoundingClientRect();
+      const sidebarHeight = sidebarRef.current.offsetHeight;
+      
+      // Calculate left position for fixed element
+      setLeftPosition(sidebarWrapperRect.left);
+      
+      // Only stick when scrolling down and container top reaches threshold
+      // And container bottom hasn't passed the sidebar
+      if (containerRect.top <= 128 && containerRect.bottom >= sidebarHeight + 128 + 64) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    handleScroll(); // Initial check
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen mt-5">
-      <div className="mx-auto max-w-[90vw] px-0 md:px-6 lg:px-8 md:py-12 mb-20">
+    <div className="min-h-screen md:mt-20 lg:mt-20 mx-3 md:mx-0">
+      <div className="mx-auto max-w-[1280px] px-0 md:px-6 lg:px-8 md:py-12 mb-20">
         {/* Header Section */}
-        <div className="mb-12">
-          <h1 className="text-4xl lg:text-5xl font-bold text-black mb-4">
+        <div className="mb-24 md:w-[50vw] mt-32 md:mt-0 ">
+          <h1 className="text-4xl lg:text-5xl font-bold text-black mb-4 font-['Epilogue'] leading-tight">
             Our Ramblings
           </h1>
-          <p className="text-gray-600 text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <p className="text-black text-lg font-normal">
+            From UGC tips to the latest in social and design trends, The Silo Blog dives into what’s shaping the digitall marketing and content-first world right now.
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div ref={containerRef} className="flex flex-col lg:flex-row gap-12">
           {/* Sidebar */}
-          <div className="lg:w-48 flex-shrink-0">
-            <div className="sticky top-20 lg:top-24 p-4 bg-white z-40 shadow-md lg:shadow-none">
+          <div ref={sidebarWrapperRef} className="lg:w-48 flex-shrink-0">
+            <div 
+              ref={sidebarRef}
+              className={`${isSticky ? 'fixed top-32' : 'relative'} p-4 bg-white z-40 shadow-md lg:shadow-none`}
+              style={isSticky ? { left: `${leftPosition}px`, width: sidebarWrapperRef.current?.offsetWidth + 'px' } : {}}
+            >
               <h3 className="text-lg font-bold text-black mb-6">
                 Blog categories
               </h3>
@@ -104,7 +150,7 @@ export default function Ramblings() {
                     className={`block w-full text-left text-sm transition-all duration-300 ease-in-out ${
                       selectedCategory === category
                         ? "border-2 border-black bg-transparent px-4 py-3 text-black font-bold transform scale-105"
-                        : "text-gray-700 hover:text-black hover:bg-gray-50 hover:translate-x-2 hover:font-bold px-2 py-1"
+                        : "text-black hover:text-black hover:bg-white hover:translate-x-2 hover:font-bold px-2 py-1"
                     }`}
                   >
                     {category}
@@ -131,20 +177,20 @@ export default function Ramblings() {
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
-                    <div className="md:p-8 py-8 px-0">
+                    <div className="md:p-8 md:px-0 py-8 px-0">
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1 rounded">
+                        <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1">
                           {filteredPosts[0].category}
                         </span>
-                        <span className="text-gray-300">•</span>
-                        <span className="text-sm text-gray-500">
+                        
+                        <span className="text-sm text-black">
                           {filteredPosts[0].readTime}
                         </span>
                       </div>
-                      <h2 className="text-3xl font-bold text-black mb-4 hover:text-red-600 transition-colors">
+                      <h2 className="text-3xl font-bold text-black mb-4 hover:text-brand transition-colors">
                         {filteredPosts[0].title}
                       </h2>
-                      <p className="text-gray-600 mb-6 text-lg">
+                      <p className="text-black mb-6 text-lg">
                         {filteredPosts[0].description}
                       </p>
                       <a
@@ -156,7 +202,7 @@ export default function Ramblings() {
                           aria-hidden
                           className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
                         >
-                          <MdOutlineKeyboardArrowRight className="text-2xl font-black text-black" />
+                          <MdOutlineKeyboardArrowRight className="text-2xl font-black text-brand" />
                         </span>
                       </a>
                     </div>
@@ -179,20 +225,20 @@ export default function Ramblings() {
                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                           />
                         </div>
-                        <div className="md:p-6 py-6 px-0">
+                        <div className="md:p-6 md:px-0 py-6 px-0">
                           <div className="flex items-center gap-3 mb-3">
-                            <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1 rounded">
+                            <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1">
                               {post.category}
                             </span>
-                            <span className="text-gray-300">•</span>
-                            <span className="text-sm text-gray-500">
+                            
+                            <span className="text-sm text-black">
                               {post.readTime}
                             </span>
                           </div>
-                          <h3 className="text-xl font-bold text-black mb-3 hover:text-red-600 transition-colors">
+                          <h3 className="text-xl font-bold text-black mb-3 hover:text-brand transition-colors">
                             {post.title}
                           </h3>
-                          <p className="text-gray-600 mb-4">
+                          <p className="text-black mb-4">
                             {post.description}
                           </p>
                           <a
@@ -218,7 +264,7 @@ export default function Ramblings() {
             {/* No posts message */}
             {filteredPosts.length === 0 && (
               <div className="text-center py-12">
-                <p className="text-gray-500 text-lg">
+                <p className="text-black text-lg">
                   No posts found in this category.
                 </p>
               </div>
@@ -242,13 +288,13 @@ export default function Ramblings() {
 
             {/* Right Form */}
             <div className="lg:flex-shrink-0 max-w-xl w-full">
-              <div className="md:flex md:gap-3 flex  gap-4">
+              <div className="md:flex md:gap-3 flex flex-col md:flex-row  gap-4">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   className="px-4 py-3 border border-black  focus:outline-none focus:ring-2 focus:ring-[#FF322E] focus:border-transparent text-base w-full"
                 />
-                <button className="bg-[#FF322E] whitespace-nowrap text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors text-base">
+                <button className="bg-[#FF322E] whitespace-nowrap text-white px-6 py-3 font-semibold hover:bg-brand transition-colors text-base">
                   Sign me up!
                 </button>
               </div>
@@ -265,6 +311,7 @@ export default function Ramblings() {
             </div>
           </div>
         </div>
+        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
       </div>
     </div>
   );

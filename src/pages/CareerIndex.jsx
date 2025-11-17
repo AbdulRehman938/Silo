@@ -16,19 +16,19 @@ const CareerIndex = () => {
   };
 
   return (
-    <div className="h-auto max-w-[90vw] mx-auto px-0 sm:px-6 md:px-8 lg:px-16 xl:px-20">
+    <div className="h-auto max-w-[1280px] mt-20 mx-auto px-0 sm:px-6 md:px-8 lg:px-16 xl:px-20">
       <div className="min-h-screen max-w-full bg-white py-8 sm:py-12 md:py-16 lg:py-20 mx-auto mb-28 md:mb-0">
         <div className="max-w-full mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
             {/* Left Content */}
             <div className="space-y-4 sm:space-y-6 order-1 lg:order-1">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-black leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
                 Work at the Silo
               </h1>
-              <p className="text-sm sm:text-base md:text-xl text-black leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              <p className="text-sm sm:text-base md:text-lg font-normal text-black leading-relaxed">
+                Want to make ideas happen? Join The Silo - a team of creators
                 <br className="hidden sm:block" />
-                Suspendisse varius enim in eros elementum tristique.
+               strategists, and storytellers shaping brands that stand out online
               </p>
             </div>
 
@@ -37,7 +37,7 @@ const CareerIndex = () => {
               {/* Job Card 1 */}
               <div
                 onClick={() => handleJobClick(1)}
-                className="bg-white border border-gray-400 p-6 sm:p-8 md:p-10 cursor-pointer hover:shadow-lg hover:border-gray-500 transition-all duration-200 group"
+                className="bg-white border border-black p-6 sm:p-8 md:p-10 cursor-pointer  hover:border-black transition-all duration-200 group"
               >
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2 sm:mb-0">
@@ -49,7 +49,7 @@ const CareerIndex = () => {
                         lineHeight: "140%",
                         letterSpacing: "0%",
                       }}
-                      className="text-black group-hover:text-red-600 transition-colors duration-200"
+                      className="text-black group-hover:text-brand transition-colors duration-200"
                     >
                       Job Title
                     </h3>
@@ -61,14 +61,14 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="bg-red-100 text-black px-2 py-1 rounded self-start"
+                      className="bg-[#FFDBDB] text-black px-2 py-1 rounded self-start"
                     >
                       Department
                     </span>
                   </div>
                   <button
                     onClick={(e) => handleApplyClick(e, 1)}
-                    className="inline-flex items-center gap-2 font-dm font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group self-start sm:self-auto"
+                    className="inline-flex items-center gap-2 font-dm font-normal text-xl leading-[150%] text-[#FF322E] tracking-normal group self-start sm:self-auto"
                   >
                     <span>Apply Now</span>
                     <span
@@ -88,7 +88,7 @@ const CareerIndex = () => {
                     lineHeight: "150%",
                     letterSpacing: "0%",
                   }}
-                  className="text-gray-600 mb-3 sm:mb-4"
+                  className="text-black mb-3 sm:mb-4"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Suspendisse varius enim in eros elementum tristique.
@@ -97,7 +97,7 @@ const CareerIndex = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
                   <div className="flex items-center gap-2">
                     <svg
-                      className="w-4 h-4 text-gray-500 flex-shrink-0"
+                      className="w-4 h-4 text-black flex-shrink-0"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -115,14 +115,14 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="text-gray-500"
+                      className="text-black"
                     >
                       Location
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <svg
-                      className="w-4 h-4 text-gray-500 flex-shrink-0"
+                      className="w-4 h-4 text-black flex-shrink-0"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -140,7 +140,7 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="text-gray-500"
+                      className="text-black"
                     >
                       Contract Type
                     </span>
@@ -151,7 +151,7 @@ const CareerIndex = () => {
               {/* Job Card 2 */}
               <div
                 onClick={() => handleJobClick(2)}
-                className="bg-white border border-gray-400 p-6 sm:p-8 md:p-10 cursor-pointer hover:shadow-lg hover:border-gray-500 transition-all duration-200 group"
+                className="bg-white border border-black p-6 sm:p-8 md:p-10 cursor-pointer  hover:border-black transition-all duration-200 group"
               >
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2 sm:mb-0">
@@ -163,7 +163,7 @@ const CareerIndex = () => {
                         lineHeight: "140%",
                         letterSpacing: "0%",
                       }}
-                      className="text-black group-hover:text-red-600 transition-colors duration-200"
+                      className="text-black group-hover:text-brand transition-colors duration-200"
                     >
                       Job Title
                     </h3>
@@ -175,14 +175,14 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="bg-red-100 text-black px-2 py-1 rounded self-start"
+                      className="bg-[#FFBDBD] text-black px-2 py-1 rounded self-start"
                     >
                       Department
                     </span>
                   </div>
                   <button
                     onClick={(e) => handleApplyClick(e, 2)}
-                    className="inline-flex items-center gap-2 font-dm font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group self-start sm:self-auto"
+                    className="inline-flex items-center gap-2 font-dm font-normal text-xl leading-[150%] text-[#FF322E] tracking-normal group self-start sm:self-auto"
                   >
                     <span>Apply Now</span>
                     <span
@@ -202,7 +202,7 @@ const CareerIndex = () => {
                     lineHeight: "150%",
                     letterSpacing: "0%",
                   }}
-                  className="text-gray-600 mb-3 sm:mb-4"
+                  className="text-black mb-3 sm:mb-4"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Suspendisse varius enim in eros elementum tristique.
@@ -211,7 +211,7 @@ const CareerIndex = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
                   <div className="flex items-center gap-2">
                     <svg
-                      className="w-4 h-4 text-gray-500 flex-shrink-0"
+                      className="w-4 h-4 text-black flex-shrink-0"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -229,14 +229,14 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="text-gray-500"
+                      className="text-black"
                     >
                       Location
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <svg
-                      className="w-4 h-4 text-gray-500 flex-shrink-0"
+                      className="w-4 h-4 text-black flex-shrink-0"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -254,7 +254,7 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="text-gray-500"
+                      className="text-black"
                     >
                       Contract Type
                     </span>
@@ -265,7 +265,7 @@ const CareerIndex = () => {
               {/* Job Card 3 */}
               <div
                 onClick={() => handleJobClick(3)}
-                className="bg-white border border-gray-400 p-6 sm:p-8 md:p-10 cursor-pointer hover:shadow-lg hover:border-gray-500 transition-all duration-200 group"
+                className="bg-white border border-black p-6 sm:p-8 md:p-10 cursor-pointer  hover:border-black transition-all duration-200 group"
               >
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2 sm:mb-0">
@@ -277,7 +277,7 @@ const CareerIndex = () => {
                         lineHeight: "140%",
                         letterSpacing: "0%",
                       }}
-                      className="text-black group-hover:text-red-600 transition-colors duration-200"
+                      className="text-black group-hover:text-brand transition-colors duration-200"
                     >
                       Job Title
                     </h3>
@@ -289,14 +289,14 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="bg-red-100 text-black px-2 py-1 rounded self-start"
+                      className="bg-[#FFBDBD] text-black px-2 py-1 rounded self-start"
                     >
                       Department
                     </span>
                   </div>
                   <button
                     onClick={(e) => handleApplyClick(e, 3)}
-                    className="inline-flex items-center gap-2 font-dm font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group self-start sm:self-auto"
+                    className="inline-flex items-center gap-2 font-dm font-normal text-xl leading-[150%] text-[#FF322E] tracking-normal group self-start sm:self-auto"
                   >
                     <span>Apply Now</span>
                     <span
@@ -316,7 +316,7 @@ const CareerIndex = () => {
                     lineHeight: "150%",
                     letterSpacing: "0%",
                   }}
-                  className="text-gray-600 mb-3 sm:mb-4"
+                  className="text-black mb-3 sm:mb-4"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Suspendisse varius enim in eros elementum tristique.
@@ -325,7 +325,7 @@ const CareerIndex = () => {
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
                   <div className="flex items-center gap-2">
                     <svg
-                      className="w-4 h-4 text-gray-500 flex-shrink-0"
+                      className="w-4 h-4 text-black flex-shrink-0"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -343,14 +343,14 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="text-gray-500"
+                      className="text-black"
                     >
                       Location
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <svg
-                      className="w-4 h-4 text-gray-500 flex-shrink-0"
+                      className="w-4 h-4 text-black flex-shrink-0"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -368,7 +368,7 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="text-gray-500"
+                      className="text-black"
                     >
                       Contract Type
                     </span>
@@ -380,6 +380,7 @@ const CareerIndex = () => {
         </div>
       </div>
       <Section2 />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-20" />
     </div>
   );
 };
