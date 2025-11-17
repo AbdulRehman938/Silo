@@ -1,115 +1,29 @@
-import { useState, useRef, useEffect } from 'react'
-import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from 'react-icons/fa'
-import demoVideo from '../../DemoVideo/Demo-Video.mp4'
+import { useRef, useEffect } from 'react'
 
 const Hero = () => {
   const videoRef = useRef(null)
-  const [isPlaying, setIsPlaying] = useState(true)
-  const [isMuted, setIsMuted] = useState(true)
-  const [isHovered, setIsHovered] = useState(false)
 
   useEffect(() => {
     // Ensure video plays when component mounts
     if (videoRef.current) {
       videoRef.current.play().catch(error => {
         console.log('Video autoplay failed:', error)
-        setIsPlaying(false)
       })
     }
   }, [])
 
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause()
-      } else {
-        videoRef.current.play().catch(error => {
-          console.log('Video play failed:', error)
-        })
-      }
-      setIsPlaying(!isPlaying)
-    }
-  }
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted
-      setIsMuted(!isMuted)
-    }
-  }
-
   return (
-    <div className='relative w-full h-[50vh] md:h-auto md:aspect-video overflow-hidden group'>
+    <div className='relative w-full h-[50vh] md:h-auto md:aspect-video overflow-hidden'>
       {/* Video Element */}
       <video
         ref={videoRef}
         className='absolute inset-0 w-full h-full object-cover'
         src="https://res.cloudinary.com/di9tb45rl/video/upload/v1762717692/Demo-video_himxf7.mp4"
         loop
-        muted={isMuted}
+        muted
         autoPlay
         playsInline
       />
-
-      {/* Black Overlay with Play/Pause and Mute Buttons - Shows on Hover (Desktop/Tablet) */}
-      <div 
-        className={`hidden md:flex absolute inset-0 bg-black/50 items-center justify-center gap-4 transition-opacity duration-300 ${
-          isHovered ? 'opacity-100' : 'opacity-0'
-        }`}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <button
-          onClick={togglePlayPause}
-          className='w-20 h-20 rounded-full bg-red-500/30 backdrop-blur-sm flex items-center justify-center hover:bg-red-500/50 transition-all duration-300 hover:scale-110 border-2 border-red-400/50'
-          aria-label={isPlaying ? 'Pause video' : 'Play video'}
-        >
-          {isPlaying ? (
-            <FaPause className='text-white text-3xl ml-0' />
-          ) : (
-            <FaPlay className='text-white text-3xl ml-1' />
-          )}
-        </button>
-        
-        {/* Desktop Mute Button - Next to Play/Pause */}
-        <button
-          onClick={toggleMute}
-          className='w-14 h-14 rounded-full bg-red-500/30 backdrop-blur-sm flex items-center justify-center hover:bg-red-500/50 transition-all duration-300 hover:scale-110 border-2 border-red-400/50'
-          aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-        >
-          {isMuted ? (
-            <FaVolumeMute className='text-white text-xl' />
-          ) : (
-            <FaVolumeUp className='text-white text-xl' />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Play/Pause Button - Bottom Right */}
-      <button
-        onClick={togglePlayPause}
-        className='md:hidden absolute bottom-4 right-16 w-12 h-12 rounded-full bg-red-500/40 backdrop-blur-sm flex items-center justify-center hover:bg-red-500/60 transition-all duration-300 z-10 border-2 border-red-400/50'
-        aria-label={isPlaying ? 'Pause video' : 'Play video'}
-      >
-        {isPlaying ? (
-          <FaPause className='text-white text-lg ml-0' />
-        ) : (
-          <FaPlay className='text-white text-lg ml-1' />
-        )}
-      </button>
-
-      {/* Mobile Mute/Unmute Button - Bottom Right */}
-      <button
-        onClick={toggleMute}
-        className='md:hidden absolute bottom-4 right-4 w-10 h-10 rounded-full bg-red-500/40 backdrop-blur-sm flex items-center justify-center hover:bg-red-500/60 transition-all duration-300 z-10 border-2 border-red-400/50'
-        aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-      >
-        {isMuted ? (
-          <FaVolumeMute className='text-white text-lg' />
-        ) : (
-          <FaVolumeUp className='text-white text-lg' />
-        )}
-      </button>
     </div>
   )
 }

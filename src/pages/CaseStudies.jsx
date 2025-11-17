@@ -2,45 +2,44 @@ import React from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Section2 from "../components/About/Section2";
+import Section from "../components/Home/Section";
 
 const CaseStudies = () => {
   return (
-    <div className="max-w-[90vw] h-auto flex flex-col justify-start items-center mx-auto">
+    <div className="max-w-[1280px] mx-auto h-auto flex flex-col justify-start items-center mt-16 xl:mt-10 lg:mt-40 md:mt-40">
       <section
-        className="min-h-screen flex items-center w-full justify-center px-3 sm:px-2 md:px-6 lg:px-8 pb-6 md:pb-12 lg:pb-16 overflow-hidden"
+        className="mt-10 mb-10 flex items-start w-full justify-start px-0 sm:px-2 md:px-6 lg:px-8 pb-6 md:pb-12 lg:pb-16 overflow-hidden"
         aria-label="About Silo - Company introduction"
       >
-        <div className="flex flex-col justify-between xl:grid xl:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 max-w-full mx-auto w-full items-centersm:mt-5 xs:mt-10">
+        <div className="flex flex-col justify-between xl:grid xl:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 max-w-full mx-auto w-full items-start md:items-center mt-0 xl:mt-16 lg:mt-0 md:mt-0">
           {/* Text Content Area */}
           <div
-            className="flex flex-col h-full sm:mt-5 xs:mt-10 justify-between space-y-4 sm:space-y-6 md:space-y-8 order-2 xl:order-1 xl:pr-6 w-full"
+            className="flex flex-col h-full justify-start xl:justify-between space-y-4 sm:space-y-6 md:space-y-8 order-1 xl:order-1 xl:pr-6 items-start w-[90%] md:-ml-16 xl:ml-0 "
             role="main"
           >
             {/* Main Heading - Zoom & Small Laptop Optimized */}
             <h1
-              className="font-bold text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[56px] leading-tight text-center xl:text-left px-2 sm:px-0"
+              className="font-bold text-black text-4xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[56px] leading-3 text-left px-2 sm:px-0 mt-6 sm:mt-0"
               style={{
                 opacity: 1,
                 fontFamily: "Epilogue, sans-serif",
                 fontWeight: 700,
-                lineHeight: "120%",
+                lineHeight: "100%",
                 letterSpacing: "0%",
               }}
             >
-              We are the <span className="text-red-500">Silo</span>, get to know
-              us.
+              You're going to want to see these.
             </h1>
-
             {/* Text and Buttons Container */}
             <div className="flex flex-col gap-3 sm:gap-4 items-start w-full px-2 sm:px-0">
               {/* Brand Statement - Zoom & Small Laptop Optimized */}
               <div>
                 <p
-                  className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl xl:text-[18px] leading-relaxed text-center xl:text-left max-w-full xl:max-w-lg px-2 sm:px-0"
+                  className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl xl:text-[18px] leading-relaxed text-left max-w-full xl:max-w-lg px-2 sm:px-0 font-epilogue"
                   style={{
                     opacity: 1,
-                    fontFamily: "DM Sans, sans-serif",
                     fontWeight: 400,
+                    fontFamily: "Epilogue, sans-serif",
                     lineHeight: "150%",
                     letterSpacing: "0%",
                   }}
@@ -50,29 +49,28 @@ const CaseStudies = () => {
                   strategic, and deeply rooted in a brand's purpose.
                 </p>
               </div>
-
               {/* Buttons - Zoom & Small Laptop Optimized */}
-              <div className="flex flex-row gap-3 sm:gap-4 items-start w-full sm:w-auto lg:mx-auto md:mx-auto xl:mx-0">
+              <div className="flex flex-row gap-3 sm:gap-4 items-start w-full sm:w-auto xl:mx-0">
                 <a
                   href="/case-study-post"
-                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
+                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold tracking-wide text-white border-transparent relative overflow-hidden group"
                 >
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper lg:group-hover:animate-bounce-custom">
-                    <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out lg:group-hover:opacity-100 lg:group-hover:translate-x-4 lg:group-hover:scale-[140%]" />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                    <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
                   </div>
-                  <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base lg:group-hover:translate-x-40">
+                  <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base group-hover:translate-x-40">
                     Let's chat
                   </span>
                 </a>
 
                 <a
                   href="/case-study-post"
-                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
+                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
                 >
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper lg:group-hover:animate-bounce-custom">
-                    <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out lg:group-hover:opacity-100 lg:group-hover:translate-x-4 lg:group-hover:scale-[140%]" />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                    <FaChevronRight className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
                   </div>
-                  <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base lg:group-hover:translate-x-40">
+                  <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base group-hover:translate-x-40">
                     Our services
                   </span>
                 </a>
@@ -81,21 +79,21 @@ const CaseStudies = () => {
           </div>
 
           {/* Visual Content Area - Zoom & Small Laptop Optimized */}
-          <div className="flex flex-col lg:flex-col xl:flex-row lg:mt-10 items-center justify-center xl:justify-end gap-3 sm:gap-4 md:gap-6 order-1 xl:order-2 w-full max-w-sm sm:max-w-md md:max-w-lg xl:max-w-none mx-auto xl:mx-0 md:mt-10 mt-10">
-            {/* Primary Image - Zoom & Small Laptop Optimized */}
-            <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:w-auto xl:max-w-[400px] 2xl:max-w-[438px] flex-shrink-0">
+          <div className="flex flex-col mt-10 md:mt-0 md:flex-row lg:flex-row xl:flex-row items-center md:items-start xl:items-start justify-start xl:justify-end gap-3 sm:gap-4 md:gap-6 order-2 xl:order-2 w-full sm:max-w-xl md:max-w-none lg:max-w-none xl:max-w-none xl:mx-0 ">
+            {/* Secondary Image - Zoom & Small Laptop Optimized */}
+            <div className="order-1 md:order-1 w-full max-w-full sm:max-w-sm md:w-1/2 md:max-w-none lg:w-1/2 xl:w-auto xl:max-w-[400px] 2xl:max-w-[438px] flex-shrink-0">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717301/studies1_lzgldj.png"
                 alt="Silo team member showcasing brand identity"
-                className="w-full h-auto object-cover max-h-[300px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[500px] xl:max-h-[600px] 2xl:max-h-none"
+                className="w-full h-auto object-cover max-h-[400px] sm:max-h-[350px] md:max-h-[500px] lg:max-h-[550px] xl:max-h-[550px] 2xl:max-h-none"
                 style={{
                   opacity: 1,
                 }}
               />
             </div>
 
-            {/* Secondary Image - Zoom & Small Laptop Optimized */}
-            <div className="flex flex-col items-center lg:items-center xl:self-start xl:mt-8 2xl:mt-16 border-white bg-white">
+            {/* Primary Image - Zoom & Small Laptop Optimized */}
+            <div className="order-2 md:order-2 flex flex-col items-start md:items-center lg:items-center xl:items-start md:w-auto lg:w-auto xl:w-auto border-white bg-white">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717296/studies2_a4olwb.png"
                 alt="The Silo brand representation"
@@ -105,11 +103,11 @@ const CaseStudies = () => {
           </div>
         </div>
       </section>
-
-      <div id="done" className="w-full min-h-screen pb-20">
-        <div className="space-y-20">
+      <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black" />
+      <div id="done" className="max-w-[1280px] pb-20 px-4 md:px-6 xl:px-0 mx-auto">
+        <div className="space-y-20 mx-auto ">
           {/* First project */}
-          <div className="hidden lg:flex items-center justify-around space-x-20 border-y-[0.1rem] py-16 border-y-gray-800 group relative">
+          <div className="hidden lg:flex items-center justify-around space-x-20 py-16 border-b border-b-black group relative">
             <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
@@ -125,7 +123,7 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-[30%] flex flex-col justify-center items-start gap-4">
+            <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
               <p className="text-xl text-black font-bold">Food & Drink</p>
               <p className="text-lg font-semibold text-black">
@@ -156,7 +154,38 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="block md:flex md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-y-2 pb-12 border-y-gray-800 group relative mt-0">
+          <div className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-b border-b-black py-12 group relative mt-0">
+            {/* Text content first */}
+            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
+              <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
+              <p className="text-xl text-black font-bold">Food & Drink</p>
+              <p className="text-lg font-semibold text-black">
+                We built a TikTok-first launch campaign for this food start-up.
+                Fast cuts, bold graphics, and creator-led taste tests turned
+                into millions of views and a sell-out first week.
+              </p>
+              <div className="flex space-x-2 mt-2">
+                <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  UGC
+                </span>
+                <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  TikTok
+                </span>
+              </div>
+              <a
+                href="/case-study-post"
+                className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+              >
+                <span>View Project</span>
+                <span
+                  aria-hidden
+                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out lg:group-hover:translate-x-2"
+                >
+                  <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
+                </span>
+              </a>
+            </div>
+            {/* Image second */}
             <div className="w-full md:w-1/2 h-96 rounded-md relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
@@ -172,41 +201,11 @@ const CaseStudies = () => {
                 />
               </div>
             </div>
-            {/* Placeholder for image */}
-            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4">
-              <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
-              <p className="text-xl text-black font-bold">Food & Drink</p>
-              <p className="text-lg font-semibold text-black">
-                We built a TikTok-first launch campaign for this food start-up.
-                Fast cuts, bold graphics, and creator-led taste tests turned
-                into millions of views and a sell-out first week.
-              </p>
-              <div className="flex space-x-2 mt-2">
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  UGC
-                </span>
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  TikTok
-                </span>
-              </div>
-              <a
-                href="/case-study-post"
-                className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
-              >
-                <span>View Project</span>
-                <span
-                  aria-hidden
-                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out lg:group-hover:translate-x-2"
-                >
-                  <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
-                </span>
-              </a>
-            </div>
           </div>
 
           {/* Second project */}
-          <div className="hidden lg:flex items-center justify-around space-x-20 border-b-2 pb-16 border-b-gray-800 group relative">
-            <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
+          <div className="hidden lg:flex items-center justify-around space-x-20 border-b pb-16 border-b-black group relative">
+            <div className="w-1/3 h-80 xl:h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
@@ -221,7 +220,7 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-[30%] flex flex-col justify-center items-start gap-4">
+            <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Lumin Solar</h3>
               <p className="text-xl text-black font-bold">Energy</p>
               <p className="text-lg font-semibold text-black">
@@ -252,24 +251,9 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="block md:flex md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-b-2 py-12 border-b-gray-800 group relative md:top-[-5rem] mt-0 pt-0">
-            <div className="w-full md:w-1/2 h-96 rounded-md relative">
-              <img
-                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
-                alt="smoothie"
-                className="w-full h-full object-cover"
-              />
-              {/* Hover image placeholder */}
-              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
-                <img
-                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
-                  alt="smoothie"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            {/* Placeholder for image */}
-            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4">
+          <div className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-b border-b-black py-12 group relative mt-0">
+            {/* Text content first */}
+            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Lumin Solar</h3>
               <p className="text-xl text-black font-bold">Energy</p>
               <p className="text-lg font-semibold text-black">
@@ -297,12 +281,28 @@ const CaseStudies = () => {
                   <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
                 </span>
               </a>
+            </div>
+            {/* Image second */}
+            <div className="w-full md:w-1/2 h-80 xl:h-96 rounded-md relative">
+              <img
+                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
+                alt="smoothie"
+                className="w-full h-full object-cover"
+              />
+              {/* Hover image placeholder */}
+              <div className="absolute -right-80 top-0 w-[70%] h-64 xl:h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
+                <img
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
+                  alt="smoothie"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
 
           {/* Third project */}
           <div className="hidden lg:flex items-center justify-around space-x-20 pb-16 group relative">
-            <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
+            <div className="w-1/3 lg:w-1/4 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"
@@ -317,7 +317,7 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-[30%] flex flex-col justify-center items-start gap-4">
+            <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Smart Stats</h3>
               <p className="text-xl text-black font-bold">SaaS</p>
               <p className="text-lg font-semibold text-black">
@@ -351,7 +351,41 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="block md:flex md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 pb-12 group relative md:top-[-10rem] mt-0">
+          <div className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-b border-b-black py-12 group relative mt-0">
+            {/* Text content first */}
+            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
+              <h3 className="text-4xl font-bold text-black">Smart Stats</h3>
+              <p className="text-xl text-black font-bold">SaaS</p>
+              <p className="text-lg font-semibold text-black">
+                We gave this data platform a face, not just numbers. From
+                explainer animations to punchy LinkedIn posts, we built a visual
+                system that made analytics unmissable.
+              </p>
+              <div className="flex space-x-2 mt-2">
+                <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  Design
+                </span>
+                <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  B2B
+                </span>
+                <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  LinkedIn Content
+                </span>
+              </div>
+              <a
+                href="/case-study-post"
+                className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+              >
+                <span>View Project</span>
+                <span
+                  aria-hidden
+                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                >
+                  <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
+                </span>
+              </a>
+            </div>
+            {/* Image second */}
             <div className="w-full md:w-1/2 h-96 rounded-md relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
@@ -367,45 +401,12 @@ const CaseStudies = () => {
                 />
               </div>
             </div>
-            {/* Placeholder for image */}
-            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4">
-              <h3 className="text-4xl font-bold text-black">Smart Stats</h3>
-              <p className="text-xl text-black font-bold">SaaS</p>
-              <p className="text-lg font-semibold text-black">
-                We gave this data platform a face, not just numbers. From
-                explainer animations to punchy LinkedIn posts, we built a visual
-                system that made analytics unmissable.
-              </p>
-              <div className="flex space-x-2 mt-2">
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  Design
-                </span>
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  B2B
-                </span>
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  LinkedIn Content
-                </span>
-              </div>
-              <a
-                href="/case-study-post"
-                className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
-              >
-                <span>View Project</span>
-                <span
-                  aria-hidden
-                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
-                >
-                  <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
-                </span>
-              </a>
-            </div>
           </div>
         </div>
 
-        <div className="space-y-20">
+        <div className="space-y-20 mx-auto">
           {/* First project */}
-          <div className="hidden lg:flex items-center justify-around space-x-20 border-y-[0.1rem] py-16 border-y-gray-800 group relative">
+          <div className="hidden lg:flex items-center justify-around space-x-20 border-y py-16 border-y-black group relative">
             <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
@@ -421,7 +422,7 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-[30%] flex flex-col justify-center items-start gap-4">
+            <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
               <p className="text-xl text-black font-bold">Food & Drink</p>
               <p className="text-lg font-semibold text-black">
@@ -452,7 +453,38 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="block md:flex md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-y-2 py-12 border-y-gray-800 group relative mt-0">
+          <div className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-b border-b-black py-12 group relative mt-0">
+            {/* Text content first */}
+            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
+              <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
+              <p className="text-xl text-black font-bold">Food & Drink</p>
+              <p className="text-lg font-semibold text-black">
+                We built a TikTok-first launch campaign for this food start-up.
+                Fast cuts, bold graphics, and creator-led taste tests turned
+                into millions of views and a sell-out first week.
+              </p>
+              <div className="flex space-x-2 mt-2">
+                <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  UGC
+                </span>
+                <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  TikTok
+                </span>
+              </div>
+              <a
+                href="/case-study-post"
+                className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+              >
+                <span>View Project</span>
+                <span
+                  aria-hidden
+                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                >
+                  <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
+                </span>
+              </a>
+            </div>
+            {/* Image second */}
             <div className="w-full md:w-1/2 h-96 rounded-md relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
@@ -468,41 +500,11 @@ const CaseStudies = () => {
                 />
               </div>
             </div>
-            {/* Placeholder for image */}
-            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4">
-              <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
-              <p className="text-xl text-black font-bold">Food & Drink</p>
-              <p className="text-lg font-semibold text-black">
-                We built a TikTok-first launch campaign for this food start-up.
-                Fast cuts, bold graphics, and creator-led taste tests turned
-                into millions of views and a sell-out first week.
-              </p>
-              <div className="flex space-x-2 mt-2">
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  UGC
-                </span>
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  TikTok
-                </span>
-              </div>
-              <a
-                href="/case-study-post"
-                className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
-              >
-                <span>View Project</span>
-                <span
-                  aria-hidden
-                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
-                >
-                  <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
-                </span>
-              </a>
-            </div>
           </div>
 
           {/* Second project */}
-          <div className="hidden lg:flex items-center justify-around space-x-20 border-b-2 py-16 border-b-gray-800 group relative">
-            <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
+          <div className="hidden lg:flex items-center justify-around space-x-20 border-b py-16 border-b-black group relative">
+            <div className="w-1/3 h-80 xl:h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
@@ -517,7 +519,7 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-[30%] flex flex-col justify-center items-start gap-4">
+            <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Lumin Solar</h3>
               <p className="text-xl text-black font-bold">Energy</p>
               <p className="text-lg font-semibold text-black">
@@ -548,15 +550,46 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="block md:flex md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-b-2 py-12 border-b-gray-800 group relative md:top-[-5rem] mt-0">
-            <div className="w-full md:w-1/2 h-96 rounded-md relative">
+          <div className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 border-b border-b-black py-12 group relative mt-0">
+            {/* Text content first */}
+            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
+              <h3 className="text-4xl font-bold text-black">Lumin Solar</h3>
+              <p className="text-xl text-black font-bold">Energy</p>
+              <p className="text-lg font-semibold text-black">
+                For this clean-tech brand we stripped out the jargon and made
+                solar feel simple. Scroll-stopping motion and sharp messaging
+                powered record inbound leads.
+              </p>
+              <div className="flex space-x-2 mt-2">
+                <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  Motion Design
+                </span>
+                <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  Strategy
+                </span>
+              </div>
+              <a
+                href="/case-study-post"
+                className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+              >
+                <span>View Project</span>
+                <span
+                  aria-hidden
+                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                >
+                  <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
+                </span>
+              </a>
+            </div>
+            {/* Image second */}
+            <div className="w-full md:w-1/2 h-80 xl:h-96 rounded-md relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
                 className="w-full h-full object-cover"
               />
               {/* Hover image placeholder */}
-              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
+              <div className="absolute -right-80 top-0 w-[70%] h-64 xl:h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                   alt="smoothie"
@@ -564,41 +597,11 @@ const CaseStudies = () => {
                 />
               </div>
             </div>
-            {/* Placeholder for image */}
-            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4">
-              <h3 className="text-4xl font-bold text-black">Lumin Solar</h3>
-              <p className="text-xl text-black font-bold">Energy</p>
-              <p className="text-lg font-semibold text-black">
-                For this clean-tech brand we stripped out the jargon and made
-                solar feel simple. Scroll-stopping motion and sharp messaging
-                powered record inbound leads.
-              </p>
-              <div className="flex space-x-2 mt-2">
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  Motion Design
-                </span>
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  Strategy
-                </span>
-              </div>
-              <a
-                href="/case-study-post"
-                className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
-              >
-                <span>View Project</span>
-                <span
-                  aria-hidden
-                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
-                >
-                  <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
-                </span>
-              </a>
-            </div>
           </div>
 
           {/* Third project */}
           <div className="hidden lg:flex items-center justify-around space-x-20 py-16  group relative">
-            <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
+            <div className="w-1/3 lg:w-1/4 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"
@@ -613,7 +616,7 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="w-[30%] flex flex-col justify-center items-start gap-4">
+            <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Smart Stats</h3>
               <p className="text-xl text-black font-bold">SaaS</p>
               <p className="text-lg font-semibold text-black">
@@ -647,14 +650,48 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="block md:flex md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 pb-12 group relative md:top-[-10rem] mt-0">
+          <div className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-8 md:space-y-0 py-12 group relative mt-0">
+            {/* Text content first */}
+            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
+              <h3 className="text-4xl font-bold text-black">Smart Stats</h3>
+              <p className="text-xl text-black font-bold">SaaS</p>
+              <p className="text-lg font-semibold text-black">
+                We gave this data platform a face, not just numbers. From
+                explainer animations to punchy LinkedIn posts, we built a visual
+                system that made analytics unmissable.
+              </p>
+              <div className="flex space-x-2 mt-2">
+                <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  Design
+                </span>
+                <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  B2B
+                </span>
+                <span className="text-base font-bold text-black p-2 bg-brand/20">
+                  LinkedIn Content
+                </span>
+              </div>
+              <a
+                href="/case-study-post"
+                className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+              >
+                <span>View Project</span>
+                <span
+                  aria-hidden
+                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                >
+                  <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
+                </span>
+              </a>
+            </div>
+            {/* Image second */}
             <div className="w-full md:w-1/2 h-96 rounded-md relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"
                 className="w-full h-full object-cover"
               />
-              {/* Hover image placeholder */}  
+              {/* Hover image placeholder */}
               <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
@@ -663,46 +700,14 @@ const CaseStudies = () => {
                 />
               </div>
             </div>
-            {/* Placeholder for image */}
-            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4">
-              <h3 className="text-4xl font-bold text-black">Smart Stats</h3>
-              <p className="text-xl text-black font-bold">SaaS</p>
-              <p className="text-lg font-semibold text-black">
-                We gave this data platform a face, not just numbers. From
-                explainer animations to punchy LinkedIn posts, we built a visual
-                system that made analytics unmissable.
-              </p>
-              <div className="flex space-x-2 mt-2">
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  Design
-                </span>
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  B2B
-                </span>
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  LinkedIn Content
-                </span>
-              </div>
-              <a
-                href="/case-study-post"
-                className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
-              >
-                <span>View Project</span>
-                <span
-                  aria-hidden
-                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
-                >
-                  <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
-                </span>
-              </a>
-            </div>
           </div>
         </div>
       </div>
-      <Section2 />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black mt-10 mb-20" />
+      <Section />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black" />
     </div>
   );
 };
 
 export default CaseStudies;
-

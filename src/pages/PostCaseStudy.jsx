@@ -19,7 +19,7 @@ const PostCaseStudy = () => {
       client: "RetailCo",
       category: "E-commerce",
       titleSection: {
-        title: "Transforming online shopping with a 45% conversion boost.",
+        title: "Transforming online shopping",
         description: [
           "RetailCo approached us with a challenge: their e-commerce platform was outdated, slow, and converting poorly. Users were abandoning carts at an alarming rate, and the mobile experience was practically unusable.",
           "We rebuilt their entire platform from the ground up, focusing on speed, intuitive navigation, and a seamless checkout process. The results exceeded all expectations, with conversion rates jumping 45% and cart abandonment dropping by 32%."

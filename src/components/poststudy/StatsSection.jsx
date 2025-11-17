@@ -1,5 +1,3 @@
-import { FaImage } from 'react-icons/fa'
-
 const StatsSection = ({ title, column1, column2, column3 }) => {
   return (
     <div className='w-full max-w-[90vw] mx-auto py-16 md:py-24'>
@@ -37,8 +35,14 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
               className='w-full h-full object-cover'
             />
           ) : (
-            <div className='w-full h-full flex items-center justify-center bg-gray-300'>
-              <FaImage className='w-24 h-24 text-gray-400' />
+            <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
+              <svg 
+                className='w-20 h-20 text-[#BABABA]' 
+                fill='currentColor' 
+                viewBox='0 0 24 24'
+              >
+                <path d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'/>
+              </svg>
             </div>
           )}
         </div>
@@ -67,8 +71,14 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
               className='w-full h-full object-cover'
             />
           ) : (
-            <div className='w-full h-full flex items-center justify-center bg-gray-300'>
-              <FaImage className='w-24 h-24 text-gray-400' />
+            <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
+              <svg 
+                className='w-20 h-20 text-[#BABABA]' 
+                fill='currentColor' 
+                viewBox='0 0 24 24'
+              >
+                <path d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'/>
+              </svg>
             </div>
           )}
         </div>
@@ -119,8 +129,14 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
                 className='w-full h-full object-cover'
               />
             ) : (
-              <div className='w-full h-full flex items-center justify-center bg-gray-300'>
-                <FaImage className='w-24 h-24 text-gray-400' />
+              <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
+                <svg 
+                  className='w-20 h-20 text-[#BABABA]' 
+                  fill='currentColor' 
+                  viewBox='0 0 24 24'
+                >
+                  <path d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'/>
+                </svg>
               </div>
             )}
           </div>
@@ -169,8 +185,14 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
                 className='w-full h-full object-cover'
               />
             ) : (
-              <div className='w-full h-full flex items-center justify-center bg-gray-300'>
-                <FaImage className='w-24 h-24 text-gray-400' />
+              <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
+                <svg 
+                  className='w-20 h-20 text-[#BABABA]' 
+                  fill='currentColor' 
+                  viewBox='0 0 24 24'
+                >
+                  <path d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'/>
+                </svg>
               </div>
             )}
           </div>

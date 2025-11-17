@@ -12,7 +12,7 @@ const FourGallery = ({ images }) => {
     <div className='w-full max-w-[90vw] mx-auto py-8 md:py-12'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-20 md:mb-0'>
         {displayImages.slice(0, 4).map((image, index) => (
-          <div key={index} className='w-full aspect-square bg-gray-200 overflow-hidden'>
+          <div key={index} className='w-full aspect-square bg-[#DBDBDB] overflow-hidden'>
             {image.src ? (
               <img 
                 src={image.src} 
@@ -20,9 +20,9 @@ const FourGallery = ({ images }) => {
                 className='w-full h-full object-cover hover:scale-105 transition-transform duration-300'
               />
             ) : (
-              <div className='w-full h-full flex items-center justify-center bg-gray-300'>
+              <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
                 <svg 
-                  className='w-20 h-20 text-gray-400' 
+                  className='w-20 h-20 text-[#BABABA]' 
                   fill='currentColor' 
                   viewBox='0 0 24 24'
                 >

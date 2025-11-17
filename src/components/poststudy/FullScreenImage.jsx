@@ -1,7 +1,7 @@
 const FullScreenImage = ({ src, alt }) => {
   return (
     <div className='w-full max-w-[90vw] mx-auto py-0 md:py-12'>
-      <div className='w-full aspect-video bg-gray-200 overflow-hidden'>
+      <div className='w-full aspect-video bg-[#DBDBDB] overflow-hidden'>
         {src ? (
           <img 
             src={src} 
@@ -9,9 +9,9 @@ const FullScreenImage = ({ src, alt }) => {
             className='w-full h-full object-cover'
           />
         ) : (
-          <div className='w-full h-full flex items-center justify-center bg-gray-300'>
+          <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
             <svg 
-              className='w-24 h-24 text-gray-400' 
+              className='w-24 h-24 text-[#BABABA]' 
               fill='currentColor' 
               viewBox='0 0 24 24'
             >

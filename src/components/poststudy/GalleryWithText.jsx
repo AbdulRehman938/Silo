@@ -52,13 +52,13 @@ const GalleryWithText = ({ heading, text, images }) => {
   }, [])
 
   return (
-    <div ref={containerRef} className='w-full bg-gray-50 py-16 md:py-24 relative'>
+    <div ref={containerRef} className='w-full bg-white py-16 md:py-24 relative'>
       <div className='max-w-[90vw] mx-auto'>
         <div className='flex flex-col lg:flex-row gap-8 lg:gap-16 items-start'>
           {/* Left: Scrolling Images */}
           <div className='w-full lg:w-1/2 flex flex-col gap-6 order-2 lg:order-1'>
             {displayImages.map((image, index) => (
-              <div key={index} className='w-full aspect-[4/3] bg-gray-200 overflow-hidden'>
+              <div key={index} className='w-full aspect-[4/3] bg-[#DBDBDB] overflow-hidden'>
                 {image.src ? (
                   <img 
                     src={image.src} 
@@ -66,9 +66,9 @@ const GalleryWithText = ({ heading, text, images }) => {
                     className='w-full h-full object-cover'
                   />
                 ) : (
-                  <div className='w-full h-full flex items-center justify-center bg-gray-300'>
+                  <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
                     <svg 
-                      className='w-20 h-20 text-gray-400' 
+                      className='w-20 h-20 text-[#BABABA]' 
                       fill='currentColor' 
                       viewBox='0 0 24 24'
                     >
@@ -84,7 +84,7 @@ const GalleryWithText = ({ heading, text, images }) => {
           <div ref={textWrapperRef} className='w-full lg:w-1/2 relative order-1 lg:order-2'>
             <div 
               ref={textRef}
-              className={`${isSticky ? 'fixed top-24' : 'relative'}`}
+              className={`${isSticky ? 'fixed top-32' : 'relative'}`}
               style={isSticky ? { left: `${leftPosition}px`, width: textWrapperRef.current?.offsetWidth + 'px' } : {}}
             >
               <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6'>
