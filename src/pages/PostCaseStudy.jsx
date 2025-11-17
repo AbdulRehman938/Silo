@@ -337,6 +337,71 @@ const PostCaseStudy = () => {
           { src: null, alt: "Community celebration" }
         ]
       }
+    },
+    6: {
+      id: 6,
+      title: "Social Media Strategy",
+      client: "GrowthTech",
+      category: "Social Media",
+      titleSection: {
+        title: "Building a social presence that generated 850K followers in 6 months.",
+        description: [
+          "GrowthTech had an incredible product but virtually no social media presence. Their competitors were dominating the conversation while they sat on the sidelines with a few hundred followers and sporadic posting.",
+          "We developed a comprehensive social media strategy that transformed them into an industry thought leader. Through strategic content pillars, consistent posting, community engagement, and data-driven optimization, we grew their following to 850,000 across platforms and generated over $2M in attributed revenue."
+        ]
+      },
+      stats: {
+        title: "Social growth in 6 months",
+        column1: {
+          heading: 'Total Followers Gained',
+          value: '850K',
+          description: 'Organic growth across Instagram, LinkedIn, TikTok, and Twitter through strategic content.'
+        },
+        column2: {
+          image: { src: null, alt: 'Social media analytics dashboard' },
+          stat: {
+            heading: 'Average Engagement Rate',
+            value: '9.4%',
+            description: 'Consistently high engagement through community-focused content and active interaction.'
+          }
+        },
+        column3: {
+          stat: {
+            heading: 'Attributed Revenue',
+            value: '$2M+',
+            description: 'Direct revenue tracked from social media traffic through UTM parameters and conversion tracking.'
+          },
+          image: { src: null, alt: 'Revenue attribution chart' }
+        }
+      },
+      fullScreenImage: {
+        src: null,
+        alt: "Social media strategy showcase"
+      },
+      galleryWithText: {
+        heading: "Content that educates, entertains, and converts",
+        text: "We developed five core content pillars that positioned GrowthTech as the go-to resource in their industry. From educational carousel posts to behind-the-scenes stories to thought leadership articles, every piece of content served a strategic purpose while maintaining an authentic, approachable voice.",
+        images: [
+          { src: null, alt: "Content calendar overview" },
+          { src: null, alt: "Top performing posts" },
+          { src: null, alt: "Community engagement" }
+        ]
+      },
+      simpleHeadingText: {
+        heading: "Strategy backed by data, powered by creativity",
+        text: [
+          "Every decision was informed by analytics. We A/B tested content formats, posting times, captions, and hashtag strategies. We monitored competitor activity, tracked trending topics, and jumped on relevant conversations at the perfect moment. The result was a feed that felt spontaneous but was actually meticulously planned.",
+          "We didn't just post and ghost. We built a community by responding to every comment, engaging with followers' content, and creating opportunities for user-generated content. The social channels became a two-way conversation that strengthened customer relationships and turned followers into brand advocates."
+        ]
+      },
+      fourGallery: {
+        images: [
+          { src: null, alt: "Instagram feed design" },
+          { src: null, alt: "LinkedIn thought leadership" },
+          { src: null, alt: "TikTok viral content" },
+          { src: null, alt: "Community highlights" }
+        ]
+      }
     }
   }
 

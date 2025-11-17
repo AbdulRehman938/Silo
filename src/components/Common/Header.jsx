@@ -37,7 +37,7 @@ export default function Header() {
               The Silo
             </NavLink>
             <NavLink
-              to="/about"
+              to="/portfolio"
               className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
             >
               Portfolio
@@ -115,7 +115,7 @@ export default function Header() {
                       The Silo
                     </NavLink>
                     <NavLink 
-                      to="/about" 
+                      to="/portfolio" 
                       onClick={close} 
                       className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand font-extrabold border-b-2 border-brand pb-1' : 'text-black'}`}
                       style={{ transitionDelay: open ? '160ms' : '0ms' }}

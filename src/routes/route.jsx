@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import * as HomeModule from '../pages/Home.jsx'
 import Layout from '../Layout.jsx'
-import Portfolio from '../pages/Portfolio.jsx'
 import Services from '../pages/Services.jsx'
 import JobBoard from '../pages/JobBoard.jsx'
 import Ramblings from '../pages/Ramblings.jsx'
@@ -27,8 +26,7 @@ function RoutesTree() {
 		<Routes>
 			<Route element={<Layout />}>
 				<Route index element={<Home />} />
-				<Route path="portfolio" element={<Portfolio />} />
-				<Route path="about" element={<About />} />
+				<Route path="portfolio" element={<About />} />
 				<Route path="services" element={<Services />} />
 				<Route path="job-board" element={<JobBoard />} />
 				<Route path="ramblings" element={<Ramblings />} />

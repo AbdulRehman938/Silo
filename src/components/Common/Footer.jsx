@@ -72,7 +72,7 @@ const Footer = () => {
               </li>
               <li>
                 <NavLink
-                  to="/about"
+                  to="/portfolio"
                   className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
@@ -172,66 +172,79 @@ const Footer = () => {
               <li>
                 <a
                   href="/case-study/1"
-                  className="text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
                     lineHeight: "150%",
                   }}
                 >
-                  E-commerce Platform
+                  Case Study 1
                 </a>
               </li>
               <li>
                 <a
-                  href="/case-study/1"
-                  className="text-sm hover:text-brand"
+                  href="/case-study/2"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
                     lineHeight: "150%",
                   }}
                 >
-                  Brand Refresh Campaign
+                  Case Study 2
                 </a>
               </li>
               <li>
                 <a
                   href="/case-study/3"
-                  className="text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
                     lineHeight: "150%",
                   }}
                 >
-                  Mobile App Launch
+                  Case Study 3
                 </a>
               </li>
               <li>
                 <a
                   href="/case-study/4"
-                  className="text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
                     lineHeight: "150%",
                   }}
                 >
-                  Content Marketing
+                  Case Study 4
                 </a>
               </li>
               <li>
                 <a
                   href="/case-study/5"
-                  className="text-sm ease-in-out duration-200 cursor-pointer"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
                     fontWeight: 700,
                     lineHeight: "150%",
                   }}
                 >
-                  UGC Creator Campaign
+                  Case Study 5
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/case-study/6"
+                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
+                  style={{
+                    fontFamily: "DM Sans",
+                    fontWeight: 700,
+                    lineHeight: "150%",
+                  }}
+                >
+                  Case Study 6
                 </a>
               </li>
             </ul>
@@ -397,7 +410,7 @@ const Footer = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/about" className="text-sm">
+                <NavLink to="/portfolio" className="text-sm">
                   About the Silo
                 </NavLink>
               </li>
@@ -439,28 +452,33 @@ const Footer = () => {
             </Link>
             <ul className="space-y-1">
               <li>
-                <a href="/case-study/1" className="text-sm">
-                  E-commerce Platform
+                <a href="/case-study/1" className="text-sm hover:text-brand">
+                  Case Study 1
                 </a>
               </li>
               <li>
                 <a href="/case-study/2" className="text-sm hover:text-brand">
-                  Brand Refresh Campaign
+                  Case Study 2
                 </a>
               </li>
               <li>
                 <a href="/case-study/3" className="text-sm hover:text-brand">
-                  Mobile App Launch
+                  Case Study 3
                 </a>
               </li>
               <li>
                 <a href="/case-study/4" className="text-sm hover:text-brand">
-                  Content Marketing
+                  Case Study 4
                 </a>
               </li>
               <li>
                 <a href="/case-study/5" className="text-sm hover:text-brand">
-                  UGC Creator Campaign
+                  Case Study 5
+                </a>
+              </li>
+              <li>
+                <a href="/case-study/6" className="text-sm hover:text-brand">
+                  Case Study 6
                 </a>
               </li>
             </ul>

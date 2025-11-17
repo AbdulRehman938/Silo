@@ -52,7 +52,7 @@ const CaseStudies = () => {
               {/* Buttons - Zoom & Small Laptop Optimized */}
               <div className="flex flex-row gap-3 sm:gap-4 items-start w-full sm:w-auto xl:mx-0">
                 <a
-                  href="/case-study-post"
+                  href="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold tracking-wide text-white border-transparent relative overflow-hidden group"
                 >
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -64,7 +64,7 @@ const CaseStudies = () => {
                 </a>
 
                 <a
-                  href="/case-study-post"
+                  href="/services"
                   className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
                 >
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -136,7 +136,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="/case-study-post"
+                href="/case-study/1"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -169,7 +169,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="/case-study-post"
+                href="/case-study/1"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -229,7 +229,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="/case-study-post"
+                href="/case-study/2"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -262,7 +262,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="/case-study-post"
+                href="/case-study/2"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -325,7 +325,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="/case-study-post"
+                href="/case-study/3"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -391,7 +391,7 @@ const CaseStudies = () => {
         </div>
 
         <div className="space-y-20 mx-auto">
-          {/* First project */}
+          {/* Fourth project */}
           <div className="hidden lg:flex items-center justify-around space-x-20 border-y py-16 border-y-black group relative">
             <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
@@ -423,7 +423,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="/case-study-post"
+                href="/case-study/4"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -456,7 +456,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="/case-study-post"
+                href="/case-study/4"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -484,7 +484,7 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          {/* Second project */}
+          {/* Fifth project */}
           <div className="hidden lg:flex items-center justify-around space-x-20 border-b py-16 border-b-black group relative">
             <div className="w-1/3 h-80 xl:h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
@@ -516,7 +516,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="/case-study-post"
+                href="/case-study/5"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -549,7 +549,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="/case-study-post"
+                href="/case-study/5"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -577,7 +577,7 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          {/* Third project */}
+          {/* Sixth project */}
           <div className="hidden lg:flex items-center justify-around space-x-20 py-16  group relative">
             <div className="w-1/3 lg:w-1/4 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
@@ -612,7 +612,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="/case-study-post"
+                href="/case-study/6"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>
@@ -648,7 +648,7 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="/case-study-post"
+                href="/case-study/6"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>View Project</span>

@@ -9,6 +9,9 @@ const MindsInTheSilo = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [mouseStart, setMouseStart] = useState(null);
+  const [mouseEnd, setMouseEnd] = useState(null);
+  const [isMouseDown, setIsMouseDown] = useState(false);
   
   // Viewport animation state
   const [cardsInViewport, setCardsInViewport] = useState(new Set());
@@ -159,17 +162,17 @@ const MindsInTheSilo = () => {
 
   // Navigation functions with faster transitions
   const goToNextSlide = () => {
-    if (!isTransitioning) {
+    if (!isTransitioning && currentSlide < totalSlides - 1) {
       setIsTransitioning(true);
-      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+      setCurrentSlide((prev) => prev + 1);
       setTimeout(() => setIsTransitioning(false), 300);
     }
   };
 
   const goToPrevSlide = () => {
-    if (!isTransitioning) {
+    if (!isTransitioning && currentSlide > 0) {
       setIsTransitioning(true);
-      setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+      setCurrentSlide((prev) => prev - 1);
       setTimeout(() => setIsTransitioning(false), 300);
     }
   };
@@ -202,16 +205,57 @@ const MindsInTheSilo = () => {
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
 
-    // Trigger swipe for all screen sizes
-    if (isLeftSwipe) {
+    // Trigger swipe for all screen sizes with boundary checks
+    if (isLeftSwipe && currentSlide < totalSlides - 1) {
       goToNextSlide();
-    } else if (isRightSwipe) {
+    } else if (isRightSwipe && currentSlide > 0) {
       goToPrevSlide();
     }
     
     // Reset touch states
     setTouchStart(null);
     setTouchEnd(null);
+  };
+
+  // Mouse drag handlers for desktop
+  const handleMouseDown = (e) => {
+    setIsMouseDown(true);
+    setMouseEnd(null);
+    setMouseStart(e.clientX);
+    e.preventDefault();
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isMouseDown) return;
+    setMouseEnd(e.clientX);
+    e.preventDefault();
+  };
+
+  const handleMouseUp = () => {
+    if (!isMouseDown || !mouseStart || !mouseEnd) {
+      setIsMouseDown(false);
+      return;
+    }
+    
+    const distance = mouseStart - mouseEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe && currentSlide < totalSlides - 1) {
+      goToNextSlide();
+    } else if (isRightSwipe && currentSlide > 0) {
+      goToPrevSlide();
+    }
+    
+    setIsMouseDown(false);
+    setMouseStart(null);
+    setMouseEnd(null);
+  };
+
+  const handleMouseLeave = () => {
+    setIsMouseDown(false);
+    setMouseStart(null);
+    setMouseEnd(null);
   };
 
   // Keyboard navigation
@@ -284,6 +328,10 @@ const MindsInTheSilo = () => {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
             role="group"
             aria-label={`Slide ${currentSlide + 1} of ${totalSlides}`}
             style={{ touchAction: 'pan-y pinch-zoom' }}
@@ -501,7 +549,7 @@ const MindsInTheSilo = () => {
                     }
                   }}
                   className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
-                    currentSlide === index ? 'bg-red-500' : 'bg-white hover:bg-white-400'
+                    currentSlide === index ? 'bg-red-500' : 'bg-red-200 hover:bg-red-300'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                   aria-current={currentSlide === index ? 'true' : 'false'}
@@ -513,9 +561,9 @@ const MindsInTheSilo = () => {
             <div className="flex space-x-1 sm:space-x-2">
             <button 
               onClick={goToPrevSlide}
-              disabled={isTransitioning}
+              disabled={isTransitioning || currentSlide === 0}
               className={`w-10 h-10 sm:w-12 sm:h-12 border border-red-500 text-red-500 flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base sm:text-lg ${
-                isTransitioning 
+                isTransitioning || currentSlide === 0
                   ? 'opacity-50 cursor-not-allowed' 
                   : 'hover:bg-red-50 active:bg-red-100'
               }`}
@@ -525,9 +573,9 @@ const MindsInTheSilo = () => {
             </button>
             <button 
               onClick={goToNextSlide}
-              disabled={isTransitioning}
+              disabled={isTransitioning || currentSlide === totalSlides - 1}
               className={`w-10 h-10 sm:w-12 sm:h-12 border border-red-500 text-red-500 flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base sm:text-lg ${
-                isTransitioning 
+                isTransitioning || currentSlide === totalSlides - 1
                   ? 'opacity-50 cursor-not-allowed' 
                   : 'hover:bg-red-50 active:bg-red-100'
               }`}

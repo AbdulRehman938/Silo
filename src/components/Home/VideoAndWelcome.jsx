@@ -154,7 +154,7 @@ export default function VideoAndWelcome() {
             </p>
             <div className="flex flex-wrap items-center gap-8">
               <a
-                href="#"
+                href="/portfolio"
                 className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold  tracking-wide text-white  border-transparent relative overflow-hidden group"
               >
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 translate-x-5 svg-wrapper group-hover:animate-bounce-custom">
@@ -165,7 +165,7 @@ export default function VideoAndWelcome() {
                 </span>
               </a>
               <a
-                href="#"
+                href="/contact"
                 className="inline-flex items-center gap-2 font-dm font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
               >
                 <span>Let’s Talk</span>

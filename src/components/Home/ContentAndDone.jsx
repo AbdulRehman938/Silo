@@ -158,11 +158,11 @@ export default function ContentAndDone() {
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-studies';
+                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-study/1';
               }}
               onClick={(e) => {
                 if (e.target.closest('a')) return;
-                window.location.href = '/case-studies';
+                window.location.href = '/case-study/1';
               }}
             >
               <div className="w-1/3 h-96 transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
@@ -197,7 +197,7 @@ export default function ContentAndDone() {
                   </span>
                 </div>
                 <a
-                  href="/case-study-post"
+                  href="/case-study/1"
                   className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                 >
                   <span>View Project</span>
@@ -216,11 +216,11 @@ export default function ContentAndDone() {
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-studies';
+                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-study/1';
               }}
               onClick={(e) => {
                 if (e.target.closest('a')) return;
-                window.location.href = '/case-studies';
+                window.location.href = '/case-study/1';
               }}
             >
               <div className="w-1/2 h-96 relative">
@@ -256,7 +256,7 @@ export default function ContentAndDone() {
                   </span>
                 </div>
                 <a
-                  href="/case-study-post"
+                  href="/case-study/1"
                   className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                 >
                   <span>View Project</span>
@@ -276,11 +276,11 @@ export default function ContentAndDone() {
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-studies';
+                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-study/2';
               }}
               onClick={(e) => {
                 if (e.target.closest('a')) return;
-                window.location.href = '/case-studies';
+                window.location.href = '/case-study/2';
               }}
             >
               <div className="w-1/3 h-96 transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
@@ -313,7 +313,7 @@ export default function ContentAndDone() {
                   </span>
                 </div>
                 <a
-                  href="/case-study-post"
+                  href="/case-study/2"
                   className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                 >
                   <span>View Project</span>
@@ -332,11 +332,11 @@ export default function ContentAndDone() {
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-studies';
+                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-study/2';
               }}
               onClick={(e) => {
                 if (e.target.closest('a')) return;
-                window.location.href = '/case-studies';
+                window.location.href = '/case-study/2';
               }}
             >
               <div className="w-1/2 h-96 relative">
@@ -370,7 +370,7 @@ export default function ContentAndDone() {
                   </span>
                 </div>
                 <a
-                  href="/case-study-post"
+                  href="/case-study/2"
                   className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                 >
                   <span>View Project</span>
@@ -390,11 +390,11 @@ export default function ContentAndDone() {
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-studies';
+                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-study/3';
               }}
               onClick={(e) => {
                 if (e.target.closest('a')) return;
-                window.location.href = '/case-studies';
+                window.location.href = '/case-study/3';
               }}
             >
               <div className="w-1/3 h-96 transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
@@ -430,7 +430,7 @@ export default function ContentAndDone() {
                   </span>
                 </div>
                 <a
-                  href="/case-study-post"
+                  href="/case-study/3"
                   className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                 >
                   <span>View Project</span>
@@ -449,11 +449,11 @@ export default function ContentAndDone() {
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-studies';
+                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-study/3';
               }}
               onClick={(e) => {
                 if (e.target.closest('a')) return;
-                window.location.href = '/case-studies';
+                window.location.href = '/case-study/3';
               }}
             >
               <div className="w-1/2 h-96 relative">
@@ -490,7 +490,7 @@ export default function ContentAndDone() {
                   </span>
                 </div>
                 <a
-                  href="/case-study-post"
+                  href="/case-study/3"
                   className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                 >
                   <span>View Project</span>
@@ -505,9 +505,9 @@ export default function ContentAndDone() {
             </div>
           </div>
 
-          <div className="flex justify-center md:-mt-10">
+          <div className="flex justify-center md:mt-10">
             <a
-              href="/case-study-post"
+              href="case-studies"
               className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -535,11 +535,11 @@ export default function ContentAndDone() {
             role="link"
             tabIndex={0}
             onKeyDown={(e) => {
-              if (e.key === 'Enter') window.location.href = '/case-studies';
+              if (e.key === 'Enter') window.location.href = '/case-study/1';
             }}
             onClick={(e) => {
               if (e.target.closest && e.target.closest('a')) return;
-              window.location.href = '/case-studies';
+              window.location.href = '/case-study/1';
             }}
           >
             <img
@@ -620,11 +620,11 @@ export default function ContentAndDone() {
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-studies';
+                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-study/1';
               }}
               onClick={(e) => {
                 if (e.target.closest && e.target.closest('a')) return;
-                window.location.href = '/case-studies';
+                window.location.href = '/case-study/1';
               }}
             >
               <div className="w-full h-64 mb-0">
@@ -640,7 +640,7 @@ export default function ContentAndDone() {
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">UGC</span>
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">TikTok</span>
                 </div>
-                <a href="/case-study-post" className="inline-flex items-center gap-2 font-dm font-bold text-lg text-[#FF322E]">
+                <a href="/case-study/1" className="inline-flex items-center gap-2 font-dm font-bold text-lg text-[#FF322E]">
                   <span>View Project</span>
                   <MdOutlineKeyboardArrowRight className="text-xl" />
                 </a>
@@ -652,11 +652,11 @@ export default function ContentAndDone() {
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-studies';
+                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-study/2';
               }}
               onClick={(e) => {
                 if (e.target.closest && e.target.closest('a')) return;
-                window.location.href = '/case-studies';
+                window.location.href = '/case-study/2';
               }}
             >
               <div className="w-full h-64">
@@ -672,7 +672,7 @@ export default function ContentAndDone() {
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">Motion Design</span>
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">Strategy</span>
                 </div>
-                <a href="/case-study-post" className="inline-flex items-center gap-2 font-dm font-bold text-lg text-[#FF322E]">
+                <a href="/case-study/2" className="inline-flex items-center gap-2 font-dm font-bold text-lg text-[#FF322E]">
                   <span>View Project</span>
                   <MdOutlineKeyboardArrowRight className="text-xl" />
                 </a>
@@ -684,11 +684,11 @@ export default function ContentAndDone() {
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-studies';
+                if (e.key === 'Enter' && !e.target.closest('a')) window.location.href = '/case-study/3';
               }}
               onClick={(e) => {
                 if (e.target.closest && e.target.closest('a')) return;
-                window.location.href = '/case-studies';
+                window.location.href = '/case-study/3';
               }}
             >
               <div className="w-full h-64">
@@ -704,7 +704,7 @@ export default function ContentAndDone() {
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">Design</span>
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">B2B</span>
                 </div>
-                <a href="/case-study-post" className="inline-flex items-center gap-2 font-dm font-bold text-lg text-[#FF322E]">
+                <a href="/case-study/3" className="inline-flex items-center gap-2 font-dm font-bold text-lg text-[#FF322E]">
                   <span>View Project</span>
                   <MdOutlineKeyboardArrowRight className="text-xl" />
                 </a>
@@ -713,7 +713,7 @@ export default function ContentAndDone() {
           </div>
 
           <div className="flex justify-center mt-[-5rem]">
-            <a href="/case-study-post" className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-base font-extrabold uppercase tracking-wide text-brand">
+            <a href="case-studies" className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-base font-extrabold uppercase tracking-wide text-brand">
               <span>View all</span>
             </a>
           </div>
