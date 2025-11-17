@@ -1,21 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FaChevronRight } from 'react-icons/fa'
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center px-4 sm:px-6 md:px-8">
-      <div className="text-center max-w-4xl mx-auto">
+    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 mt-20">
+      <div className="text-center max-w-[768px] mx-auto">
         {/* Main Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-black leading-tight mb-8 sm:mb-12 md:mb-16">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-epilogue lg:text-8xl xl:text-9xl font-bold text-black leading-tight mb-8 sm:mb-12 md:mb-16">
           Well, this is awkward.
         </h1>
         
         {/* Description */}
         <div className="mb-8 sm:mb-12 md:mb-16">
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-black font-normal leading-relaxed max-w-2xl mx-auto">
             The page you're looking for doesn't exist, or maybe it never did.
           </p>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mt-2">
+          <p className="text-base sm:text-lg md:text-xl text-black font-normal leading-relaxed max-w-2xl mx-auto mt-2">
             Either way, no content here.
           </p>
         </div>
@@ -24,19 +25,30 @@ const NotFound = () => {
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
           <Link 
             to="/" 
-            className="w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 md:px-10 rounded-none transition-colors duration-200 text-sm sm:text-base"
+            className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold tracking-wide text-white border-transparent relative overflow-hidden group w-full sm:w-auto"
           >
-            Back to Home
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+              <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
+            </div>
+            <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-40">
+              Back to Home
+            </span>
           </Link>
           
           <Link 
-            to="/portfolio" 
-            className="w-full sm:w-auto bg-transparent border-2 border-red-500 text-red-500 hover:bg-red-50 font-bold py-3 sm:py-4 px-6 sm:px-8 md:px-10 rounded-none transition-colors duration-200 text-sm sm:text-base"
+            to="/services" 
+            className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group w-full sm:w-auto"
           >
-            See our Work
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+              <FaChevronRight className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
+            </div>
+            <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-40">
+              See our Work
+            </span>
           </Link>
         </div>
       </div>
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
     </div>
   )
 }
