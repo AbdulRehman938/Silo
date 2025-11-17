@@ -47,44 +47,47 @@ const Cards = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Desktop wheel handler with robust scroll lock
+  // Desktop wheel handler
   useEffect(() => {
     const handleWheel = (e) => {
       if (!desktopRef.current) return;
+      
       const rect = desktopRef.current.getBoundingClientRect();
       const viewportCenter = window.innerHeight / 2;
       const containerCenter = rect.top + rect.height / 2;
-      const isAtTrigger = Math.abs(containerCenter - viewportCenter) <= 100;
-
-      // Lock scroll if cards are centered and not fully animated
-      if (isAtTrigger && cardProgress < CARD_DATA.length && cardProgress > 0) {
-        if (!isScrollLocked) setIsScrollLocked(true);
-      } else {
-        if (isScrollLocked) setIsScrollLocked(false);
-      }
+      const isAtTrigger = Math.abs(containerCenter - viewportCenter) <= 150;
 
       if (isAtTrigger) {
         const delta = e.deltaY;
-        const step = Math.abs(delta) * 0.003;
-        const shouldAnimate = 
-          (cardProgress > 0 && cardProgress < CARD_DATA.length) ||
-          (cardProgress === 0 && delta > 0) ||
-          (cardProgress === CARD_DATA.length && delta < 0);
-        if (shouldAnimate) {
-          e.preventDefault();
-          e.stopPropagation();
-          setCardProgress(prev => {
-            const newProgress = prev + (delta > 0 ? step : -step);
-            return Math.max(0, Math.min(CARD_DATA.length, newProgress));
-          });
-        }
+        const step = Math.abs(delta) * 0.005;
+        
+        setCardProgress(prev => {
+          const newProgress = prev + (delta > 0 ? step : -step);
+          const clampedProgress = Math.max(0, Math.min(CARD_DATA.length, newProgress));
+          
+          // Only lock scroll if we're in the middle of the animation
+          if (clampedProgress > 0 && clampedProgress < CARD_DATA.length) {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsScrollLocked(true);
+          } else {
+            // Unlock immediately when at endpoints
+            setIsScrollLocked(false);
+          }
+          
+          return clampedProgress;
+        });
+      } else {
+        // Unlock when outside trigger zone
+        setIsScrollLocked(false);
       }
     };
+    
     document.addEventListener('wheel', handleWheel, { passive: false });
     return () => document.removeEventListener('wheel', handleWheel);
-  }, [cardProgress, isScrollLocked]);
+  }, []);
 
-  // Mobile touch handler with robust scroll lock
+  // Mobile touch handler
   useEffect(() => {
     const handleTouchStart = (e) => {
       if (!mobileRef.current || !isMobileInView) return;
@@ -93,28 +96,34 @@ const Cards = () => {
 
     const handleTouchMove = (e) => {
       if (!mobileRef.current || !isMobileInView) return;
-      const delta = touchStartY.current - e.touches[0].clientY;
-      const step = Math.abs(delta) * 0.01;
-      const shouldAnimate = 
-        (cardProgress > 0 && cardProgress < CARD_DATA.length) ||
-        (cardProgress === 0 && delta > 0) ||
-        (cardProgress === CARD_DATA.length && delta < 0);
-      // Lock scroll if cards are centered and not fully animated
+      
       const rect = mobileRef.current.getBoundingClientRect();
       const viewportCenter = window.innerHeight / 2;
       const containerCenter = rect.top + rect.height / 2;
-      const isAtTrigger = Math.abs(containerCenter - viewportCenter) <= 100;
-      if (isAtTrigger && cardProgress < CARD_DATA.length && cardProgress > 0) {
-        if (!isScrollLocked) setIsScrollLocked(true);
-      } else {
-        if (isScrollLocked) setIsScrollLocked(false);
-      }
-      if (shouldAnimate) {
-        e.preventDefault();
+      const isAtTrigger = Math.abs(containerCenter - viewportCenter) <= 150;
+      
+      if (isAtTrigger) {
+        const delta = touchStartY.current - e.touches[0].clientY;
+        const step = Math.abs(delta) * 0.015;
+        
         setCardProgress(prev => {
           const newProgress = prev + (delta > 0 ? step : -step);
-          return Math.max(0, Math.min(CARD_DATA.length, newProgress));
+          const clampedProgress = Math.max(0, Math.min(CARD_DATA.length, newProgress));
+          
+          // Only lock scroll if we're in the middle of the animation
+          if (clampedProgress > 0 && clampedProgress < CARD_DATA.length) {
+            e.preventDefault();
+            setIsScrollLocked(true);
+          } else {
+            // Unlock immediately when at endpoints
+            setIsScrollLocked(false);
+          }
+          
+          return clampedProgress;
         });
+      } else {
+        // Unlock when outside trigger zone
+        setIsScrollLocked(false);
       }
       touchStartY.current = e.touches[0].clientY;
     };
@@ -125,7 +134,9 @@ const Cards = () => {
       document.removeEventListener('touchstart', handleTouchStart);
       document.removeEventListener('touchmove', handleTouchMove);
     };
-  }, [cardProgress, isMobileInView, isScrollLocked]);
+  }, [isMobileInView]);
+
+
   // Scroll lock effect: lock/unlock body scroll when needed
   useEffect(() => {
     if (isScrollLocked) {
