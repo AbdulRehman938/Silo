@@ -31,7 +31,7 @@ export default function Header() {
           {/* Center: Nav */}
           <nav className="hidden lg:flex items-center justify-center gap-3 xl:gap-4 2xl:gap-6 text-xl font-bold text-black relative">
             <NavLink
-              to="/about"
+              to="/case-studies"
               className={({ isActive }) => `px-2 xl:px-2.5  2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
             >
               The Silo
@@ -107,7 +107,7 @@ export default function Header() {
               <div className="max-w-[1440px] border-[2px] border-black border-t-0 mx-auto bg-white shadow-lg">
                 <nav className="px-6 py-8 flex-1 flex flex-col gap-6 text-center">
                     <NavLink 
-                      to="/about" 
+                      to="/case-studies" 
                       onClick={close} 
                       className={({ isActive }) => `text-xl font-bold tracking-tight transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand font-extrabold border-b-2 border-brand pb-1' : 'text-black'}`}
                       style={{ transitionDelay: open ? '80ms' : '0ms' }}

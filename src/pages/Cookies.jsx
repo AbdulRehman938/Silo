@@ -10,13 +10,13 @@ const Cookies = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black mb-4 sm:mb-6">
             Cookies Policy
           </h1>
-          <p className="text-sm sm:text-base text-gray-500">
+          <p className="text-sm sm:text-base text-black">
            Effective date: April 3, 2023
           </p>
         </div>
 
         {/* Introduction */}
-        <div className="mb-12 text-sm sm:text-base text-gray-700 leading-relaxed">
+        <div className="mb-12 text-sm sm:text-base text-black leading-relaxed">
           <p>
             This Cookies Policy explains how The Silo Creative Ltd ("we", "us", or "our") uses cookies and similar technologies on our website www.thesilocreative.com.
           </p>
@@ -29,7 +29,7 @@ const Cookies = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               1. What Are Cookies?
             </h2>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            <p className="text-sm sm:text-base text-black leading-relaxed">
               Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences, improve your experience, and provide insights into how the site is used.
             </p>
           </section>
@@ -39,7 +39,7 @@ const Cookies = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               2. How We Use Cookies
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 We use cookies to:
               </p>
@@ -60,7 +60,7 @@ const Cookies = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               3. Types of Cookies We Use
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 <strong>Essential Cookies:</strong> These are required for the website to work properly (e.g. security, navigation).
               </p>
@@ -78,7 +78,7 @@ const Cookies = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               4. Managing Cookies
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 When you first visit our website, you'll see a cookie consent banner. You can choose to accept or reject non-essential cookies.
               </p>
@@ -93,7 +93,7 @@ const Cookies = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               5. Updates to This Policy
             </h2>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            <p className="text-sm sm:text-base text-black leading-relaxed">
               We may update this Cookies Policy from time to time to reflect changes in law or our website functionality. The updated version will always be available on this page.
             </p>
           </section>
@@ -103,7 +103,7 @@ const Cookies = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               6. Contact Us
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 If you have any questions about how we use cookies, please contact us at:
               </p>
@@ -111,7 +111,7 @@ const Cookies = () => {
                 📧 hello@thesilocreative.com<br />
                 🌐 www.thesilocreative.com
               </p>
-              <p className="text-center mt-8 text-gray-600">
+              <p className="text-center mt-8 text-black">
                 © {new Date().getFullYear()} The Silo Creative Ltd | Cookies Policy
               </p>
             </div>

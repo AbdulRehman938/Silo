@@ -10,7 +10,7 @@ const Terms = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black mb-4 sm:mb-6">
             Terms & Conditions
           </h1>
-          <p className="text-sm sm:text-base text-gray-500">
+          <p className="text-sm sm:text-base text-black">
             Effective date: April 3, 2023
           </p>
         </div>
@@ -22,7 +22,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               1. About These Terms and Conditions
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 This Website (www.thesilocreative.com) is the property of The Silo Creative Ltd, a company registered in England and Wales. These Terms and Conditions ("Terms") outline the legal terms on which we provide our creative and marketing services ("Services") through our Website ("Website") to you ("You", or the "Client").
               </p>
@@ -40,7 +40,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               2. Agreement
             </h2>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            <p className="text-sm sm:text-base text-black leading-relaxed">
               These Terms form a legally binding Agreement between you ("the Client") and The Silo Creative Ltd ("The Silo"). Details of the Services and fees will be specified in the Order Form agreed by both parties.
             </p>
           </section>
@@ -50,7 +50,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               3. About Us
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The Silo Creative Ltd is a creative agency specialising in:
               </p>
@@ -75,7 +75,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               4. Terminology
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>In these Terms:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>"Agreement"</strong> – refers to these Terms, your Order Form, and your acceptance of our Privacy and Cookies Policies.</li>
@@ -97,7 +97,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               5. Service Provision
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 You must have a valid agreement with The Silo to access our Services.
               </p>
@@ -121,7 +121,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               6. Service Delivery
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 Service delivery will be evidenced through reports, progress updates, or creative proofs, depending on the project type.
               </p>
@@ -141,7 +141,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               7. Term of Agreement
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The term of your Agreement will be defined in your Order Form. Services commence from the Commencement Date, once all required materials and payments are received.
               </p>
@@ -159,7 +159,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               8. Fees and Payment
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 All fees are outlined in your Order Form and payable in the agreed currency at the time of signing. The Silo accepts payments in GBP (£) and other currencies where specified and agreed in writing.
               </p>
@@ -189,7 +189,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               9. Confidentiality
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The Silo treats all client information as strictly confidential. Any data, materials, or project details shared will only be used for delivering the agreed Services.
               </p>
@@ -207,7 +207,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               10. Intellectual Property
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 All creative concepts, strategies, designs, and materials produced by The Silo remain the intellectual property of The Silo until full payment has been received.
               </p>
@@ -228,7 +228,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               11. Limitation of Liability
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The Silo will provide Services with reasonable skill and care but cannot guarantee specific performance results.
               </p>
@@ -249,7 +249,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               12. Data Protection and Privacy
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The Silo complies with the UK GDPR and Data Protection Act 2018. We collect and process only the data necessary to provide our Services securely and effectively.
               </p>
@@ -267,7 +267,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               13. Termination
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 Either party may terminate this Agreement in accordance with the notice period set out in Section 7.
               </p>
@@ -290,7 +290,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               14. Governing Law and Jurisdiction
             </h2>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            <p className="text-sm sm:text-base text-black leading-relaxed">
               These Terms and Conditions shall be governed by and construed in accordance with the laws of England and Wales. Both The Silo and the Client agree to the exclusive jurisdiction of the courts of England and Wales.
             </p>
           </section>
@@ -300,7 +300,7 @@ const Terms = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               15. Contact
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The Silo Creative Ltd<br />
                 Registered in England and Wales<br />
@@ -310,7 +310,7 @@ const Terms = () => {
               <p>
                 Support and client queries are available via email Monday–Friday, 9am–5pm (GMT).
               </p>
-              <p className="text-center mt-8 text-gray-600">
+              <p className="text-center mt-8 text-black">
                 © {new Date().getFullYear()} The Silo Creative Ltd | All Rights Reserved
               </p>
             </div>

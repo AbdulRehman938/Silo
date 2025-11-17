@@ -49,7 +49,7 @@ const HeroSection = ({ jobData }) => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-600"
+                  className="text-black"
                 >
                   {jobData.type}
                 </p>
@@ -61,7 +61,7 @@ const HeroSection = ({ jobData }) => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-500"
+                  className="text-black"
                 >
                   {jobData.location}
                 </p>
@@ -124,7 +124,7 @@ const HeroSection = ({ jobData }) => {
                   lineHeight: '150%', 
                   letterSpacing: '0%'
                 }} 
-                className="text-gray-700"
+                className="text-black"
               >
                 We work with brands who want to cut through the noise, and creators who know 
                 how to make that happen. Now we're looking for a Creator Partnerships Manager 

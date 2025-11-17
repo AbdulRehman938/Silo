@@ -8,12 +8,12 @@ const SimpleHeadingText = ({ heading, text }) => {
         <div className='flex flex-col gap-4'>
           {Array.isArray(text) ? (
             text.map((para, index) => (
-              <p key={index} className='text-base md:text-lg text-gray-700 leading-relaxed'>
+              <p key={index} className='text-base md:text-lg text-black leading-relaxed'>
                 {para}
               </p>
             ))
           ) : (
-            <p className='text-base md:text-lg text-gray-700 leading-relaxed'>
+            <p className='text-base md:text-lg text-black leading-relaxed'>
               {text || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere."}
             </p>
           )}

@@ -36,7 +36,7 @@ const Hero = () => {
               {/* Brand Statement - Zoom & Small Laptop Optimized */}
               <div>
                 <p
-                  className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl xl:text-[18px] leading-relaxed text-left max-w-full xl:max-w-lg px-2 sm:px-0 font-epilogue"
+                  className="text-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-[18px] leading-relaxed text-left max-w-full xl:max-w-lg px-2 sm:px-0 font-epilogue"
                   style={{
                     opacity: 1,
                     fontWeight: 400,

@@ -103,14 +103,14 @@ export default function VideoModal({
           <div className="w-9 h-9 bg-white rounded flex items-center justify-center text-sm font-bold">
             Silo
           </div>
-          <div className="text-white">
-            <div className="inline-block bg-[#0b5cff] text-white px-3 py-1 rounded text-sm font-semibold -mt-1">
+          <div className="text-black">
+            <div className="inline-block bg-[#0b5cff] text-black px-3 py-1 rounded text-sm font-semibold -mt-1">
               {title}
             </div>
             {byline && (
               <div className="text-xs opacity-90 mt-1">
                 by{" "}
-                <a className="underline text-white/90" href="#">
+                <a className="underline text-black/90" href="#">
                   {byline}
                 </a>
               </div>
@@ -123,18 +123,18 @@ export default function VideoModal({
           <button
             onClick={() => setMuted((v) => !v)}
             aria-pressed={!muted}
-            className="w-10 h-10 rounded-full bg-white/6 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/12 border border-white/10 transition"
+            className="w-10 h-10 rounded-full bg-white/6 backdrop-blur-sm flex items-center justify-center text-black hover:bg-white/12 border border-white/10 transition"
             title={muted ? "Unmute" : "Mute"}
           >
             {muted ? <IoVolumeMute size={18} /> : <IoVolumeHigh size={18} />}
           </button>
-          <button className="w-10 h-10 rounded-full bg-white/6 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/12 border border-white/10 transition">
+          <button className="w-10 h-10 rounded-full bg-white/6 backdrop-blur-sm flex items-center justify-center text-black hover:bg-white/12 border border-white/10 transition">
             <IoHeartOutline size={18} />
           </button>
-          <button className="w-10 h-10 rounded-full bg-white/6 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/12 border border-white/10 transition">
+          <button className="w-10 h-10 rounded-full bg-white/6 backdrop-blur-sm flex items-center justify-center text-black hover:bg-white/12 border border-white/10 transition">
             <IoTimeOutline size={18} />
           </button>
-          <button className="w-10 h-10 rounded-full bg-white/6 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/12 border border-white/10 transition">
+          <button className="w-10 h-10 rounded-full bg-white/6 backdrop-blur-sm flex items-center justify-center text-black hover:bg-white/12 border border-white/10 transition">
             <IoShareSocialOutline size={18} />
           </button>
         </div>
@@ -143,7 +143,7 @@ export default function VideoModal({
         <button
           onClick={onClose}
           aria-label="Close"
-          className="absolute top-6 right-4 w-11 h-11 bg-white/7 text-white z-40 flex items-center justify-center hover:bg-white/14 transition"
+          className="absolute top-6 right-4 w-11 h-11 bg-white/7 text-black z-40 flex items-center justify-center hover:bg-white/14 transition"
         >
           <IoClose size={22} />
         </button>

@@ -46,7 +46,7 @@ const Section = () => {
             </div>
 
             {/* Right column - empty space for image */}
-            <div className="w-full md:w-1/2 bg-gray-50 md:min-h-[280px]">
+            <div className="w-full md:w-1/2 bg-white-50 md:min-h-[280px]">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
@@ -62,7 +62,7 @@ const Section = () => {
         <div className="border border-black pb-6 rounded-sm overflow-hidden">
           <div className="flex flex-col items-stretch">
             {/* Top: right image placeholder (appears on top for md view) */}
-            <div className="w-full bg-gray-50 h-52 md:h-72 lg:h-72">
+            <div className="w-full bg-white-50 h-52 md:h-72 lg:h-72">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
@@ -74,7 +74,7 @@ const Section = () => {
               <h2 className="text-2xl md:text-3xl font-semibold text-black mb-3">
                 Ready when you are.
               </h2>
-              <p className="text-sm md:text-base text-gray-700 mb-4">
+              <p className="text-sm md:text-base text-black mb-4">
                 Whether you’re a brand looking for scroll-stopping content or a
                 creator ready to join our roster, this is where it starts.
               </p>
@@ -107,7 +107,7 @@ const Section = () => {
               <h2 className="text-3xl font-extrabold text-black mb-3">
                 Ready when you are.
               </h2>
-              <p className="text-sm text-gray-700 mb-4">
+              <p className="text-sm text-black mb-4">
                 Whether you’re a brand looking for scroll-stopping content or a
                 creator ready to join our roster, this is where it starts.
               </p>
@@ -129,7 +129,7 @@ const Section = () => {
             </div>
 
             {/* Bottom: image placeholder */}
-            <div className="w-full bg-gray-50 h-44">
+            <div className="w-full bg-white-50 h-44">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"

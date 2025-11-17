@@ -206,7 +206,7 @@ const Cards = () => {
                   {/* card : {card.number} */}
                 </div>
                 <h2 className="2xl:text-5xl lg:text-2xl font-bold mb-2">{card.title}</h2>
-                <p className="2xl:text-3xl lg:text-xl text-gray-700">{card.desc}</p>
+                <p className="2xl:text-3xl lg:text-xl text-black">{card.desc}</p>
               </motion.div>
             );
           })}
@@ -268,7 +268,7 @@ const Cards = () => {
                  
                 </div>
                 <h2 className="text-sm font-bold mb-1 leading-tight">{card.title}</h2>
-                <p className="text-xs text-gray-700 leading-relaxed">{card.desc}</p>
+                <p className="text-xs text-black leading-relaxed">{card.desc}</p>
               </motion.div>
             );
           })}

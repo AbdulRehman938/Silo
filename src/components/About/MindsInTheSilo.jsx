@@ -501,7 +501,7 @@ const MindsInTheSilo = () => {
                     }
                   }}
                   className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
-                    currentSlide === index ? 'bg-red-500' : 'bg-gray-300 hover:bg-gray-400'
+                    currentSlide === index ? 'bg-red-500' : 'bg-white hover:bg-white-400'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                   aria-current={currentSlide === index ? 'true' : 'false'}

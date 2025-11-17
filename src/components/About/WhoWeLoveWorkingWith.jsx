@@ -51,7 +51,7 @@ const WhoWeLoveWorkingWith = () => {
           
           {/* Below Text - Zoom & Small Laptop Optimized */}
           <p 
-            className="text-gray-700 text-leftlg:block xl:block lg:text-left xl:text-left text-xs sm:text-sm md:text-base lg:text-lg xl:text-base leading-relaxed md:mt-10"
+            className="text-black text-leftlg:block xl:block lg:text-left xl:text-left text-xs sm:text-sm md:text-base lg:text-lg xl:text-base leading-relaxed md:mt-10"
             style={{
               fontFamily: 'DM Sans, sans-serif',
               fontWeight: 700,

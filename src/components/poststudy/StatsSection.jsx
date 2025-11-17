@@ -20,14 +20,14 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
               {column1?.value || '30%'}
             </div>
             <div className='w-full h-[2px] bg-black mb-4'></div>
-            <p className='text-sm text-gray-700 leading-relaxed'>
+            <p className='text-sm text-black leading-relaxed'>
               {column1?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
             </p>
           </div>
         </div>
 
         {/* Column 2: Image then Stats */}
-        <div className='w-full aspect-[4/3] bg-gray-200 overflow-hidden'>
+        <div className='w-full aspect-[4/3] bg-white overflow-hidden'>
           {column2?.image?.src ? (
             <img 
               src={column2.image.src} 
@@ -55,14 +55,14 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
               {column2?.stat?.value || '30%'}
             </div>
             <div className='w-full h-[2px] bg-black mb-4'></div>
-            <p className='text-sm text-gray-700 leading-relaxed'>
+            <p className='text-sm text-black leading-relaxed'>
               {column2?.stat?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
             </p>
           </div>
         </div>
 
         {/* Column 3: Image then Stats */}
-        <div className='w-full aspect-[4/3] bg-gray-200 overflow-hidden'>
+        <div className='w-full aspect-[4/3] bg-white overflow-hidden'>
           {column3?.image?.src ? (
             <img 
               src={column3.image.src} 
@@ -90,7 +90,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
               {column3?.stat?.value || '30%'}
             </div>
             <div className='w-full h-[2px] bg-black mb-4'></div>
-            <p className='text-sm text-gray-700 leading-relaxed'>
+            <p className='text-sm text-black leading-relaxed'>
               {column3?.stat?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
             </p>
           </div>
@@ -110,7 +110,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
               {column1?.value || '30%'}
             </div>
             <div className='w-full h-[2px] bg-black mb-4'></div>
-            <p className='text-sm md:text-base text-gray-700 leading-relaxed'>
+            <p className='text-sm md:text-base text-black leading-relaxed'>
               {column1?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
             </p>
           </div>
@@ -119,7 +119,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
         {/* Column 2: Image on top, Stat on bottom */}
         <div className='flex flex-col gap-6 md:gap-8'>
           {/* Image Card */}
-          <div className='w-full aspect-[4/3] bg-gray-200 overflow-hidden'>
+          <div className='w-full aspect-[4/3] bg-white overflow-hidden'>
             {column2?.image?.src ? (
               <img 
                 src={column2.image.src} 
@@ -148,7 +148,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
                 {column2?.stat?.value || '30%'}
               </div>
               <div className='w-full h-[2px] bg-black mb-4'></div>
-              <p className='text-sm md:text-base text-gray-700 leading-relaxed'>
+              <p className='text-sm md:text-base text-black leading-relaxed'>
                 {column2?.stat?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
               </p>
             </div>
@@ -167,14 +167,14 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
                 {column3?.stat?.value || '30%'}
               </div>
               <div className='w-full h-[2px] bg-black mb-4'></div>
-              <p className='text-sm md:text-base text-gray-700 leading-relaxed'>
+              <p className='text-sm md:text-base text-black leading-relaxed'>
                 {column3?.stat?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
               </p>
             </div>
           </div>
           
           {/* Image Card */}
-          <div className='w-full aspect-[4/3] bg-gray-200 overflow-hidden'>
+          <div className='w-full aspect-[4/3] bg-white overflow-hidden'>
             {column3?.image?.src ? (
               <img 
                 src={column3.image.src} 

@@ -18,8 +18,8 @@ const JobBoardDetail = () => {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Job Not Found</h1>
-          <p className="text-gray-600 mb-6">The job you're looking for doesn't exist or has been removed.</p>
+          <h1 className="text-2xl font-bold text-black mb-4">Job Not Found</h1>
+          <p className="text-black mb-6">The job you're looking for doesn't exist or has been removed.</p>
           <button 
             onClick={() => navigate('/job-board')}
             className="bg-[#FF322E] text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors"
@@ -67,7 +67,7 @@ const JobBoardDetail = () => {
                   <p className="text-black font-semibold text-base">
                     {job.contact.name}
                   </p>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-black text-sm">
                     {job.contact.title}
                   </p>
                 </div>
@@ -115,7 +115,7 @@ const JobBoardDetail = () => {
               The Client:
             </h2>
             
-            <div className="text-gray-700 text-base leading-relaxed whitespace-pre-line max-w-prose">
+            <div className="text-black text-base leading-relaxed whitespace-pre-line max-w-prose">
               {job.client.description}
             </div>
           </div>

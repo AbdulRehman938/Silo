@@ -38,7 +38,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Build and maintain strong relationships with creators across the UK, South Africa and US.
                 </span>
@@ -53,7 +53,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Work directly with clients to understand their goals and translate them into creative briefs.
                 </span>
@@ -68,7 +68,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Match brands with the right creators based on style, reach, and audience.
                 </span>
@@ -83,7 +83,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Oversee campaigns from ideation through delivery, ensuring quality and timeliness.
                 </span>
@@ -98,7 +98,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Manage content rights, usage, and ready-to-post delivery formats.
                 </span>
@@ -113,7 +113,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Provide insight on performance, pulling insights that shape future campaigns.
                 </span>
@@ -146,7 +146,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Competitive salary with performance-based bonuses.
                 </span>
@@ -161,7 +161,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Hybrid working setup with flexibility built in.
                 </span>
@@ -176,7 +176,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Access to a growing international creator network.
                 </span>
@@ -191,7 +191,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Opportunity to work on campaigns with Revolut, Ignition, food, and tech brands.
                 </span>
@@ -206,7 +206,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   A team that values creativity, clarity, and bold ideas.
                 </span>
@@ -243,7 +243,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   A strong communicator who can manage both client expectations and creator needs.
                 </span>
@@ -258,7 +258,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Organised, detail-oriented, and comfortable running multiple projects at once.
                 </span>
@@ -273,7 +273,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Confident in social platforms, trends, and content formats.
                 </span>
@@ -288,7 +288,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Experienced in influencer/UGC management, brand partnerships, or campaign delivery.
                 </span>
@@ -303,7 +303,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Comfortable in a fast-paced, no-fluff environment.
                 </span>
@@ -336,7 +336,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   The go-to person for making brand—creator partnerships run smoothly.
                 </span>
@@ -351,7 +351,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   A trusted voice with both clients and creators.
                 </span>
@@ -366,7 +366,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   A driver of campaigns that feel fresh, intentional, and effective.
                 </span>
@@ -381,7 +381,7 @@ const JobDetailsSection = () => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-gray-700"
+                  className="text-black"
                 >
                   Part of a team that pushes brands to stop playing safe and start getting noticed.
                 </span>

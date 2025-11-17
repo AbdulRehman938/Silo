@@ -35,7 +35,7 @@ const CaseStudies = () => {
               {/* Brand Statement - Zoom & Small Laptop Optimized */}
               <div>
                 <p
-                  className="text-gray-700 text-sm sm:text-base md:text-lg lg:text-xl xl:text-[18px] leading-relaxed text-left max-w-full xl:max-w-lg px-2 sm:px-0 font-epilogue"
+                  className="text-black text-sm sm:text-base md:text-lg lg:text-xl xl:text-[18px] leading-relaxed text-left max-w-full xl:max-w-lg px-2 sm:px-0 font-epilogue"
                   style={{
                     opacity: 1,
                     fontWeight: 400,
@@ -113,7 +113,7 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
+            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-white rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
                 alt="smoothie"
@@ -188,7 +188,7 @@ const CaseStudies = () => {
                 alt="smoothie"
                 className="w-full h-full object-cover" loading="lazy" />
               {/* Hover image placeholder */}
-              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
+              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-white  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
                   alt="smoothie"
@@ -206,7 +206,7 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
+            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-white rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                 alt="smoothie"
@@ -281,7 +281,7 @@ const CaseStudies = () => {
                 alt="smoothie"
                 className="w-full h-full object-cover" loading="lazy" />
               {/* Hover image placeholder */}
-              <div className="absolute -right-80 top-0 w-[70%] h-64 xl:h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
+              <div className="absolute -right-80 top-0 w-[70%] h-64 xl:h-80 bg-white  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                   alt="smoothie"
@@ -299,7 +299,7 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
+            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-white rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
                 alt="smoothie"
@@ -380,7 +380,7 @@ const CaseStudies = () => {
                 alt="smoothie"
                 className="w-full h-full object-cover" loading="lazy" />
               {/* Hover image placeholder */}
-              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
+              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-white  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
                   alt="smoothie"
@@ -400,7 +400,7 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
+            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-white rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
                 alt="smoothie"
@@ -475,7 +475,7 @@ const CaseStudies = () => {
                 alt="smoothie"
                 className="w-full h-full object-cover" loading="lazy" />
               {/* Hover image placeholder */}
-              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
+              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-white  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
                   alt="smoothie"
@@ -493,7 +493,7 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
+            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-white rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                 alt="smoothie"
@@ -568,7 +568,7 @@ const CaseStudies = () => {
                 alt="smoothie"
                 className="w-full h-full object-cover" loading="lazy" />
               {/* Hover image placeholder */}
-              <div className="absolute -right-80 top-0 w-[70%] h-64 xl:h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
+              <div className="absolute -right-80 top-0 w-[70%] h-64 xl:h-80 bg-white  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                   alt="smoothie"
@@ -586,7 +586,7 @@ const CaseStudies = () => {
                 className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
+            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-white rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
                 alt="smoothie"
@@ -667,7 +667,7 @@ const CaseStudies = () => {
                 alt="smoothie"
                 className="w-full h-full object-cover" loading="lazy" />
               {/* Hover image placeholder */}
-              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
+              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-white  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
                   alt="smoothie"

@@ -10,7 +10,7 @@ const Privacy = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black mb-4 sm:mb-6">
             Legal & Website Terms
           </h1>
-          <p className="text-sm sm:text-base text-gray-500">
+          <p className="text-sm sm:text-base text-black">
             Effective date: April 3, 2023
           </p>
         </div>
@@ -22,7 +22,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               1. About These Terms
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 This Website (www.thesilocreative.com) is the property of The Silo Creative Ltd, a company registered in England and Wales. These Terms and Conditions ("Terms") outline the legal terms on which we provide our creative and marketing services ("Services") through our Website ("Website") to you ("You", or the "Client").
               </p>
@@ -37,7 +37,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               2. About Us
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The Silo Creative Ltd is a creative agency specialising in:
               </p>
@@ -60,7 +60,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               3. Agreement
             </h2>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            <p className="text-sm sm:text-base text-black leading-relaxed">
               These Terms form a legally binding Agreement between the Client and The Silo. Details of the Services and applicable fees will be set out in the signed Order Form.
             </p>
           </section>
@@ -70,7 +70,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               3. About Us
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The Silo Creative Ltd is a creative agency specialising in:
               </p>
@@ -93,7 +93,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               4. Service Provision
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The Client must provide all required brand assets, access credentials, and information for The Silo to perform its Services. The Silo may use trusted third-party partners for campaign delivery or technical work. All such partners are bound by confidentiality and data protection agreements.
               </p>
@@ -108,7 +108,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               5. Service Delivery
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 We deliver Services through regular updates, reports, and creative proofs depending on the project type:
               </p>
@@ -128,7 +128,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               6. Fees and Payment
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 All fees are outlined in your Order Form and payable in the agreed currency at the time of signing. We accept payments in GBP (£) and other currencies where specified and agreed in writing.
               </p>
@@ -158,7 +158,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               7. Confidentiality
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The Silo treats all client information as strictly confidential. Information shared with us will only be used to deliver the agreed Services and will not be disclosed to third parties without written consent, except as required by law or where necessary to fulfil the Services.
               </p>
@@ -173,7 +173,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               8. Intellectual Property
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 All creative concepts, strategies, designs, and materials produced by The Silo remain our intellectual property until full payment is received.
               </p>
@@ -191,7 +191,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               9. Limitation of Liability
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The Silo will provide Services with reasonable skill and care but cannot guarantee specific performance outcomes.
               </p>
@@ -209,7 +209,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               10. Data Protection and Privacy
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The Silo complies with the UK GDPR and the Data Protection Act 2018. We collect and process only the data necessary to provide our Services securely and effectively.
               </p>
@@ -224,7 +224,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               11. Termination
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 Either party may terminate this Agreement in accordance with the notice period set out in the Order Form.
               </p>
@@ -247,7 +247,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               12. Copyright Statement
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 All content on this website — including design, layout, text, graphics, and software — is protected by copyright and remains the property of The Silo Creative Ltd.
               </p>
@@ -266,7 +266,7 @@ const Privacy = () => {
               <p>
                 For copyright or usage enquiries, please contact hello@thesilocreative.com.
               </p>
-              <p className="text-center mt-6 text-gray-600">
+              <p className="text-center mt-6 text-black">
                 © {new Date().getFullYear()} The Silo Creative Ltd | Copyright Statement
               </p>
             </div>
@@ -277,7 +277,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               13. Website Acceptable Use Policy
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <h3 className="text-lg sm:text-xl font-bold text-black mt-6 mb-3">Permitted Use</h3>
               <p>
                 You may use our website for lawful purposes only. You are permitted to:
@@ -326,7 +326,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               14. Governing Law and Jurisdiction
             </h2>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+            <p className="text-sm sm:text-base text-black leading-relaxed">
               These Terms are governed by and construed in accordance with the laws of England and Wales. Both The Silo and the Client agree to submit to the exclusive jurisdiction of the courts of England and Wales.
             </p>
           </section>
@@ -336,7 +336,7 @@ const Privacy = () => {
             <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-4 sm:mb-6">
               15. Contact
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm sm:text-base text-black leading-relaxed">
               <p>
                 The Silo Creative Ltd<br />
                 Registered in England and Wales<br />
@@ -346,7 +346,7 @@ const Privacy = () => {
               <p>
                 Support and client queries are available via email Monday–Friday, 9am–5pm (GMT).
               </p>
-              <p className="text-center mt-8 text-gray-600">
+              <p className="text-center mt-8 text-black">
                 © {new Date().getFullYear()} The Silo Creative Ltd | Legal & Website Terms
               </p>
             </div>

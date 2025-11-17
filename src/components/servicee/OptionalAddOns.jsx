@@ -10,7 +10,7 @@ const OptionalAddOns = () => {
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border-t border-black mx-3">
           {/* Column 1 */}
           <div className="md:pr-8 md:border-r md:border-black py-10">
-            <div className="bg-gray-100 w-full h-96 mb-6 flex overflow-hidden items-start justify-center text-gray-400">
+            <div className="bg-white w-full h-96 mb-6 flex overflow-hidden items-start justify-center text-black">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717268/option-service1_oiwmo4.png"
                 alt="first"
@@ -19,10 +19,10 @@ const OptionalAddOns = () => {
             <h3 className="text-4xl font-bold mb-3">
               Email Marketing
             </h3>
-            <p className="text-base text-gray-700 mb-4">
+            <p className="text-base text-black mb-4">
              We don’t just send emails — we craft conversations that convert.
             </p>
-            <ul className="space-y-3 text-sm text-gray-800">
+            <ul className="space-y-3 text-sm text-black">
               <li className="flex items-start">
                 <span
                   className="inline-block w-3 h-3 mt-1 mr-3 bg-[#FF322E] rotate-[270deg]"   
@@ -49,7 +49,7 @@ const OptionalAddOns = () => {
 
           {/* Column 2 */}
           <div className="md:px-8 md:border-r md:border-black py-10">
-            <div className="bg-gray-100 w-full h-96 mb-6 flex items-center justify-center text-gray-400">
+            <div className="bg-white w-full h-96 mb-6 flex items-center justify-center text-black">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762770096/option-service2_k1qegk.png"
                 alt="second"
@@ -58,10 +58,10 @@ const OptionalAddOns = () => {
             <h3 className="text-4xl font-bold mb-3">
               Paid Advertising (Meta, Google, Tik Tok, Bing etc)
             </h3>
-            <p className="text-base text-gray-700 mb-4">
+            <p className="text-base text-black mb-4">
               We turn ad spend into measurable growth through data-driven strategy and creative precision.
             </p>
-            <ul className="space-y-3 text-sm text-gray-800">
+            <ul className="space-y-3 text-sm text-black">
               <li className="flex items-start">
                 <span
                   className="inline-block w-3 h-3 mt-1 mr-3 bg-[#FF322E] rotate-[270deg]"
@@ -89,7 +89,7 @@ const OptionalAddOns = () => {
           {/* Column 3 */}
           <div className="md:col-span-2 lg:col-span-1 md:flex md:justify-center md:pl-8 py-10">
             <div className="w-full md:w-[85%] lg:w-full">
-              <div className="bg-gray-100 w-full h-96 mb-6 flex items-center justify-center text-gray-400">
+              <div className="bg-white w-full h-96 mb-6 flex items-center justify-center text-black">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717273/option-service3_j0um8a.png"
                   alt="third"
@@ -98,10 +98,10 @@ const OptionalAddOns = () => {
               <h3 className="text-4xl font-bold mb-3">
                 Influencer Campaign Management
               </h3>
-              <p className="text-base text-gray-700 mb-4">
+              <p className="text-base text-black mb-4">
                 We connect brands with the right voices — from discovery to delivery, every detail handled.
               </p>
-              <ul className="space-y-3 text-sm text-gray-800">
+              <ul className="space-y-3 text-sm text-black">
                 <li className="flex items-start">
                   <span
                     className="inline-block w-3 h-3 mt-1 mr-3 bg-[#FF322E] rotate-[270deg]"

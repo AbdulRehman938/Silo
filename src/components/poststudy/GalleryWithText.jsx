@@ -89,7 +89,7 @@ const GalleryWithText = ({ heading, text, images }) => {
               <h2 className='text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-6'>
                 {heading || "Short heading goes here"}
               </h2>
-              <p className='text-base md:text-lg text-gray-700 leading-relaxed'>
+              <p className='text-base md:text-lg text-black leading-relaxed'>
                 {text || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet."}
               </p>
             </div>

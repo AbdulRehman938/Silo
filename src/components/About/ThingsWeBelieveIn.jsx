@@ -20,7 +20,7 @@ const ThingsWeBelieveIn = () => {
           
           {/* Below Text - Zoom & Small Laptop Optimized */}
           <p 
-            className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed text-left"
+            className="text-black text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed text-left"
             style={{
               fontWeight: 500,
               lineHeight: '150%',
@@ -65,7 +65,7 @@ const ThingsWeBelieveIn = () => {
             </h3>
             
             <p 
-              className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-sm xl:text-base leading-relaxed text-left"
+              className="text-black text-xs sm:text-sm md:text-base lg:text-sm xl:text-base leading-relaxed text-left"
               style={{
                 fontWeight: 600,
                 lineHeight: '150%',
@@ -107,7 +107,7 @@ const ThingsWeBelieveIn = () => {
             </h3>
             
             <p 
-              className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-sm xl:text-base leading-relaxed text-left md:text-left lg:text-left"
+              className="text-black text-xs sm:text-sm md:text-base lg:text-sm xl:text-base leading-relaxed text-left md:text-left lg:text-left"
               style={{
                 fontWeight: 600,
                 lineHeight: '150%',
@@ -150,7 +150,7 @@ const ThingsWeBelieveIn = () => {
             </h3>
             
             <p 
-              className="text-gray-700 text-xs sm:text-sm md:text-base lg:text-sm xl:text-base leading-relaxed text-left"
+              className="text-black text-xs sm:text-sm md:text-base lg:text-sm xl:text-base leading-relaxed text-left"
               style={{
                 fontWeight: 600,
                 lineHeight: '150%',

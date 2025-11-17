@@ -68,13 +68,13 @@ const TitleWithDescription = ({ title, description }) => {
               description.map((para, index) => (
                 <p
                   key={index}
-                  className="text-base md:text-lg text-gray-600 leading-relaxed"
+                  className="text-base md:text-lg text-black leading-relaxed"
                 >
                   {para}
                 </p>
               ))
             ) : (
-              <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+              <p className="text-base md:text-lg text-black leading-relaxed">
                 {description ||
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."}
               </p>

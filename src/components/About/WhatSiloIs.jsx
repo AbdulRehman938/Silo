@@ -20,7 +20,7 @@ const WhatSiloIs = () => {
           </div>
           
           {/* Right Side - Text Content - Zoom & Small Laptop Optimized */}
-            <div className="text-gray-700 space-y-3 sm:space-y-4 md:space-y-6 w-full px-2 sm:px-0">
+            <div className="text-black space-y-3 sm:space-y-4 md:space-y-6 w-full px-2 sm:px-0">
             <p 
               className="text-base sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[18px] leading-relaxed text-left"
               style={{

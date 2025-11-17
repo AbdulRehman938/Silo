@@ -130,7 +130,7 @@ export default function NewsletterSubscription({ onSubmit, isSubmitting, message
         <button
           type="submit"
           disabled={formik.isSubmitting}
-          className="w-full bg-red-500 text-white px-4 py-3 font-medium hover:bg-red-600 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="w-full bg-red-500 text-black px-4 py-3 font-medium hover:bg-red-600 focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
           {formik.isSubmitting ? 'Subscribing...' : 'Subscribe'}
         </button>

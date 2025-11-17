@@ -84,7 +84,7 @@ export default function VideoAndWelcome() {
 
               {/* centered play CTA */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex items-center gap-4 text-start text-white px-4">
+                <div className="flex items-center gap-4 text-start text-black px-4">
                   <button
                     type="button"
                     aria-label="Play showreel"

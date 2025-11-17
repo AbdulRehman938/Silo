@@ -13,7 +13,7 @@ const Section2 = () => {
               <h1 className="text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tight text-black mb-6">
                 Ready when you are.
               </h1>
-              <p className="text-sm md:text-xl text-gray-700 font-semibold mb-8 max-w-2xl">
+              <p className="text-sm md:text-xl text-black font-semibold mb-8 max-w-2xl">
                 Whether you’re a brand looking for scroll-stopping content or a
                 creator ready to join our roster, this is where it starts.
               </p>
@@ -46,7 +46,7 @@ const Section2 = () => {
             </div>
 
             {/* Right column - empty space for image */}
-            <div className="w-full md:w-1/2 bg-gray-50 md:min-h-[280px]">
+            <div className="w-full md:w-1/2 bg-white-50 md:min-h-[280px]">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
@@ -62,7 +62,7 @@ const Section2 = () => {
         <div className="border-2 border-gray-600 py-6 rounded-sm overflow-hidden">
           <div className="flex flex-col items-stretch">
             {/* Top: right image placeholder (appears on top for md view) */}
-            <div className="w-full bg-gray-50 h-52 md:h-64 lg:h-72 px-10">
+            <div className="w-full bg-white-50 h-52 md:h-64 lg:h-72 px-10">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
@@ -74,7 +74,7 @@ const Section2 = () => {
               <h2 className="text-2xl md:text-3xl font-semibold text-black mb-3">
                 Ready when you are.
               </h2>
-              <p className="text-sm md:text-base text-gray-700 mb-4">
+              <p className="text-sm md:text-base text-black mb-4">
                 Whether you’re a brand looking for scroll-stopping content or a
                 creator ready to join our roster, this is where it starts.
               </p>
@@ -107,7 +107,7 @@ const Section2 = () => {
               <h2 className="text-2xl font-semibold text-black mb-3">
                 Ready when you are.
               </h2>
-              <p className="text-sm text-gray-700 mb-4">
+              <p className="text-sm text-black mb-4">
                 Whether you’re a brand looking for scroll-stopping content or a
                 creator ready to join our roster, this is where it starts.
               </p>
@@ -129,7 +129,7 @@ const Section2 = () => {
             </div>
 
             {/* Bottom: image placeholder */}
-            <div className="w-full bg-gray-50 h-44 px-5">
+            <div className="w-full bg-white-50 h-44 px-5">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"

@@ -349,7 +349,7 @@ const PostCaseStudy = () => {
         <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-black mb-4">Case Study Not Found</h1>
-            <p className="text-gray-600 mb-8">The case study you're looking for doesn't exist.</p>
+            <p className="text-black mb-8">The case study you're looking for doesn't exist.</p>
             <a 
               href="/case-studies" 
               className="inline-flex items-center text-red-500 hover:text-red-600 font-medium transition-colors"

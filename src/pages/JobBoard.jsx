@@ -87,7 +87,7 @@ export default function JobBoard() {
 
             {/* Description Text - Exact match to screenshot */}
             <p
-              className="mb-2 text-gray-700"
+              className="mb-2 text-black"
               style={{
                 fontFamily: "DM Sans, sans-serif",
                 fontWeight: 700,
@@ -101,7 +101,7 @@ export default function JobBoard() {
             </p>
 
             <p
-              className="mb-8 text-gray-600"
+              className="mb-8 text-black"
               style={{
                 fontFamily: "DM Sans, sans-serif",
                 fontWeight: 400,

@@ -89,7 +89,7 @@ const Contact = () => {
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold text-black leading-tight">
                   Want to work with brands that get it?
                 </h1>
-                <p className="text-gray-600 mt-3 sm:mt-4 text-base sm:text-lg">
+                <p className="text-black mt-3 sm:mt-4 text-base sm:text-lg">
                  Got creative flair? Join our global UGC creator network.
                 </p>
               </div>
