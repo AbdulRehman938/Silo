@@ -22,6 +22,7 @@ const WhyUGC = () => {
               src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717258/img1_f6eobz.png" 
               alt="People trust people"
               className="w-full h-auto max-h-56 sm:max-h-56 md:max-h-64 lg:max-h-[450px] object-cover"
+              loading="lazy"
             />
             <h3 
               className="font-bold text-black text-xl sm:text-xl md:text-xl lg:text-3xl text-left"
@@ -55,6 +56,7 @@ const WhyUGC = () => {
               src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717257/img2_nbestt.png" 
               alt="Strategy makes it scale"
               className="w-full h-auto max-h-48 sm:max-h-56 md:max-h-64 lg:max-h-[250px] object-cover"
+              loading="lazy"
             />
             <h3 
               className="font-bold text-black text-xl sm:text-xl md:text-xl lg:text-3xl text-left"
@@ -89,6 +91,7 @@ const WhyUGC = () => {
               src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717244/img3_dwttap.png" 
               alt="Brands need both"
               className="w-full h-auto max-h-48 sm:max-h-56 md:max-h-64 lg:max-h-[240px] object-cover"
+              loading="lazy"
             />
             <h3 
               className="font-bold text-black text-xl sm:text-xl md:text-xl lg:text-3xl text-left"

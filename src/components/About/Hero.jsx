@@ -88,6 +88,7 @@ const Hero = () => {
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717241/About1_t6qyw0.png"
                 alt="Silo team member showcasing brand identity"
                 className="w-full h-auto object-cover max-h-[400px] sm:max-h-[350px] md:max-h-[500px] lg:max-h-[550px] xl:max-h-[550px] 2xl:max-h-none"
+                loading="lazy"
                 style={{
                   opacity: 1,
                 }}
@@ -100,6 +101,7 @@ const Hero = () => {
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/About2_gof6gm.png"
                 alt="The Silo brand representation"
                 className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 2xl:w-[328px] h-auto object-cover max-h-[200px] sm:max-h-[250px] md:max-h-[300px] lg:max-h-[350px] lg:block xl:min-h-[200px] 2xl:max-h-none border-white"
+                loading="lazy"
               />
             </div>
           </div>

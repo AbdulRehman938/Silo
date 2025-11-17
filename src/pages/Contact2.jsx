@@ -250,8 +250,7 @@ const Contact = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717234/contact2_v8cqrr.png"
                 alt="Person relaxing on chair"
-                className="w-full h-64 sm:h-80 md:h-[75vh] lg:h-[80vh] object-cover"
-              />
+                className="w-full h-64 sm:h-80 md:h-[75vh] lg:h-[80vh] object-cover" loading="lazy" />
             </div>
           </div>
         </div>
@@ -292,8 +291,7 @@ const Contact = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717233/contact1_ttxa48.png"
                 alt="Person in spotlight"
-                className="w-full h-full md:h-[370px] object-cover"
-              />
+                className="w-full h-full md:h-[370px] object-cover" loading="lazy" />
             </div>
           </div>
         </div>

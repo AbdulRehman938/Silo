@@ -174,8 +174,7 @@ export default function Ramblings() {
                       <img
                         src={filteredPosts[0].image}
                         alt={filteredPosts[0].title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" />
                     </div>
                     <div className="md:p-8 md:px-0 py-8 px-0">
                       <div className="flex items-center gap-3 mb-4">
@@ -222,8 +221,7 @@ export default function Ramblings() {
                           <img
                             src={post.image}
                             alt={post.title}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                          />
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" />
                         </div>
                         <div className="md:p-6 md:px-0 py-6 px-0">
                           <div className="flex items-center gap-3 mb-3">

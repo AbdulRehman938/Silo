@@ -23,7 +23,7 @@ export default function Header() {
         <div className="max-w-[1440px] border-[2px] border-black bg-white mx-auto py-3 px-3 md:px-6 flex justify-between items-center decoration-black">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center" aria-label="Home">
-          <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg" alt="Silo" className="h-5 header2 w-auto md:h-9" />
+          <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg" alt="Silo" className="h-5 header2 w-auto md:h-9" loading="lazy" />
         </Link>
 
         {/* Right: CTA */}

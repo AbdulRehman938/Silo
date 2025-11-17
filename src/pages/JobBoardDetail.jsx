@@ -62,8 +62,7 @@ const JobBoardDetail = () => {
                 <img
                   src={job.contact.avatar}
                   alt={`${job.contact.name} avatar`}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
+                  className="w-12 h-12 rounded-full object-cover" loading="lazy" />
                 <div>
                   <p className="text-black font-semibold text-base">
                     {job.contact.name}
@@ -95,8 +94,7 @@ const JobBoardDetail = () => {
             <img
               src={job.images.primary}
               alt={`${job.title} main image`}
-              className="w-full h-[300px] md:h-[350px] lg:h-[400px] object-cover"
-            />
+              className="w-full h-[300px] md:h-[350px] lg:h-[400px] object-cover" loading="lazy" />
           </div>
         </div>
         
@@ -108,8 +106,7 @@ const JobBoardDetail = () => {
             <img
               src={job.images.secondary}
               alt={`${job.title} secondary image`}
-              className="w-full h-[280px] md:h-[320px] lg:h-[360px] object-cover"
-            />
+              className="w-full h-[280px] md:h-[320px] lg:h-[360px] object-cover" loading="lazy" />
           </div>
           
           {/* Client Info */}

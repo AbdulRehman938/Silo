@@ -70,7 +70,7 @@ export const useSiloHoverPixi = ({ hostRef, svgSrc, height, intensity, isMobile 
         logoTex = Texture.from(base);
       } catch {
         console.warn('[Pixi] Texture fallback to <img>');
-        el.innerHTML = `<img src="${svgSrc}" alt="logo" style="max-width:100%;height:auto;display:block;" />`;
+        el.innerHTML = `<img src="${svgSrc}" alt="logo" style="max-width:100%;height:auto;display:block;" loading="lazy" />`;
         return;
       }
 

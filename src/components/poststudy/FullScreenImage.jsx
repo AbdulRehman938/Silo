@@ -6,8 +6,7 @@ const FullScreenImage = ({ src, alt }) => {
           <img 
             src={src} 
             alt={alt || "Full screen image"} 
-            className='w-full h-full object-cover'
-          />
+            className='w-full h-full object-cover' loading="lazy" />
         ) : (
           <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
             <svg 

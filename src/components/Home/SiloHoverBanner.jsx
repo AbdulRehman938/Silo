@@ -26,7 +26,7 @@ export const SiloHoverBanner = ({
             <div ref={hostRef} className='relative w-full flex items-center justify-center' />
           ) : (
             <div className='flex justify-center items-center w-full h-full'>
-              <img src={svgSrc} alt='Silo logo' className='w-full h-auto object-contain' />
+              <img src={svgSrc} alt='Silo logo' className='w-full h-auto object-contain' loading="lazy" />
             </div>
           )}
         </div>

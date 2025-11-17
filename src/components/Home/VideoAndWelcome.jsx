@@ -75,8 +75,7 @@ export default function VideoAndWelcome() {
           <img
             src={cmsData.imageUrl}
             alt="Showcase"
-            className="block w-full h-full object-cover select-none"
-          />
+            className="block w-full h-full object-cover select-none" loading="lazy" />
 
           {cmsData.showVideo ? (
             <>

@@ -14,8 +14,7 @@ const OptionalAddOns = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717268/option-service1_oiwmo4.png"
                 alt="first"
-                className="object-cover object-top w-full h-full"
-              />
+                className="object-cover object-top w-full h-full" loading="lazy" />
             </div>
             <h3 className="text-4xl font-bold mb-3">
               Email Marketing
@@ -54,8 +53,7 @@ const OptionalAddOns = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762770096/option-service2_k1qegk.png"
                 alt="second"
-                className="object-cover object-xcenter w-full h-full"
-              />
+                className="object-cover object-xcenter w-full h-full" loading="lazy" />
             </div>
             <h3 className="text-4xl font-bold mb-3">
               Paid Advertising (Meta, Google, Tik Tok, Bing etc)
@@ -95,8 +93,7 @@ const OptionalAddOns = () => {
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717273/option-service3_j0um8a.png"
                   alt="third"
-                  className="object-cover object-xcenter w-full h-full"
-                />
+                  className="object-cover object-xcenter w-full h-full" loading="lazy" />
               </div>
               <h3 className="text-4xl font-bold mb-3">
                 Influencer Campaign Management

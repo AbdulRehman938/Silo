@@ -88,8 +88,7 @@ const CaseStudies = () => {
                 className="w-full h-auto object-cover max-h-[400px] sm:max-h-[350px] md:max-h-[500px] lg:max-h-[550px] xl:max-h-[550px] 2xl:max-h-none"
                 style={{
                   opacity: 1,
-                }}
-              />
+                }} loading="lazy" />
             </div>
 
             {/* Primary Image - Zoom & Small Laptop Optimized */}
@@ -97,8 +96,7 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717296/studies2_a4olwb.png"
                 alt="The Silo brand representation"
-                className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 2xl:w-[328px] h-auto object-cover max-h-[200px] sm:max-h-[250px] md:max-h-[300px] lg:max-h-[350px] lg:block xl:min-h-[200px] 2xl:max-h-none border-white"
-              />
+                className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 2xl:w-[328px] h-auto object-cover max-h-[200px] sm:max-h-[250px] md:max-h-[300px] lg:max-h-[350px] lg:block xl:min-h-[200px] 2xl:max-h-none border-white" loading="lazy" />
             </div>
           </div>
         </div>
@@ -112,16 +110,14 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
             <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
@@ -190,15 +186,13 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
               {/* Hover image placeholder */}
               <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
                   alt="smoothie"
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
           </div>
@@ -209,16 +203,14 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
             <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Lumin Solar</h3>
@@ -287,15 +279,13 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
               {/* Hover image placeholder */}
               <div className="absolute -right-80 top-0 w-[70%] h-64 xl:h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                   alt="smoothie"
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
           </div>
@@ -306,16 +296,14 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
             <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Smart Stats</h3>
@@ -390,15 +378,13 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
               {/* Hover image placeholder */}
               <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 rounded-xl overflow-hidden lg:group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
                   alt="smoothie"
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
           </div>
@@ -411,16 +397,14 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
             <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
@@ -489,15 +473,13 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
               {/* Hover image placeholder */}
               <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
                   alt="smoothie"
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
           </div>
@@ -508,16 +490,14 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
             <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Lumin Solar</h3>
@@ -586,15 +566,13 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
               {/* Hover image placeholder */}
               <div className="absolute -right-80 top-0 w-[70%] h-64 xl:h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717251/lumer-hover_vxhyvl.png"
                   alt="smoothie"
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
           </div>
@@ -605,16 +583,14 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
             <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-gray-100 rounded-xl overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 group-hover:pointer-events-auto">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Smart Stats</h3>
@@ -689,15 +665,13 @@ const CaseStudies = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
               {/* Hover image placeholder */}
               <div className="absolute -right-80 top-0 w-[70%] h-80 bg-gray-100  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none group-hover:opacity-100 group-hover:scale-100 rounded-xl overflow-hidden group-hover:rotate-0">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717298/stats-hover_hbm23m.png"
                   alt="smoothie"
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full object-cover" loading="lazy" />
               </div>
             </div>
           </div>

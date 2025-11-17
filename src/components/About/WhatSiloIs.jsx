@@ -73,6 +73,7 @@ const WhatSiloIs = () => {
               src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717240/image_re2b0o.png" 
               alt="Silo creative process illustration"
               className="w-full h-full object-cover"
+              loading="lazy"
               style={{
                 opacity: 1
               }}

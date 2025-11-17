@@ -32,8 +32,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
             <img 
               src={column2.image.src} 
               alt={column2.image.alt || 'Stats image'} 
-              className='w-full h-full object-cover'
-            />
+              className='w-full h-full object-cover' loading="lazy" />
           ) : (
             <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
               <svg 
@@ -68,8 +67,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
             <img 
               src={column3.image.src} 
               alt={column3.image.alt || 'Stats image'} 
-              className='w-full h-full object-cover'
-            />
+              className='w-full h-full object-cover' loading="lazy" />
           ) : (
             <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
               <svg 
@@ -126,8 +124,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
               <img 
                 src={column2.image.src} 
                 alt={column2.image.alt || 'Stats image'} 
-                className='w-full h-full object-cover'
-              />
+                className='w-full h-full object-cover' loading="lazy" />
             ) : (
               <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
                 <svg 
@@ -182,8 +179,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
               <img 
                 src={column3.image.src} 
                 alt={column3.image.alt || 'Stats image'} 
-                className='w-full h-full object-cover'
-              />
+                className='w-full h-full object-cover' loading="lazy" />
             ) : (
               <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
                 <svg 

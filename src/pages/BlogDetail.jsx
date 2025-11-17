@@ -324,8 +324,7 @@ export default function BlogDetail() {
               <img
                 src={blogPost.content.contentImage.src}
                 alt={blogPost.content.contentImage.alt}
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
             {blogPost.content.contentImage.caption && (
               <p className="text-sm text-black mt-2 flex items-center gap-1">

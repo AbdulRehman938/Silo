@@ -13,8 +13,7 @@ const Interested = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717232/first_dyyzet.png"
                 alt="first"
-                className="object-cover object-top w-full h-full"
-              />
+                className="object-cover object-top w-full h-full" loading="lazy" />
             </div>
             <h3 className="text-4xl font-bold mb-3">
               Social Strategy & Management
@@ -54,8 +53,7 @@ const Interested = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717288/second_wt2ss3.png"
                 alt="second"
-                className="object-cover object-xcenter w-full h-full"
-              />
+                className="object-cover object-xcenter w-full h-full" loading="lazy" />
             </div>
             <h3 className="text-4xl font-bold mb-3">
               A silo load of UGC Creators
@@ -96,8 +94,7 @@ const Interested = () => {
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717293/third_gwfnbk.png"
                   alt="third"
-                  className="object-cover object-xcenter w-full h-full"
-                />
+                  className="object-cover object-xcenter w-full h-full" loading="lazy" />
               </div>
               <h3 className="text-4xl font-bold mb-3">
                 Building Modern Design & Motion

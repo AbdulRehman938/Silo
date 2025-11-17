@@ -17,8 +17,7 @@ const FourGallery = ({ images }) => {
               <img 
                 src={image.src} 
                 alt={image.alt || `Gallery image ${index + 1}`} 
-                className='w-full h-full object-cover hover:scale-105 transition-transform duration-300'
-              />
+                className='w-full h-full object-cover hover:scale-105 transition-transform duration-300' loading="lazy" />
             ) : (
               <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
                 <svg 

@@ -14,7 +14,7 @@ const Footer = () => {
           {/* Left: Brand + Newsletter */}
           <div className="md:col-span-5">
             <div className="flex items-center gap-2 mb-6">
-              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717230/footerlogo_tllimb.png" alt="Silo logo" className="h-8" />
+              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717230/footerlogo_tllimb.png" alt="Silo logo" className="h-8" loading="lazy" />
             </div>
             <p className="text-xl font-medium mb-3">
               Join our newsletter to stay up to date.
@@ -250,7 +250,7 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  {/* <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717295/Youtube_dtmefe.png" alt="Youtube" className="w-4 h-4" /> */}
+                  {/* <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717295/Youtube_dtmefe.png" alt="Youtube" className="w-4 h-4" loading="lazy" /> */}
                   <FaYoutube className="w-4 h-4 text-black font-bold" />
                   Youtube
                 </a>
@@ -265,7 +265,7 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/X_loibpj.png" alt="X" className="w-4 h-4" />X
+                  <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/X_loibpj.png" alt="X" className="w-4 h-4" loading="lazy" />X
                 </a>
               </li>
               <li>
@@ -281,8 +281,7 @@ const Footer = () => {
                   <img
                     src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717241/Instagram_ec8sza.png"
                     alt="Instagram"
-                    className="w-4 h-4"
-                  />
+                    className="w-4 h-4" loading="lazy" />
                   Instagram
                 </a>
               </li>
@@ -296,7 +295,7 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  {/* <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717291/Tiktok_ryqcdc.png" alt="TikTok" className="w-4 h-4" /> */}
+                  {/* <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717291/Tiktok_ryqcdc.png" alt="TikTok" className="w-4 h-4" loading="lazy" /> */}
                   <SiTiktok className="w-4 h-4 text-black font-bold" />
                   TikTok
                 </a>
@@ -311,7 +310,7 @@ const Footer = () => {
                     lineHeight: "150%",
                   }}
                 >
-                  <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717248/Linkedin_joc2nv.png" alt="LinkedIn" className="w-4 h-4" />
+                  <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717248/Linkedin_joc2nv.png" alt="LinkedIn" className="w-4 h-4" loading="lazy" />
                   LinkedIn
                 </a>
               </li>
@@ -353,7 +352,7 @@ const Footer = () => {
         {/* Top: Brand and copyright */}
         <div className="mb-4">
           <div className="font-extrabold text-xl mb-3">
-            <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717230/footerlogo_tllimb.png" alt="Silo logo" className="h-8" />
+            <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717230/footerlogo_tllimb.png" alt="Silo logo" className="h-8" loading="lazy" />
           </div>
           <div className="text-sm font-bold">
             © {year} The Silo Creative Limited
@@ -365,25 +364,25 @@ const Footer = () => {
           <div className="flex gap-3 mb-2 mt-4">
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">Youtube</span>
-              {/* <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717295/Youtube_dtmefe.png" alt="Youtube" className="w-4 h-4" /> */}
+              {/* <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717295/Youtube_dtmefe.png" alt="Youtube" className="w-4 h-4" loading="lazy" /> */}
               <FaYoutube className="w-4 h-4 text-black font-bold" />
             </a>
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">twitter</span>
-              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/X_loibpj.png" alt="X" className="w-4 h-4" />
+              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/X_loibpj.png" alt="X" className="w-4 h-4" loading="lazy" />
             </a>
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">Instagram</span>
-              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717241/Instagram_ec8sza.png" alt="Instagram" className="w-4 h-4" />
+              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717241/Instagram_ec8sza.png" alt="Instagram" className="w-4 h-4" loading="lazy" />
             </a>
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">TikTok</span>
-              {/* <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717291/Tiktok_ryqcdc.png" alt="TikTok" className="w-4 h-4" /> */}
+              {/* <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717291/Tiktok_ryqcdc.png" alt="TikTok" className="w-4 h-4" loading="lazy" /> */}
               <SiTiktok className="w-4 h-4 text-black font-bold" />
             </a>
             <a href="#" className="bg-neutral-200 p-2">
               <span className="sr-only">LinkedIn</span>
-              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717248/Linkedin_joc2nv.png" alt="LinkedIn" className="w-4 h-4" />
+              <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717248/Linkedin_joc2nv.png" alt="LinkedIn" className="w-4 h-4" loading="lazy" />
             </a>
           </div>
         </div>

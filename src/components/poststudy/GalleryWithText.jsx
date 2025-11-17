@@ -63,8 +63,7 @@ const GalleryWithText = ({ heading, text, images }) => {
                   <img 
                     src={image.src} 
                     alt={image.alt || `Gallery image ${index + 1}`} 
-                    className='w-full h-full object-cover'
-                  />
+                    className='w-full h-full object-cover' loading="lazy" />
                 ) : (
                   <div className='w-full h-full flex items-center justify-center bg-[#DBDBDB]'>
                     <svg 

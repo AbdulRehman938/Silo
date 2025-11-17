@@ -30,8 +30,7 @@ function JobCard({ job }) {
         <img
           src={job.image}
           alt={`${job.title} - ${job.category} job opportunity`}
-          className="w-full h-full font-bold object-cover transition-transform duration-300 group-hover:scale-110"
-        />
+          className="w-full h-full font-bold object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" />
       </div>
 
       {/* Category Label - Exact styling from screenshot */}

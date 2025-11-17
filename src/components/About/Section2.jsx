@@ -50,8 +50,7 @@ const Section2 = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
         </div>
@@ -67,8 +66,7 @@ const Section2 = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
 
             {/* Bottom: content */}
@@ -135,8 +133,7 @@ const Section2 = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
         </div>

@@ -371,6 +371,7 @@ const MindsInTheSilo = () => {
                         src={item.imageUrl} 
                         alt={`${item.name} - Team Member`}
                         className="w-full h-auto object-cover flex-1 max-h-[22rem] lg:max-h-[22rem] md:max-h-[30rem]"
+                        loading="lazy"
                         draggable={false}
                       />
                       
