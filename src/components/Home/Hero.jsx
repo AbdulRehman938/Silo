@@ -6,8 +6,14 @@ import Section from "./Section";
 import "../../styles/scaling-overrides.css";
 
 const DEFAULT_LOGOS = [
-  { src: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717226/asics_vgprpc.png", alt: "ASICS" },
-  { src: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/webflow_r2dwk5.png", alt: "Webflow" },
+  {
+    src: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717226/asics_vgprpc.png",
+    alt: "ASICS",
+  },
+  {
+    src: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/webflow_r2dwk5.png",
+    alt: "Webflow",
+  },
 ];
 
 export default function Hero() {
@@ -45,7 +51,7 @@ export default function Hero() {
       <ContentAndDone />
       <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black md:my-28 mt-20" />
       <Section />
-         <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
     </div>
   );
 }

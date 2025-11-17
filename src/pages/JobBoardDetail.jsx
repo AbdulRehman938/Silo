@@ -1,6 +1,10 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { jobsData } from '../data/jobsData.js';
 import { TiTick } from 'react-icons/ti';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const JobBoardDetail = () => {
   const { jobId } = useParams();
@@ -28,7 +32,7 @@ const JobBoardDetail = () => {
   }
 
   return (
-    <div className="w-full bg-white min-h-screen">
+    <div className="w-full bg-white min-h-screen max-w-[1280px] mx-auto mt-20">
       {/* Main container matching the exact design */}
       <div className="max-w-[90vw] mx-auto py-8 sm:py-12 lg:py-16">
         
@@ -136,8 +140,8 @@ const JobBoardDetail = () => {
               <ul className="space-y-6">
                 {job.requirements.lookingFor.map((requirement, index) => (
                   <li key={index} className="flex items-start gap-4">
-                    <span className="text-black text-lg mt-0.5"><TiTick /></span>
-                    <span className="text-gray-700 text-base leading-relaxed">
+                    <span className="text-brand text-lg mt-0.5"><TiTick /></span>
+                    <span className="text-black text-base leading-relaxed">
                       {requirement}
                     </span>
                   </li>
@@ -154,8 +158,8 @@ const JobBoardDetail = () => {
               <ul className="space-y-6">
                 {job.requirements.notLookingFor.map((requirement, index) => (
                   <li key={index} className="flex items-start gap-4">
-                    <span className="text-black font-black text-lg mt-0.5">✗</span>
-                    <span className="text-gray-700 text-base leading-relaxed">
+                    <span className="text-brand font-black text-lg mt-0.5">✗</span>
+                    <span className="text-black text-base leading-relaxed">
                       {requirement}
                     </span>
                   </li>
@@ -182,16 +186,56 @@ const JobBoardDetail = () => {
             
             {/* Right Form */}
             <div className="lg:flex-shrink-0 max-w-xl w-full">
-              <div className="flex gap-3">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="px-4 py-3 border border-black  focus:outline-none focus:ring-2 focus:ring-[#FF322E] focus:border-transparent text-base w-full"
-                />
-                <button className="bg-[#FF322E] whitespace-nowrap text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors text-base">
-                  Send me work
-                </button>
-              </div>
+              <Formik
+                initialValues={{ email: '' }}
+                validationSchema={Yup.object({
+                  email: Yup.string().email('Invalid email address').required('Email is required')
+                })}
+                onSubmit={async (values, { setSubmitting, resetForm }) => {
+                  try {
+                    console.log('Form submitted as array:', [values]);
+                    
+                    // Store in localStorage
+                    const existingEmails = JSON.parse(localStorage.getItem('newsletterEmails') || '[]');
+                    existingEmails.push(values);
+                    localStorage.setItem('newsletterEmails', JSON.stringify(existingEmails));
+                    
+                    toast.success('Successfully subscribed to newsletter!');
+                    
+                    setTimeout(() => {
+                      resetForm();
+                      setSubmitting(false);
+                      window.location.reload();
+                    }, 2000);
+                  } catch (error) {
+                    console.error('Error:', error);
+                    setSubmitting(false);
+                  }
+                }}
+              >
+                {({ isSubmitting }) => (
+                  <Form>
+                    <div className="flex gap-3">
+                      <div className="w-full">
+                        <Field
+                          type="email"
+                          name="email"
+                          placeholder="Enter your email"
+                          className="px-4 py-3 border border-black focus:outline-none focus:ring-2 focus:ring-[#FF322E] focus:border-transparent text-base w-full"
+                        />
+                        <ErrorMessage name="email" component="div" className="text-red-500 text-sm mt-1" />
+                      </div>
+                      <button 
+                        type="submit" 
+                        disabled={isSubmitting}
+                        className="bg-[#FF322E] whitespace-nowrap text-white px-6 py-3 font-semibold hover:bg-red-600 transition-colors text-base disabled:opacity-50 self-start"
+                      >
+                        Send me work
+                      </button>
+                    </div>
+                  </Form>
+                )}
+              </Formik>
               
               <p className="text-black text-sm mt-3 leading-relaxed">
                 By clicking Sign Up you're confirming that you agree with our{' '}
@@ -204,6 +248,18 @@ const JobBoardDetail = () => {
           </div>
         </div>
       </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
     </div>
   );
 };

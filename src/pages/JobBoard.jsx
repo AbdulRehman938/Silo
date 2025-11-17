@@ -26,21 +26,21 @@ function JobCard({ job }) {
       aria-label={`View job details for ${job.title} in ${job.category}`}
     >
       {/* Job Image - Adjusted for 95vw container */}
-      <div className="w-full h-[260px] overflow-hidden rounded-lg mb-3">
+      <div className="w-full h-[260px] font-bold overflow-hidden mb-3">
         <img
           src={job.image}
           alt={`${job.title} - ${job.category} job opportunity`}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          className="w-full h-full font-bold object-cover transition-transform duration-300 group-hover:scale-110"
         />
       </div>
 
       {/* Category Label - Exact styling from screenshot */}
       <div
-        className="bg-[#FFDBDB] text-black w-fit rounded mb-2"
+        className="bg-[#FFDBDB] text-black w-fit mb-2"
         style={{
           padding: "5px 7px",
           fontSize: "16px",
-          fontWeight: 500,
+          fontWeight: 800,
           fontFamily: "DM Sans, sans-serif",
         }}
       >
@@ -53,7 +53,7 @@ function JobCard({ job }) {
         style={{
           fontFamily: "Epilogue, sans-serif",
           fontWeight: 700,
-          fontSize: "clamp(20px, 2.5vw, 28px)",
+          fontSize: "clamp(10px, 2vw, 20px)",
           lineHeight: "130%",
           letterSpacing: "0%",
         }}
@@ -66,9 +66,9 @@ function JobCard({ job }) {
 
 export default function JobBoard() {
   return (
-    <div className="w-full bg-white md:mt-5 mb-20">
+    <div className="w-full bg-white md:mt-5 mb-20 max-w-[1280px] mx-auto mt-20">
       {/* Container with 95vw max-width */}
-      <div className="max-w-[90vw] mx-auto px-0 sm:px-0 lg:px-6 py-10 lg:py-14 mb-20 md:mb-0">
+      <div className="max-w-[full] mx-auto px-0 sm:px-0 lg:px-6 py-10 lg:py-14 my-20 md:mb-0">
         {/* Hero Section - Adjusted for 95vw */}
         <div className="mb-12 lg:mb-16">
           <div className="w-full lg:w-1/2">
@@ -136,7 +136,7 @@ export default function JobBoard() {
               }}
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-6 group-hover:scale-[140%]" />
+                <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
               </div>
               <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-60">
                 Sign up as a Creator
@@ -158,7 +158,7 @@ export default function JobBoard() {
               }}
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                <FaChevronRight   className="text-[#FF322E] w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-6 group-hover:scale-[140%]" />
+                <FaChevronRight   className="text-[#FF322E] w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
               </div>
               <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-80">
                 Post a requirement Brief
@@ -203,6 +203,7 @@ export default function JobBoard() {
 
       {/* Section Component */}
       <Section />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
     </div>
   );
 }
