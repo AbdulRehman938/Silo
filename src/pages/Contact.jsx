@@ -3,6 +3,7 @@ import { FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { toast } from "react-toastify";
 import "../styles/scaling-overrides.css"
 
 const Contact = () => {
@@ -47,28 +48,49 @@ const Contact = () => {
       // Handle form submission here
       console.log("Form submitted:", values);
       
+      // Get existing data from localStorage
+      const existingData = JSON.parse(localStorage.getItem('contactFormData') || '[]');
+      
+      // Add new submission with timestamp
+      const newSubmission = {
+        ...values,
+        submittedAt: new Date().toISOString()
+      };
+      
+      // Add to array and store in localStorage
+      const updatedData = [...existingData, newSubmission];
+      localStorage.setItem('contactFormData', JSON.stringify(updatedData));
+      
+      // Log all stored data
+      console.log('All contact form submissions:', updatedData);
+      
       // Simulate API call
       setTimeout(() => {
-        alert("Form submitted successfully!");
+        toast.success("Form submitted successfully!");
         resetForm();
         setSubmitting(false);
+        
+        // Reload page after successful submit
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
       }, 1000);
     },
   });
   return (
-    <div className="min-h-screen max-w-[95vw] mx-auto bg-white">
+    <div className="min-h-screen max-w-[1280px] mt-20 md:mx-auto mx-4 bg-white">
       {/* First Section - Want to work with brands that get it? */}
       <section className="pt-8 sm:pt-12 md:pt-16 lg:pt-20 px-0 sm:px-6 md:px-8 lg:px-16">
         <div className="max-w-full mx-auto min-h-screen">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
             {/* Left Content */}
-            <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
+            <div className="space-y-6 sm:space-y-8 order-1 lg:order-1">
               <div>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold text-black leading-tight">
                   Want to work with brands that get it?
                 </h1>
                 <p className="text-gray-600 mt-3 sm:mt-4 text-base sm:text-lg">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                 Got creative flair? Join our global UGC creator network.
                 </p>
               </div>
 
@@ -77,7 +99,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     Name
                   </label>
@@ -91,7 +113,7 @@ const Contact = () => {
                     className={`w-full px-3 sm:px-4 py-2 sm:py-3 border rounded-none focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm sm:text-base ${
                       formik.touched.name && formik.errors.name
                         ? "border-red-500"
-                        : "border-gray-300"
+                        : "border-black"
                     }`}
                   />
                   {formik.touched.name && formik.errors.name && (
@@ -102,7 +124,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     Email
                   </label>
@@ -116,7 +138,7 @@ const Contact = () => {
                     className={`w-full px-3 sm:px-4 py-2 sm:py-3 border rounded-none focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm sm:text-base ${
                       formik.touched.email && formik.errors.email
                         ? "border-red-500"
-                        : "border-gray-300"
+                        : "border-black"
                     }`}
                   />
                   {formik.touched.email && formik.errors.email && (
@@ -127,7 +149,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     Phone
                   </label>
@@ -141,7 +163,7 @@ const Contact = () => {
                     className={`w-full px-3 sm:px-4 py-2 sm:py-3 border rounded-none focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent text-sm sm:text-base ${
                       formik.touched.phone && formik.errors.phone
                         ? "border-red-500"
-                        : "border-gray-300"
+                        : "border-black"
                     }`}
                   />
                   {formik.touched.phone && formik.errors.phone && (
@@ -152,7 +174,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-black mb-2"
                   >
                     Message
                   </label>
@@ -167,7 +189,7 @@ const Contact = () => {
                     className={`w-full px-3 sm:px-4 py-2 sm:py-3 border rounded-none focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent resize-none text-sm sm:text-base sm:rows-6 ${
                       formik.touched.message && formik.errors.message
                         ? "border-red-500"
-                        : "border-gray-300"
+                        : "border-black"
                     }`}
                   />
                   {formik.touched.message && formik.errors.message && (
@@ -184,7 +206,7 @@ const Contact = () => {
                       checked={formik.values.terms}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      className={`h-4 w-4 text-red-500 focus:ring-red-500 border-gray-300 rounded mt-0.5 sm:mt-0 flex-shrink-0 ${
+                      className={`h-4 w-4 text-red-500 focus:ring-red-500 border-black mt-0.5 sm:mt-0 flex-shrink-0 ${
                         formik.touched.terms && formik.errors.terms
                           ? "border-red-500"
                           : ""
@@ -192,14 +214,14 @@ const Contact = () => {
                     />
                     <label
                       htmlFor="terms"
-                      className="ml-2 text-sm text-gray-600 leading-relaxed"
+                      className="ml-2 text-sm text-black leading-relaxed"
                     >
                       I accept the{" "}
                       <Link
                         to="/terms"
-                        className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer underline"
+                        className="hover:text-brand text-sm ease-in-out duration-200 cursor-pointer underline"
                       >
-                        terms
+                        Terms
                       </Link>
                     </label>
                   </div>
@@ -211,7 +233,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={formik.isSubmitting}
-                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white  border-transparent relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-normal tracking-wide text-white  border-transparent relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed top-7"
                 >
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 translate-x-5 svg-wrapper group-hover:animate-bounce-custom">
                     <FaChevronRight   className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-4 group-hover:scale-[140%]" />
@@ -224,11 +246,11 @@ const Contact = () => {
             </div>
 
             {/* Right Image */}
-            <div className="order-1 lg:order-2">
+            <div className="order-2 lg:order-2 mt-8 lg:mt-0">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717233/contact1_ttxa48.png"
                 alt="Person relaxing on chair"
-                className="w-full h-64 sm:h-80 md:h-[75vh] lg:h-[80vh] object-cover"
+                className="w-full h-full object-fill"
               />
             </div>
           </div>
@@ -237,24 +259,24 @@ const Contact = () => {
 
       {/* Second Section - Brand looking to hire creators? */}
       <section className="contact pb-8 sm:pb-12 md:pb-12 lg:pb-16 mt-8 md:mt-0 px-0 sm:px-6 md:px-8 lg:px-16">
-        <div className="max-w-full mx-auto">
+        <div className="max-w-full mx-auto mt-20">
           <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-0 lg:items-stretch">
             {/* Left Content with Border */}
-            <div className="border-2 border-gray-300 bg-white p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
+            <div className="border-2 border-black bg-white p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
               <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-black leading-tight">
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-black leading-tight">
                     Brand looking to hire creators?
                   </h2>
-                  <p className="text-gray-600 mt-3 sm:mt-4 text-base sm:text-lg">
+                  <p className="text-black mt-3 sm:mt-4 text-base sm:text-lg">
                     We'll match your brand with the right talent and deliver
                     content that cuts through.
                   </p>
                 </div>
 
                 <Link
-                  to="/contact2"
-                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold tracking-wide text-white  border-transparent relative overflow-hidden group"
+                  to="/contact-brand"
+                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-normal tracking-wide text-white  border-transparent relative overflow-hidden group"
                 >
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 translate-x-5 svg-wrapper group-hover:animate-bounce-custom">
                     <FaChevronRight   className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-4 group-hover:scale-[140%]" />
@@ -277,6 +299,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+       <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
     </div>
   );
 };
