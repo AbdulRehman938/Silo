@@ -49,12 +49,12 @@ const Hero = () => {
       <div className="hidden sm:block min-h-screen">
         <div className="w-full max-w-[1280px] min-h-screen mx-auto mt-24 flex flex-col justify-center items-center hero-top">
           <div
-            className="flex items-center w-[210px] h-[300px] justify-center service-video "
+            className="service-hero-title flex items-center w-[210px] h-[300px] justify-center service-video "
           >
             <VideoPlayer containerClassName="w-full h-full" onVideoClick={handleOpen} />
           </div>
           <div className="flex flex-col justify-start items-center text-black leading-tight">
-            <h1 className="font-bold xl:text-[200px] lg:text-[150px] 2xl:mb-3 mt-0 md:text-[16vw] md:mb-0 md:0">
+            <h1 className=" font-bold xl:text-[200px] lg:text-[150px] 2xl:mb-3 mt-0 md:text-[16vw] md:mb-0 md:0">
               What we do
             </h1>
             <span className="text-black text-xl font-normal text-center lg:w-[60vw] lg:text-lg md:w-[70vw] md:text-base md:mb-5">

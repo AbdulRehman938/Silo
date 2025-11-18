@@ -7,9 +7,6 @@
 
 /* Global tweaks to resemble the clean white layout */
 @layer base {
-  html, body, #root {
-    height: 100%;
-  }
   html, body {
     overflow-x: hidden;
     scrollbar-width: none;

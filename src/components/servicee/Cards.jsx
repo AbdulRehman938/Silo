@@ -26,149 +26,230 @@ const CARD_DATA = [
     title: "Social Strategy & Management",
     desc: "We don't just post, we'll plan, manage, and grow your brand's presence.",
   },
-
 ];
 
 const Cards = () => {
   const desktopRef = useRef(null);
   const mobileRef = useRef(null);
   const [cardProgress, setCardProgress] = useState(0);
-  const [isScrollLocked, setIsScrollLocked] = useState(false);
-  const [isMobileInView, setIsMobileInView] = useState(false);
+  const [isLocked, setIsLocked] = useState(false);
   const touchStartY = useRef(0);
+  const isAnimating = useRef(false);
+  const unlockTimeoutRef = useRef(null);
 
-  // Viewport visibility for mobile
+  // Auto-unlock when reaching boundaries
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsMobileInView(entry.isIntersecting),
-      { threshold: 0.5 }
-    );
-    if (mobileRef.current) observer.observe(mobileRef.current);
-    return () => observer.disconnect();
-  }, []);
+    console.log('📊 cardProgress changed:', cardProgress, 'isLocked:', isLocked, 'isAnimating:', isAnimating.current);
+    
+    if (isAnimating.current && (cardProgress >= CARD_DATA.length || cardProgress <= 0)) {
+      if (unlockTimeoutRef.current) {
+        clearTimeout(unlockTimeoutRef.current);
+      }
+      
+      const delay = cardProgress >= CARD_DATA.length ? 800 : 300;
+      const direction = cardProgress >= CARD_DATA.length ? 'END' : 'START';
+      console.log(`🔓 Scheduling ${direction} unlock in ${delay}ms`);
+      
+      unlockTimeoutRef.current = setTimeout(() => {
+        console.log(`✅ Unlocking now (${direction})`);
+        setIsLocked(false);
+        isAnimating.current = false;
+      }, delay);
+    }
+    
+    return () => {
+      if (unlockTimeoutRef.current) {
+        clearTimeout(unlockTimeoutRef.current);
+      }
+    };
+  }, [cardProgress]);
 
-  // Desktop wheel handler
+  // Desktop wheel handler with scroll lock
   useEffect(() => {
     const handleWheel = (e) => {
       if (!desktopRef.current) return;
       
       const rect = desktopRef.current.getBoundingClientRect();
-      const viewportCenter = window.innerHeight / 2;
+      const viewportHeight = window.innerHeight;
+      const viewportCenter = viewportHeight / 2;
       const containerCenter = rect.top + rect.height / 2;
-      const isAtTrigger = Math.abs(containerCenter - viewportCenter) <= 150;
-
-      if (isAtTrigger) {
+      const distanceFromCenter = Math.abs(containerCenter - viewportCenter);
+      
+      // Check if section is visible
+      const isInViewport = rect.top < viewportHeight && rect.bottom > 0;
+      const visibleTop = Math.max(rect.top, 0);
+      const visibleBottom = Math.min(rect.bottom, viewportHeight);
+      const visibleHeight = visibleBottom - visibleTop;
+      const visibilityRatio = visibleHeight / rect.height;
+      const isSignificantlyVisible = visibilityRatio >= 0.3;
+      
+      // Only lock when section is visible and near center
+      const isCentered = distanceFromCenter <= 300 && isInViewport && isSignificantlyVisible;
+      
+      // Don't lock if we're at boundaries and not animating
+      const atBoundary = (cardProgress >= CARD_DATA.length && e.deltaY > 0) || (cardProgress <= 0 && e.deltaY < 0);
+      const shouldLock = (isCentered || isAnimating.current) && !atBoundary;
+      
+      if (shouldLock) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (!isLocked && !isAnimating.current && isCentered) {
+          setIsLocked(true);
+          isAnimating.current = true;
+          
+          // Auto-scroll section to perfect center when lock engages
+          const scrollOffset = containerCenter - viewportCenter;
+          const targetScrollY = window.scrollY + scrollOffset;
+          
+          window.scrollTo({
+            top: targetScrollY,
+            behavior: 'smooth'
+          });
+        }
+        
         const delta = e.deltaY;
-        const step = Math.abs(delta) * 0.005;
+        // Direct proportional movement - faster scroll = faster card movement
+        const step = Math.abs(delta) * 0.002;
+        const direction = delta > 0 ? 1 : -1;
         
         setCardProgress(prev => {
-          const newProgress = prev + (delta > 0 ? step : -step);
-          const clampedProgress = Math.max(0, Math.min(CARD_DATA.length, newProgress));
-          
-          // Only lock scroll if we're in the middle of the animation
-          if (clampedProgress > 0 && clampedProgress < CARD_DATA.length) {
-            e.preventDefault();
-            e.stopPropagation();
-            setIsScrollLocked(true);
-          } else {
-            // Unlock immediately when at endpoints
-            setIsScrollLocked(false);
-          }
-          
-          return clampedProgress;
+          const newProgress = prev + (direction * step);
+          return Math.max(0, Math.min(CARD_DATA.length, newProgress));
         });
-      } else {
-        // Unlock when outside trigger zone
-        setIsScrollLocked(false);
       }
     };
     
-    document.addEventListener('wheel', handleWheel, { passive: false });
-    return () => document.removeEventListener('wheel', handleWheel);
-  }, []);
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [isLocked, cardProgress]);
 
-  // Mobile touch handler
+  // Mobile touch handler with scroll lock
   useEffect(() => {
+    let touchAccumulator = 0;
+    
     const handleTouchStart = (e) => {
-      if (!mobileRef.current || !isMobileInView) return;
+      if (!mobileRef.current) return;
       touchStartY.current = e.touches[0].clientY;
+      touchAccumulator = 0;
     };
 
     const handleTouchMove = (e) => {
-      if (!mobileRef.current || !isMobileInView) return;
+      if (!mobileRef.current) return;
       
       const rect = mobileRef.current.getBoundingClientRect();
-      const viewportCenter = window.innerHeight / 2;
-      const containerCenter = rect.top + rect.height / 2;
-      const isAtTrigger = Math.abs(containerCenter - viewportCenter) <= 150;
+      const viewportHeight = window.innerHeight;
+      const viewportCenter = viewportHeight / 2;
       
-      if (isAtTrigger) {
-        const delta = touchStartY.current - e.touches[0].clientY;
-        const step = Math.abs(delta) * 0.015;
-        
-        setCardProgress(prev => {
-          const newProgress = prev + (delta > 0 ? step : -step);
-          const clampedProgress = Math.max(0, Math.min(CARD_DATA.length, newProgress));
-          
-          // Only lock scroll if we're in the middle of the animation
-          if (clampedProgress > 0 && clampedProgress < CARD_DATA.length) {
-            e.preventDefault();
-            setIsScrollLocked(true);
-          } else {
-            // Unlock immediately when at endpoints
-            setIsScrollLocked(false);
-          }
-          
-          return clampedProgress;
-        });
-      } else {
-        // Unlock when outside trigger zone
-        setIsScrollLocked(false);
+      // Early exit: section must be on screen
+      if (rect.bottom < 0 || rect.top > viewportHeight) {
+        // Section is completely off screen, don't interfere
+        if (isAnimating.current) {
+          // If was animating but now off screen, unlock
+          setIsLocked(false);
+          isAnimating.current = false;
+        }
+        return;
       }
-      touchStartY.current = e.touches[0].clientY;
+      
+      // Calculate visibility
+      const visibleTop = Math.max(rect.top, 0);
+      const visibleBottom = Math.min(rect.bottom, viewportHeight);
+      const visibleHeight = visibleBottom - visibleTop;
+      const visibilityRatio = visibleHeight / rect.height;
+      
+      // Only proceed if at least 50% of section is visible
+      if (visibilityRatio < 0.5) {
+        return;
+      }
+      
+      // Check if centered
+      const containerCenter = rect.top + rect.height / 2;
+      const distanceFromCenter = Math.abs(containerCenter - viewportCenter);
+      const isCentered = distanceFromCenter <= 150 && containerCenter > 0 && containerCenter < viewportHeight;
+      
+      // Lock when centered and not already locked
+      if (isCentered && !isAnimating.current) {
+        setIsLocked(true);
+        isAnimating.current = true;
+        
+        // Auto-scroll section to perfect center when lock engages on mobile
+        const scrollOffset = containerCenter - viewportCenter;
+        const targetScrollY = window.scrollY + scrollOffset;
+        
+        window.scrollTo({
+          top: targetScrollY,
+          behavior: 'smooth'
+        });
+      }
+      
+      // Only handle scroll if animating or centered
+      if (!isAnimating.current && !isCentered) {
+        return;
+      }
+      
+      const currentY = e.touches[0].clientY;
+      const delta = touchStartY.current - currentY;
+      
+      // Don't prevent if at boundary and scrolling in that direction
+      const atBoundary = (cardProgress >= CARD_DATA.length && delta > 0) || (cardProgress <= 0 && delta < 0);
+      
+      if (!atBoundary && (isAnimating.current || isCentered)) {
+        e.preventDefault();
+        
+        touchAccumulator += delta;
+        touchStartY.current = currentY;
+        
+        // Direct proportional movement - card speed matches drag speed
+        // Each pixel of drag = progress increment
+        const progressPerPixel = 1 / 300; // 300px to complete one card
+        
+        if (Math.abs(delta) > 0) {
+          const direction = delta > 0 ? 1 : -1;
+          const increment = Math.abs(delta) * progressPerPixel;
+          
+          setCardProgress(prev => {
+            const newProgress = prev + (direction * increment);
+            return Math.max(0, Math.min(CARD_DATA.length, newProgress));
+          });
+        }
+      } else {
+        touchStartY.current = currentY;
+      }
     };
 
-    document.addEventListener('touchstart', handleTouchStart, { passive: true });
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    const handleTouchEnd = () => {
+      touchAccumulator = 0;
+    };
+
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
+    
     return () => {
-      document.removeEventListener('touchstart', handleTouchStart);
-      document.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
     };
-  }, [isMobileInView]);
-
-
-  // Scroll lock effect: lock/unlock body scroll when needed
-  useEffect(() => {
-    if (isScrollLocked) {
-      document.body.style.overflow = 'hidden';
-      document.body.style.touchAction = 'none';
-    } else {
-      document.body.style.overflow = '';
-      document.body.style.touchAction = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-      document.body.style.touchAction = '';
-    };
-  }, [isScrollLocked]);
+  }, [isLocked, cardProgress]);
 
   const getCardTransform = (index) => {
-    // Each card disappears one by one
     const cardStart = index;
     const cardEnd = index + 1;
     
     if (cardProgress < cardStart) {
+      // Card hasn't started animating yet - keep it visible
       return { y: 0, opacity: 1, scale: 1 };
     } else if (cardProgress >= cardEnd) {
-      return { y: -200, opacity: 0, scale: 0.8 };
+      // Card has completed - move it far off screen
+      return { y: -1000, opacity: 1, scale: 1 };
     } else {
-      const progress = cardProgress - cardStart;
-      // Snap to either fully visible or fully hidden - no in-between
-      const snapped = progress < 0.5 ? 0 : 1;
+      // Card is currently animating - smooth continuous movement
+      const progress = cardProgress - cardStart; // 0 to 1
       return {
-        y: snapped * -200,
-        opacity: 1 - snapped,
-        scale: 1 - (snapped * 0.2)
+        y: progress * -1000, // Smooth interpolation from 0 to -1000px
+        opacity: 1, // Keep fully visible
+        scale: 1 // Keep same size
       };
     }
   };
@@ -177,8 +258,7 @@ const Cards = () => {
     <>
       {/* Desktop View - Hidden on Mobile */}
       <div ref={desktopRef} className="hidden sm:flex w-full max-w-[1280px] mx-auto h-screen 2xl:mt-20 md:mt-0 flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
-        {/* Static stacked cards centered over the H1 */}
-        <div className="absolute left-[30%] top-[40%] -translate-x-1/2 -translate-y-1/2 z-[60] flex items-center justify-center" style={{height: 420, width: 720}}>
+        <div className="absolute left-[30%] top-[40%] -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center" style={{height: 420, width: 720}}>
           {CARD_DATA.map((card, i) => {
             const VISIBLE_COUNT = Math.min(5, CARD_DATA.length);
             const computeOffset = (idx) => {
@@ -213,8 +293,8 @@ const Cards = () => {
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 2xl:w-full lg:w-[80%] md:w-[55%] md:h-[200px] md:left-[20rem] md:top-[15rem] lg:h-[250px] 2xl:h-[340px] bg-white border-2 border-[#FF322E] flex flex-col items-start justify-center px-12 py-10 shadow-lg 2xl:left-[23rem]"
                 style={{ zIndex: z }}
               >
-                <div className="mb-4 flex w-full justify-between items-center 2xl:text-xl lg:text-base font-bold">{card.icon}
-                  {/* card : {card.number} */}
+                <div className="mb-4 flex w-full justify-between items-center 2xl:text-xl lg:text-base font-bold">
+                  {card.icon}
                 </div>
                 <h2 className="2xl:text-5xl lg:text-2xl font-bold mb-2">{card.title}</h2>
                 <p className="2xl:text-3xl lg:text-xl text-black">{card.desc}</p>
@@ -229,12 +309,10 @@ const Cards = () => {
 
       {/* Mobile View - Only Visible on Mobile */}
       <div ref={mobileRef} className="sm:hidden w-full h-screen flex flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
-        {/* Mobile H1 text positioned at top */}
         <h1 className="absolute left-1/2 top-[30%] -translate-x-1/2 -translate-y-1/2 text-brand text-[20vw] leading-[5rem] font-bold text-center z-10 pointer-events-none">
           CORE <br /> SERVICES
         </h1>
         
-        {/* Mobile stacked cards positioned below text */}
         <div className="absolute left-1/2 top-[70%] -translate-x-1/2 -translate-y-1/2 z-[60] flex items-center justify-center" style={{height: 200, width: 300}}>
           {CARD_DATA.map((card, i) => {
             const VISIBLE_COUNT = Math.min(5, CARD_DATA.length);
@@ -267,7 +345,7 @@ const Cards = () => {
                   scale: transform.scale
                 }}
                 transition={{ type: 'spring', stiffness: 220, damping: 22 }}
-                className="absolute   -translate-x-1/2 -translate-y-1/2 w-[280px] h-[160px] bg-white border-2 border-[#FF322E] rounded-md flex flex-col items-start justify-center px-4 py-3 shadow-lg"
+                className="absolute -translate-x-1/2 -translate-y-1/2 w-[280px] h-[160px] bg-white border-2 border-[#FF322E] rounded-md flex flex-col items-start justify-center px-4 py-3 shadow-lg"
                 style={{ zIndex: z }}
               >
                 <div className="mb-2 flex w-full justify-between items-center text-xs font-bold">
@@ -276,7 +354,6 @@ const Cards = () => {
                       {card.icon.props.children}
                     </svg>
                   </div>
-                 
                 </div>
                 <h2 className="text-sm font-bold mb-1 leading-tight">{card.title}</h2>
                 <p className="text-xs text-black leading-relaxed">{card.desc}</p>
@@ -284,7 +361,6 @@ const Cards = () => {
             );
           })}
         </div>
-
       </div>
     </>
   );

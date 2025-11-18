@@ -35,6 +35,13 @@
 .contact {
   margin-top: 5rem !important;
 }
+.hero-top {
+  height: 100vh !important;
+}
+.service-hero-title {
+  height: 270px !important;
+  margin-top: 2rem !important;
+}
 }
 
 /* Target 150% Windows scaling (devicePixelRatio ~1.5) */
@@ -95,5 +102,12 @@
 }
 #welcome-parent-div {
   height: 50rem;
+}
+.hero-top {
+  height: 100vh !important;
+}
+.service-hero-title {
+  height: 270px !important;
+  margin-top: 2rem !important;
 }
 }
