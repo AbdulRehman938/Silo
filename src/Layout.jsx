@@ -1,4 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Header from './components/Common/Header.jsx'
 // import Footer defensively: support default or named export to avoid HMR/module mismatch errors
 import * as FooterModule from './components/Common/Footer.jsx'
@@ -9,6 +10,11 @@ const Footer = FooterModule.default || FooterModule.Footer || (() => <div>Footer
 export default function Layout() {
   const location = useLocation()
   const isCaseStudyPost = location.pathname.startsWith('/case-study/')
+
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">

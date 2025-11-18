@@ -46,30 +46,29 @@ const Hero = () => {
   return (
     <>
       {/* Desktop / larger screens - hidden on small screens */}
-      <div className="hidden sm:block min-h-screen">
-        <div className="w-full max-w-[1280px] min-h-screen mx-auto mt-24 flex flex-col justify-center items-center hero-top">
+      <div className="hidden sm:block h-screen pt-20">
+        <div className="w-full max-w-[1280px] h-full mx-auto flex flex-col justify-center items-center px-4">
           <div
-            className="service-hero-title flex items-center w-[210px] h-[300px] justify-center service-video "
+            className="service-hero-title flex items-center w-[180px] h-[250px] justify-center service-video mb-6"
           >
             <VideoPlayer containerClassName="w-full h-full" onVideoClick={handleOpen} />
           </div>
-          <div className="flex flex-col justify-start items-center text-black leading-tight">
-            <h1 className=" font-bold xl:text-[200px] lg:text-[150px] 2xl:mb-3 mt-0 md:text-[16vw] md:mb-0 md:0">
+          <div className="flex flex-col justify-start items-center text-black leading-tight mb-6">
+            <h1 className="font-bold xl:text-[160px] lg:text-[120px] md:text-[14vw] leading-none mb-2">
               What we do
             </h1>
-            <span className="text-black text-xl font-normal text-center lg:w-[60vw] lg:text-lg md:w-[70vw] md:text-base md:mb-5">
-              {" "}
+            <span className="text-black lg:text-base md:text-sm font-normal text-center max-w-3xl px-4">
               We make content that cuts through the noise. Strategy, UGC,
-              design, and motion, <br /> built to get noticed and remembered
+              design, and motion, built to get noticed and remembered
             </span>
           </div>
-          <div className="flex flex-wrap gap-10 2xl:mb-28 xl:mb-10">
+          <div className="flex flex-wrap gap-6 justify-center">
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[45px] hero-btn px-6 py-3 text-xs font-bold  tracking-wide text-white border-transparent relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[45px] hero-btn px-6 py-3 text-xs font-bold tracking-wide text-white border-transparent relative overflow-hidden group"
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
+                <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
               </div>
               <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-40">
                 Let's chat
@@ -78,10 +77,10 @@ const Hero = () => {
 
             <a
               href="#"
-              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[45px] hero-btn px-8 py-3 text-xs font-bold  tracking-wide text-brand relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[45px] hero-btn px-8 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
+                <FaChevronRight className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
               </div>
               <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-28">
                 About us
@@ -96,42 +95,42 @@ const Hero = () => {
         <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black " />
       </div>
       {/* Mobile-only view - visible only on small screens */}
-      <div className="block sm:hidden w-full h-auto bg-white px-1 py-6 mt-20">
-        {/* Video (targeting the same video but sized for mobile) */}
-        <div className="mb-4">
-          <VideoPlayer
-            containerClassName="w-[50%] mx-auto h-[35vh]"
-            videoClassName="w-full h-auto object-contain"
-            onVideoClick={handleOpen}
-          />
-        </div>
+      <div className="block sm:hidden w-full h-screen pt-20 px-4">
+        <div className="h-full flex flex-col justify-center items-center">
+          {/* Video (targeting the same video but sized for mobile) */}
+          <div className="mb-4">
+            <VideoPlayer
+              containerClassName="w-[180px] h-[220px] mx-auto"
+              videoClassName="w-full h-full object-cover"
+              onVideoClick={handleOpen}
+            />
+          </div>
 
-        {/* Headline & description (smaller for mobile) */}
-        <div className="flex flex-col gap-3 text-center text-black mt-20">
-          <h1 className="text-6xl font-black leading-tight">What we do</h1>
-          <p className="text-sm leading-relaxed">
-            We make content that cuts through the noise. Strategy, UGC, design,
-            and motion, built to get noticed and remembered.
-          </p>
-        </div>
+          {/* Headline & description (smaller for mobile) */}
+          <div className="flex flex-col gap-3 text-center text-black mb-6">
+            <h1 className="text-5xl font-black leading-tight">What we do</h1>
+            <p className="text-sm leading-relaxed px-4">
+              We make content that cuts through the noise. Strategy, UGC, design,
+              and motion, built to get noticed and remembered.
+            </p>
+          </div>
 
-        {/* Buttons stacked for mobile */}
-        <div className="mt-6 flex gap-3 mx-auto ml-5">
-          <a
-            href="#"
-            className="w-[45%] inline-flex items-center justify-center gap-2 bg-[#FF322E] h-12 px-4 text-sm font-bold tracking-wide text-white"
-          >
-            
-            <span className="whitespace-nowrap">Let's chat</span>
-          </a>
+          {/* Buttons stacked for mobile */}
+          <div className="flex gap-3 justify-center w-full px-4">
+            <a
+              href="#"
+              className="flex-1 max-w-[160px] inline-flex items-center justify-center gap-2 bg-[#FF322E] h-12 px-4 text-sm font-bold tracking-wide text-white"
+            >
+              <span className="whitespace-nowrap">Let's chat</span>
+            </a>
 
-          <a
-            href="#"
-            className="w-[45%] inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-12 px-4 text-sm font-bold tracking-wide text-brand"
-          >
-            
-            <span>About us</span>
-          </a>
+            <a
+              href="#"
+              className="flex-1 max-w-[160px] inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-12 px-4 text-sm font-bold tracking-wide text-brand"
+            >
+              <span>About us</span>
+            </a>
+          </div>
         </div>
 
         {/* Include cards component (will also be mobile visible) */}
