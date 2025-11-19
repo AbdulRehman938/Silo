@@ -260,7 +260,7 @@ const Cards = () => {
                 initial={{ opacity: 0, y: 20, x: 0, rotate: 0 }}
                 animate={{ 
                   opacity: transform.opacity, 
-                  x: offset.x - 300, 
+                  x: offset.x - 310, 
                   y: -offset.y + transform.y - 80, 
                   rotate: offset.r,
                   scale: transform.scale
