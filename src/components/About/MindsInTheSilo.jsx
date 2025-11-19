@@ -406,11 +406,21 @@ const MindsInTheSilo = () => {
                   {item.type === 'team-member' ? (
                     // Team Member Card - No fading animations
                     <motion.div 
-                      className="bg-white h-full flex flex-col group"
+                      className="bg-white h-full flex flex-col border-2 p-1 transition-all duration-200"
                       style={{
                         minHeight: '300px',
-                        pointerEvents: isDragging ? 'none' : 'auto',
-                        border: cardsPerView === 1 && isInViewport ? '2px solid #FF322E' : 'none'
+                        pointerEvents: 'auto',
+                        borderColor: cardsPerView === 1 && isInViewport ? '#FF322E' : 'transparent'
+                      }}
+                      onMouseEnter={(e) => {
+                        if (!isDragging && window.innerWidth >= 768) {
+                          e.currentTarget.style.borderColor = '#FF322E';
+                        }
+                      }}
+                      onMouseLeave={(e) => {
+                        if (cardsPerView !== 1 || !isInViewport) {
+                          e.currentTarget.style.borderColor = 'transparent';
+                        }
                       }}
                       whileHover={!isDragging ? {} : {}}
                       transition={{ duration: 0.3 }}
@@ -425,7 +435,7 @@ const MindsInTheSilo = () => {
                       
                       {/* Text Content - No animations */}
                       <div 
-                        className="mt-0 pt-3 sm:pt-3 lg:pt-4 border border-transparent border-t-0 transition-all duration-200 md:group-hover:border-red-500 md:group-hover:border-b-2 md:group-hover:border-l-2 md:group-hover:border-r-2"
+                        className="mt-0 pt-3 sm:pt-3 lg:pt-4"
                       >
                         <h3 
                           className="font-semibold text-black text-xl sm:text-base lg:text-2xl text-left"

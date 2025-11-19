@@ -99,7 +99,7 @@ const Section = () => {
       </div>
 
       {/* Mobile-only view: show only on mobile (<md). Content on top, image on bottom. */}
-      <div className="block md:hidden mt-40 px-[4vw]">
+      <div className="block md:hidden mt-20 px-[4vw]">
         <div className="border border-black pt-3 rounded-sm overflow-hidden mt-[-5rem]">
           <div className="flex flex-col items-stretch">
             {/* Top: content */}

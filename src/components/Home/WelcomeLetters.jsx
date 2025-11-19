@@ -62,13 +62,16 @@ export const WelcomeLetters = () => {
     if (!containerRef.current) return;
 
     const letters = containerRef.current.querySelectorAll('.welcome-letter');
-    const viewportHeight = window.innerHeight;
-    const containerTop = containerRef.current.getBoundingClientRect().top;
-    const startY = -(viewportHeight + containerTop + 200);
-
-    // Use the parent div as trigger instead of the component itself
+    const container = containerRef.current.parentElement;
+    const containerHeight = container ? container.offsetHeight : 500;
+    
     // Check if mobile view
     const isMobile = window.innerWidth < 768;
+    
+    // Desktop: start from top of viewport, Mobile: start from top of container
+    const startY = isMobile ? -containerHeight - 100 : -window.innerHeight - 600;
+    
+    // Use the parent div as trigger instead of the component itself
     const triggerElement = isMobile 
       ? document.getElementById('welcome-parent-div-mobile')
       : document.getElementById('welcome-parent-div');
@@ -86,13 +89,13 @@ export const WelcomeLetters = () => {
     letters.forEach((letter, index) => {
       const dropIndex = DROP_ORDER.indexOf(index);
       const { x, y, rotate } = LETTER_LAYOUT[index];
-      const startTime = dropIndex * 0.15;
+      const startTime = (letters.length - 1 - index) * 0.15; // Animate from right to left (e, m, o, c, l, e, W)
       const fallDuration = 0.8 + Math.random() * 0.2;
 
       tl.fromTo(
         letter,
         { y: startY, x, rotate, opacity: 1, scaleY: 1, scaleX: 1 },
-        { y, duration: fallDuration, ease: 'power3.in' },
+        { y, opacity: 1, duration: fallDuration, ease: 'power3.in' },
         startTime
       );
 
@@ -138,7 +141,7 @@ export const WelcomeLetters = () => {
           style={{
             fontSize: `${item.size}px`,
             transform: `translate(${item.x}px, ${item.y}px) rotate(${item.rotate}deg)`,
-            zIndex: item.z,
+            zIndex: -1,
           }}
         >
           {item.char}

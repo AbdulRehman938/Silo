@@ -70,8 +70,8 @@ export default function VideoAndWelcome() {
       {/* Mobile-only simplified block: visible on small screens only
           Animated letters placed BEFORE the content on mobile as requested. */}
 
-      <div className="relative w-full overflow-hidden mt-6 md:mt-10 lg:mt-14">
-        <div className="h-80 lg:h-[80vh] md:h-[60vh] relative">
+      <div className="relative w-full overflow-hidden mt-6 md:mt-10 lg:mt-14 z-20">
+        <div className="h-80 lg:h-[80vh] md:h-[60vh] relative z-20">
           <img
             src={cmsData.imageUrl}
             alt="Showcase"
@@ -137,7 +137,7 @@ export default function VideoAndWelcome() {
       <div className="hidden md:block relative mx-auto px-3 mt-10 md:mt-10 lg:mt-20 md:px-0 md:mx-10">
         <div
           id="welcome-parent-div"
-          className="relative flex items-end max-w-[1280px] mx-auto justify-between h-[60vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh]"
+          className="relative flex items-end max-w-[1280px] mx-auto justify-between h-[60vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh] z-10"
         >
           {/* Left text div - aligned at bottom left */}
           <div className="relative z-10 self-end pb-4 max-w-[38%] md:max-w-[45%] flex flex-col justify-end gap-6 md:gap-7">
@@ -211,7 +211,7 @@ export default function VideoAndWelcome() {
             )}
           </div>
 
-          < div className="mx-[3vw] md:px-0">
+          < div className="mx-[3vw] md:px-0 ">
             <p className="text-[18px] font-extrabold tracking-tight text-black">
               We're the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.

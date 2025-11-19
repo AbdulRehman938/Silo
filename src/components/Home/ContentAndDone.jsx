@@ -545,11 +545,11 @@ export default function ContentAndDone() {
             <img
               src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717232/first_dyyzet.png"
               alt="Social Strategy"
-              className="w-full h-96 object-cover" loading="lazy" />
+              className="w-full h-[28rem] object-cover" loading="lazy" />
             <h3 className="mt-3 font-epilogue font-bold text-lg">
               Social Strategy & Management
             </h3>
-            <p className="text-sm text-black font-bold">
+            <p className="text-sm text-black font-bold leading-relaxed">
               Your brand deserves more than random posts and recycled trends. We start with strategy — mapping your audience, defining content pillars, and building weekly calendars that give your feed structure and purpose. Then we bring it to life with fast-paced creative sprints and posts designed to connect, not just fill space. <span className="font-bold">Every piece earns its place. Every post builds your brand.</span> 
             </p>
           </div>
@@ -569,12 +569,12 @@ export default function ContentAndDone() {
             <img
               src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717288/second_wt2ss3.png"
               alt="UGC Creator Network"
-              className="w-full h-48 object-cover" loading="lazy" />
+              className="w-full h-64 object-cover" loading="lazy" />
             <h3 className="mt-3 font-epilogue font-bold text-lg">
               UGC Creator Network
             </h3>
-            <p className="text-sm text-black/80">
-             People connect with people and that’s why we tap into a global network of vetted creators to put real faces and real voices behind your brand. We handle the briefs, sourcing, and direction so you get a steady flow of native videos that feel at home on the platform, not like another ad. <span className="font-bold">Authentic content. Real reach. Built for the scroll.</span> 
+            <p className="text-sm text-black/80 leading-relaxed">
+             People connect with people and that's why we tap into a global network of vetted creators to put real faces and real voices behind your brand. We handle the briefs, sourcing, and direction so you get a steady flow of native videos that feel at home on the platform, not like another ad. <span className="font-bold">Authentic content. Real reach. Built for the scroll.</span> 
             </p>
           </div>
 
@@ -593,12 +593,12 @@ export default function ContentAndDone() {
             <img
               src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717293/third_gwfnbk.png"
               alt="Design + Motion"
-              className="w-full h-60 object-cover" loading="lazy" />
+              className="w-full h-72 object-cover" loading="lazy" />
             <h3 className="mt-3 font-epilogue font-bold text-lg">
               Design + Motion
             </h3>
-            <p className="text-sm text-black/80">
-              From stunning pitch decks and polished documents to bold web graphics and social posts, we design content that makes your brand look as good as it sounds. And when stills aren’t enough, we bring it all to life with animation and video production that moves the story forward. <span className="font-bold">Beautiful design. Seamless motion. Creative built to stand out on every screen.</span>
+            <p className="text-sm text-black/80 leading-relaxed">
+              From stunning pitch decks and polished documents to bold web graphics and social posts, we design content that makes your brand look as good as it sounds. And when stills aren't enough, we bring it all to life with animation and video production that moves the story forward. <span className="font-bold">Beautiful design. Seamless motion. Creative built to stand out on every screen.</span>
             </p>
           </div>
         </div>
@@ -627,14 +627,16 @@ export default function ContentAndDone() {
                 window.location.href = '/case-study/1';
               }}
             >
-              <div className="w-full h-64 mb-0">
+              <div className="w-full h-80 mb-0">
                 <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png" alt="smoothie" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-black">Smoothie Smash</h3>
                 <p className="text-lg text-black font-bold">Food & Drink</p>
-                <p className="text-base font-medium text-black">
+                <p className="text-base font-medium text-black leading-relaxed">
                   We built a TikTok-first launch campaign for this food start-up.
+                  Fast cuts, bold graphics, and creator-led taste tests turned
+                  into millions of views and a sell-out first week.
                 </p>
                 <div className="flex space-x-2">
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">UGC</span>
@@ -659,14 +661,16 @@ export default function ContentAndDone() {
                 window.location.href = '/case-study/2';
               }}
             >
-              <div className="w-full h-64">
+              <div className="w-full h-80">
                 <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png" alt="lumin solar" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-black">Lumin Solar</h3>
                 <p className="text-lg text-black font-bold">Energy</p>
-                <p className="text-base font-medium text-black">
-                  For this clean-tech brand we stripped out the jargon and made solar feel simple.
+                <p className="text-base font-medium text-black leading-relaxed">
+                  For this clean-tech brand we stripped out the jargon and made
+                  solar feel simple. Scroll-stopping motion and sharp messaging
+                  powered record inbound leads.
                 </p>
                 <div className="flex space-x-2">
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">Motion Design</span>
@@ -691,14 +695,16 @@ export default function ContentAndDone() {
                 window.location.href = '/case-study/3';
               }}
             >
-              <div className="w-full h-64">
+              <div className="w-full h-80">
                 <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png" alt="smart stats" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-black">Smart Stats</h3>
                 <p className="text-lg text-black font-bold">SaaS</p>
-                <p className="text-base font-medium text-black">
-                  We gave this data platform a face, not just numbers.
+                <p className="text-base font-medium text-black leading-relaxed">
+                  We gave this data platform a face, not just numbers. From
+                  explainer animations to punchy LinkedIn posts, we built a visual
+                  system that made analytics unmissable.
                 </p>
                 <div className="flex space-x-2">
                   <span className="text-sm font-bold text-black p-2 bg-brand/20">Design</span>
