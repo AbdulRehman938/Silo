@@ -190,7 +190,7 @@ export default function VideoAndWelcome() {
 
       <div
         id="welcome-parent-div-mobile"
-        className="md:hidden h-[38rem] flex justify-center items-center gap-10"
+        className="md:hidden h-[38rem] flex justify-center items-center gap-10 px-[4vw]"
       >
         <div className="flex flex-col justify-center items-center gap-10 h-full">
           <div className="pointer-events-none select-none mb-6 mt-10 h-[35rem] w-[80vw] ml-20">
@@ -211,9 +211,9 @@ export default function VideoAndWelcome() {
             )}
           </div>
 
-          <div className="mx-3">
+          < div className="mx-[3vw] md:px-0">
             <p className="text-[18px] font-extrabold tracking-tight text-black">
-              We’re the creative agency for brands that want more than filler
+              We're the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.
             </p>
             <p className="text-[12px] leading-relaxed text-black/80 mt-2">

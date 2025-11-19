@@ -58,7 +58,7 @@ const Section = () => {
 
       {/* MD-only view: show this block only on md screens (>=md and <lg).
           Here the right image-placeholder appears on top and the content below. */}
-      <div className="hidden md:block lg:hidden mx-3">
+      <div className="hidden md:block lg:hidden">
         <div className="border border-black pb-6 rounded-sm overflow-hidden">
           <div className="flex flex-col items-stretch">
             {/* Top: right image placeholder (appears on top for md view) */}
@@ -99,7 +99,7 @@ const Section = () => {
       </div>
 
       {/* Mobile-only view: show only on mobile (<md). Content on top, image on bottom. */}
-      <div className="block md:hidden mt-40 mx-3">
+      <div className="block md:hidden mt-40 px-[4vw]">
         <div className="border border-black pt-3 rounded-sm overflow-hidden mt-[-5rem]">
           <div className="flex flex-col items-stretch">
             {/* Top: content */}

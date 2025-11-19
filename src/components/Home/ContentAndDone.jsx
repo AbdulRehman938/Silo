@@ -522,8 +522,8 @@ export default function ContentAndDone() {
       </div>
 
       {/* Mobile-only view (hidden on desktop) */}
-      <div className="block md:hidden mt-[-1rem] mx-3">
-        <h2 className="text-3xl font-bold tracking-tight text-black mb-[5rem]">
+      <div className="block md:hidden mt-[-1rem] px-[4vw]">
+        <h2 className="text-4xl font-bold tracking-tight text-black mb-[3rem]">
           This is simply what we do
         </h2>
      
@@ -607,7 +607,7 @@ export default function ContentAndDone() {
 
         {/* Mobile Done Section */}
         <div id="done-mobile" className="w-full">
-          <h2 className="text-4xl font-bold tracking-tight text-black mb-4">
+          <h2 className="text-4xl font-bold tracking-tight text-black mb-4 mt-20">
             Stuff we've done
           </h2>
           <p className="text-base text-black mb-16 font-bold">
@@ -680,7 +680,7 @@ export default function ContentAndDone() {
             </div>
 
             <div
-              className="py-8 relative top-[-8rem] cursor-pointer"
+              className="pt-8 relative top-[-8rem] cursor-pointer"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {

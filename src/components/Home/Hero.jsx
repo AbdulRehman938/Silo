@@ -28,7 +28,7 @@ export default function Hero() {
         />
 
         <div className="w-full bg-white flex-shrink-0 mt-10 md:mt-0">
-          <div className="mx-auto w-full px-3 md:px-6 home-hero-text-h">
+          <div className="mx-auto w-full md:px-6 home-hero-text-h">
             <div className="py-4 md:py-5 text-center font-bold text-2xl 2xl:text-3xl xl:text-2xl text-black">
               Used by companies who know what works.
             </div>
