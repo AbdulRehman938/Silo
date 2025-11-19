@@ -1,11 +1,8 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import Header from './components/Common/Header.jsx'
-// import Footer defensively: support default or named export to avoid HMR/module mismatch errors
-import * as FooterModule from './components/Common/Footer.jsx'
+import Footer from './components/Common/Footer.jsx'
 import "./styles/scaling-overrides.css"
-
-const Footer = FooterModule.default || FooterModule.Footer || (() => <div>Footer</div>)
 
 export default function Layout() {
   const location = useLocation()

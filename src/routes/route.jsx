@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import * as HomeModule from '../pages/Home.jsx'
+import Home from '../pages/Home.jsx'
 import Layout from '../Layout.jsx'
 import Services from '../pages/Services.jsx'
 import JobBoard from '../pages/JobBoard.jsx'
@@ -18,8 +18,6 @@ import JobBoardDetail from '../pages/JobBoardDetail.jsx'
 import BlogDetail from '../pages/BlogDetail.jsx'
 import CaseStudies from '../pages/CaseStudies.jsx'
 import PostCaseStudy from '../pages/PostCaseStudy.jsx'
-
-const Home = HomeModule.default || HomeModule.Home || (() => <div>Home</div>)
 
 function RoutesTree() {
 	return (
