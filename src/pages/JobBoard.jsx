@@ -13,7 +13,7 @@ function JobCard({ job }) {
 
   return (
     <div
-      className="flex flex-col w-full md:max-w-[28vw] cursor-pointer transition-all duration-300 group"
+      className="flex flex-col w-full md:w-[24vw] md:flex-shrink-0 cursor-pointer transition-all duration-300 group mb-8 md:mb-0"
       onClick={handleCardClick}
       role="button"
       tabIndex={0}
@@ -25,20 +25,25 @@ function JobCard({ job }) {
       }}
       aria-label={`View job details for ${job.title} in ${job.category}`}
     >
-      {/* Job Image - Adjusted for 95vw container */}
-      <div className="w-full h-[260px] font-bold overflow-hidden mb-3">
-        <img
-          src={job.image}
-          alt={`${job.title} - ${job.category} job opportunity`}
-          className="w-full h-full font-bold object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" />
-      </div>
+      {/* Job Title - At top on mobile */}
+      <h3
+        className="text-black m-0 mb-3 md:mb-2 order-1 md:order-3 text-2xl md:text-base"
+        style={{
+          fontFamily: "Epilogue, sans-serif",
+          fontWeight: 700,
+          lineHeight: "130%",
+          letterSpacing: "0%",
+        }}
+      >
+        {job.title}
+      </h3>
 
-      {/* Category Label - Exact styling from screenshot */}
+      {/* Category Label - Below title on mobile, above title on desktop */}
       <div
-        className="bg-[#FFDBDB] text-black w-fit mb-2"
+        className="bg-[#FFDBDB] text-black w-fit mb-4 md:mb-2 md:mt-3 order-2 md:order-2"
         style={{
           padding: "5px 7px",
-          fontSize: "16px",
+          fontSize: "18px",
           fontWeight: 800,
           fontFamily: "DM Sans, sans-serif",
         }}
@@ -46,19 +51,13 @@ function JobCard({ job }) {
         {job.category}
       </div>
 
-      {/* Job Title - Exact typography from screenshot */}
-      <h3
-        className="text-black m-0"
-        style={{
-          fontFamily: "Epilogue, sans-serif",
-          fontWeight: 700,
-          fontSize: "clamp(10px, 2vw, 20px)",
-          lineHeight: "130%",
-          letterSpacing: "0%",
-        }}
-      >
-        {job.title}
-      </h3>
+      {/* Job Image - Moved to bottom on mobile */}
+      <div className="w-full h-[260px] font-bold overflow-hidden order-3 md:order-1">
+        <img
+          src={job.image}
+          alt={`${job.title} - ${job.category} job opportunity`}
+          className="w-full h-full font-bold object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" />
+      </div>
     </div>
   );
 }
@@ -67,7 +66,7 @@ export default function JobBoard() {
   return (
     <div className="w-full bg-white md:mt-5 mb-20 max-w-[1280px] mx-auto mt-20">
       {/* Container with 95vw max-width */}
-      <div className="max-w-[full] mx-auto px-0 sm:px-0 lg:px-6 py-10 lg:py-14 my-20 md:mb-0">
+      <div className="max-w-[full] mx-[3vw] md:mx-auto px-0 sm:px-0 lg:px-6 py-10 lg:py-14 my-20 md:mb-0">
         {/* Hero Section - Adjusted for 95vw */}
         <div className="mb-12 lg:mb-16">
           <div className="w-full lg:w-1/2">
@@ -167,7 +166,7 @@ export default function JobBoard() {
         </div>
 
         {/* Job Grid - Exact screenshot layout with responsive behavior */}
-        <div className="w-full">
+        <div className="w-full px-[1vw] md:px-0">
           {/* Mobile: Single column (< 640px) */}
           <div className="grid grid-cols-1 gap-6 sm:hidden justify-items-center">
             {jobsData.map((job) => (
@@ -185,14 +184,14 @@ export default function JobBoard() {
           {/* Desktop: Adjusted layout for 95vw (1024px+) */}
           <div className="hidden lg:block">
             {/* First Row - 3 cards with adjusted spacing */}
-            <div className="flex gap-4 mb-8 justify-start">
+            <div className="flex gap-8 mb-8 justify-start">
               <JobCard job={jobsData[0]} />
               <JobCard job={jobsData[1]} />
               <JobCard job={jobsData[2]} />
             </div>
 
             {/* Second Row - 2 cards with adjusted spacing */}
-            <div className="flex gap-4 justify-start">
+            <div className="flex gap-8 justify-start">
               <JobCard job={jobsData[3]} />
               <JobCard job={jobsData[4]} />
             </div>

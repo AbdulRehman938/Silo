@@ -6,10 +6,10 @@ const Interested = () => {
     <section className="w-full bg-white text-black pt-16">
       <div className="max-w-[1280px] mx-auto px-0 md:px-6 ">
         {/* Three column layout on md+, stacked on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border-t border-black mx-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-black mx-3">
           {/* Column 1 */}
           <div className="md:pr-8 md:border-r md:border-black py-10">
-            <div className="bg-white w-full h-96 mb-6 flex overflow-hidden items-start justify-center text-black">
+            <div className="bg-white w-full h-60 mb-6 flex overflow-hidden items-start justify-center text-black">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717232/first_dyyzet.png"
                 alt="first"
@@ -49,11 +49,11 @@ const Interested = () => {
 
           {/* Column 2 */}
           <div className="md:px-8 md:border-r md:border-black py-10">
-            <div className="bg-white w-full h-96 mb-6 flex items-center justify-center text-black">
+            <div className="bg-white w-full h-60 mb-6 flex items-center justify-center text-black">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717288/second_wt2ss3.png"
                 alt="second"
-                className="object-cover object-xcenter w-full h-full" loading="lazy" />
+                className="object-fill w-full h-full" loading="lazy" />
             </div>
             <h3 className="text-4xl font-bold mb-3">
               A silo load of UGC Creators
@@ -90,7 +90,7 @@ const Interested = () => {
           {/* Column 3 */}
           <div className="md:col-span-2 lg:col-span-1 md:flex md:justify-center md:pl-8 py-10">
             <div className="w-full md:w-[85%] lg:w-full">
-              <div className="bg-white w-full h-96 mb-6 flex items-center justify-center text-black">
+              <div className="bg-white w-full h-60 mb-6 flex items-center justify-center text-black">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717293/third_gwfnbk.png"
                   alt="third"

@@ -7,10 +7,10 @@ const OptionalAddOns = () => {
     <section className="w-full bg-white text-black md:pb-16 pb-0">
   <div className="max-w-[1280px] mx-auto px-0 md:px-6">
         {/* Three column layout on md+, stacked on mobile */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border-t border-black mx-3">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-black mx-3">
           {/* Column 1 */}
           <div className="md:pr-8 md:border-r md:border-black py-10">
-            <div className="bg-white w-full h-96 mb-6 flex overflow-hidden items-start justify-center text-black">
+            <div className="bg-white w-full h-60 mb-6 flex overflow-hidden items-start justify-center text-black">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717268/option-service1_oiwmo4.png"
                 alt="first"
@@ -49,7 +49,7 @@ const OptionalAddOns = () => {
 
           {/* Column 2 */}
           <div className="md:px-8 md:border-r md:border-black py-10">
-            <div className="bg-white w-full h-96 mb-6 flex items-center justify-center text-black">
+            <div className="bg-white w-full h-60 mb-6 flex items-center justify-center text-black">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762770096/option-service2_k1qegk.png"
                 alt="second"
@@ -89,7 +89,7 @@ const OptionalAddOns = () => {
           {/* Column 3 */}
           <div className="md:col-span-2 lg:col-span-1 md:flex md:justify-center md:pl-8 py-10">
             <div className="w-full md:w-[85%] lg:w-full">
-              <div className="bg-white w-full h-96 mb-6 flex items-center justify-center text-black">
+              <div className="bg-white w-full h-60 mb-6 flex items-center justify-center text-black">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717273/option-service3_j0um8a.png"
                   alt="third"
@@ -132,7 +132,7 @@ const OptionalAddOns = () => {
         <div className="mt-12 ml-5 md:ml-0">
           <a
             href="#"
-            className="inline-flex items-center justify-center gap-2  bg-transparent border-2 border-brand h-[55px] px-8 py-3 text-xs font-semibold uppercase tracking-wide text-brand relative overflow-hidden group"
+            className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-8 py-3 text-xs font-semibold uppercase tracking-wide text-brand relative overflow-hidden group"
           >
             <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
               <FaChevronRight className="block text-brand w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-24 group-hover:scale-[140%]" />
