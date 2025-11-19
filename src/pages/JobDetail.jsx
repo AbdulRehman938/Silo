@@ -2,33 +2,13 @@ import { useParams } from 'react-router-dom'
 import HeroSection from '../components/jobdetail/HeroSection'
 import JobDetailsSection from '../components/jobdetail/JobDetailsSection'
 import ApplicationFormSection from '../components/jobdetail/ApplicationFormSection'
+import { jobDetailData } from '../data/jobDetailData'
 
 const JobDetail = () => {
   const { id } = useParams()
 
   // Job data based on ID
-  const jobData = {
-    1: {
-      department: 'Food & Drink',
-      title: 'Creator Partnerships Manager',
-      type: 'Permanent',
-      location: 'Remote'
-    },
-    2: {
-      department: 'Marketing',
-      title: 'Social Media Strategist',
-      type: 'Full-time',
-      location: 'London, UK'
-    },
-    3: {
-      department: 'Design',
-      title: 'Creative Director',
-      type: 'Contract',
-      location: 'Hybrid'
-    }
-  }
-
-  const job = jobData[id] || jobData[1]
+  const job = jobDetailData[id] || jobDetailData[1]
 
   return (
     <div className="bg-white">
