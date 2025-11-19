@@ -234,20 +234,20 @@ const Cards = () => {
     <>
       {/* Desktop View - Hidden on Mobile */}
       <div ref={desktopRef} className="hidden sm:flex w-full max-w-[1280px] mx-auto h-screen 2xl:mt-20 md:mt-0 flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
-        <div className="absolute left-[30%] top-[40%] -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center" style={{height: 420, width: 720}}>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center">
           {CARD_DATA.map((card, i) => {
             const VISIBLE_COUNT = Math.min(5, CARD_DATA.length);
             const computeOffset = (idx) => {
               if (idx === 0) return { x: 0, y: 0, r: 0 };
               if (idx < VISIBLE_COUNT) {
                 const pos = idx;
-                const x = (pos % 2 === 0 ? 1 : -1) * (8 + pos * 6);
+                const x = (pos % 2 === 0 ? -1 : 1) * (8 + pos * 6);
                 const y = pos * 18;
-                const r = (pos % 2 === 0 ? 4 : -4) + (pos % 3);
+                const r = (pos % 2 === 0 ? -4 : 4) - (pos % 3);
                 return { x, y, r };
               }
               const hiddenIndex = idx - VISIBLE_COUNT;
-              return { x: (idx % 2 === 0 ? 6 : -6), y: 120 + hiddenIndex * 22, r: (idx % 2 === 0 ? 6 : -6) };
+              return { x: (idx % 2 === 0 ? -6 : 6), y: 120 + hiddenIndex * 22, r: (idx % 2 === 0 ? -6 : 6) };
             };
 
             const offset = computeOffset(i);
@@ -260,13 +260,13 @@ const Cards = () => {
                 initial={{ opacity: 0, y: 20, x: 0, rotate: 0 }}
                 animate={{ 
                   opacity: transform.opacity, 
-                  x: offset.x, 
-                  y: -offset.y + transform.y, 
+                  x: offset.x - 360, 
+                  y: -offset.y + transform.y - 100, 
                   rotate: offset.r,
                   scale: transform.scale
                 }}
                 transition={{ type: 'spring', stiffness: 220, damping: 22 }}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 2xl:w-full lg:w-[80%] md:w-[55%] md:h-[200px] md:left-[20rem] md:top-[15rem] lg:h-[250px] 2xl:h-[340px] bg-white border-2 border-[#FF322E] flex flex-col items-start justify-center px-12 py-10 shadow-lg 2xl:left-[23rem]"
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 2xl:w-[720px] lg:w-[580px] md:w-[420px] md:h-[200px] lg:h-[250px] 2xl:h-[340px] bg-white border-2 border-[#FF322E] flex flex-col items-start justify-center px-12 py-10 shadow-lg"
                 style={{ zIndex: z }}
               >
                 <div className="mb-4 flex w-full justify-between items-center 2xl:text-xl lg:text-base font-bold">
