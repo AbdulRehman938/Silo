@@ -136,7 +136,7 @@ export default function Ramblings() {
                         {filteredPosts[0].description}
                       </p>
                       <a
-                        href="#"
+                        href={filteredPosts[0].link}
                         className="inline-flex items-center gap-2 font-dm font-semibold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                       >
                         <span>Read more</span>
@@ -183,7 +183,7 @@ export default function Ramblings() {
                             {post.description}
                           </p>
                           <a
-                            href="#"
+                            href={post.link}
                             className="inline-flex items-center gap-2 font-dm font-semibold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                           >
                             <span>Read more</span>

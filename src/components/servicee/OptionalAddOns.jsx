@@ -131,7 +131,7 @@ const OptionalAddOns = () => {
         {/* CTA */}
         <div className="mt-12 ml-5 md:ml-0">
           <a
-            href="#"
+            href="/contact"
             className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-8 py-3 text-xs font-semibold uppercase tracking-wide text-brand relative overflow-hidden group"
           >
             <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">

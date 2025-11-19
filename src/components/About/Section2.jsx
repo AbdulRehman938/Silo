@@ -81,13 +81,13 @@ const Section2 = () => {
 
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex items-center justify-center bg-[#FF322E] text-white px-4 py-2 "
                 >
                   For Brands
                 </a>
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex items-center justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 "
                 >
                   For Creators
@@ -114,7 +114,7 @@ const Section2 = () => {
 
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex items-center justify-center bg-[#FF322E] text-white px-4 py-2 "
                 >
                   For Brands

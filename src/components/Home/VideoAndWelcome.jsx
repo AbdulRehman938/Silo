@@ -225,7 +225,7 @@ export default function VideoAndWelcome() {
             </p>
             <div className="flex flex-wrap items-center gap-4 mt-4">
               <a
-                href="#"
+                href="/portfolio"
                 className="inline-flex items-center justify-center gap-2  bg-[#FF322E] h-[48px] px-6 py-3 text-xs font-bold  tracking-wide text-white border-transparent relative overflow-hidden group"
               >
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -236,10 +236,10 @@ export default function VideoAndWelcome() {
                 </span>
               </a>
               <a
-                href="#"
+                href="/contact"
                 className="inline-flex items-center gap-2 font-dm font-bold text-lg leading-[150%] text-[#FF322E] tracking-normal group"
               >
-                <span>Let’s Talk</span>
+                <span>Let's Talk</span>
                 <span
                   aria-hidden
                   className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"

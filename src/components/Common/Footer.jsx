@@ -45,7 +45,7 @@ const Footer = () => {
             <p className="mt-3 text-sm text-black font-bold max-w-md">
               By subscribing you agree to with our{" "}
               <a
-                href="#"
+                href="/privacy-policy"
                 className="underline cursor-pointer ease-in-out duration-200"
               >
                 Privacy Policy
@@ -85,7 +85,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/portfolio"
                   className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
@@ -98,7 +98,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/portfolio"
                   className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
@@ -111,7 +111,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/portfolio"
                   className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                   style={{
                     fontFamily: "DM Sans",
@@ -415,17 +415,17 @@ const Footer = () => {
                 </NavLink>
               </li>
               <li>
-                <a href="#" className="text-sm">
+                <a href="/portfolio" className="text-sm">
                   Mission and Values
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm">
+                <a href="/portfolio" className="text-sm">
                   Meet the Team
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm">
+                <a href="/portfolio" className="text-sm">
                   Why UGC?
                 </a>
               </li>
