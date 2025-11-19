@@ -46,15 +46,15 @@ const Hero = () => {
   return (
     <>
       {/* Desktop / larger screens - hidden on small screens */}
-      <div className="hidden sm:block h-screen pt-20">
-        <div className="w-full max-w-[1280px] h-full mx-auto flex flex-col justify-center items-center px-4">
+      <div className="hidden sm:block h-screen pt-8">
+        <div className="w-full max-w-[1280px] h-full mx-auto flex flex-col justify-between items-center px-4 pb-8 pt-16">
           <div
-            className="service-hero-title flex items-center w-[180px] h-[250px] justify-center service-video mb-6"
+            className="service-hero-title flex items-center w-[180px] h-[250px] justify-center service-video mb-3"
           >
             <VideoPlayer containerClassName="w-full h-full" onVideoClick={handleOpen} />
           </div>
-          <div className="flex flex-col justify-start items-center text-black leading-tight mb-6">
-            <h1 className="font-bold xl:text-[160px] lg:text-[120px] md:text-[14vw] leading-none mb-2">
+          <div className="flex flex-col justify-start items-center text-black leading-tight mb-3">
+            <h1 className="font-bold xl:text-[160px] lg:text-[120px] md:text-[14vw] leading-none mb-1">
               What we do
             </h1>
             <span className="text-black lg:text-base md:text-sm font-normal text-center max-w-3xl px-4">
@@ -88,17 +88,19 @@ const Hero = () => {
             </a>
           </div>
         </div>
+      </div>
+      <div className="hidden sm:block">
         <Cards />
         <Interested />
         <OptionalAddOns />
         <Section />
-        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black " />
+        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black" />
       </div>
       {/* Mobile-only view - visible only on small screens */}
-      <div className="block sm:hidden w-full h-screen pt-20 px-4">
-        <div className="h-full flex flex-col justify-center items-center">
+      <div className="block sm:hidden w-full h-auto pt-8 px-4">
+        <div className="flex flex-col justify-start items-center gap-10 pb-0 pt-20">
           {/* Video (targeting the same video but sized for mobile) */}
-          <div className="mb-4">
+          <div className="mb-2">
             <VideoPlayer
               containerClassName="w-[180px] h-[220px] mx-auto"
               videoClassName="w-full h-full object-cover"
@@ -107,7 +109,7 @@ const Hero = () => {
           </div>
 
           {/* Headline & description (smaller for mobile) */}
-          <div className="flex flex-col gap-3 text-center text-black mb-6">
+          <div className="flex flex-col gap-2 text-center text-black mb-3">
             <h1 className="text-5xl font-black leading-tight">What we do</h1>
             <p className="text-sm leading-relaxed px-4">
               We make content that cuts through the noise. Strategy, UGC, design,
@@ -132,7 +134,10 @@ const Hero = () => {
             </a>
           </div>
         </div>
-
+      </div>
+      
+      {/* Mobile sections outside h-screen */}
+      <div className="block sm:hidden">
         {/* Include cards component (will also be mobile visible) */}
         <div className="mt-6">
           <Cards />
