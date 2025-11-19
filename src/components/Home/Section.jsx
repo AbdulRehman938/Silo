@@ -82,13 +82,13 @@ const Section = () => {
               <div className="flex gap-3">
                 <a
                   href="#"
-                  className="inline-flex items-center font-bold justify-center bg-[#FF322E] text-white px-4 py-2 rounded"
+                  className="inline-flex items-center font-bold justify-center bg-[#FF322E] text-white px-4 py-2 "
                 >
                   For Brands
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center font-bold justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 rounded"
+                  className="inline-flex items-center font-bold justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 "
                 >
                   For Creators
                 </a>
@@ -100,7 +100,7 @@ const Section = () => {
 
       {/* Mobile-only view: show only on mobile (<md). Content on top, image on bottom. */}
       <div className="block md:hidden mt-20 px-[4vw]">
-        <div className="border border-black pt-3  overflow-hidden mt-[-5rem]">
+        <div className="border border-black pt-3  overflow-hidden">
           <div className="flex flex-col items-stretch">
             {/* Top: content */}
             <div className="px-3 py-3 pb-10">
@@ -115,13 +115,13 @@ const Section = () => {
               <div className="flex gap-3">
                 <a
                   href="#"
-                  className="inline-flex items-center font-bold justify-center bg-[#FF322E] text-white px-4 py-2 rounded"
+                  className="inline-flex items-center font-bold justify-center bg-[#FF322E] text-white px-4 py-2 "
                 >
                   For Brands
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center font-bold justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 rounded"
+                  className="inline-flex items-center font-bold justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 "
                 >
                   For Creators
                 </a>

@@ -19,7 +19,7 @@ const HeroSection = ({ jobData }) => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="bg-red-100 text-black px-3 py-2 rounded"
+                  className="bg-red-100 text-black px-3 py-2 "
                 >
                   {jobData.department}
                 </span>

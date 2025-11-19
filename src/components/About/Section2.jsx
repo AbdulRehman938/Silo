@@ -82,13 +82,13 @@ const Section2 = () => {
               <div className="flex gap-3">
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center bg-[#FF322E] text-white px-4 py-2 rounded"
+                  className="inline-flex items-center justify-center bg-[#FF322E] text-white px-4 py-2 "
                 >
                   For Brands
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 rounded"
+                  className="inline-flex items-center justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 "
                 >
                   For Creators
                 </a>
@@ -115,13 +115,13 @@ const Section2 = () => {
               <div className="flex gap-3">
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center bg-[#FF322E] text-white px-4 py-2 rounded"
+                  className="inline-flex items-center justify-center bg-[#FF322E] text-white px-4 py-2 "
                 >
                   For Brands
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 rounded"
+                  className="inline-flex items-center justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 "
                 >
                   For Creators
                 </a>

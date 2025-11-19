@@ -679,7 +679,7 @@ const CaseStudies = () => {
           </div>
         </div>
       </div>
-      <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black mt-10 mb-20" />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black mt-10 mb-10" />
       <Section />
       <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black" />
     </div>
