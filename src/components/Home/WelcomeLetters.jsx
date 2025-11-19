@@ -94,7 +94,7 @@ export const WelcomeLetters = () => {
 
       tl.fromTo(
         letter,
-        { y: startY, x, rotate, opacity: 1, scaleY: 1, scaleX: 1 },
+        { y: startY, x, rotate, opacity: 0, scaleY: 1, scaleX: 1 },
         { y, opacity: 1, duration: fallDuration, ease: 'power3.in' },
         startTime
       );
