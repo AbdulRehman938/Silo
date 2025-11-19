@@ -16,7 +16,7 @@ const CareerIndex = () => {
   };
 
   return (
-    <div className="h-auto max-w-[1280px] mt-20 mx-auto px-0 sm:px-6 md:px-8 lg:px-16 xl:px-20">
+    <div className="h-auto max-w-[1280px] mt-20 mx-auto px-[4vw] sm:px-6 md:px-8 lg:px-16 xl:px-20">
       <div className="min-h-screen max-w-full bg-white py-8 sm:py-12 md:py-16 lg:py-20 mx-auto mb-28 md:mb-0">
         <div className="max-w-full mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
@@ -33,14 +33,14 @@ const CareerIndex = () => {
             </div>
 
             {/* Right Content - Job Listings */}
-            <div className="space-y-3 sm:space-y-4 order-2 lg:order-2">
+            <div className="space-y-6 sm:space-y-4 order-2 lg:order-2">
               {/* Job Card 1 */}
               <div
                 onClick={() => handleJobClick(1)}
-                className="bg-white border border-black p-6 sm:p-8 md:p-10 cursor-pointer  hover:border-black transition-all duration-200 group"
+                className="bg-white border border-black p-4 py-6 sm:p-8 md:p-10 cursor-pointer  hover:border-black transition-all duration-200 group"
               >
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2 sm:mb-0">
+                <div className="flex flex-row sm:flex-row items-start justify-between mb-3 sm:mb-4 gap-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
                     <h3
                       style={{
                         fontFamily: "Epilogue",
@@ -68,7 +68,7 @@ const CareerIndex = () => {
                   </div>
                   <button
                     onClick={(e) => handleApplyClick(e, 1)}
-                    className="inline-flex items-center gap-2 font-dm font-normal text-xl leading-[150%] text-[#FF322E] tracking-normal group self-start sm:self-auto"
+                    className="inline-flex items-center gap-2 font-dm font-normal text-xl leading-[150%] text-[#FF322E] tracking-normal group flex-shrink-0"
                   >
                     <span>Apply Now</span>
                     <span
@@ -151,10 +151,10 @@ const CareerIndex = () => {
               {/* Job Card 2 */}
               <div
                 onClick={() => handleJobClick(2)}
-                className="bg-white border border-black p-6 sm:p-8 md:p-10 cursor-pointer  hover:border-black transition-all duration-200 group"
+                className="bg-white border border-black p-4 py-6 sm:p-8 md:p-10 cursor-pointer  hover:border-black transition-all duration-200 group"
               >
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2 sm:mb-0">
+                <div className="flex flex-row sm:flex-row items-start justify-between mb-3 sm:mb-4 gap-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
                     <h3
                       style={{
                         fontFamily: "Epilogue",
@@ -175,14 +175,14 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="bg-[#FFBDBD] text-black px-2 py-1 self-start"
+                      className="bg-[#FFDBDB] text-black px-2 py-1 self-start"
                     >
                       Department
                     </span>
                   </div>
                   <button
                     onClick={(e) => handleApplyClick(e, 2)}
-                    className="inline-flex items-center gap-2 font-dm font-normal text-xl leading-[150%] text-[#FF322E] tracking-normal group self-start sm:self-auto"
+                    className="inline-flex items-center gap-2 font-dm font-normal text-xl leading-[150%] text-[#FF322E] tracking-normal group flex-shrink-0"
                   >
                     <span>Apply Now</span>
                     <span
@@ -265,10 +265,10 @@ const CareerIndex = () => {
               {/* Job Card 3 */}
               <div
                 onClick={() => handleJobClick(3)}
-                className="bg-white border border-black p-6 sm:p-8 md:p-10 cursor-pointer  hover:border-black transition-all duration-200 group"
+                className="bg-white border border-black p-4 py-6 sm:p-8 md:p-10 cursor-pointer  hover:border-black transition-all duration-200 group"
               >
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3 sm:mb-4">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2 sm:mb-0">
+                <div className="flex flex-row sm:flex-row items-start justify-between mb-3 sm:mb-4 gap-3">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
                     <h3
                       style={{
                         fontFamily: "Epilogue",
@@ -289,14 +289,14 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="bg-[#FFBDBD] text-black px-2 py-1 self-start"
+                      className="bg-[#FFDBDB] text-black px-2 py-1 self-start"
                     >
                       Department
                     </span>
                   </div>
                   <button
                     onClick={(e) => handleApplyClick(e, 3)}
-                    className="inline-flex items-center gap-2 font-dm font-normal text-xl leading-[150%] text-[#FF322E] tracking-normal group self-start sm:self-auto"
+                    className="inline-flex items-center gap-2 font-dm font-normal text-xl leading-[150%] text-[#FF322E] tracking-normal group flex-shrink-0"
                   >
                     <span>Apply Now</span>
                     <span

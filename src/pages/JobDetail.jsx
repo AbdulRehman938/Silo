@@ -40,7 +40,6 @@ const JobDetail = () => {
       
       {/* Section 3: Application Form */}
       <ApplicationFormSection />
-      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
     </div>
   )
 }

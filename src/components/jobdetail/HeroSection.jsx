@@ -8,23 +8,7 @@ const HeroSection = ({ jobData }) => {
         <div className="w-full pt-8 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Content */}
-            <div className="space-y-6 order-2 lg:order-1">
-              {/* Department Badge */}
-              <div className="inline-block">
-                <span 
-                  style={{
-                    fontFamily: 'DM Sans', 
-                    fontWeight: 600, 
-                    fontSize: '14px', 
-                    lineHeight: '150%', 
-                    letterSpacing: '0%'
-                  }} 
-                  className="bg-red-100 text-black px-3 py-2 "
-                >
-                  {jobData.department}
-                </span>
-              </div>
-
+            <div className="space-y-6 order-1 lg:order-1">
               {/* Job Title */}
               <h1 
                 style={{
@@ -40,7 +24,7 @@ const HeroSection = ({ jobData }) => {
               </h1>
 
               {/* Job Details */}
-              <div className="space-y-1">
+              <div className="space-y-1 flex flex-col gap-0">
                 <p 
                   style={{
                     fontFamily: 'DM Sans', 
@@ -49,7 +33,7 @@ const HeroSection = ({ jobData }) => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-black"
+                  className="text-black order-1 lg:order-1"
                 >
                   {jobData.type}
                 </p>
@@ -61,16 +45,48 @@ const HeroSection = ({ jobData }) => {
                     lineHeight: '150%', 
                     letterSpacing: '0%'
                   }} 
-                  className="text-black"
+                  className="text-black order-2 lg:order-2"
                 >
                   {jobData.location}
                 </p>
+                
+                {/* Department Badge - Below location on mobile, at top on desktop */}
+                <div className="inline-block order-3 lg:order-none lg:hidden self-start" style={{ marginTop: '24px' }}>
+                  <span 
+                    style={{
+                      fontFamily: 'DM Sans', 
+                      fontWeight: 600, 
+                      fontSize: '14px', 
+                      lineHeight: '150%', 
+                      letterSpacing: '0%'
+                    }} 
+                    className="bg-red-100 text-black px-3 py-2"
+                  >
+                    {jobData.department}
+                  </span>
+                </div>
+              </div>
+              
+              {/* Department Badge - Desktop only at top */}
+              <div className="hidden lg:block lg:-order-1">
+                <span 
+                  style={{
+                    fontFamily: 'DM Sans', 
+                    fontWeight: 600, 
+                    fontSize: '14px', 
+                    lineHeight: '150%', 
+                    letterSpacing: '0%'
+                  }} 
+                  className="bg-red-100 text-black px-3 py-2"
+                >
+                  {jobData.department}
+                </span>
               </div>
             </div>
 
             {/* Right Image */}
-            <div className="order-1 lg:order-2">
-              <div className="w-full h-full flex items-center justify-center bg-[#DBDBDB]  sm:h-[336px] lg:h-[315px]">
+            <div className="order-2 lg:order-2">
+              <div className="w-full h-[400px] sm:h-[450px] lg:h-[400px] flex items-center justify-center bg-[#DBDBDB]">
                 <svg
                   className="w-20 h-20 text-[#BABABA]"
                   fill="currentColor"
@@ -85,12 +101,12 @@ const HeroSection = ({ jobData }) => {
       </div>
 
       {/* Content Section no. 2 - Bottom Half */}
-      <div className="flex-1 max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 flex items-center pb-8 sm:pb-12">
+      <div className="flex-1 max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 flex items-center pb-8 sm:pb-12 mt-16 sm:mt-0">
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             {/* Left Image */}
             <div className="order-2 lg:order-1">
-              <div className="w-full h-full flex items-center justify-center bg-[#DBDBDB] sm:h-80 lg:h-[300px]">
+              <div className="w-full h-[400px] sm:h-[450px] lg:h-[400px] flex items-center justify-center bg-[#DBDBDB]">
                 <svg
                   className="w-20 h-20 text-[#BABABA]"
                   fill="currentColor"

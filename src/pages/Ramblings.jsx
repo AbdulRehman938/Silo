@@ -1,6 +1,5 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaChevronRight } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 export default function Ramblings() {
@@ -167,16 +166,10 @@ export default function Ramblings() {
                 {/* Featured Post */}
                 <div className="mb-12">
                   <div
-                    className="bg-white overflow-hidden cursor-pointer"
+                    className="bg-white overflow-hidden cursor-pointer flex flex-col"
                     onClick={() => navigate(filteredPosts[0].link)}
                   >
-                    <div className="w-full h-[60vh] overflow-hidden group">
-                      <img
-                        src={filteredPosts[0].image}
-                        alt={filteredPosts[0].title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" />
-                    </div>
-                    <div className="md:p-8 md:px-0 py-8 px-0">
+                    <div className="md:p-8 md:px-0 py-8 px-0 order-1 md:order-2">
                       <div className="flex items-center gap-3 mb-4">
                         <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1">
                           {filteredPosts[0].category}
@@ -205,6 +198,12 @@ export default function Ramblings() {
                         </span>
                       </a>
                     </div>
+                    <div className="w-full h-[60vh] overflow-hidden group order-2 md:order-1">
+                      <img
+                        src={filteredPosts[0].image}
+                        alt={filteredPosts[0].title}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" />
+                    </div>
                   </div>
                 </div>
 
@@ -214,16 +213,10 @@ export default function Ramblings() {
                     {filteredPosts.slice(1).map((post) => (
                       <div
                         key={post.id}
-                        className="bg-white overflow-hidden cursor-pointer"
+                        className="bg-white overflow-hidden cursor-pointer flex flex-col"
                         onClick={() => navigate(post.link)}
                       >
-                        <div className="aspect-[4/3] overflow-hidden group">
-                          <img
-                            src={post.image}
-                            alt={post.title}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" />
-                        </div>
-                        <div className="md:p-6 md:px-0 py-6 px-0">
+                        <div className="md:p-6 md:px-0 py-6 px-0 order-1 md:order-2">
                           <div className="flex items-center gap-3 mb-3">
                             <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1">
                               {post.category}
@@ -251,6 +244,12 @@ export default function Ramblings() {
                               <MdOutlineKeyboardArrowRight className="text-2xl font-black text-back" />
                             </span>
                           </a>
+                        </div>
+                        <div className="aspect-[4/3] overflow-hidden group order-2 md:order-1">
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" />
                         </div>
                       </div>
                     ))}
@@ -309,8 +308,8 @@ export default function Ramblings() {
             </div>
           </div>
         </div>
-        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
       </div>
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black my-5" />
     </div>
   );
 }
