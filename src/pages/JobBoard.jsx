@@ -121,6 +121,7 @@ export default function JobBoard() {
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             {/* Primary Button - Exact screenshot styling */}
             <button
+              onClick={() => window.location.href = '/contact'}
               className="inline-flex items-center justify-center gap-2 bg-[#FF322E] text-white border-transparent relative overflow-hidden group"
               style={{
                 fontFamily: "DM Sans, sans-serif",
@@ -143,6 +144,7 @@ export default function JobBoard() {
 
             {/* Secondary Button - Exact screenshot styling */}
             <button
+              onClick={() => window.location.href = '/contact'}
               className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#FF322E] text-[#FF322E] relative overflow-hidden group"
               style={{
                 fontFamily: "DM Sans, sans-serif",

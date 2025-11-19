@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa";
 
 const Hero = () => {
@@ -53,8 +54,8 @@ const Hero = () => {
 
               {/* Buttons - Zoom & Small Laptop Optimized */}
               <div className="flex flex-row gap-3 sm:gap-4 items-start w-full sm:w-auto xl:mx-0">
-                <a
-                  href="#"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[48px] px-5 py-2 text-xs font-bold tracking-wide text-white border-transparent relative overflow-hidden group"
                 >
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -63,10 +64,10 @@ const Hero = () => {
                   <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base group-hover:translate-x-40">
                     Let's chat
                   </span>
-                </a>
+                </Link>
 
-                <a
-                  href="#"
+                <Link
+                  to="/services"
                   className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[48px] px-5 py-2 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
                 >
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -75,7 +76,7 @@ const Hero = () => {
                   <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base group-hover:translate-x-40">
                     Our services
                   </span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

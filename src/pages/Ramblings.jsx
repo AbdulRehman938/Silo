@@ -249,7 +249,7 @@ export default function Ramblings() {
               <p className="text-black text-sm mt-3 leading-relaxed">
                 By clicking Sign Up you're confirming that you agree with our{" "}
                 <a
-                  href="#"
+                  href="/terms"
                   className="hover:text-brand hover:text-base text-sm ease-in-out duration-200 cursor-pointer"
                 >
                   Terms and Conditions

@@ -64,7 +64,7 @@ const Hero = () => {
           </div>
           <div className="flex flex-wrap gap-6 justify-center">
             <a
-              href="#"
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[45px] hero-btn px-6 py-3 text-xs font-bold tracking-wide text-white border-transparent relative overflow-hidden group"
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -76,7 +76,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="#"
+              href="/portfolio"
               className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[45px] hero-btn px-8 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -120,14 +120,14 @@ const Hero = () => {
           {/* Buttons stacked for mobile */}
           <div className="flex gap-3 justify-center w-full px-4">
             <a
-              href="#"
+              href="/contact"
               className="flex-1 max-w-[160px] inline-flex items-center justify-center gap-2 bg-[#FF322E] h-12 px-4 text-sm font-bold tracking-wide text-white"
             >
               <span className="whitespace-nowrap">Let's chat</span>
             </a>
 
             <a
-              href="#"
+              href="/portfolio"
               className="flex-1 max-w-[160px] inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-12 px-4 text-sm font-bold tracking-wide text-brand"
             >
               <span>About us</span>

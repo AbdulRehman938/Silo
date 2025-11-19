@@ -20,7 +20,7 @@ const Section2 = () => {
 
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex items-center justify-center gap-2  bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
                 >
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -32,7 +32,7 @@ const Section2 = () => {
                 </a>
 
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex items-center justify-center gap-2  bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
                 >
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -120,7 +120,7 @@ const Section2 = () => {
                   For Brands
                 </a>
                 <a
-                  href="#"
+                  href="/contact"
                   className="inline-flex items-center justify-center border border-[#FF322E] text-[#FF322E] px-4 py-2 "
                 >
                   For Creators

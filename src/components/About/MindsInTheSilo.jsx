@@ -499,8 +499,8 @@ const MindsInTheSilo = () => {
                         </motion.h3>
                         
                         <motion.button 
-                          className="bg-brand hover:bg-red-600 text-white font-bold px-3 sm:px-4 lg:px-6 xl:px-8 py-4 sm:py-2 lg:py-3 xl:py-4 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base sm:text-sm lg:text-base xl:text-lg w-[80%] mx-auto ml-9"
-                          onClick={() => console.log('Prove it clicked')}
+                          className="bg-brand hover:bg-brand text-white font-bold px-3 sm:px-4 lg:px-6 xl:px-8 py-4 sm:py-2 lg:py-3 xl:py-4 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 text-base sm:text-sm lg:text-base xl:text-lg w-[80%] mx-auto ml-9"
+                          onClick={() => window.location.href = '/careers'}
                           style={{
                             fontFamily: 'DM Sans, sans-serif',
                             fontWeight: 700

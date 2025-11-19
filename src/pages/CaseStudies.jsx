@@ -105,7 +105,10 @@ const CaseStudies = () => {
       <div id="done" className="max-w-[1280px] pb-0 px-4 md:px-6 xl:px-0 mx-auto">
         <div className="space-y-20 mx-auto ">
           {/* First project */}
-          <div className="hidden lg:flex items-center justify-around space-x-20 py-16 border-b border-b-black group relative">
+          <div 
+            className="hidden lg:flex items-center justify-around space-x-20 py-16 border-b border-b-black group relative cursor-pointer"
+            onClick={() => window.location.href = '/case-study/1'}
+          >
             <div className="w-1/3 h-96  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
@@ -150,7 +153,10 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 border-b border-b-black py-12 group relative mt-0">
+          <div 
+            className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 border-b border-b-black py-12 group relative mt-0 cursor-pointer"
+            onClick={() => window.location.href = '/case-study/1'}
+          >
             {/* Text content first */}
             <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
@@ -171,6 +177,7 @@ const CaseStudies = () => {
               <a
                 href="/case-study/1"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span>View Project</span>
                 <span
@@ -198,7 +205,10 @@ const CaseStudies = () => {
           </div>
 
           {/* Second project */}
-          <div className="hidden lg:flex items-center justify-around space-x-20 border-b pb-16 border-b-black group relative">
+          <div 
+            className="hidden lg:flex items-center justify-around space-x-20 border-b pb-16 border-b-black group relative cursor-pointer"
+            onClick={() => window.location.href = '/case-study/2'}
+          >
             <div className="w-1/3 h-80 xl:h-96  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
@@ -231,6 +241,7 @@ const CaseStudies = () => {
               <a
                 href="/case-study/2"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span>View Project</span>
                 <span
@@ -243,7 +254,10 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 border-b border-b-black py-12 group relative mt-0">
+          <div 
+            className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 border-b border-b-black py-12 group relative mt-0 cursor-pointer"
+            onClick={() => window.location.href = '/case-study/2'}
+          >
             {/* Text content first */}
             <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Lumin Solar</h3>
@@ -264,6 +278,7 @@ const CaseStudies = () => {
               <a
                 href="/case-study/2"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span>View Project</span>
                 <span
@@ -291,7 +306,10 @@ const CaseStudies = () => {
           </div>
 
           {/* Third project */}
-          <div className="hidden lg:flex items-center justify-around space-x-20 pb-16 group relative">
+          <div 
+            className="hidden lg:flex items-center justify-around space-x-20 pb-16 group relative cursor-pointer"
+            onClick={() => window.location.href = '/case-study/3'}
+          >
             <div className="w-full lg:w-1/4 h-80  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
@@ -327,6 +345,7 @@ const CaseStudies = () => {
               <a
                 href="/case-study/3"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span>View Project</span>
                 <span
@@ -339,7 +358,10 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 border-b border-b-black py-12 group relative mt-0">
+          <div 
+            className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 border-b border-b-black py-12 group relative mt-0 cursor-pointer"
+            onClick={() => window.location.href = '/case-study/3'}
+          >
             {/* Text content first */}
             <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Smart Stats</h3>
@@ -361,8 +383,9 @@ const CaseStudies = () => {
                 </span>
               </div>
               <a
-                href="/case-study-post"
+                href="/case-study/3"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span>View Project</span>
                 <span
@@ -392,7 +415,10 @@ const CaseStudies = () => {
 
         <div className="space-y-20 mx-auto">
           {/* Fourth project */}
-          <div className="hidden lg:flex items-center justify-around space-x-20 border-y py-16 border-y-black group relative">
+          <div 
+            className="hidden lg:flex items-center justify-around space-x-20 border-y py-16 border-y-black group relative cursor-pointer"
+            onClick={() => window.location.href = '/case-study/4'}
+          >
             <div className="w-1/3 h-96  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
@@ -425,6 +451,7 @@ const CaseStudies = () => {
               <a
                 href="/case-study/4"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span>View Project</span>
                 <span
@@ -437,7 +464,10 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 border-b border-b-black py-12 group relative mt-0">
+          <div 
+            className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 border-b border-b-black py-12 group relative mt-0 cursor-pointer"
+            onClick={() => window.location.href = '/case-study/4'}
+          >
             {/* Text content first */}
             <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
@@ -458,6 +488,7 @@ const CaseStudies = () => {
               <a
                 href="/case-study/4"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span>View Project</span>
                 <span
@@ -485,7 +516,10 @@ const CaseStudies = () => {
           </div>
 
           {/* Fifth project */}
-          <div className="hidden lg:flex items-center justify-around space-x-20 border-b py-16 border-b-black group relative">
+          <div 
+            className="hidden lg:flex items-center justify-around space-x-20 border-b py-16 border-b-black group relative cursor-pointer"
+            onClick={() => window.location.href = '/case-study/5'}
+          >
             <div className="w-1/3 h-80 xl:h-96  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
@@ -518,6 +552,7 @@ const CaseStudies = () => {
               <a
                 href="/case-study/5"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span>View Project</span>
                 <span
@@ -530,7 +565,10 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 border-b border-b-black py-12 group relative mt-0">
+          <div 
+            className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 border-b border-b-black py-12 group relative mt-0 cursor-pointer"
+            onClick={() => window.location.href = '/case-study/5'}
+          >
             {/* Text content first */}
             <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Lumin Solar</h3>
@@ -551,6 +589,7 @@ const CaseStudies = () => {
               <a
                 href="/case-study/5"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span>View Project</span>
                 <span
@@ -580,7 +619,10 @@ const CaseStudies = () => {
           {/* Sixth project */}
 
           {/* Sixth project */}
-          <div className="hidden lg:flex items-center justify-around space-x-20 py-16  group relative">
+          <div 
+            className="hidden lg:flex items-center justify-around space-x-20 py-16 group relative cursor-pointer"
+            onClick={() => window.location.href = '/case-study/6'}
+          >
             <div className="w-full lg:w-1/4 h-80  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
@@ -616,6 +658,7 @@ const CaseStudies = () => {
               <a
                 href="/case-study/6"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span>View Project</span>
                 <span
@@ -628,7 +671,10 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 pt-12 group relative mt-0">
+          <div 
+            className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 pt-12 group relative mt-0 cursor-pointer"
+            onClick={() => window.location.href = '/case-study/6'}
+          >
             {/* Text content first */}
             <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
               <h3 className="text-4xl font-bold text-black">Smart Stats</h3>
@@ -652,6 +698,7 @@ const CaseStudies = () => {
               <a
                 href="/case-study/6"
                 className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span>View Project</span>
                 <span
