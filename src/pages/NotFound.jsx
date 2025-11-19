@@ -48,7 +48,7 @@ const NotFound = () => {
           </Link>
         </div>
       </div>
-      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
+      <div className="absolute left-0 right-0 w-full h-[0.06rem] bg-black mt-20 bottom-0" />
     </div>
   )
 }
