@@ -100,11 +100,11 @@ export default function VideoModal({
       >
         {/* top-left title badge */}
         <div className="absolute top-1 left-1 z-30 flex items-start gap-3">
-          <div className="w-9 h-9 bg-white rounded flex items-center justify-center text-sm font-bold">
+          <div className="w-9 h-9 bg-white flex items-center justify-center text-sm font-bold">
             Silo
           </div>
           <div className="text-black">
-            <div className="inline-block bg-[#0b5cff] text-black px-3 py-1 rounded text-sm font-semibold -mt-1">
+            <div className="inline-block bg-[#0b5cff] text-black px-3 py-1 text-sm font-semibold -mt-1">
               {title}
             </div>
             {byline && (

@@ -345,7 +345,7 @@ const Cards = () => {
                   scale: transform.scale
                 }}
                 transition={{ type: 'spring', stiffness: 220, damping: 22 }}
-                className="absolute -translate-x-1/2 -translate-y-1/2 w-[280px] h-[160px] bg-white border-2 border-[#FF322E] rounded-md flex flex-col items-start justify-center px-4 py-3 shadow-lg"
+                className="absolute -translate-x-1/2 -translate-y-1/2 w-[280px] h-[160px] bg-white border-2 border-[#FF322E]  flex flex-col items-start justify-center px-4 py-3 shadow-lg"
                 style={{ zIndex: z }}
               >
                 <div className="mb-2 flex w-full justify-between items-center text-xs font-bold">

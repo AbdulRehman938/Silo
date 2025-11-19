@@ -508,7 +508,7 @@ export default function ContentAndDone() {
           <div className="flex justify-center md:mt-10">
             <a
               href="case-studies"
-              className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-2  bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                 <FaChevronRight   className="text-brand w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
@@ -719,7 +719,7 @@ export default function ContentAndDone() {
           </div>
 
           <div className="flex justify-center mt-[-5rem]">
-            <a href="case-studies" className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-base font-extrabold uppercase tracking-wide text-brand">
+            <a href="case-studies" className="inline-flex items-center justify-center gap-2  bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-base font-extrabold uppercase tracking-wide text-brand">
               <span>View all</span>
             </a>
           </div>

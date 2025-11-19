@@ -106,7 +106,7 @@ const CaseStudies = () => {
         <div className="space-y-20 mx-auto ">
           {/* First project */}
           <div className="hidden lg:flex items-center justify-around space-x-20 py-16 border-b border-b-black group relative">
-            <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
+            <div className="w-1/3 h-96  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
                 alt="smoothie"
@@ -182,7 +182,7 @@ const CaseStudies = () => {
               </a>
             </div>
             {/* Image second */}
-            <div className="w-full md:w-1/2 h-80 rounded-md relative">
+            <div className="w-full md:w-1/2 h-80  relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
                 alt="smoothie"
@@ -199,7 +199,7 @@ const CaseStudies = () => {
 
           {/* Second project */}
           <div className="hidden lg:flex items-center justify-around space-x-20 border-b pb-16 border-b-black group relative">
-            <div className="w-1/3 h-80 xl:h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
+            <div className="w-1/3 h-80 xl:h-96  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
@@ -275,7 +275,7 @@ const CaseStudies = () => {
               </a>
             </div>
             {/* Image second */}
-            <div className="w-full md:w-1/2 h-80 rounded-md relative">
+            <div className="w-full md:w-1/2 h-80  relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
@@ -292,7 +292,7 @@ const CaseStudies = () => {
 
           {/* Third project */}
           <div className="hidden lg:flex items-center justify-around space-x-20 pb-16 group relative">
-            <div className="w-full lg:w-1/4 h-80 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
+            <div className="w-full lg:w-1/4 h-80  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"
@@ -374,7 +374,7 @@ const CaseStudies = () => {
               </a>
             </div>
             {/* Image second */}
-            <div className="w-full md:w-1/2 h-72 rounded-md relative">
+            <div className="w-full md:w-1/2 h-72  relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"
@@ -393,7 +393,7 @@ const CaseStudies = () => {
         <div className="space-y-20 mx-auto">
           {/* Fourth project */}
           <div className="hidden lg:flex items-center justify-around space-x-20 border-y py-16 border-y-black group relative">
-            <div className="w-1/3 h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
+            <div className="w-1/3 h-96  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
                 alt="smoothie"
@@ -469,7 +469,7 @@ const CaseStudies = () => {
               </a>
             </div>
             {/* Image second */}
-            <div className="w-full md:w-1/2 h-80 rounded-md relative">
+            <div className="w-full md:w-1/2 h-80  relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
                 alt="smoothie"
@@ -486,7 +486,7 @@ const CaseStudies = () => {
 
           {/* Fifth project */}
           <div className="hidden lg:flex items-center justify-around space-x-20 border-b py-16 border-b-black group relative">
-            <div className="w-1/3 h-80 xl:h-96 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
+            <div className="w-1/3 h-80 xl:h-96  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
@@ -562,7 +562,7 @@ const CaseStudies = () => {
               </a>
             </div>
             {/* Image second */}
-            <div className="w-full md:w-1/2 h-80 rounded-md relative">
+            <div className="w-full md:w-1/2 h-80  relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png"
                 alt="smoothie"
@@ -581,7 +581,7 @@ const CaseStudies = () => {
 
           {/* Sixth project */}
           <div className="hidden lg:flex items-center justify-around space-x-20 py-16  group relative">
-            <div className="w-full lg:w-1/4 h-80 rounded-md transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
+            <div className="w-full lg:w-1/4 h-80  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"
@@ -663,7 +663,7 @@ const CaseStudies = () => {
               </a>
             </div>
             {/* Image second */}
-            <div className="w-full md:w-1/2 h-72 rounded-md relative">
+            <div className="w-full md:w-1/2 h-72  relative">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/SMART_h3lxc7.png"
                 alt="smoothie"

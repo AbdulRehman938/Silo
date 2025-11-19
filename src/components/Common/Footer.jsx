@@ -527,7 +527,7 @@ const Footer = () => {
             </div>
             <button
               type="submit"
-              className="mt-3 w-full inline-flex items-center justify-center rounded-sm border-2 border-brand h-[42px] px-4 py-2.5 text-sm font-bold uppercase tracking-wide text-brand"
+              className="mt-3 w-full inline-flex items-center justify-center  border-2 border-brand h-[42px] px-4 py-2.5 text-sm font-bold uppercase tracking-wide text-brand"
               aria-label="SUBSCRIBE"
             >
               SUBSCRIBE

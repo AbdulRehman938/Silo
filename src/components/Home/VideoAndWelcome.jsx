@@ -148,7 +148,7 @@ export default function VideoAndWelcome() {
             <p className="text-xs md:text-xs lg:text-base font-semibold leading-relaxed text-black/80">
               We create intentional, personality–driven content, from authentic
               creator videos to scroll–stopping social feeds – designed to
-              connect. Every piece is grounded in strategy, fuelled by
+              connect. Every piece is gin strategy, fuelled by
               creativity, and built to spark genuine engagement that grows your
               brand’s online community.
             </p>
@@ -219,14 +219,14 @@ export default function VideoAndWelcome() {
             <p className="text-[12px] leading-relaxed text-black/80 mt-2">
               We create intentional, personality–driven content, from authentic
               creator videos to scroll–stopping social feeds – designed to
-              connect. Every piece is grounded in strategy, fuelled by
+              connect. Every piece is gin strategy, fuelled by
               creativity, and built to spark genuine engagement that grows your
               brand’s online community.
             </p>
             <div className="flex flex-wrap items-center gap-4 mt-4">
               <a
                 href="#"
-                className="inline-flex items-center justify-center gap-2 rounded-sm bg-[#FF322E] h-[48px] px-6 py-3 text-xs font-bold  tracking-wide text-white border-transparent relative overflow-hidden group"
+                className="inline-flex items-center justify-center gap-2  bg-[#FF322E] h-[48px] px-6 py-3 text-xs font-bold  tracking-wide text-white border-transparent relative overflow-hidden group"
               >
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                   <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-2 group-hover:scale-[140%]" />

@@ -61,7 +61,7 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="bg-[#FFDBDB] text-black px-2 py-1 rounded self-start"
+                      className="bg-[#FFDBDB] text-black px-2 py-1 self-start"
                     >
                       Department
                     </span>
@@ -175,7 +175,7 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="bg-[#FFBDBD] text-black px-2 py-1 rounded self-start"
+                      className="bg-[#FFBDBD] text-black px-2 py-1 self-start"
                     >
                       Department
                     </span>
@@ -289,7 +289,7 @@ const CareerIndex = () => {
                         lineHeight: "150%",
                         letterSpacing: "0%",
                       }}
-                      className="bg-[#FFBDBD] text-black px-2 py-1 rounded self-start"
+                      className="bg-[#FFBDBD] text-black px-2 py-1 self-start"
                     >
                       Department
                     </span>
