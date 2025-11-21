@@ -6,6 +6,7 @@ import WhoWeLoveWorkingWith from "../components/About/WhoWeLoveWorkingWith";
 import ThingsWeBelieveIn from "../components/About/ThingsWeBelieveIn";
 import MindsInTheSilo from "../components/About/MindsInTheSilo";
 import Section from "../components/Home/Section";
+import LazySection from "../components/Common/LazySection";
 
 const About = () => {
   // Scroll to top when component mounts
@@ -21,14 +22,26 @@ const About = () => {
 
       <div className="h-[1px] bg-black w-[100vw]"></div>
       <div className=" min-h-screen mx-auto w-full max-w-[1280px]">
+        <LazySection>
         <WhatSiloIs />
+        </LazySection>
+        <LazySection>
         <WhyUGC />
+        </LazySection>
+        <LazySection>
         <WhoWeLoveWorkingWith />
+        </LazySection>
+        <LazySection>
         <ThingsWeBelieveIn />
+        </LazySection>
         <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black my-10" />
+        <LazySection>
         <MindsInTheSilo />
+        </LazySection>
          <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10 mb-20" />
+        <LazySection>
         <Section />
+        </LazySection>
         <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black" />
       </div>
     </div>

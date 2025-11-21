@@ -3,6 +3,8 @@ import { FaChevronRight } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Section2 from "../components/About/Section2";
 import Section from "../components/Home/Section";
+import LazyImage from "../components/Common/LazyImage";
+import LazySection from "../components/Common/LazySection";
 
 const CaseStudies = () => {
   return (
@@ -82,26 +84,27 @@ const CaseStudies = () => {
           <div className="flex flex-col mt-10 md:mt-0 md:flex-row lg:flex-row xl:flex-row items-center md:items-start xl:items-start justify-start xl:justify-end gap-3 sm:gap-4 md:gap-6 order-2 xl:order-2 w-full sm:max-w-xl md:max-w-none lg:max-w-none xl:max-w-none xl:mx-0 ">
             {/* Primary Image - Zoom & Small Laptop Optimized */}
             <div className="order-1 md:order-2 flex flex-col items-start md:items-center lg:items-center xl:items-start md:w-auto lg:w-auto xl:w-auto border-white bg-white">
-              <img
+              <LazyImage
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717296/studies2_a4olwb.png"
                 alt="The Silo brand representation"
-                className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 2xl:w-[328px] h-auto object-cover max-h-[200px] sm:max-h-[250px] md:max-h-[300px] lg:max-h-[350px] lg:block xl:min-h-[200px] 2xl:max-h-none border-white" loading="lazy" />
+                className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 2xl:w-[328px] h-auto object-cover max-h-[200px] sm:max-h-[250px] md:max-h-[300px] lg:max-h-[350px] lg:block xl:min-h-[200px] 2xl:max-h-none border-white" />
             </div>
 
             {/* Secondary Image - Zoom & Small Laptop Optimized */}
             <div className="order-2 md:order-1 w-full max-w-full sm:max-w-sm md:w-1/2 md:max-w-none lg:w-1/2 xl:w-auto xl:max-w-[400px] 2xl:max-w-[438px] flex-shrink-0">
-              <img
+              <LazyImage
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717301/studies1_lzgldj.png"
                 alt="Silo team member showcasing brand identity"
                 className="w-full h-auto object-cover max-h-[400px] sm:max-h-[350px] md:max-h-[500px] lg:max-h-[550px] xl:max-h-[550px] 2xl:max-h-none"
                 style={{
                   opacity: 1,
-                }} loading="lazy" />
+                }} />
             </div>
           </div>
         </div>
       </section>
       <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black" />
+      <LazySection>
       <div id="done" className="max-w-[1280px] pb-0 px-4 md:px-10 lg:px-10 mx-auto">
         <div className="space-y-20 mx-auto ">
           {/* First project */}
@@ -726,8 +729,11 @@ const CaseStudies = () => {
           </div>
         </div>
       </div>
+      </LazySection>
       <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black mt-10 mb-10" />
+      <LazySection>
       <Section />
+      </LazySection>
       <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black" />
     </div>
   );
