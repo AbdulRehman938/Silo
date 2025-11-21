@@ -6,7 +6,7 @@ const Section2 = () => {
     <section className="w-full mb-20 max-w-[1280px] mx-auto">
       {/* Default view: hidden on mobile, visible on lg+ (md has its own layout) */}
       <div className="hidden md:hidden lg:block w-full">
-        <div className="border-2 border-gray-600  overflow-hidden w-full">
+        <div className="border-[1px] border-gray-600  overflow-hidden w-full">
           <div className="flex flex-col md:flex-row items-stretch">
             {/* Left column - content */}
             <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
@@ -33,7 +33,7 @@ const Section2 = () => {
 
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2  bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
+                  className="inline-flex items-center justify-center gap-2  bg-transparent border-[1px] border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
                 >
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                     <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
@@ -59,7 +59,7 @@ const Section2 = () => {
       {/* MD-only view: show this block only on md screens (>=md and <lg).
           Here the right image-placeholder appears on top and the content below. */}
       <div className="hidden md:block lg:hidden">
-        <div className="border-2 border-gray-600 py-6  overflow-hidden">
+        <div className="border-[1px] border-gray-600 py-6  overflow-hidden">
           <div className="flex flex-col items-stretch">
             {/* Top: right image placeholder (appears on top for md view) */}
             <div className="w-full bg-white-50 h-52 md:h-64 lg:h-72 px-10">
@@ -100,7 +100,7 @@ const Section2 = () => {
 
       {/* Mobile-only view: show only on mobile (<md). Content on top, image on bottom. */}
       <div className="block md:hidden">
-        <div className="border-2 border-gray-600 py-6  overflow-hidden mt-[-5rem]">
+        <div className="border-[1px] border-gray-600 py-6  overflow-hidden mt-[-5rem]">
           <div className="flex flex-col items-stretch">
             {/* Top: content */}
             <div className="p-6">

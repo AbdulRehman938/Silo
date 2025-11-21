@@ -123,7 +123,7 @@ const JobBoardDetail = () => {
         
         {/* Requirements Section */}
         <div className="pt-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 relative border-t-2 border-t-black pt-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 relative border-t-[1px] border-t-black pt-10">
             
             {/* Vertical divider line for desktop */}
             <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-black transform -translate-x-0.5"></div>
@@ -256,7 +256,7 @@ const JobBoardDetail = () => {
         draggable
         pauseOnHover
       />
-        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
+        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black mt-10" />
     </div>
   );
 };

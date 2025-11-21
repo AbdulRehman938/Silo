@@ -145,7 +145,7 @@ export default function JobBoard() {
             {/* Secondary Button - Exact screenshot styling */}
             <button
               onClick={() => window.location.href = '/contact'}
-              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-[#FF322E] text-[#FF322E] relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-[#FF322E] text-[#FF322E] relative overflow-hidden group"
               style={{
                 fontFamily: "DM Sans, sans-serif",
                 fontWeight: 700,
@@ -203,7 +203,7 @@ export default function JobBoard() {
 
       {/* Section Component */}
       <Section />
-      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black mt-10" />
     </div>
   );
 }

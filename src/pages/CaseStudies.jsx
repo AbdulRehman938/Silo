@@ -67,7 +67,7 @@ const CaseStudies = () => {
 
                 <a
                   href="/services"
-                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
+                  className="inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-brand h-[55px] px-6 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
                 >
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                     <FaChevronRight className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
@@ -103,7 +103,7 @@ const CaseStudies = () => {
           </div>
         </div>
       </section>
-      <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black" />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[1px] bg-black" />
       <LazySection>
       <div id="done" className="max-w-[1280px] pb-0 px-4 md:px-10 lg:px-10 mx-auto">
         <div className="space-y-20 mx-auto ">
@@ -730,11 +730,11 @@ const CaseStudies = () => {
         </div>
       </div>
       </LazySection>
-      <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black mt-10 mb-10" />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[1px] bg-black mt-10 mb-10" />
       <LazySection>
       <Section />
       </LazySection>
-      <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black" />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[1px] bg-black" />
     </div>
   );
 };

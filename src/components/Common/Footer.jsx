@@ -32,7 +32,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="shrink-0 inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[42px] px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
+                className="shrink-0 inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-brand h-[42px] px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
               >
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                   <FaChevronRight className="text-brand w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
@@ -527,7 +527,7 @@ const Footer = () => {
             </div>
             <button
               type="submit"
-              className="mt-3 w-full inline-flex items-center justify-center  border-2 border-brand h-[42px] px-4 py-2.5 text-sm font-bold uppercase tracking-wide text-brand"
+              className="mt-3 w-full inline-flex items-center justify-center  border-[1px] border-brand h-[42px] px-4 py-2.5 text-sm font-bold uppercase tracking-wide text-brand"
               aria-label="SUBSCRIBE"
             >
               SUBSCRIBE

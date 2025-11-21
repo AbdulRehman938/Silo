@@ -34,15 +34,15 @@ const About = () => {
         <LazySection>
         <ThingsWeBelieveIn />
         </LazySection>
-        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black my-10" />
+        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black my-10" />
         <LazySection>
         <MindsInTheSilo />
         </LazySection>
-         <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10 mb-20" />
+         <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black mt-10 mb-20" />
         <LazySection>
         <Section />
         </LazySection>
-        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black" />
+        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black" />
       </div>
     </div>
   );

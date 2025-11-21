@@ -98,7 +98,7 @@ export default function Ramblings() {
                     onClick={() => setSelectedCategory(category)}
                     className={`block w-full text-left text-sm transition-all duration-300 ease-in-out ${
                       selectedCategory === category
-                        ? "border-2 border-black bg-transparent px-4 py-3 text-black font-bold transform scale-105"
+                        ? "border-[1px] border-black bg-transparent px-4 py-3 text-black font-bold transform scale-105"
                         : "text-black hover:text-black hover:bg-white hover:translate-x-2 hover:font-bold px-2 py-1"
                     }`}
                   >
@@ -259,7 +259,7 @@ export default function Ramblings() {
           </div>
         </div>
       </div>
-      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black my-5" />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black my-5" />
     </div>
   );
 }

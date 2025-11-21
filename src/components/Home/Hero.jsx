@@ -49,9 +49,9 @@ export default function Hero() {
       <VideoAndWelcome />
 
       <ContentAndDone />
-      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black md:my-28 my-20" />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black md:my-28 my-20" />
       <Section />
-      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black mt-10" />
     </div>
   );
 }

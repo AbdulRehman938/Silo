@@ -98,7 +98,7 @@ export default function NewsletterSubscription({ onSubmit, isSubmitting, message
     <div ref={wrapperRef} className="relative">
       <div 
         ref={newsletterRef}
-        className={`bg-white border-2 mt-10 border-black p-6 ${isSticky ? 'fixed top-24' : 'relative'}`}
+        className={`bg-white border-[1px] mt-10 border-black p-6 ${isSticky ? 'fixed top-24' : 'relative'}`}
         style={isSticky ? { left: `${leftPosition}px`, width: wrapperRef.current?.offsetWidth + 'px' } : {}}
       >
       <h3 className="text-xl font-bold text-black mb-3">Subscribe to newsletter</h3>

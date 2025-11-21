@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header onClick={handleHeaderClick} className="fixed top-0 left-0 w-full right-0 z-50 bg-transparent mt-3 md:mt-5">
       <div className="mx-3 lg:mx-auto">
-        <div className="max-w-[1376px] border-[2px] border-black bg-white mx-auto py-3 px-3 md:px-6 lg:px-10 flex justify-between items-center decoration-black">
+        <div className="max-w-[1376px] border-[1px] border-black bg-white mx-auto py-3 px-3 md:px-6 lg:px-10 flex justify-between items-center decoration-black">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center" aria-label="Home">
           <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg" alt="Silo" className="h-5 header2 w-auto md:h-9" loading="lazy" />
@@ -104,12 +104,12 @@ export default function Header() {
             aria-hidden={!open}
           >
             <div className="mx-3 lg:mx-auto">
-              <div className="max-w-[1280px] border-[2px] border-black border-t-0 mx-auto bg-white shadow-lg">
+              <div className="max-w-[1280px] border-[1px] border-black border-t-0 mx-auto bg-white shadow-lg">
                 <nav className="px-6 py-8 flex-1 flex flex-col gap-6 text-center">
                     <NavLink 
                       to="/case-studies" 
                       onClick={close} 
-                      className={({ isActive }) => `text-xl font-bold tracking-tight transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand font-extrabold border-b-2 border-brand pb-1' : 'text-black'}`}
+                      className={({ isActive }) => `text-xl font-bold tracking-tight transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand font-extrabold border-b-[1px] border-brand pb-1' : 'text-black'}`}
                       style={{ transitionDelay: open ? '80ms' : '0ms' }}
                     >
                       The Silo
@@ -117,7 +117,7 @@ export default function Header() {
                     <NavLink 
                       to="/portfolio" 
                       onClick={close} 
-                      className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand font-extrabold border-b-2 border-brand pb-1' : 'text-black'}`}
+                      className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand font-extrabold border-b-[1px] border-brand pb-1' : 'text-black'}`}
                       style={{ transitionDelay: open ? '160ms' : '0ms' }}
                     >
                       Portfolio
@@ -125,7 +125,7 @@ export default function Header() {
                     <NavLink 
                       to="/services" 
                       onClick={close} 
-                      className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand font-extrabold border-b-2 border-brand pb-1' : 'text-black'}`}
+                      className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand font-extrabold border-b-[1px] border-brand pb-1' : 'text-black'}`}
                       style={{ transitionDelay: open ? '240ms' : '0ms' }}
                     >
                       Services
@@ -133,7 +133,7 @@ export default function Header() {
                     <NavLink 
                       to="/job-board" 
                       onClick={close} 
-                      className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand font-extrabold border-b-2 border-brand pb-1' : 'text-black'}`}
+                      className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand font-extrabold border-b-[1px] border-brand pb-1' : 'text-black'}`}
                       style={{ transitionDelay: open ? '320ms' : '0ms' }}
                     >
                       Job Board
@@ -141,7 +141,7 @@ export default function Header() {
                     <NavLink 
                       to="/ramblings" 
                       onClick={close} 
-                      className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand font-extrabold border-b-2 border-brand pb-1' : 'text-black'}`}
+                      className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand font-extrabold border-b-[1px] border-brand pb-1' : 'text-black'}`}
                       style={{ transitionDelay: open ? '400ms' : '0ms' }}
                     >
                       Ramblings

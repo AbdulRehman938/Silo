@@ -266,7 +266,7 @@ const Cards = () => {
                   scale: transform.scale
                 }}
                 transition={{ type: 'spring', stiffness: 220, damping: 22 }}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 2xl:w-[720px] lg:w-[580px] md:w-[420px] md:h-[200px] lg:h-[250px] 2xl:h-[340px] bg-white border-2 border-[#FF322E] flex flex-col items-start justify-center px-12 py-10 shadow-lg"
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 2xl:w-[720px] lg:w-[580px] md:w-[420px] md:h-[200px] lg:h-[250px] 2xl:h-[340px] bg-white border-[1px] border-[#FF322E] flex flex-col items-start justify-center px-12 py-10 shadow-lg"
                 style={{ zIndex: z }}
               >
                 <div className="mb-4 flex w-full justify-between items-center 2xl:text-xl lg:text-base font-bold">
@@ -321,7 +321,7 @@ const Cards = () => {
                   scale: transform.scale
                 }}
                 transition={{ type: 'spring', stiffness: 220, damping: 22 }}
-                className="absolute -translate-x-1/2 -translate-y-1/2 w-[280px] h-[160px] bg-white border-2 border-[#FF322E]  flex flex-col items-start justify-center px-4 py-3 shadow-lg"
+                className="absolute -translate-x-1/2 -translate-y-1/2 w-[280px] h-[160px] bg-white border-[1px] border-[#FF322E]  flex flex-col items-start justify-center px-4 py-3 shadow-lg"
                 style={{ zIndex: z }}
               >
                 <div className="mb-2 flex w-full justify-between items-center text-xs font-bold">

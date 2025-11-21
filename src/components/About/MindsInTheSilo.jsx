@@ -406,7 +406,7 @@ const MindsInTheSilo = () => {
                   {item.type === 'team-member' ? (
                     // Team Member Card - No fading animations
                     <motion.div 
-                      className="bg-white h-full flex flex-col border-2 p-1 transition-all duration-200"
+                      className="bg-white h-full flex flex-col border-[1px] p-1 transition-all duration-200"
                       style={{
                         minHeight: '300px',
                         pointerEvents: 'auto',
@@ -457,7 +457,7 @@ const MindsInTheSilo = () => {
                   ) : (
                     // Special Card - Viewport-based animations
                     <motion.div 
-                      className=" p-3 sm:p-4 lg:p-6 xl:p-8 h-full flex flex-col justify-center items-center text-left border-2 group"
+                      className=" p-3 sm:p-4 lg:p-6 xl:p-8 h-full flex flex-col justify-center items-center text-left border-[1px] group"
                       style={{
                         minHeight: '300px',
                         backgroundColor: '#FFE5E5',

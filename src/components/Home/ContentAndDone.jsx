@@ -141,7 +141,7 @@ export default function ContentAndDone() {
             </div>
           </article>
         </div>
-        <div className="w-[100vw] absolute h-[0.08rem] right-5 bg-black my-20 "></div>
+        <div className="w-[100vw] absolute h-[1px] right-5 bg-black my-20 "></div>
 
         <div id="done" className="w-full min-h-screen pb-10 relative top-40">
           <h2 className="text-7xl font-bold tracking-tight text-black mb-4">
@@ -272,7 +272,7 @@ export default function ContentAndDone() {
 
             {/* Second project */}
             <div
-              className="hidden lg:flex items-center justify-around space-x-20 border-b-[0.1rem] pb-16 border-b-black group relative cursor-pointer"
+              className="hidden lg:flex items-center justify-around space-x-20 border-b-[1px] pb-16 border-b-black group relative cursor-pointer"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -328,7 +328,7 @@ export default function ContentAndDone() {
             </div>
 
             <div
-              className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 border-b-2 py-12 border-b-gray-800 group relative top-[-5rem] cursor-pointer"
+              className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 border-b-[1px] py-12 border-b-gray-800 group relative top-[-5rem] cursor-pointer"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -508,7 +508,7 @@ export default function ContentAndDone() {
           <div className="flex justify-center md:mt-10">
             <a
               href="case-studies"
-              className="inline-flex items-center justify-center gap-2  bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-2  bg-transparent border-[1px] border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                 <FaChevronRight   className="text-brand w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
@@ -719,7 +719,7 @@ export default function ContentAndDone() {
           </div>
 
           <div className="flex justify-center mt-[-5rem]">
-            <a href="case-studies" className="inline-flex items-center justify-center gap-2  bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-base font-extrabold uppercase tracking-wide text-brand">
+            <a href="case-studies" className="inline-flex items-center justify-center gap-2  bg-transparent border-[1px] border-brand h-[55px] px-6 py-3 text-base font-extrabold uppercase tracking-wide text-brand">
               <span>View all</span>
             </a>
           </div>

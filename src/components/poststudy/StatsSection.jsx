@@ -11,7 +11,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
       {/* Mobile Layout: Image followed by stats for each */}
       <div className='md:hidden flex flex-col gap-6'>
         {/* Column 1 Stats */}
-        <div className='bg-white border-2 border-black p-8 flex flex-col justify-between min-h-[400px]'>
+        <div className='bg-white border-[1px] border-black p-8 flex flex-col justify-between min-h-[400px]'>
           <h3 className='text-lg font-bold text-black'>
             {column1?.heading || 'Short stats heading goes here'}
           </h3>
@@ -19,7 +19,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
             <div className='text-6xl font-bold text-black mb-4'>
               {column1?.value || '30%'}
             </div>
-            <div className='w-full h-[2px] bg-black mb-4'></div>
+            <div className='w-full h-[1px] bg-black mb-4'></div>
             <p className='text-sm text-black leading-relaxed'>
               {column1?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
             </p>
@@ -46,7 +46,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
           )}
         </div>
         
-        <div className='bg-white border-2 border-black p-8 flex flex-col justify-between'>
+        <div className='bg-white border-[1px] border-black p-8 flex flex-col justify-between'>
           <h3 className='text-lg font-bold text-black mb-4'>
             {column2?.stat?.heading || 'Short stats heading goes here'}
           </h3>
@@ -54,7 +54,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
             <div className='text-6xl font-bold text-black mb-4'>
               {column2?.stat?.value || '30%'}
             </div>
-            <div className='w-full h-[2px] bg-black mb-4'></div>
+            <div className='w-full h-[1px] bg-black mb-4'></div>
             <p className='text-sm text-black leading-relaxed'>
               {column2?.stat?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
             </p>
@@ -81,7 +81,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
           )}
         </div>
         
-        <div className='bg-white border-2 border-black p-8 flex flex-col justify-between'>
+        <div className='bg-white border-[1px] border-black p-8 flex flex-col justify-between'>
           <h3 className='text-lg font-bold text-black mb-4'>
             {column3?.stat?.heading || 'Short stats heading goes here'}
           </h3>
@@ -89,7 +89,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
             <div className='text-6xl font-bold text-black mb-4'>
               {column3?.stat?.value || '30%'}
             </div>
-            <div className='w-full h-[2px] bg-black mb-4'></div>
+            <div className='w-full h-[1px] bg-black mb-4'></div>
             <p className='text-sm text-black leading-relaxed'>
               {column3?.stat?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
             </p>
@@ -101,7 +101,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
       <div className='hidden md:grid grid-cols-3 gap-6 md:gap-8'>
         
         {/* Column 1: Single tall card */}
-        <div className='bg-white border-2 border-black p-8 md:p-10 flex flex-col justify-between md:min-h-[500px]'>
+        <div className='bg-white border-[1px] border-black p-8 md:p-10 flex flex-col justify-between md:min-h-[500px]'>
           <h3 className='text-lg md:text-xl font-bold text-black'>
             {column1?.heading || 'Short stats heading goes here'}
           </h3>
@@ -109,7 +109,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
             <div className='text-6xl md:text-7xl lg:text-8xl font-bold text-black mb-4'>
               {column1?.value || '30%'}
             </div>
-            <div className='w-full h-[2px] bg-black mb-4'></div>
+            <div className='w-full h-[1px] bg-black mb-4'></div>
             <p className='text-sm md:text-base text-black leading-relaxed'>
               {column1?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
             </p>
@@ -139,7 +139,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
           </div>
           
           {/* Stat Card */}
-          <div className='bg-white border-2 border-black p-8 md:p-10 flex flex-col justify-between'>
+          <div className='bg-white border-[1px] border-black p-8 md:p-10 flex flex-col justify-between'>
             <h3 className='text-lg md:text-xl font-bold text-black mb-4'>
               {column2?.stat?.heading || 'Short stats heading goes here'}
             </h3>
@@ -147,7 +147,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
               <div className='text-6xl md:text-7xl lg:text-8xl font-bold text-black mb-4'>
                 {column2?.stat?.value || '30%'}
               </div>
-              <div className='w-full h-[2px] bg-black mb-4'></div>
+              <div className='w-full h-[1px] bg-black mb-4'></div>
               <p className='text-sm md:text-base text-black leading-relaxed'>
                 {column2?.stat?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
               </p>
@@ -158,7 +158,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
         {/* Column 3: Stat on top, Image on bottom */}
         <div className='flex flex-col gap-6 md:gap-8'>
           {/* Stat Card */}
-          <div className='bg-white border-2 border-black p-8 md:p-10 flex flex-col justify-between'>
+          <div className='bg-white border-[1px] border-black p-8 md:p-10 flex flex-col justify-between'>
             <h3 className='text-lg md:text-xl font-bold text-black mb-4'>
               {column3?.stat?.heading || 'Short stats heading goes here'}
             </h3>
@@ -166,7 +166,7 @@ const StatsSection = ({ title, column1, column2, column3 }) => {
               <div className='text-6xl md:text-7xl lg:text-8xl font-bold text-black mb-4'>
                 {column3?.stat?.value || '30%'}
               </div>
-              <div className='w-full h-[2px] bg-black mb-4'></div>
+              <div className='w-full h-[1px] bg-black mb-4'></div>
               <p className='text-sm md:text-base text-black leading-relaxed'>
                 {column3?.stat?.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
               </p>

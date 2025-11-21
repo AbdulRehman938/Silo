@@ -6,7 +6,7 @@ const Section = () => {
     <section className="mx-auto w-full max-w-[1280px] pb-12 md:pb-24">
       {/* Default view: hidden on mobile, visible on lg+ (md has its own layout) */}
       <div className="hidden md:hidden lg:block">
-        <div className="border-2 border-gray-600  overflow-hidden w-full mx-auto">
+        <div className="border-[1px] border-gray-600  overflow-hidden w-full mx-auto">
           <div className="flex flex-col md:flex-row items-stretch">
             {/* Left column - content */}
             <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center">
@@ -33,7 +33,7 @@ const Section = () => {
 
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2  bg-transparent border-2 border-brand h-[55px] px-6 py-3 text-xs font-bold  tracking-wide text-brand relative overflow-hidden group"
+                  className="inline-flex items-center justify-center gap-2  bg-transparent border-[1px] border-brand h-[55px] px-6 py-3 text-xs font-bold  tracking-wide text-brand relative overflow-hidden group"
                 >
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                     <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />

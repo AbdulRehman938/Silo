@@ -233,7 +233,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={formik.isSubmitting}
-                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-normal tracking-wide text-white  border-transparent relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed top-7"
+                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold tracking-wide text-white  border-transparent relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed top-7"
                 >
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 translate-x-5 svg-wrapper group-hover:animate-bounce-custom">
                     <FaChevronRight   className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-4 group-hover:scale-[140%]" />
@@ -261,7 +261,7 @@ const Contact = () => {
         <div className="max-w-full mx-auto mt-20">
           <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-0 lg:items-stretch">
             {/* Left Content with Border */}
-            <div className="border-2 border-black bg-white p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
+            <div className="border-[1px] border-black bg-white p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
               <div className="space-y-4 sm:space-y-6">
                 <div>
                   <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-black leading-tight">
@@ -275,7 +275,7 @@ const Contact = () => {
 
                 <Link
                   to="/contact-brand"
-                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-normal tracking-wide text-white  border-transparent relative overflow-hidden group"
+                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold tracking-wide text-white  border-transparent relative overflow-hidden group"
                 >
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 translate-x-5 svg-wrapper group-hover:animate-bounce-custom">
                     <FaChevronRight   className="block text-white w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-4 group-hover:scale-[140%]" />
@@ -297,7 +297,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-       <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
+       <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black mt-10" />
     </div>
   );
 };

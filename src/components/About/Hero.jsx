@@ -68,7 +68,7 @@ const Hero = () => {
 
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[48px] px-5 py-2 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
+                  className="inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-brand h-[48px] px-5 py-2 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
                 >
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                     <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />

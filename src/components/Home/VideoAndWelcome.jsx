@@ -253,7 +253,7 @@ export default function VideoAndWelcome() {
       </div>
       <div
         id="line"
-        className="w-full h-[0.06rem] bg-black relative mx-auto mt-20 mb-20 md:mt-40 md:mb-28"
+        className="w-full h-[1px] bg-black relative mx-auto mt-20 mb-20 md:mt-40 md:mb-28"
       ></div>
     </div>
   );

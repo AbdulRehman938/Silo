@@ -380,7 +380,7 @@ const CareerIndex = () => {
         </div>
       </div>
       <Section2 />
-      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-20" />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black mt-20" />
     </div>
   );
 };

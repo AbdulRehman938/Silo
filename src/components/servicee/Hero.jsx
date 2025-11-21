@@ -77,7 +77,7 @@ const Hero = () => {
 
             <a
               href="/portfolio"
-              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-[45px] hero-btn px-8 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
+              className="inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-brand h-[45px] hero-btn px-8 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                 <FaChevronRight className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
@@ -94,7 +94,7 @@ const Hero = () => {
         <Interested />
         <OptionalAddOns />
         <Section />
-        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black" />
+        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black" />
       </div>
       {/* Mobile-only view - visible only on small screens */}
       <div className="block sm:hidden w-full h-auto pt-8 px-4">
@@ -128,7 +128,7 @@ const Hero = () => {
 
             <a
               href="/portfolio"
-              className="flex-1 max-w-[160px] inline-flex items-center justify-center gap-2 bg-transparent border-2 border-brand h-12 px-4 text-sm font-bold tracking-wide text-brand"
+              className="flex-1 max-w-[160px] inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-brand h-12 px-4 text-sm font-bold tracking-wide text-brand"
             >
               <span>About us</span>
             </a>
@@ -145,7 +145,7 @@ const Hero = () => {
         <Interested />
         <OptionalAddOns />
         <Section />
-        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black " />
+        <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black " />
       </div>
       
       {open &&
