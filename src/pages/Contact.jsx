@@ -78,10 +78,10 @@ const Contact = () => {
     },
   });
   return (
-    <div className="min-h-screen max-w-[1280px] mt-20 md:mx-auto mx-4 bg-white">
+    <div className="min-h-screen max-w-[1280px] mt-20 mx-auto px-4 md:px-0 bg-white">
       {/* First Section - Want to work with brands that get it? */}
-      <section className="pt-8 sm:pt-12 md:pt-16 lg:pt-20 px-0 sm:px-6 md:px-8 lg:px-16">
-        <div className="max-w-full mx-auto min-h-screen">
+      <section className="pt-8 sm:pt-12 md:pt-16 lg:pt-20 px-0 sm:px-6 md:px-0">
+        <div className="w-full mx-auto min-h-screen">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start">
             {/* Left Content */}
             <div className="space-y-6 sm:space-y-8 order-1 lg:order-1">
@@ -257,7 +257,7 @@ const Contact = () => {
       </section>
 
       {/* Second Section - Brand looking to hire creators? */}
-      <section className="contact pb-8 sm:pb-12 md:pb-12 lg:pb-16 mt-8 md:mt-0 px-0 sm:px-6 md:px-8 lg:px-16">
+      <section className="contact pb-8 sm:pb-12 md:pb-12 lg:pb-16 mt-8 md:mt-0 px-0 sm:px-6 md:px-0">
         <div className="max-w-full mx-auto mt-20">
           <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-0 lg:items-stretch">
             {/* Left Content with Border */}

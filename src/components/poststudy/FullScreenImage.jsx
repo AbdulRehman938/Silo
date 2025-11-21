@@ -1,6 +1,6 @@
 const FullScreenImage = ({ src, alt }) => {
   return (
-    <div className='w-full max-w-[90vw] mx-auto py-0 md:py-12'>
+    <div className='w-full max-w-[1280px] mx-auto py-0 md:py-12'>
       <div className='w-full aspect-video bg-[#DBDBDB] overflow-hidden'>
         {src ? (
           <img 

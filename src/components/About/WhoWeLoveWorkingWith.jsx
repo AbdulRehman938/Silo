@@ -32,7 +32,7 @@ const row3 = {
 
 const WhoWeLoveWorkingWith = () => {
   return (
-    <section className="main-div md:min-h-[60vh] min-h-[55vh] w-[100vw] flex items-start justify-center pt-32 md:pt-0 pb-6 mb-10 md:mb-0 sm:pb-8 md:pb-12 lg:pb-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden">
+    <section className="main-div md:min-h-[60vh] min-h-[55vh] w-[100vw] flex items-start justify-center pt-32 md:pt-0 pb-6 mb-10 md:mb-0 sm:pb-8 md:pb-12 lg:pb-16 px-3 sm:px-4 md:px-0 bg-white overflow-x-hidden">
       <div className="max-w-full mr-auto w-full h-auto">
         {/* Text Section - Zoom & Small Laptop Optimized */}
         <div className="text-left mb-6 sm:mb-8 md:mb-12 lg:mb-16 px-2 sm:px-0 w-full -mt-32 md:mt-0">
@@ -75,7 +75,7 @@ const WhoWeLoveWorkingWith = () => {
 
             {/* Left overlay: narrow, only as tall as these rows (h-full on wrapper) */}
             <div
-              className="absolute left-0 h-full w-12 md:w-36 pointer-events-none z-50"
+              className="absolute left-0 h-full w-12 md:w-36 pointer-events-none z-10"
               style={{
                 // move overlay further up so it covers the topmost row as well
                 top: '-72px',
@@ -85,7 +85,7 @@ const WhoWeLoveWorkingWith = () => {
             />
             {/* Right overlay to mirror the left one */}
             <div
-              className="absolute right-0 h-full w-12 md:w-36 pointer-events-none z-50"
+              className="absolute right-0 h-full w-12 md:w-36 pointer-events-none z-10"
               style={{
                 top: '-72px',
                 height: 'calc(100% + 32px)',

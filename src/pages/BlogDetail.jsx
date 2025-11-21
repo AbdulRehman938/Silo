@@ -84,7 +84,7 @@ export default function BlogDetail() {
 
   return (
     <div className="bg-white mt-20 min-h-[20vh]">
-      <div className="mx-auto max-w-[1280px] px-6 lg:px-8 py-12">
+      <div className="mx-auto max-w-[1280px] px-4 md:px-0 py-12">
         {/* Breadcrumb Navigation */}
 
         {/* Hero Section */}

@@ -8,7 +8,7 @@ const Hero = () => {
     <>
       {/* First Section - Hero */}
       <section
-        className="my-20 flex items-center w-full justify-start px-3 sm:px-2 md:px-6 lg:px-8 overflow-hidden md:h-[calc(100vh-80px)]"
+        className="my-20 flex items-center w-full justify-start px-3 sm:px-2 md:px-6 lg:px-0 overflow-hidden md:h-[calc(100vh-80px)]"
         aria-label="About Silo - Company introduction"
       >
         <div className="flex flex-col justify-between xl:grid xl:grid-cols-[1fr_1.5fr] gap-4 sm:gap-5 md:gap-6 lg:gap-8 xl:gap-10 max-w-full mx-auto w-full items-center">
@@ -19,7 +19,7 @@ const Hero = () => {
           >
             {/* Main Heading - Zoom & Small Laptop Optimized */}
             <h1
-              className="font-bold text-black text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-[56px] leading-3 text-left px-2 sm:px-0 mt-4 sm:mt-0"
+              className="font-bold text-black text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-[56px] leading-3 text-left px-2 sm:px-0 md:px-0 mt-4 sm:mt-0"
               style={{
                 opacity: 1,
                 fontFamily: 'Epilogue, sans-serif',
@@ -37,7 +37,7 @@ const Hero = () => {
               {/* Brand Statement - Zoom & Small Laptop Optimized */}
               <div>
                 <p
-                  className="text-black text-sm sm:text-base md:text-base lg:text-lg xl:text-[16px] leading-relaxed text-left max-w-full xl:max-w-lg px-2 sm:px-0 font-epilogue"
+                  className="text-black text-sm sm:text-base md:text-base lg:text-lg xl:text-[16px] leading-relaxed text-left max-w-full xl:max-w-lg px-2 md:px-0 font-epilogue"
                   style={{
                     opacity: 1,
                     fontWeight: 400,

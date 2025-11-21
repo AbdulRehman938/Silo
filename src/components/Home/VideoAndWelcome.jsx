@@ -70,7 +70,7 @@ export default function VideoAndWelcome() {
       {/* Mobile-only simplified block: visible on small screens only
           Animated letters placed BEFORE the content on mobile as requested. */}
 
-      <div className="relative w-full overflow-hidden mt-6 md:mt-10 lg:mt-14 z-20">
+      <div className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden mt-6 md:mt-10 lg:mt-14 z-20">
         <div className="h-80 lg:h-[80vh] md:h-[60vh] relative z-20">
           <img
             src={cmsData.imageUrl}
@@ -134,13 +134,13 @@ export default function VideoAndWelcome() {
           document.body
         )}
 
-      <div className="hidden md:block relative mx-auto px-3 mt-10 md:mt-10 lg:mt-20 md:px-0 md:mx-10">
+      <div className="hidden md:block relative mx-auto mt-10 md:mt-10 lg:mt-20">
         <div
           id="welcome-parent-div"
           className="relative flex items-end max-w-[1280px] mx-auto justify-between h-[60vh] lg:h-[70vh] xl:h-[80vh] md:h-[60vh] 2xl:h-[90vh] z-10"
         >
           {/* Left text div - aligned at bottom left */}
-          <div className="relative z-10 self-end pb-4 max-w-[38%] md:max-w-[45%] flex flex-col justify-end gap-6 md:gap-7">
+          <div className="relative z-10 self-end pb-4 max-w-[38%] md:max-w-[35%] flex flex-col justify-end gap-6 md:gap-7">
             <p className="text-base md:text-base lg:text-xl font-semibold md:tracking-tighter tracking-tight text-black">
               We’re the creative agency for brands that want more than filler
               posts or cookie–cutter campaigns.

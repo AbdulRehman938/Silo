@@ -9,7 +9,7 @@ const FourGallery = ({ images }) => {
   const displayImages = images || defaultImages
 
   return (
-    <div className='w-full max-w-[90vw] mx-auto py-8 md:py-12'>
+    <div className='w-full max-w-[1280px] mx-auto py-8 md:py-12'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-20 md:mb-0'>
         {displayImages.slice(0, 4).map((image, index) => (
           <div key={index} className='w-full aspect-square bg-[#DBDBDB] overflow-hidden'>

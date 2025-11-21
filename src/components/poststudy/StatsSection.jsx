@@ -1,6 +1,6 @@
 const StatsSection = ({ title, column1, column2, column3 }) => {
   return (
-    <div className='w-full max-w-[90vw] mx-auto py-16 md:py-24'>
+    <div className='w-full max-w-[1280px] mx-auto py-16 md:py-24'>
       {/* Section Title */}
       {title && (
         <h2 className='text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-12'>

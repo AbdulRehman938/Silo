@@ -5,7 +5,7 @@ import { FaChevronRight } from "react-icons/fa";
 const OptionalAddOns = () => {
   return (
     <section className="w-full bg-white text-black md:pb-16 pb-0">
-  <div className="max-w-[1280px] mx-auto px-0 md:px-6">
+  <div className="max-w-[1280px] mx-auto px-4 md:px-0">
         {/* Three column layout on md+, stacked on mobile */}
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-black mx-3">
           {/* Column 1 */}

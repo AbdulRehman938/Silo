@@ -4,7 +4,7 @@ import Section from '../components/Home/Section.jsx'
 const Terms = () => {
   return (
     <div className="min-h-screen bg-white my-20">
-      <div className="max-w-[768px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="max-w-[768px] mx-auto px-4 sm:px-6 md:px-0 py-12 sm:py-16 md:py-20 lg:py-24">
         {/* Header Section */}
         <div className="text-center mb-16 sm:mb-20 md:mb-24">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-black mb-4 sm:mb-6">

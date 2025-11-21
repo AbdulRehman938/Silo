@@ -19,8 +19,8 @@ export default function Header() {
 
   return (
     <header onClick={handleHeaderClick} className="fixed top-0 left-0 w-full right-0 z-50 bg-transparent mt-3 md:mt-5">
-      <div className="mx-3 lg:mx-10">
-        <div className="max-w-[1440px] border-[2px] border-black bg-white mx-auto py-3 px-3 md:px-6 flex justify-between items-center decoration-black">
+      <div className="mx-3 lg:mx-auto">
+        <div className="max-w-[1376px] border-[2px] border-black bg-white mx-auto py-3 px-3 md:px-6 lg:px-10 flex justify-between items-center decoration-black">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center" aria-label="Home">
           <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg" alt="Silo" className="h-5 header2 w-auto md:h-9" loading="lazy" />
@@ -103,8 +103,8 @@ export default function Header() {
             style={{ transformOrigin: 'top' }}
             aria-hidden={!open}
           >
-            <div className="mx-3 lg:mx-10">
-              <div className="max-w-[1440px] border-[2px] border-black border-t-0 mx-auto bg-white shadow-lg">
+            <div className="mx-3 lg:mx-auto">
+              <div className="max-w-[1280px] border-[2px] border-black border-t-0 mx-auto bg-white shadow-lg">
                 <nav className="px-6 py-8 flex-1 flex flex-col gap-6 text-center">
                     <NavLink 
                       to="/case-studies" 

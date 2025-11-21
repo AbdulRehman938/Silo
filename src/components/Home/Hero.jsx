@@ -18,7 +18,7 @@ const DEFAULT_LOGOS = [
 
 export default function Hero() {
   return (
-    <div className="w-full max-w-[1440px] mx-auto">
+    <div className="w-full max-w-[1280px] mx-auto">
       {/* Full screen hero section */}
       <div className="w-full 2xl:h-[calc(100vh-80px)] xl:h-[calc(100vh-80px)] lg:h-auto md:h-[60vh] h-[50vh] flex flex-col justify-between">
         <SiloHoverBanner

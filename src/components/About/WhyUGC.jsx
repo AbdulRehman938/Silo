@@ -1,6 +1,6 @@
 const WhyUGC = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center py-6 sm:py-8 md:py-12 lg:py-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden">
+    <section className="min-h-screen flex items-center justify-center py-6 sm:py-8 md:py-12 lg:py-16 px-3 sm:px-4 md:px-0 bg-white overflow-x-hidden">
       <div className="max-w-full mx-auto w-full">
         <h2 
           className="font-bold text-black mb-16 md:mb-20 sm:mb-8 text-left xl:text-left text-4xl sm:text-xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-[60px] leading-tight px-2 sm:px-0 w-[70vw] md:w-[30vw] lg:w-[30vw] xl:w-[30vw]"

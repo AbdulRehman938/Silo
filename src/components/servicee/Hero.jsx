@@ -47,7 +47,7 @@ const Hero = () => {
     <>
       {/* Desktop / larger screens - hidden on small screens */}
       <div className="hidden sm:block sm:h-[calc(100vh-80px)] pt-8 mt-20">
-        <div className="w-full max-w-[1280px] h-full mx-auto flex flex-col justify-between items-center px-4 pb-8 pt-10">
+        <div className="w-full max-w-[1280px] h-full mx-auto flex flex-col justify-between items-center px-4 md:px-10 lg:px-10 pb-8 pt-10">
           <div
             className="service-hero-title flex items-center w-[180px] h-[250px] justify-center service-video mb-3"
           >

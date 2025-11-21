@@ -53,7 +53,7 @@ const GalleryWithText = ({ heading, text, images }) => {
 
   return (
     <div ref={containerRef} className='w-full bg-white py-16 md:py-24 relative'>
-      <div className='max-w-[90vw] mx-auto'>
+      <div className='max-w-[1280px] mx-auto'>
         <div className='flex flex-col lg:flex-row gap-8 lg:gap-16 items-start'>
           {/* Left: Scrolling Images */}
           <div className='w-full lg:w-1/2 flex flex-col gap-6 order-2 lg:order-1'>

@@ -411,7 +411,7 @@ const PostCaseStudy = () => {
   if (!caseStudy) {
     return (
       <div className="bg-white min-h-screen">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-12">
+        <div className="mx-auto max-w-[1280px] px-6 md:px-0 py-12">
           <div className="text-center">
             <h1 className="text-4xl font-bold text-black mb-4">Case Study Not Found</h1>
             <p className="text-black mb-8">The case study you're looking for doesn't exist.</p>
@@ -465,6 +465,7 @@ const PostCaseStudy = () => {
         images={caseStudy.fourGallery.images}
       />
       <Section />
+      <div className="relative left-1/2 -translate-x-1/2 w-screen h-[0.06rem] bg-black mt-10" />
     </div>
   )
 }

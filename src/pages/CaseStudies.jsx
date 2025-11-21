@@ -8,7 +8,7 @@ const CaseStudies = () => {
   return (
     <div className="max-w-[1280px] mx-auto h-auto flex flex-col justify-start items-center mt-16 xl:mt-10 lg:mt-40 md:mt-40">
       <section
-        className="mt-10 mb-10 flex items-start w-full justify-start px-0 sm:px-2 md:px-6 lg:px-8 pb-6 md:pb-12 lg:pb-16 overflow-hidden"
+        className="mt-10 mb-10 flex items-start w-full justify-start px-4 md:px-0 pb-6 md:pb-12 lg:pb-16 overflow-hidden"
         aria-label="About Silo - Company introduction"
       >
         <div className="flex flex-col justify-between xl:grid xl:grid-cols-[1fr_1.5fr] gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 max-w-full mx-auto w-full items-start md:items-center mt-0 xl:mt-16 lg:mt-0 md:mt-0">
@@ -102,7 +102,7 @@ const CaseStudies = () => {
         </div>
       </section>
       <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[0.06rem] bg-black" />
-      <div id="done" className="max-w-[1280px] pb-0 px-4 md:px-6 xl:px-0 mx-auto">
+      <div id="done" className="max-w-[1280px] pb-0 px-4 md:px-10 lg:px-10 mx-auto">
         <div className="space-y-20 mx-auto ">
           {/* First project */}
           <div 

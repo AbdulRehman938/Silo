@@ -16,7 +16,7 @@ const CareerIndex = () => {
   };
 
   return (
-    <div className="h-auto max-w-[1280px] mt-20 mx-auto px-[4vw] sm:px-6 md:px-8 lg:px-16 xl:px-20">
+    <div className="h-auto max-w-[1280px] mt-20 mx-auto px-4 md:px-10 lg:px-10">
       <div className="min-h-screen max-w-full bg-white py-8 sm:py-12 md:py-16 lg:py-20 mx-auto mb-28 md:mb-0">
         <div className="max-w-full mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16">

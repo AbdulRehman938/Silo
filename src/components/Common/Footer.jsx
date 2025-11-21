@@ -5,10 +5,10 @@ import { SiTiktok } from "react-icons/si";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer className="w-full bg-white text-black max-w-[1440px] mx-auto">
-      <div className="mx-3 lg:mx-10">
+    <footer className="w-full bg-white text-black max-w-[1280px] mx-auto">
+      <div className="mx-3 md:mx-auto">
       {/* Top grid: logo/newsletter + link columns */}
-      <div className="hidden md:block w-full py-10 md:py-14">
+      <div className="hidden md:block w-full py-10 md:py-14 lg:px-0">
         <div className="">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
           {/* Left: Brand + Newsletter */}

@@ -15,7 +15,7 @@ const About = () => {
 
   return (
     <div className="bg-white overflow-x-hidden flex flex-col mx-auto">
-      <div className=" min-h-screen mx-auto max-w-[1280px]">
+      <div className="min-h-screen mx-auto max-w-[1280px]">
         <Hero />
       </div>
 

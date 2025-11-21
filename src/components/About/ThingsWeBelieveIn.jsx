@@ -1,6 +1,6 @@
 const ThingsWeBelieveIn = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center pb-6 sm:py-8 md:py-12 lg:py-16 px-3 sm:px-4 md:px-6 lg:px-8 bg-white overflow-x-hidden">
+    <section className="min-h-screen flex items-center justify-center pb-6 sm:py-8 md:py-12 lg:py-16 px-3 sm:px-4 md:px-0 bg-white overflow-x-hidden">
       <div className="max-w-full mx-auto w-full">
         {/* Text Section - Zoom & Small Laptop Optimized */}
         <div className="text-left xl:text-left mb-10 sm:mb-8 md:mb-16 lg:mb-20 px-2 sm:px-0 max-w-4xl mx-auto xl:mx-0">
@@ -34,7 +34,7 @@ const ThingsWeBelieveIn = () => {
         {/* Cards Grid - Zoom & Small Laptop Optimized */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-4 xl:gap-6 2xl:gap-8">
           {/* First Card - Zoom & Small Laptop Optimized */}
-          <div className="w-full max-w-sm mx-auto lg:max-w-[25vw] space-y-3 sm:space-y-4 md:space-y-6 px-2 sm:px-0 my-10 md:my-0">
+          <div className="w-full max-w-sm mx-auto lg:max-w-[25vw] space-y-3 sm:space-y-4 md:space-y-6 px-2 sm:px-0 md:px-0 md:mx-0 my-10 md:my-0">
             {/* Red Card with Icon Only */}
             <div 
               className="w-full h-40 sm:h-48 md:h-56 lg:h-48 xl:h-56 2xl:h-60 flex items-center justify-center"

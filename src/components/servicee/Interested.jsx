@@ -4,7 +4,7 @@ import { FaChevronRight } from "react-icons/fa";
 const Interested = () => {
   return (
     <section className="w-full bg-white text-black pt-16">
-      <div className="max-w-[1280px] mx-auto px-0 md:px-6 ">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-0">
         {/* Three column layout on md+, stacked on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-black mx-3">
           {/* Column 1 */}

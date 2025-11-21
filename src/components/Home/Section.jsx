@@ -3,7 +3,7 @@ import { FaChevronRight } from "react-icons/fa";
 
 const Section = () => {
   return (
-    <section className="mx-auto w-full max-w-[1200px] pb-12 md:pb-24">
+    <section className="mx-auto w-full max-w-[1280px] pb-12 md:pb-24">
       {/* Default view: hidden on mobile, visible on lg+ (md has its own layout) */}
       <div className="hidden md:hidden lg:block">
         <div className="border-2 border-gray-600  overflow-hidden w-full mx-auto">

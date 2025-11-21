@@ -84,10 +84,10 @@ export default function ContentAndDone() {
     };
   }, []);
   return (
-    <div className="pt-0 mx-auto px-0 md:px-6 max-w-[1280px] md:pb-28 ">
+    <div className="pt-0 mx-auto px-0 max-w-[1280px] md:pb-28 ">
       {/* Desktop view (hidden on mobile) */}
       <div className="hidden md:block overflow-visible max-w-[1280px]">
-        <div className="flex justify-center relative items-start w-[95vw] mx-auto">
+        <div className="flex justify-center relative items-start w-full mx-auto">
           <h2 className="mr-auto text-2xl lg:text-5xl xl:text-6xl md:text-6xl xl:w-[30rem] 2xl:text-7xl font-bold tracking-tight text-black w-[28rem] 2xl:w-[28rem] lg:w-[22rem]">
             This is simply <br /> what we do
           </h2>
