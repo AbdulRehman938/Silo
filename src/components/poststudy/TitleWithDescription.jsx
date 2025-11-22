@@ -73,7 +73,7 @@ const TitleWithDescription = ({ title, description }) => {
         </div>
 
         <div 
-          className="relative w-full h-[50vh] md:h-auto md:aspect-video overflow-hidden mt-20 cursor-pointer"
+          className="relative w-full h-[30vh] md:h-auto md:aspect-video overflow-hidden mt-20 cursor-pointer"
           onClick={handleVimeoClick}
         >
           <iframe

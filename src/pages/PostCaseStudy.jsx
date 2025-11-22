@@ -428,7 +428,7 @@ const PostCaseStudy = () => {
   }
 
   return (
-    <div className='w-full h-auto bg-white mb-20 mx-3 md:mx-0'>
+    <div className='w-full h-auto bg-white mb-20 px-3 md:px-0'>
       {/* Video Hero */}
       <Hero />
       
