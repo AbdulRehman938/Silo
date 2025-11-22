@@ -27,9 +27,9 @@ export default function Hero() {
           className="home-hero-text-float flex-shrink-0"
         />
 
-        <div className="relative left-1/2 -translate-x-1/2 w-screen bg-white flex-shrink-0 mt-10 md:mt-0">
+        <div className="relative left-1/2 -translate-x-1/2 w-screen bg-transparent flex-shrink-0 mt-10 md:mt-0">
           <div className="w-full home-hero-text-h">
-            <div className="py-4 md:py-5 text-center font-bold text-2xl 2xl:text-3xl xl:text-2xl text-black">
+            <div className="py-4 md:py-5 text-center font-bold text-2xl xl:text-xl text-black">
               Used by companies who know what works.
             </div>
           </div>
