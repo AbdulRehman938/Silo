@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Section2 from "../components/About/Section2";
@@ -7,6 +7,10 @@ import LazyImage from "../components/Common/LazyImage";
 import LazySection from "../components/Common/LazySection";
 
 const CaseStudies = () => {
+  const [showVideoSection, setShowVideoSection] = useState(true);
+  const [showVimeoModal, setShowVimeoModal] = useState(false);
+  // Vimeo video URL from Hero.jsx
+  const vimeoUrl = "https://player.vimeo.com/video/76979871";
   return (
     <div className="max-w-[1280px] mx-auto h-auto flex flex-col justify-start items-center mt-16 xl:mt-10 lg:mt-40 md:mt-40">
       <section
@@ -80,25 +84,185 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          {/* Visual Content Area - Zoom & Small Laptop Optimized */}
-          <div className="flex flex-col mt-10 md:mt-0 md:flex-row lg:flex-row xl:flex-row items-center md:items-start xl:items-start justify-start xl:justify-end gap-3 sm:gap-4 md:gap-6 order-2 xl:order-2 w-full sm:max-w-xl md:max-w-none lg:max-w-none xl:max-w-none xl:mx-0 ">
-            {/* Primary Image - Zoom & Small Laptop Optimized */}
-            <div className="order-1 md:order-2 flex flex-col items-start md:items-center lg:items-center xl:items-start md:w-auto lg:w-auto xl:w-auto border-white bg-white">
-              <LazyImage
-                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717296/studies2_a4olwb.png"
-                alt="The Silo brand representation"
-                className="w-32 sm:w-40 md:w-48 lg:w-56 xl:w-64 2xl:w-[328px] h-auto object-cover max-h-[200px] sm:max-h-[250px] md:max-h-[300px] lg:max-h-[350px] lg:block xl:min-h-[200px] 2xl:max-h-none border-white" />
+          {/* Visual Content Area - Responsive Layout */}
+          <div className="order-2 xl:order-2 w-full mt-10 md:mt-0">
+            {/* Mobile Layout: Large image first, small image + video section below */}
+            <div className="flex flex-col md:hidden gap-4">
+              {/* Large Image */}
+              <div className="w-full">
+                <img
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717301/studies1_lzgldj.png"
+                  alt="Silo team member showcasing brand identity"
+                  className="w-full h-auto object-cover max-h-[350px]"
+                  loading="lazy"
+                />
+              </div>
+              {/* Small Image + Video Section in same row */}
+              <div className="flex flex-row items-center justify-center gap-3 w-full">
+                {/* Small Image */}
+                <div className="flex justify-center">
+                  <img
+                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717296/studies2_a4olwb.png"
+                    alt="The Silo brand representation"
+                    className="w-32 h-auto object-cover max-h-[120px]"
+                    loading="lazy"
+                  />
+                </div>
+                {/* Video Section (conditionally rendered) */}
+                {showVideoSection && (
+                  <div className="flex items-center">
+                    {/* Vertical Text Outside */}
+                    <div className="flex flex-col items-center mr-2 max-w-[12px]">
+                      <span className="text-black font-bold text-xs tracking-wide rotate-[-90deg] whitespace-nowrap">Cut through the noise</span>
+                    </div>
+                    <div className="relative flex items-center justify-center w-[90px] h-[120px]">
+                      <img
+                        src="https://res.cloudinary.com/di9tb45rl/image/upload/v1763796208/image_7_hpf0du.png"
+                        alt="Video thumbnail"
+                        className="w-full h-full object-cover shadow-lg" />
+                      <div className="absolute inset-0 bg-black bg-opacity-30" />
+                      {/* Play Button Overlay */}
+                      <button
+                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg flex items-center justify-center w-10 h-10 border-2 border-white hover:scale-105 transition"
+                        onClick={() => setShowVimeoModal(true)}
+                        aria-label="Play video"
+                      >
+                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="16" cy="16" r="16" fill="white" />
+                          <polygon points="13,10 24,16 13,22" fill="#222" />
+                        </svg>
+                      </button>
+                      {/* Close Button */}
+                      <button className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-gray-200 transition" onClick={() => setShowVideoSection(false)}>
+                        <svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <line x1="4" y1="4" x2="14" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
+                          <line x1="14" y1="4" x2="4" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
 
-            {/* Secondary Image - Zoom & Small Laptop Optimized */}
-            <div className="order-2 md:order-1 w-full max-w-full sm:max-w-sm md:w-1/2 md:max-w-none lg:w-1/2 xl:w-auto xl:max-w-[400px] 2xl:max-w-[438px] flex-shrink-0">
-              <LazyImage
-                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717301/studies1_lzgldj.png"
-                alt="Silo team member showcasing brand identity"
-                className="w-full h-auto object-cover max-h-[400px] sm:max-h-[350px] md:max-h-[500px] lg:max-h-[550px] xl:max-h-[550px] 2xl:max-h-none"
-                style={{
-                  opacity: 1,
-                }} />
+            {/* MD Layout: Large image left, small image + video section right */}
+            <div className="hidden md:flex xl:hidden gap-6">
+              {/* Large Image */}
+              <div className="flex-1">
+                <img
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717301/studies1_lzgldj.png"
+                  alt="Silo team member showcasing brand identity"
+                  className="w-full h-auto object-cover max-h-[500px] lg:max-h-[550px]"
+                  loading="lazy"
+                />
+              </div>
+              {/* Right Column: Small image + video section */}
+              <div className="flex flex-col gap-4 justify-between items-end">
+                {/* Small Image */}
+                <div>
+                  <img
+                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717296/studies2_a4olwb.png"
+                    alt="The Silo brand representation"
+                    className="w-48 lg:w-56 h-auto object-cover max-h-[300px] lg:max-h-[350px]"
+                    loading="lazy"
+                  />
+                </div>
+                {/* Video Section - Bottom of small image (conditionally rendered) */}
+                {showVideoSection && (
+                  <div className="flex items-center w-full justify-end">
+                    {/* Vertical Text Outside */}
+                    <div className="flex flex-col items-center mr-2 max-w-[12px]">
+                      <span className="text-black font-bold text-xs tracking-wide rotate-[-90deg] whitespace-nowrap">Cut through the noise</span>
+                    </div>
+                    {/* Video Section */}
+                    <div className="relative flex items-center justify-center w-[140px] sm:w-[180px] md:w-[150px]">
+                      <img
+                        src="https://res.cloudinary.com/di9tb45rl/image/upload/v1763796208/image_7_hpf0du.png"
+                        alt="Video thumbnail"
+                        className="w-full h-full object-cover shadow-lg" />
+                      <div className="absolute inset-0 bg-black bg-opacity-30" />
+                      {/* Play Button Overlay */}
+                      <button
+                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 border-2 border-white hover:scale-105 transition"
+                        onClick={() => setShowVimeoModal(true)}
+                        aria-label="Play video"
+                      >
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="16" cy="16" r="16" fill="white" />
+                          <polygon points="13,10 24,16 13,22" fill="#000" />
+                        </svg>
+                      </button>
+                      {/* Close Button */}
+                      <button className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-gray-200 transition" onClick={() => setShowVideoSection(false)}>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <line x1="4" y1="4" x2="14" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
+                          <line x1="14" y1="4" x2="4" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* XL Layout: Large image left, small image + video section right */}
+            <div className="hidden xl:flex gap-6">
+              {/* Large Image */}
+              <div className="flex-1 max-w-[438px]">
+                <img
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717301/studies1_lzgldj.png"
+                  alt="Silo team member showcasing brand identity"
+                  className="w-full h-auto object-cover max-h-[550px] 2xl:max-h-none"
+                  loading="lazy"
+                />
+              </div>
+              {/* Right Column: Small image + video section */}
+              <div className="flex flex-col justify-between items-end">
+                {/* Small Image */}
+                <div className="mb-4">
+                  <img
+                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717296/studies2_a4olwb.png"
+                    alt="The Silo brand representation"
+                    className="w-64 2xl:w-[328px] h-auto object-cover xl:min-h-[200px] 2xl:max-h-none"
+                    loading="lazy"
+                  />
+                </div>
+                {/* Video Section - Bottom of small image */}
+                {showVideoSection && (
+                  <div className="flex items-center w-full justify-end">
+                    {/* Vertical Text Outside */}
+                    <div className="flex flex-col items-center mr-2 max-w-[12px]">
+                      <span className="text-black font-bold text-xs tracking-wide rotate-[-90deg] whitespace-nowrap">Cut through the noise</span>
+                    </div>
+                    {/* Video Section */}
+                    <div className="relative flex items-center justify-center w-[140px] sm:w-[180px] md:w-[150px]">
+                      <img
+                        src="https://res.cloudinary.com/di9tb45rl/image/upload/v1763796208/image_7_hpf0du.png"
+                        alt="Video thumbnail"
+                        className="w-full h-full object-cover shadow-lg" />
+                      <div className="absolute inset-0 bg-black bg-opacity-30" />
+                      {/* Play Button Overlay */}
+                      <button
+                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 border-2 border-white hover:scale-105 transition"
+                        onClick={() => setShowVimeoModal(true)}
+                        aria-label="Play video"
+                      >
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="16" cy="16" r="16" fill="white" />
+                          <polygon points="13,10 24,16 13,22" fill="#222" />
+                        </svg>
+                      </button>
+                      {/* Close Button */}
+                      <button className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-gray-200 transition" onClick={() => setShowVideoSection(false)}>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <line x1="4" y1="4" x2="14" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
+                          <line x1="14" y1="4" x2="4" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -108,104 +272,7 @@ const CaseStudies = () => {
       <div id="done" className="max-w-[1280px] pb-0 px-4 md:px-10 lg:px-10 mx-auto">
         <div className="space-y-20 mx-auto ">
           {/* First project */}
-          <div 
-            className="hidden lg:flex items-center justify-around space-x-20 py-16 border-b border-b-black group relative cursor-pointer"
-            onClick={() => window.location.href = '/case-study/1'}
-          >
-            <div className="w-1/3 h-96  transform transition-transform duration-600 ease-in-out lg:group-hover:-translate-x-12">
-              <img
-                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
-                alt="smoothie"
-                className="w-full h-full object-cover" loading="lazy" />
-            </div>
-            {/* Hover image placeholder (absolutely positioned so it doesn't shift layout) */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-full -translate-y-1/2 w-1/6 h-96 bg-white overflow-hidden opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 lg:group-hover:rotate-0 lg:group-hover:pointer-events-auto">
-              <img
-                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
-                alt="smoothie"
-                className="w-full h-full object-cover" loading="lazy" />
-            </div>
-            <div className="w-[30%] flex flex-col justify-center items-start gap-4 text-left">
-              <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
-              <p className="text-xl text-black font-bold">Food & Drink</p>
-              <p className="text-lg font-semibold text-black">
-                We built a TikTok-first launch campaign for this food start-up.
-                Fast cuts, bold graphics, and creator-led taste tests turned
-                into millions of views and a sell-out first week.
-              </p>
-              <div className="flex space-x-2 mt-2">
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  UGC
-                </span>
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  TikTok
-                </span>
-              </div>
-              <a
-                href="/case-study/1"
-                className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
-              >
-                <span>View Project</span>
-                <span
-                  aria-hidden
-                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out lg:group-hover:translate-x-2"
-                >
-                  <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
-                </span>
-              </a>
-            </div>
-          </div>
-
-          <div 
-            className="block md:flex lg:hidden items-center w-full mx-auto justify-center md:space-x-10 space-y-3 md:space-y-0 border-b border-b-black py-12 group relative mt-0 cursor-pointer"
-            onClick={() => window.location.href = '/case-study/1'}
-          >
-            {/* Text content first */}
-            <div className="w-full md:w-[80%] flex flex-col justify-center items-start gap-4 text-left">
-              <h3 className="text-4xl font-bold text-black">Smoothie Smash</h3>
-              <p className="text-xl text-black font-bold">Food & Drink</p>
-              <p className="text-lg font-semibold text-black">
-                We built a TikTok-first launch campaign for this food start-up.
-                Fast cuts, bold graphics, and creator-led taste tests turned
-                into millions of views and a sell-out first week.
-              </p>
-              <div className="flex space-x-2 mt-2">
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  UGC
-                </span>
-                <span className="text-base font-bold text-black p-2 bg-brand/20">
-                  TikTok
-                </span>
-              </div>
-              <a
-                href="/case-study/1"
-                className="inline-flex items-center gap-2 font-dm mt-10 font-bold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <span>View Project</span>
-                <span
-                  aria-hidden
-                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out lg:group-hover:translate-x-2"
-                >
-                  <MdOutlineKeyboardArrowRight className="text-2xl font-black" />
-                </span>
-              </a>
-            </div>
-            {/* Image second */}
-            <div className="w-full md:w-1/2 h-80  relative">
-              <img
-                src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717287/Smoothie_dhwlm0.png"
-                alt="smoothie"
-                className="w-full h-full object-cover" loading="lazy" />
-              {/* Hover image placeholder */}
-              <div className="absolute -right-80 top-0 w-[70%] h-80 bg-white  opacity-0 scale-90 rotate-6 transition-all duration-600 ease-in-out z-10 pointer-events-none lg:group-hover:opacity-100 lg:group-hover:scale-100 overflow-hidden lg:group-hover:rotate-0">
-                <img
-                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717289/smoothie-hover_znf5gc.png"
-                  alt="smoothie"
-                  className="w-full h-full object-cover" loading="lazy" />
-              </div>
-            </div>
-          </div>
+          {/* ...existing code... */}
 
           {/* Second project */}
           <div 
@@ -732,11 +799,44 @@ const CaseStudies = () => {
       </LazySection>
       <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[1px] bg-black mt-10 mb-10" />
       <LazySection>
-      <Section />
+        <Section />
       </LazySection>
       <div className="relative left-1/2 -translate-x-1/2 w-screen mx-auto h-[1px] bg-black" />
+
+      {/* Vimeo Modal */}
+      {showVimeoModal && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-70">
+          <div className="relative flex flex-col items-center justify-center">
+            {/* Close Button */}
+            <button
+              className="absolute top-2 right-2 bg-white rounded-full p-2 shadow hover:bg-gray-200 transition"
+              onClick={() => setShowVimeoModal(false)}
+              aria-label="Close video"
+              style={{ zIndex: 10 }}
+            >
+              <svg width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="4" y1="4" x2="14" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
+                <line x1="14" y1="4" x2="4" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </button>
+            {/* Vertical Vimeo Embed */}
+            <div className="w-[320px] h-[570px] sm:w-[360px] sm:h-[640px] md:w-[400px] md:h-[700px] bg-black overflow-hidden flex items-center justify-center shadow-2xl">
+              <iframe
+                src={vimeoUrl}
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title="Vimeo Video"
+                style={{ aspectRatio: '9/16', width: '100%', height: '100%' }}
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
-};
+}
 
 export default CaseStudies;
