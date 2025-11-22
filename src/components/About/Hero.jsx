@@ -91,7 +91,7 @@ const Hero = () => {
               {/* Large Image */}
               <div className="w-full">
                 <img
-                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717301/studies1_lzgldj.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717241/About1_t6qyw0.png"
                   alt="Silo team member showcasing brand identity"
                   className="w-full h-auto object-cover max-h-[350px]"
                   loading="lazy"
@@ -102,7 +102,7 @@ const Hero = () => {
                 {/* Small Image */}
                 <div className="flex justify-center">
                   <img
-                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717296/studies2_a4olwb.png"
+                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/About2_gof6gm.png"
                     alt="The Silo brand representation"
                     className="w-32 h-auto object-cover max-h-[120px]"
                     loading="lazy"
@@ -150,7 +150,7 @@ const Hero = () => {
               {/* Large Image */}
               <div className="flex-1">
                 <img
-                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717301/studies1_lzgldj.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717241/About1_t6qyw0.png"
                   alt="Silo team member showcasing brand identity"
                   className="w-full h-auto object-cover max-h-[500px] lg:max-h-[550px]"
                   loading="lazy"
@@ -161,7 +161,7 @@ const Hero = () => {
                 {/* Small Image */}
                 <div>
                   <img
-                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717296/studies2_a4olwb.png"
+                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/About2_gof6gm.png"
                     alt="The Silo brand representation"
                     className="w-48 lg:w-56 h-auto object-cover max-h-[300px] lg:max-h-[350px]"
                     loading="lazy"
@@ -210,7 +210,7 @@ const Hero = () => {
               {/* Large Image */}
               <div className="flex-1 max-w-[438px]">
                 <img
-                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717301/studies1_lzgldj.png"
+                  src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717241/About1_t6qyw0.png"
                   alt="Silo team member showcasing brand identity"
                   className="w-full h-auto object-cover max-h-[550px] 2xl:max-h-none"
                   loading="lazy"
@@ -221,7 +221,7 @@ const Hero = () => {
                 {/* Small Image */}
                 <div className="mb-4">
                   <img
-                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717296/studies2_a4olwb.png"
+                    src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/About2_gof6gm.png"
                     alt="The Silo brand representation"
                     className="w-64 2xl:w-[328px] h-auto object-cover xl:min-h-[200px] 2xl:max-h-none"
                     loading="lazy"
