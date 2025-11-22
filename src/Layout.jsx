@@ -14,7 +14,7 @@ export default function Layout() {
   }, [location.pathname])
 
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden lg:mx-10">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Header />
       {/* reserve space for fixed header so page content isn't hidden */}
       <main className={`flex-1 w-full service-top'}`}>

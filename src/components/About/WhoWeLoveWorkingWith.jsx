@@ -80,7 +80,7 @@ const WhoWeLoveWorkingWith = () => {
                 // move overlay further up so it covers the topmost row as well
                 top: '-72px',
                 height: 'calc(100% + 32px)',
-                background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(249,250,251,0.95) 30%, rgba(249,250,251,0.85) 60%, rgba(255,255,255,0) 100%)',
+                background: '#ffffff',
               }}
             />
             {/* Right overlay to mirror the left one */}
@@ -89,7 +89,7 @@ const WhoWeLoveWorkingWith = () => {
               style={{
                 top: '-72px',
                 height: 'calc(100% + 32px)',
-                background: 'linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(249,250,251,0.95) 30%, rgba(249,250,251,0.85) 60%, rgba(255,255,255,0) 100%)',
+                background: '#ffffff',
               }}
             />
           </div>

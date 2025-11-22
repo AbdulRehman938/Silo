@@ -88,12 +88,12 @@ export default function ContentAndDone() {
       {/* Desktop view (hidden on mobile) */}
       <div className="hidden md:block overflow-visible max-w-[1280px]">
         <div className="flex justify-center relative items-start w-full mx-auto">
-          <h2 className="mr-auto text-2xl lg:text-5xl xl:text-6xl md:text-6xl xl:w-[30rem] 2xl:text-7xl font-bold tracking-tight text-black w-[28rem] 2xl:w-[28rem] lg:w-[22rem]">
+          <h2 className="mr-auto text-2xl md:text-5xl xl:w-[30rem] md:mb-10 lg:mb-0 font-bold tracking-tight text-black w-[28rem] 2xl:w-[28rem] lg:w-[22rem]">
             This is simply <br /> what we do
           </h2>
          
         </div>
-        <div className="h-fit overflow-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start mx-auto md:mt-0">
+        <div className="h-fit overflow-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 items-start mx-auto md:mt-0">
           <article className="w-full flex flex-col gap-8 mt-0 pt-0 md:gap-6 ">
             <div className="overflow-hidden w-auto h-[20rem] md:h-[320px] lg:h-[25rem] lg:mt-20">
               <img
@@ -151,7 +151,7 @@ export default function ContentAndDone() {
            Just some of the brands we’ve worked with
           </p>
 
-          <div className="space-y-20 w-full mt-28">
+          <div className="w-full mt-28">
             {/* First project */}
             <div
               className="hidden lg:flex items-center justify-around space-x-20 border-y-[0.1rem] py-16 border-y-gray-800 group relative cursor-pointer"
@@ -272,7 +272,7 @@ export default function ContentAndDone() {
 
             {/* Second project */}
             <div
-              className="hidden lg:flex items-center justify-around space-x-20 border-b-[1px] pb-16 border-b-black group relative cursor-pointer"
+              className="hidden lg:flex items-center justify-around space-x-20 border-b-[0.1rem] py-16 border-b-black group relative cursor-pointer mt-0"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -386,7 +386,7 @@ export default function ContentAndDone() {
 
             {/* Third project */}
             <div
-              className="hidden lg:flex items-center justify-around space-x-20 pb-16 group relative cursor-pointer"
+              className="hidden lg:flex items-center justify-around space-x-20 py-16 group relative cursor-pointer"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -661,7 +661,7 @@ export default function ContentAndDone() {
                 window.location.href = '/case-study/2';
               }}
             >
-              <div className="w-full h-80">
+              <div className="w-full h-80 mb-0">
                 <img src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717249/Lumen_w2q5zm.png" alt="lumin solar" className="w-full h-full object-cover" loading="lazy" />
               </div>
               <div className="space-y-4">

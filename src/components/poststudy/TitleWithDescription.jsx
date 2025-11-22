@@ -1,56 +1,46 @@
 import { useState, useRef, useEffect } from "react";
-import { createPortal } from "react-dom";
-import { FaPlay, FaPause } from "react-icons/fa";
+import Player from "./vimeo-player";
 
 const TitleWithDescription = ({ title, description }) => {
-  const videoRef = useRef(null);
+  const vimeoIframeRef = useRef(null);
   const playerRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [showOverlay, setShowOverlay] = useState(false);
-  const [open, setOpen] = useState(false);
-
-  const cmsData = {
-    showVideo: true,
-    videoUrl: "https://player.vimeo.com/video/76979871"
-  };
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
-  }, []);
-
-  useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === "Escape") handleClose();
-    };
-    if (open) window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
-
-  useEffect(() => {
-    if (!open) return;
-    const onPointerDown = (e) => {
-      const node = playerRef.current;
-      if (!node) return;
-      if (!node.contains(e.target)) {
-        handleClose();
+    const handleIframeLoad = () => {
+      if (vimeoIframeRef.current && !playerRef.current) {
+        playerRef.current = new Player(vimeoIframeRef.current);
+        playerRef.current.setVolume(1);
+        playerRef.current.setMuted(true);
+        playerRef.current.play();
+        setIsPlaying(true);
       }
     };
-    document.addEventListener("pointerdown", onPointerDown);
-    return () => document.removeEventListener("pointerdown", onPointerDown);
-  }, [open]);
 
-  const handleOpen = () => {
-    if (!cmsData.showVideo) return;
-    setOpen(true);
-  };
+    const iframe = vimeoIframeRef.current;
+    if (iframe) {
+      iframe.addEventListener("load", handleIframeLoad);
+      // If already loaded, call immediately
+      if (iframe.readyState === "complete") handleIframeLoad();
+    }
+    return () => {
+      if (iframe) iframe.removeEventListener("load", handleIframeLoad);
+      if (playerRef.current) playerRef.current.unload();
+    };
+  }, []);
 
-  const handleClose = () => setOpen(false);
-
-  const handlePlayPause = (e) => {
-    e.stopPropagation();
-    handleOpen();
+  const handleVimeoClick = () => {
+    if (playerRef.current) {
+      playerRef.current.getPaused().then(paused => {
+        if (paused) {
+          playerRef.current.play();
+          setIsPlaying(true);
+        } else {
+          playerRef.current.pause();
+          setIsPlaying(false);
+        }
+      });
+    }
   };
 
   return (
@@ -84,57 +74,26 @@ const TitleWithDescription = ({ title, description }) => {
 
         <div 
           className="relative w-full h-[50vh] md:h-auto md:aspect-video overflow-hidden mt-20 cursor-pointer"
-          onClick={handleOpen}
+          onClick={handleVimeoClick}
         >
-          <video
-            ref={videoRef}
+          <iframe
+            ref={vimeoIframeRef}
+            id="vimeo-player"
+            src="https://player.vimeo.com/video/76979871?autoplay=1&muted=1&background=0&controls=0"
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            title="Vimeo Video"
             className="absolute inset-0 w-full h-full object-cover"
-            src="https://res.cloudinary.com/di9tb45rl/video/upload/v1762717692/Demo-video_himxf7.mp4"
-            loop
-            muted
-
-            playsInline
+            style={{ border: 0, borderRadius: 0 }}
           />
-
-          <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
-            <button
-              onClick={handlePlayPause}
-              className="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-4 transition-all"
-            >
-              {isPlaying ? <FaPause className="w-8 h-8" /> : <FaPlay className="w-8 h-8" />}
-            </button>
-          </div>
+          <div className="absolute inset-0 w-full h-full bg-black bg-opacity-30 pointer-events-none" />
         </div>
       </div>
 
-      {open &&
-        createPortal(
-          <div
-            onClick={handleClose}
-            className="fixed inset-0 z-[9999] flex items-center justify-center"
-          >
-            <div
-              onClick={handleClose}
-              className="absolute inset-0 bg-black/60"
-            />
-
-            <div
-              ref={playerRef}
-              onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-[1100px] mx-4 h-[50vh] md:h-[60vh]"
-            >
-              <iframe
-                title="Vimeo player"
-                src={`${cmsData.videoUrl}?autoplay=1&muted=0`}
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-                style={{ border: 0, borderRadius: 0 }}
-              />
-            </div>
-          </div>,
-          document.body
-        )}
+      {/* Modal removed, video is now in-page. Play/pause toggles on empty area click. */}
     </>
   );
 };
