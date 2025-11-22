@@ -7,7 +7,7 @@ import { FaPlay } from "react-icons/fa";
 
 export default function VideoAndWelcome() {
   const [cmsData, setCmsData] = useState({
-    showVideo: true,
+    showVideo: false,
     videoUrl: "https://player.vimeo.com/video/76979871",
     imageUrl:
       "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717240/image_re2b0o.png",
