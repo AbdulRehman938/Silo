@@ -7,7 +7,7 @@ import { FaPlay } from "react-icons/fa";
 
 export default function VideoAndWelcome() {
   const [cmsData, setCmsData] = useState({
-    showVideo: false,
+    showVideo: true,
     videoUrl: "https://player.vimeo.com/video/76979871",
     imageUrl:
       "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717240/image_re2b0o.png",
@@ -84,7 +84,7 @@ export default function VideoAndWelcome() {
 
               {/* centered play CTA */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex items-center gap-4 text-start text-black px-4">
+                <div className="flex items-center gap-4 text-start text-white px-4">
                   <button
                     type="button"
                     aria-label="Play showreel"
