@@ -84,7 +84,7 @@ export default function BlogDetail() {
 
   return (
     <div className="bg-white mt-20 min-h-[20vh]">
-      <div className="mx-auto max-w-[1280px] px-4 md:px-0 py-12">
+      <div className="mx-auto max-w-[1280px] px-4 md:px-0 py-4">
         {/* Breadcrumb Navigation */}
 
         {/* Hero Section */}
@@ -93,7 +93,7 @@ export default function BlogDetail() {
         {/* Content Container - wraps all scrollable content */}
         <div ref={contentContainerRef}>
         {/* Introduction and Newsletter Section - Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-10">
           {/* Left Column - Introduction Content (2/3 width) */}
           <div className="lg:col-span-2">
             <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">

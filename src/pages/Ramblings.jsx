@@ -41,6 +41,12 @@ export default function Ramblings() {
     )
       return;
 
+    // Only enable scroll animation for screens >= 768px (md and up)
+    if (window.innerWidth < 768) {
+      gsap.set(sidebarRef.current, { y: 0 });
+      return;
+    }
+
     const sidebar = sidebarRef.current;
     const container = containerRef.current;
 

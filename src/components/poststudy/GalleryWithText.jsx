@@ -17,6 +17,12 @@ const GalleryWithText = ({ heading, text, images }) => {
   useEffect(() => {
     if (!containerRef.current || !textRef.current) return;
 
+    // Only enable scroll animation for screens >= 768px (md and up)
+    if (window.innerWidth < 768) {
+      gsap.set(textRef.current, { y: 0 });
+      return;
+    }
+
     const textEl = textRef.current;
     const containerEl = containerRef.current;
 
