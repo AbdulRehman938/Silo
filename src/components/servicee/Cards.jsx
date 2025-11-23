@@ -233,7 +233,7 @@ const Cards = () => {
   return (
     <>
       {/* Desktop View - Hidden on Mobile */}
-      <div ref={desktopRef} className="hidden sm:flex w-full max-w-[1280px] mx-auto h-screen 2xl:mt-20 md:mt-0 flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
+      <div ref={desktopRef} className="hidden sm:flex w-full max-w-[1280px] mx-auto h-[calc(100vh-80px)] 2xl:mt-20 md:mt-0 flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 flex items-center justify-center">
           {CARD_DATA.map((card, i) => {
             const VISIBLE_COUNT = Math.min(5, CARD_DATA.length);
@@ -284,12 +284,12 @@ const Cards = () => {
       </div>
 
       {/* Mobile View - Only Visible on Mobile */}
-      <div ref={mobileRef} className="sm:hidden w-full h-screen flex flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
+      <div ref={mobileRef} className="sm:hidden w-full h-[calc(85vh-100px)] flex flex-col items-center justify-center relative" style={{ overflow: 'hidden' }}>
         <h1 className="absolute left-1/2 top-[30%] -translate-x-1/2 -translate-y-1/2 text-brand text-[20vw] leading-[5rem] font-bold text-center z-10 pointer-events-none">
           CORE <br /> SERVICES
         </h1>
         
-        <div className="absolute left-1/2 top-[70%] -translate-x-1/2 -translate-y-1/2 z-[60] flex items-center justify-center" style={{height: 200, width: 300}}>
+        <div className="absolute left-1/2 top-[80%] -translate-x-1/2 -translate-y-1/2 z-[60] flex items-center justify-center" style={{height: 200, width: 300}}>
           {CARD_DATA.map((card, i) => {
             const VISIBLE_COUNT = Math.min(5, CARD_DATA.length);
             const computeOffset = (idx) => {

@@ -47,9 +47,9 @@ const Hero = () => {
     <>
       {/* Desktop / larger screens - hidden on small screens */}
       <div className="hidden sm:block sm:h-[calc(100vh-80px)] pt-8 mt-20">
-        <div className="w-full max-w-[1280px] h-full mx-auto flex flex-col justify-between items-center px-4 md:px-10 lg:px-10 pb-8 pt-10">
+        <div className="w-full max-w-[1280px] h-full mx-auto flex flex-col justify-between items-center px-4 md:px-10 lg:px-10 pb-2 pt-2">
           <div
-            className="service-hero-title flex items-center w-[180px] h-[250px] justify-center service-video mb-3"
+            className="service-hero-title flex items-center w-[180px] h-[210px] justify-center service-video mb-3"
           >
             <VideoPlayer containerClassName="w-full h-full" onVideoClick={handleOpen} />
           </div>
@@ -110,15 +110,15 @@ const Hero = () => {
 
           {/* Headline & description (smaller for mobile) */}
           <div className="flex flex-col gap-2 text-center text-black mb-3">
-            <h1 className="text-5xl font-black leading-tight">What we do</h1>
-            <p className="text-sm leading-relaxed px-4">
+            <h1 className="text-6xl font-black leading-tight">What we do</h1>
+            <p className="text-sm leading-relaxed mt-5">
               We make content that cuts through the noise. Strategy, UGC, design,
               and motion, built to get noticed and remembered.
             </p>
           </div>
 
           {/* Buttons stacked for mobile */}
-          <div className="flex gap-3 justify-center w-full px-4">
+          <div className="flex gap-3 justify-center w-full px-4 -mt-5">
             <a
               href="/contact"
               className="flex-1 max-w-[160px] inline-flex items-center justify-center gap-2 bg-[#FF322E] h-12 px-4 text-sm font-bold tracking-wide text-white"
@@ -182,42 +182,19 @@ const Hero = () => {
 
 function VideoPlayer({ containerClassName = "", videoClassName = "", onVideoClick }) {
   const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
-  const [showOverlay, setShowOverlay] = useState(false);
 
-  const handlePlayPause = () => {
-    if (!videoRef.current) return;
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  const handleMute = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !isMuted;
-    setIsMuted(!isMuted);
-  };
-
-  // Ensure video is muted/playing state sync
+  // Always keep video playing
   React.useEffect(() => {
     if (!videoRef.current) return;
     videoRef.current.muted = isMuted;
-    if (isPlaying) {
-      videoRef.current.play();
-    } else {
-      videoRef.current.pause();
-    }
-  }, [isMuted, isPlaying]);
+    videoRef.current.play();
+  }, [isMuted]);
 
+  // Overlay and play button always visible
   return (
     <div 
       className={`relative cursor-pointer ${containerClassName}`}
-      onMouseEnter={() => setShowOverlay(true)}
-      onMouseLeave={() => setShowOverlay(false)}
       onClick={onVideoClick}
     >
       <video
@@ -231,18 +208,13 @@ function VideoPlayer({ containerClassName = "", videoClassName = "", onVideoClic
         <source src="https://res.cloudinary.com/di9tb45rl/video/upload/v1762717692/Demo-video_himxf7.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      
-      {showOverlay && (
-        <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center gap-4">
-          <button
-            onClick={handlePlayPause}
-            className="bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-3 transition-all"
-          >
-            {isPlaying ? <FaPause className="w-6 h-6" /> : <FaPlay className="w-6 h-6" />}
-          </button>
-         
-        </div>
-      )}
+      <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center gap-4 pointer-events-none">
+        <button
+          className="bg-white bg-opacity-80 rounded-full p-3 transition-all pointer-events-none"
+        >
+          <FaPlay className="w-6 h-6" />
+        </button>
+      </div>
     </div>
   );
 }
