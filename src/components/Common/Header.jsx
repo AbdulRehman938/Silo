@@ -31,13 +31,13 @@ export default function Header() {
           {/* Center: Nav */}
           <nav className="hidden lg:flex items-center justify-center gap-3 xl:gap-4 2xl:gap-6 text-xl font-bold text-black relative">
             <NavLink
-              to="/case-studies"
+              to="/portfolio"
               className={({ isActive }) => `px-2 xl:px-2.5  2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
             >
               The Silo
             </NavLink>
             <NavLink
-              to="/portfolio"
+              to="/case-studies"
               className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
             >
               Portfolio

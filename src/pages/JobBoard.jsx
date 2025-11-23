@@ -13,7 +13,7 @@ function JobCard({ job }) {
 
   return (
     <div
-      className="flex flex-col w-full md:w-[24vw] md:flex-shrink-0 cursor-pointer transition-all duration-300 group mb-8 md:mb-0"
+      className="flex flex-col w-full lg:w-[32vw] lg:max-w-[400px] lg:flex-shrink-0 cursor-pointer transition-all duration-300 group mb-8 md:mb-0"
       onClick={handleCardClick}
       role="button"
       tabIndex={0}
@@ -177,7 +177,7 @@ export default function JobBoard() {
           </div>
 
           {/* Tablet: 2 columns (640px - 1024px) */}
-          <div className="hidden sm:grid lg:hidden grid-cols-2 gap-4 justify-items-center">
+          <div className="hidden sm:grid lg:hidden grid-cols-2 gap-2 justify-items-center">
             {jobsData.map((job) => (
               <JobCard key={job.id} job={job} />
             ))}
@@ -185,15 +185,15 @@ export default function JobBoard() {
 
           {/* Desktop: Adjusted layout for 95vw (1024px+) */}
           <div className="hidden lg:block">
-            {/* First Row - 3 cards with adjusted spacing */}
-            <div className="flex gap-8 mb-8 justify-start">
+            {/* First Row - 3 cards with fixed width and gap */}
+            <div className="flex gap-20 mb-8">
               <JobCard job={jobsData[0]} />
               <JobCard job={jobsData[1]} />
               <JobCard job={jobsData[2]} />
             </div>
 
-            {/* Second Row - 2 cards with adjusted spacing */}
-            <div className="flex gap-8 justify-start">
+            {/* Second Row - 2 cards with fixed width and gap matching top row */}
+            <div className="flex gap-20 mb-8">
               <JobCard job={jobsData[3]} />
               <JobCard job={jobsData[4]} />
             </div>

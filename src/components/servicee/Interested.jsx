@@ -8,7 +8,7 @@ const Interested = () => {
         {/* Three column layout on md+, stacked on mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-black mx-3">
           {/* Column 1 */}
-          <div className="md:pr-8 md:border-r md:border-black py-10">
+          <div className="md:pr-8 md:border-r md:border-black border-b-black border-b py-10">
             <div className="bg-white w-full h-60 mb-6 flex overflow-hidden items-start justify-center text-black">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717232/first_dyyzet.png"
@@ -48,7 +48,7 @@ const Interested = () => {
           </div>
 
           {/* Column 2 */}
-          <div className="md:px-8 md:border-r md:border-black py-10">
+          <div className="md:px-8 md:border-r md:border-black py-10 border-b-black border-b">
             <div className="bg-white w-full h-60 mb-6 flex items-center justify-center text-black">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717288/second_wt2ss3.png"
@@ -88,7 +88,7 @@ const Interested = () => {
           </div>
 
           {/* Column 3 */}
-          <div className="md:col-span-2 lg:col-span-1 md:flex md:justify-center md:pl-8 py-10">
+          <div className="md:col-span-2 lg:col-span-1 md:flex md:justify-center md:pl-8 py-10 border-b-black border-b">
             <div className="w-full md:w-[85%] lg:w-full">
               <div className="bg-white w-full h-60 mb-6 flex items-center justify-center text-black">
                 <img

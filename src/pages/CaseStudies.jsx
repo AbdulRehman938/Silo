@@ -520,7 +520,7 @@ const CaseStudies = () => {
             </div>
           </div>
 
-          <div className="space-y-20 mx-auto">
+          <div className="mx-auto">
             {/* Fourth project */}
             <div
               className="hidden lg:flex items-center justify-around space-x-20 border-y py-16 border-y-black group relative cursor-pointer"

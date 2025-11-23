@@ -45,7 +45,7 @@ const TitleWithDescription = ({ title, description }) => {
 
   return (
     <>
-      <div className="w-full max-w-[1280px] mx-auto py-16 md:py-24">
+      <div className="w-full max-w-[1280px] mx-auto py-16 md:py-24 px-3 md:px-0">
         <div className="relative min-h-[300px] md:min-h-[400px]">
           <div className="relative w-full md:absolute md:top-0 md:left-0 md:w-[45%]">
             <h1 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-black leading-tight">
