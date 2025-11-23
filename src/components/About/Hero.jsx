@@ -104,7 +104,7 @@ const Hero = () => {
                   <img
                     src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/About2_gof6gm.png"
                     alt="The Silo brand representation"
-                    className="w-32 h-auto object-cover max-h-[120px]"
+                    className="w-32 h-auto object-cover"
                     loading="lazy"
                   />
                 </div>
@@ -115,11 +115,11 @@ const Hero = () => {
                     <div className="flex flex-col items-center mr-2 max-w-[12px]">
                       <span className="text-black font-bold text-xs tracking-wide rotate-[-90deg] whitespace-nowrap">Cut through the noise</span>
                     </div>
-                    <div className="relative flex items-center justify-center w-[90px] h-[120px]">
+                    <div className="relative flex items-center justify-center w-[90px]" style={{ minHeight: '120px' }}>
                       <img
                         src="https://res.cloudinary.com/di9tb45rl/image/upload/v1763796208/image_7_hpf0du.png"
                         alt="Video thumbnail"
-                        className="w-full h-full object-cover shadow-lg" />
+                        className="w-full h-auto object-cover shadow-lg" />
                       <div className="absolute inset-0 bg-black bg-opacity-30" />
                       {/* Play Button Overlay */}
                       <button
@@ -270,34 +270,22 @@ const Hero = () => {
 
       {/* Vimeo Modal */}
       {showVimeoModal && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-80">
-          <div className="relative flex flex-col items-center justify-center w-full h-full">
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4 bg-white rounded-full p-2 shadow hover:bg-gray-200 transition"
-              onClick={() => setShowVimeoModal(false)}
-              aria-label="Close video"
-              style={{ zIndex: 10 }}
-            >
-              <svg width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="4" y1="4" x2="14" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
-                <line x1="14" y1="4" x2="4" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-            </button>
-            {/* Vertical Vimeo Embed - edge to edge, no border radius, no extra background */}
-            <div className="flex items-center justify-center w-[95vw] max-w-[420px] h-[80vh] m-auto">
-              <iframe
-                src={vimeoUrl}
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                title="Vimeo Video"
-                style={{ width: '100%', height: '100%', background: 'transparent', border: 'none', aspectRatio: '9/16' }}
-              ></iframe>
-            </div>
-          </div>
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-80"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setShowVimeoModal(false);
+          }}
+        >
+          <iframe
+            src="https://player.vimeo.com/video/76979871?autoplay=1&title=1&byline=1&portrait=0"
+            width="465"
+            height="628"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            title="Vimeo Video"
+            style={{ background: 'transparent', border: 'none', boxShadow: '0 0 32px rgba(0,0,0,0.5)' }}
+          ></iframe>
         </div>
       )}
     </>
