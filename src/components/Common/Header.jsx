@@ -66,14 +66,14 @@ export default function Header() {
           <button
             aria-label="Open menu"
             aria-expanded={open}
-            className="lg:hidden inline-flex h-6 w-12 items-center justify-center border border-transparent"
+            className="lg:hidden inline-flex h-7 w-14 items-center justify-center border border-transparent"
             onClick={toggle}
           >
             <span className="sr-only">Menu</span>
             <span className="flex flex-col items-center justify-center gap-1">
-              <span className={`block h-0.5 w-6 bg-black transition-transform duration-300 ${open ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-              <span className={`block h-0.5 w-6 bg-black transition-opacity duration-300 ${open ? 'opacity-0' : ''}`}></span>
-              <span className={`block h-0.5 w-6 bg-black transition-transform duration-300 ${open ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+              <span className={`block h-0.5 w-7 bg-black transition-transform duration-300 ${open ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+              <span className={`block h-0.5 w-7 bg-black transition-opacity duration-300 ${open ? 'opacity-0' : ''}`}></span>
+              <span className={`block h-0.5 w-7 bg-black transition-transform duration-300 ${open ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
             </span>
           </button>
 

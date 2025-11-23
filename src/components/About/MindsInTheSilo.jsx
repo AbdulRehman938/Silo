@@ -290,7 +290,7 @@ const MindsInTheSilo = () => {
         {/* Header Section - Zoom & Small Laptop Optimized */}
         <div className="text-left xl:text-left mb-6 sm:mb-8 md:mb-12 lg:mb-16 px-2 sm:px-0">
           <h2 
-            className="font-bold text-black text-2xl sm:text-xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-[48px] leading-tight mb-3 sm:mb-4"
+            className="font-bold text-black text-4xl sm:text-xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-[48px] leading-tight mb-3 sm:mb-4"
             style={{
               opacity: 1,
               fontFamily: 'Epilogue, sans-serif',
@@ -410,11 +410,11 @@ const MindsInTheSilo = () => {
                       style={{
                         minHeight: '300px',
                         pointerEvents: 'auto',
-                        borderColor: cardsPerView === 1 && isInViewport ? '#FF322E' : 'transparent'
+                        borderColor: cardsPerView === 1 && isInViewport ? 'transparent' : 'transparent'
                       }}
                       onMouseEnter={(e) => {
                         if (!isDragging && window.innerWidth >= 768) {
-                          e.currentTarget.style.borderColor = '#FF322E';
+                          e.currentTarget.style.borderColor = 'transparent';
                         }
                       }}
                       onMouseLeave={(e) => {
@@ -558,7 +558,7 @@ const MindsInTheSilo = () => {
                       setTimeout(() => setIsTransitioning(false), 300);
                     }
                   }}
-                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
+                  className={`w-2 h-2 sm:w-3 sm:h-3 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
                     currentSlide === index ? 'bg-red-500' : 'bg-red-200 hover:bg-red-300'
                   }`}
                   aria-label={`Go to slide ${index + 1}`}

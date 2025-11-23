@@ -93,14 +93,14 @@ const Hero = () => {
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717241/About1_t6qyw0.png"
                   alt="Silo team member showcasing brand identity"
-                  className="w-full h-auto object-cover max-h-[350px]"
+                  className="w-full h-auto object-cover max-h-[500px] sm:max-h-[350px]"
                   loading="lazy"
                 />
               </div>
               {/* Small Image + Video Section in same row */}
               <div className="flex flex-row items-center justify-center gap-3 w-full">
                 {/* Small Image */}
-                <div className="flex justify-center">
+                <div className="hidden sm:flex justify-center">
                   <img
                     src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/About2_gof6gm.png"
                     alt="The Silo brand representation"
@@ -110,7 +110,7 @@ const Hero = () => {
                 </div>
                 {/* Video Section (conditionally rendered) */}
                 {showVideoSection && (
-                  <div className="flex items-center">
+                  <div className="flex items-center h-[10rem]">
                     {/* Vertical Text Outside */}
                     <div className="flex flex-col items-center mr-2 max-w-[12px]">
                       <span className="text-black font-bold text-xs tracking-wide rotate-[-90deg] whitespace-nowrap">Cut through the noise</span>

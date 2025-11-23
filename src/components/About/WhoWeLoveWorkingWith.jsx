@@ -78,7 +78,7 @@ const WhoWeLoveWorkingWith = () => {
               className="absolute left-0 h-full w-12 md:w-36 pointer-events-none z-10"
               style={{
                 // move overlay further up so it covers the topmost row as well
-                top: '-72px',
+                top: '-70px',
                 height: 'calc(100% + 32px)',
                 background: '#ffffff',
               }}
@@ -87,7 +87,7 @@ const WhoWeLoveWorkingWith = () => {
             <div
               className="absolute right-0 h-full w-12 md:w-36 pointer-events-none z-10"
               style={{
-                top: '-72px',
+                top: '-70px',
                 height: 'calc(100% + 32px)',
                 background: '#ffffff',
               }}

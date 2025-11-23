@@ -3,7 +3,7 @@ const ThingsWeBelieveIn = () => {
     <section className="min-h-screen flex items-center justify-center pb-6 sm:py-8 md:py-12 lg:py-16 px-3 sm:px-4 md:px-0 bg-white overflow-x-hidden">
       <div className="max-w-full mx-auto w-full">
         {/* Text Section - Zoom & Small Laptop Optimized */}
-        <div className="text-left xl:text-left mb-10 sm:mb-8 md:mb-16 lg:mb-20 px-2 sm:px-0 max-w-4xl mx-auto xl:mx-0">
+        <div className="text-left xl:text-left mb-2 md:mb-16 lg:mb-20 px-2 sm:px-0 max-w-4xl mx-auto xl:mx-0">
           {/* Heading - Zoom & Small Laptop Optimized */}
           <h2 
               className="font-bold text-black text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[48px] leading-tight mb-3 sm:mb-4 text-left"
