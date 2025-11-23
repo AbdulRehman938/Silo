@@ -65,17 +65,18 @@ export default function NewsletterSubscription({ onSubmit, isSubmitting, message
 
     gsap.set(newsletterEl, { y: 0 });
 
+    const buffer = -8; // Adjust this value as needed for perfect alignment
     const st = ScrollTrigger.create({
       trigger: containerEl,
-      start: 'top 96px',
+      start: 'top 86px',
       end: () =>
-        containerEl.offsetHeight - newsletterEl.offsetHeight <= 0
+        containerEl.offsetHeight - newsletterEl.offsetHeight + buffer <= 0
           ? '+=0'
-          : `+=${containerEl.offsetHeight - newsletterEl.offsetHeight - 160}`,
+          : `+=${containerEl.offsetHeight - newsletterEl.offsetHeight + buffer}`,
       scrub: true,
       onUpdate: (self) => {
         const progress = self.progress;
-        const maxY = containerEl.offsetHeight - newsletterEl.offsetHeight - 160;
+        const maxY = containerEl.offsetHeight - newsletterEl.offsetHeight + buffer;
         gsap.to(newsletterEl, {
           y: progress * maxY,
           ease: 'none',

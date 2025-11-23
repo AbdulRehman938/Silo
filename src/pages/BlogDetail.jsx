@@ -138,7 +138,11 @@ export default function BlogDetail() {
             </div>
             {blogPost.content.contentImage.caption && (
               <p className="text-sm text-black mt-2 flex items-center gap-1">
-                <span><LuTriangleRight className="text-black fill-black mx-1 rotate-90" size={16} /></span> {blogPost.content.contentImage.caption}
+                <span className="mx-1" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="0,0 0,16 16,16" fill="black" stroke="black" strokeWidth="1" />
+                  </svg>
+                </span> {blogPost.content.contentImage.caption}
               </p>
             )}
           </div>
@@ -164,7 +168,9 @@ export default function BlogDetail() {
             </blockquote>
             {blogPost.content.quote.author && (
               <p className="text-sm text-black flex items-center gap-1">
-                <span><LuTriangleRight className="text-black fill-black mx-1 rotate-90" size={16} /></span> {blogPost.content.quote.author}
+                <span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="0,0 0,16 16,16" fill="black" stroke="black" strokeWidth="1" />
+                  </svg></span> {blogPost.content.quote.author}
               </p>
             )}
           </div>
