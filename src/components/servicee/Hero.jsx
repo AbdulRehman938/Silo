@@ -4,7 +4,7 @@ import { FaPlay, FaPause} from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import Cards from "./Cards";
 import Interested from "./Interested";
-import OptionalAddOns from "./OptionalAddOns";
+// import OptionalAddOns from "./OptionalAddOns";
 import "../../styles/scaling-overrides.css";
 import Section from "../Home/Section.jsx";
 
@@ -92,7 +92,7 @@ const Hero = () => {
       <div className="hidden sm:block">
         <Cards />
         <Interested />
-        <OptionalAddOns />
+        {/* <OptionalAddOns /> */}
         <Section />
         <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black" />
       </div>
@@ -143,7 +143,7 @@ const Hero = () => {
           <Cards />
         </div>
         <Interested />
-        <OptionalAddOns />
+        {/* <OptionalAddOns /> */}
         <Section />
         <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black " />
       </div>

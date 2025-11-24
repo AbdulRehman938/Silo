@@ -13,7 +13,9 @@ const Interested = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717232/first_dyyzet.png"
                 alt="first"
-                className="object-cover object-top w-full h-full" loading="lazy" />
+                className="object-cover object-top w-full h-full"
+                loading="lazy"
+              />
             </div>
             <h3 className="text-4xl font-bold mb-3">
               Social Strategy & Management
@@ -53,7 +55,9 @@ const Interested = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717288/second_wt2ss3.png"
                 alt="second"
-                className="object-fill w-full h-full" loading="lazy" />
+                className="object-fill w-full h-full"
+                loading="lazy"
+              />
             </div>
             <h3 className="text-4xl font-bold mb-3">
               A silo load of UGC Creators
@@ -94,7 +98,9 @@ const Interested = () => {
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717293/third_gwfnbk.png"
                   alt="third"
-                  className="object-cover object-xcenter w-full h-full" loading="lazy" />
+                  className="object-cover object-xcenter w-full h-full"
+                  loading="lazy"
+                />
               </div>
               <h3 className="text-4xl font-bold mb-3">
                 Building Modern Design & Motion
@@ -127,6 +133,65 @@ const Interested = () => {
               </ul>
             </div>
           </div>
+        </div>
+      </div>
+      <div
+        id="optional"
+        className="max-w-[1280px] h-auto mx-auto px-4 md:px-0 py-16"
+      >
+        <div className="mx-3">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Optional add-ons
+          </h2>
+          <p className="text-base md:text-lg text-black font-semibold mb-8">
+            These services support your core campaign and can be added when
+            needed.
+          </p>
+
+          <div className="space-y-4">
+            <div className="flex items-start">
+              <span
+                className="inline-block w-3 h-3 mt-1.5 mr-4 bg-[#FF322E] rotate-[270deg] flex-shrink-0"
+                style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
+              ></span>
+              <p className="text-base md:text-lg">Email Marketing</p>
+            </div>
+
+            <div className="flex items-start">
+              <span
+                className="inline-block w-3 h-3 mt-1.5 mr-4 bg-[#FF322E] rotate-[270deg] flex-shrink-0"
+                style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
+              ></span>
+              <p className="text-base md:text-lg">
+                Paid Advertising (Meta, Google, TikTok, Bing)
+              </p>
+            </div>
+
+            <div className="flex items-start">
+              <span
+                className="inline-block w-3 h-3 mt-1.5 mr-4 bg-[#FF322E] rotate-[270deg] flex-shrink-0"
+                style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
+              ></span>
+              <p className="text-base md:text-lg">
+                Influencer Campaign Management (talent sourcing, rate
+                negotiation, deliverables)
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* CTA */}
+        <div className="mt-12 ml-5 md:ml-0">
+          <a
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-[1px] border-brand h-[55px] px-8 py-3 text-xs font-semibold uppercase tracking-wide text-brand relative overflow-hidden group"
+          >
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+              <FaChevronRight className="block text-brand w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-24 group-hover:scale-[140%]" />
+            </div>
+            <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-60">
+              Interested in chat
+            </span>
+          </a>
         </div>
       </div>
     </section>

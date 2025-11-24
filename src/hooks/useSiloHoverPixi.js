@@ -57,15 +57,16 @@ export const useSiloHoverPixi = ({ hostRef, svgSrc, height, intensity, isMobile 
         logoTex = await Assets.load(svgSrc);
         console.log('[Pixi] Texture loaded', svgSrc);
 
-        // Add only top padding to prevent clipping
-        const padY = logoTex.height * 0.15;
+        // Add padding to prevent clipping when liquid effect expands
+        const padX = logoTex.width * 0.12;
+        const padY = logoTex.height * 0.12;
         const base = document.createElement('canvas');
-        base.width = logoTex.width;
-        base.height = logoTex.height + padY;
+        base.width = logoTex.width + (padX * 2);
+        base.height = logoTex.height + (padY * 2);
         const ctx = base.getContext('2d');
         if (ctx) {
           ctx.clearRect(0, 0, base.width, base.height);
-          ctx.drawImage(logoTex.source.resource, 0, padY, logoTex.width, logoTex.height);
+          ctx.drawImage(logoTex.source.resource, padX, padY, logoTex.width, logoTex.height);
         }
         logoTex = Texture.from(base);
       } catch {
@@ -102,13 +103,14 @@ export const useSiloHoverPixi = ({ hostRef, svgSrc, height, intensity, isMobile 
         if (!app || !logoSprite || !logoTex) return;
 
         const w = el.clientWidth;
-        const h = isMobile ? height : (logoTex.height / logoTex.width) * w;
+        const scaleFactor = 1.25; // Increase size by 25%
+        const h = isMobile ? height : (logoTex.height / logoTex.width) * w * scaleFactor;
 
         app.renderer.resize(w, h);
         logoSprite.x = w / 2;
         logoSprite.y = h / 2;
-        logoSprite.width = w;
-        logoSprite.height = (logoTex.height / logoTex.width) * w;
+        logoSprite.width = w * scaleFactor;
+        logoSprite.height = (logoTex.height / logoTex.width) * w * scaleFactor;
 
         rippleUniforms.uAspect.x = logoSprite.width;
         rippleUniforms.uAspect.y = logoSprite.height;

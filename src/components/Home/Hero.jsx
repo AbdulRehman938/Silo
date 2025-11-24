@@ -25,16 +25,16 @@ export default function Hero() {
         <SiloHoverBanner
           svgSrc="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/hero_hyl0xu.svg"
           intensity={40}
-          className="home-hero-text-float flex-shrink-0"
+          className="home-hero-text-float flex-shrink-0 mt-8 md:mt-12 lg:mt-16"
         />
 
-        <div className="relative left-1/2 -translate-x-1/2 w-screen bg-transparent flex-shrink-0 mt-10 md:mt-0">
+        <div className="relative left-1/2 -translate-x-1/2 w-screen bg-transparent flex-shrink-0 mt-6 md:mt-0 lg:mt-0">
           <div className="w-full home-hero-text-h">
-            <div className="py-4 md:py-5 text-center font-bold text-2xl xl:text-xl text-black">
+            <div className="py-3 md:py-4 text-center font-bold text-2xl xl:text-xl text-black">
               Used by companies who know what works.
             </div>
           </div>
-          <div className="pb-8 mt-5 home-hero-text-p">
+          <div className="pb-6 mt-3 home-hero-text-p">
             <LogoLoop
               logos={DEFAULT_LOGOS}
               gap={48}
