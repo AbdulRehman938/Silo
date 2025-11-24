@@ -104,11 +104,13 @@ export const useSiloHoverPixi = ({ hostRef, svgSrc, height, intensity, isMobile 
 
         const w = el.clientWidth;
         const scaleFactor = 1.25; // Increase size by 25%
-        const h = isMobile ? height : (logoTex.height / logoTex.width) * w * scaleFactor;
+        const horizontalPadding = w * 0.05; // Add 5% padding on each side
+        const canvasWidth = w + (horizontalPadding * 2);
+        const canvasHeight = isMobile ? height : (logoTex.height / logoTex.width) * w * scaleFactor;
 
-        app.renderer.resize(w, h);
-        logoSprite.x = w / 2;
-        logoSprite.y = h / 2;
+        app.renderer.resize(canvasWidth, canvasHeight);
+        logoSprite.x = canvasWidth / 2;
+        logoSprite.y = canvasHeight / 2;
         logoSprite.width = w * scaleFactor;
         logoSprite.height = (logoTex.height / logoTex.width) * w * scaleFactor;
 
