@@ -119,12 +119,14 @@ const Cards = () => {
 
     let touchAccumulator = 0;
     let scrollCheckInterval = null;
+    let lastScrollY = window.scrollY;
+    let lastFrameTime = Date.now();
 
     // Intersection Observer for detecting section visibility
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.25) {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
             // Section is visible, start checking for centering
             if (!scrollCheckInterval) {
               scrollCheckInterval = setInterval(checkAndLockSection, 16); // 60fps
@@ -144,7 +146,7 @@ const Cards = () => {
       },
       {
         threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-        rootMargin: "100px 0px", // Extended detection zone
+        rootMargin: "50px 0px", // Reduced from 100px
       }
     );
 
@@ -157,10 +159,15 @@ const Cards = () => {
       const containerCenter = rect.top + rect.height / 2;
       const distanceFromCenter = Math.abs(containerCenter - viewportCenter);
 
-      // Very aggressive threshold for fast scrolling
-      const threshold = 350; // Large detection zone
+      // Reduced threshold to prevent premature locking
+      const threshold = 200; // Reduced from 350px
 
-      if (distanceFromCenter <= threshold && !isAnimating.current) {
+      // Only lock if section is reasonably centered
+      const isReasonablyCentered = distanceFromCenter <= threshold;
+      const isComingIntoView =
+        containerCenter > 100 && containerCenter < viewportHeight - 100;
+
+      if (isReasonablyCentered && isComingIntoView && !isAnimating.current) {
         setIsLocked(true);
         isAnimating.current = true;
 
@@ -173,6 +180,38 @@ const Cards = () => {
           behavior: "smooth",
         });
       }
+
+      // Handle momentum/passive scrolling for card animation
+      if (isAnimating.current) {
+        const currentScrollY = window.scrollY;
+        const scrollDelta = currentScrollY - lastScrollY;
+
+        if (Math.abs(scrollDelta) > 0) {
+          const now = Date.now();
+          const timeDelta = now - lastFrameTime;
+
+          // Convert scroll movement to card progress
+          const progressPerPixel = 1 / 300; // 300px to scroll through one card
+          const direction = scrollDelta > 0 ? 1 : -1;
+          const increment = Math.abs(scrollDelta) * progressPerPixel;
+
+          // Don't update if at boundary
+          const atBoundary =
+            (cardProgress >= CARD_DATA.length && direction > 0) ||
+            (cardProgress <= 0 && direction < 0);
+
+          if (!atBoundary && timeDelta > 0) {
+            setCardProgress((prev) => {
+              const newProgress = prev + direction * increment;
+              return Math.max(0, Math.min(CARD_DATA.length, newProgress));
+            });
+          }
+
+          lastFrameTime = now;
+        }
+
+        lastScrollY = currentScrollY;
+      }
     };
 
     observer.observe(mobileRef.current);
@@ -181,6 +220,8 @@ const Cards = () => {
       if (!mobileRef.current) return;
       touchStartY.current = e.touches[0].clientY;
       touchAccumulator = 0;
+      lastScrollY = window.scrollY;
+      lastFrameTime = Date.now();
     };
 
     const handleTouchMove = (e) => {
