@@ -57,7 +57,7 @@ const Hero = () => {
             <h1 className="font-bold xl:text-[160px] lg:text-[120px] md:text-[14vw] leading-none mb-1">
               What we do
             </h1>
-            <span className="text-black lg:text-base md:text-sm font-normal text-center max-w-3xl px-4">
+            <span className="text-black lg:text-base md:text-sm font-normal text-center max-w-3xl px-4 my-5">
               We make content that cuts through the noise. Strategy, UGC,
               design, and motion, built to get noticed and remembered
             </span>
