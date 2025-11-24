@@ -116,11 +116,17 @@ const Cards = () => {
   // Mobile touch handler with scroll lock
   useEffect(() => {
     let touchAccumulator = 0;
+    let lastTouchTime = 0;
+    let lastTouchY = 0;
+    let velocity = 0;
 
     const handleTouchStart = (e) => {
       if (!mobileRef.current) return;
       touchStartY.current = e.touches[0].clientY;
+      lastTouchY = e.touches[0].clientY;
+      lastTouchTime = Date.now();
       touchAccumulator = 0;
+      velocity = 0;
     };
 
     const handleTouchMove = (e) => {
@@ -141,37 +147,56 @@ const Cards = () => {
         return;
       }
 
-      // Calculate visibility
+      // Calculate velocity for fast scroll detection
+      const currentTime = Date.now();
+      const currentY = e.touches[0].clientY;
+      const timeDelta = currentTime - lastTouchTime;
+      if (timeDelta > 0) {
+        velocity = Math.abs(currentY - lastTouchY) / timeDelta;
+      }
+      lastTouchTime = currentTime;
+      lastTouchY = currentY;
+
+      // Calculate visibility - reduced threshold for earlier detection
       const visibleTop = Math.max(rect.top, 0);
       const visibleBottom = Math.min(rect.bottom, viewportHeight);
       const visibleHeight = visibleBottom - visibleTop;
       const visibilityRatio = visibleHeight / rect.height;
 
-      // Only proceed if at least 50% of section is visible
-      if (visibilityRatio < 0.5) {
+      // Lower threshold to 40% for better fast-scroll detection
+      if (visibilityRatio < 0.4) {
         return;
       }
 
-      // Check if centered
+      // Check if centered - increased threshold for fast scrolling
       const containerCenter = rect.top + rect.height / 2;
       const distanceFromCenter = Math.abs(containerCenter - viewportCenter);
+
+      // Adaptive threshold based on velocity - higher velocity = larger threshold
+      const baseThreshold = 150;
+      const velocityBonus = Math.min(velocity * 100, 150); // Max 150px bonus
+      const adaptiveThreshold = baseThreshold + velocityBonus;
+
       const isCentered =
-        distanceFromCenter <= 150 &&
+        distanceFromCenter <= adaptiveThreshold &&
         containerCenter > 0 &&
         containerCenter < viewportHeight;
 
       // Lock when centered and not already locked
       if (isCentered && !isAnimating.current) {
-        setIsLocked(true);
-        isAnimating.current = true;
+        // Use RAF for smoother lock engagement
+        requestAnimationFrame(() => {
+          setIsLocked(true);
+          isAnimating.current = true;
 
-        // Auto-scroll section to perfect center when lock engages on mobile
-        const scrollOffset = containerCenter - viewportCenter;
-        const targetScrollY = window.scrollY + scrollOffset;
+          // Auto-scroll section to perfect center when lock engages on mobile
+          const scrollOffset = containerCenter - viewportCenter;
+          const targetScrollY = window.scrollY + scrollOffset;
 
-        window.scrollTo({
-          top: targetScrollY,
-          behavior: "smooth",
+          window.scrollTo({
+            top: targetScrollY,
+            behavior: "smooth",
+          });
         });
       }
 
@@ -180,7 +205,6 @@ const Cards = () => {
         return;
       }
 
-      const currentY = e.touches[0].clientY;
       const delta = touchStartY.current - currentY;
 
       // Don't prevent if at boundary and scrolling in that direction
@@ -214,6 +238,9 @@ const Cards = () => {
 
     const handleTouchEnd = () => {
       touchAccumulator = 0;
+      velocity = 0;
+      lastTouchTime = 0;
+      lastTouchY = 0;
     };
 
     window.addEventListener("touchstart", handleTouchStart, { passive: true });
