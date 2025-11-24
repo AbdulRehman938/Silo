@@ -95,7 +95,7 @@ export default function Ramblings() {
         </div>
 
         {/* Sidebar + Posts Wrapper */}
-        <div ref={containerRef} className="flex flex-col lg:flex-row gap-12 relative mt-10">
+        <div ref={containerRef} className="flex flex-col lg:flex-row gap-12 relative mt-2">
           
           {/* Sidebar */}
           <div ref={sidebarWrapperRef} className="lg:w-48 flex-shrink-0 relative">
