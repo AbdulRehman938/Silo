@@ -113,98 +113,80 @@ const Cards = () => {
     return () => window.removeEventListener("wheel", handleWheel);
   }, [isLocked, cardProgress]);
 
-  // Mobile touch handler with scroll lock
+  // Mobile scroll handler with Intersection Observer
   useEffect(() => {
+    if (!mobileRef.current) return;
+
     let touchAccumulator = 0;
-    let lastTouchTime = 0;
-    let lastTouchY = 0;
-    let velocity = 0;
+    let scrollCheckInterval = null;
 
-    const handleTouchStart = (e) => {
-      if (!mobileRef.current) return;
-      touchStartY.current = e.touches[0].clientY;
-      lastTouchY = e.touches[0].clientY;
-      lastTouchTime = Date.now();
-      touchAccumulator = 0;
-      velocity = 0;
-    };
+    // Intersection Observer for detecting section visibility
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.25) {
+            // Section is visible, start checking for centering
+            if (!scrollCheckInterval) {
+              scrollCheckInterval = setInterval(checkAndLockSection, 16); // 60fps
+            }
+          } else if (!entry.isIntersecting) {
+            // Section left viewport, clear interval
+            if (scrollCheckInterval) {
+              clearInterval(scrollCheckInterval);
+              scrollCheckInterval = null;
+            }
+            if (isAnimating.current) {
+              setIsLocked(false);
+              isAnimating.current = false;
+            }
+          }
+        });
+      },
+      {
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+        rootMargin: "100px 0px", // Extended detection zone
+      }
+    );
 
-    const handleTouchMove = (e) => {
+    const checkAndLockSection = () => {
       if (!mobileRef.current) return;
 
       const rect = mobileRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
       const viewportCenter = viewportHeight / 2;
-
-      // Early exit: section must be on screen
-      if (rect.bottom < 0 || rect.top > viewportHeight) {
-        // Section is completely off screen, don't interfere
-        if (isAnimating.current) {
-          // If was animating but now off screen, unlock
-          setIsLocked(false);
-          isAnimating.current = false;
-        }
-        return;
-      }
-
-      // Calculate velocity for fast scroll detection
-      const currentTime = Date.now();
-      const currentY = e.touches[0].clientY;
-      const timeDelta = currentTime - lastTouchTime;
-      if (timeDelta > 0) {
-        velocity = Math.abs(currentY - lastTouchY) / timeDelta;
-      }
-      lastTouchTime = currentTime;
-      lastTouchY = currentY;
-
-      // Calculate visibility - reduced threshold for earlier detection
-      const visibleTop = Math.max(rect.top, 0);
-      const visibleBottom = Math.min(rect.bottom, viewportHeight);
-      const visibleHeight = visibleBottom - visibleTop;
-      const visibilityRatio = visibleHeight / rect.height;
-
-      // Lower threshold to 40% for better fast-scroll detection
-      if (visibilityRatio < 0.4) {
-        return;
-      }
-
-      // Check if centered - increased threshold for fast scrolling
       const containerCenter = rect.top + rect.height / 2;
       const distanceFromCenter = Math.abs(containerCenter - viewportCenter);
 
-      // Adaptive threshold based on velocity - higher velocity = larger threshold
-      const baseThreshold = 150;
-      const velocityBonus = Math.min(velocity * 100, 150); // Max 150px bonus
-      const adaptiveThreshold = baseThreshold + velocityBonus;
+      // Very aggressive threshold for fast scrolling
+      const threshold = 350; // Large detection zone
 
-      const isCentered =
-        distanceFromCenter <= adaptiveThreshold &&
-        containerCenter > 0 &&
-        containerCenter < viewportHeight;
+      if (distanceFromCenter <= threshold && !isAnimating.current) {
+        setIsLocked(true);
+        isAnimating.current = true;
 
-      // Lock when centered and not already locked
-      if (isCentered && !isAnimating.current) {
-        // Use RAF for smoother lock engagement
-        requestAnimationFrame(() => {
-          setIsLocked(true);
-          isAnimating.current = true;
+        // Snap to center
+        const scrollOffset = containerCenter - viewportCenter;
+        const targetScrollY = window.scrollY + scrollOffset;
 
-          // Auto-scroll section to perfect center when lock engages on mobile
-          const scrollOffset = containerCenter - viewportCenter;
-          const targetScrollY = window.scrollY + scrollOffset;
-
-          window.scrollTo({
-            top: targetScrollY,
-            behavior: "smooth",
-          });
+        window.scrollTo({
+          top: targetScrollY,
+          behavior: "smooth",
         });
       }
+    };
 
-      // Only handle scroll if animating or centered
-      if (!isAnimating.current && !isCentered) {
-        return;
-      }
+    observer.observe(mobileRef.current);
 
+    const handleTouchStart = (e) => {
+      if (!mobileRef.current) return;
+      touchStartY.current = e.touches[0].clientY;
+      touchAccumulator = 0;
+    };
+
+    const handleTouchMove = (e) => {
+      if (!mobileRef.current || !isAnimating.current) return;
+
+      const currentY = e.touches[0].clientY;
       const delta = touchStartY.current - currentY;
 
       // Don't prevent if at boundary and scrolling in that direction
@@ -212,14 +194,13 @@ const Cards = () => {
         (cardProgress >= CARD_DATA.length && delta > 0) ||
         (cardProgress <= 0 && delta < 0);
 
-      if (!atBoundary && (isAnimating.current || isCentered)) {
+      if (!atBoundary && isAnimating.current) {
         e.preventDefault();
 
         touchAccumulator += delta;
         touchStartY.current = currentY;
 
         // Direct proportional movement - card speed matches drag speed
-        // Each pixel of drag = progress increment
         const progressPerPixel = 1 / 300; // 300px to complete one card
 
         if (Math.abs(delta) > 0) {
@@ -238,9 +219,6 @@ const Cards = () => {
 
     const handleTouchEnd = () => {
       touchAccumulator = 0;
-      velocity = 0;
-      lastTouchTime = 0;
-      lastTouchY = 0;
     };
 
     window.addEventListener("touchstart", handleTouchStart, { passive: true });
@@ -248,6 +226,10 @@ const Cards = () => {
     window.addEventListener("touchend", handleTouchEnd, { passive: true });
 
     return () => {
+      observer.disconnect();
+      if (scrollCheckInterval) {
+        clearInterval(scrollCheckInterval);
+      }
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
