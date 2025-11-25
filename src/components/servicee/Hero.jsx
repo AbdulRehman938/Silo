@@ -23,9 +23,17 @@ const Hero = () => {
   const playerRef = useRef(null);
   const videoContainerRef = useRef(null);
   const heroSectionRef = useRef(null);
-  const [videoState, setVideoState] = useState("initial"); // 'initial', 'fixed', 'absolute'
-  const [absoluteTop, setAbsoluteTop] = useState(0); // For absolute positioning
-  const previousStateRef = useRef("initial"); // Track previous state to prevent flickering
+  const initialVideoPositionRef = useRef(null);
+  const [videoPosition, setVideoPosition] = useState({
+    top: 0,
+    left: 0,
+    right: 'auto',
+    bottom: 'auto',
+    width: 180,
+    height: 210,
+  });
+  const [videoState, setVideoState] = useState("initial"); // 'initial', 'transitioning', 'fixed', 'absolute'
+  const [absoluteTop, setAbsoluteTop] = useState(0);
 
   useEffect(() => {
     const onKey = (e) => {
@@ -48,60 +56,117 @@ const Hero = () => {
     return () => document.removeEventListener("pointerdown", onPointerDown);
   }, [open]);
 
-  // Handle scroll for sticky video
+  // Capture initial video position
+  useEffect(() => {
+    if (initialVideoPositionRef.current) {
+      const rect = initialVideoPositionRef.current.getBoundingClientRect();
+      const scrollY = window.scrollY || window.pageYOffset;
+      setVideoPosition({
+        top: rect.top + scrollY,
+        left: rect.left,
+        right: 'auto',
+        bottom: 'auto',
+        width: 180,
+        height: 210,
+      });
+    }
+  }, []);
+
+  // Handle scroll for smooth video animation
   useEffect(() => {
     let ticking = false;
     
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          if (!heroSectionRef.current) {
+          if (!heroSectionRef.current || !initialVideoPositionRef.current) {
             ticking = false;
             return;
           }
 
           const heroRect = heroSectionRef.current.getBoundingClientRect();
+          const initialRect = initialVideoPositionRef.current.getBoundingClientRect();
           const footer = document.querySelector("footer");
           const footerRect = footer?.getBoundingClientRect();
-          const videoHeight = 240; // Height when sticky
-          const bottomOffset = 200; // Increased offset to stop video higher above footer
-
-          // Use hysteresis to prevent flickering
-          // Different thresholds based on current state
-          let threshold;
-          if (previousStateRef.current === "initial") {
-            threshold = -150; // Need to scroll further down to switch to fixed
-          } else {
-            threshold = -50; // Can scroll back up sooner to return to initial
-          }
           
-          const heroTopOutOfView = heroRect.top < threshold;
+          const scrollY = window.scrollY || window.pageYOffset;
+          const initialTop = initialRect.top + scrollY;
+          const initialLeft = initialRect.left;
 
-          // Calculate if video would overlap footer
-          const footerApproaching =
-            footerRect && footerRect.top <= window.innerHeight;
+          // Target position (bottom right)
+          const targetBottom = 24; // 6 * 4px
+          const targetRight = 24;
+          const targetWidth = 200;
+          const targetHeight = 240;
 
-          let newState = previousStateRef.current;
+          // Calculate progress (0 to 1) based on hero section scroll
+          const scrollStart = 0;
+          const scrollEnd = heroRect.height;
+          const scrollProgress = Math.max(0, Math.min(1, -heroRect.top / scrollEnd));
 
-          if (!heroTopOutOfView) {
-            // We're at the top, show in initial position
-            newState = "initial";
-          } else if (heroTopOutOfView && !footerApproaching) {
-            // We've scrolled past hero and footer is not near, stick to viewport
-            newState = "fixed";
+          // Check if footer is approaching
+          const bottomOffset = 150; // Reduced to allow video to move lower before stopping
+          const footerApproaching = footerRect && footerRect.top <= window.innerHeight;
+
+          if (scrollProgress === 0) {
+            // At the top - initial position
+            setVideoState("initial");
+            setVideoPosition({
+              top: initialTop,
+              left: initialLeft,
+              right: 'auto',
+              bottom: 'auto',
+              width: 180,
+              height: 210,
+            });
+          } else if (scrollProgress < 1) {
+            // Transitioning - interpolate between initial and fixed positions
+            setVideoState("transitioning");
+            
+            // Calculate target position in viewport
+            const viewportHeight = window.innerHeight;
+            const targetTop = viewportHeight - targetHeight - targetBottom;
+            const targetLeft = window.innerWidth - targetWidth - targetRight;
+
+            // Interpolate position
+            const currentTop = initialTop + (targetTop + scrollY - initialTop) * scrollProgress;
+            const currentLeft = initialLeft + (targetLeft - initialLeft) * scrollProgress;
+            const currentWidth = 180 + (targetWidth - 180) * scrollProgress;
+            const currentHeight = 210 + (targetHeight - 210) * scrollProgress;
+
+            setVideoPosition({
+              top: currentTop,
+              left: currentLeft,
+              right: 'auto',
+              bottom: 'auto',
+              width: currentWidth,
+              height: currentHeight,
+            });
+          } else if (!footerApproaching) {
+            // Fully scrolled - fixed to bottom right
+            setVideoState("fixed");
+            setVideoPosition({
+              top: 'auto',
+              left: 'auto',
+              right: targetRight,
+              bottom: targetBottom,
+              width: targetWidth,
+              height: targetHeight,
+            });
           } else if (footerApproaching && footerRect) {
-            // Footer is approaching, calculate absolute position
-            const scrollY = window.scrollY || window.pageYOffset;
+            // Footer approaching - absolute position
+            setVideoState("absolute");
             const footerTop = footerRect.top + scrollY;
-            const calculatedTop = footerTop - videoHeight - bottomOffset;
+            const calculatedTop = footerTop - targetHeight - bottomOffset;
             setAbsoluteTop(calculatedTop);
-            newState = "absolute";
-          }
-
-          // Only update state if it actually changed
-          if (newState !== previousStateRef.current) {
-            previousStateRef.current = newState;
-            setVideoState(newState);
+            setVideoPosition({
+              top: calculatedTop,
+              left: 'auto',
+              right: targetRight,
+              bottom: 'auto',
+              width: targetWidth,
+              height: targetHeight,
+            });
           }
           
           ticking = false;
@@ -123,23 +188,12 @@ const Hero = () => {
         className="hidden sm:block sm:h-[calc(100vh-80px)] pt-8 mt-20"
       >
         <div className="w-full max-w-[1280px] h-full mx-auto flex flex-col justify-between items-center px-4 md:px-10 lg:px-10 pb-2 pt-2">
-          {/* Placeholder to prevent layout shift when video becomes fixed */}
-          {videoState !== "initial" && (
-            <div className="w-[180px] h-[210px] mb-3" aria-hidden="true" />
-          )}
-
-          {/* Video in initial state (normal position) */}
-          {videoState === "initial" && (
-            <div
-              ref={videoContainerRef}
-              className="service-hero-title relative flex items-center justify-center service-video w-[180px] h-[210px] mb-3 transition-all duration-500 ease-in-out"
-            >
-              <VideoPlayer
-                containerClassName="w-full h-full"
-                onVideoClick={handleOpen}
-              />
-            </div>
-          )}
+          {/* Placeholder to track initial video position */}
+          <div 
+            ref={initialVideoPositionRef}
+            className="w-[180px] h-[210px] mb-3" 
+            aria-hidden="true" 
+          />
 
           <div className="flex flex-col justify-start items-center text-black leading-tight mb-3">
             <h1 className="font-bold xl:text-[160px] lg:text-[120px] md:text-[14vw] leading-none mb-1">
@@ -178,25 +232,29 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Video in fixed/absolute state - rendered at body level via portal */}
-      {videoState !== "initial" &&
-        createPortal(
-          <div
-            ref={videoContainerRef}
-            className={`service-hero-title flex items-center justify-center service-video transition-all duration-500 ease-in-out w-[200px] h-[240px] z-50 sm:flex ${
-              videoState === "fixed"
-                ? "fixed bottom-6 right-6"
-                : "absolute right-6"
-            }`}
-            style={videoState === "absolute" ? { top: `${absoluteTop}px` } : {}}
-          >
-            <VideoPlayer
-              containerClassName="w-full h-full"
-              onVideoClick={handleOpen}
-            />
-          </div>,
-          document.body
-        )}
+      {/* Video - always rendered with smooth animation */}
+      {createPortal(
+        <div
+          ref={videoContainerRef}
+          className="service-hero-title flex items-center justify-center service-video z-50 hidden sm:flex"
+          style={{
+            position: videoState === "fixed" && videoPosition.top === 'auto' ? 'fixed' : 'absolute',
+            top: videoPosition.top !== 'auto' ? `${videoPosition.top}px` : videoPosition.top,
+            left: videoPosition.left !== 'auto' ? `${videoPosition.left}px` : videoPosition.left,
+            right: videoPosition.right !== 'auto' ? `${videoPosition.right}px` : videoPosition.right,
+            bottom: videoPosition.bottom !== 'auto' ? `${videoPosition.bottom}px` : videoPosition.bottom,
+            width: `${videoPosition.width}px`,
+            height: `${videoPosition.height}px`,
+            transition: 'none', // Smooth animation via position updates
+          }}
+        >
+          <VideoPlayer
+            containerClassName="w-full h-full"
+            onVideoClick={handleOpen}
+          />
+        </div>,
+        document.body
+      )}
 
       <div className="hidden sm:block">
         <Cards />
