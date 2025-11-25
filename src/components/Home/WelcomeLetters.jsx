@@ -20,13 +20,16 @@ export const WelcomeLetters = () => {
   const containerRef = useRef(null);
 
   const { OFFSET_X, OFFSET_Y, SCALE } = useMemo(() => {
-    const w = typeof window !== 'undefined' ? window.innerWidth : 1440;
+    // Calculate DPR-normalized viewport width
+    const dpr = typeof window !== 'undefined' ? (window.devicePixelRatio || 1) : 1;
+    const physicalWidth = typeof window !== 'undefined' ? window.innerWidth : 1440;
+    const w = physicalWidth / dpr; // Logical viewport width
 
   // Mobile breakpoints (keep client's logic)
   // Make very small phones still render letters (avoid scale 0 which hides them)
   if (w <= 385) return { OFFSET_X: -55, OFFSET_Y: 170, SCALE: 0.7 };
     if (w <= 425) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.8 }; // 425px mobile
-    if (w <= 428) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.8 }; // 425px mobile
+    if (w <= 428) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.8 }; // 428px mobile
     if (w <= 440) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.8 }; // 425px mobile
     if (w <= 480) {
       const t = (w - 425) / (480 - 425);
@@ -41,7 +44,7 @@ export const WelcomeLetters = () => {
     // Tablet/Desktop breakpoints - adjusted down 20% and shifted left
     if (w <= 900) return { OFFSET_X: -45, OFFSET_Y: -200, SCALE: 1.25 }; // md
     if (w <= 1024) return { OFFSET_X: -20, OFFSET_Y: -200, SCALE: 1.5 }; // lg
-    if (w <= 1440) return { OFFSET_X: 0, OFFSET_Y: -160, SCALE: 2.0 }; // 1280 - slightly smaller
+    if (w <= 1440) return { OFFSET_X: 0, OFFSET_Y: -160, SCALE: 2.0 }; // 1440 - slightly smaller
     if (w <= 1536) return { OFFSET_X: 20, OFFSET_Y: -160, SCALE: 1.8 }; // xl
     
     // 2xl and above - adjusted to fit within parent and cover full height
