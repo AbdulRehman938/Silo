@@ -50,7 +50,7 @@ const WhoWeLoveWorkingWith = () => {
         <div className="text-left mb-6 sm:mb-8 md:mb-12 lg:mb-16 px-2 sm:px-0 w-full -mt-32 md:mt-0">
           {/* Heading - Zoom & Small Laptop Optimized */}
           <h2
-            className="font-bold text-black text-left sm:text-left md:text-left md:absolute md:left-1/2 md:-translate-x-1/2 md:-mt-12 lg:text-left lg:static lg:left-auto lg:translate-x-0 lg:mt-0 text-2xl sm:text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-[48px] leading-tight mb-3 md:mb-10 sm:mb-4"
+            className="font-bold text-black text-left sm:text-left md:text-left md:absolute md:left-1/2 md:-translate-x-1/2 md:-mt-12 lg:text-left lg:static lg:left-auto lg:translate-x-0 lg:mt-0 text-2xl sm:text-xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-[52px] leading-tight mb-3 md:mb-10 sm:mb-4"
             style={{
               fontFamily: "Epilogue, sans-serif",
               fontWeight: 700,
@@ -87,7 +87,7 @@ const WhoWeLoveWorkingWith = () => {
 
           {/* Left overlay: narrow, only as tall as these rows (h-full on wrapper) */}
           <div
-            className="absolute left-0 h-full w-12 md:w-36 pointer-events-none z-10"
+            className="absolute left-0 h-full w-12 md:w-64 pointer-events-none z-10"
             style={{
               top: "-70px",
               height: "calc(100% + 32px)",
@@ -106,7 +106,7 @@ const WhoWeLoveWorkingWith = () => {
 
           {/* Right overlay to mirror the left one */}
           <div
-            className="absolute right-0 h-full w-12 md:w-36 pointer-events-none z-10"
+            className="absolute right-0 h-full w-12 md:w-64 pointer-events-none z-10"
             style={{
               top: "-70px",
               height: "calc(100% + 32px)",
