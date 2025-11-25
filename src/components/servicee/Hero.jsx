@@ -76,7 +76,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="/portfolio"
+              href="/about"
               className="inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-brand h-[45px] hero-btn px-8 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
@@ -127,7 +127,7 @@ const Hero = () => {
             </a>
 
             <a
-              href="/portfolio"
+              href="/about"
               className="flex-1 max-w-[160px] inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-brand h-12 px-4 text-sm font-bold tracking-wide text-brand"
             >
               <span>About us</span>

@@ -36,7 +36,7 @@ const NotFound = () => {
           </Link>
           
           <Link 
-            to="/services" 
+            to="/case-studies" 
             className="inline-flex items-center justify-center gap-2  bg-transparent border-[1px] border-brand h-[55px] px-6 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group w-full sm:w-auto"
           >
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">

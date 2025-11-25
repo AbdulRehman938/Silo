@@ -58,69 +58,19 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">About us</h4>
             <ul className="space-y-3">
               <li>
-                <NavLink
-                  to="/services"
-                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
-                  style={{
-                    fontFamily: "DM Sans",
-                    fontWeight: 700,
-                    lineHeight: "150%",
-                  }}
-                >
-                  Services
-                </NavLink>
+                <NavLink to="/services" className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand" style={{ fontFamily: "DM Sans", fontWeight: 700, lineHeight: "150%" }}>Services</NavLink>
               </li>
               <li>
-                <NavLink
-                  to="/portfolio"
-                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
-                  style={{
-                    fontFamily: "DM Sans",
-                    fontWeight: 700,
-                    lineHeight: "150%",
-                  }}
-                >
-                  About the Silo
-                </NavLink>
+                <NavLink to="/about" className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand" style={{ fontFamily: "DM Sans", fontWeight: 700, lineHeight: "150%" }}>About the Silo</NavLink>
               </li>
               <li>
-                <a
-                  href="/portfolio"
-                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
-                  style={{
-                    fontFamily: "DM Sans",
-                    fontWeight: 700,
-                    lineHeight: "150%",
-                  }}
-                >
-                  Mission and Values
-                </a>
+                <a href="/about#things-we-believe-in" className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand" style={{ fontFamily: "DM Sans", fontWeight: 700, lineHeight: "150%" }}>Mission and Values</a>
               </li>
               <li>
-                <a
-                  href="/portfolio"
-                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
-                  style={{
-                    fontFamily: "DM Sans",
-                    fontWeight: 700,
-                    lineHeight: "150%",
-                  }}
-                >
-                  Meet the Team
-                </a>
+                <a href="/about#minds-in-the-silo" className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand" style={{ fontFamily: "DM Sans", fontWeight: 700, lineHeight: "150%" }}>Meet the Team</a>
               </li>
               <li>
-                <a
-                  href="/portfolio"
-                  className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
-                  style={{
-                    fontFamily: "DM Sans",
-                    fontWeight: 700,
-                    lineHeight: "150%",
-                  }}
-                >
-                  Why UGC?
-                </a>
+                <a href="/about#why-ugc" className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand" style={{ fontFamily: "DM Sans", fontWeight: 700, lineHeight: "150%" }}>Why UGC?</a>
               </li>
               <li>
                 <NavLink
@@ -405,29 +355,19 @@ const Footer = () => {
             <div className="font-bold mb-1">About us</div>
             <ul className="space-y-1">
               <li>
-                <NavLink to="/services" className="text-sm">
-                  Services
-                </NavLink>
+                <NavLink to="/services" className="text-sm">Services</NavLink>
               </li>
               <li>
-                <NavLink to="/portfolio" className="text-sm">
-                  About the Silo
-                </NavLink>
+                <NavLink to="/about" className="text-sm">About the Silo</NavLink>
               </li>
               <li>
-                <a href="/portfolio" className="text-sm">
-                  Mission and Values
-                </a>
+                <a href="/about#things-we-believe-in" className="text-sm">Mission and Values</a>
               </li>
               <li>
-                <a href="/portfolio" className="text-sm">
-                  Meet the Team
-                </a>
+                <a href="/about#minds-in-the-silo" className="text-sm">Meet the Team</a>
               </li>
               <li>
-                <a href="/portfolio" className="text-sm">
-                  Why UGC?
-                </a>
+                <a href="/about#why-ugc" className="text-sm">Why UGC?</a>
               </li>
               <li>
                 <NavLink to="/careers" className="text-sm">

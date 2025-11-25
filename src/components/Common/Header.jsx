@@ -30,36 +30,11 @@ export default function Header() {
         <div className="flex items-center justify-center gap-6">
           {/* Center: Nav */}
           <nav className="hidden lg:flex items-center justify-center gap-3 xl:gap-4 2xl:gap-6 text-xl font-bold text-black relative">
-            <NavLink
-              to="/portfolio"
-              className={({ isActive }) => `px-2 xl:px-2.5  2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
-            >
-              The Silo
-            </NavLink>
-            <NavLink
-              to="/case-studies"
-              className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
-            >
-              Portfolio
-            </NavLink>
-            <NavLink
-              to="/services"
-              className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
-            >
-              Services
-            </NavLink>
-            <NavLink
-              to="/job-board"
-              className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
-            >
-              Job Board
-            </NavLink>
-            <NavLink
-              to="/ramblings"
-              className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}
-            >
-              Ramblings
-            </NavLink>
+            <NavLink to="/about" className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}>The Silo</NavLink>
+            <NavLink to="/case-studies" className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}>Portfolio</NavLink>
+            <NavLink to="/services" className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}>Services</NavLink>
+            <NavLink to="/job-board" className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}>Job Board</NavLink>
+            <NavLink to="/ramblings" className={({ isActive }) => `px-2 xl:px-2.5 2xl:px-1 py-2 xl:py-2.5 2xl:py-3 font-bold whitespace-nowrap transition-colors ${isActive ? 'text-brand font-extrabold' : 'text-black'}`}>Ramblings</NavLink>
           </nav>
 
           {/* Mobile menu button */}
@@ -106,46 +81,11 @@ export default function Header() {
             <div className="mx-3 lg:mx-auto">
               <div className="max-w-[1280px] border-[1px] border-black border-t-0 mx-auto bg-white shadow-lg">
                 <nav className="px-6 py-8 flex-1 flex flex-col gap-6 text-center">
-                    <NavLink 
-                      to="/case-studies" 
-                      onClick={close} 
-                      className={({ isActive }) => `text-xl font-bold tracking-tight transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand border-b-[1px] border-brand pb-1' : 'text-black'}`}
-                      style={{ transitionDelay: open ? '80ms' : '0ms' }}
-                    >
-                      The Silo
-                    </NavLink>
-                    <NavLink 
-                      to="/portfolio" 
-                      onClick={close} 
-                      className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand border-b-[1px] border-brand pb-1' : 'text-black'}`}
-                      style={{ transitionDelay: open ? '160ms' : '0ms' }}
-                    >
-                      Portfolio
-                    </NavLink>
-                    <NavLink 
-                      to="/services" 
-                      onClick={close} 
-                      className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand border-b-[1px] border-brand pb-1' : 'text-black'}`}
-                      style={{ transitionDelay: open ? '240ms' : '0ms' }}
-                    >
-                      Services
-                    </NavLink>
-                    <NavLink 
-                      to="/job-board" 
-                      onClick={close} 
-                      className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand border-b-[1px] border-brand pb-1' : 'text-black'}`}
-                      style={{ transitionDelay: open ? '320ms' : '0ms' }}
-                    >
-                      Job Board
-                    </NavLink>
-                    <NavLink 
-                      to="/ramblings" 
-                      onClick={close} 
-                      className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand border-b-[1px] border-brand pb-1' : 'text-black'}`}
-                      style={{ transitionDelay: open ? '400ms' : '0ms' }}
-                    >
-                      Ramblings
-                    </NavLink>
+                    <NavLink to="/about" onClick={close} className={({ isActive }) => `text-xl font-bold tracking-tight transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand border-b-[1px] border-brand pb-1' : 'text-black'}`} style={{ transitionDelay: open ? '80ms' : '0ms' }}>The Silo</NavLink>
+                    <NavLink to="/case-studies" onClick={close} className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand border-b-[1px] border-brand pb-1' : 'text-black'}`} style={{ transitionDelay: open ? '160ms' : '0ms' }}>Portfolio</NavLink>
+                    <NavLink to="/services" onClick={close} className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand border-b-[1px] border-brand pb-1' : 'text-black'}`} style={{ transitionDelay: open ? '240ms' : '0ms' }}>Services</NavLink>
+                    <NavLink to="/job-board" onClick={close} className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand border-b-[1px] border-brand pb-1' : 'text-black'}`} style={{ transitionDelay: open ? '320ms' : '0ms' }}>Job Board</NavLink>
+                    <NavLink to="/ramblings" onClick={close} className={({ isActive }) => `text-xl font-bold transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'} ${isActive ? 'text-brand border-b-[1px] border-brand pb-1' : 'text-black'}`} style={{ transitionDelay: open ? '400ms' : '0ms' }}>Ramblings</NavLink>
                 </nav>
 
                 <div className={`px-6 pb-8 transition-all duration-150 ${open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}`} style={{ transitionDelay: open ? '480ms' : '0ms' }}>

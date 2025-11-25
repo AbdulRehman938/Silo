@@ -24,7 +24,7 @@ function RoutesTree() {
 		<Routes>
 			<Route element={<Layout />}>
 				<Route index element={<Home />} />
-				<Route path="portfolio" element={<About />} />
+				<Route path="about" element={<About />} />
 				<Route path="services" element={<Services />} />
 				<Route path="job-board" element={<JobBoard />} />
 				<Route path="ramblings" element={<Ramblings />} />

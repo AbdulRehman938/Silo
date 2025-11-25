@@ -545,7 +545,7 @@ const MindsInTheSilo = () => {
           </div>
 
           {/* Navigation Controls - Mobile Optimized */}
-          <div className="flex justify-between items-center mt-6 sm:mt-8 w-full px-2 sm:px-4 lg:max-w-full lg:mx-auto lg:px-10">
+          <div className="flex justify-between items-center mt-6 sm:mt-8 w-full pr-2 sm:pr-4 lg:max-w-full lg:mx-auto lg:pr-10">
             {/* Navigation Dots - Mobile Enhanced */}
             <div className="flex space-x-1 sm:space-x-2">
               {Array.from({ length: totalSlides }).map((_, index) => (
