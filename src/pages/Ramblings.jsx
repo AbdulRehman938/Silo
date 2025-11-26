@@ -101,7 +101,7 @@ export default function Ramblings() {
           <div ref={sidebarWrapperRef} className="lg:w-48 flex-shrink-0 relative">
             <div
               ref={sidebarRef}
-              className="relative p-4 bg-white z-40 shadow-md lg:shadow-none"
+              className="relative pb-4 bg-white z-40 shadow-md lg:shadow-none"
             >
               <h3 className="text-lg font-bold text-black mb-6">
                 Blog categories
@@ -220,7 +220,7 @@ export default function Ramblings() {
                           <img
                             src={post.image}
                             alt={post.title}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                            className="w-full h-full object-cover md:object-cover transition-transform duration-300 group-hover:scale-110"
                             loading="lazy"
                           />
                         </div>

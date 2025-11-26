@@ -27,10 +27,10 @@ const Hero = () => {
   const [videoPosition, setVideoPosition] = useState({
     top: 0,
     left: 0,
-    right: 'auto',
-    bottom: 'auto',
+    right: "auto",
+    bottom: "auto",
     width: 180,
-    height: 210,
+    height: 130,
   });
   const [videoState, setVideoState] = useState("initial"); // 'initial', 'transitioning', 'fixed', 'absolute'
   const [absoluteTop, setAbsoluteTop] = useState(0);
@@ -64,10 +64,10 @@ const Hero = () => {
       setVideoPosition({
         top: rect.top + scrollY,
         left: rect.left,
-        right: 'auto',
-        bottom: 'auto',
-        width: 180,
-        height: 210,
+        right: "auto",
+        bottom: "auto",
+        width: rect.width,
+        height: rect.height,
       });
     }
   }, []);
@@ -75,7 +75,7 @@ const Hero = () => {
   // Handle scroll for smooth video animation
   useEffect(() => {
     let ticking = false;
-    
+
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
@@ -85,10 +85,11 @@ const Hero = () => {
           }
 
           const heroRect = heroSectionRef.current.getBoundingClientRect();
-          const initialRect = initialVideoPositionRef.current.getBoundingClientRect();
+          const initialRect =
+            initialVideoPositionRef.current.getBoundingClientRect();
           const footer = document.querySelector("footer");
           const footerRect = footer?.getBoundingClientRect();
-          
+
           const scrollY = window.scrollY || window.pageYOffset;
           const initialTop = initialRect.top + scrollY;
           const initialLeft = initialRect.left;
@@ -97,16 +98,20 @@ const Hero = () => {
           const targetBottom = 24; // 6 * 4px
           const targetRight = 24;
           const targetWidth = 200;
-          const targetHeight = 240;
+          const targetHeight = 160;
 
           // Calculate progress (0 to 1) based on hero section scroll
           const scrollStart = 0;
           const scrollEnd = heroRect.height;
-          const scrollProgress = Math.max(0, Math.min(1, -heroRect.top / scrollEnd));
+          const scrollProgress = Math.max(
+            0,
+            Math.min(1, -heroRect.top / scrollEnd)
+          );
 
           // Check if footer is approaching
-          const bottomOffset = 150; // Reduced to allow video to move lower before stopping
-          const footerApproaching = footerRect && footerRect.top <= window.innerHeight;
+          const bottomOffset = 240; // Reduced to allow video to move lower before stopping
+          const footerApproaching =
+            footerRect && footerRect.top <= window.innerHeight;
 
           if (scrollProgress === 0) {
             // At the top - initial position
@@ -114,31 +119,33 @@ const Hero = () => {
             setVideoPosition({
               top: initialTop,
               left: initialLeft,
-              right: 'auto',
-              bottom: 'auto',
+              right: "auto",
+              bottom: "auto",
               width: 180,
-              height: 210,
+              height: 130,
             });
           } else if (scrollProgress < 1) {
             // Transitioning - interpolate between initial and fixed positions
             setVideoState("transitioning");
-            
+
             // Calculate target position in viewport
             const viewportHeight = window.innerHeight;
             const targetTop = viewportHeight - targetHeight - targetBottom;
             const targetLeft = window.innerWidth - targetWidth - targetRight;
 
             // Interpolate position
-            const currentTop = initialTop + (targetTop + scrollY - initialTop) * scrollProgress;
-            const currentLeft = initialLeft + (targetLeft - initialLeft) * scrollProgress;
+            const currentTop =
+              initialTop + (targetTop + scrollY - initialTop) * scrollProgress;
+            const currentLeft =
+              initialLeft + (targetLeft - initialLeft) * scrollProgress;
             const currentWidth = 180 + (targetWidth - 180) * scrollProgress;
-            const currentHeight = 210 + (targetHeight - 210) * scrollProgress;
+            const currentHeight = 130 + (targetHeight - 130) * scrollProgress;
 
             setVideoPosition({
               top: currentTop,
               left: currentLeft,
-              right: 'auto',
-              bottom: 'auto',
+              right: "auto",
+              bottom: "auto",
               width: currentWidth,
               height: currentHeight,
             });
@@ -146,8 +153,8 @@ const Hero = () => {
             // Fully scrolled - fixed to bottom right
             setVideoState("fixed");
             setVideoPosition({
-              top: 'auto',
-              left: 'auto',
+              top: "auto",
+              left: "auto",
               right: targetRight,
               bottom: targetBottom,
               width: targetWidth,
@@ -161,14 +168,14 @@ const Hero = () => {
             setAbsoluteTop(calculatedTop);
             setVideoPosition({
               top: calculatedTop,
-              left: 'auto',
+              left: "auto",
               right: targetRight,
-              bottom: 'auto',
+              bottom: "auto",
               width: targetWidth,
               height: targetHeight,
             });
           }
-          
+
           ticking = false;
         });
         ticking = true;
@@ -187,47 +194,49 @@ const Hero = () => {
         ref={heroSectionRef}
         className="hidden sm:block sm:h-[calc(100vh-80px)] pt-8 mt-20"
       >
-        <div className="w-full max-w-[1280px] h-full mx-auto flex flex-col justify-between items-center px-4 md:px-10 lg:px-10 pb-2 pt-2">
+        <div className="w-full max-w-[1280px] h-full mx-auto flex flex-col justify-between items-center px-4 md:px-10 lg:px-10 pb-2 pt-0">
           {/* Placeholder to track initial video position */}
-          <div 
+          <div
             ref={initialVideoPositionRef}
-            className="w-[180px] h-[210px] mb-3" 
-            aria-hidden="true" 
+            className="w-[180px] h-[130px] mb-2"
+            aria-hidden="true"
           />
 
-          <div className="flex flex-col justify-start items-center text-black leading-tight mb-3">
-            <h1 className="font-bold xl:text-[160px] lg:text-[120px] md:text-[14vw] leading-none mb-1">
-              What we do
-            </h1>
-            <span className="text-black lg:text-base md:text-sm font-normal text-center max-w-3xl px-4 my-5">
-              We make content that cuts through the noise. Strategy, UGC,
-              design, and motion, built to get noticed and remembered
-            </span>
-          </div>
-          <div className="flex flex-wrap gap-6 justify-center">
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[45px] hero-btn px-6 py-3 text-xs font-bold tracking-wide text-white border-transparent relative overflow-hidden group"
-            >
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
-              </div>
-              <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-40">
-                Let's chat
+          <div className="flex flex-col items-center w-full">
+            <div className="flex flex-col justify-start items-center text-black leading-tight mb-3">
+              <h1 className="font-bold xl:text-[160px] lg:text-[120px] md:text-[14vw] leading-none mb-1">
+                What we do
+              </h1>
+              <span className="text-black lg:text-base md:text-sm font-normal text-center max-w-3xl px-4 my-5">
+                We make content that cuts through the noise. Strategy, UGC,
+                design, and motion, built to get noticed and remembered
               </span>
-            </a>
+            </div>
+            <div className="flex flex-wrap gap-6 justify-center">
+              <a
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[45px] hero-btn px-6 py-3 text-xs font-bold tracking-wide text-white border-transparent relative overflow-hidden group"
+              >
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                  <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
+                </div>
+                <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-40">
+                  Let's chat
+                </span>
+              </a>
 
-            <a
-              href="/about"
-              className="inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-brand h-[45px] hero-btn px-8 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
-            >
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                <FaChevronRight className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
-              </div>
-              <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-28">
-                About us
-              </span>
-            </a>
+              <a
+                href="/about"
+                className="inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-brand h-[45px] hero-btn px-8 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
+              >
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                  <FaChevronRight className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
+                </div>
+                <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-28">
+                  About us
+                </span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -236,16 +245,31 @@ const Hero = () => {
       {createPortal(
         <div
           ref={videoContainerRef}
-          className="service-hero-title flex items-center justify-center service-video z-50 hidden sm:flex"
+          className="service-hero-title hidden sm:flex items-center justify-center service-video z-10"
           style={{
-            position: videoState === "fixed" && videoPosition.top === 'auto' ? 'fixed' : 'absolute',
-            top: videoPosition.top !== 'auto' ? `${videoPosition.top}px` : videoPosition.top,
-            left: videoPosition.left !== 'auto' ? `${videoPosition.left}px` : videoPosition.left,
-            right: videoPosition.right !== 'auto' ? `${videoPosition.right}px` : videoPosition.right,
-            bottom: videoPosition.bottom !== 'auto' ? `${videoPosition.bottom}px` : videoPosition.bottom,
+            position:
+              videoState === "fixed" && videoPosition.top === "auto"
+                ? "fixed"
+                : "absolute",
+            top:
+              videoPosition.top !== "auto"
+                ? `${videoPosition.top}px`
+                : videoPosition.top,
+            left:
+              videoPosition.left !== "auto"
+                ? `${videoPosition.left}px`
+                : videoPosition.left,
+            right:
+              videoPosition.right !== "auto"
+                ? `${videoPosition.right}px`
+                : videoPosition.right,
+            bottom:
+              videoPosition.bottom !== "auto"
+                ? `${videoPosition.bottom}px`
+                : videoPosition.bottom,
             width: `${videoPosition.width}px`,
             height: `${videoPosition.height}px`,
-            transition: 'none', // Smooth animation via position updates
+            transition: "none", // Smooth animation via position updates
           }}
         >
           <VideoPlayer
@@ -270,7 +294,7 @@ const Hero = () => {
           <div className="mb-2">
             <VideoPlayer
               containerClassName="w-[180px] h-[220px] mx-auto"
-              videoClassName="w-full h-full object-cover"
+              videoClassName="w-full h-[220px] object-cover"
               onVideoClick={handleOpen}
             />
           </div>
