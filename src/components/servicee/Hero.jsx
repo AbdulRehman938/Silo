@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { FaPlay, FaPause } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import Cards from "./Cards";
 import Interested from "./Interested";
@@ -9,7 +9,7 @@ import "../../styles/scaling-overrides.css";
 import Section from "../Home/Section.jsx";
 
 const Hero = () => {
-  const [cmsData, setCmsData] = useState({
+  const [cmsData] = useState({
     showVideo: true,
     videoUrl: "https://player.vimeo.com/video/76979871",
   });
@@ -33,7 +33,6 @@ const Hero = () => {
     height: 130,
   });
   const [videoState, setVideoState] = useState("initial"); // 'initial', 'transitioning', 'fixed', 'absolute'
-  const [absoluteTop, setAbsoluteTop] = useState(0);
 
   useEffect(() => {
     const onKey = (e) => {
@@ -93,6 +92,8 @@ const Hero = () => {
           const scrollY = window.scrollY || window.pageYOffset;
           const initialTop = initialRect.top + scrollY;
           const initialLeft = initialRect.left;
+          const initialWidth = initialRect.width;
+          const initialHeight = initialRect.height;
 
           // Target position (bottom right)
           const targetBottom = 24; // 6 * 4px
@@ -101,7 +102,6 @@ const Hero = () => {
           const targetHeight = 160;
 
           // Calculate progress (0 to 1) based on hero section scroll
-          const scrollStart = 0;
           const scrollEnd = heroRect.height;
           const scrollProgress = Math.max(
             0,
@@ -121,8 +121,8 @@ const Hero = () => {
               left: initialLeft,
               right: "auto",
               bottom: "auto",
-              width: 180,
-              height: 130,
+              width: initialWidth,
+              height: initialHeight,
             });
           } else if (scrollProgress < 1) {
             // Transitioning - interpolate between initial and fixed positions
@@ -138,8 +138,10 @@ const Hero = () => {
               initialTop + (targetTop + scrollY - initialTop) * scrollProgress;
             const currentLeft =
               initialLeft + (targetLeft - initialLeft) * scrollProgress;
-            const currentWidth = 180 + (targetWidth - 180) * scrollProgress;
-            const currentHeight = 130 + (targetHeight - 130) * scrollProgress;
+            const currentWidth =
+              initialWidth + (targetWidth - initialWidth) * scrollProgress;
+            const currentHeight =
+              initialHeight + (targetHeight - initialHeight) * scrollProgress;
 
             setVideoPosition({
               top: currentTop,
@@ -165,7 +167,6 @@ const Hero = () => {
             setVideoState("absolute");
             const footerTop = footerRect.top + scrollY;
             const calculatedTop = footerTop - targetHeight - bottomOffset;
-            setAbsoluteTop(calculatedTop);
             setVideoPosition({
               top: calculatedTop,
               left: "auto",
@@ -183,8 +184,12 @@ const Hero = () => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll, { passive: true });
     handleScroll(); // Call once on mount
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
 
   return (
@@ -192,30 +197,33 @@ const Hero = () => {
       {/* Desktop / larger screens - hidden on small screens */}
       <div
         ref={heroSectionRef}
-        className="hidden sm:block sm:h-[calc(100vh-80px)] pt-8 mt-20"
+        className="hidden sm:block sm:min-h-screen pt-8 mt-20"
       >
-        <div className="w-full max-w-[1280px] h-full mx-auto flex flex-col justify-between items-center px-4 md:px-10 lg:px-10 pb-2 pt-0">
-          {/* Placeholder to track initial video position */}
+        <div className="w-full max-w-[1280px] min-h-[calc(100vh-80px)] mx-auto flex flex-col justify-center items-center px-4 md:px-10 lg:px-10 pb-8">
+          {/* Video at top center */}
           <div
             ref={initialVideoPositionRef}
-            className="w-[180px] h-[130px] mb-2"
+            className="w-auto aspect-[9/13] h-[280px] mb-8 shrink-0"
             aria-hidden="true"
           />
 
-          <div className="flex flex-col items-center w-full">
-            <div className="flex flex-col justify-start items-center text-black leading-tight mb-3">
-              <h1 className="font-bold xl:text-[160px] lg:text-[120px] md:text-[14vw] leading-none mb-1">
-                What we do
-              </h1>
-              <span className="text-black lg:text-base md:text-sm font-normal text-center max-w-3xl px-4 my-5">
-                We make content that cuts through the noise. Strategy, UGC,
-                design, and motion, built to get noticed and remembered
-              </span>
-            </div>
-            <div className="flex flex-wrap gap-6 justify-center">
+          {/* Heading */}
+          <div className="flex flex-col items-center w-full mb-6">
+            <h1 className="font-bold text-[clamp(95px,17vw,160px)] leading-[0.9] mb-6 text-center">
+              What we do
+            </h1>
+            
+            {/* Description */}
+            <p className="text-black text-base font-normal text-center max-w-2xl px-4 mb-8">
+              We make content that cuts through the noise. Strategy, UGC,
+              design, and motion, built to get noticed and remembered.
+            </p>
+            
+            {/* Buttons */}
+            <div className="flex gap-4 justify-center">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[45px] hero-btn px-6 py-3 text-xs font-bold tracking-wide text-white border-transparent relative overflow-hidden group"
+                className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-12 hero-btn px-8 py-3 text-sm font-bold tracking-wide text-white border-transparent relative overflow-hidden group"
               >
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                   <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
@@ -227,7 +235,7 @@ const Hero = () => {
 
               <a
                 href="/about"
-                className="inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-brand h-[45px] hero-btn px-8 py-3 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
+                className="inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-brand h-12 hero-btn px-8 py-3 text-sm font-bold tracking-wide text-brand relative overflow-hidden group"
               >
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
                   <FaChevronRight className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
@@ -377,7 +385,7 @@ function VideoPlayer({
   onVideoClick,
 }) {
   const videoRef = useRef(null);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted] = useState(true);
 
   // Always keep video playing
   React.useEffect(() => {
