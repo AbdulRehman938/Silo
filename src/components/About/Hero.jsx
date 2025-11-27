@@ -1,11 +1,149 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa";
+import { createPortal } from "react-dom";
+
+const VideoContent = ({ onClick, onClose }) => (
+  <div className="flex items-center justify-end pointer-events-auto">
+    {/* Vertical Text Outside */}
+    <div className="flex flex-col items-center mr-2 max-w-[12px]">
+      <span className="text-black font-bold text-xs tracking-wide rotate-[-90deg] whitespace-nowrap">
+        Cut through the noise
+      </span>
+    </div>
+    {/* Video Section */}
+    <div className="relative flex items-center justify-center w-[140px] sm:w-[180px] md:w-[150px] h-[200px]">
+      <img
+        src="https://res.cloudinary.com/di9tb45rl/image/upload/v1763796208/image_7_hpf0du.png"
+        alt="Video thumbnail"
+        className="w-full h-full object-cover shadow-lg"
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-30" />
+      {/* Play Button Overlay */}
+      <button
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 border-2 border-white hover:scale-105 transition"
+        onClick={onClick}
+        aria-label="Play video"
+      >
+        <svg
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="16" cy="16" r="16" fill="white" />
+          <polygon points="13,10 24,16 13,22" fill="#000" />
+        </svg>
+      </button>
+      {/* Close Button */}
+      <button
+        className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-gray-200 transition"
+        onClick={onClose}
+      >
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="4"
+            y1="4"
+            x2="14"
+            y2="14"
+            stroke="#222"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          <line
+            x1="14"
+            y1="4"
+            x2="4"
+            y2="14"
+            stroke="#222"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+);
 
 const Hero = () => {
   const [showVideoSection, setShowVideoSection] = useState(true);
   const [showVimeoModal, setShowVimeoModal] = useState(false);
-  const vimeoUrl = "https://player.vimeo.com/video/76979871";
+  const [videoStyle, setVideoStyle] = useState({
+    position: "fixed",
+    bottom: "24px",
+    right: "24px",
+    zIndex: 50,
+  });
+  const [isDesktop, setIsDesktop] = useState(false);
+  const mdPlaceholderRef = useRef(null);
+  const xlPlaceholderRef = useRef(null);
+
+  // Handle scroll for sticky video
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if we are in desktop mode (md breakpoint is 768px)
+      const isDesktopView = window.innerWidth >= 768;
+      setIsDesktop(isDesktopView);
+
+      if (!isDesktopView) return;
+
+      const footer = document.querySelector("footer");
+      if (!footer) return;
+
+      // Determine active placeholder
+      const placeholder =
+        mdPlaceholderRef.current && mdPlaceholderRef.current.offsetParent
+          ? mdPlaceholderRef.current
+          : xlPlaceholderRef.current;
+
+      let rightPos = 24; // Default
+      if (placeholder) {
+        const rect = placeholder.getBoundingClientRect();
+        rightPos = window.innerWidth - rect.right;
+        // Ensure it doesn't go negative or too small
+        if (rightPos < 24) rightPos = 24;
+      }
+
+      const footerRect = footer.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const bottomGap = 100; // Increased to stop earlier before footer
+
+      if (footerRect.top < viewportHeight) {
+        // Footer is visible, stick to footer
+        const newBottom = viewportHeight - footerRect.top + bottomGap;
+        setVideoStyle({
+          position: "fixed",
+          bottom: `${newBottom}px`,
+          right: `${rightPos}px`,
+          zIndex: 50,
+        });
+      } else {
+        // Footer not visible, stick to bottom of screen
+        setVideoStyle({
+          position: "fixed",
+          bottom: "24px",
+          right: `${rightPos}px`,
+          zIndex: 50,
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -25,14 +163,14 @@ const Hero = () => {
               className="font-bold text-black text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-[56px] leading-3 text-left px-2 sm:px-0 md:px-0 mt-4 sm:mt-0"
               style={{
                 opacity: 1,
-                fontFamily: 'Epilogue, sans-serif',
+                fontFamily: "Epilogue, sans-serif",
                 fontWeight: 700,
                 lineHeight: "100%",
                 letterSpacing: "0%",
               }}
             >
-              We are the <br /> <span className="text-red-500">Silo, </span>get to <br /> know
-              us.
+              We are the <br /> <span className="text-red-500">Silo, </span>get
+              to <br /> know us.
             </h1>
 
             {/* Text and Buttons Container */}
@@ -44,7 +182,7 @@ const Hero = () => {
                   style={{
                     opacity: 1,
                     fontWeight: 400,
-                    fontFamily:"Epilogue, sans-serif",
+                    fontFamily: "Epilogue, sans-serif",
                     lineHeight: "150%",
                     letterSpacing: "0%",
                   }}
@@ -62,7 +200,7 @@ const Hero = () => {
                   className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[48px] px-5 py-2 text-xs font-bold tracking-wide text-white border-transparent relative overflow-hidden group"
                 >
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                    <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
+                    <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
                   </div>
                   <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base group-hover:translate-x-40">
                     Let's chat
@@ -74,7 +212,7 @@ const Hero = () => {
                   className="inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-brand h-[48px] px-5 py-2 text-xs font-bold tracking-wide text-brand relative overflow-hidden group"
                 >
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                    <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
+                    <FaChevronRight className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-3 group-hover:scale-[140%]" />
                   </div>
                   <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base group-hover:translate-x-40">
                     Our services
@@ -108,38 +246,13 @@ const Hero = () => {
                     loading="lazy"
                   />
                 </div>
-                {/* Video Section (conditionally rendered) */}
+                {/* Video Section (Mobile - Keep inline) */}
                 {showVideoSection && (
                   <div className="flex items-center h-[10rem]">
-                    {/* Vertical Text Outside */}
-                    <div className="flex flex-col items-center mr-2 max-w-[12px]">
-                      <span className="text-black font-bold text-xs tracking-wide rotate-[-90deg] whitespace-nowrap">Cut through the noise</span>
-                    </div>
-                    <div className="relative flex items-center justify-center w-[90px]" style={{ minHeight: '120px' }}>
-                      <img
-                        src="https://res.cloudinary.com/di9tb45rl/image/upload/v1763796208/image_7_hpf0du.png"
-                        alt="Video thumbnail"
-                        className="w-full h-auto object-cover shadow-lg" />
-                      <div className="absolute inset-0 bg-black bg-opacity-30" />
-                      {/* Play Button Overlay */}
-                      <button
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg flex items-center justify-center w-10 h-10 border-2 border-white hover:scale-105 transition"
-                        onClick={() => setShowVimeoModal(true)}
-                        aria-label="Play video"
-                      >
-                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="16" cy="16" r="16" fill="white" />
-                          <polygon points="13,10 24,16 13,22" fill="#222" />
-                        </svg>
-                      </button>
-                      {/* Close Button */}
-                      <button className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-gray-200 transition" onClick={() => setShowVideoSection(false)}>
-                        <svg width="14" height="14" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <line x1="4" y1="4" x2="14" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
-                          <line x1="14" y1="4" x2="4" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
-                      </button>
-                    </div>
+                    <VideoContent
+                      onClick={() => setShowVimeoModal(true)}
+                      onClose={() => setShowVideoSection(false)}
+                    />
                   </div>
                 )}
               </div>
@@ -167,41 +280,8 @@ const Hero = () => {
                     loading="lazy"
                   />
                 </div>
-                {/* Video Section - Bottom of small image (conditionally rendered) */}
-                {showVideoSection && (
-                  <div className="flex items-center w-full justify-end">
-                    {/* Vertical Text Outside */}
-                    <div className="flex flex-col items-center mr-2 max-w-[12px]">
-                      <span className="text-black font-bold text-xs tracking-wide rotate-[-90deg] whitespace-nowrap">Cut through the noise</span>
-                    </div>
-                    {/* Video Section */}
-                    <div className="relative flex items-center justify-center w-[140px] sm:w-[180px] md:w-[150px]">
-                      <img
-                        src="https://res.cloudinary.com/di9tb45rl/image/upload/v1763796208/image_7_hpf0du.png"
-                        alt="Video thumbnail"
-                        className="w-full h-full object-cover shadow-lg" />
-                      <div className="absolute inset-0 bg-black bg-opacity-30" />
-                      {/* Play Button Overlay */}
-                      <button
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 border-2 border-white hover:scale-105 transition"
-                        onClick={() => setShowVimeoModal(true)}
-                        aria-label="Play video"
-                      >
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="16" cy="16" r="16" fill="white" />
-                          <polygon points="13,10 24,16 13,22" fill="#000" />
-                        </svg>
-                      </button>
-                      {/* Close Button */}
-                      <button className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-gray-200 transition" onClick={() => setShowVideoSection(false)}>
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <line x1="4" y1="4" x2="14" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
-                          <line x1="14" y1="4" x2="4" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                )}
+                {/* Video Section Placeholder */}
+                <div ref={mdPlaceholderRef} className="w-[150px] h-[200px]" />
               </div>
             </div>
 
@@ -227,46 +307,26 @@ const Hero = () => {
                     loading="lazy"
                   />
                 </div>
-                {/* Video Section - Bottom of small image */}
-                {showVideoSection && (
-                  <div className="flex items-center w-full justify-end">
-                    {/* Vertical Text Outside */}
-                    <div className="flex flex-col items-center mr-2 max-w-[12px]">
-                      <span className="text-black font-bold text-xs tracking-wide rotate-[-90deg] whitespace-nowrap">Cut through the noise</span>
-                    </div>
-                    {/* Video Section */}
-                    <div className="relative flex items-center justify-center w-[140px] sm:w-[180px] md:w-[150px]">
-                      <img
-                        src="https://res.cloudinary.com/di9tb45rl/image/upload/v1763796208/image_7_hpf0du.png"
-                        alt="Video thumbnail"
-                        className="w-full h-full object-cover shadow-lg" />
-                      <div className="absolute inset-0 bg-black bg-opacity-30" />
-                      {/* Play Button Overlay */}
-                      <button
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-lg flex items-center justify-center w-14 h-14 border-2 border-white hover:scale-105 transition"
-                        onClick={() => setShowVimeoModal(true)}
-                        aria-label="Play video"
-                      >
-                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="16" cy="16" r="16" fill="white" />
-                          <polygon points="13,10 24,16 13,22" fill="#222" />
-                        </svg>
-                      </button>
-                      {/* Close Button */}
-                      <button className="absolute top-2 right-2 bg-white rounded-full p-1 shadow hover:bg-gray-200 transition" onClick={() => setShowVideoSection(false)}>
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <line x1="4" y1="4" x2="14" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
-                          <line x1="14" y1="4" x2="4" y2="14" stroke="#222" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                )}
+                {/* Video Section Placeholder */}
+                <div ref={xlPlaceholderRef} className="w-[150px] h-[200px]" />
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Sticky Video for Desktop */}
+      {showVideoSection &&
+        isDesktop &&
+        createPortal(
+          <div style={videoStyle}>
+            <VideoContent
+              onClick={() => setShowVimeoModal(true)}
+              onClose={() => setShowVideoSection(false)}
+            />
+          </div>,
+          document.body
+        )}
 
       {/* Vimeo Modal */}
       {showVimeoModal && (
@@ -284,7 +344,11 @@ const Hero = () => {
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
             title="Vimeo Video"
-            style={{ background: 'transparent', border: 'none', boxShadow: '0 0 32px rgba(0,0,0,0.5)' }}
+            style={{
+              background: "transparent",
+              border: "none",
+              boxShadow: "0 0 32px rgba(0,0,0,0.5)",
+            }}
           ></iframe>
         </div>
       )}

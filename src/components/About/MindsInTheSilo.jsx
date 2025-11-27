@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef, useCallback } from "react";
+import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
+import { motion } from "framer-motion";
 
 const MindsInTheSilo = () => {
   // Carousel state management
@@ -12,7 +12,7 @@ const MindsInTheSilo = () => {
   const [mouseStart, setMouseStart] = useState(null);
   const [mouseEnd, setMouseEnd] = useState(null);
   const [isMouseDown, setIsMouseDown] = useState(false);
-  
+
   // Viewport animation state
   const [cardsInViewport, setCardsInViewport] = useState(new Set());
   const cardRefs = useRef([]);
@@ -20,58 +20,67 @@ const MindsInTheSilo = () => {
   // Carousel data - team members + special card
   const carouselData = [
     {
-      id: 'ruby-turbett',
-      type: 'team-member',
-      name: 'Ruby Turbett',
-      title: 'Founder',
-      description: 'Ruby has a decade of marketing experience, having built a finance-focused agency before leaning into her passion for social. She leads with sharp thinking and builds strong client relationships. Outside work, she’s at pilates, boxing or planning her next city break.',
-      imageUrl: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717229/Carousal1_qyrnxy.png'
+      id: "ruby-turbett",
+      type: "team-member",
+      name: "Ruby Turbett",
+      title: "Founder",
+      description:
+        "Ruby has a decade of marketing experience, having built a finance-focused agency before leaning into her passion for social. She leads with sharp thinking and builds strong client relationships. Outside work, she’s at pilates, boxing or planning her next city break.",
+      imageUrl:
+        "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717229/Carousal1_qyrnxy.png",
     },
     {
-      id: 'hailey-hippolyte',
-      type: 'team-member',
-      name: 'Hailey Hippolyte',
-      title: 'Head of Social & Creator Partnerships',
-      description: 'Hailey turns ideas into standout stories and thoughtful collaborations. With a balance of data and creativity, she helps brands connect in a lasting way. She thrives on bringing people and ideas together, often found chasing sunsets when she’s off the clock.',
-      imageUrl: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717231/Carousal2_hnaif5.png'
+      id: "hailey-hippolyte",
+      type: "team-member",
+      name: "Hailey Hippolyte",
+      title: "Head of Social & Creator Partnerships",
+      description:
+        "Hailey turns ideas into standout stories and thoughtful collaborations. With a balance of data and creativity, she helps brands connect in a lasting way. She thrives on bringing people and ideas together, often found chasing sunsets when she’s off the clock.",
+      imageUrl:
+        "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717231/Carousal2_hnaif5.png",
     },
     {
-      id: 'will-carter',
-      type: 'team-member',
-      name: 'Will Carter',
-      title: 'Creative Digital Designer',
-      description: 'Will designs clean, human-focused digital experiences with a balance of creativity and practical thinking. He helps brands show up with clarity and purpose, turning ideas into simple products people enjoy using. When he’s not working, he’s likely on a padel court perfecting his backhand.',
-      imageUrl: 'https://res.cloudinary.com/di9tb45rl/image/upload/v1762717231/Carousal4_inzouv.png'
+      id: "will-carter",
+      type: "team-member",
+      name: "Will Carter",
+      title: "Creative Digital Designer",
+      description:
+        "Will designs clean, human-focused digital experiences with a balance of creativity and practical thinking. He helps brands show up with clarity and purpose, turning ideas into simple products people enjoy using. When he’s not working, he’s likely on a padel court perfecting his backhand.",
+      imageUrl:
+        "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717231/Carousal4_inzouv.png",
     },
     {
-      id: 'join-us',
-      type: 'special-card',
-      title: 'Think you’re the right fit for our team?',
-      buttonText: 'Current Vacancies',
-      description: 'Can’t see an opening that fits you? Get in touch anyway - we’re always on the lookout for our next team-mates!'
-    }
+      id: "join-us",
+      type: "special-card",
+      title: "Think you’re the right fit for our team?",
+      buttonText: "Current Vacancies",
+      description:
+        "Can’t see an opening that fits you? Get in touch anyway - we’re always on the lookout for our next team-mates!",
+    },
   ];
 
   // Enhanced responsive breakpoint detection
-  const [viewportWidth, setViewportWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
-  
+  const [viewportWidth, setViewportWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 1200
+  );
+
   // Intersection Observer for viewport-based animations
   const observerCallback = useCallback((entries) => {
     entries.forEach((entry) => {
       const cardIndex = parseInt(entry.target.dataset.cardIndex);
-      
-      setCardsInViewport(prev => {
+
+      setCardsInViewport((prev) => {
         const newSet = new Set(prev);
-        
+
         // Card is entering viewport (even 1% visible)
         if (entry.isIntersecting && entry.intersectionRatio > 0) {
           newSet.add(cardIndex);
-        } 
+        }
         // Card is completely out of viewport
         else if (!entry.isIntersecting && entry.intersectionRatio === 0) {
           newSet.delete(cardIndex);
         }
-        
+
         return newSet;
       });
     });
@@ -81,8 +90,8 @@ const MindsInTheSilo = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(observerCallback, {
       root: null,
-      rootMargin: '0px',
-      threshold: [0, 0.01] // Trigger at 0% (completely out) and 1% (barely in)
+      rootMargin: "0px",
+      threshold: [0, 0.01], // Trigger at 0% (completely out) and 1% (barely in)
     });
 
     // Observe all card elements
@@ -94,7 +103,7 @@ const MindsInTheSilo = () => {
       observer.disconnect();
     };
   }, [observerCallback]);
-  
+
   useEffect(() => {
     const checkViewport = () => {
       const width = window.innerWidth;
@@ -115,20 +124,20 @@ const MindsInTheSilo = () => {
 
       setViewportWidth(width);
     };
-    
+
     // Initial check
     checkViewport();
-    
+
     // Debounced resize handler for better performance
     let timeoutId;
     const debouncedResize = () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(checkViewport, 150);
     };
-    
-    window.addEventListener('resize', debouncedResize);
+
+    window.addEventListener("resize", debouncedResize);
     return () => {
-      window.removeEventListener('resize', debouncedResize);
+      window.removeEventListener("resize", debouncedResize);
       clearTimeout(timeoutId);
     };
   }, [viewportWidth]);
@@ -158,7 +167,10 @@ const MindsInTheSilo = () => {
   };
 
   const { cardsPerView, cardWidth, gap } = getLayoutForWidth(viewportWidth);
-  const totalSlides = cardsPerView === 1 ? carouselData.length : Math.max(1, carouselData.length - cardsPerView + 1);
+  const totalSlides =
+    cardsPerView === 1
+      ? carouselData.length
+      : Math.max(1, carouselData.length - cardsPerView + 1);
 
   // Navigation functions with faster transitions
   const goToNextSlide = () => {
@@ -185,12 +197,12 @@ const MindsInTheSilo = () => {
 
   const handleTouchMove = (e) => {
     setTouchEnd(e.targetTouches[0].clientX);
-    
+
     // Prevent horizontal scroll interference on all screen sizes
     if (touchStart) {
       const currentX = e.targetTouches[0].clientX;
       const diffX = Math.abs(currentX - touchStart);
-      
+
       // If horizontal movement is significant, prevent default to avoid scroll conflicts
       if (diffX > 10) {
         e.preventDefault();
@@ -200,7 +212,7 @@ const MindsInTheSilo = () => {
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -211,7 +223,7 @@ const MindsInTheSilo = () => {
     } else if (isRightSwipe && currentSlide > 0) {
       goToPrevSlide();
     }
-    
+
     // Reset touch states
     setTouchStart(null);
     setTouchEnd(null);
@@ -236,7 +248,7 @@ const MindsInTheSilo = () => {
       setIsMouseDown(false);
       return;
     }
-    
+
     const distance = mouseStart - mouseEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -246,7 +258,7 @@ const MindsInTheSilo = () => {
     } else if (isRightSwipe && currentSlide > 0) {
       goToPrevSlide();
     }
-    
+
     setIsMouseDown(false);
     setMouseStart(null);
     setMouseEnd(null);
@@ -261,18 +273,18 @@ const MindsInTheSilo = () => {
   // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'ArrowLeft') {
+      if (e.key === "ArrowLeft") {
         e.preventDefault();
         goToPrevSlide();
-      } else if (e.key === 'ArrowRight') {
+      } else if (e.key === "ArrowRight") {
         e.preventDefault();
         goToNextSlide();
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -289,41 +301,43 @@ const MindsInTheSilo = () => {
       <div className="max-w-full mx-auto w-full">
         {/* Header Section - Zoom & Small Laptop Optimized */}
         <div className="text-left xl:text-left mb-6 sm:mb-8 md:mb-12 lg:mb-16 px-2 sm:px-0">
-          <h2 
+          <h2
             className="font-bold text-black text-4xl sm:text-xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-[48px] leading-tight mb-3 sm:mb-4"
             style={{
               opacity: 1,
-              fontFamily: 'Epilogue, sans-serif',
+              fontFamily: "Epilogue, sans-serif",
               fontWeight: 700,
-              lineHeight: '120%',
-              letterSpacing: '0%'
+              lineHeight: "120%",
+              letterSpacing: "0%",
             }}
           >
             Minds in the Silo
           </h2>
-          
-          <p 
+
+          <p
             className="text-black text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed max-w-2xl xl:mx-0"
             style={{
-              fontFamily: 'DM Sans, sans-serif',
+              fontFamily: "DM Sans, sans-serif",
               fontWeight: 400,
-              lineHeight: '150%',
-              letterSpacing: '0%'
+              lineHeight: "150%",
+              letterSpacing: "0%",
             }}
           >
-           Behind The Silo is a collective of storytellers, designers, and social minds who live and breathe content - building brands with creativity and strategy.
+            Behind The Silo is a collective of storytellers, designers, and
+            social minds who live and breathe content - building brands with
+            creativity and strategy.
           </p>
         </div>
 
         {/* Carousel Container - Mobile Optimized */}
-        <div 
+        <div
           className="relative"
           role="region"
           aria-label="Team members carousel"
           aria-live="polite"
         >
           {/* Cards Container - Mobile Enhanced with Framer Motion */}
-          <div 
+          <div
             className="overflow-hidden w-full px-2 sm:px-4 lg:px-0 lg:max-w-full lg:mx-auto"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -334,27 +348,29 @@ const MindsInTheSilo = () => {
             onMouseLeave={handleMouseLeave}
             role="group"
             aria-label={`Slide ${currentSlide + 1} of ${totalSlides}`}
-            style={{ touchAction: 'pan-y pinch-zoom' }}
+            style={{ touchAction: "pan-y pinch-zoom" }}
           >
-            <motion.div 
+            <motion.div
               className="flex gap-3 sm:gap-4 md:gap-6 cursor-grab active:cursor-grabbing select-none"
               drag="x"
               dragConstraints={{
-                left: -(cardWidth + gap) * Math.max(0, carouselData.length - cardsPerView),
-                right: 0
+                left:
+                  -(cardWidth + gap) *
+                  Math.max(0, carouselData.length - cardsPerView),
+                right: 0,
               }}
               dragElastic={0.2}
               dragMomentum={false}
               onDragStart={() => {
                 setIsDragging(true);
-                document.body.style.userSelect = 'none';
+                document.body.style.userSelect = "none";
               }}
               onDragEnd={(event, info) => {
                 setIsDragging(false);
-                document.body.style.userSelect = '';
+                document.body.style.userSelect = "";
                 const offset = info.offset.x;
                 const velocity = info.velocity.x;
-                
+
                 if (Math.abs(offset) > 50 || Math.abs(velocity) > 300) {
                   if (offset > 0 && currentSlide > 0) {
                     goToPrevSlide();
@@ -364,24 +380,27 @@ const MindsInTheSilo = () => {
                 }
               }}
               animate={{
-                x: -currentSlide * (cardWidth + gap)
+                x: -currentSlide * (cardWidth + gap),
               }}
               transition={{
                 type: "spring",
                 stiffness: 400,
                 damping: 25,
-                mass: 0.5
+                mass: 0.5,
               }}
               style={{
-                width: `${cardWidth * carouselData.length + gap * (carouselData.length - 1)}px`
+                width: `${
+                  cardWidth * carouselData.length +
+                  gap * (carouselData.length - 1)
+                }px`,
               }}
             >
               {carouselData.map((item, index) => {
                 const isInViewport = cardsInViewport.has(index);
-                
+
                 return (
-                  <motion.div 
-                    key={item.id} 
+                  <motion.div
+                    key={item.id}
                     ref={(el) => {
                       cardRefs.current[index] = el;
                       if (el) el.dataset.cardIndex = index;
@@ -389,155 +408,166 @@ const MindsInTheSilo = () => {
                     className="flex-shrink-0"
                     style={{ width: `${cardWidth}px` }}
                     initial={{ opacity: 0, scale: 0.8, y: 50, rotateY: -15 }}
-                    animate={{ 
+                    animate={{
                       opacity: isInViewport ? 1 : 0,
                       scale: isInViewport ? 1 : 0.8,
                       y: isInViewport ? 0 : 50,
-                      rotateY: isInViewport ? 0 : -15
+                      rotateY: isInViewport ? 0 : -15,
                     }}
                     transition={{
                       duration: 0.8,
                       ease: [0.25, 0.46, 0.45, 0.94],
                       type: "spring",
                       stiffness: 100,
-                      damping: 15
+                      damping: 15,
                     }}
                   >
-                  {item.type === 'team-member' ? (
-                    // Team Member Card - No fading animations
-                    <motion.div 
-                      className="bg-white h-full flex flex-col border-[1px] p-1 transition-all duration-200"
-                      style={{
-                        minHeight: '300px',
-                        pointerEvents: 'auto',
-                        borderColor: cardsPerView === 1 && isInViewport ? 'transparent' : 'transparent'
-                      }}
-                      onMouseEnter={(e) => {
-                        if (!isDragging && window.innerWidth >= 768) {
-                          e.currentTarget.style.borderColor = 'transparent';
-                        }
-                      }}
-                      onMouseLeave={(e) => {
-                        if (cardsPerView !== 1 || !isInViewport) {
-                          e.currentTarget.style.borderColor = 'transparent';
-                        }
-                      }}
-                      whileHover={!isDragging ? {} : {}}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <img 
-                        src={item.imageUrl} 
-                        alt={`${item.name} - Team Member`}
-                        className="w-full h-auto object-cover flex-1 max-h-[22rem] lg:max-h-[22rem] md:max-h-[30rem]"
-                        loading="lazy"
-                        draggable={false}
-                      />
-                      
-                      {/* Text Content - No animations */}
-                      <div 
-                        className="mt-0 pt-3 sm:pt-3 lg:pt-4"
-                      >
-                        <h3 
-                          className="font-semibold text-black text-xl sm:text-base lg:text-2xl text-left"
-                        >
-                          {item.name}
-                        </h3>
-                        <p 
-                          className="text-black text-base sm:text-sm lg:text-xl text-left mb-5 font-normal"
-                        >
-                          {item.title}
-                        </p>
-                        <p 
-                          className="text-black text-sm lg:text-lg leading-relaxed text-left font-normal"
-                        >
-                          {item.description}
-                        </p>
-                      </div>
-                    </motion.div>
-                  ) : (
-                    // Special Card - Viewport-based animations
-                    <motion.div 
-                      className=" p-3 sm:p-4 lg:p-6 xl:p-8 h-full flex flex-col justify-center items-center text-left border-[1px] group"
-                      style={{
-                        minHeight: '300px',
-                        backgroundColor: '#FFE5E5',
-                        borderColor: '#FF322E',
-                        pointerEvents: isDragging ? 'none' : 'auto'
-                      }}
-                      whileHover={!isDragging ? { 
-                        borderColor: '#FF1E1A',
-                        rotate: 1
-                      } : {}}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <motion.div 
-                        className="space-y-6 sm:space-y-4 lg:space-y-6 xl:space-y-8 max-w-xs"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ 
-                          opacity: isInViewport ? 1 : 0, 
-                          scale: isInViewport ? 1 : 0.8 
+                    {item.type === "team-member" ? (
+                      // Team Member Card - No fading animations
+                      <motion.div
+                        className="bg-white h-full flex flex-col border-[1px] p-1 transition-all duration-200"
+                        style={{
+                          minHeight: "300px",
+                          pointerEvents: "auto",
+                          borderColor:
+                            cardsPerView === 1 && isInViewport
+                              ? "transparent"
+                              : "transparent",
                         }}
-                        transition={{ duration: 0.6, delay: isInViewport ? 0.2 : 0 }}
+                        onMouseEnter={(e) => {
+                          if (!isDragging && window.innerWidth >= 768) {
+                            e.currentTarget.style.borderColor = "transparent";
+                          }
+                        }}
+                        onMouseLeave={(e) => {
+                          if (cardsPerView !== 1 || !isInViewport) {
+                            e.currentTarget.style.borderColor = "transparent";
+                          }
+                        }}
+                        whileHover={!isDragging ? {} : {}}
+                        transition={{ duration: 0.3 }}
                       >
-                        <motion.h3 
-                          className="font-bold text-black text-3xl text-center w-[90%] md:text-4xl md:w-[100%] mx-auto sm:text-xl lg:text-2xl xl:text-3xl leading-tight"
-                          style={{
-                            fontFamily: 'Epilogue, sans-serif',
-                            fontWeight: 700,
-                            lineHeight: '120%',
-                            letterSpacing: '0%'
-                          }}
-                          initial={{ opacity: 0, scale: 0.7, rotateZ: -5 }}
-                          animate={{ 
-                            opacity: isInViewport ? 1 : 0, 
-                            scale: isInViewport ? 1 : 0.7,
-                            rotateZ: isInViewport ? 0 : -5
-                          }}
-                          transition={{ duration: 0.6, delay: isInViewport ? 0.3 : 0 }}
-                        >
-                          {item.title}
-                        </motion.h3>
-                        
-                        <motion.button 
-                          className="bg-brand hover:bg-brand text-white font-bold px-3 sm:px-4 lg:px-6 xl:px-8 py-4 sm:py-2 lg:py-3 xl:py-4 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 text-base sm:text-sm lg:text-base xl:text-lg w-[80%] mx-auto ml-9"
-                          onClick={() => window.location.href = '/careers'}
-                          style={{
-                            fontFamily: 'DM Sans, sans-serif',
-                            fontWeight: 700
-                          }}
-                          whileHover={{ scale: 1.1, rotate: -1 }}
-                          whileTap={{ scale: 0.95 }}
-                          initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                          animate={{ 
-                            opacity: isInViewport ? 1 : 0, 
-                            y: isInViewport ? 0 : 20,
-                            scale: isInViewport ? 1 : 0.8
-                          }}
-                          transition={{ duration: 0.6, delay: isInViewport ? 0.4 : 0 }}
-                        >
-                          {item.buttonText}
-                        </motion.button>
-                        
-                        <motion.p 
-                          className="text-black text-sm text-center w-[90%] mx-auto md:w-[100%] sm:text-sm lg:text-base leading-relaxed"
-                          style={{
-                            fontFamily: 'DM Sans, sans-serif',
-                            fontWeight: 600,
-                            lineHeight: '150%',
-                            letterSpacing: '0%',
-                          }}
-                          initial={{ opacity: 0, y: 15 }}
-                          animate={{ 
-                            opacity: isInViewport ? 1 : 0, 
-                            y: isInViewport ? 0 : 15 
-                          }}
-                          transition={{ duration: 0.6, delay: isInViewport ? 0.5 : 0 }}
-                        >
-                          {item.description}
-                        </motion.p>
+                        <img
+                          src={item.imageUrl}
+                          alt={`${item.name} - Team Member`}
+                          className="w-full h-auto object-cover flex-1 max-h-[22rem] lg:max-h-[22rem] md:max-h-[30rem]"
+                          loading="lazy"
+                          draggable={false}
+                        />
+
+                        {/* Text Content - No animations */}
+                        <div className="mt-0 pt-3 sm:pt-3 lg:pt-4">
+                          <h3 className="font-semibold text-black text-xl sm:text-base lg:text-2xl text-left">
+                            {item.name}
+                          </h3>
+                          <p className="text-black text-base sm:text-sm lg:text-xl text-left mb-5 font-normal">
+                            {item.title}
+                          </p>
+                          <p className="text-black text-sm lg:text-lg leading-relaxed text-left font-normal">
+                            {item.description}
+                          </p>
+                        </div>
                       </motion.div>
-                    </motion.div>
-                  )}
+                    ) : (
+                      // Special Card - Viewport-based animations
+                      <motion.div
+                        className=" p-3 sm:p-4 lg:p-6 xl:p-8 h-full flex flex-col justify-center items-center text-left border-[1px] group"
+                        style={{
+                          minHeight: "300px",
+                          backgroundColor: "#FFE5E5",
+                          borderColor: "#FF322E",
+                          pointerEvents: isDragging ? "none" : "auto",
+                        }}
+                        whileHover={
+                          !isDragging
+                            ? {
+                                borderColor: "#FF1E1A",
+                                rotate: 0,
+                              }
+                            : {}
+                        }
+                        transition={{ duration: 0.3 }}
+                      >
+                        <motion.div
+                          className="space-y-6 sm:space-y-4 lg:space-y-6 xl:space-y-8 max-w-xs"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{
+                            opacity: isInViewport ? 1 : 0,
+                            scale: isInViewport ? 1 : 0.8,
+                          }}
+                          transition={{
+                            duration: 0.6,
+                            delay: isInViewport ? 0.2 : 0,
+                          }}
+                        >
+                          <motion.h3
+                            className="font-bold text-black text-3xl text-center w-[90%] md:text-4xl md:w-[100%] mx-auto sm:text-xl lg:text-2xl xl:text-3xl leading-tight"
+                            style={{
+                              fontFamily: "Epilogue, sans-serif",
+                              fontWeight: 700,
+                              lineHeight: "120%",
+                              letterSpacing: "0%",
+                            }}
+                            initial={{ opacity: 0, scale: 0.7, rotateZ: -5 }}
+                            animate={{
+                              opacity: isInViewport ? 1 : 0,
+                              scale: isInViewport ? 1 : 0.7,
+                              rotateZ: isInViewport ? 0 : -5,
+                            }}
+                            transition={{
+                              duration: 0.6,
+                              delay: isInViewport ? 0.3 : 0,
+                            }}
+                          >
+                            {item.title}
+                          </motion.h3>
+
+                          <motion.button
+                            className="bg-brand text-white font-bold px-3 sm:px-4 lg:px-6 xl:px-8 py-4 sm:py-2 lg:py-3 xl:py-4 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 text-base sm:text-sm lg:text-base xl:text-lg w-[80%] mx-auto ml-9"
+                            onClick={() => (window.location.href = "/careers")}
+                            style={{
+                              fontFamily: "DM Sans, sans-serif",
+                              fontWeight: 700,
+                            }}
+                            whileHover={{ scale: 1.1, rotate: -1 }}
+                            whileTap={{ scale: 0.95 }}
+                            initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                            animate={{
+                              opacity: isInViewport ? 1 : 0,
+                              y: isInViewport ? 0 : 20,
+                              scale: isInViewport ? 1 : 0.8,
+                            }}
+                            transition={{
+                              duration: 0.6,
+                              delay: isInViewport ? 0.4 : 0,
+                            }}
+                          >
+                            {item.buttonText}
+                          </motion.button>
+
+                          <motion.p
+                            className="text-black text-sm text-center w-[90%] mx-auto md:w-[100%] sm:text-sm lg:text-base leading-relaxed"
+                            style={{
+                              fontFamily: "DM Sans, sans-serif",
+                              fontWeight: 600,
+                              lineHeight: "150%",
+                              letterSpacing: "0%",
+                            }}
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{
+                              opacity: isInViewport ? 1 : 0,
+                              y: isInViewport ? 0 : 15,
+                            }}
+                            transition={{
+                              duration: 0.6,
+                              delay: isInViewport ? 0.5 : 0,
+                            }}
+                          >
+                            {item.description}
+                          </motion.p>
+                        </motion.div>
+                      </motion.div>
+                    )}
                   </motion.div>
                 );
               })}
@@ -559,40 +589,42 @@ const MindsInTheSilo = () => {
                     }
                   }}
                   className={`w-2 h-2 sm:w-3 sm:h-3 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
-                    currentSlide === index ? 'bg-red-500' : 'bg-red-200 hover:bg-red-300'
+                    currentSlide === index
+                      ? "bg-red-500"
+                      : "bg-red-200 hover:bg-red-300"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
-                  aria-current={currentSlide === index ? 'true' : 'false'}
+                  aria-current={currentSlide === index ? "true" : "false"}
                 />
               ))}
             </div>
 
             {/* Navigation Arrows - Mobile Enhanced */}
             <div className="flex space-x-1 sm:space-x-2">
-            <button 
-              onClick={goToPrevSlide}
-              disabled={isTransitioning || currentSlide === 0}
-              className={`w-10 h-10 sm:w-12 sm:h-12 border border-red-500 text-red-500 flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base sm:text-lg ${
-                isTransitioning || currentSlide === 0
-                  ? 'opacity-50 cursor-not-allowed' 
-                  : 'hover:bg-red-50 active:bg-red-100'
-              }`}
-              aria-label="Previous slide"
-            >
-              <HiArrowLeft />
-            </button>
-            <button 
-              onClick={goToNextSlide}
-              disabled={isTransitioning || currentSlide === totalSlides - 1}
-              className={`w-10 h-10 sm:w-12 sm:h-12 border border-red-500 text-red-500 flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base sm:text-lg ${
-                isTransitioning || currentSlide === totalSlides - 1
-                  ? 'opacity-50 cursor-not-allowed' 
-                  : 'hover:bg-red-50 active:bg-red-100'
-              }`}
-              aria-label="Next slide"
-            >
-              <HiArrowRight />
-            </button>
+              <button
+                onClick={goToPrevSlide}
+                disabled={isTransitioning || currentSlide === 0}
+                className={`w-10 h-10 sm:w-12 sm:h-12 border border-red-500 text-red-500 flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base sm:text-lg ${
+                  isTransitioning || currentSlide === 0
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:bg-red-50 active:bg-red-100"
+                }`}
+                aria-label="Previous slide"
+              >
+                <HiArrowLeft />
+              </button>
+              <button
+                onClick={goToNextSlide}
+                disabled={isTransitioning || currentSlide === totalSlides - 1}
+                className={`w-10 h-10 sm:w-12 sm:h-12 border border-red-500 text-red-500 flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 text-base sm:text-lg ${
+                  isTransitioning || currentSlide === totalSlides - 1
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:bg-red-50 active:bg-red-100"
+                }`}
+                aria-label="Next slide"
+              >
+                <HiArrowRight />
+              </button>
             </div>
           </div>
         </div>
