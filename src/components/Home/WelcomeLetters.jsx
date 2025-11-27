@@ -27,10 +27,10 @@ export const WelcomeLetters = () => {
 
   // Mobile breakpoints (keep client's logic)
   // Make very small phones still render letters (avoid scale 0 which hides them)
-  if (w <= 385) return { OFFSET_X: -55, OFFSET_Y: 170, SCALE: 0.7 };
-    if (w <= 425) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.8 }; // 425px mobile
-    if (w <= 428) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.8 }; // 428px mobile
-    if (w <= 440) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.8 }; // 425px mobile
+  if (w <= 385) return { OFFSET_X: -55, OFFSET_Y: 170, SCALE: 0.8 };
+    if (w <= 425) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.9 }; // 425px mobile
+    if (w <= 428) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.9 }; // 428px mobile
+    if (w <= 440) return { OFFSET_X: -40, OFFSET_Y: 170, SCALE: 0.9 }; // 425px mobile
     if (w <= 480) {
       const t = (w - 425) / (480 - 425);
       return {
