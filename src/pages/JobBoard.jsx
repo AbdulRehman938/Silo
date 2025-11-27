@@ -1,6 +1,6 @@
 import Section from "../components/Home/Section.jsx";
 import { FaChevronRight } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { jobsData } from "../data/jobsData.js";
 
 // JobCard Component - Clickable with hover effects
@@ -208,12 +208,17 @@ export default function JobBoard() {
                     className="flex-1 sm:flex-none sm:w-[350px] border border-black px-4 py-3 text-sm font-normal placeholder-black/60 focus:outline-none focus:ring-2 focus:ring-black"
                     required
                   />
-                  <button
-                    type="submit"
-                    className="bg-brand text-white px-6 py-3 text-sm font-bold hover:bg-brand/90 transition-colors whitespace-nowrap"
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center justify-center gap-2 bg-[#FF322E] h-[48px] px-8 py-4 text-xs font-medium tracking-wide text-white border-transparent relative overflow-hidden group"
                   >
-                    Send me jobs
-                  </button>
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                      <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
+                    </div>
+                    <span className="block transition-all whitespace-nowrap duration-300 ease-in-out text-base group-hover:translate-x-40">
+                      Send me jobs
+                    </span>
+                  </Link>
                 </form>
 
                 <p className="text-xs text-black mt-3">
