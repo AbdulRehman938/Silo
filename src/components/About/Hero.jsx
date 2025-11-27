@@ -79,7 +79,7 @@ const Hero = () => {
     position: "fixed",
     bottom: "24px",
     right: "24px",
-    zIndex: 50,
+    zIndex: 40,
   });
   const [isDesktop, setIsDesktop] = useState(false);
   const mdPlaceholderRef = useRef(null);
@@ -122,7 +122,7 @@ const Hero = () => {
           position: "fixed",
           bottom: `${newBottom}px`,
           right: `${rightPos}px`,
-          zIndex: 50,
+          zIndex: 40,
         });
       } else {
         // Footer not visible, stick to bottom of screen
@@ -130,7 +130,7 @@ const Hero = () => {
           position: "fixed",
           bottom: "24px",
           right: `${rightPos}px`,
-          zIndex: 50,
+          zIndex: 40,
         });
       }
     };
@@ -321,7 +321,7 @@ const Hero = () => {
       {/* Vimeo Modal */}
       {showVimeoModal && (
         <div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black bg-opacity-80"
+          className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-80"
           onClick={(e) => {
             if (e.target === e.currentTarget) setShowVimeoModal(false);
           }}
