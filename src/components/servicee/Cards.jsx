@@ -12,6 +12,8 @@ const Cards = () => {
   const touchStartY = useRef(0);
   const isAnimating = useRef(false);
   const unlockTimeoutRef = useRef(null);
+  const animationStartTimeoutRef = useRef(null);
+  const canStartAnimation = useRef(false);
 
   // Auto-unlock when reaching boundaries
   useEffect(() => {
@@ -121,17 +123,37 @@ const Cards = () => {
     let scrollCheckInterval = null;
     let lastScrollY = window.scrollY;
     let lastFrameTime = Date.now();
+    let isTouching = false;
 
     // Intersection Observer for detecting section visibility
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
-            // Section is visible, start checking for centering
+            // Section is visible
+            // Start delay timer if not already started/ready
+            if (
+              !canStartAnimation.current &&
+              !animationStartTimeoutRef.current
+            ) {
+              animationStartTimeoutRef.current = setTimeout(() => {
+                canStartAnimation.current = true;
+                animationStartTimeoutRef.current = null;
+              }, 1000);
+            }
+
+            // Start checking for centering
             if (!scrollCheckInterval) {
               scrollCheckInterval = setInterval(checkAndLockSection, 16); // 60fps
             }
           } else if (!entry.isIntersecting) {
+            // Reset delay timer and flag
+            if (animationStartTimeoutRef.current) {
+              clearTimeout(animationStartTimeoutRef.current);
+              animationStartTimeoutRef.current = null;
+            }
+            canStartAnimation.current = false;
+
             // Section left viewport, clear interval
             if (scrollCheckInterval) {
               clearInterval(scrollCheckInterval);
@@ -167,7 +189,13 @@ const Cards = () => {
       const isComingIntoView =
         containerCenter > 100 && containerCenter < viewportHeight - 100;
 
-      if (isReasonablyCentered && isComingIntoView && !isAnimating.current) {
+      if (
+        isReasonablyCentered &&
+        isComingIntoView &&
+        !isAnimating.current &&
+        !isTouching &&
+        canStartAnimation.current
+      ) {
         setIsLocked(true);
         isAnimating.current = true;
 
@@ -218,6 +246,7 @@ const Cards = () => {
 
     const handleTouchStart = (e) => {
       if (!mobileRef.current) return;
+      isTouching = true;
       touchStartY.current = e.touches[0].clientY;
       touchAccumulator = 0;
       lastScrollY = window.scrollY;
@@ -259,6 +288,7 @@ const Cards = () => {
     };
 
     const handleTouchEnd = () => {
+      isTouching = false;
       touchAccumulator = 0;
     };
 
@@ -271,27 +301,39 @@ const Cards = () => {
       if (scrollCheckInterval) {
         clearInterval(scrollCheckInterval);
       }
+      if (animationStartTimeoutRef.current) {
+        clearTimeout(animationStartTimeoutRef.current);
+      }
       window.removeEventListener("touchstart", handleTouchStart);
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
     };
   }, [isLocked, cardProgress]);
 
-  const getCardTransform = (index) => {
+  const getCardTransform = (index, isMobile = false) => {
     const cardStart = index;
     const cardEnd = index + 1;
+    const isLastCard = index === CARD_DATA.length - 1;
+
+    // Mobile specific override for last card - always stay in place
+    if (isMobile && isLastCard) {
+      return { y: 0, opacity: 1, scale: 1 };
+    }
 
     if (cardProgress < cardStart) {
       // Card hasn't started animating yet - keep it visible
       return { y: 0, opacity: 1, scale: 1 };
     } else if (cardProgress >= cardEnd) {
-      // Card has completed - move it far off screen
-      return { y: -1000, opacity: 1, scale: 1 };
+      // Card has completed
+      // Move it off screen - reduced distance for mobile
+      const distance = isMobile ? 500 : 1000;
+      return { y: -distance, opacity: 1, scale: 1 };
     } else {
       // Card is currently animating - smooth continuous movement
       const progress = cardProgress - cardStart; // 0 to 1
+      const distance = isMobile ? 500 : 1000;
       return {
-        y: progress * -1000, // Smooth interpolation from 0 to -1000px
+        y: progress * -distance, // Smooth interpolation
         opacity: 1, // Keep fully visible
         scale: 1, // Keep same size
       };
@@ -327,7 +369,7 @@ const Cards = () => {
             };
 
             const offset = computeOffset(i);
-            const z = 300 - i;
+            const z = 40 - i;
             const transform = getCardTransform(i);
 
             return (
@@ -374,7 +416,7 @@ const Cards = () => {
         </h1>
 
         <div
-          className="absolute left-1/2 top-[80%] -translate-x-1/2 -translate-y-1/2 z-[60] flex items-center justify-center"
+          className="absolute left-1/2 top-[80%] -translate-x-1/2 -translate-y-1/2 z-[20] flex items-center justify-center"
           style={{ height: 200, width: 300 }}
         >
           {CARD_DATA.map((card, i) => {
@@ -397,8 +439,8 @@ const Cards = () => {
             };
 
             const offset = computeOffset(i);
-            const z = 300 - i;
-            const transform = getCardTransform(i);
+            const z = 40 - i;
+            const transform = getCardTransform(i, true);
 
             return (
               <motion.div
