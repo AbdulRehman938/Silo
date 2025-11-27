@@ -9,9 +9,21 @@ import Section from "../components/Home/Section";
 import LazySection from "../components/Common/LazySection";
 
 const About = () => {
-  // Scroll to top when component mounts
+  // Handle scroll to anchor or top when component mounts
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const hash = window.location.hash;
+    if (hash) {
+      // Wait for content to load, then scroll to anchor
+      setTimeout(() => {
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 300);
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   return (
@@ -23,20 +35,26 @@ const About = () => {
       <div className="h-[1px] bg-black w-[100vw]"></div>
       <div className=" min-h-screen mx-auto w-full max-w-[1280px]">
         <LazySection>
-        <WhatSiloIs />
+          <WhatSiloIs />
         </LazySection>
         <LazySection>
-        <WhyUGC />
+          <div id="why-ugc">
+            <WhyUGC />
+          </div>
         </LazySection>
         <LazySection>
-        <WhoWeLoveWorkingWith />
+          <WhoWeLoveWorkingWith />
         </LazySection>
         <LazySection>
-        <ThingsWeBelieveIn />
+          <div id="things-we-believe-in">
+            <ThingsWeBelieveIn />
+          </div>
         </LazySection>
         <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black my-10" />
         <LazySection>
-        <MindsInTheSilo />
+          <div id="minds-in-the-silo">
+            <MindsInTheSilo />
+          </div>
         </LazySection>
          <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black mt-10 mb-20" />
         <LazySection>

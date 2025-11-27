@@ -12,6 +12,9 @@ export default function Ramblings() {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("View all");
 
+  // Toggle this to true when client wants to show blog content via CMS
+  const showContent = false;
+
   const containerRef = useRef(null);
   const sidebarRef = useRef(null);
   const sidebarWrapperRef = useRef(null);
@@ -37,7 +40,8 @@ export default function Ramblings() {
     if (
       !sidebarRef.current ||
       !sidebarWrapperRef.current ||
-      !containerRef.current
+      !containerRef.current ||
+      !showContent
     )
       return;
 
@@ -78,7 +82,7 @@ export default function Ramblings() {
       st.kill();
       ScrollTrigger.refresh();
     };
-  }, []);
+  }, [showContent]);
 
   return (
     <div className="min-h-screen md:mt-20 lg:mt-28 mx-3 md:mx-0">
@@ -90,129 +94,112 @@ export default function Ramblings() {
           </h1>
           <p className="text-black text-lg font-normal">
             From UGC tips to the latest in social and design trends, The Silo
-            Blog dives into what’s shaping the digital marketing and
+            Blog dives into what's shaping the digital marketing and
             content-first world right now.
           </p>
         </div>
 
-        {/* Sidebar + Posts Wrapper */}
-        <div
-          ref={containerRef}
-          className="flex flex-col lg:flex-row gap-12 relative mt-2"
-        >
-          {/* Sidebar */}
-          <div
-            ref={sidebarWrapperRef}
-            className="lg:w-48 flex-shrink-0 relative"
-          >
-            <div
-              ref={sidebarRef}
-              className="relative pb-4 bg-white z-40 shadow-md lg:shadow-none"
-            >
-              <h3 className="text-lg font-bold text-black mb-6">
-                Blog categories
-              </h3>
-
-              <div className="space-y-4">
-                {categories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => {
-                      setSelectedCategory(category);
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                    className={`block w-full text-left text-sm transition-all duration-300 ease-in-out ${
-                      selectedCategory === category
-                        ? "border-[1px] border-black bg-transparent px-4 py-3 text-black font-bold transform scale-105"
-                        : "text-black hover:text-black hover:bg-white hover:translate-x-2 hover:font-bold px-2 py-1"
-                    }`}
-                  >
-                    {category}
+        {/* Empty State - Show when showContent is false */}
+        {!showContent && (
+          <div className="flex flex-col lg:flex-row gap-12 relative mt-2">
+            {/* Sidebar */}
+            <div className="lg:w-48 flex-shrink-0">
+              <div className="relative pb-4 bg-white">
+                <h3 className="text-lg font-bold text-black mb-6">
+                  Blog categories
+                </h3>
+                <div className="space-y-4">
+                  <button className="block w-full text-left text-sm border-[1px] border-black bg-transparent px-4 py-3 text-black font-bold">
+                    View all
                   </button>
-                ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Empty State Message */}
+            <div className="flex-1">
+              <div className="border-[1px] border-black p-6 md:p-24 flex flex-col items-center justify-center min-h-[250px] md:min-h-[400px]">
+                <h2 className="text-2xl md:text-3xl font-bold text-black text-center mb-4">
+                  This page is as empty as your brand without UGC.
+                </h2>
+                <p className="text-black text-base md:text-lg text-center">
+                  Don't worry, we're going to be fixing both.
+                </p>
               </div>
             </div>
           </div>
+        )}
 
-          {/* Main Content */}
-          <div className="flex-1">
-            {filteredPosts.length > 0 && (
-              <>
-                {/* Featured Post */}
-                <div className="mb-12">
-                  <div
-                    className="bg-white overflow-hidden cursor-pointer flex flex-col"
-                    onClick={() => navigate(filteredPosts[0].link)}
-                  >
-                    <div className="md:p-8 md:px-0 py-8 px-0 order-1 md:order-2">
-                      <div className="flex items-center gap-3 mb-4">
-                        <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1">
-                          {filteredPosts[0].category}
-                        </span>
+        {/* Full Blog Content - Hidden by default, ready for CMS */}
+        {showContent && (
+          <>
+            {/* Sidebar + Posts Wrapper */}
+            <div
+              ref={containerRef}
+              className="flex flex-col lg:flex-row gap-12 relative mt-2"
+            >
+              {/* Sidebar */}
+              <div
+                ref={sidebarWrapperRef}
+                className="lg:w-48 flex-shrink-0 relative"
+              >
+                <div
+                  ref={sidebarRef}
+                  className="relative pb-4 bg-white z-40 shadow-md lg:shadow-none"
+                >
+                  <h3 className="text-lg font-bold text-black mb-6">
+                    Blog categories
+                  </h3>
 
-                        <span className="text-sm text-black">
-                          {filteredPosts[0].readTime}
-                        </span>
-                      </div>
-                      <h2 className="text-3xl font-bold text-black mb-4 hover:text-brand transition-colors">
-                        {filteredPosts[0].title}
-                      </h2>
-                      <p className="text-black mb-6 text-lg">
-                        {filteredPosts[0].description}
-                      </p>
-                      <a
-                        href={filteredPosts[0].link}
-                        className="inline-flex items-center gap-2 font-dm font-semibold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                  <div className="space-y-4">
+                    {categories.map((category) => (
+                      <button
+                        key={category}
+                        onClick={() => {
+                          setSelectedCategory(category);
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }}
+                        className={`block w-full text-left text-sm transition-all duration-300 ease-in-out ${
+                          selectedCategory === category
+                            ? "border-[1px] border-black bg-transparent px-4 py-3 text-black font-bold transform scale-105"
+                            : "text-black hover:text-black hover:bg-white hover:translate-x-2 hover:font-bold px-2 py-1"
+                        }`}
                       >
-                        <span>Read more</span>
-                        <span
-                          aria-hidden
-                          className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
-                        >
-                          <MdOutlineKeyboardArrowRight className="text-2xl font-black text-brand" />
-                        </span>
-                      </a>
-                    </div>
-
-                    <div className="w-full h-[60vh] overflow-hidden group order-2 md:order-1">
-                      <img
-                        src={filteredPosts[0].image}
-                        alt={filteredPosts[0].title}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        loading="lazy"
-                      />
-                    </div>
+                        {category}
+                      </button>
+                    ))}
                   </div>
                 </div>
+              </div>
 
-                {/* Grid Posts */}
-                {filteredPosts.length > 1 && (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {filteredPosts.slice(1).map((post) => (
+              {/* Main Content */}
+              <div className="flex-1">
+                {filteredPosts.length > 0 && (
+                  <>
+                    {/* Featured Post */}
+                    <div className="mb-12">
                       <div
-                        key={post.id}
                         className="bg-white overflow-hidden cursor-pointer flex flex-col"
-                        onClick={() => navigate(post.link)}
+                        onClick={() => navigate(filteredPosts[0].link)}
                       >
-                        <div className="md:p-6 md:px-0 py-6 px-0 order-1 md:order-2">
-                          <div className="flex items-center gap-3 mb-3">
+                        <div className="md:p-8 md:px-0 py-8 px-0 order-1 md:order-2">
+                          <div className="flex items-center gap-3 mb-4">
                             <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1">
-                              {post.category}
+                              {filteredPosts[0].category}
                             </span>
 
                             <span className="text-sm text-black">
-                              {post.readTime}
+                              {filteredPosts[0].readTime}
                             </span>
                           </div>
-
-                          <h3 className="text-xl font-bold text-black mb-3 hover:text-brand transition-colors">
-                            {post.title}
-                          </h3>
-
-                          <p className="text-black mb-4">{post.description}</p>
-
+                          <h2 className="text-3xl font-bold text-black mb-4 hover:text-brand transition-colors">
+                            {filteredPosts[0].title}
+                          </h2>
+                          <p className="text-black mb-6 text-lg">
+                            {filteredPosts[0].description}
+                          </p>
                           <a
-                            href={post.link}
+                            href={filteredPosts[0].link}
                             className="inline-flex items-center gap-2 font-dm font-semibold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
                           >
                             <span>Read more</span>
@@ -220,36 +207,91 @@ export default function Ramblings() {
                               aria-hidden
                               className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
                             >
-                              <MdOutlineKeyboardArrowRight className="text-2xl font-black text-back" />
+                              <MdOutlineKeyboardArrowRight className="text-2xl font-black text-brand" />
                             </span>
                           </a>
                         </div>
 
-                        <div className="aspect-[4/3] overflow-hidden group order-2 md:order-1">
+                        <div className="w-full h-[60vh] overflow-hidden group order-2 md:order-1">
                           <img
-                            src={post.image}
-                            alt={post.title}
-                            className="w-full h-full object-cover md:object-cover transition-transform duration-300 group-hover:scale-110"
+                            src={filteredPosts[0].image}
+                            alt={filteredPosts[0].title}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                             loading="lazy"
                           />
                         </div>
                       </div>
-                    ))}
+                    </div>
+
+                    {/* Grid Posts */}
+                    {filteredPosts.length > 1 && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {filteredPosts.slice(1).map((post) => (
+                          <div
+                            key={post.id}
+                            className="bg-white overflow-hidden cursor-pointer flex flex-col"
+                            onClick={() => navigate(post.link)}
+                          >
+                            <div className="md:p-6 md:px-0 py-6 px-0 order-1 md:order-2">
+                              <div className="flex items-center gap-3 mb-3">
+                                <span className="text-sm bg-[#FFDBDB] text-black font-semibold px-3 py-1">
+                                  {post.category}
+                                </span>
+
+                                <span className="text-sm text-black">
+                                  {post.readTime}
+                                </span>
+                              </div>
+
+                              <h3 className="text-xl font-bold text-black mb-3 hover:text-brand transition-colors">
+                                {post.title}
+                              </h3>
+
+                              <p className="text-black mb-4">
+                                {post.description}
+                              </p>
+
+                              <a
+                                href={post.link}
+                                className="inline-flex items-center gap-2 font-dm font-semibold text-xl leading-[150%] text-[#FF322E] tracking-normal group"
+                              >
+                                <span>Read more</span>
+                                <span
+                                  aria-hidden
+                                  className="inline-block ml-1 transform transition-transform duration-300 ease-in-out group-hover:translate-x-2"
+                                >
+                                  <MdOutlineKeyboardArrowRight className="text-2xl font-black text-back" />
+                                </span>
+                              </a>
+                            </div>
+
+                            <div className="aspect-[4/3] overflow-hidden group order-2 md:order-1">
+                              <img
+                                src={post.image}
+                                alt={post.title}
+                                className="w-full h-full object-cover md:object-cover transition-transform duration-300 group-hover:scale-110"
+                                loading="lazy"
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                )}
+
+                {/* No posts message */}
+                {filteredPosts.length === 0 && (
+                  <div className="text-center py-12">
+                    <p className="text-black text-lg">
+                      No posts found in this category.
+                    </p>
                   </div>
                 )}
-              </>
-            )}
-
-            {/* No posts message */}
-            {filteredPosts.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-black text-lg">
-                  No posts found in this category.
-                </p>
               </div>
-            )}
-          </div>
-        </div>
+            </div>
+          </>
+        )}
 
         {/* Newsletter Section */}
         <div className="md:mt-40 mt-10">

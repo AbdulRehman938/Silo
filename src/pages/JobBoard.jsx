@@ -56,13 +56,18 @@ function JobCard({ job }) {
         <img
           src={job.image}
           alt={`${job.title} - ${job.category} job opportunity`}
-          className="w-full h-full font-bold object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" />
+          className="w-full h-full font-bold object-cover transition-transform duration-300 group-hover:scale-110"
+          loading="lazy"
+        />
       </div>
     </div>
   );
 }
 
 export default function JobBoard() {
+  // Toggle this to true when client wants to show job listings via CMS
+  const showJobs = false;
+
   return (
     <div className="w-full bg-white md:mt-7 mb-20 max-w-[1280px] mx-auto mt-20">
       {/* Container with 95vw max-width */}
@@ -121,7 +126,7 @@ export default function JobBoard() {
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
             {/* Primary Button - Exact screenshot styling */}
             <button
-              onClick={() => window.location.href = '/contact'}
+              onClick={() => (window.location.href = "/contact")}
               className="inline-flex items-center justify-center gap-2 bg-[#FF322E] text-white border-transparent relative overflow-hidden group"
               style={{
                 fontFamily: "DM Sans, sans-serif",
@@ -135,7 +140,7 @@ export default function JobBoard() {
               }}
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
+                <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
               </div>
               <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-60">
                 Sign up as a Creator
@@ -144,7 +149,7 @@ export default function JobBoard() {
 
             {/* Secondary Button - Exact screenshot styling */}
             <button
-              onClick={() => window.location.href = '/contact'}
+              onClick={() => (window.location.href = "/contact")}
               className="inline-flex items-center justify-center gap-2 bg-transparent border-[1px] border-[#FF322E] text-[#FF322E] relative overflow-hidden group"
               style={{
                 fontFamily: "DM Sans, sans-serif",
@@ -158,7 +163,7 @@ export default function JobBoard() {
               }}
             >
               <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                <FaChevronRight   className="text-[#FF322E] w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
+                <FaChevronRight className="text-[#FF322E] w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
               </div>
               <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-80">
                 Post a requirement Brief
@@ -167,38 +172,98 @@ export default function JobBoard() {
           </div>
         </div>
 
-        {/* Job Grid - Exact screenshot layout with responsive behavior */}
-        <div className="w-full px-[1vw] md:px-0">
-          {/* Mobile: Single column (< 640px) */}
-          <div className="grid grid-cols-1 gap-6 sm:hidden justify-items-center">
-            {jobsData.map((job) => (
-              <JobCard key={job.id} job={job} />
-            ))}
-          </div>
-
-          {/* Tablet: 2 columns (640px - 1024px) */}
-          <div className="hidden sm:grid lg:hidden grid-cols-2 gap-2 justify-items-center">
-            {jobsData.map((job) => (
-              <JobCard key={job.id} job={job} />
-            ))}
-          </div>
-
-          {/* Desktop: Adjusted layout for 95vw (1024px+) */}
-          <div className="hidden lg:block">
-            {/* First Row - 3 cards with fixed width and gap */}
-            <div className="flex gap-20 mb-8">
-              <JobCard job={jobsData[0]} />
-              <JobCard job={jobsData[1]} />
-              <JobCard job={jobsData[2]} />
+        {/* Empty State - Show when showJobs is false */}
+        {!showJobs && (
+          <div className="w-full mb-4 md:mb-16">
+            {/* Empty State Message */}
+            <div className="text-center mb-6 py-6 md:mb-12 md:py-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+                Quiet in here, huh?
+              </h2>
+              <p className="text-base md:text-lg text-black">
+                Our brands are brewing their next big thing. You could be first
+                in line when they drop.
+              </p>
             </div>
 
-            {/* Second Row - 2 cards with fixed width and gap matching top row */}
-            <div className="flex gap-20 mb-8">
-              <JobCard job={jobsData[3]} />
-              <JobCard job={jobsData[4]} />
+            {/* Newsletter Signup Section */}
+            <div className="w-full flex flex-col md:flex-row md:justify-between md:items-start gap-4 md:gap-8">
+              {/* Left side - Text content */}
+              <div className="max-w-xl">
+                <h3 className="text-2xl md:text-3xl font-bold text-black mb-4">
+                  Get these straight to your inbox
+                </h3>
+                <p className="text-base text-black mb-6 md:mb-0">
+                  We add UGC jobs weekly, but our creator roster gets first
+                  dibs. Sign up to get briefs before they hit the board.
+                </p>
+              </div>
+
+              {/* Right side - Form */}
+              <div className="flex flex-col items-start flex-shrink-0">
+                <form className="flex flex-row gap-3 items-center">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 sm:flex-none sm:w-[350px] border border-black px-4 py-3 text-sm font-normal placeholder-black/60 focus:outline-none focus:ring-2 focus:ring-black"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="bg-brand text-white px-6 py-3 text-sm font-bold hover:bg-brand/90 transition-colors whitespace-nowrap"
+                  >
+                    Send me jobs
+                  </button>
+                </form>
+
+                <p className="text-xs text-black mt-3">
+                  By clicking Sign Up you're confirming that you agree with our{" "}
+                  <a
+                    href="/privacy-policy"
+                    className="underline hover:text-brand"
+                  >
+                    Terms and Conditions
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        )}
+
+        {/* Job Grid - Hidden by default, ready for CMS */}
+        {showJobs && (
+          <div className="w-full px-[1vw] md:px-0">
+            {/* Mobile: Single column (< 640px) */}
+            <div className="grid grid-cols-1 gap-6 sm:hidden justify-items-center">
+              {jobsData.map((job) => (
+                <JobCard key={job.id} job={job} />
+              ))}
+            </div>
+
+            {/* Tablet: 2 columns (640px - 1024px) */}
+            <div className="hidden sm:grid lg:hidden grid-cols-2 gap-2 justify-items-center">
+              {jobsData.map((job) => (
+                <JobCard key={job.id} job={job} />
+              ))}
+            </div>
+
+            {/* Desktop: Adjusted layout for 95vw (1024px+) */}
+            <div className="hidden lg:block">
+              {/* First Row - 3 cards with fixed width and gap */}
+              <div className="flex gap-20 mb-8">
+                <JobCard job={jobsData[0]} />
+                <JobCard job={jobsData[1]} />
+                <JobCard job={jobsData[2]} />
+              </div>
+
+              {/* Second Row - 2 cards with fixed width and gap matching top row */}
+              <div className="flex gap-20 mb-8">
+                <JobCard job={jobsData[3]} />
+                <JobCard job={jobsData[4]} />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Section Component */}

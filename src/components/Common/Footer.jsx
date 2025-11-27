@@ -1,13 +1,23 @@
-import { Link, NavLink } from "react-router-dom";
-import { IoMdSend } from "react-icons/io";
-import {
-  FaChevronCircleRight,
-  FaChevronRight,
-  FaYoutube,
-} from "react-icons/fa";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { FaChevronRight, FaYoutube } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
 const Footer = () => {
   const year = new Date().getFullYear();
+  const navigate = useNavigate();
+
+  // Handle anchor link navigation
+  const handleAnchorClick = (e, path, anchor) => {
+    e.preventDefault();
+    navigate(path);
+    // Wait for navigation to complete, then scroll to anchor
+    setTimeout(() => {
+      const element = document.getElementById(anchor);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
+  };
+
   return (
     <footer className="w-full bg-white text-black max-w-[1280px] mx-auto">
       <div className="mx-3 md:mx-auto">
@@ -17,14 +27,14 @@ const Footer = () => {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
               {/* Left: Brand + Newsletter */}
               <div className="md:col-span-5">
-                <div className="flex items-center gap-2 mb-6">
+                <Link to="/" className="flex items-center gap-2 mb-6">
                   <img
                     src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717230/footerlogo_tllimb.png"
                     alt="Silo logo"
                     className="h-8"
                     loading="lazy"
                   />
-                </div>
+                </Link>
                 <p className="text-xl font-medium mb-3">
                   Join our newsletter to stay up to date.
                 </p>
@@ -95,6 +105,9 @@ const Footer = () => {
                   <li>
                     <a
                       href="/about#things-we-believe-in"
+                      onClick={(e) =>
+                        handleAnchorClick(e, "/about", "things-we-believe-in")
+                      }
                       className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                       style={{
                         fontFamily: "DM Sans",
@@ -108,6 +121,9 @@ const Footer = () => {
                   <li>
                     <a
                       href="/about#minds-in-the-silo"
+                      onClick={(e) =>
+                        handleAnchorClick(e, "/about", "minds-in-the-silo")
+                      }
                       className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                       style={{
                         fontFamily: "DM Sans",
@@ -121,6 +137,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/about#why-ugc"
+                      onClick={(e) => handleAnchorClick(e, "/about", "why-ugc")}
                       className="text-sm ease-in-out duration-200 cursor-pointer hover:text-brand"
                       style={{
                         fontFamily: "DM Sans",
@@ -389,14 +406,14 @@ const Footer = () => {
         <div className="block md:hidden px-2 py-8 w-full bg-white">
           {/* Top: Brand and copyright */}
           <div className="mb-4">
-            <div className="font-extrabold text-xl mb-3">
+            <Link to="/" className="font-extrabold text-xl mb-3 inline-block">
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717230/footerlogo_tllimb.png"
                 alt="Silo logo"
                 className="h-8"
                 loading="lazy"
               />
-            </div>
+            </Link>
             <div className="text-sm font-bold">
               © {year} The Silo Creative Limited
             </div>
@@ -460,17 +477,33 @@ const Footer = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <a href="/about#things-we-believe-in" className="text-sm">
+                  <a
+                    href="/about#things-we-believe-in"
+                    onClick={(e) =>
+                      handleAnchorClick(e, "/about", "things-we-believe-in")
+                    }
+                    className="text-sm"
+                  >
                     Mission and Values
                   </a>
                 </li>
                 <li>
-                  <a href="/about#minds-in-the-silo" className="text-sm">
+                  <a
+                    href="/about#minds-in-the-silo"
+                    onClick={(e) =>
+                      handleAnchorClick(e, "/about", "minds-in-the-silo")
+                    }
+                    className="text-sm"
+                  >
                     Meet the Team
                   </a>
                 </li>
                 <li>
-                  <a href="/about#why-ugc" className="text-sm">
+                  <a
+                    href="/about#why-ugc"
+                    onClick={(e) => handleAnchorClick(e, "/about", "why-ugc")}
+                    className="text-sm"
+                  >
                     Why UGC?
                   </a>
                 </li>
