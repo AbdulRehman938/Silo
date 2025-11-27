@@ -124,35 +124,8 @@ const Hero = () => {
               width: initialWidth,
               height: initialHeight,
             });
-          } else if (scrollProgress < 1) {
-            // Transitioning - interpolate between initial and fixed positions
-            setVideoState("transitioning");
-
-            // Calculate target position in viewport
-            const viewportHeight = window.innerHeight;
-            const targetTop = viewportHeight - targetHeight - targetBottom;
-            const targetLeft = window.innerWidth - targetWidth - targetRight;
-
-            // Interpolate position
-            const currentTop =
-              initialTop + (targetTop + scrollY - initialTop) * scrollProgress;
-            const currentLeft =
-              initialLeft + (targetLeft - initialLeft) * scrollProgress;
-            const currentWidth =
-              initialWidth + (targetWidth - initialWidth) * scrollProgress;
-            const currentHeight =
-              initialHeight + (targetHeight - initialHeight) * scrollProgress;
-
-            setVideoPosition({
-              top: currentTop,
-              left: currentLeft,
-              right: "auto",
-              bottom: "auto",
-              width: currentWidth,
-              height: currentHeight,
-            });
           } else if (!footerApproaching) {
-            // Fully scrolled - fixed to bottom right
+            // Scrolled - instantly fixed to bottom right
             setVideoState("fixed");
             setVideoPosition({
               top: "auto",
@@ -212,13 +185,13 @@ const Hero = () => {
             <h1 className="font-bold text-[clamp(95px,17vw,160px)] leading-[0.9] mb-6 text-center">
               What we do
             </h1>
-            
+
             {/* Description */}
             <p className="text-black text-base font-normal text-center max-w-2xl px-4 mb-8">
               We make content that cuts through the noise. Strategy, UGC,
               design, and motion, built to get noticed and remembered.
             </p>
-            
+
             {/* Buttons */}
             <div className="flex gap-4 justify-center">
               <a
