@@ -48,7 +48,7 @@ const Footer = () => {
                 href="/privacy-policy"
                 className="underline cursor-pointer ease-in-out duration-200"
               >
-                Privacy Policy
+                 Legal & Website changes
               </a>{" "}
               and provide consent to receive updates from our company.
             </p>
@@ -293,7 +293,7 @@ const Footer = () => {
               href="/privacy-policy"
               className="font-bold text-black underline text-sm ease-in-out duration-200 cursor-pointer"
             >
-              Privacy Policy
+               Legal & Website changes
             </a>
             <Link
               to="/terms"
@@ -432,7 +432,7 @@ const Footer = () => {
               href="/privacy-policy"
               className="ease-in-out font-bold text-black duration-200 cursor-pointer"
             >
-              Privacy Policy
+               Legal & Website changes
             </a>
             <Link
               to="/terms"
@@ -474,7 +474,7 @@ const Footer = () => {
             </button>
           </form>
            <p className="text-xs font-bold text-black mt-3">
-            By subscribing you agree to with our Privacy Policy and provide
+            By subscribing you agree to with our  Legal & Website changes and provide
             consent to receive updates from our company.
           </p>
         </div>

@@ -81,7 +81,7 @@ export default function Ramblings() {
   }, []);
 
   return (
-    <div className="min-h-screen md:mt-20 lg:mt-20 mx-3 md:mx-0">
+    <div className="min-h-screen md:mt-20 lg:mt-28 mx-3 md:mx-0">
       <div className="mx-auto max-w-[1280px] px-4 md:px-0 md:py-12 mb-20">
         {/* Header Section */}
         <div className="mb-24 md:w-[50vw] mt-32 md:mt-0 ">

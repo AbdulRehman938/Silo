@@ -1,5 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { MdOutlineAccessTime, MdOutlineKeyboardArrowRight, MdOutlineLocationOn } from "react-icons/md";
+import {
+  MdOutlineAccessTime,
+  MdOutlineKeyboardArrowRight,
+  MdOutlineLocationOn,
+} from "react-icons/md";
 import Section2 from "../components/About/Section2";
 
 const CareerIndex = () => {
@@ -16,8 +20,8 @@ const CareerIndex = () => {
   };
 
   return (
-    <div className="h-auto max-w-[1280px] mt-20 mx-auto px-4 md:px-10 lg:px-10">
-      <div className="min-h-screen max-w-full bg-white py-8 sm:py-12 md:py-16 lg:py-20 mx-auto mb-28 md:mb-0">
+    <div className="h-auto max-w-[1280px] mt-24 mx-auto px-4 md:px-10 lg:px-10">
+      <div className="min-h-screen max-w-full bg-white py-8 sm:py-12 md:py-16 lg:py-20 mx-auto mb-28 md:mb-0 flex items-center">
         <div className="max-w-full mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16">
             {/* Left Content */}
@@ -28,7 +32,8 @@ const CareerIndex = () => {
               <p className="text-sm sm:text-base md:text-lg font-normal text-black leading-relaxed">
                 Want to make ideas happen? Join The Silo - a team of creators
                 <br className="hidden sm:block" />
-               strategists, and storytellers shaping brands that stand out online
+                strategists, and storytellers shaping brands that stand out
+                online
               </p>
             </div>
 
@@ -96,7 +101,7 @@ const CareerIndex = () => {
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
                   <div className="flex items-center gap-2">
-                   <MdOutlineLocationOn className="w-6 h-6 text-black font-thin flex-shrink-0" />
+                    <MdOutlineLocationOn className="w-6 h-6 text-black font-thin flex-shrink-0" />
                     <span
                       style={{
                         fontFamily: "DM Sans",
@@ -190,7 +195,7 @@ const CareerIndex = () => {
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
                   <div className="flex items-center gap-2">
-                   <MdOutlineLocationOn className="w-6 h-6 text-black font-thin flex-shrink-0" />
+                    <MdOutlineLocationOn className="w-6 h-6 text-black font-thin flex-shrink-0" />
                     <span
                       style={{
                         fontFamily: "DM Sans",
@@ -284,7 +289,7 @@ const CareerIndex = () => {
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
                   <div className="flex items-center gap-2">
-                   <MdOutlineLocationOn className="w-6 h-6 text-black font-thin flex-shrink-0" />
+                    <MdOutlineLocationOn className="w-6 h-6 text-black font-thin flex-shrink-0" />
                     <span
                       style={{
                         fontFamily: "DM Sans",

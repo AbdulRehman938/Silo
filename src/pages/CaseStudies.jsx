@@ -12,7 +12,7 @@ const CaseStudies = () => {
   // Vimeo video URL from Hero.jsx
   const vimeoUrl = "https://player.vimeo.com/video/76979871";
   return (
-    <div className="max-w-[1280px] mx-auto h-auto flex flex-col justify-start items-center mt-16 xl:mt-10 lg:mt-40 md:mt-40">
+    <div className="max-w-[1280px] mx-auto h-auto flex flex-col justify-start items-center mt-16 xl:mt-12 lg:mt-40 md:mt-40">
       <section
         className="mt-10 mb-10 flex items-start w-full justify-start px-4 md:px-0 pb-6 md:pb-12 lg:pb-16 overflow-hidden"
         aria-label="About Silo - Company introduction"
@@ -100,7 +100,7 @@ const CaseStudies = () => {
               {/* Small Image + Video Section in same row */}
               <div className="flex flex-row items-center justify-center gap-3 w-full">
                 {/* Small Image */}
-                <div className="flex justify-center">
+                <div className="hidden sm:flex justify-center">
                   <img
                     src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717296/studies2_a4olwb.png"
                     alt="The Silo brand representation"
@@ -108,7 +108,6 @@ const CaseStudies = () => {
                     loading="lazy"
                   />
                 </div>
-              
               </div>
             </div>
 
@@ -143,7 +142,6 @@ const CaseStudies = () => {
                         Cut through the noise
                       </span>
                     </div>
-                   
                   </div>
                 )}
               </div>
@@ -171,7 +169,6 @@ const CaseStudies = () => {
                     loading="lazy"
                   />
                 </div>
-              
               </div>
             </div>
           </div>

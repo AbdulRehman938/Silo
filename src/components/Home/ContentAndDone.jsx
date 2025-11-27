@@ -212,10 +212,10 @@ export default function ContentAndDone() {
             Just some of the brands we’ve worked with
           </p>
 
-          <div className="w-full mt-28">
+          <div className="w-full mt-28 border-t-[0.1rem] border-t-black">
             {/* First project */}
             <div
-              className="hidden lg:flex items-center justify-around space-x-20 border-y-[0.1rem] py-16 border-y-gray-800 group relative cursor-pointer"
+              className="hidden lg:flex items-center justify-around space-x-20 border-b-[0.1rem] py-16 border-b-black group relative cursor-pointer"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -278,7 +278,7 @@ export default function ContentAndDone() {
             </div>
 
             <div
-              className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 border-y-2 py-12 border-y-gray-800 group relative cursor-pointer"
+              className="hidden md:block md:flex-col-reverse lg:hidden items-center w-full mx-auto justify-center space-x-10 border-y-[1px] py-12 border-y-black group relative cursor-pointer"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -735,7 +735,7 @@ export default function ContentAndDone() {
 
           <div className="space-y-12">
             <div
-              className="border-y py-8 border-y-black cursor-pointer"
+              className="border-y-[0.1rem] py-8 border-y-black cursor-pointer"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -784,7 +784,7 @@ export default function ContentAndDone() {
             </div>
 
             <div
-              className="border-b relative top-[-2rem] py-8 border-b-black cursor-pointer"
+              className="border-b-[0.1rem] relative top-[-2rem] py-8 border-b-black cursor-pointer"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
