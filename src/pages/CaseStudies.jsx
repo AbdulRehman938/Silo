@@ -150,7 +150,7 @@ const CaseStudies = () => {
             {/* XL Layout: Large image left, small image + video section right */}
             <div className="hidden xl:flex gap-6">
               {/* Large Image */}
-              <div className="flex-1 max-w-[438px]">
+              <div className="flex-1 max-w-[460px]">
                 <img
                   src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717301/studies1_lzgldj.png"
                   alt="Silo team member showcasing brand identity"
@@ -178,7 +178,7 @@ const CaseStudies = () => {
       <LazySection>
         <div
           id="done"
-          className="max-w-[1280px] pb-0 px-4 md:px-10 lg:px-10 mx-auto"
+          className="max-w-[1280px] pb-0 px-4 md:px-10 lg:px-0 mx-auto"
         >
           <div className="mx-auto ">
             <div

@@ -38,7 +38,7 @@ const Footer = () => {
                   <FaChevronRight className="text-brand w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
                 </div>
                 <span className="block transition-all duration-300 ease-in-out text-sm group-hover:translate-x-40">
-                  SUBSCRIBE
+                  Subscribe
                 </span>
               </button>
             </form>
@@ -470,7 +470,7 @@ const Footer = () => {
               className="mt-3 w-full inline-flex items-center justify-center  border-[1px] border-brand h-[42px] px-4 py-2.5 text-sm font-bold tracking-wide text-brand"
               aria-label="SUBSCRIBE"
             >
-              SUBSCRIBE
+              Subscribe
             </button>
           </form>
            <p className="text-xs font-bold text-black mt-3">

@@ -186,7 +186,7 @@ const Interested = () => {
             className="inline-flex items-center justify-center gap-2 rounded-sm bg-transparent border-[1px] border-brand h-[55px] px-8 py-3 text-xs font-semibold  tracking-wide text-brand relative overflow-hidden group"
           >
             <div className="absolute left-3 top-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-              <FaChevronRight className="block text-brand w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-24 group-hover:scale-[140%]" />
+              <FaChevronRight className="block text-brand w-6 h-6 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-20 group-hover:scale-[140%]" />
             </div>
             <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-60">
               Interested in chat

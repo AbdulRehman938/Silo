@@ -212,10 +212,10 @@ export default function ContentAndDone() {
             Just some of the brands we’ve worked with
           </p>
 
-          <div className="w-full mt-28 border-t-[0.1rem] border-t-black">
+          <div className="w-full mt-28 border-t-[1px] border-t-black">
             {/* First project */}
             <div
-              className="hidden lg:flex items-center justify-around space-x-20 border-b-[0.1rem] py-16 border-b-black group relative cursor-pointer"
+              className="hidden lg:flex items-center justify-around space-x-20 border-b-[1px] py-16 border-b-black group relative cursor-pointer"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -343,7 +343,7 @@ export default function ContentAndDone() {
 
             {/* Second project */}
             <div
-              className="hidden lg:flex items-center justify-around space-x-20 border-b-[0.1rem] py-16 border-b-black group relative cursor-pointer mt-0"
+              className="hidden lg:flex items-center justify-around space-x-20 border-b-[1px] py-16 border-b-black group relative cursor-pointer mt-0"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -733,9 +733,9 @@ export default function ContentAndDone() {
             Just some of the brands we’ve worked with
           </p>
 
-          <div className="space-y-12">
+          <div className="space-y-12 border-t-[1px] border-t-black">
             <div
-              className="border-y-[0.1rem] py-8 border-y-black cursor-pointer"
+              className="border-b-[1px] py-8 border-b-black cursor-pointer"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
@@ -784,7 +784,7 @@ export default function ContentAndDone() {
             </div>
 
             <div
-              className="border-b-[0.1rem] relative top-[-2rem] py-8 border-b-black cursor-pointer"
+              className="border-b-[1px] relative top-[-2rem] py-8 border-b-black cursor-pointer"
               role="link"
               tabIndex={0}
               onKeyDown={(e) => {
