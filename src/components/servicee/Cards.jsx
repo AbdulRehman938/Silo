@@ -1,56 +1,44 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import { servicesData } from "../../data/servicesData.jsx";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const CARD_DATA = servicesData;
 
 const Cards = () => {
   const desktopRef = useRef(null);
   const mobileRef = useRef(null);
-  const [cardProgress, setCardProgress] = useState(0);
+  const cardProgress = useMotionValue(0);
   const [isLocked, setIsLocked] = useState(false);
-  const touchStartY = useRef(0);
   const isAnimating = useRef(false);
   const unlockTimeoutRef = useRef(null);
-  const animationStartTimeoutRef = useRef(null);
-  const canStartAnimation = useRef(false);
 
   // Auto-unlock when reaching boundaries
+  // Auto-unlock when reaching boundaries
   useEffect(() => {
-    console.log(
-      "📊 cardProgress changed:",
-      cardProgress,
-      "isLocked:",
-      isLocked,
-      "isAnimating:",
-      isAnimating.current
-    );
+    const unsubscribe = cardProgress.on("change", (latest) => {
+      if (isAnimating.current && (latest >= CARD_DATA.length || latest <= 0)) {
+        if (unlockTimeoutRef.current) {
+          clearTimeout(unlockTimeoutRef.current);
+        }
 
-    if (
-      isAnimating.current &&
-      (cardProgress >= CARD_DATA.length || cardProgress <= 0)
-    ) {
-      if (unlockTimeoutRef.current) {
-        clearTimeout(unlockTimeoutRef.current);
+        const delay = latest >= CARD_DATA.length ? 800 : 300;
+
+        unlockTimeoutRef.current = setTimeout(() => {
+          setIsLocked(false);
+          isAnimating.current = false;
+        }, delay);
       }
-
-      const delay = cardProgress >= CARD_DATA.length ? 800 : 300;
-      const direction = cardProgress >= CARD_DATA.length ? "END" : "START";
-      console.log(`🔓 Scheduling ${direction} unlock in ${delay}ms`);
-
-      unlockTimeoutRef.current = setTimeout(() => {
-        console.log(`✅ Unlocking now (${direction})`);
-        setIsLocked(false);
-        isAnimating.current = false;
-      }, delay);
-    }
+    });
 
     return () => {
+      unsubscribe();
       if (unlockTimeoutRef.current) {
         clearTimeout(unlockTimeoutRef.current);
       }
     };
-  }, [cardProgress]);
+  }, []);
 
   // Desktop wheel handler with scroll lock
   useEffect(() => {
@@ -75,10 +63,12 @@ const Cards = () => {
       const isCentered =
         distanceFromCenter <= 300 && isInViewport && isSignificantlyVisible;
 
+      const currentProgress = cardProgress.get();
+
       // Don't lock if we're at boundaries and not animating
       const atBoundary =
-        (cardProgress >= CARD_DATA.length && e.deltaY > 0) ||
-        (cardProgress <= 0 && e.deltaY < 0);
+        (currentProgress >= CARD_DATA.length && e.deltaY > 0) ||
+        (currentProgress <= 0 && e.deltaY < 0);
       const shouldLock = (isCentered || isAnimating.current) && !atBoundary;
 
       if (shouldLock) {
@@ -104,241 +94,52 @@ const Cards = () => {
         const step = Math.abs(delta) * 0.002;
         const direction = delta > 0 ? 1 : -1;
 
-        setCardProgress((prev) => {
-          const newProgress = prev + direction * step;
-          return Math.max(0, Math.min(CARD_DATA.length, newProgress));
-        });
+        const newProgress = Math.max(
+          0,
+          Math.min(CARD_DATA.length, currentProgress + direction * step)
+        );
+        cardProgress.set(newProgress);
       }
     };
 
     window.addEventListener("wheel", handleWheel, { passive: false });
     return () => window.removeEventListener("wheel", handleWheel);
-  }, [isLocked, cardProgress]);
+  }, [isLocked]);
 
-  // Mobile scroll handler with Intersection Observer
+  // Register ScrollTrigger
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+  }, []);
+
+  // Mobile ScrollTrigger
   useEffect(() => {
     if (!mobileRef.current) return;
 
-    let touchAccumulator = 0;
-    let scrollCheckInterval = null;
-    let lastScrollY = window.scrollY;
-    let lastFrameTime = Date.now();
-    let isTouching = false;
-
-    // Intersection Observer for detecting section visibility
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
-            // Section is visible
-            // Start delay timer if not already started/ready
-            if (
-              !canStartAnimation.current &&
-              !animationStartTimeoutRef.current
-            ) {
-              animationStartTimeoutRef.current = setTimeout(() => {
-                canStartAnimation.current = true;
-                animationStartTimeoutRef.current = null;
-              }, 1000);
-            }
-
-            // Start checking for centering
-            if (!scrollCheckInterval) {
-              scrollCheckInterval = setInterval(checkAndLockSection, 16); // 60fps
-            }
-          } else if (!entry.isIntersecting) {
-            // Reset delay timer and flag
-            if (animationStartTimeoutRef.current) {
-              clearTimeout(animationStartTimeoutRef.current);
-              animationStartTimeoutRef.current = null;
-            }
-            canStartAnimation.current = false;
-
-            // Section left viewport, clear interval
-            if (scrollCheckInterval) {
-              clearInterval(scrollCheckInterval);
-              scrollCheckInterval = null;
-            }
-            if (isAnimating.current) {
-              setIsLocked(false);
-              isAnimating.current = false;
-            }
-          }
-        });
-      },
-      {
-        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-        rootMargin: "50px 0px", // Reduced from 100px
+    // Kill any existing ScrollTriggers to prevent duplicates on re-renders
+    const triggers = ScrollTrigger.getAll();
+    triggers.forEach((trigger) => {
+      if (trigger.vars.trigger === mobileRef.current) {
+        trigger.kill();
       }
-    );
+    });
 
-    const checkAndLockSection = () => {
-      if (!mobileRef.current) return;
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: mobileRef.current,
+        start: "center center", // Lock when center of section hits center of viewport
+        end: "+=2000", // Scroll distance to complete the animation
+        pin: true, // Pin the section
+        scrub: 0.5, // Smooth scrubbing
+        onUpdate: (self) => {
+          // Map progress 0-1 to card index 0-CARD_DATA.length
+          const progress = self.progress * CARD_DATA.length;
+          cardProgress.set(progress);
+        },
+      });
+    }, mobileRef);
 
-      const rect = mobileRef.current.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const viewportCenter = viewportHeight / 2;
-      const containerCenter = rect.top + rect.height / 2;
-      const distanceFromCenter = Math.abs(containerCenter - viewportCenter);
-
-      // Reduced threshold to prevent premature locking
-      const threshold = 200; // Reduced from 350px
-
-      // Only lock if section is reasonably centered
-      const isReasonablyCentered = distanceFromCenter <= threshold;
-      const isComingIntoView =
-        containerCenter > 100 && containerCenter < viewportHeight - 100;
-
-      if (
-        isReasonablyCentered &&
-        isComingIntoView &&
-        !isAnimating.current &&
-        !isTouching &&
-        canStartAnimation.current
-      ) {
-        setIsLocked(true);
-        isAnimating.current = true;
-
-        // Snap to center
-        const scrollOffset = containerCenter - viewportCenter;
-        const targetScrollY = window.scrollY + scrollOffset;
-
-        window.scrollTo({
-          top: targetScrollY,
-          behavior: "smooth",
-        });
-      }
-
-      // Handle momentum/passive scrolling for card animation
-      if (isAnimating.current) {
-        const currentScrollY = window.scrollY;
-        const scrollDelta = currentScrollY - lastScrollY;
-
-        if (Math.abs(scrollDelta) > 0) {
-          const now = Date.now();
-          const timeDelta = now - lastFrameTime;
-
-          // Convert scroll movement to card progress
-          const progressPerPixel = 1 / 300; // 300px to scroll through one card
-          const direction = scrollDelta > 0 ? 1 : -1;
-          const increment = Math.abs(scrollDelta) * progressPerPixel;
-
-          // Don't update if at boundary
-          const atBoundary =
-            (cardProgress >= CARD_DATA.length && direction > 0) ||
-            (cardProgress <= 0 && direction < 0);
-
-          if (!atBoundary && timeDelta > 0) {
-            setCardProgress((prev) => {
-              const newProgress = prev + direction * increment;
-              return Math.max(0, Math.min(CARD_DATA.length, newProgress));
-            });
-          }
-
-          lastFrameTime = now;
-        }
-
-        lastScrollY = currentScrollY;
-      }
-    };
-
-    observer.observe(mobileRef.current);
-
-    const handleTouchStart = (e) => {
-      if (!mobileRef.current) return;
-      isTouching = true;
-      touchStartY.current = e.touches[0].clientY;
-      touchAccumulator = 0;
-      lastScrollY = window.scrollY;
-      lastFrameTime = Date.now();
-    };
-
-    const handleTouchMove = (e) => {
-      if (!mobileRef.current || !isAnimating.current) return;
-
-      const currentY = e.touches[0].clientY;
-      const delta = touchStartY.current - currentY;
-
-      // Don't prevent if at boundary and scrolling in that direction
-      const atBoundary =
-        (cardProgress >= CARD_DATA.length && delta > 0) ||
-        (cardProgress <= 0 && delta < 0);
-
-      if (!atBoundary && isAnimating.current) {
-        e.preventDefault();
-
-        touchAccumulator += delta;
-        touchStartY.current = currentY;
-
-        // Direct proportional movement - card speed matches drag speed
-        const progressPerPixel = 1 / 300; // 300px to complete one card
-
-        if (Math.abs(delta) > 0) {
-          const direction = delta > 0 ? 1 : -1;
-          const increment = Math.abs(delta) * progressPerPixel;
-
-          setCardProgress((prev) => {
-            const newProgress = prev + direction * increment;
-            return Math.max(0, Math.min(CARD_DATA.length, newProgress));
-          });
-        }
-      } else {
-        touchStartY.current = currentY;
-      }
-    };
-
-    const handleTouchEnd = () => {
-      isTouching = false;
-      touchAccumulator = 0;
-    };
-
-    window.addEventListener("touchstart", handleTouchStart, { passive: true });
-    window.addEventListener("touchmove", handleTouchMove, { passive: false });
-    window.addEventListener("touchend", handleTouchEnd, { passive: true });
-
-    return () => {
-      observer.disconnect();
-      if (scrollCheckInterval) {
-        clearInterval(scrollCheckInterval);
-      }
-      if (animationStartTimeoutRef.current) {
-        clearTimeout(animationStartTimeoutRef.current);
-      }
-      window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("touchmove", handleTouchMove);
-      window.removeEventListener("touchend", handleTouchEnd);
-    };
-  }, [isLocked, cardProgress]);
-
-  const getCardTransform = (index, isMobile = false) => {
-    const cardStart = index;
-    const cardEnd = index + 1;
-    const isLastCard = index === CARD_DATA.length - 1;
-
-    // Mobile specific override for last card - always stay in place
-    if (isMobile && isLastCard) {
-      return { y: 0, opacity: 1, scale: 1 };
-    }
-
-    if (cardProgress < cardStart) {
-      // Card hasn't started animating yet - keep it visible
-      return { y: 0, opacity: 1, scale: 1 };
-    } else if (cardProgress >= cardEnd) {
-      // Card has completed
-      // Move it off screen - reduced distance for mobile
-      const distance = isMobile ? 500 : 1000;
-      return { y: -distance, opacity: 1, scale: 1 };
-    } else {
-      // Card is currently animating - smooth continuous movement
-      const progress = cardProgress - cardStart; // 0 to 1
-      const distance = isMobile ? 500 : 1000;
-      return {
-        y: progress * -distance, // Smooth interpolation
-        opacity: 1, // Keep fully visible
-        scale: 1, // Keep same size
-      };
-    }
-  };
+    return () => ctx.revert(); // Cleanup
+  }, []);
 
   return (
     <>
@@ -370,22 +171,31 @@ const Cards = () => {
 
             const offset = computeOffset(i);
             const z = 40 - i;
-            const transform = getCardTransform(i);
+
+            // Desktop Transform Logic
+            const transformY = useTransform(
+              cardProgress,
+              [i, i + 1],
+              [0, -1000]
+            );
+            const finalY = useTransform(transformY, (v) => -offset.y + v - 80);
 
             return (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20, x: 0, rotate: 0 }}
                 animate={{
-                  opacity: transform.opacity,
+                  opacity: 1,
                   x: offset.x - 310,
-                  y: -offset.y + transform.y - 80,
                   rotate: offset.r,
-                  scale: transform.scale,
+                  scale: 1,
+                }}
+                style={{
+                  y: finalY,
+                  zIndex: z,
                 }}
                 transition={{ type: "spring", stiffness: 220, damping: 22 }}
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 2xl:w-[720px] lg:w-[580px] md:w-[420px] md:h-[200px] lg:h-[250px] 2xl:h-[340px] bg-white border-[1px] border-[#FF322E] flex flex-col items-start justify-center px-12 py-10 shadow-lg"
-                style={{ zIndex: z }}
               >
                 <div className="mb-4 flex w-full justify-between items-center 2xl:text-xl lg:text-base font-bold">
                   {card.icon}
@@ -440,22 +250,40 @@ const Cards = () => {
 
             const offset = computeOffset(i);
             const z = 40 - i;
-            const transform = getCardTransform(i, true);
+
+            // Mobile Transform Logic
+            const isLast = i === CARD_DATA.length - 1;
+            const scrollY = useTransform(cardProgress, [i, i + 1], [0, -500]);
+            // For last card, keep y at 0 (no movement), otherwise use scrollY
+            const y = isLast ? 0 : scrollY;
+            // Apply offset
+            const finalY = useTransform(
+              // If y is a MotionValue, useTransform works. If y is 0, we need to handle it.
+              // Since useTransform expects a MotionValue as first arg, we wrap 0 in one if needed.
+              // However, hooks can't be conditional.
+              // So we must use useTransform for both cases or use a different approach.
+              // We can just use scrollY and override the output range for the last card?
+              // Or just:
+              scrollY,
+              (v) => -offset.y + (isLast ? 0 : v)
+            );
 
             return (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20, x: 0, rotate: 0 }}
                 animate={{
-                  opacity: transform.opacity,
+                  opacity: 1,
                   x: offset.x,
-                  y: -offset.y + transform.y,
                   rotate: offset.r,
-                  scale: transform.scale,
+                  scale: 1,
+                }}
+                style={{
+                  y: finalY,
+                  zIndex: z,
                 }}
                 transition={{ type: "spring", stiffness: 220, damping: 22 }}
                 className="absolute -translate-x-1/2 -translate-y-1/2 w-[280px] h-[160px] bg-white border-[1px] border-[#FF322E]  flex flex-col items-start justify-center px-4 py-3 shadow-lg"
-                style={{ zIndex: z }}
               >
                 <div className="mb-2 flex w-full justify-between items-center text-xs font-bold">
                   <div className="w-6 h-6">
