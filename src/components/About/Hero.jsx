@@ -225,7 +225,7 @@ const Hero = () => {
           {/* Visual Content Area - Responsive Layout (copied from CaseStudies) */}
           <div className="order-2 xl:order-2 w-full mt-10 md:mt-0">
             {/* Mobile Layout: Large image first, small image + video section below */}
-            <div className="flex flex-col md:hidden gap-4">
+            <div className="flex flex-col md:hidden gap-0">
               {/* Large Image */}
               <div className="w-full">
                 <img
@@ -235,9 +235,8 @@ const Hero = () => {
                   loading="lazy"
                 />
               </div>
-              {/* Small Image + Video Section in same row */}
+              {/* Small Image */}
               <div className="flex flex-row items-center justify-center gap-3 w-full">
-                {/* Small Image */}
                 <div className="hidden sm:flex justify-center">
                   <img
                     src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717235/About2_gof6gm.png"
@@ -246,15 +245,6 @@ const Hero = () => {
                     loading="lazy"
                   />
                 </div>
-                {/* Video Section (Mobile - Keep inline) */}
-                {showVideoSection && (
-                  <div className="flex items-center h-[10rem]">
-                    <VideoContent
-                      onClick={() => setShowVimeoModal(true)}
-                      onClose={() => setShowVideoSection(false)}
-                    />
-                  </div>
-                )}
               </div>
             </div>
 

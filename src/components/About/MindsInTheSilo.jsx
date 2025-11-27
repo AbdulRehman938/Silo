@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
+import { FaChevronRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const MindsInTheSilo = () => {
@@ -522,15 +523,13 @@ const MindsInTheSilo = () => {
                             {item.title}
                           </motion.h3>
 
-                          <motion.button
-                            className="bg-brand text-white font-bold px-3 sm:px-4 lg:px-6 xl:px-8 py-4 sm:py-2 lg:py-3 xl:py-4 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 text-base sm:text-sm lg:text-base xl:text-lg w-[80%] mx-auto ml-9"
-                            onClick={() => (window.location.href = "/careers")}
+                          <motion.a
+                            href="/careers"
+                            className="inline-flex items-center justify-center gap-2 bg-brand h-12 px-8 py-3 text-sm font-bold tracking-wide text-white border-transparent relative overflow-hidden group w-[80%] mx-auto ml-9"
                             style={{
                               fontFamily: "DM Sans, sans-serif",
                               fontWeight: 700,
                             }}
-                            whileHover={{ scale: 1.1, rotate: -1 }}
-                            whileTap={{ scale: 0.95 }}
                             initial={{ opacity: 0, y: 20, scale: 0.8 }}
                             animate={{
                               opacity: isInViewport ? 1 : 0,
@@ -542,8 +541,13 @@ const MindsInTheSilo = () => {
                               delay: isInViewport ? 0.4 : 0,
                             }}
                           >
-                            {item.buttonText}
-                          </motion.button>
+                            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                              <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
+                            </div>
+                            <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-80">
+                              {item.buttonText}
+                            </span>
+                          </motion.a>
 
                           <motion.p
                             className="text-black text-sm text-center w-[90%] mx-auto md:w-[100%] sm:text-sm lg:text-base leading-relaxed"

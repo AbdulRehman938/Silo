@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
-import "../styles/scaling-overrides.css"
+import "../styles/scaling-overrides.css";
 
 const Contact = () => {
   // Scroll to top when component mounts
@@ -47,29 +47,31 @@ const Contact = () => {
     onSubmit: (values, { setSubmitting, resetForm }) => {
       // Handle form submission here
       console.log("Form submitted:", values);
-      
+
       // Get existing data from localStorage
-      const existingData = JSON.parse(localStorage.getItem('contact2FormData') || '[]');
-      
+      const existingData = JSON.parse(
+        localStorage.getItem("contact2FormData") || "[]"
+      );
+
       // Add new submission with timestamp
       const newSubmission = {
         ...values,
-        submittedAt: new Date().toISOString()
+        submittedAt: new Date().toISOString(),
       };
-      
+
       // Add to array and store in localStorage
       const updatedData = [...existingData, newSubmission];
-      localStorage.setItem('contact2FormData', JSON.stringify(updatedData));
-      
+      localStorage.setItem("contact2FormData", JSON.stringify(updatedData));
+
       // Log all stored data
-      console.log('All contact2 form submissions:', updatedData);
-      
+      console.log("All contact2 form submissions:", updatedData);
+
       // Simulate API call
       setTimeout(() => {
         toast.success("Form submitted successfully!");
         resetForm();
         setSubmitting(false);
-        
+
         // Reload page after successful submit
         setTimeout(() => {
           window.location.reload();
@@ -87,15 +89,19 @@ const Contact = () => {
             <div className="space-y-6 sm:space-y-8 order-1 lg:order-1">
               <div>
                 <h1 className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black leading-tight">
-                 Ready to stop just posting and start growing?
+                  Ready to stop just posting and start growing?
                 </h1>
                 <p className="text-black mt-3 sm:mt-4 text-base sm:text-lg">
-                 Looking for the perfect creator to bring your brand to life? Look no further.
+                  Looking for the perfect creator to bring your brand to life?
+                  Look no further.
                 </p>
               </div>
 
               {/* Contact Form */}
-              <form onSubmit={formik.handleSubmit} className="space-y-4 sm:space-y-6">
+              <form
+                onSubmit={formik.handleSubmit}
+                className="space-y-4 sm:space-y-6"
+              >
                 <div>
                   <label
                     htmlFor="name"
@@ -117,7 +123,9 @@ const Contact = () => {
                     }`}
                   />
                   {formik.touched.name && formik.errors.name && (
-                    <p className="mt-1 text-sm text-red-500">{formik.errors.name}</p>
+                    <p className="mt-1 text-sm text-red-500">
+                      {formik.errors.name}
+                    </p>
                   )}
                 </div>
 
@@ -142,7 +150,9 @@ const Contact = () => {
                     }`}
                   />
                   {formik.touched.email && formik.errors.email && (
-                    <p className="mt-1 text-sm text-red-500">{formik.errors.email}</p>
+                    <p className="mt-1 text-sm text-red-500">
+                      {formik.errors.email}
+                    </p>
                   )}
                 </div>
 
@@ -167,7 +177,9 @@ const Contact = () => {
                     }`}
                   />
                   {formik.touched.phone && formik.errors.phone && (
-                    <p className="mt-1 text-sm text-red-500">{formik.errors.phone}</p>
+                    <p className="mt-1 text-sm text-red-500">
+                      {formik.errors.phone}
+                    </p>
                   )}
                 </div>
 
@@ -193,7 +205,9 @@ const Contact = () => {
                     }`}
                   />
                   {formik.touched.message && formik.errors.message && (
-                    <p className="mt-1 text-sm text-red-500">{formik.errors.message}</p>
+                    <p className="mt-1 text-sm text-red-500">
+                      {formik.errors.message}
+                    </p>
                   )}
                 </div>
 
@@ -226,17 +240,19 @@ const Contact = () => {
                     </label>
                   </div>
                   {formik.touched.terms && formik.errors.terms && (
-                    <p className="mt-1 text-sm text-red-500">{formik.errors.terms}</p>
+                    <p className="mt-1 text-sm text-red-500">
+                      {formik.errors.terms}
+                    </p>
                   )}
                 </div>
 
                 <button
                   type="submit"
                   disabled={formik.isSubmitting}
-                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white  border-transparent relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed top-7"
+                  className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold  tracking-wide text-white  border-transparent relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed top-7"
                 >
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 translate-x-5 svg-wrapper group-hover:animate-bounce-custom">
-                    <FaChevronRight   className="block text-white w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-4 group-hover:scale-[140%]" />
+                    <FaChevronRight className="block text-white w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-4 group-hover:scale-[140%]" />
                   </div>
                   <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-28">
                     {formik.isSubmitting ? "Submitting..." : "Submit"}
@@ -250,7 +266,9 @@ const Contact = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717234/contact2_v8cqrr.png"
                 alt="Person relaxing on chair"
-                className="w-full h-64 sm:h-80 md:h-[75vh] lg:h-[80vh] object-cover" loading="lazy" />
+                className="w-full h-64 sm:h-80 md:h-[75vh] lg:h-[80vh] object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -265,10 +283,11 @@ const Contact = () => {
               <div className="space-y-4 sm:space-y-6">
                 <div>
                   <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-black leading-tight">
-                   Looking to join as a creator instead?
+                    Looking to join as a creator instead?
                   </h2>
                   <p className="text-black mt-3 sm:mt-4 text-base sm:text-lg">
-                    Get briefs from brands that value authenticity, creativity, and strategy.
+                    Get briefs from brands that value authenticity, creativity,
+                    and strategy.
                   </p>
                 </div>
 
@@ -277,7 +296,7 @@ const Contact = () => {
                   className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold tracking-wide text-white  border-transparent relative overflow-hidden group"
                 >
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 translate-x-5 svg-wrapper group-hover:animate-bounce-custom">
-                    <FaChevronRight   className="block text-white w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-8 group-hover:scale-[140%]" />
+                    <FaChevronRight className="block text-white w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-8 group-hover:scale-[140%]" />
                   </div>
                   <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-48">
                     Join the Silo
@@ -291,7 +310,9 @@ const Contact = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717233/contact1_ttxa48.png"
                 alt="Person in spotlight"
-                className="w-full h-full md:h-[370px] object-cover" loading="lazy" />
+                className="w-full h-full md:h-[370px] object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

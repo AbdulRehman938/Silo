@@ -21,10 +21,10 @@ const Section2 = () => {
               <div className="flex flex-wrap gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2  bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group"
+                  className="inline-flex items-center justify-center gap-2  bg-[#FF322E] h-[55px] px-6 py-3 text-xs font-bold tracking-wide text-white border-transparent relative overflow-hidden group"
                 >
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                    <FaChevronRight   className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                    <FaChevronRight className="text-white w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
                   </div>
                   <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-40">
                     For Brands
@@ -33,10 +33,10 @@ const Section2 = () => {
 
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2  bg-transparent border-[1px] border-brand h-[55px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-brand relative overflow-hidden group"
+                  className="inline-flex items-center justify-center gap-2  bg-transparent border-[1px] border-brand h-[55px] px-6 py-3 text-xs font-bold  tracking-wide text-brand relative overflow-hidden group"
                 >
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
-                    <FaChevronRight   className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 svg-wrapper group-hover:animate-bounce-custom">
+                    <FaChevronRight className="text-brand w-5 h-5 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-[140%]" />
                   </div>
                   <span className="block transition-all duration-300 ease-in-out text-base group-hover:translate-x-40">
                     For Creators
@@ -50,7 +50,9 @@ const Section2 = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
-                className="w-full h-full object-cover" loading="lazy" />
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
@@ -66,7 +68,9 @@ const Section2 = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
-                className="w-full h-full object-cover" loading="lazy" />
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
 
             {/* Bottom: content */}
@@ -133,7 +137,9 @@ const Section2 = () => {
               <img
                 src="https://res.cloudinary.com/di9tb45rl/image/upload/v1762717286/section_x4xoyy.png"
                 alt="section"
-                className="w-full h-full object-cover" loading="lazy" />
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

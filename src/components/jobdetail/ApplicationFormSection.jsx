@@ -50,21 +50,31 @@ const ApplicationFormSection = () => {
       // Handle form submission here
       const formData = {
         ...values,
-        resumeFiles: resumeFiles.map((f) => ({ name: f.name, size: f.size, type: f.type })),
-        coverLetterFiles: coverLetterFiles.map((f) => ({ name: f.name, size: f.size, type: f.type })),
-        submittedAt: new Date().toISOString()
+        resumeFiles: resumeFiles.map((f) => ({
+          name: f.name,
+          size: f.size,
+          type: f.type,
+        })),
+        coverLetterFiles: coverLetterFiles.map((f) => ({
+          name: f.name,
+          size: f.size,
+          type: f.type,
+        })),
+        submittedAt: new Date().toISOString(),
       };
       console.log("Form submitted:", formData);
-      
+
       // Get existing data from localStorage
-      const existingData = JSON.parse(localStorage.getItem('applicationFormData') || '[]');
-      
+      const existingData = JSON.parse(
+        localStorage.getItem("applicationFormData") || "[]"
+      );
+
       // Add to array and store in localStorage
       const updatedData = [...existingData, formData];
-      localStorage.setItem('applicationFormData', JSON.stringify(updatedData));
-      
+      localStorage.setItem("applicationFormData", JSON.stringify(updatedData));
+
       // Log all stored data
-      console.log('All application form submissions:', updatedData);
+      console.log("All application form submissions:", updatedData);
 
       // Simulate API call
       setTimeout(() => {
@@ -73,7 +83,7 @@ const ApplicationFormSection = () => {
         setResumeFiles([]);
         setCoverLetterFiles([]);
         setSubmitting(false);
-        
+
         // Reload page after successful submit
         setTimeout(() => {
           window.location.reload();
@@ -545,7 +555,7 @@ const ApplicationFormSection = () => {
           <button
             type="submit"
             disabled={formik.isSubmitting}
-            className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold uppercase tracking-wide text-white border-transparent relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center justify-center gap-2 bg-[#FF322E] w-xl h-[48px] px-6 py-3 text-xs font-bold  tracking-wide text-white border-transparent relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <div className="absolute left-3 top-1/2 -translate-y-1/2 translate-x-5 svg-wrapper group-hover:animate-bounce-custom">
               <FaChevronRight className="block text-white w-4 h-4 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-4 group-hover:scale-[140%]" />
@@ -556,7 +566,6 @@ const ApplicationFormSection = () => {
           </button>
         </form>
       </div>
-      
     </div>
   );
 };

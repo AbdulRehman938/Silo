@@ -83,22 +83,28 @@ export default function Ramblings() {
   return (
     <div className="min-h-screen md:mt-20 lg:mt-20 mx-3 md:mx-0">
       <div className="mx-auto max-w-[1280px] px-4 md:px-0 md:py-12 mb-20">
-        
         {/* Header Section */}
         <div className="mb-24 md:w-[50vw] mt-32 md:mt-0 ">
           <h1 className="text-4xl lg:text-5xl font-bold text-black mb-4 font-['Epilogue'] leading-tight">
             Our Ramblings
           </h1>
           <p className="text-black text-lg font-normal">
-            From UGC tips to the latest in social and design trends, The Silo Blog dives into what’s shaping the digital marketing and content-first world right now.
+            From UGC tips to the latest in social and design trends, The Silo
+            Blog dives into what’s shaping the digital marketing and
+            content-first world right now.
           </p>
         </div>
 
         {/* Sidebar + Posts Wrapper */}
-        <div ref={containerRef} className="flex flex-col lg:flex-row gap-12 relative mt-2">
-          
+        <div
+          ref={containerRef}
+          className="flex flex-col lg:flex-row gap-12 relative mt-2"
+        >
           {/* Sidebar */}
-          <div ref={sidebarWrapperRef} className="lg:w-48 flex-shrink-0 relative">
+          <div
+            ref={sidebarWrapperRef}
+            className="lg:w-48 flex-shrink-0 relative"
+          >
             <div
               ref={sidebarRef}
               className="relative pb-4 bg-white z-40 shadow-md lg:shadow-none"
@@ -111,7 +117,10 @@ export default function Ramblings() {
                 {categories.map((category) => (
                   <button
                     key={category}
-                    onClick={() => setSelectedCategory(category)}
+                    onClick={() => {
+                      setSelectedCategory(category);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
                     className={`block w-full text-left text-sm transition-all duration-300 ease-in-out ${
                       selectedCategory === category
                         ? "border-[1px] border-black bg-transparent px-4 py-3 text-black font-bold transform scale-105"
@@ -245,14 +254,14 @@ export default function Ramblings() {
         {/* Newsletter Section */}
         <div className="md:mt-40 mt-10">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 md:gap-12 lg:gap-16">
-            
             <div className="lg:flex-1 lg:max-w-lg">
               <h2 className="text-black text-3xl font-bold mb-4 font-['Epilogue'] leading-tight">
                 Sign up to our newsletter
               </h2>
 
               <p className="text-black text-base leading-relaxed">
-                We don’t spam. We send sharp insights, new briefs, and content you’ll actually want to open.
+                We don’t spam. We send sharp insights, new briefs, and content
+                you’ll actually want to open.
               </p>
             </div>
 
@@ -280,7 +289,6 @@ export default function Ramblings() {
             </div>
           </div>
         </div>
-
       </div>
 
       <div className="relative left-1/2 -translate-x-1/2 w-screen h-[1px] bg-black my-5" />
