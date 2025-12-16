@@ -7,11 +7,11 @@ import "../../styles/scaling-overrides.css";
 
 const DEFAULT_LOGOS = [
   {
-    src: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717226/asics_vgprpc.png",
+    src: "https://res.cloudinary.com/di9tb45rl/image/upload/v1765891785/asics_ktapuy.png",
     alt: "ASICS",
   },
   {
-    src: "https://res.cloudinary.com/di9tb45rl/image/upload/v1762717294/webflow_r2dwk5.png",
+    src: "https://res.cloudinary.com/di9tb45rl/image/upload/v1765891785/webflow_q2ffgx.png",
     alt: "Webflow",
   },
 ];
